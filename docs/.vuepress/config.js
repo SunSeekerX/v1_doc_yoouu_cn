@@ -1,12 +1,12 @@
 /**
- * @name: 
+ * @name:
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-12 22:48:05
+ * @LastEditTime: 2020-04-12 23:55:35
  */
 
- module.exports = {
+module.exports = {
   base: '/',
   title: 'SunSeekerX',
   description: 'This road is just beginning ~',
@@ -16,12 +16,21 @@
       'link',
       {
         rel: 'icon',
-        href: '/favicon.ico'
-      }
-    ]
+        href: '/favicon.ico',
+      },
+    ],
   ],
-  themeConfig:{
-    repo: 'PanJiaChen/vue-element-admin',
-    docsRepo: 'PanJiaChen/vue-element-admin-site',
-  }
- }
+  themeConfig: {
+    repo: 'SunSeekerX/sunseekerx',
+    editLinks: true,
+    sidebarDepth: 2,
+    nav: [
+      { text: 'Home', link: '/' },
+      { text: 'Guide', link: '/guide/' },
+    ],
+    // sidebar: ['/', '/guide/', '/vsa/'],
+    sidebar: 'auto',
+    // displayAllHeaders: true, // 默认值：false
+    lastUpdated: 'Last Updated',
+  },
+}
