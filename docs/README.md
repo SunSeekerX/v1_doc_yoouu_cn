@@ -2,7 +2,6 @@
 home: true
 heroImage: /home.jpg
 heroText: SunSeekerX
-# tagline: This road is just beginning ~
 tagline: 这条路才刚刚开始啊 ~
 actionText: 快速上手 →
 actionLink: /guide/
