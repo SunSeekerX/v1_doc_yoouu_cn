@@ -1,10 +1,8 @@
 # 😄 About me
 
-## Technology stack
-
 以下都是我平时用过或熟悉的编程语言、框架、软件及工具，带 ^†^ 符号的是我比较喜欢和常用的。
 
-### Programming language
+## Programming language
 
 - [JavaScript](https://www.javascript.com/)^†^
 - [HTML](https://www.w3.org/html)^†^
@@ -12,7 +10,7 @@
 - [SQL](https://www.runoob.com/sql/sql-tutorial.html)^†^
 - [JAVA](https://www.java.com/)
 
-### Front end
+## Front end
 
 - uni-app
 
@@ -40,7 +38,7 @@
 
 - scss
 
-### Back end
+## Back end
 
 - Node.js
 - Express
@@ -49,13 +47,13 @@
 - Mysql
 - Mongodb
 
-### Common
+## Common
 
 - token权限控制
 - es6,es7
 - Mock.js
 
-### Software
+## Software
 
 - VSCode
 - Hbuilderx
@@ -67,7 +65,7 @@
 - 微信web开发者工具
 - Adobe Photoshop CC 2019
 
-### Other
+## Other
 
 - JS穷举
 - 域名备案

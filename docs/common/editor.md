@@ -1,10 +1,10 @@
 # editor
 
-### VSCode
+## VSCode
 
 > Setting sync id: 7e4a454490b30e5e5934976993e322ce。请复制这个 ID 并将其用于其他设备来下载配置。
 
-#### plugins
+### plugins
 
 |                     名称                      |                       简述                       |
 | :-------------------------------------------: | :----------------------------------------------: |
@@ -35,7 +35,7 @@
 | ES7 React/Redux/GraphQL/React-Native snippets |                                                  |
 |           vscode-styled-components            |            vscode react jsx css 提示             |
 
-#### VSCode setting
+### VSCode setting
 
 ```json
 {
@@ -100,23 +100,21 @@
 
 ```
 
-#### Shortcut key 快捷键
+### Shortcut key 快捷键
 
-##### `递归折叠方法` 折叠当前光标下所有方法与参数
+#### `递归折叠方法` 折叠当前光标下所有方法与参数
 
 折叠 `ctrl+k ctrl+[` 
 
 取消折叠 `ctrl+k` `ctrl+j`
 
-### WebStorm
+## WebStorm
 
-#### Format code
+### 01. 格式化代码快捷键
 
 `Ctrl+Alt+L`
 
-
-
-### 1.IntelliJ IDEA 2018 设置代码提示对大小写不敏感
+### 02. IntelliJ IDEA 2018 设置代码提示对大小写不敏感
 
 >  setting->Editor->General->Code Completion
 >  取消勾选Match case 

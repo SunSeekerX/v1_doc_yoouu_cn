@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-15 14:35:37
+ * @LastEditTime: 2020-04-15 15:10:03
  */
 
 const moment = require('moment')
@@ -29,6 +29,20 @@ module.exports = {
     nav: [
       { text: '首页', link: '/' },
       { text: '指南', link: '/guide/' },
+      {
+        text: '资源',
+        items: [{ text: '有趣的网站', link: '/common/resource/' }],
+      },
+      {
+        text: '基本',
+        items: [
+          // { text: '基本', link: '/common/' },
+          { text: 'Git', link: '/common/git/' },
+          { text: '编辑器', link: '/common/editor/' },
+          { text: '其他', link: '/common/other/' },
+          { text: '关于我', link: '/common/about-me/' },
+        ],
+      },
       {
         text: '前端',
         items: [
@@ -65,7 +79,7 @@ module.exports = {
     // sidebar: ['/', '/guide/', '/vsa/'],
     sidebar: 'auto',
     lastUpdated: 'Last Updated',
-    displayAllHeaders: true // 默认值：false
+    displayAllHeaders: true, // 默认值：false
   },
   plugins: [
     [

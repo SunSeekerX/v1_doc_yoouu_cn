@@ -1,7 +1,7 @@
-## Git
+# Git
 
-> 1. 配置基本信息
->
+配置基本信息
+
 > ```bash
 > git config --global user.name "Your Name"
 > git config --global user.email "email@example.com"
@@ -10,6 +10,10 @@
 > git config --global user.name "SunSeekerX"
 > git config --global user.email "1647800606@qq.com"
 > ```
+
+
+
+
 
 |                         指令                          |                             说明                             |
 | :---------------------------------------------------: | :----------------------------------------------------------: |
@@ -30,7 +34,27 @@
 
 
 
-给`Git`全局配置http代理
+## 常用分支操作
+
+```bash
+# 1.拉取远程分支，如果本地没有改分支
+git fetch [远程地址别名] [远程仓库分支]:[本地创建分支名]
+# 例如，下面代码执行会拉取远程1.1.0分支然后在本地创建名为1.1.0的分支，冒号右边的是本地分支名，可以自定义
+git fetch origin 1.1.0:1.1.0
+
+# 2.删除本地分支，如果本地分支未完全合并是无法删除的，需要将-d改为-D表示强制删除
+git branch -d [本地分支名]
+
+# 3.撤销本次所有更改,会撤销本次所有的更改。不包括已经commit的
+git checkout -- .
+
+# 4.终止合并,如果合并冲突过多，需要终止合并
+git merge --abort
+```
+
+
+
+## 给`Git`全局配置http代理
 
 **只能代理http连接！！！**
 
