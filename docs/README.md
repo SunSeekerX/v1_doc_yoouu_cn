@@ -7,7 +7,7 @@ actionText: 快速上手 →
 actionLink: /guide/
 features:
   - title: 持续更新
-    details: 本主页收录了前端相关技术文档，以及个人学习笔记
+    details: 本主页收录了前后端相关技术文档，以及个人学习笔记
   - title: 开源库
     details: 正在开发整理的Vue-simple-admin/Clover-user/web-storage-apis 等开源库
   - title: 技术栈
