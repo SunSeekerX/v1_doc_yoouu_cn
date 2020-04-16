@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-15 15:10:03
+ * @LastEditTime: 2020-04-16 10:36:05
  */
 
 const moment = require('moment')
@@ -75,6 +75,14 @@ module.exports = {
           { text: 'Linux', link: '/back-end/linux/' },
         ],
       },
+      {
+        text: '开源库',
+        items: [
+          { text: 'vue-simple-admin', link: '/vsa/' },
+          { text: 'web-storage-apis', link: '/web-storage-apis/' },
+          // { text: 'Vue', link: '/front-end/vue/' },
+        ],
+      },
     ],
     // sidebar: ['/', '/guide/', '/vsa/'],
     sidebar: 'auto',
@@ -94,4 +102,8 @@ module.exports = {
       },
     ],
   ],
+  markdown: {
+    lineNumbers: true,
+    extractHeaders: ['h2', 'h3', 'h4'],
+  },
 }
