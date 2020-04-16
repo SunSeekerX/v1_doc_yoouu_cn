@@ -54,6 +54,30 @@ git merge --abort
 
 
 
+### 怎么更换git远程仓库地址
+
+方法一 ： 通过命令直接修改远程仓库地址
+
+```bash
+# 查看所有远程仓库
+git remote -v
+# 你新的远程仓库地址
+git remote set-url origin [新的地址]
+```
+
+方法二： 先删除在添加你的远程仓库
+
+```bash
+# 删除远程仓库关联
+git remote rm origin
+# 你的新远程仓库地址
+git remote add origin 
+```
+
+
+
+
+
 ## 给`Git`全局配置http代理
 
 **只能代理http连接！！！**
