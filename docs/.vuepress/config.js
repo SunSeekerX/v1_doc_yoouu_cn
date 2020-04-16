@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-16 10:36:05
+ * @LastEditTime: 2020-04-16 11:48:33
  */
 
 const moment = require('moment')
@@ -41,6 +41,10 @@ module.exports = {
           { text: '编辑器', link: '/common/editor/' },
           { text: '其他', link: '/common/other/' },
           { text: '关于我', link: '/common/about-me/' },
+          {
+            text: '常见问题',
+            items: [{ text: 'PowerShell', link: '/common/power-shell/' }],
+          },
         ],
       },
       {
