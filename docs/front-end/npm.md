@@ -1,6 +1,6 @@
-## npm
+# npm
 
-### 替换默认的镜像源
+## 替换默认的镜像源
 
 ```bash
 # 1、查看一下当前源
@@ -21,7 +21,7 @@ yarn config set registry https://registry.yarnpkg.com
 
 
 
-### 查看，更新，卸载全局安装的包
+## 查看，更新，卸载全局安装的包
 
 文档：https://www.npmjs.cn/
 
@@ -53,7 +53,7 @@ npm update -g jshint
 
 
 
-### package.json升级依赖包
+## 升级`package.json`依赖包
 
 安装：
 
@@ -78,3 +78,20 @@ ncu -u
 ```bash
 ncu -a
 ```
+
+
+
+## 清除缓存
+
+npm
+
+```bash
+npm cache clean -f
+```
+
+yarn
+
+```bash
+yarn cache clean
+```
+
