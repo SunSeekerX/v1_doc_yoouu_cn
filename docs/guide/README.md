@@ -28,4 +28,6 @@
 6. 染指`Golang`（之前想系统学习下`java`，大学里学的是`java`，无奈当时没有很深入，不过貌似有更好的选择）
 7. [🧐] 学习Vue3快速深入全攻略（优惠购买的）:[https://ke.qq.com/course/1967929](https://ke.qq.com/course/1967929)
 8. [🧐] 文档持续更新
+9. [🧐] 研究下[Branca](https://branca.io),一种安全令牌的数据格式，比 JWT 更安全，同类项目还有 [Paseto](https://paseto.io/)。
+10. 书籍：[斯诺登自传](https://a.temporaryrecord.com/)《永久记录》，未删节的简体中文版 PDF 下载，作者本人授权。
 
