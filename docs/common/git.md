@@ -1,19 +1,19 @@
 # Git
 
-配置基本信息
+## 配置基本信息
 
-> ```bash
-> git config --global user.name "Your Name"
-> git config --global user.email "email@example.com"
-> 
-> # example
-> git config --global user.name "SunSeekerX"
-> git config --global user.email "1647800606@qq.com"
-> ```
+> 为了让别人知道是谁提交了代码。
 
+```bash
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
 
+# example
+git config --global user.name "SunSeekerX"
+git config --global user.email "1647800606@qq.com"
+```
 
-
+## 基本指令
 
 |                         指令                          |                             说明                             |
 | :---------------------------------------------------: | :----------------------------------------------------------: |
@@ -34,27 +34,41 @@
 
 
 
-## 常用分支操作
+# 常用分支操作
+
+## 1.拉取远程分支并在本地创建分支
 
 ```bash
-# 1.拉取远程分支，如果本地没有改分支
+# 如果本地没有该分支
 git fetch [远程地址别名] [远程仓库分支]:[本地创建分支名]
 # 例如，下面代码执行会拉取远程1.1.0分支然后在本地创建名为1.1.0的分支，冒号右边的是本地分支名，可以自定义
 git fetch origin 1.1.0:1.1.0
+```
 
-# 2.删除本地分支，如果本地分支未完全合并是无法删除的，需要将-d改为-D表示强制删除
+## 2.删除本地分支
+
+```bash
+# 删除本地分支，如果本地分支未完全合并是无法删除的，需要将-d改为-D表示强制删除
 git branch -d [本地分支名]
+```
 
-# 3.撤销本次所有更改,会撤销本次所有的更改。不包括已经commit的
+## 3.撤销本次所有更改
+
+```bash
+# 撤销本次所有更改,会撤销本次所有的更改。不包括已经commit的
 git checkout -- .
+```
 
-# 4.终止合并,如果合并冲突过多，需要终止合并
+## 4.终止合并
+
+```bash
+# 终止合并,如果合并冲突过多，想要终止合并
 git merge --abort
 ```
 
 
 
-### 怎么更换git远程仓库地址
+## 5.怎么更换git远程仓库地址
 
 方法一 ： 通过命令直接修改远程仓库地址
 
@@ -71,33 +85,38 @@ git remote set-url origin [新的地址]
 # 删除远程仓库关联
 git remote rm origin
 # 你的新远程仓库地址
-git remote add origin 
+git remote add origin [新的地址]
+```
+
+## 6.拉取指定分支代码
+
+```bash
+ git clone -b [远程分支名] [远程仓库地址]
 ```
 
 
 
 
 
-## 给`Git`全局配置http代理
+# 给`Git`配置全局http和https代理
 
-**只能代理http连接！！！**
+> 提交`Github`和`Gitlab`的代码在某些时候非常慢，这个时候就可以配置代理加速代码提交和拉取。
+>
+> **只能代理http连接！！！**
 
 ```bash
-# 代理
+# 设置代理 http.proxy 后面接你的本地代理地址和端口，一般是这个
+# 不过我的1080端口老是被冲突，所以我改成了65534,然后你的代理软件需要允许来自局域网的连接就可以了。
 git config --global http.proxy http://127.0.0.1:1080
 git config --global https.proxy https://127.0.0.1:1080
-# 上面不生效用
-git config --global http.proxy 'socks5://127.0.0.1:1080' 
-git config --global https.proxy 'socks5://127.0.0.1:1080'
-
-# 只对 github 进行代理，对国内的仓库不影响，可以这样设置，不熟悉配置文件不建议使用
-git config --global http.https://github.com.proxy https://127.0.0.1:1080
-git config --global https.https://github.com.proxy https://127.0.0.1:1080
-# 只对 gitlab 进行代理，对国内的仓库不影响，可以这样设置，不熟悉配置文件不建议使用
-git config --global https.https://https://gitlab.com.proxy https://127.0.0.1:1080
 
 # 恢复
 git config --global --unset http.proxy
 git config --global --unset https.proxy
+
+# 如果发现取消代理的命令不生效，可以用以下命令查看全局配置信息
+git config --global -l
+# 编辑全局配置，会启动编辑器，你可以手动去除代理信息
+git config --global -e
 ```
 
