@@ -1,9 +1,9 @@
 /**
- * @name:
+ * @name: config.js
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-16 11:48:33
+ * @LastEditTime: 2020-04-26 14:23:56
  */
 
 const moment = require('moment')
@@ -31,19 +31,21 @@ module.exports = {
       { text: '指南', link: '/guide/' },
       {
         text: '资源',
-        items: [{ text: '有趣的网站', link: '/common/resource/' }],
+        link: '/common/resource',
       },
       {
         text: '基本',
         items: [
-          // { text: '基本', link: '/common/' },
-          { text: 'Git', link: '/common/git/' },
-          { text: '编辑器', link: '/common/editor/' },
-          { text: '其他', link: '/common/other/' },
-          { text: '关于我', link: '/common/about-me/' },
+          { text: 'Git', link: '/common/git' },
+          { text: '编辑器', link: '/common/editor' },
+          { text: '其他', link: '/common/other' },
+          { text: '关于我', link: '/common/about-me' },
           {
             text: '常见问题',
-            items: [{ text: 'PowerShell', link: '/common/power-shell/' }],
+            items: [
+              { text: 'PowerShell', link: '/common/power-shell' },
+              { text: '更新日志', link: '/common/changelog' },
+            ],
           },
         ],
       },
@@ -54,17 +56,17 @@ module.exports = {
           {
             text: '基础',
             items: [
-              { text: 'Html', link: '/front-end/html/' },
-              { text: 'Css', link: '/front-end/css/' },
-              { text: 'JavaScript', link: '/front-end/javascript/' },
+              { text: 'Html', link: '/front-end/html' },
+              { text: 'Css', link: '/front-end/css' },
+              { text: 'JavaScript', link: '/front-end/javascript' },
             ],
           },
           {
             text: '框架',
             items: [
-              { text: 'Npm', link: '/front-end/npm/' },
-              { text: 'Uni-app', link: '/front-end/uni-app/' },
-              { text: 'Vue', link: '/front-end/vue/' },
+              { text: 'Npm', link: '/front-end/npm' },
+              { text: 'Uni-app', link: '/front-end/uni-app' },
+              { text: 'Vue', link: '/front-end/vue' },
             ],
           },
         ],
@@ -73,10 +75,10 @@ module.exports = {
         text: '后端',
         items: [
           { text: '基本', link: '/back-end/' },
-          { text: '数据库', link: '/back-end/database/' },
-          { text: 'Java', link: '/back-end/java/' },
-          { text: 'Docker', link: '/back-end/docker/' },
-          { text: 'Linux', link: '/back-end/linux/' },
+          { text: '数据库', link: '/back-end/database' },
+          { text: 'Java', link: '/back-end/java' },
+          { text: 'Docker', link: '/back-end/docker' },
+          { text: 'Linux', link: '/back-end/linux' },
         ],
       },
       {
