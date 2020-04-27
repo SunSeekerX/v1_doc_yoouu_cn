@@ -1,6 +1,6 @@
 # Docker
 
-## 01. 安装Docker
+## 0x1. 安装Docker
 
 > **centos安装文档**：[https://docs.docker.com/install/linux/docker-ce/centos/](https://docs.docker.com/install/linux/docker-ce/centos/)
 >
@@ -8,7 +8,7 @@
 
 
 
-## 02. Docker安装`MariaDB`
+## 0x2. Docker安装`MariaDB`
 
 ```shell
 # 1.搜索mariadb镜像（非必须）
@@ -42,7 +42,7 @@ docker stop 容器id　　#停止容器
 
 
 
-## 03. Docker安装`MongoDB`
+## 0x3. Docker安装`MongoDB`
 
 > ！如果外部目录存在老的数据文件，创建初始化用户不会生效。
 
@@ -71,7 +71,7 @@ mongo -u root -p 12345678900
 
 
 
-## 04. Docker安装`portainer`
+## 0x4. Docker安装`portainer`
 
 ```shell
 # 1.搜索MongoDB镜像（非必须）
@@ -88,7 +88,7 @@ docker ps -a
 
 
 
-## 05. Docker安装`nondanee/unblockneteasemusic`
+## 0x5. Docker安装`nondanee/unblockneteasemusic`
 
 ```shell
 # 1.搜索MongoDB镜像（非必须）
@@ -103,3 +103,10 @@ docker run -d -p 65535:8080 --restart=always --name music nondanee/unblockneteas
 docker ps -a 
 ```
 
+
+
+## 0x6. Docker安装`Gitlab`
+
+> GitLab 分为 社区版（Community Edition，缩写为 CE）和 企业版（Enterprise Edition，缩写为 EE）。社区版是免费的，而企业版包含一些收费服务，一般来说个人开发者用社区版就足够了。
+
+### 下载镜像
