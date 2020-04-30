@@ -105,8 +105,19 @@ docker ps -a
 
 
 
-## 0x6. Docker安装`Gitlab`
+## 0x6. Docker安装`jenkins`
 
-> GitLab 分为 社区版（Community Edition，缩写为 CE）和 企业版（Enterprise Edition，缩写为 EE）。社区版是免费的，而企业版包含一些收费服务，一般来说个人开发者用社区版就足够了。
+> Jenkins是开源CI&CD软件领导者， 提供超过1000个插件来支持构建、部署、自动化， 满足任何项目的需要。
+>
+> 官网：[https://jenkins.io/zh/](https://jenkins.io/zh/)
+>
+> 推荐使用docker安装，这样可以方便升级，不用被jdk环境搭建搞得焦头烂额，直接关注使用功能
+>
+> Docker镜像：[https://hub.docker.com/r/jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins)
 
-### 下载镜像
+```bash
+
+```
+
+
+
