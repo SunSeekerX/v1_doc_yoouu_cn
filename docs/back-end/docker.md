@@ -116,8 +116,36 @@ docker ps -a
 > Docker镜像：[https://hub.docker.com/r/jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins)
 
 ```bash
-
+# 拉取长期服务版
+docker pull jenkins/jenkins:lts
+# 在启动Jenkins时，需要先创建一个Jenkins的配置目录，并且挂载到docker 里的Jenkins目录下
+mkdir -p /var/jenkins_home
+# 修改目录权限（很重要！）否则jenkins没有读取改目录的权限
+chown -R 1000 /var/jenkins_home
+# 查看文件夹权限
+sudo ls -nd /var/jenkins_home/
+# 运行 Jenkins
+docker run --name jenkins -p 50001:8080 -u root  -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JENKINS_UC="	https://updates.jenkins-zh.cn" -e JENKINS_UC_DOWNLOAD="https://mirrors.tuna.tsinghua.edu.cn/jenkins" -e JAVA_OPTS=-Duser.timezone=Asia/Shanghai -v $(which git):/usr/bin/git jenkins/jenkins:lts
 ```
 
+### 配置Jenkins
 
+> 第一次进入需要加载依赖和配置需要一段时间，可以通过`docker logs <容器id> -f`监控jenkins运行日志
 
+访问`http://<你的ip>:8080`访问Jenkins。如果无法访问请检查系统防火墙、云的安全组设置。
+
+可以看到需要我们输入密码。
+
+首先进入容器：
+
+```shell
+docker exec -it jenkins /bin/bash
+```
+
+然后查看密码：
+
+```shell
+cat /var/jenkins_home/secrets/initialAdminPassword
+```
+
+复制输出的内容，粘贴到Administrator password，输入 exit 退出容器，此时进行下一步你会看到此界面，点击 Install suggested plugins
