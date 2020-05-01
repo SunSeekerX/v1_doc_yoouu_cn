@@ -17,6 +17,16 @@ yarn config get registry
 yarn config set registry https://registry.npm.taobao.org
 # 3、或者切换为自带的
 yarn config set registry https://registry.yarnpkg.com
+
+# 其他镜像
+yarn config set disturl https://npm.taobao.org/dist # node-gyp 编译依赖的 node 源码镜像
+yarn config set node_sqlite3_binary_host_mirror https://npm.taobao.org/mirrors # sqlite3 镜像
+yarn config set sass_binary_site "https://npm.taobao.org/mirrors/node-sass/"
+yarn config set phantomjs_cdnurl "http://cnpmjs.org/downloads"
+yarn config set electron_mirror "https://npm.taobao.org/mirrors/electron/"
+yarn config set sqlite3_binary_host_mirror "https://foxgis.oss-cn-shanghai.aliyuncs.com/"
+yarn config set profiler_binary_host_mirror "https://npm.taobao.org/mirrors/node-inspector/"
+yarn config set chromedriver_cdnurl "https://cdn.npm.taobao.org/dist/chromedriver"
 ```
 
 

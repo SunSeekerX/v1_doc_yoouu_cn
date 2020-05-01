@@ -8,7 +8,7 @@
     "build": "vuepress build docs"
   },
   "devDependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.25.0",
     "vuepress": "^0.14.11"
   }
 }
