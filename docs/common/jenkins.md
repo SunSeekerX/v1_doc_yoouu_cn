@@ -1,3 +1,11 @@
+# Jenkins
+
+> 更新地址：[https://sunseekerx.yoouu.cn/common/jenkins.html](https://sunseekerx.yoouu.cn/common/jenkins.html)
+>
+> 更新时间：2020-05-05 20:39:33
+
+
+
 ## Vue项目自动化构建
 
 `Jenkins`安装查看`Docker`章节。
