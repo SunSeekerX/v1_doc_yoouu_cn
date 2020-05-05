@@ -190,6 +190,23 @@ cd /www/wwwroot/sunseekerx.yoouu.cn
 
 
 
+### 0x10 Git设置`Webhooks`
+
+前提是`Git`需要能访问到你的`Jenkins`，一旦有代码提交上来，`Git`就会去请求你这个地址，然后`Jenkins`触发构建动作。
+
+> 简单来说就是我提交代码告诉`Git`，`Git`告诉`Jenkins`你该构建了，完了`Jenkins`去构建。`Git`就像仓库管理员，`Jenkins`就是干苦力的。😁
+
+![github-webhook-setting](./jenkins.assets/github-webhook-setting.png)
+
 ### 0x10 测试下提交构建
 
-在本地修改一些文件，提交上去
+在本地修改一些文件，提交上去，稍等一会儿查看`Jenkins`，这个处于等待中的任务就是提交的任务
+
+![git-webhook](./jenkins.assets/git-webhook.png)
+
+
+
+访问[https://sunseekerx.yoouu.cn/](https://sunseekerx.yoouu.cn/)试试，更新成功🤣
+
+![new-website](./jenkins.assets/new-website.png)
+
