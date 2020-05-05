@@ -45,7 +45,7 @@
 3. 页面直接`ctrl+f`搜索`ssh`，直接安装`Publish Over SSH`插件(不要用自带的过滤搜索没用)
 
 
-![plugin-publish-over-ssh](./jenkins.assets/plugin-publish-over-ssh.png)
+![plugin-publish-over-ssh]( https://image.yoouu.cn/2020/Jenkins/plugin-publish-over-ssh.png)
 
 
 
@@ -65,7 +65,7 @@
 10. `Passphrase`填写密码
 11. 填写完了点击`Test Configuration`测试下是否连接成功
 
-![publish-over-ssh-setting](./jenkins.assets/publish-over-ssh-setting.png)
+![publish-over-ssh-setting]( https://image.yoouu.cn/2020/Jenkins/publish-over-ssh-setting.png)
 
 
 
@@ -87,7 +87,7 @@
       3. 版本选择`12.16.3`，这是目前稳定的长期支持版本
       4. 保存
    
-   ![plugin-nodejs](./jenkins.assets/plugin-nodejs.png)
+   ![plugin-nodejs]( https://image.yoouu.cn/2020/Jenkins/plugin-nodejs.png)
 
 
 
@@ -97,7 +97,7 @@
 
 ### 0x2 输入名称
 
-![input-name](./jenkins.assets/input-name.png)
+![input-name]( https://image.yoouu.cn/2020/Jenkins/input-name.png)
 
 
 
@@ -105,7 +105,7 @@
 
 > 我的文档项目访问是公开的，可以直接访问，如果是私有项目还需要配置一个可访问的账号才可以。就是下面`Credentials`选项。
 
-![repositories](./jenkins.assets/repositories.png)
+![repositories]( https://image.yoouu.cn/2020/Jenkins/repositories.png)
 
 
 
@@ -117,13 +117,13 @@
 
 > 勾选`Provide Node & npm bin/ folder to PATH`，这是提供`Node`命令给我们使用。
 
-![build](./jenkins.assets/build.png)
+![build]( https://image.yoouu.cn/2020/Jenkins/build.png)
 
 
 
 ### 0x6 增加构建步骤 - `执行shell`
 
-![build-step](./jenkins.assets/build-step.png)
+![build-step]( https://image.yoouu.cn/2020/Jenkins/build-step.png)
 
 
 
@@ -159,7 +159,7 @@ tar -zcvf sunseekerx.tar.gz *
 
 执行完成之后会在服务器生成`sunseekerx.tar.gz`，下一步就是把这个文件发送到指定部署的服务器。进行解压。
 
-![build-file](./jenkins.assets/build-file.png)
+![build-file]( https://image.yoouu.cn/2020/Jenkins/build-file.png)
 
 
 
@@ -180,7 +180,7 @@ cd /www/wwwroot/sunseekerx.yoouu.cn
 \echo ">>>执行成功"
 ```
 
-![send-flie](./jenkins.assets/send-flie.png)
+![send-flie]( https://image.yoouu.cn/2020/Jenkins/send-flie.png)
 
 
 
@@ -188,13 +188,13 @@ cd /www/wwwroot/sunseekerx.yoouu.cn
 
 > 可以看到服务器有了构建之后的文件
 
-![finish-build-files](./jenkins.assets/finish-build-files.png)
+![finish-build-files]( https://image.yoouu.cn/2020/Jenkins/finish-build-files.png)
 
 
 
 ### 0x9 访问下网站试试，nice😁
 
-![sunseekerx.yoouu.cn](./jenkins.assets/sunseekerx.yoouu.cn.png)
+![sunseekerx.yoouu.cn]( https://image.yoouu.cn/2020/Jenkins/sunseekerx.yoouu.cn.png)
 
 
 
@@ -204,17 +204,17 @@ cd /www/wwwroot/sunseekerx.yoouu.cn
 
 > 简单来说就是我提交代码告诉`Git`，`Git`告诉`Jenkins`你该构建了，完了`Jenkins`去构建。`Git`就像仓库管理员，`Jenkins`就是干苦力的。😁
 
-![github-webhook-setting](./jenkins.assets/github-webhook-setting.png)
+![github-webhook-setting]( https://image.yoouu.cn/2020/Jenkins/github-webhook-setting.png)
 
 ### 0x10 测试下提交构建
 
 在本地修改一些文件，提交上去，稍等一会儿查看`Jenkins`，这个处于等待中的任务就是提交的任务
 
-![git-webhook](./jenkins.assets/git-webhook.png)
+![git-webhook]( https://image.yoouu.cn/2020/Jenkins/git-webhook.png)
 
 
 
 访问[https://sunseekerx.yoouu.cn/](https://sunseekerx.yoouu.cn/)试试，更新成功🤣
 
-![new-website](./jenkins.assets/new-website.png)
+![new-website]( https://image.yoouu.cn/2020/Jenkins/new-website.png)
 
