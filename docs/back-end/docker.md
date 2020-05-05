@@ -72,7 +72,7 @@ docker images
 # 4.建一个目录作为和容器的映射目录(-p:递归建立目录)
 mkdir -p /data/mariadb
 # 5.启动MariaDB
-docker run --name mariadb -p 3306:3306 -e MYSQL_ROOT_PASSWORD=输入数据库root用户的密码 -v /data/mariadb:/var/lib/mysql -d mariadb
+docker run --name mariadb -p 3306:3306 --restart=always -e MYSQL_ROOT_PASSWORD=输入数据库root用户的密码 -v /data/mariadb:/var/lib/mysql -d mariadb
 #　　--name启动容器设置容器名称为mariadb
 #　　-p设置容器的3306端口映射到主机3306端口
 #　　-e MYSQL_ROOT_PASSWORD设置环境变量数据库root用户密码为输入数据库root用户的密码
@@ -108,9 +108,9 @@ docker images
 # 4.建一个目录作为和容器的映射目录(-p:递归建立目录)
 mkdir -p /data/mongodb
 # 5.启动MongoDB
-docker run --name mongodb -p 27017:27017 -v /data/mongodb:/data/db -d mongo --auth
+docker run --name mongodb -p 27017:27017 --restart=always -v /data/mongodb:/data/db -d mongo --auth
     # 5.1 下面启动在admin数据库创建了一个超级管理员，具有管理所有数据库的权限。
-    docker run --name mongodb -p 27017:27017 -v /data/mongodb:/data/db -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=12345678900 -d mongo
+    docker run --name mongodb -p 27017:27017 --restart=always -v /data/mongodb:/data/db -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=12345678900 -d mongo
 # 6.查看容器是否运行
 docker ps -a 
 # 7.修改容器为自启动
@@ -177,7 +177,7 @@ chown -R 1000 /var/jenkins_home
 # 查看文件夹权限
 sudo ls -nd /var/jenkins_home/
 # 运行 Jenkins
-docker run --name jenkins -p 50001:8080 -u root  -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JENKINS_UC="	https://updates.jenkins-zh.cn" -e JENKINS_UC_DOWNLOAD="https://mirrors.tuna.tsinghua.edu.cn/jenkins" -e JAVA_OPTS=-Duser.timezone=Asia/Shanghai -v $(which git):/usr/bin/git jenkins/jenkins:lts
+docker run --name jenkins -p 50001:8080 --restart=always -u root  -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JENKINS_UC="	https://updates.jenkins-zh.cn" -e JENKINS_UC_DOWNLOAD="https://mirrors.tuna.tsinghua.edu.cn/jenkins" -e JAVA_OPTS=-Duser.timezone=Asia/Shanghai -v $(which git):/usr/bin/git jenkins/jenkins:lts
 ```
 
 ### 配置Jenkins
