@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-04-26 14:23:56
+ * @LastEditTime: 2020-05-05 11:19:42
  */
 
 const moment = require('moment')
@@ -27,19 +27,23 @@ module.exports = {
     editLinks: false,
     sidebarDepth: 2,
     nav: [
-      { text: '首页', link: '/' },
+      // { text: '首页', link: '/' },
       { text: '指南', link: '/guide/' },
-      {
-        text: '资源',
-        link: '/common/resource',
-      },
       {
         text: '基本',
         items: [
+          {
+            text: '资源',
+            link: '/common/resource',
+          },
           { text: 'Git', link: '/common/git' },
           { text: '编辑器', link: '/common/editor' },
           { text: '其他', link: '/common/other' },
           { text: '关于我', link: '/common/about-me' },
+          {
+            text: '其他技术',
+            items: [{ text: 'Jenkins', link: '/common/jenkins' }],
+          },
           {
             text: '常见问题',
             items: [
@@ -53,6 +57,7 @@ module.exports = {
         text: '前端',
         items: [
           { text: '基本', link: '/front-end/' },
+
           {
             text: '基础',
             items: [

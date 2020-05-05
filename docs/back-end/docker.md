@@ -184,7 +184,7 @@ docker run --name jenkins -p 50001:8080 -u root  -d -v /var/run/docker.sock:/var
 
 > 第一次进入需要加载依赖和配置需要一段时间，可以通过`docker logs <容器id> -f`监控jenkins运行日志
 
-访问`http://<你的ip>:8080`访问Jenkins。如果无法访问请检查系统防火墙、云的安全组设置。
+访问`http://<你的ip>:50001`访问Jenkins。如果无法访问请检查系统防火墙、云的安全组设置。
 
 可以看到需要我们输入密码。
 
@@ -201,3 +201,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 ```
 
 复制输出的内容，粘贴到Administrator password，输入 exit 退出容器，此时进行下一步你会看到此界面，点击 Install suggested plugins
+
+
+
+然后创建管理用户
