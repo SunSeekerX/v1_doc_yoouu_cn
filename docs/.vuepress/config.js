@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-05 14:46:11
+ * @LastEditTime: 2020-05-06 15:37:16
  */
 
 const moment = require('moment')
@@ -97,7 +97,7 @@ module.exports = {
     // sidebar: ['/', '/guide/', '/vsa/'],
     sidebar: 'auto',
     lastUpdated: 'Last Updated',
-    displayAllHeaders: true, // 默认值：false
+    // displayAllHeaders: true, // 默认值：false
   },
   plugins: [
     [

@@ -45,3 +45,11 @@ Email：1647800606@qq.com
 
 QQ：1647800606
 
+
+
+## 反馈
+
+如果发现文档中的错误可以使用[issue](https://github.com/SunSeekerX/sunseekerx/issues)。
+
+
+
