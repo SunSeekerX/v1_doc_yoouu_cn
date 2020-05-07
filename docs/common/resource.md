@@ -52,7 +52,7 @@
 
 ### 有趣的项目
 
-[mikutap](https://github.com/HFIProgramming/mikutap) - 有趣的音乐网站项目，超解压。[线上地址](https://app.yoouu.cn/mikutap/)。同类项目：[patatap](https://patatap.com/)
+[mikutap](https://github.com/HFIProgramming/mikutap) - 有趣的音乐网站项目，超解压。[线上地址](https://app.yoouu.cn/app/mikutap/)。同类项目：[patatap](https://patatap.com/)
 
 [996.ICU](https://github.com/996icu/996.ICU) - 😮
 
