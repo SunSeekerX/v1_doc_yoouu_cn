@@ -3,7 +3,7 @@ home: true
 heroImage: /home.png
 heroText: SunSeekerX
 tagline: 这条路才刚刚开始啊 ~
-actionText: 快速上手 →
+actionText: 冲冲冲 →
 actionLink: /guide/
 features:
   - title: 持续更新

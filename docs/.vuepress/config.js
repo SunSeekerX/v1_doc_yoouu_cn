@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-06 15:37:16
+ * @LastEditTime: 2020-05-08 16:13:35
  */
 
 const moment = require('moment')
@@ -40,6 +40,15 @@ module.exports = {
           { text: '编辑器', link: '/common/editor' },
           { text: '其他', link: '/common/other' },
           { text: '关于我', link: '/common/about-me' },
+          {
+            text: '学习计划',
+            items: [
+              { text: 'Git快速入门', link: '/common/coding/git' },
+              { text: 'Node.js 学习计划', link: '/common/coding/nodejs' },
+              { text: 'React 学习计划', link: '/common/coding/react' },
+              // { text: 'Spring Boot 入门', link: '/common/coding/spring-boot' },
+            ],
+          },
           {
             text: '其他技术',
             items: [{ text: 'Jenkins', link: '/common/jenkins' }],
