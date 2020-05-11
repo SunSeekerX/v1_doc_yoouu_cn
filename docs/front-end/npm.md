@@ -154,6 +154,46 @@ yarn cache clean
 
 
 
+## 优雅的提交你的 Git Commit Message
+
+### 全局安装
+
+```bash
+npm install -g commitizen cz-conventional-changelog
+echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+
+```
+
+主要, 全局模式下, 需要 ~/.czrc 配置文件, 为 commitizen 指定 Adapter.
+
+### 项目级安装
+
+```bash
+npm install -D commitizen cz-conventional-changelog
+
+# yarn
+yarn add commitizen cz-conventional-changelog -D
+```
+
+package.json中配置:
+
+```json
+"script": {
+    ...,
+    "commit": "git-cz",
+},
+ "config": {
+    "commitizen": {
+      "path": "node_modules/cz-conventional-changelog"
+    }
+  }
+```
+
+如果全局安装过 commitizen, 那么在对应的项目中执行 git cz or npm run commit 都可以.
+
+
+
+
 ## 版本号管理
 
 ### 命令
