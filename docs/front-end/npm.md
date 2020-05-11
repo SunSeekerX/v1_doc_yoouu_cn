@@ -154,42 +154,425 @@ yarn cache clean
 
 
 
-## 优雅的提交你的 Git Commit Message
+## ✅规范提交代码
 
-### 全局安装
+> [约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.2/)
+>
+> 一种用于给提交信息增加人机可读含义的规范
+>
+> [Commitizen](http://commitizen.github.io/cz-cli/) - 命令行规范提交工具
+>
+> 文章参考：
+>
+> [Commit message 和 Change log 编写指南 - 阮一峰](https://www.ruanyifeng.com/blog/2016/01/commit_message_change_log.html)
+>
+> [如何配置 Git Commit Message - 伯艺](https://zhuanlan.zhihu.com/p/69635847)
+
+
+
+### 0x1 安装[Commitizen](https://github.com/commitizen/cz-cli)
+
+> 替代你的 git commit（帮助我们生成符合规范的 commit message）
 
 ```bash
-npm install -g commitizen cz-conventional-changelog
-echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+# [推荐全局安装] commitizen 为我们提供一些 cli 命令
+# 比如：commitizen init、 git cz
 
+npm install -g commitizen
 ```
 
-主要, 全局模式下, 需要 ~/.czrc 配置文件, 为 commitizen 指定 Adapter.
+### 0x2 安装[cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 
-### 项目级安装
+> 是一个`commitizen`的 adapter（适配器），一个符合 Angular 团队规范的 preset（按照我们指定的规范帮助我们生成 commit message）
+
+接下来，通过键入命令初始化项目以使用cz-convention -changelog适配器
 
 ```bash
-npm install -D commitizen cz-conventional-changelog
+# 有两种安装方式
 
-# yarn
-yarn add commitizen cz-conventional-changelog -D
+# 1.手动安装 [推荐]
+yarn add cz-conventional-changelog -D
+
+# 2.使用npm自动安装
+commitizen init cz-conventional-changelog --save-dev --save-exact
+
+# 2.使用yarn自动安装
+commitizen init cz-conventional-changelog --yarn --dev --exact
 ```
 
-package.json中配置:
+> 配置 package.json
+
+```js
+{
+    "scripts": {
+        "commit": "git-cz"
+    },
+    "config": {
+        "commitizen": {
+          "path": "node_modules/cz-conventional-changelog"
+        }
+    }
+}
+```
+
+
+
+### 0x3 自定义 adapter
+
+安装[cz-customizable](https://github.com/leonardoanalista/cz-customizable)
+
+> 可自定义的Commitizen插件。比如：默认的提交 types 可能特别多，有些时候我们可能只需要其中的某些 type，或者自定义type。
+
+```bash
+yarn add cz-customizable -D
+```
+
+> 配置 package.json
+
+```js
+{
+    "config": {
+        "commitizen": {
+          "path": "node_modules/cz-customizable"
+        }
+    }
+}
+```
+
+> 在根目录下，配置 .cz-config.js
+
+```js
+module.exports = {
+  types: [
+    {
+      value: 'feat',
+      name : 'feat:     A new feature'
+    },
+    {
+      value: 'fix',
+      name : 'fix:      A bug fix'
+    },
+    {
+      value: 'docs',
+      name : 'docs:     Documentation only changes'
+    },
+    {
+      value: 'refactor',
+      name : 'refactor: A code change that neither fixes a bug nor adds a feature'
+    },
+    {
+      value: 'perf',
+      name : 'perf:     A code change that improves performance'
+    },
+    {
+      value: 'test',
+      name : 'test:     Add missing tests or correcting existing tests'
+    },
+    {
+      value: 'build',
+      name : 'build:    Add missing tests or correcting existing tests'
+    },
+    {
+      value: 'revert',
+      name : 'revert:   Revert to a commit'
+    }
+  ],
+  allowBreakingChanges: ['feat', 'fix', 'refactor', 'perf', 'build', 'revert']
+};
+```
+
+
+
+### 0x4 校验 commit
+
+[commitlint](https://github.com/conventional-changelog/commitlint)
+
+> `commitlint` 帮我们规范 `commit message`（`commitlint`的实现方式和`commitizen`差不多也需要个 adapter）
+>
+> - @commitlint/cli 【命令行工具】
+> - @commitlint/config-conventional 【校验规则】符合 Angular团队规范（不同于代码规范），当然还有其它规范。
+
+```bash
+# [推荐局部安装]
+yarn add @commitlint/config-conventional @commitlint/cli -D 
+```
+
+> package.json 配置
 
 ```json
-"script": {
-    ...,
-    "commit": "git-cz",
-},
- "config": {
-    "commitizen": {
-      "path": "node_modules/cz-conventional-changelog"
-    }
+"commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
   }
 ```
 
-如果全局安装过 commitizen, 那么在对应的项目中执行 git cz or npm run commit 都可以.
+也可以
+
+> 在根目录下使用配置文件： `.commitlintrc.js`
+
+```js
+module.exports = {
+  extends: ['@commitlint/config-conventional']
+}
+```
+
+
+
+**针对自定义的 Adapter 进行 Lint**
+
+[https://github.com/whizark/commitlint-config-czgithub.com](https://github.com/whizark/commitlint-config-cz)
+
+如果是使用**`cz-customizable`**适配器做了破坏 Angular 风格的提交说明配置，那么不能使用`@commitlint/config-conventional`规则进行提交说明校验，可以使用`commitlint-config-cz` 对定制化提交说明进行校验。
+
+安装校验规则：
+
+```bash
+npm i -D commitlint-config-cz @commitlint/cli
+```
+
+此时的 `.commitlintrc.js` 文件：
+
+```js
+module.exports = {
+  extends: [
+    'cz'
+  ]
+};
+```
+
+
+
+**第三步: Husky**
+
+在提交代码前通常我们会通过`eslint`等工具来校验 我们的代码，然后再进行提交，由于 git 提供了 `hook`机制，所以我们可以通过 `git hook` 在 **pre-commit 进行 eslint**，在 **commit-msg 阶段进行 commit message lint**。
+
+**3.1 pre-commit**
+
+[https://github.com/typicode/huskygithub.com](https://github.com/typicode/husky)
+
+配合 [Husky](https://github.com/typicode/husky) 进行 `git hook `校验
+
+```bash
+# 安装
+yarn add husky -D
+```
+
+> 配置 package.json
+
+```js
+"husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+}
+```
+
+> 或者，使用配置文件：`.huskyrc`
+
+```js
+{
+  "hooks": {
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint -e $GIT_PARAMS"
+  }
+}
+```
+
+
+
+**3.2 lint-staged**
+
+当我们运行eslint或stylelint的命令时，只会检查我们通过git add添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍。
+
+```bash
+yarn add lint-staged -D
+```
+
+配置 package.json
+
+```json
+{
+    "husky": {
+        "hooks": {
+          "pre-commit": "lint-staged",
+          "commit-msg": "commitlint -e $GIT_PARAMS"
+        }
+    },
+    "lint-staged": {
+        "src/**/*.{tsx,ts}": [
+          "prettier --write",
+          "git add"
+        ]
+    }
+}
+```
+
+### 0x5 standard-version
+
+以上配置已经可以满足提交代码的常规要求，但是如果我们想自动生成 CHANGELOG，语义化我们的版本（[Semantic Versioning](https://semver.org/lang/zh-CN/)）。 就需要借助 [standard-version](https://github.com/conventional-changelog/standard-version)
+
+standard-version的作用就是生成 changelog 更新 package.json 和 package.lock.json 中的 version 字段。
+
+关于版本：
+
+```bash
+# 版本
+# major：主版本号，不兼容的API修改
+# minor：次版本号，向下兼容，功能性增加
+# patch：修订号，向下兼容，bug fixed
+
+# 版本发布进度
+# alpha（内测）
+# beta（公测）
+# rc （正式版本的候选版本）  Release Candiate
+
+# npm 发布指令
+# 升级补丁版本号：
+npm version patch。
+# 升级小版本号：
+npm version minor。
+# 升级大版本号：
+npm version major。
+```
+
+关于release:
+
+```bash
+# 发布首个版本
+npm run release -- --first-release
+
+# 发布预发布版本
+# 例如：v1.0.0 -> v1.0.0-0
+npm run release -- --prerelease
+
+# 发布与首个 alpha 版本 
+# 例如：v1.0.0 -> 1.0.1-alpha.0
+npm run release -- --prerelease alpha
+
+# 发布 major、minor、patch 版本 
+npm run release -- --release-as minor
+```
+
+安装
+
+```bash
+yarn add standard-version -D
+```
+
+配置 package.json
+
+```text
+{
+    "script": {
+        // .....
+        "release": "standard-version"
+    }
+}
+```
+
+
+
+### 0x6 完整的配置
+
+**package.json**
+
+```js
+"scripts": {
+    // ....
+    "commit": "git-cz",
+    "release": "standard-version"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{tsx,ts}": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+```
+
+**.cz-config.js**
+
+```js
+// type: commit 的类型
+// 参考：https://juejin.im/post/5afc5242f265da0b7f44bee4
+// feat: 新特性
+// fix: 修改问题
+// docs: 文档修改
+// style: 代码格式修改, 注意不是 css 修改
+// refactor: 代码重构
+// chore: 其他修改, 比如构建流程, 依赖管理.
+// subject: commit 的概述, 建议符合  50/72 formatting
+// ...
+module.exports = {
+  types: [
+    {
+      value: 'feat',
+      name : 'feat:     A new feature'
+    },
+    {
+      value: 'fix',
+      name : 'fix:      A bug fix'
+    },
+    {
+      value: 'docs',
+      name : 'docs:     Documentation only changes'
+    },
+    {
+      value: 'refactor',
+      name : 'refactor: A code change that neither fixes a bug nor adds a feature'
+    },
+    {
+      value: 'perf',
+      name : 'perf:     A code change that improves performance'
+    },
+    {
+      value: 'test',
+      name : 'test:     Add missing tests or correcting existing tests'
+    },
+    {
+      value: 'build',
+      name : 'build:    Add missing tests or correcting existing tests'
+    },
+    {
+      value: 'revert',
+      name : 'revert:   Revert to a commit'
+    }
+  ],
+  allowBreakingChanges: ['feat', 'fix', 'refactor', 'perf', 'build', 'revert']
+};
+```
+
+**.commitlintrc.js**
+
+```js
+module.exports = {
+  extends: ['@commitlint/config-conventional']
+  // extends: ['cz']
+  // cz 方式需要配合插件
+  // yarn add commitlint-config-cz @commitlint/cli -D
+}
+```
+
+## 提交代码
+
+使用`git cz`代替`git commit`会出现可选的命令行提交界面。
+
+```bash
+git cz -a
+```
 
 
 
