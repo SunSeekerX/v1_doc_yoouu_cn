@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-11 14:05:52
+ * @LastEditTime: 2020-05-11 18:09:25
  */
 
 const moment = require('moment')
@@ -46,7 +46,6 @@ module.exports = {
               { text: 'Git快速入门', link: '/common/coding/git' },
               { text: 'Node.js 学习计划', link: '/common/coding/nodejs' },
               { text: 'React 学习计划', link: '/common/coding/react' },
-              // { text: 'Spring Boot 入门', link: '/common/coding/spring-boot' },
             ],
           },
           {
