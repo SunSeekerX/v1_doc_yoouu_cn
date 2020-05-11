@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-08 16:13:35
+ * @LastEditTime: 2020-05-11 14:05:52
  */
 
 const moment = require('moment')
@@ -66,7 +66,6 @@ module.exports = {
         text: '前端',
         items: [
           { text: '基本', link: '/front-end/' },
-
           {
             text: '基础',
             items: [
@@ -99,6 +98,15 @@ module.exports = {
         items: [
           { text: 'vue-simple-admin', link: '/vsa/' },
           { text: 'web-storage-apis', link: '/web-storage-apis/' },
+          {
+            text: '博客主题',
+            items: [
+              {
+                text: 'Ghost-Theme-Frenemy',
+                link: 'https://github.com/SunSeekerX/Ghost-Theme-Frenemy',
+              },
+            ],
+          },
           // { text: 'Vue', link: '/front-end/vue/' },
         ],
       },

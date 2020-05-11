@@ -30,6 +30,7 @@
 8. [🧐] 文档持续更新
 9. [🧐] 研究下[Branca](https://branca.io),一种安全令牌的数据格式，比 JWT 更安全，同类项目还有 [Paseto](https://paseto.io/)。
 10. 书籍：[斯诺登自传](https://a.temporaryrecord.com/)《永久记录》，未删节的简体中文版 PDF 下载，作者本人授权。
+11. 学习：[深入浅出现代Web编程](https://fullstackopen.com/zh/) - 一个芬兰的全栈公开课的中文版。
 
 
 
