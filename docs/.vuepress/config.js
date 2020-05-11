@@ -3,12 +3,13 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-11 18:09:25
+ * @LastEditTime: 2020-05-11 19:46:14
  */
 
 const moment = require('moment')
+const resolve = require('vuepress-theme-hope/resolve')
 
-module.exports = {
+module.exports = resolve({
   base: '/',
   title: 'SunSeekerX',
   description: 'This road is just beginning ~',
@@ -27,7 +28,6 @@ module.exports = {
     editLinks: false,
     sidebarDepth: 2,
     nav: [
-      // { text: '首页', link: '/' },
       { text: '指南', link: '/guide/' },
       {
         text: '基本',
@@ -54,6 +54,7 @@ module.exports = {
           },
           {
             text: '常见问题',
+
             items: [
               { text: 'PowerShell', link: '/common/power-shell' },
               { text: '更新日志', link: '/common/changelog' },
@@ -110,10 +111,18 @@ module.exports = {
         ],
       },
     ],
-    // sidebar: ['/', '/guide/', '/vsa/'],
     sidebar: 'auto',
     lastUpdated: 'Last Updated',
     // displayAllHeaders: true, // 默认值：false
+    // vuepress-theme-hope 主题配置
+    footer: {
+      copyright: false,
+    },
+  },
+  comment: {
+    type: 'valine',
+    appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
+    appKey: '13eOI19EMGKKtQepMDxLIn9u',
   },
   plugins: [
     [
@@ -127,9 +136,20 @@ module.exports = {
         },
       },
     ],
+
+    'md-enhance',
+    [
+      '@mr-hope/comment',
+      {
+        type: 'valine',
+        author: 'SunSeekerX',
+        appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
+        appKey: '13eOI19EMGKKtQepMDxLIn9u',
+      },
+    ],
   ],
   markdown: {
     lineNumbers: true,
     extractHeaders: ['h2', 'h3', 'h4'],
   },
-}
+})

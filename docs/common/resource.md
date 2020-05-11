@@ -124,6 +124,10 @@
 
 ![](https://image.yoouu.cn/sunseekerx/resource/ghost-theme-Moegi.png)
 
+### Vuepress主题
+
+[vuepress-theme-hope](https://vuepress-theme.mrhope.site/) - 一个轻量的 Vuepress 主题
+
 
 
 ### Windows软件
