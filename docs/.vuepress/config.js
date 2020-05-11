@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-11 19:46:14
+ * @LastEditTime: 2020-05-12 00:15:48
  */
 
 const moment = require('moment')
@@ -118,6 +118,7 @@ module.exports = resolve({
     footer: {
       copyright: false,
     },
+    pwa: false
   },
   comment: {
     type: 'valine',
