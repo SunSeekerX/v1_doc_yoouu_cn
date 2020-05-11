@@ -463,7 +463,7 @@ yarn add standard-version -D
 
 配置 package.json
 
-```text
+```json
 {
     "script": {
         // .....
@@ -566,12 +566,12 @@ module.exports = {
 }
 ```
 
-## 提交代码
+### 0x7 提交代码
 
 使用`git cz`代替`git commit`会出现可选的命令行提交界面。
 
 ```bash
-git cz -a
+git cz
 ```
 
 
