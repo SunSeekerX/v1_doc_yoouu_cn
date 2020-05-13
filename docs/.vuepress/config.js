@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-12 00:15:48
+ * @LastEditTime: 2020-05-13 17:00:01
  */
 
 const moment = require('moment')
@@ -20,6 +20,13 @@ module.exports = resolve({
       {
         rel: 'icon',
         href: '/favicon.ico',
+      },
+    ],
+    // 百度统计
+    [
+      'script',
+      {
+        src: 'https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4',
       },
     ],
   ],
@@ -113,12 +120,16 @@ module.exports = resolve({
     ],
     sidebar: 'auto',
     lastUpdated: 'Last Updated',
-    // displayAllHeaders: true, // 默认值：false
+    displayAllHeaders: true, // 默认值：false
+
     // vuepress-theme-hope 主题配置
+    baseLang: 'zh-CN',
+    author: 'SunSeekerX',
     footer: {
       copyright: false,
     },
-    pwa: false
+    blog: false,
+    pwa: false,
   },
   comment: {
     type: 'valine',
