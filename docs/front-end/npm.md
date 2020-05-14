@@ -154,6 +154,16 @@ yarn cache clean
 
 
 
+## yarn升级依赖
+
+```bash
+yarn upgrade-interactive
+```
+
+
+
+
+
 ## ✅规范提交代码
 
 > [约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.2/)

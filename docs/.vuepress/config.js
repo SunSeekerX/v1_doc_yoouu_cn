@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-13 17:00:01
+ * @LastEditTime: 2020-05-14 17:00:49
  */
 
 const moment = require('moment')
@@ -44,7 +44,7 @@ module.exports = resolve({
             link: '/common/resource',
           },
           { text: 'Git', link: '/common/git' },
-          { text: '编辑器', link: '/common/editor' },
+          { text: '编辑器', link: '/common/ide' },
           { text: '其他', link: '/common/other' },
           { text: '关于我', link: '/common/about-me' },
           {
@@ -73,6 +73,7 @@ module.exports = resolve({
         text: '前端',
         items: [
           { text: '基本', link: '/front-end/' },
+          { text: 'javascript-obfuscator', link: '/front-end/javascript-obfuscator' },
           {
             text: '基础',
             items: [

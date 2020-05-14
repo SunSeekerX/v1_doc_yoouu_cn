@@ -99,3 +99,18 @@ import 'normalize.css'
 >
 > 作者：走啊丶去拯救世界链接：https://juejin.im/post/5c9347405188252db7569a5a来源：掘金著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
+
+
+## Api接口加密
+
+
+
+## 源码加密
+
+我们希望生产环境下的js代码不是源码那么易读，用来隐藏一些特殊信息，
+
+
+
+## 网络状态监听
+
+[webpack-obfuscator](https://www.npmjs.com/package/webpack-obfuscator)
