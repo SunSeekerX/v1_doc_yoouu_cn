@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-14 17:00:49
+ * @LastEditTime: 2020-05-14 20:36:09
  */
 
 const moment = require('moment')
@@ -72,7 +72,7 @@ module.exports = resolve({
       {
         text: '前端',
         items: [
-          { text: '基本', link: '/front-end/' },
+          // { text: '基本', link: '/front-end/' },
           { text: 'javascript-obfuscator', link: '/front-end/javascript-obfuscator' },
           {
             text: '基础',
@@ -132,11 +132,11 @@ module.exports = resolve({
     blog: false,
     pwa: false,
   },
-  comment: {
-    type: 'valine',
-    appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
-    appKey: '13eOI19EMGKKtQepMDxLIn9u',
-  },
+  // comment: {
+  //   type: 'valine',
+  //   appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
+  //   appKey: '13eOI19EMGKKtQepMDxLIn9u',
+  // },
   plugins: [
     [
       '@vuepress/last-updated',
@@ -154,6 +154,7 @@ module.exports = resolve({
     [
       '@mr-hope/comment',
       {
+        
         type: 'valine',
         author: 'SunSeekerX',
         appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',

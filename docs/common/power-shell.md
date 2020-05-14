@@ -29,3 +29,22 @@ react-native : 无法加载文件 C:\Users\SunSeekerX\AppData\Roaming\npm\react-
    # 查看执行策略
    get-ExecutionPolicy
    ```
+
+
+
+## 开启win10卓越性能模式
+
+桌面按住`shift`加上鼠标右键选择在此处打开`powershell`窗口执行
+
+```powershell
+powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+
+# 输出
+PS C:\Users\SunSeekerX\Desktop> powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+电源方案 GUID: 124d9932-ad06-41b8-85a6-342c4b5c6db9  (卓越性能)
+PS C:\Users\SunSeekerX\Desktop>
+```
+
+去电源选项选择卓越性能就ok了
+
+![](https://image.yoouu.cn/sunseekerx/common/power-shell/super-power.png)
