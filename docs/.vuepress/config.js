@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-14 20:36:09
+ * @LastEditTime: 2020-05-15 23:05:35
  */
 
 const moment = require('moment')
@@ -57,7 +57,10 @@ module.exports = resolve({
           },
           {
             text: '其他技术',
-            items: [{ text: 'Jenkins', link: '/common/jenkins' }],
+            items: [
+              { text: 'Jenkins', link: '/common/jenkins' },
+              { text: 'Markdown示例', link: '/common/other/markdown' },
+            ],
           },
           {
             text: '常见问题',
@@ -73,7 +76,10 @@ module.exports = resolve({
         text: '前端',
         items: [
           // { text: '基本', link: '/front-end/' },
-          { text: 'javascript-obfuscator', link: '/front-end/javascript-obfuscator' },
+          {
+            text: 'javascript-obfuscator',
+            link: '/front-end/javascript-obfuscator',
+          },
           {
             text: '基础',
             items: [
@@ -131,6 +137,11 @@ module.exports = resolve({
     },
     blog: false,
     pwa: false,
+    markdown: {
+      enableAll: true,
+      // 启用流程图功能
+      flowchart: true,
+    },
   },
   // comment: {
   //   type: 'valine',
@@ -149,12 +160,15 @@ module.exports = resolve({
         },
       },
     ],
-
-    'md-enhance',
+    [
+      'md-enhance',
+      {
+        enableAll: true,
+      },
+    ],
     [
       '@mr-hope/comment',
       {
-        
         type: 'valine',
         author: 'SunSeekerX',
         appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
