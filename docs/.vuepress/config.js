@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-15 23:05:35
+ * @LastEditTime: 2020-05-16 15:53:49
  */
 
 const moment = require('moment')
@@ -105,6 +105,7 @@ module.exports = resolve({
           { text: '数据库', link: '/back-end/database' },
           { text: 'Java', link: '/back-end/java' },
           { text: 'Docker', link: '/back-end/docker' },
+          { text: 'Redis', link: '/back-end/redis' },
         ],
       },
       {
