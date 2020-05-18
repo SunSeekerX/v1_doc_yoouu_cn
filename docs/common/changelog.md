@@ -1,5 +1,7 @@
 # 更新日志
 
+**2020-05-14** 引入 [Valine](https://valine.js.org/)评论系统，有小问题阔以直接评论指出了。
+
 **2020-05-11** 更换 [vuepress-theme-hope](https://vuepress-theme.mrhope.site/)主题
 
 **2020-05-11** 引入`oss`图床，以后的文章可以方便的使用图片了，不用担心图片丢失。使用了自有域名，可以很方便的转移。
