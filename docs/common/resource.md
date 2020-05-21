@@ -24,6 +24,8 @@
 
 ## 开发资源
 
+[印记中文](https://docschina.org) - 印记中文 - 深入挖掘国外前端新领域，为中国 Web 前端开发人员提供优质文档！
+
 [Gogs](https://github.com/gogs/gogs/blob/master/README_ZH.md) - 一款极易搭建的自助 Git 服务。
 
 [Apizza](极客专属的接口协作管理工具) - 在线接口调试工具

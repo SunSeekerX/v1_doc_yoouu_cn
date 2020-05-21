@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-16 15:53:49
+ * @LastEditTime: 2020-05-21 20:41:12
  */
 
 const moment = require('moment')
@@ -138,11 +138,6 @@ module.exports = resolve({
     },
     blog: false,
     pwa: false,
-    markdown: {
-      enableAll: true,
-      // 启用流程图功能
-      flowchart: true,
-    },
   },
   // comment: {
   //   type: 'valine',
@@ -161,12 +156,12 @@ module.exports = resolve({
         },
       },
     ],
-    [
-      'md-enhance',
-      {
-        enableAll: true,
-      },
-    ],
+    // [
+    //   'md-enhance',
+    //   {
+    //     enableAll: true,
+    //   },
+    // ],
     [
       '@mr-hope/comment',
       {
