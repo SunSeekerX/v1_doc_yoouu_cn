@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-21 20:41:12
+ * @LastEditTime: 2020-05-22 14:56:50
  */
 
 const moment = require('moment')
@@ -109,6 +109,15 @@ module.exports = resolve({
         ],
       },
       {
+        text: '关于我',
+        items: [
+          // { text: 'me', link: '/me/about-me' },
+          { text: '看过的书', link: '/me/book' },
+          { text: '看过的电影', link: '/me/movie' },
+          { text: '看过的电视剧', link: '/me/teleplay' },
+        ],
+      },
+      {
         text: '开源库',
         items: [
           { text: 'vue-simple-admin', link: '/vsa/' },
@@ -139,11 +148,6 @@ module.exports = resolve({
     blog: false,
     pwa: false,
   },
-  // comment: {
-  //   type: 'valine',
-  //   appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
-  //   appKey: '13eOI19EMGKKtQepMDxLIn9u',
-  // },
   plugins: [
     [
       '@vuepress/last-updated',
@@ -156,12 +160,12 @@ module.exports = resolve({
         },
       },
     ],
-    // [
-    //   'md-enhance',
-    //   {
-    //     enableAll: true,
-    //   },
-    // ],
+    [
+      'md-enhance',
+      {
+        enableAll: true,
+      },
+    ],
     [
       '@mr-hope/comment',
       {
