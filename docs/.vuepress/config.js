@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-23 22:30:54
+ * @LastEditTime: 2020-05-23 23:18:53
  */
 
 const moment = require('moment')
@@ -46,7 +46,6 @@ module.exports = resolve({
           { text: 'Git', link: '/common/git' },
           { text: '编辑器', link: '/common/ide' },
           { text: '其他', link: '/common/other' },
-          { text: '关于我', link: '/common/about-me' },
           {
             text: '学习计划',
             items: [
@@ -109,6 +108,15 @@ module.exports = resolve({
         ],
       },
       {
+        text: '关于我',
+        items: [
+          // { text: 'me', link: '/me/about-me' },
+          { text: '看过的书', link: '/me/book' },
+          { text: '看过的电影', link: '/me/movie' },
+          { text: '看过的电视剧', link: '/me/teleplay' },
+        ],
+      },
+      {
         text: '开源库',
         items: [
           { text: 'vue-simple-admin', link: '/vsa/' },
@@ -139,11 +147,6 @@ module.exports = resolve({
     blog: false,
     pwa: true,
   },
-  // comment: {
-  //   type: 'valine',
-  //   appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
-  //   appKey: '13eOI19EMGKKtQepMDxLIn9u',
-  // },
   plugins: [
     [
       '@vuepress/last-updated',
@@ -156,12 +159,12 @@ module.exports = resolve({
         },
       },
     ],
-    // [
-    //   'md-enhance',
-    //   {
-    //     enableAll: true,
-    //   },
-    // ],
+    [
+      'md-enhance',
+      {
+        enableAll: true,
+      },
+    ],
     [
       '@mr-hope/comment',
       {
