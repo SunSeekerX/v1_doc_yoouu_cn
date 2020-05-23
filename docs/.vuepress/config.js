@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-21 20:41:12
+ * @LastEditTime: 2020-05-23 22:30:54
  */
 
 const moment = require('moment')
@@ -137,7 +137,7 @@ module.exports = resolve({
       copyright: false,
     },
     blog: false,
-    pwa: false,
+    pwa: true,
   },
   // comment: {
   //   type: 'valine',
