@@ -1,5 +1,7 @@
 # 更新日志
 
+**2020-05-25** 升级主题至`0.4.0`版本
+
 **2020-05-14** 引入 [Valine](https://valine.js.org/)评论系统，有小问题阔以直接评论指出了。
 
 **2020-05-11** 更换 [vuepress-theme-hope](https://vuepress-theme.mrhope.site/)主题
