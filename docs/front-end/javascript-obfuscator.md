@@ -10,7 +10,7 @@
 >
 > 更新时间：2020-05-14 14:38:18
 
-`JavaScript Obfuscator`是一个强大的免费JavaScript混淆，为您的源代码提供保护。
+`JavaScript Obfuscator`是一个强大的免费JavaScript混淆器，为您的源代码提供保护。
 
 ![logo](https://raw.githubusercontent.com/javascript-obfuscator/javascript-obfuscator/master/images/logo.png)
 
