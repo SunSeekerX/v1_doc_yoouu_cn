@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-23 23:18:53
+ * @LastEditTime: 2020-05-26 18:04:20
  */
 
 const moment = require('moment')
@@ -146,6 +146,10 @@ module.exports = resolve({
     },
     blog: false,
     pwa: true,
+    // algolia:{
+    //   apiKey: 'a626b8143210b99b44d55b5733dabf79',
+    //   indexName: ''
+    // },
   },
   plugins: [
     [
