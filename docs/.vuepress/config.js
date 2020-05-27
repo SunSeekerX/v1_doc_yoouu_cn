@@ -3,10 +3,10 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-26 18:04:20
+ * @LastEditTime: 2020-05-27 11:29:30
  */
 
-const moment = require('moment')
+// const moment = require('moment')
 const resolve = require('vuepress-theme-hope/resolve')
 
 module.exports = resolve({
@@ -146,29 +146,34 @@ module.exports = resolve({
     },
     blog: false,
     pwa: true,
-    // algolia:{
-    //   apiKey: 'a626b8143210b99b44d55b5733dabf79',
-    //   indexName: ''
-    // },
+    algolia: {
+      apiKey: '096b749333c9e2a49cff2b30a786dc6c',
+      sunseekerx: 'sunseekerx',
+    },
+    comment: {
+      type: 'valine',
+      appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
+      appKey: '13eOI19EMGKKtQepMDxLIn9u',
+    },
   },
   plugins: [
-    [
-      '@vuepress/last-updated',
-      {
-        transformer: (timestamp, lang = 'zh-CN') => {
-          // 不要忘了安装 moment
-          moment.locale(lang)
-          // return moment(timestamp).fromNow()
-          return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
-        },
-      },
-    ],
-    [
-      'md-enhance',
-      {
-        enableAll: true,
-      },
-    ],
+    // [
+    //   '@vuepress/last-updated',
+    //   {
+    //     transformer: (timestamp, lang = 'zh-CN') => {
+    //       // 不要忘了安装 moment
+    //       moment.locale(lang)
+    //       // return moment(timestamp).fromNow()
+    //       return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
+    //     },
+    //   },
+    // ],
+    // [
+    //   'md-enhance',
+    //   {
+    //     enableAll: true,
+    //   },
+    // ],
     [
       '@mr-hope/comment',
       {
