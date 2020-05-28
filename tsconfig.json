@@ -6,7 +6,6 @@
     "module": "commonjs", // 为了避免 vuepress-types 解析失败
     "types": [
       "@mr-hope/vuepress-theme-types",
-      "vuepress-types"
     ]
   },
   "include": [
