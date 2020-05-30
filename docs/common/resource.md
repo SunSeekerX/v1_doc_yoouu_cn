@@ -2,7 +2,7 @@
 
 > 相当于一个书签页面，用来收集网站。
 >
-> 更新时间：2020-05-06 15:33:53
+> 更新时间：2020-05-30 17:57:28
 
 
 
@@ -143,24 +143,6 @@
 [redis](https://github.com/microsoftarchive/redis) - Windows版本的redis
 
 [ShadowsocksR-Windows](https://github.com/HMBSbige/ShadowsocksR-Windows) - ShadowsocksR for Windows
-
-
-
-### Edxposed
-
-> EdXposed安装教程
->
-> 1. 确保已经安装Magisk Manager， 版本不低于V17.0。
-> 2. [https://github.com/topjohnwu/Magisk/releases ](https://github.com/topjohnwu/Magisk/releases)
-> 3. 在Magisk Manager里安装 Riru-core，版本不低于 v10 。
-> 4. [https://github.com/RikkaApps/Riru/releases](https://github.com/RikkaApps/Riru/releases)
-> 5. 在Magisk Manager里安装 EdXposed。
-> 6. [https://github.com/solohsu/EdXposed/releases](https://github.com/solohsu/EdXposed/releases)
-> 7. 安装Ed Xposed Installer App。
-> 8. [https://github.com/solohsu/XposedInstaller/releases](https://github.com/solohsu/XposedInstaller/releases)
-> 9. 重启手机。
-> 10. EdXposedManager
-> 11. [https://github.com/ElderDrivers/EdXposedManager/releases](https://github.com/ElderDrivers/EdXposedManager/releases)
 
 
 

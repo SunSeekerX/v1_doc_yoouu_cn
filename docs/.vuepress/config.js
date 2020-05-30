@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-27 11:29:30
+ * @LastEditTime: 2020-05-30 18:06:35
  */
 
 // const moment = require('moment')
@@ -106,6 +106,10 @@ module.exports = resolve({
           { text: 'Docker', link: '/back-end/docker' },
           { text: 'Redis', link: '/back-end/redis' },
         ],
+      },
+      {
+        text: '玩机',
+        link: '/wangji/'
       },
       {
         text: '关于我',
