@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-30 18:06:35
+ * @LastEditTime: 2020-05-31 13:35:36
  */
 
 // const moment = require('moment')
@@ -172,12 +172,12 @@ module.exports = resolve({
     //     },
     //   },
     // ],
-    // [
-    //   'md-enhance',
-    //   {
-    //     enableAll: true,
-    //   },
-    // ],
+    [
+      'md-enhance',
+      {
+        enableAll: true,
+      },
+    ],
     [
       '@mr-hope/comment',
       {
