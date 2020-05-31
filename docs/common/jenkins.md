@@ -6,6 +6,26 @@
 
 
 
+## 配置插件下载加速
+
+设置>插件>高级>升级站点>[https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json](https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json)
+
+这一步只是替换了插件列表下载加速，下载的时候还是国外的源。
+
+进入Jenkins工作目录，进入更新配置位置
+
+`${jenkins}/updates/default.json`
+
+执行命令替换下载插件地址
+
+```bash
+sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g' default.json && sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' default.json
+```
+
+每次更新了插件列表都要执行替换命令，否则下载地址会替换回去。
+
+
+
 ## Vue项目自动化构建
 
 `Jenkins`安装查看`Docker`章节。
