@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-05-31 13:35:36
+ * @LastEditTime: 2020-06-02 11:09:08
  */
 
 // const moment = require('moment')
@@ -36,6 +36,7 @@ module.exports = resolve({
     sidebarDepth: 2,
     nav: [
       { text: '指南', link: '/guide/' },
+      // 基本
       {
         text: '基本',
         items: [
@@ -71,6 +72,7 @@ module.exports = resolve({
           },
         ],
       },
+      // 前端
       {
         text: '前端',
         items: [
@@ -97,20 +99,24 @@ module.exports = resolve({
           },
         ],
       },
+      // 后端
       {
         text: '后端',
         items: [
-          { text: '基本', link: '/back-end/' },
+          { text: 'SQL', link: '/back-end/sql' },
+          // { text: '基本', link: '/back-end/' },
           { text: '数据库', link: '/back-end/database' },
           { text: 'Java', link: '/back-end/java' },
           { text: 'Docker', link: '/back-end/docker' },
           { text: 'Redis', link: '/back-end/redis' },
         ],
       },
+      // 玩机
       {
         text: '玩机',
         link: '/wangji/'
       },
+      // 关于我
       {
         text: '关于我',
         items: [
@@ -120,6 +126,7 @@ module.exports = resolve({
           { text: '看过的电视剧', link: '/me/teleplay' },
         ],
       },
+      // 开源库
       {
         text: '开源库',
         items: [
