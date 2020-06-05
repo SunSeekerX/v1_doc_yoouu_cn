@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-05 13:09:35
+ * @LastEditTime: 2020-06-05 22:54:02
  */
 
 // const moment = require('moment')
@@ -45,6 +45,7 @@ module.exports = resolve({
             link: '/common/resource',
           },
           { text: 'Git', link: '/common/git' },
+          { text: '正则表达式', link: '/common/regexp' },
           { text: '编辑器', link: '/common/ide' },
           { text: '其他', link: '/common/other' },
           {
@@ -164,7 +165,7 @@ module.exports = resolve({
     pwa: true,
     algolia: {
       apiKey: '096b749333c9e2a49cff2b30a786dc6c',
-      sunseekerx: 'sunseekerx',
+      indexName: 'sunseekerx',
     },
     comment: {
       type: 'valine',
@@ -184,12 +185,12 @@ module.exports = resolve({
     //     },
     //   },
     // ],
-    [
-      'md-enhance',
-      {
-        enableAll: true,
-      },
-    ],
+    // [
+    //   'md-enhance',
+    //   {
+    //     enableAll: true,
+    //   },
+    // ],
     [
       '@mr-hope/comment',
       {

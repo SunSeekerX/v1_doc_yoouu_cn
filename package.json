@@ -15,10 +15,10 @@
     "@mr-hope/vuepress-plugin-comment": "^0.6.5",
     "cz-conventional-changelog": "3.2.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.7",
+    "lint-staged": "^10.2.9",
     "moment": "^2.26.0",
     "standard-version": "^8.0.0",
-    "typescript": "^3.9.3",
+    "typescript": "^3.9.5",
     "vuepress": "^1.5.0",
     "vuepress-plugin-md-enhance": "^0.6.5",
     "vuepress-theme-hope": "^0.6.5"

@@ -279,11 +279,11 @@ git checkout -- .
 
 ```bash
 # 会在本地新建分支，并自动切换到该分支
-git checkout -b 本地分支 远程分支 
+git checkout -b ${本地分支} ${远程地址别名}/${远程分支 }
 # 会在本地新建分支，但不会自动切换，还需checkout
-git fetch origin 远程分支:本地分支 
+git fetch origin ${远程分支}:${本地分支}
 # 建立本地分支与远程分支的链接
-git branch --set-upstream 本地分支 远程分支
+git branch --set-upstream ${本地分支} ${远程分支}
 # 例如，下面代码执行会拉取远程1.1.0分支然后在本地创建名为1.1.0的分支，冒号右边的是本地分支名，可以自定义
 git fetch origin 1.1.0:1.1.0
 ```
