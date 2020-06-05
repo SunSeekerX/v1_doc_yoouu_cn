@@ -6,7 +6,7 @@
 
 
 
-## 工具网站
+## 📁 工具网站
 
 [刷新率在线测试-UFO Test: Framerates](https://www.testufo.com/)
 
@@ -16,13 +16,43 @@
 
 
 
-### 开源软件
+## 📁 开源软件
 
 [frp](https://github.com/fatedier/frp) - frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp 协议，为 http 和 https 应用协议提供了额外的能力，且尝试性支持了点对点穿透。
 
+[trilium](https://github.com/zadam/trilium) - 一个 Markdown 格式的笔记软件，使用目录层级整理笔记。可以下载安装桌面版，也可以自己架设在线版。
+
+![trilium.png](https://image.yoouu.cn/sunseekerx/resource/trilium.png)
+
+[LightProxy](https://github.com/alibaba/lightproxy) - 一个本地的代理服务器，用于本地数据包捕获，可以实时 hosts 绑定、设置规则转发、mock 接口、修改请求和响应的内容等。
+
+![lightproxy.png](https://image.yoouu.cn/sunseekerx/resource/lightproxy.png)
+
+[Wifi 登录二维码](https://github.com/bndw/wifi-card)  - 一个生成 Wifi 登录二维码的在线工具，手机扫码就可以登录 Wifi。
+
+![wifi-card.png](https://image.yoouu.cn/sunseekerx/resource/wifi-card.png)
 
 
-## 开发资源
+
+## 📁 软件
+
+### Windows软件
+
+[mactype](https://github.com/snowie2000/mactype) - 改进Windows字体渲染的软件
+
+[mactype-hack](https://github.com/wspl/mactype-hack) - 🎩对不支持的程序/操作系统应用MacType的解决方案。
+
+[AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager) - 🚀🚀🚀 一个更快，更好，更稳定的redis桌面管理器，兼容Linux, windows, mac，更重要的是，它不会崩溃时加载大量的关键字。
+
+[redis](https://github.com/microsoftarchive/redis) - Windows版本的redis
+
+[ShadowsocksR-Windows](https://github.com/HMBSbige/ShadowsocksR-Windows) - ShadowsocksR for Windows
+
+
+
+
+
+## 📁 开发资源
 
 [印记中文](https://docschina.org) - 印记中文 - 深入挖掘国外前端新领域，为中国 Web 前端开发人员提供优质文档！
 
@@ -38,7 +68,25 @@
 
 
 
-## Git
+## 📁 开发
+
+### 学习项目
+
+[apshop](https://github.com/inmyjs/apshop) - 基于egg.js的商城系统（目前仅实现PC端），apshop官网 [https://www.inmyjs.com](https://www.inmyjs.com/)
+
+[javascript-algorithms](https://github.com/trekhleb/javascript-algorithms) - JavaScript 算法与数据结构
+
+[system-design-primer](https://github.com/donnemartin/system-design-primer) - 学习如何设计大型系统。为系统设计的面试做准备。
+
+[css-animation-101](https://github.com/cssanimation/css-animation-101) - 学习如何将动画引入到您的web项目中
+
+[interview_internal_reference](https://github.com/0voice/interview_internal_reference) - 2019年最新总结，阿里，腾讯，百度，美团，头条等技术面试题目，以及答案，专家出题人分析汇总。
+
+[设计模式](https://refactoringguru.cn/design-patterns) - 该网站为中文教程，使用通俗的语言，介绍各种设计模式，图文并茂。此外，还有代码重构方面的英语内容。
+
+![design-patterns.jpg](https://image.yoouu.cn/sunseekerx/resource/design-patterns.jpg)
+
+
 
 ### css
 
@@ -82,18 +130,6 @@
 
 
 
-### 学习项目
-
-[apshop](https://github.com/inmyjs/apshop) - 基于egg.js的商城系统（目前仅实现PC端），apshop官网 [https://www.inmyjs.com](https://www.inmyjs.com/)
-
-[javascript-algorithms](https://github.com/trekhleb/javascript-algorithms) - JavaScript 算法与数据结构
-
-[system-design-primer](https://github.com/donnemartin/system-design-primer) - 学习如何设计大型系统。为系统设计的面试做准备。
-
-[css-animation-101](https://github.com/cssanimation/css-animation-101) - 学习如何将动画引入到您的web项目中
-
-[interview_internal_reference](https://github.com/0voice/interview_internal_reference) - 2019年最新总结，阿里，腾讯，百度，美团，头条等技术面试题目，以及答案，专家出题人分析汇总。
-
 
 
 ### 简历
@@ -126,27 +162,21 @@
 
 ![](https://image.yoouu.cn/sunseekerx/resource/ghost-theme-Moegi.png)
 
+[Ghost-Theme-Frenemy](https://github.com/SunSeekerX/Ghost-Theme-Frenemy) - 适合阅读的`Ghost`主题。
+
+![Ghost-Theme-Frenemy.png](https://image.yoouu.cn/sunseekerx/resource/Ghost-Theme-Frenemy.png)
+
+
+
 ### Vuepress主题
 
 [vuepress-theme-hope](https://vuepress-theme.mrhope.site/) - 一个轻量的 Vuepress 主题
 
 
 
-### Windows软件
-
-[mactype](https://github.com/snowie2000/mactype) - 改进Windows字体渲染的软件
-
-[mactype-hack](https://github.com/wspl/mactype-hack) - 🎩对不支持的程序/操作系统应用MacType的解决方案。
-
-[AnotherRedisDesktopManager](https://github.com/qishibo/AnotherRedisDesktopManager) - 🚀🚀🚀 一个更快，更好，更稳定的redis桌面管理器，兼容Linux, windows, mac，更重要的是，它不会崩溃时加载大量的关键字。
-
-[redis](https://github.com/microsoftarchive/redis) - Windows版本的redis
-
-[ShadowsocksR-Windows](https://github.com/HMBSbige/ShadowsocksR-Windows) - ShadowsocksR for Windows
 
 
-
-## 前端
+## 📁 前端
 
 [vConsole](https://github.com/Tencent/vConsole) - 一个轻量、可拓展、针对手机网页的前端开发者调试面板。
 
@@ -226,7 +256,7 @@
 
 
 
-## 后端
+## 📁 后端
 
 [IntelliJ IDEA 激活码](http://idea.fxw.la/)
 
@@ -240,6 +270,8 @@
 
 
 
+
+
 ## 🍳 有趣的网站
 
 航班实时追踪：[http://flightadsb.variflight.com/](http://flightadsb.variflight.com/)
@@ -247,3 +279,7 @@
 技术热门度曲线：[https://stateofdev.com/](https://stateofdev.com/)
 
 谷歌地图： [https://www.google.com/maps/](https://www.google.com/maps/)
+
+[Fuun.fun](https://fuun.fun/) - 该网站收集了一些有趣的网页小程序，主要是 HTML5 小游戏。
+
+![Fuun.fun.png](https://image.yoouu.cn/sunseekerx/resource/Fuun.fun.png)
