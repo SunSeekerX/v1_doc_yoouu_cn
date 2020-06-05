@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-02 11:09:08
+ * @LastEditTime: 2020-06-05 13:09:35
  */
 
 // const moment = require('moment')
@@ -31,7 +31,7 @@ module.exports = resolve({
     ],
   ],
   themeConfig: {
-    repo: 'SunSeekerX/sunseekerx',
+    // repo: 'SunSeekerX/sunseekerx',
     editLinks: false,
     sidebarDepth: 2,
     nav: [
@@ -139,6 +139,10 @@ module.exports = resolve({
                 text: 'Ghost-Theme-Frenemy',
                 link: 'https://github.com/SunSeekerX/Ghost-Theme-Frenemy',
               },
+              {
+                text: 'Doc-Github',
+                link: 'https://github.com/SunSeekerX/sunseekerx',
+              },
             ],
           },
           // { text: 'Vue', link: '/front-end/vue/' },
@@ -153,7 +157,8 @@ module.exports = resolve({
     baseLang: 'zh-CN',
     author: 'SunSeekerX',
     footer: {
-      copyright: false,
+      // copyright: true,
+      display: true,
     },
     blog: false,
     pwa: true,

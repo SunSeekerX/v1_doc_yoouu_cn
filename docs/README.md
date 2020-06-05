@@ -4,11 +4,11 @@ heroImage: /home.jpg
 heroText: SunSeekerX
 tagline: 这条路才刚刚开始啊 ~
 action:
-  - text: 冲冲冲 → 💡
+  - text: 指南 → 💡
     link: /guide/
-actionText: 冲冲冲 →
+actionText: 指南 →
 actionLink: /guide/
-footer: MIT Licensed | Copyright © 2020-present SunSeekerX
+# footer: MIT Licensed | Copyright © 2020-present SunSeekerX
 ---
 
 
