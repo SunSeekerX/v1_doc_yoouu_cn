@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-05 22:54:02
+ * @LastEditTime: 2020-06-07 19:22:28
  */
 
 // const moment = require('moment')
@@ -172,6 +172,7 @@ module.exports = resolve({
       appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
       appKey: '13eOI19EMGKKtQepMDxLIn9u',
     },
+    breadcrumb: false,
   },
   plugins: [
     // [
