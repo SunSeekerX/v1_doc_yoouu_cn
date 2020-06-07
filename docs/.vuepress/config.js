@@ -23,11 +23,24 @@ module.exports = resolve({
       },
     ],
     // 百度统计
+    // [
+    //   'script',
+    //   {
+    //     src: 'https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4',
+    //   },
+    // ],
     [
       'script',
-      {
-        src: 'https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4',
-      },
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `,
     ],
   ],
   themeConfig: {
@@ -115,7 +128,7 @@ module.exports = resolve({
       // 玩机
       {
         text: '玩机',
-        link: '/wangji/'
+        link: '/wangji/',
       },
       // 关于我
       {
