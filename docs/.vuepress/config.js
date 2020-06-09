@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-07 19:22:28
+ * @LastEditTime: 2020-06-09 09:41:32
  */
 
 // const moment = require('moment')
@@ -163,6 +163,8 @@ module.exports = resolve({
         ],
       },
     ],
+    
+    docsDir: "docs/theme/src",
     sidebar: 'auto',
     lastUpdated: 'Last Updated',
     displayAllHeaders: true, // 默认值：false
@@ -185,7 +187,10 @@ module.exports = resolve({
       appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
       appKey: '13eOI19EMGKKtQepMDxLIn9u',
     },
+    repo: "https://github.com/SunSeekerX/sunseekerx",
+    repoDisplay: false,
     breadcrumb: false,
+    hostname: 'https://sunseekerx.yoouu.cn/'
   },
   plugins: [
     // [
