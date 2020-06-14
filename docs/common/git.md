@@ -1,10 +1,21 @@
 # Git
 
-## 工作区
+常用工作示例
 
-![Git](https://image.yoouu.cn/sunseekerx/common/git/1049928-f72357a8bfddc6d2.webp)
+![工作流程图（来源于阮一峰老师的博客）](https://image.yoouu.cn/sunseekerx/common/git/bg2015120901.png)
 
-## 配置基本信息
+
+
+专用名词解释：
+
+1. Workspace: 工作区
+2. Index / Stage: 暂存区
+3. Repository: 本地仓库
+4. Remote: 远程仓库（例如`Github`、`Gitlab`、 `码云`）
+
+
+
+## 基本配置
 
 > 为了让别人知道是谁提交了代码。
 
@@ -27,7 +38,9 @@ git config --list  # 查看所有Git的配置(全局+本地+系统)
 git config --global color.ui true # 显示git相关颜色
 ```
 
-## 基本指令
+
+
+## 常用指令
 
 |                         指令                          |                             说明                             |
 | :---------------------------------------------------: | :----------------------------------------------------------: |
@@ -52,11 +65,12 @@ git config --global color.ui true # 显示git相关颜色
 
 > 提交`Github`和`Gitlab`的代码在某些时候非常慢，这个时候就可以配置代理加速代码提交和拉取。
 >
-> **只能代理http连接！！！**
+> **只有`http`和`https`方式可以代理**，`ssh`使用方式无法使用。
 
 ```bash
 # 设置代理 http.proxy 后面接你的本地代理地址和端口，一般是这个
-# 不过我的1080端口老是被冲突，所以我改成了65534,然后你的代理软件需要允许来自局域网的连接就可以了。
+# 不过我的1080端口老是被冲突，所以我改成了65534,然后。
+# 需要你的代理软件在1080端口允许来自局域网的连接
 git config --global http.proxy http://127.0.0.1:1080
 git config --global https.proxy https://127.0.0.1:1080
 
@@ -352,3 +366,11 @@ git remote add origin [新的地址]
 ```bash
  git clone -b [远程分支名] [远程仓库地址]
 ```
+
+
+
+## 参考链接
+
+- [如何进阶成公司 Git 小能手(常见问题总结)](http://www.inode.club/webframe/tool/git.html) By koala
+- [常用 Git 命令清单](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html) By 阮一峰
+
