@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-07 19:22:28
+ * @LastEditTime: 2020-06-09 11:27:39
  */
 
 // const moment = require('moment')
@@ -40,6 +40,26 @@ module.exports = resolve({
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
+      `,
+    ],
+
+    // 谷歌分析
+    [
+      'script',
+      {
+        async: 'async',
+        src: 'https://www.googletagmanager.com/gtag/js?id=UA-160614210-1',
+      },
+    ],
+    [
+      'script',
+      {},
+      `
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'UA-160614210-1');
       `,
     ],
   ],
@@ -163,6 +183,8 @@ module.exports = resolve({
         ],
       },
     ],
+
+    docsDir: 'docs/theme/src',
     sidebar: 'auto',
     lastUpdated: 'Last Updated',
     displayAllHeaders: true, // 默认值：false
@@ -185,7 +207,10 @@ module.exports = resolve({
       appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
       appKey: '13eOI19EMGKKtQepMDxLIn9u',
     },
+    repo: 'https://github.com/SunSeekerX/sunseekerx',
+    repoDisplay: false,
     breadcrumb: false,
+    hostname: 'https://sunseekerx.yoouu.cn/',
   },
   plugins: [
     // [
