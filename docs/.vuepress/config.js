@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-09 11:27:39
+ * @LastEditTime: 2020-06-15 23:03:41
  */
 
 // const moment = require('moment')
@@ -11,8 +11,11 @@ const resolve = require('vuepress-theme-hope/resolve')
 
 module.exports = resolve({
   base: '/',
+
   title: 'SunSeekerX',
+
   description: 'This road is just beginning ~',
+
   // favicon: 网站图标
   head: [
     [
@@ -63,12 +66,17 @@ module.exports = resolve({
       `,
     ],
   ],
+
   themeConfig: {
     // repo: 'SunSeekerX/sunseekerx',
     editLinks: false,
+
     sidebarDepth: 2,
+
     nav: [
+      // Guide
       { text: '指南', link: '/guide/' },
+      
       // 基本
       {
         text: '基本',
@@ -106,6 +114,7 @@ module.exports = resolve({
           },
         ],
       },
+
       // 前端
       {
         text: '前端',
@@ -133,6 +142,7 @@ module.exports = resolve({
           },
         ],
       },
+
       // 后端
       {
         text: '后端',
@@ -145,11 +155,26 @@ module.exports = resolve({
           { text: 'Redis', link: '/back-end/redis' },
         ],
       },
+
+      // 理财
+      {
+        text: '理财',
+        items: [
+          // { text: 'me', link: '/me/about-me' },
+          { text: '理财', link: '/financial/' },
+          { text: '法币交易', link: '/financial/trade' },
+          { text: '币币交易', link: '/financial/exchange' },
+          { text: '合约交易', link: '/financial/contract' },
+        ],
+        link: '',
+      },
+
       // 玩机
       {
         text: '玩机',
         link: '/wangji/',
       },
+
       // 关于我
       {
         text: '关于我',
@@ -160,6 +185,7 @@ module.exports = resolve({
           { text: '看过的电视剧', link: '/me/teleplay' },
         ],
       },
+
       // 开源库
       {
         text: '开源库',
@@ -185,51 +211,48 @@ module.exports = resolve({
     ],
 
     docsDir: 'docs/theme/src',
+
     sidebar: 'auto',
+
     lastUpdated: 'Last Updated',
+
     displayAllHeaders: true, // 默认值：false
 
     // vuepress-theme-hope 主题配置
     baseLang: 'zh-CN',
+
     author: 'SunSeekerX',
+
     footer: {
       // copyright: true,
       display: true,
     },
+
     blog: false,
+
     pwa: true,
+
     algolia: {
       apiKey: '096b749333c9e2a49cff2b30a786dc6c',
       indexName: 'sunseekerx',
     },
+
     comment: {
       type: 'valine',
       appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
       appKey: '13eOI19EMGKKtQepMDxLIn9u',
     },
+
     repo: 'https://github.com/SunSeekerX/sunseekerx',
+
     repoDisplay: false,
+
     breadcrumb: false,
+
     hostname: 'https://sunseekerx.yoouu.cn/',
   },
+
   plugins: [
-    // [
-    //   '@vuepress/last-updated',
-    //   {
-    //     transformer: (timestamp, lang = 'zh-CN') => {
-    //       // 不要忘了安装 moment
-    //       moment.locale(lang)
-    //       // return moment(timestamp).fromNow()
-    //       return moment(timestamp).format('YYYY-MM-DD HH:mm:ss')
-    //     },
-    //   },
-    // ],
-    // [
-    //   'md-enhance',
-    //   {
-    //     enableAll: true,
-    //   },
-    // ],
     [
       '@mr-hope/comment',
       {
@@ -240,8 +263,10 @@ module.exports = resolve({
       },
     ],
   ],
+
   markdown: {
     lineNumbers: true,
+
     extractHeaders: ['h2', 'h3', 'h4'],
   },
 })
