@@ -12,16 +12,16 @@
   "devDependencies": {
     "@commitlint/cli": "^8.3.5",
     "@commitlint/config-conventional": "^8.3.4",
-    "@mr-hope/vuepress-plugin-comment": "^0.6.7",
+    "@mr-hope/vuepress-plugin-comment": "^0.6.8",
     "cz-conventional-changelog": "3.2.0",
     "husky": "^4.2.5",
-    "lint-staged": "^10.2.10",
-    "moment": "^2.26.0",
+    "lint-staged": "^10.2.11",
+    "moment": "^2.27.0",
     "standard-version": "^8.0.0",
     "typescript": "^3.9.5",
     "vuepress": "^1.5.2",
-    "vuepress-plugin-md-enhance": "^0.6.7",
-    "vuepress-theme-hope": "^0.6.7"
+    "vuepress-plugin-md-enhance": "^0.6.8",
+    "vuepress-theme-hope": "^0.6.8"
   },
   "config": {
     "commitizen": {
