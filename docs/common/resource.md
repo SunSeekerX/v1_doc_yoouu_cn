@@ -66,7 +66,7 @@
 
 ### 学习项目
 
-[apshop](https://github.com/inmyjs/apshop) - 基于egg.js的商城系统（目前仅实现PC端），apshop官网 [https://www.inmyjs.com](https://www.inmyjs.com/)
+[apshop](https://github.com/inmyjs/apshop) - 基于 egg.js 的商城系统（目前仅实现PC端），apshop 官网 [https://www.inmyjs.com](https://www.inmyjs.com/)
 
 [javascript-algorithms](https://github.com/trekhleb/javascript-algorithms) - JavaScript 算法与数据结构
 
@@ -108,7 +108,7 @@
 
 ### Nodejs
 
-[eggjs](https://github.com/eggjs/egg) - 基于koa的nodejs企业服务端框架
+[eggjs](https://github.com/eggjs/egg) - 基于 koa 的 nodejs 企业服务端框架
 
 [node-tenpay](https://github.com/befinal/node-tenpay) - 微信支付 for nodejs
 
@@ -118,11 +118,19 @@
 
 [nodebestpractices](https://github.com/goldbergyoni/nodebestpractices) - ✅ Node.js最佳实践列表(2020年4月) [https://twitter.com/nodepractices/](https://twitter.com/nodepractices/)
 
-[nest-start](https://github.com/2214962083/nest-start) - nestjs 后端起手，快速开发
-
-[nestjs-mysql-api](https://github.com/kuangshp/nestjs-mysql-api) - 使用nestjs+mysql提供restful api
 
 
+### ⚙ Nestjs
+
+[Nestjs文档](https://docs.nestjs.cn/7/introduction) - `Nestjs ` 中文网
+
+[Nestjs 框架教程](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/)
+
+[Nestjs 学习教程](https://github.com/dzzzzzy/Nestjs-Learning)
+
+[nest-start](https://github.com/2214962083/nest-start) - `Nestjs ` 后端起手，快速开发
+
+[nestjs-mysql-api](https://github.com/kuangshp/nestjs-mysql-api) - 使用 `nestjs+mysql` 提供 `restful api`
 
 
 
@@ -144,7 +152,7 @@
 
 ### Typecho主题
 
-[fantasy](https://github.com/Seevil/fantasy) - 一款极简Typecho 博客主题
+[fantasy](https://github.com/Seevil/fantasy) - 一款极简 Typecho 博客主题
 
 ![](https://image.yoouu.cn/sunseekerx/resource/fantasy.png)
 
@@ -152,7 +160,7 @@
 
 ### Ghost博客主题
 
-[ghost-theme-Moegi](https://github.com/moegi-design/ghost-theme-Moegi) - 一个优雅清新的Ghost主题。
+[ghost-theme-Moegi](https://github.com/moegi-design/ghost-theme-Moegi) - 一个优雅清新的 Ghost 主题。
 
 ![](https://image.yoouu.cn/sunseekerx/resource/ghost-theme-Moegi.png)
 
@@ -188,9 +196,9 @@
 
 [number-precision](https://github.com/nefe/number-precision) - 🚀1K小巧快速的库，可精确地进行加、减、乘、除等运算
 
-[koro1FileHeader](https://github.com/OBKoro1/koro1FileHeader) - 在vscode中用于生成文件头部注释和函数注释的插件，经过多版迭代后，插件：支持所有主流语言,功能强大，灵活方便，文档齐全，食用简单！觉得插件不错的话，点击右上角给个Star⭐️呀~
+[koro1FileHeader](https://github.com/OBKoro1/koro1FileHeader) - 在vscode中用于生成文件头部注释和函数注释的插件，经过多版迭代后，插件：支持所有主流语言,功能强大，灵活方便，文档齐全，食用简单！觉得插件不错的话，点击右上角给个 Star⭐️ 呀~
 
-[any-rule](https://github.com/any86/any-rule) - 🦕 常用正则大全, 支持web / vscode / idea多平台 https://any86.github.io/any-rule/
+[any-rule](https://github.com/any86/any-rule) - 🦕 常用正则大全, 支持 web / vscode / idea 多平台 https://any86.github.io/any-rule/
 
 [DPlayer](https://github.com/MoePlayer/DPlayer) - html5弹幕播放器
 
@@ -204,7 +212,7 @@
 
 ### Vue
 
-[awesome-vue ](https://github.com/vuejs/awesome-vue)- Vue官方的资源库，包括官方的资源书籍，ui组件库，布局，运行环境等等，东西很多。
+[awesome-vue ](https://github.com/vuejs/awesome-vue)- Vue官方的资源库，包括官方的资源书籍，ui 组件库，布局，运行环境等等，东西很多。
 
 [awesome-bookmarks](https://github.com/PanJiaChen/awesome-bookmarks) - [PanJiaChen ](https://github.com/PanJiaChen)- 大佬的笔记库，包含前端很多的知识、工具、面试、解决方案等。（对中文友好）[在线地址](https://panjiachen.github.io/awesome-bookmarks/)
 
@@ -216,13 +224,13 @@
 
 [vue-admin-template](https://github.com/PanJiaChen/vue-admin-template) - 这是一个极简的 vue admin 管理后台。它只包含了 Element UI & axios & iconfont & permission control & lint，这些搭建后台必要的东西。
 
-[vue-admin-beautiful](https://github.com/chuzhixin/vue-admin-beautiful) - vue-admin-beautiful是一款绝佳的前端开发框架（同时支持电脑，手机，平板）,长期更新维护,感谢您的star,我一直在努力[http://chu1204505056.gitee.io/vue-adm…](http://chu1204505056.gitee.io/vue-admin-beautiful)
+[vue-admin-beautiful](https://github.com/chuzhixin/vue-admin-beautiful) - vue-admin-beautiful 是一款绝佳的前端开发框架（同时支持电脑，手机，平板）,长期更新维护,感谢您的star,我一直在努力[http://chu1204505056.gitee.io/vue-adm…](http://chu1204505056.gitee.io/vue-admin-beautiful)
 
-[vux](https://github.com/airyland/vux) - 基于Vue和WeUI的移动UI组件
+[vux](https://github.com/airyland/vux) - 基于 Vue 和 WeUI 的移动UI组件
 
-[vuelidate](https://github.com/vuelidate/vuelidate) - 简单、轻量级的基于模型的Vue.js验证
+[vuelidate](https://github.com/vuelidate/vuelidate) - 简单、轻量级的基于模型的 Vue.js 验证
 
-[vue-cli4-config](https://github.com/staven630/vue-cli4-config) - vue-cli4配置vue.config.js持续更新 [https://staven630.github.io/vue-cli4-…](https://staven630.github.io/vue-cli4-config/)
+[vue-cli4-config](https://github.com/staven630/vue-cli4-config) - vue-cli4 配置 vue.config.js 持续更新 [https://staven630.github.io/vue-cli4-…](https://staven630.github.io/vue-cli4-config/)
 
 [vue-next](https://github.com/vuejs/vue-next) - vue3.0
 
@@ -230,17 +238,17 @@
 
 ### uni-app
 
-[uniapp-http](https://github.com/jeromexiong/uniapp-http) - 封装 Uniapp 类axios方式的Promise网络请求库
+[uniapp-http](https://github.com/jeromexiong/uniapp-http) - 封装 Uniapp 类 axios 方式的 Promise 网络请求库
 
 
 
 ### react native
 
-[NativeBase](https://github.com/GeekyAnts/NativeBase) - React Native的基本跨平台UI组件 [https://nativebase.io/](https://nativebase.io/)
+[NativeBase](https://github.com/GeekyAnts/NativeBase) - React Native 的基本跨平台 UI 组件 [https://nativebase.io/](https://nativebase.io/)
 
-[goforeat](https://github.com/syun0216/goforeat) - 🍔 日日有得食（开源的rn程序）
+[goforeat](https://github.com/syun0216/goforeat) - 🍔 日日有得食（开源的 rn 程序）
 
-[react-native-iconfont-cli](https://github.com/iconfont-cli/react-native-iconfont-cli) - 把iconfont.cn的图标转换成标准RN组件，不依赖字体，支持多色彩，支持热更新
+[react-native-iconfont-cli](https://github.com/iconfont-cli/react-native-iconfont-cli) - 把 iconfont.cn 的图标转换成标准 RN 组件，不依赖字体，支持多色彩，支持热更新
 
 
 
@@ -260,7 +268,7 @@
 
 ### Java
 
-[3y](https://github.com/ZhongFuCheng3y/3y) - 📓从Java基础、JavaWeb基础到常用的框架再到面试题都有完整的教程，几乎涵盖了Java后端必备的知识点
+[3y](https://github.com/ZhongFuCheng3y/3y) - 📓从 Java 基础、JavaWeb 基础到常用的框架再到面试题都有完整的教程，几乎涵盖了 Java 后端必备的知识点
 
 
 
