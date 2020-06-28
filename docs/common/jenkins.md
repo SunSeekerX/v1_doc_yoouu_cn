@@ -8,6 +8,34 @@
 
 ## 配置插件下载加速
 
+**第一次安装**
+
+1. 在输入启动密码界面新开一个 tab 界面地址为：`${your jenkins url}/pluginManager/advanced`
+
+2. 在 `Update Site` 输入 `https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json`
+
+3. 提交
+
+4. 检查更新
+
+5. 替换下载地址：
+
+   进入 `Jenkins` 工作目录，进入更新配置位置
+
+   `${jenkins}/updates/default.json`
+
+   执行命令替换下载插件地址
+
+   ```bash
+   sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsinghua.edu.cn\/jenkins/g' default.json && sed -i 's/http:\/\/www.google.com/https:\/\/www.baidu.com/g' default.json
+   ```
+
+6. 等待检查更新完毕，安装推荐的插件
+
+
+
+**普通替换**
+
 设置>插件>高级>升级站点>[https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json](https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json)
 
 这一步只是替换了插件列表下载加速，下载的时候还是国外的源。
