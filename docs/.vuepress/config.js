@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-28 18:22:36
+ * @LastEditTime: 2020-06-28 18:31:03
  */
 
 const resolve = require('vuepress-theme-hope/resolve')
@@ -24,6 +24,7 @@ module.exports = resolve({
         href: '/favicon.ico',
       },
     ],
+
     // 百度统计
     [
       'script',
@@ -62,8 +63,6 @@ module.exports = resolve({
 
   themeConfig: {
     editLinks: false,
-
-    sidebarDepth: 2,
 
     nav: [
       // Guide
