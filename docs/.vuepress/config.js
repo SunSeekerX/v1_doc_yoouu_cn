@@ -3,10 +3,9 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-15 23:03:41
+ * @LastEditTime: 2020-06-28 17:57:33
  */
 
-// const moment = require('moment')
 const resolve = require('vuepress-theme-hope/resolve')
 
 module.exports = resolve({
@@ -16,8 +15,8 @@ module.exports = resolve({
 
   description: 'This road is just beginning ~',
 
-  // favicon: 网站图标
   head: [
+    // favicon.ico
     [
       'link',
       {
@@ -25,13 +24,8 @@ module.exports = resolve({
         href: '/favicon.ico',
       },
     ],
+
     // 百度统计
-    // [
-    //   'script',
-    //   {
-    //     src: 'https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4',
-    //   },
-    // ],
     [
       'script',
       {},
@@ -68,10 +62,7 @@ module.exports = resolve({
   ],
 
   themeConfig: {
-    // repo: 'SunSeekerX/sunseekerx',
     editLinks: false,
-
-    sidebarDepth: 2,
 
     nav: [
       // Guide
@@ -210,13 +201,9 @@ module.exports = resolve({
       },
     ],
 
-    docsDir: 'docs/theme/src',
-
     sidebar: 'auto',
 
-    lastUpdated: 'Last Updated',
-
-    displayAllHeaders: true, // 默认值：false
+    // lastUpdated: 'Last Updated',
 
     // vuepress-theme-hope 主题配置
     baseLang: 'zh-CN',
