@@ -3,10 +3,9 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-15 23:03:41
+ * @LastEditTime: 2020-06-28 18:22:36
  */
 
-// const moment = require('moment')
 const resolve = require('vuepress-theme-hope/resolve')
 
 module.exports = resolve({
@@ -16,8 +15,8 @@ module.exports = resolve({
 
   description: 'This road is just beginning ~',
 
-  // favicon: 网站图标
   head: [
+    // favicon: 网站图标
     [
       'link',
       {
@@ -26,12 +25,6 @@ module.exports = resolve({
       },
     ],
     // 百度统计
-    // [
-    //   'script',
-    //   {
-    //     src: 'https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4',
-    //   },
-    // ],
     [
       'script',
       {},
@@ -68,7 +61,6 @@ module.exports = resolve({
   ],
 
   themeConfig: {
-    // repo: 'SunSeekerX/sunseekerx',
     editLinks: false,
 
     sidebarDepth: 2,
@@ -76,7 +68,7 @@ module.exports = resolve({
     nav: [
       // Guide
       { text: '指南', link: '/guide/' },
-      
+
       // 基本
       {
         text: '基本',
@@ -119,11 +111,11 @@ module.exports = resolve({
       {
         text: '前端',
         items: [
-          // { text: '基本', link: '/front-end/' },
           {
             text: 'javascript-obfuscator',
             link: '/front-end/javascript-obfuscator',
           },
+
           {
             text: '基础',
             items: [
@@ -132,6 +124,7 @@ module.exports = resolve({
               { text: 'JavaScript', link: '/front-end/javascript' },
             ],
           },
+
           {
             text: '框架',
             items: [
@@ -148,7 +141,6 @@ module.exports = resolve({
         text: '后端',
         items: [
           { text: 'SQL', link: '/back-end/sql' },
-          // { text: '基本', link: '/back-end/' },
           { text: '数据库', link: '/back-end/database' },
           { text: 'Java', link: '/back-end/java' },
           { text: 'Docker', link: '/back-end/docker' },
@@ -160,7 +152,6 @@ module.exports = resolve({
       {
         text: '理财',
         items: [
-          // { text: 'me', link: '/me/about-me' },
           { text: '理财', link: '/financial/' },
           { text: '法币交易', link: '/financial/trade' },
           { text: '币币交易', link: '/financial/exchange' },
@@ -210,13 +201,9 @@ module.exports = resolve({
       },
     ],
 
-    docsDir: 'docs/theme/src',
-
     sidebar: 'auto',
 
-    lastUpdated: 'Last Updated',
-
-    displayAllHeaders: true, // 默认值：false
+    // lastUpdated: 'Last Updated',
 
     // vuepress-theme-hope 主题配置
     baseLang: 'zh-CN',
@@ -224,7 +211,6 @@ module.exports = resolve({
     author: 'SunSeekerX',
 
     footer: {
-      // copyright: true,
       display: true,
     },
 
