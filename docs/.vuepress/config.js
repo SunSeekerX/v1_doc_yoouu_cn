@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-06-28 18:31:03
+ * @LastEditTime: 2020-06-30 14:13:56
  */
 
 const resolve = require('vuepress-theme-hope/resolve')
@@ -92,7 +92,9 @@ module.exports = resolve({
             text: '其他技术',
             items: [
               { text: 'Jenkins', link: '/common/jenkins' },
+              { text: '脚本', link: '/common/other/script' },
               { text: 'Markdown示例', link: '/common/other/markdown' },
+
             ],
           },
           {
@@ -139,6 +141,7 @@ module.exports = resolve({
       {
         text: '后端',
         items: [
+          { text: 'NestJS', link: '/back-end/nestjs/nestjs-framework-tutorial-1' },
           { text: 'SQL', link: '/back-end/sql' },
           { text: '数据库', link: '/back-end/database' },
           { text: 'Java', link: '/back-end/java' },
