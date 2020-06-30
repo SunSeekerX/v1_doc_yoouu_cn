@@ -132,14 +132,29 @@ git status
 ### 比较文件异同
 
 ```bash
-git diff # 工作区与暂存区的差异
-git diff 分支名 #工作区与某分支的差异，远程分支这样写：remotes/origin/分支名
-git diff HEAD  # 工作区与HEAD指针指向的内容差异
-git diff 提交id 文件路径 # 工作区某文件当前版本与历史版本的差异
-git diff --stage # 工作区文件与上次提交的差异(1.6 版本前用 --cached)
-git diff 版本TAG # 查看从某个版本后都改动内容
-git diff 分支A 分支B # 比较从分支A和分支B的差异(也支持比较两个TAG)
-git diff 分支A...分支B # 比较两分支在分开后各自的改动
+# 工作区与暂存区的差异
+git diff 
+
+#工作区与某分支的差异，远程分支这样写：remotes/origin/分支名
+git diff 分支名 
+
+# 工作区与HEAD指针指向的内容差异
+git diff HEAD  
+
+# 工作区某文件当前版本与历史版本的差异
+git diff 提交id 文件路径 
+
+# 工作区文件与上次提交的差异(1.6 版本前用 --cached)
+git diff --stage 
+
+# 查看从某个版本后都改动内容
+git diff 版本TAG 
+
+# 比较从分支A和分支B的差异(也支持比较两个TAG)
+git diff 分支A 分支B 
+
+# 比较两分支在分开后各自的改动
+git diff 分支A...分支B 
 
 # 另外：如果只想统计哪些文件被改动，多少行被改动，可以添加 --stat 参数
 ```
@@ -188,8 +203,11 @@ git log fileName
 ### 代码回滚
 
 ```bash
-git reset HEAD^ # 恢复成上次提交的版本
-git reset HEAD^^ # 恢复成上上次提交的版本，就是多个^，以此类推或用~次数
+# 恢复成上次提交的版本
+git reset HEAD^ 
+
+# 恢复成上上次提交的版本，就是多个^，以此类推或用~次数
+git reset HEAD^^ 
 
 git reflog
 
