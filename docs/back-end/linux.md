@@ -64,3 +64,75 @@ apt-get upgrade: 进行安装包的更新(软件版本的升级)
 apt-get dist-upgrade: 进行系统版本的升级(Ubuntu版本的升级)
 
 do-release-upgrade: Ubuntu官方推荐的系统升级方式,若加参数-d还可以升级到开发版本,但会不稳定
+
+
+
+
+
+## 申请通配符证书
+
+```bash
+$ sudo apt-get update
+$ sudo apt-get install software-properties-common
+$ sudo add-apt-repository ppa:certbot/certbot
+$ sudo apt-get update
+$ sudo apt-get install certbot 
+```
+
+
+
+## 申请证书
+
+```bash
+sudo certbot certonly --manual -d example.com -d *.example.com --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
+```
+
+例如
+
+```bash
+sudo certbot certonly --manual -d yoouu.cn -d *.yoouu.cn --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
+```
+
+
+
+按照提示设置DNS解析
+
+
+
+![img](https:////upload-images.jianshu.io/upload_images/1186922-365bfd53bc81a30f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
+
+DNS解析
+
+# Nginx 配置
+
+
+
+```dart
+server {
+    listen      80;
+    server_name example.com;
+    return      301     https://$server_name$request_uri;
+}
+
+server {
+    listen      443 ssl;
+    server_name example.com;
+
+    charset     utf-8;
+    
+    add_header X-Content-Type-Options nosniff;
+
+    ssl on;
+    ssl_certificate     /etc/letsencrypt/live/example.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/example.com/privkey.pem;
+
+}
+```
+
+
+
+作者：Coopsrc
+链接：https://www.jianshu.com/p/d90b26fd21af
+来源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
