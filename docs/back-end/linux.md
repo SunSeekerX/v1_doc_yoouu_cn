@@ -71,6 +71,10 @@ do-release-upgrade: Ubuntu官方推荐的系统升级方式,若加参数-d还可
 
 ## 申请通配符证书
 
+安装certbot
+
+![certbot](https://image.yoouu.cn/sunseekerx/back-end/linux/1186922-0d4dbd223901c210.png)
+
 ```bash
 $ sudo apt-get update
 $ sudo apt-get install software-properties-common
@@ -97,11 +101,9 @@ sudo certbot certonly --manual -d yoouu.cn -d *.yoouu.cn --preferred-challenges 
 
 按照提示设置DNS解析
 
+![DNS解析](https://image.yoouu.cn/sunseekerx/back-end/linux/1186922-365bfd53bc81a30f.png)
 
 
-![img](https:////upload-images.jianshu.io/upload_images/1186922-365bfd53bc81a30f.png?imageMogr2/auto-orient/strip|imageView2/2/w/1200/format/webp)
-
-DNS解析
 
 # Nginx 配置
 
@@ -128,11 +130,3 @@ server {
 
 }
 ```
-
-
-
-作者：Coopsrc
-链接：https://www.jianshu.com/p/d90b26fd21af
-来源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
-
