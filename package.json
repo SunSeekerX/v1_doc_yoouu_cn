@@ -9,13 +9,13 @@
     "up": "yarn upgrade-interactive"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-plugin-comment": "^0.6.9",
+    "@mr-hope/vuepress-plugin-comment": "^0.6.10",
     "cz-conventional-changelog": "3.2.0",
     "husky": "^4.2.5",
     "lint-staged": "^10.2.11",
     "typescript": "^3.9.6",
     "vuepress": "^1.5.2",
-    "vuepress-theme-hope": "^0.6.9"
+    "vuepress-theme-hope": "^0.6.10"
   },
   "husky": {
     "hooks": {
