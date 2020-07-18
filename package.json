@@ -9,15 +9,21 @@
     "up": "yarn upgrade-interactive"
   },
   "devDependencies": {
+    "@commitlint/cli": "^9.1.1",
+    "@commitlint/config-conventional": "^9.1.1",
     "@mr-hope/vuepress-plugin-comment": "^0.7.0",
     "cz-conventional-changelog": "3.2.0",
-    "cz-customizable": "^6.2.1",
     "vuepress": "^1.5.2",
     "vuepress-theme-hope": "^0.7.0"
   },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
   "config": {
     "commitizen": {
-      "path": "node_modules/cz-customizable"
+      "path": "./node_modules/cz-conventional-changelog"
     }
   }
 }
