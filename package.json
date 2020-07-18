@@ -9,25 +9,15 @@
     "up": "yarn upgrade-interactive"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-plugin-comment": "^0.6.10",
+    "@mr-hope/vuepress-plugin-comment": "^0.7.0",
     "cz-conventional-changelog": "3.2.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.11",
-    "typescript": "^3.9.6",
+    "cz-customizable": "^6.2.1",
     "vuepress": "^1.5.2",
-    "vuepress-theme-hope": "^0.6.10"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*": "git add"
+    "vuepress-theme-hope": "^0.7.0"
   },
   "config": {
     "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
+      "path": "node_modules/cz-customizable"
     }
   }
 }
