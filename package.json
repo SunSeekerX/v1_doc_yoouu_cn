@@ -12,6 +12,7 @@
     "@commitlint/cli": "^9.1.1",
     "@commitlint/config-conventional": "^9.1.1",
     "@mr-hope/vuepress-plugin-comment": "^0.7.1",
+    "core-js": "^3.6.5",
     "cz-conventional-changelog": "3.2.0",
     "vuepress": "^1.5.2",
     "vuepress-theme-hope": "^0.7.1"
