@@ -118,6 +118,8 @@
 
 [nodebestpractices](https://github.com/goldbergyoni/nodebestpractices) - ✅ Node.js最佳实践列表(2020年4月) [https://twitter.com/nodepractices/](https://twitter.com/nodepractices/)
 
+[easy-monitor](https://github.com/hyj1991/easy-monitor) - Node.js 应用的性能监控工具，可以定位线上故障。代码开源，支持私有部署。
+
 
 
 ### ⚙ Nestjs
@@ -208,6 +210,10 @@
 
 [MeiTuanCinemaSmartChoose](https://github.com/houzisbw/MeiTuanCinemaSmartChoose) - 模拟美团app推荐座位算法
 
+[Shoelace](https://shoelace.style/) - 一个 Web Components 组件库，非常易用，很推荐。
+
+我觉得，HTML 自定义元素才是网页组件发展的方向，因为根本不需要学习任何新的 API，用的就是 DOM 语法。
+
 
 
 ### Vue
@@ -255,6 +261,8 @@
 ### npm
 
 [your-js-lib](https://github.com/vsuke/your-js-lib) - 快速开发一个轮子模板
+
+[tbify](https://github.com/fjc0k/tbify) - 国内连接 npm 源服务器很慢，tbify 这个工具可以自动将 npm、yarn 等包管理工具连上国内的淘宝镜像，对工具和系统都是非侵入性的。
 
 
 

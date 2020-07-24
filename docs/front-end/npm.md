@@ -1,6 +1,51 @@
-# npm
+# NPM
 
-## 替换默认的镜像源
+## 📁 加速下载
+
+## 📂 tbify
+
+> Github：[tbify](https://github.com/fjc0k/tbify)
+
+
+
+## 安装
+
+```bash
+# npm
+npm install tbify --global
+
+# yarn
+yarn global add tbify
+
+# pnpm
+pnpm add --global tbify
+```
+
+
+
+### 使用
+
+对于常用的包管理命令，`tbify` 提供了使用淘宝 NPM 镜像的等价命令，除了发布包到 npm 时必须使用 `npm publish` 外，都可以使用等价命令进行相关操作：
+
+| 原命令 | 使用淘宝 NPM 镜像的命令 | 示例                  |
+| ------ | ----------------------- | --------------------- |
+| `nvm`  | `tnvm` (或 `tbify nvm`) | `tnvm install 8.0.0`  |
+| `npm`  | `tnpm` (或 `tbify npm`) | `tnpm install react`  |
+| `npx`  | `tnpx` (或 `tbify npx`) | `tnpx kill-port 3000` |
+| `yarn` | `tyn` (或 `tbify yarn`) | `tyn add react`       |
+| `pnpm` | `tpm` (或 `tbify pnpm`) | `tpm add react`       |
+| `pnpx` | `tpx` (或 `tbify pnpx`) | `tpx kill-port 3000`  |
+
+对于其他命令，在使用时加上 `tbify` 前缀即可，比如：
+
+```bash
+tbify printenv npm_config_registry
+# -> https://r.npm.taobao.org
+```
+
+
+
+## ~~📂 替换镜像~~
 
 ```bash
 # 1、查看一下当前源
@@ -18,22 +63,6 @@ yarn config set registry https://registry.npm.taobao.org
 # 3、或者切换为自带的
 yarn config set registry https://registry.yarnpkg.com
 
-# 其他镜像
-yarn config set disturl https://npm.taobao.org/dist # node-gyp 编译依赖的 node 源码镜像
-yarn config set node_sqlite3_binary_host_mirror https://npm.taobao.org/mirrors # sqlite3 镜像
-yarn config set sass_binary_site "https://npm.taobao.org/mirrors/node-sass/"
-yarn config set phantomjs_cdnurl "http://cnpmjs.org/downloads"
-yarn config set electron_mirror "https://npm.taobao.org/mirrors/electron/"
-yarn config set sqlite3_binary_host_mirror "https://foxgis.oss-cn-shanghai.aliyuncs.com/"
-yarn config set profiler_binary_host_mirror "https://npm.taobao.org/mirrors/node-inspector/"
-yarn config set chromedriver_cdnurl "https://cdn.npm.taobao.org/dist/chromedriver"
-```
-
-
-
-## 依赖镜像
-
-```bash
 # ==========================================================
 # NPM
 # ==========================================================
@@ -78,9 +107,7 @@ yarn cache clean # 清空缓存
 
 
 
-## 查看，更新，卸载全局安装的包
-
-文档：https://www.npmjs.cn/
+## 📂 查看，更新，卸载全局安装的包
 
 > npm 查看全局安装过的包命令：
 
@@ -110,7 +137,7 @@ npm update -g jshint
 
 
 
-## 升级`package.json`依赖包
+## 📂 升级`package.json`依赖包
 
 安装：
 
@@ -138,7 +165,15 @@ ncu -a
 
 
 
-## 清除缓存
+## 📂 yarn升级依赖
+
+```bash
+yarn upgrade-interactive
+```
+
+
+
+## 📂 清除缓存
 
 npm
 
@@ -154,17 +189,9 @@ yarn cache clean
 
 
 
-## yarn升级依赖
-
-```bash
-yarn upgrade-interactive
-```
 
 
-
-
-
-## ✅规范提交代码
+# 📂 规范提交代码
 
 > [约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.2/)
 >
@@ -180,7 +207,7 @@ yarn upgrade-interactive
 
 
 
-### 0x1 安装[Commitizen](https://github.com/commitizen/cz-cli)
+## 0x1 安装[Commitizen](https://github.com/commitizen/cz-cli)
 
 > 替代你的 git commit（帮助我们生成符合规范的 commit message）
 
@@ -191,7 +218,9 @@ yarn upgrade-interactive
 npm install -g commitizen
 ```
 
-### 0x2 安装[cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
+
+
+## 0x2 安装[cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 
 > 是一个`commitizen`的 adapter（适配器），一个符合 Angular 团队规范的 preset（按照我们指定的规范帮助我们生成 commit message）
 
@@ -227,7 +256,7 @@ commitizen init cz-conventional-changelog --yarn --dev --exact
 
 
 
-### 0x3 自定义 adapter
+## 0x3 自定义 adapter
 
 安装[cz-customizable](https://github.com/leonardoanalista/cz-customizable)
 
@@ -293,7 +322,7 @@ module.exports = {
 
 
 
-### 0x4 校验 commit
+## 0x4 校验 commit
 
 [commitlint](https://github.com/conventional-changelog/commitlint)
 
@@ -419,7 +448,7 @@ yarn add lint-staged -D
 }
 ```
 
-### 0x5 standard-version
+## 0x5 standard-version
 
 以上配置已经可以满足提交代码的常规要求，但是如果我们想自动生成 CHANGELOG，语义化我们的版本（[Semantic Versioning](https://semver.org/lang/zh-CN/)）。 就需要借助 [standard-version](https://github.com/conventional-changelog/standard-version)
 
@@ -484,7 +513,7 @@ yarn add standard-version -D
 
 
 
-### 0x6 完整的配置
+## 0x6 完整的配置
 
 **package.json**
 
@@ -576,7 +605,9 @@ module.exports = {
 }
 ```
 
-### 0x7 提交代码
+
+
+## 0x7 提交代码
 
 使用`git cz`代替`git commit`会出现可选的命令行提交界面。
 
@@ -587,9 +618,9 @@ git cz
 
 
 
-## 版本号管理
+# 📂 版本号管理
 
-### 命令
+## 命令
 
 在Node.js项目中的前后端项目中，版本号管理使用的是NPM的命令——别跟我说，你是手动改package来更新版本号的。
 
@@ -649,7 +680,9 @@ npm version patch -m "Upgrade to %s for reasons"
 
 message中的s%将会被替换为版本号。
 
-### 版本号策略
+
+
+## 版本号策略
 
 版本号格式：主版本号**.**次版本号**.**修订号；
 
@@ -667,7 +700,9 @@ message中的s%将会被替换为版本号。
 
 万一不小心把一个不兼容的改版当成了次版本号发行了该怎么办？一旦发现自己破坏了语义化版本控制的规范，就要修正这个问题，并发行一个新的次版本号来更正这个问题并且恢复向下兼容。即使是这种情况，也不能去修改已发行的版本。
 
-### 编程式
+
+
+## 编程式
 
 在项目代码中有时候需要判断当前版本，可以通过读取package文件获取当前版本：
 
@@ -681,7 +716,9 @@ import {version} from './package.json'
 compareVersions('10.1.8', '10.0.4'); // 1compareVersions('10.0.1', '10.0.1'); // 0
 ```
 
-### 自动更新版本号
+
+
+## 自动更新版本号
 
 在项目目录的`.git/hooks/`目录中新建文件: `post-commit`——是的，没有后缀名。
 然后粘贴以下代码并保存文件：
