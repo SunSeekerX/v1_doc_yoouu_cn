@@ -9,10 +9,10 @@
     "up": "yarn upgrade-interactive"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-plugin-comment": "^0.7.1",
+    "@mr-hope/vuepress-plugin-comment": "^0.7.2",
     "cz-conventional-changelog": "3.2.0",
     "vuepress": "^1.5.3",
-    "vuepress-theme-hope": "^0.7.1"
+    "vuepress-theme-hope": "^0.7.2"
   },
   "config": {
     "commitizen": {
