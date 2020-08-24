@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-07-08 16:23:52
+ * @LastEditTime: 2020-08-24 18:37:03
  */
 
 const resolve = require('vuepress-theme-hope/resolve')
@@ -143,7 +143,7 @@ module.exports = resolve({
           { text: 'Linux', link: '/back-end/linux' },
           {
             text: 'NestJS',
-            link: '/back-end/nestjs/nestjs-framework-tutorial-1',
+            link: '/back-end/nestjs/',
           },
           { text: 'SQL', link: '/back-end/sql' },
           { text: '数据库', link: '/back-end/database' },
