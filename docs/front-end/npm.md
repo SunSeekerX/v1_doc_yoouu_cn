@@ -1,14 +1,8 @@
 # NPM
 
-## 📁 加速下载
+## 加速下载 - [tbify](https://github.com/fjc0k/tbify)
 
-## 📂 tbify
-
-> Github：[tbify](https://github.com/fjc0k/tbify)
-
-
-
-## 安装
+**安装**
 
 ```bash
 # npm
@@ -21,9 +15,7 @@ yarn global add tbify
 pnpm add --global tbify
 ```
 
-
-
-### 使用
+**使用**
 
 对于常用的包管理命令，`tbify` 提供了使用淘宝 NPM 镜像的等价命令，除了发布包到 npm 时必须使用 `npm publish` 外，都可以使用等价命令进行相关操作：
 
@@ -45,7 +37,7 @@ tbify printenv npm_config_registry
 
 
 
-## ~~📂 替换镜像~~
+## ~~加速下载 -替换镜像~~
 
 ```bash
 # 1、查看一下当前源
@@ -107,7 +99,7 @@ yarn cache clean # 清空缓存
 
 
 
-## 📂 查看，更新，卸载全局安装的包
+## 查看，更新，卸载全局安装的包
 
 > npm 查看全局安装过的包命令：
 
@@ -137,7 +129,7 @@ npm update -g jshint
 
 
 
-## 📂 升级`package.json`依赖包
+## 升级`package.json`依赖包
 
 安装：
 
@@ -165,7 +157,7 @@ ncu -a
 
 
 
-## 📂 yarn升级依赖
+## yarn升级依赖
 
 ```bash
 yarn upgrade-interactive
@@ -173,7 +165,7 @@ yarn upgrade-interactive
 
 
 
-## 📂 清除缓存
+## 清除缓存
 
 npm
 
@@ -207,22 +199,44 @@ yarn cache clean
 
 
 
-## 0x1 安装[Commitizen](https://github.com/commitizen/cz-cli)
+## 1️⃣ 安装 [Commitizen](https://github.com/commitizen/cz-cli)
 
 > 替代你的 git commit（帮助我们生成符合规范的 commit message）
+>
+> commitizen 为我们提供一些 cli 命令，比如：commitizen init、 git cz
 
 ```bash
-# [推荐全局安装] commitizen 为我们提供一些 cli 命令
-# 比如：commitizen init、 git cz
-
+# 推荐全局安装
 npm install -g commitizen
 ```
 
 
 
-## 0x2 安装[cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
+## 2️⃣ 安装 [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 
 > 是一个`commitizen`的 adapter（适配器），一个符合 Angular 团队规范的 preset（按照我们指定的规范帮助我们生成 commit message）
+>
+> 还有很多花里胡哨的适配器可以选择，看你们团队的选择了，例如带 `emoji` 表情的。。。😆
+
+**全局安装**
+
+> 个人推荐全局安装，因为这个包貌似和其他的包会产生某些冲突，导致项目用 `yarn` 方式安装的包无法使用，只能用 `npm`。
+
+```bash
+npm install -g cz-conventional-changelog
+```
+
+使用 `bash` 环境执行以下命令，`Windows` 用 `power shell` 测试文件编码会有问题。这是指定全局的适配器路径
+
+```bash
+echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
+```
+
+**执行完这一步就可以使用了，下面的步骤为高级用法！**
+
+
+
+**局部安装（不推荐，虽然官方推荐）**
 
 接下来，通过键入命令初始化项目以使用cz-convention -changelog适配器
 
@@ -256,9 +270,7 @@ commitizen init cz-conventional-changelog --yarn --dev --exact
 
 
 
-## 0x3 自定义 adapter
-
-安装[cz-customizable](https://github.com/leonardoanalista/cz-customizable)
+## 3️⃣ 自定义 adapter - [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
 
 > 可自定义的Commitizen插件。比如：默认的提交 types 可能特别多，有些时候我们可能只需要其中的某些 type，或者自定义type。
 
@@ -266,7 +278,7 @@ commitizen init cz-conventional-changelog --yarn --dev --exact
 yarn add cz-customizable -D
 ```
 
-> 配置 package.json
+配置 `package.json`
 
 ```js
 {
@@ -278,7 +290,7 @@ yarn add cz-customizable -D
 }
 ```
 
-> 在根目录下，配置 .cz-config.js
+在根目录下，配置 .cz-config.js
 
 ```js
 module.exports = {
@@ -322,9 +334,7 @@ module.exports = {
 
 
 
-## 0x4 校验 commit
-
-[commitlint](https://github.com/conventional-changelog/commitlint)
+## 4️⃣ 校验 commit - [commitlint](https://github.com/conventional-changelog/commitlint)
 
 > `commitlint` 帮我们规范 `commit message`（`commitlint`的实现方式和`commitizen`差不多也需要个 adapter）
 >
@@ -336,7 +346,7 @@ module.exports = {
 yarn add @commitlint/config-conventional @commitlint/cli -D 
 ```
 
-> package.json 配置
+`package.json` 配置
 
 ```json
 "commitlint": {
@@ -346,9 +356,7 @@ yarn add @commitlint/config-conventional @commitlint/cli -D
   }
 ```
 
-也可以
-
-> 在根目录下使用配置文件： `.commitlintrc.js`
+也可以在根目录下使用配置文件： `.commitlintrc.js`
 
 ```js
 module.exports = {
@@ -362,7 +370,7 @@ module.exports = {
 
 [https://github.com/whizark/commitlint-config-czgithub.com](https://github.com/whizark/commitlint-config-cz)
 
-如果是使用**`cz-customizable`**适配器做了破坏 Angular 风格的提交说明配置，那么不能使用`@commitlint/config-conventional`规则进行提交说明校验，可以使用`commitlint-config-cz` 对定制化提交说明进行校验。
+如果是使用 `cz-customizable` 适配器做了破坏 `Angular ` 风格的提交说明配置，那么不能使用 `@commitlint/config-conventional` 规则进行提交说明校验，可以使用 `commitlint-config-cz` 对定制化提交说明进行校验。
 
 安装校验规则：
 
@@ -384,7 +392,7 @@ module.exports = {
 
 **第三步: Husky**
 
-在提交代码前通常我们会通过`eslint`等工具来校验 我们的代码，然后再进行提交，由于 git 提供了 `hook`机制，所以我们可以通过 `git hook` 在 **pre-commit 进行 eslint**，在 **commit-msg 阶段进行 commit message lint**。
+在提交代码前通常我们会通过 `eslint` 等工具来校验 我们的代码，然后再进行提交，由于 git 提供了 `hook` 机制，所以我们可以通过 `git hook` 在 **pre-commit 进行 eslint**，在 **commit-msg 阶段进行 commit message lint**。
 
 **3.1 pre-commit**
 
@@ -397,7 +405,7 @@ module.exports = {
 yarn add husky -D
 ```
 
-> 配置 package.json
+配置 `package.json`
 
 ```js
 "husky": {
@@ -408,7 +416,7 @@ yarn add husky -D
 }
 ```
 
-> 或者，使用配置文件：`.huskyrc`
+或者，使用配置文件：`.huskyrc`
 
 ```js
 {
@@ -429,7 +437,7 @@ yarn add husky -D
 yarn add lint-staged -D
 ```
 
-配置 package.json
+配置 `package.json`
 
 ```json
 {
@@ -448,11 +456,13 @@ yarn add lint-staged -D
 }
 ```
 
-## 0x5 standard-version
 
-以上配置已经可以满足提交代码的常规要求，但是如果我们想自动生成 CHANGELOG，语义化我们的版本（[Semantic Versioning](https://semver.org/lang/zh-CN/)）。 就需要借助 [standard-version](https://github.com/conventional-changelog/standard-version)
 
-standard-version的作用就是生成 changelog 更新 package.json 和 package.lock.json 中的 version 字段。
+## 5️⃣ standard-version
+
+以上配置已经可以满足提交代码的常规要求，但是如果我们想自动生成 `CHANGELOG`，语义化我们的版本（[Semantic Versioning](https://semver.org/lang/zh-CN/)）。 就需要借助 [standard-version](https://github.com/conventional-changelog/standard-version)
+
+`standard-version` 的作用就是生成 `changelog` 更新 `package.json` 和 `package.lock.json` 中的 `version` 字段。
 
 关于版本：
 
@@ -500,7 +510,7 @@ npm run release -- --release-as minor
 yarn add standard-version -D
 ```
 
-配置 package.json
+配置 `package.json`
 
 ```json
 {
@@ -513,7 +523,7 @@ yarn add standard-version -D
 
 
 
-## 0x6 完整的配置
+## 6️⃣ 完整的配置
 
 **package.json**
 
@@ -607,12 +617,12 @@ module.exports = {
 
 
 
-## 0x7 提交代码
+## 7️⃣ 提交代码
 
 使用`git cz`代替`git commit`会出现可选的命令行提交界面。
 
 ```bash
-git cz
+git-cz
 ```
 
 
@@ -620,29 +630,29 @@ git cz
 
 # 📂 版本号管理
 
-## 命令
+## 1️⃣ 简介
 
-在Node.js项目中的前后端项目中，版本号管理使用的是NPM的命令——别跟我说，你是手动改package来更新版本号的。
+在Node.js项目中的前后端项目中，版本号管理使用的是NPM的命令——别跟我说，你是手动改 `package.json` 来更新版本号的。
 
-在命令行敲入`npm version ?`就可以看到可以使用的命令：
+在命令行敲入 `npm version ?` 就可以看到可以使用的命令：
 
 ```bash
 npm version [<newversion> | major | minor | patch | premajor | preminor | prepatch | prerelease | from-git]
 ```
 
-major：主版本号
-
-minor：次版本号
-
-patch：补丁号
-
-premajor：预备主版本
-
-prepatch：预备次版本
-
-prerelease：预发布版本
-
-我的package.jsond的**当前version为6.0.0**，依次输入下面的命令，package的version会变更为提升后的版本号：
+> major：主版本号
+>
+> minor：次版本号
+>
+> patch：补丁号
+>
+> premajor：预备主版本
+>
+> prepatch：预备次版本
+>
+> prerelease：预发布版本
+>
+> 我的package.jsond的**当前version为6.0.0**，依次输入下面的命令，package的version会变更为提升后的版本号：
 
 ```bash
 C:\Users\Administrator\Desktop\work\stage-view (master) (stage-view@6.0.0)
@@ -682,7 +692,7 @@ message中的s%将会被替换为版本号。
 
 
 
-## 版本号策略
+## 2️⃣ 版本号策略
 
 版本号格式：主版本号**.**次版本号**.**修订号；
 
@@ -702,31 +712,33 @@ message中的s%将会被替换为版本号。
 
 
 
-## 编程式
+## 3️⃣ 编程式
 
 在项目代码中有时候需要判断当前版本，可以通过读取package文件获取当前版本：
 
-```bash
-import {version} from './package.json'
+```javascript
+import { version } from './package.json'
 ```
 
-要判断两个版本号字符串的大小，可以使用插件 compare-versions :
+要判断两个版本号字符串的大小，可以使用插件 `compare-versions`
 
-```bash
-compareVersions('10.1.8', '10.0.4'); // 1compareVersions('10.0.1', '10.0.1'); // 0
+```javascript
+compareVersions('10.1.8', '10.0.4'); //  1
+compareVersions('10.0.1', '10.0.1'); //  0
+compareVersions('10.1.1', '10.2.2'); // -1
 ```
 
 
 
-## 自动更新版本号
+## 4️⃣ 自动更新版本号
 
-在项目目录的`.git/hooks/`目录中新建文件: `post-commit`——是的，没有后缀名。
+在项目目录的 `.git/hooks/` 目录中新建文件: `post-commit`——是的，没有后缀名。
 然后粘贴以下代码并保存文件：
 
 ```bash
 #!/bin/shCOMMIT_MSG="$(git log --pretty=format:"%s" -1 head)"echo "$COMMIT_MSG" | grep  -q  "^[0-9]"if [ $? -ne 0 ];then  echo $(npm version patch)fi
 ```
 
-上面代码会在每次`git commit` 执行后被运行，它检查commit的message是不是版本号，如果不是，它就会执行`npm version patch`更新版本号。
+上面代码会在每次 `git commit` 执行后被运行，它检查 commit 的 message 是不是版本号，如果不是，它就会执行 `npm version patch` 更新版本号。
 
 > 来源：[版本号管理策略&&使用npm管理项目版本号-朱嘉伟](http://buzhundong.com/post/%E7%89%88%E6%9C%AC%E5%8F%B7%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5-%E4%BD%BF%E7%94%A8npm%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E5%8F%B7.html)

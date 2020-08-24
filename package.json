@@ -10,13 +10,7 @@
   },
   "devDependencies": {
     "@mr-hope/vuepress-plugin-comment": "^0.7.2",
-    "cz-conventional-changelog": "3.2.0",
-    "vuepress": "^1.5.3",
+    "vuepress": "^1.5.4",
     "vuepress-theme-hope": "^0.7.2"
-  },
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-conventional-changelog"
-    }
   }
 }
