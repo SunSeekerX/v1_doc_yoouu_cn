@@ -136,7 +136,7 @@ rootfs (root file system)，在 bootfs 之上。包含的就是典型 Linux 系�
 
 我们可以去下载一个镜像，注意观察下载的日志输出，可以看到是一层一层的在下载!
 
-![image-20200829154226727](docker.assets/image-20200829154226727.png)
+![image-20200829154226727](https://image.yoouu.cn/sunseekerx/back-end/docker/image-20200829154226727.png)
 
 
 
@@ -206,7 +206,41 @@ ENV					# 构建的时候设置环境变量!
 
 
 
-![image-20200829162756885](docker.assets/image-20200829162756885.png)
+![image-20200829162756885](https://image.yoouu.cn/sunseekerx/back-end/docker/image-20200829162756885.png)
+
+
+
+## Docker 网络
+
+### 理解 Docker0
+
+```bash
+ip addr
+```
+
+![image-20200830152740185](https://image.yoouu.cn/sunseekerx/back-end/docker/image-20200830152740185.png)
+
+Docker0：`172.18.0.1` 相当于路由器，其他所有启动的镜像都是接入到这个路由器，所以容器之前可以 ping 通，主机也可以 ping 通容器，容器之前互相 ping 请求并不是直接到达各个容器，需要经过 Docker0 进行广播到接入 Docker0 里面的容器。
+
+![image-20200830154055179](https://image.yoouu.cn/sunseekerx/back-end/docker/image-20200830154055179.png) 
+
+
+
+> 原理
+
+1、我们每启动一个 docker 容器，docker 就会给 docker 容器分配一个 ip，我们只要安装了 docker，就会有一个网卡 dockerO，桥接模式，使用的技术是 veth-pair 技术!
+
+
+
+### 自定义网络
+
+> 这部分等到深度使用进行补充。
+
+不同的集群之间使用不同的网络，保证集群是安全和健康的。
+
+如果需要打通两个不同网络（不同网段，一般是自定义网络产生）之间的链接，需要使用 Dockek network connect 链接不同网络之间的容器。
+
+**打通是单向的！**
 
 
 
