@@ -1,5 +1,18 @@
 # power-shell
 
+## 代理
+
+```powershell
+# 设置代理
+netsh winhttp set proxy 127.0.0.1:1080
+# 取消代理
+netsh winhttp reset proxy
+# 查看代理
+netsh winhttp show proxy
+```
+
+
+
 ## powershell 因为在此系统上禁止运行脚本…
 
 > 最近在自己电脑上使用react-native 初始化项目出现了下面的错误，猜测应该是微软更新导致
