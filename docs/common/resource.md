@@ -26,6 +26,10 @@
 
 ![wifi-card.png](https://image.yoouu.cn/sunseekerx/resource/wifi-card.png)
 
+[responsively](https://github.com/responsively-org/responsively-app) - 一个方便的桌面软件，集成了开发和调试响应式网页的各种功能。
+
+![responsively](https://image.yoouu.cn/sunseekerx/resource/responsively.gif)
+
 
 
 ## 📁 软件
@@ -57,6 +61,8 @@
 [FiraCode](https://github.com/tonsky/FiraCode) - Fira代码:自由等宽字体与连字符
 
 ![](https://image.yoouu.cn/sunseekerx/resource/FiraCode.svg)
+
+[JetBrainsMono](https://github.com/JetBrains/JetBrainsMono) - IDEA 系字体
 
 [hacker-laws-zh](https://github.com/nusr/hacker-laws-zh) - 💻📖对开发人员有用的定律、理论、原则和模式。
 
@@ -213,6 +219,8 @@
 [Shoelace](https://shoelace.style/) - 一个 Web Components 组件库，非常易用，很推荐。
 
 我觉得，HTML 自定义元素才是网页组件发展的方向，因为根本不需要学习任何新的 API，用的就是 DOM 语法。
+
+[网页骨架布局生成器](https://skeletonreact.com/) - 有些网页加载时，会显示一个骨架布局，获取正式内容后再替换掉。这个在线工具就用来生成骨架布局，支持 React、React Native、Vue 和 普通 HTML。
 
 
 
