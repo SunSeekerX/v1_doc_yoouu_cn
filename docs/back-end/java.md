@@ -4,7 +4,107 @@
 
 > 下载JDK12默认安装，环境变量path添加安装路径带`bin`，新建环境变量`JAVA_HOME`不带`bin`，命令行`java`和`javac`执行成功，`tomcat`启动成功
 
+### **环境变量**
 
+JAVA_HOME=`${jdk安装位置}`  例如：C:\Program Files\Java\jdk1.8.0_261
+
+Path添加 `%JAVA_HOME%\bin`
+
+验证成功
+
+```bash
+java
+javac
+```
+
+
+
+## Maven
+
+### **环境变量**
+
+> 参考：[Maven - Environment Setup](https://www.tutorialspoint.com/maven/maven_environment_setup.htm)
+
+MAVEN_HOME=`${maven安装位置}`  例如：W:\Server\apache-maven-3.6.3
+
+M2_HOME=`${maven安装位置}`  例如：W:\Server\apache-maven-3.6.3
+
+M2=%M2_HOME%\bin
+
+MAVEN_OPTS - `-Xms256m -Xmx512m`
+
+Path添加 `%MAVEN_HOME%\bin`
+
+验证成功
+
+```
+ mvn --version
+```
+
+
+
+### **国内加速**
+
+打开 maven 的配置文件（ windows 机器一般在 maven 安装目录的 **conf/settings.xml** ），在<mirrors></mirrors>标签中添加 mirror 子节点:
+
+```xml
+<mirror>
+  <id>aliyunmaven</id>
+  <mirrorOf>*</mirrorOf>
+  <name>阿里云公共仓库</name>
+  <url>https://maven.aliyun.com/repository/public</url>
+</mirror>
+```
+
+如果想使用其它代理仓库，可在<repositories></repositories>节点中加入对应的仓库使用地址。以使用 spring 代理仓为例：
+
+```xml
+<repository>
+  <id>spring</id>
+  <url>https://maven.aliyun.com/repository/spring</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+```
+
+在你的 **pom.xml** 文件<denpendencies></denpendencies>节点中加入你要引用的文件信息：
+
+```xml
+<dependency>
+  <groupId>[GROUP_ID]</groupId>
+  <artifactId>[ARTIFACT_ID]</artifactId>
+  <version>[VERSION]</version>
+</dependency>
+```
+
+执行拉取命令：
+
+```bash
+mvn install
+```
+
+
+
+### **本地仓库**
+
+setting 节点下新增
+
+```xml
+<localRepository>${填写你本地的仓库地址，用来放jar包}</localRepository>
+<!--示例-->
+<localRepository>W:\Server\apache-maven-3.6.3\repository</localRepository>
+```
+
+
+
+### **注意事项**
+
+1. IDEA 配置了 maven 项目打开maven 配置可能会恢复为默认的，需要重新设置下。
+2. 创建生成的 web.xml 文件 xml 版本可能过低，可能会出现历史遗留问题，最好保持和 tomcat 的 xml 版本一致。可以拷贝 tomcat 的 xml 文件头。
 
 ## windows tomcat输出乱码
 
