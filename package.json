@@ -9,8 +9,8 @@
     "up": "yarn upgrade-interactive"
   },
   "devDependencies": {
-    "@mr-hope/vuepress-plugin-comment": "^0.7.3",
+    "@mr-hope/vuepress-plugin-comment": "^0.7.4",
     "vuepress": "^1.5.4",
-    "vuepress-theme-hope": "^0.7.3"
+    "vuepress-theme-hope": "^0.7.4"
   }
 }
