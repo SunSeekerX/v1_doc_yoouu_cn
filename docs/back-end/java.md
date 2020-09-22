@@ -106,6 +106,37 @@ setting 节点下新增
 1. IDEA 配置了 maven 项目打开maven 配置可能会恢复为默认的，需要重新设置下。
 2. 创建生成的 web.xml 文件 xml 版本可能过低，可能会出现历史遗留问题，最好保持和 tomcat 的 xml 版本一致。可以拷贝 tomcat 的 xml 文件头。
 
+
+
+### 常见问题
+
+**Maven 配置问题 - could not find resource mybatis-config.xml**
+
+```xml
+<build>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>true</filtering>
+        </resource>
+        <resource>
+            <directory>src/main/java</directory>
+            <includes>
+                <include>**/*.properties</include>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
+</build>
+```
+
+
+
 ## windows tomcat输出乱码
 
 文件路径`conf/logging.properties`
