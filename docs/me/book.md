@@ -20,3 +20,11 @@
 ## 开发
 
 《ECMAScript 6 入门教程》By [阮一峰](http://www.ruanyifeng.com/)
+
+
+
+
+
+## 其他
+
+- 未来世界的幸存者 By [阮一峰](http://www.ruanyifeng.com/)

@@ -1,6 +1,56 @@
-## uni-app
+# uni-app
 
-### Utils function
+## 业务实现
+
+### H5 复制内容到剪贴板
+
+使用 **vue-clipboard2**
+
+```bash
+yarn add vue-clipboard2
+```
+
+`main.js`
+
+
+```javascript
+// #ifdef H5
+import VueClipboard from 'vue-clipboard2'
+// #endif
+
+// #ifdef H5
+Vue.use(VueClipboard)
+// #endif
+```
+
+**message** 为复制的内容
+
+```html
+<!-- #ifdef H5 -->
+<text
+      v-clipboard:copy="message"
+      v-clipboard:success="onH5CopySuccess"
+      v-clipboard:error="onH5CopyError"
+      >
+  复制
+</text>
+<!-- #endif -->
+```
+
+```javascript
+onH5CopySuccess(e) {
+  this.$util.toast('复制成功')
+},
+  onH5CopyError(e) {
+    this.$util.toast('复制失败')
+  },
+```
+
+
+
+
+
+## Utils function
 
 ```javascript
 //api接口

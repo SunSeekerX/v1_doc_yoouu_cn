@@ -19,3 +19,10 @@
 切尔诺贝利 Chernobyl (2019) By [约翰·伦克](https://zh.wikipedia.org/w/index.php?title=约翰·伦克&action=edit&redlink=1)
 
 白夜追凶 (2017) By [王伟](https://movie.douban.com/celebrity/1364182/)
+
+异星灾变 第一季 Raised by Wolves Season 1 (2020) By [雷德利·斯科特](https://movie.douban.com/celebrity/1054416/) - 2020-09-25 13:51:41
+
+> 越来越好看~
+
+黑袍纠察队 By [菲利浦·斯格里西亚](https://movie.douban.com/celebrity/1323994/) - 2020-09-25 13:52:04
+
