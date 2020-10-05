@@ -159,9 +159,81 @@ SunSeekerX@SSX-PC  ~\Desktop                                              
 
 ## Flutter - Android studio 创建项目
 
-### 注意事项
+## Flutter- 注意事项
 
-- 创建项目可能卡 `create flutter project...` 
-  - 使用全局科学上网就行。
-  - 检查是否使用了国内源的环境变量
+### 创建项目可能卡 `create flutter project...` 
 
+- 使用全局科学上网就行。
+- 检查是否使用了国内源的环境变量
+
+
+
+### 运行卡 `Running Gradle task 'assembleDebug'... `
+
+1. **修改项目中 `android/build.gradle` 文件**
+
+```groovy
+buildscript {
+    repositories {
+        //修改的地方
+        //google()
+        //jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+    }
+}
+
+allprojects {
+    repositories {
+        //修改的地方
+        //google()
+        //jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+    }
+}
+
+rootProject.buildDir = '../build'
+subprojects {
+    project.buildDir = "${rootProject.buildDir}/${project.name}"
+}
+subprojects {
+    project.evaluationDependsOn(':app')
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
+```
+
+修改 Flutter 的配置文件, 该文件在 Flutter 安装目录 ` /packages/flutter_tools/gradle/flutter.gradle`
+
+```groovy
+buildscript {
+    repositories {
+        //修改的地方
+        //google()
+        //jcenter()
+        maven { url 'https://maven.aliyun.com/repository/google' }
+        maven { url 'https://maven.aliyun.com/repository/jcenter' }
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public' }
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.2.1'
+    }
+}
+```
+
+
+
+2. gradle 不完整
+   1. 中止 gradle 构建
+   2. 手动下载 gradle ，可以用迅雷很快: https://distfiles.macports.org/gradle/gradle-5.6.2-all.zip
+   3. 复制 gradle-5.6.2-all.zip 到 `C:\Users\ <MyUsername>\.gradle\wrapper\dists\gradle-5.6.2-all\9st6wgf78h16so49nn74lgtbb`  不同的版本 hash 值不同
+   4. 重新运行 `fluuter run` 或者 `flutter run -v`
