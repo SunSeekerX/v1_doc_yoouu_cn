@@ -117,6 +117,11 @@ module.exports = resolve({
           },
 
           {
+            text: 'Flutter',
+            link: '/front-end/flutter',
+          },
+
+          {
             text: '基础',
             items: [
               { text: 'Html', link: '/front-end/html' },
@@ -147,9 +152,17 @@ module.exports = resolve({
           },
           { text: 'SQL', link: '/back-end/sql' },
           { text: '数据库', link: '/back-end/database' },
-          { text: 'Java', link: '/back-end/java' },
           { text: 'Docker', link: '/back-end/docker' },
           { text: 'Redis', link: '/back-end/redis' },
+          { text: 'Java', link: '/back-end/java' },
+          {
+            text: 'Java框架',
+            items: [
+              { text: 'Mybatis', link: '/back-end/java/mybatis' },
+              { text: 'Spring', link: '/back-end/java/spring' },
+              { text: 'Spring-MVC', link: '/back-end/java/spring-mvc' },
+            ],
+          },
         ],
       },
 
