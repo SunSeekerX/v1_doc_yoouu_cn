@@ -85,7 +85,21 @@ if (!packageNames.areNotificationsEnabled()) {//手机没有开启通知的权�
 
 
 
+## nvue
 
+### 注意事项
+
+1. 子组件触发父组件的方法，父组件接受方法名不能使用 `-` 连接，否则无法触发
+
+   ```javascript
+   // bad
+   this.$emit('on-change-sort')
+   
+   // good
+   this.$emit("abc")
+   ```
+
+   
 
 ## Utils function
 
