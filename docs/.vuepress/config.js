@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-13 17:57:59
+ * @LastEditTime: 2020-10-13 18:00:44
  */
 
 const resolve = require('vuepress-theme-hope/resolve')
@@ -22,19 +22,19 @@ module.exports = resolve({
       },
     ],
     // 百度统计 sunseekerx.yoouu.cn
-    [
-      'script',
-      {},
-      `
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
-      `,
-    ],
+    // [
+    //   'script',
+    //   {},
+    //   `
+    //   var _hmt = _hmt || [];
+    //   (function() {
+    //     var hm = document.createElement("script");
+    //     hm.src = "https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4";
+    //     var s = document.getElementsByTagName("script")[0]; 
+    //     s.parentNode.insertBefore(hm, s);
+    //   })();
+    //   `,
+    // ],
     // 百度统计 doc.yoouu.cn
     [
       'script',
@@ -50,24 +50,24 @@ module.exports = resolve({
       `,
     ],
     // 谷歌分析 sunseekerx.yoouu.cn
-    [
-      'script',
-      {
-        async: 'async',
-        src: 'https://www.googletagmanager.com/gtag/js?id=UA-160614210-1',
-      },
-    ],
-    [
-      'script',
-      {},
-      `
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
+    // [
+    //   'script',
+    //   {
+    //     async: 'async',
+    //     src: 'https://www.googletagmanager.com/gtag/js?id=UA-160614210-1',
+    //   },
+    // ],
+    // [
+    //   'script',
+    //   {},
+    //   `
+    //     window.dataLayer = window.dataLayer || [];
+    //     function gtag(){dataLayer.push(arguments);}
+    //     gtag('js', new Date());
 
-        gtag('config', 'UA-160614210-1');
-      `,
-    ],
+    //     gtag('config', 'UA-160614210-1');
+    //   `,
+    // ],
     // 谷歌分析 doc.yoouu.cn
     [
       'script',
