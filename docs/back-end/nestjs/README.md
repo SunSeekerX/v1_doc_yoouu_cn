@@ -1,32 +1,27 @@
-## 教程地址
+# Nestjs 框架教程
 
-[nestjs-framework-tutorial-1](/back-end/nestjs/nestjs-framework-tutorial-1/)
+![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
 
+## 📙 教程目录
 
+> 请注意：本教程结合官方文档内容并添加了许多我自己学习过种中的理解，存在许多个人观点
 
-## 请求模型
+1. Nestjs 框架教程（第一篇：[简介](/back-end/nestjs/nestjs-framework-tutorial-1/)）
+2. Nestjs 框架教程（第二篇：[入门](/back-end/nestjs/nestjs-framework-tutorial-2/)）
+3. Nestjs 框架教程（第三篇：[控制器](/back-end/nestjs/nestjs-framework-tutorial-3/)）
+4. Nestjs 框架教程（第四篇：[Providers](/back-end/nestjs/nestjs-framework-tutorial-4/)）
+5. Nestjs 框架教程（第五篇：[模块](/back-end/nestjs/nestjs-framework-tutorial-5/)）
+6. Nestjs 框架教程（第六篇：[中间件](/back-end/nestjs/nestjs-framework-tutorial-6/)）
+7. Nestjs 框架教程（第七篇：[异常过滤器](/back-end/nestjs/nestjs-framework-tutorial-7/)）
+8. Nestjs 框架教程（第八篇：[管道](/back-end/nestjs/nestjs-framework-tutorial-8/)）
+9. Nestjs 框架教程（第九篇：[守卫](/back-end/nestjs/nestjs-framework-tutorial-9/)）
+10. Nestjs 框架教程（第十篇：[拦截器](/back-end/nestjs/nestjs-framework-tutorial-10/)）
+11. Nestjs 框架教程（第十一篇：自定义装饰器）
+12. Nestjs 框架教程（第十二篇：[请求模型](/back-end/nestjs/nestjs-framework-tutorial-12/) - 自写）
 
-1. 收到请求
-2. 全局绑定的中间件
-3. 模块绑定的中间件
-4. 全局守卫
-5. 控制层守卫
-6. 路由守卫
-7. 全局拦截器（控制器之前）
-8. 控制器层拦截器 （控制器之前）
-9. 路由拦截器 （控制器之前）
-10. 全局管道
-11. 控制器管道
-12. 路由管道
-13. 路由参数管道
-14. 控制器（方法处理器）
-15. 服务（如果有）
-16. 路由拦截器（请求之后）
-17. 控制器拦截器 （请求之后）
-18. 全局拦截器 （请求之后）
-19. 异常过滤器 （路由，之后是控制器，之后是全局）
-20. 服务器响应
+## 🎈 原文
 
+> 转载来源：[https://keelii.com/](https://keelii.com/) By @keelii
+>
+> 本系列教程转载以获得作者同意！
 
-
-![请求模型](https://image.yoouu.cn/sunseekerx/back-end/nestjs/F68A427CBC78E6C8367392C33779D4D2.jpg)

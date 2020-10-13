@@ -3,18 +3,15 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-08-24 18:37:03
+ * @LastEditTime: 2020-10-13 15:41:04
  */
 
 const resolve = require('vuepress-theme-hope/resolve')
 
 module.exports = resolve({
   base: '/',
-
   title: 'SunSeekerX',
-
   description: 'This road is just beginning ~',
-
   head: [
     // favicon: 网站图标
     [
@@ -24,7 +21,6 @@ module.exports = resolve({
         href: '/favicon.ico',
       },
     ],
-
     // 百度统计
     [
       'script',
@@ -39,7 +35,6 @@ module.exports = resolve({
       })();
       `,
     ],
-
     // 谷歌分析
     [
       'script',
@@ -60,95 +55,86 @@ module.exports = resolve({
       `,
     ],
   ],
-
   themeConfig: {
-    editLinks: false,
-
     nav: [
       // Guide
-      { text: '指南', link: '/guide/' },
-
-      // 基本
+      { text: 'Guide', link: '/guide/' },
+      // Basic
       {
-        text: '基本',
+        text: 'Basic',
         items: [
           {
-            text: '资源',
+            text: 'Resource',
             link: '/common/resource',
           },
-          { text: 'Git', link: '/common/git' },
-          { text: '正则表达式', link: '/common/regexp' },
-          { text: '编辑器', link: '/common/ide' },
-          { text: '其他', link: '/common/other' },
+          { text: 'Git commands', link: '/common/git' },
+          { text: 'RegExp', link: '/common/regexp' },
+          { text: 'IDE', link: '/common/ide' },
+          { text: 'Other', link: '/common/other' },
           {
-            text: '学习计划',
+            text: 'Learn',
             items: [
-              { text: 'Git快速入门', link: '/common/coding/git' },
-              { text: 'Node.js 学习计划', link: '/common/coding/nodejs' },
-              { text: 'React 学习计划', link: '/common/coding/react' },
+              { text: 'Git', link: '/common/coding/git' },
+              { text: 'Node.js', link: '/common/coding/nodejs' },
+              { text: 'React', link: '/common/coding/react' },
             ],
           },
           {
-            text: '其他技术',
+            text: 'Others',
             items: [
               { text: 'Jenkins', link: '/common/jenkins' },
-              { text: '脚本', link: '/common/other/script' },
-              { text: 'Markdown示例', link: '/common/other/markdown' },
+              { text: 'Scripts', link: '/common/other/script' },
+              { text: 'Markdown', link: '/common/other/markdown' },
             ],
           },
           {
-            text: '常见问题',
-
-            items: [
-              { text: 'PowerShell', link: '/common/power-shell' },
-              { text: '更新日志', link: '/common/changelog' },
-            ],
+            text: 'Troubleshooting',
+            items: [{ text: 'PowerShell', link: '/common/power-shell' }],
           },
         ],
       },
-
-      // 前端
+      // Frontend
       {
-        text: '前端',
+        text: 'Frontend',
         items: [
           {
-            text: 'javascript-obfuscator',
-            link: '/front-end/javascript-obfuscator',
-          },
-
-          {
-            text: 'Flutter',
-            link: '/front-end/flutter',
-          },
-
-          {
-            text: 'React Native',
-            link: '/front-end/react-native',
-          },
-
-          {
-            text: '基础',
+            text: 'Basic',
             items: [
               { text: 'Html', link: '/front-end/html' },
               { text: 'Css', link: '/front-end/css' },
               { text: 'JavaScript', link: '/front-end/javascript' },
             ],
           },
-
           {
-            text: '框架',
+            text: 'Skills',
             items: [
               { text: 'Npm', link: '/front-end/npm' },
-              { text: 'Uni-app', link: '/front-end/uni-app' },
               { text: 'Vue', link: '/front-end/vue' },
+              { text: 'Uni-app', link: '/front-end/uni-app' },
+              {
+                text: 'Flutter',
+                link: '/front-end/flutter',
+              },
+              {
+                text: 'React Native',
+                link: '/front-end/react-native',
+              },
+            ],
+          },
+          {
+            text: 'Others',
+            items: [
+              {
+                text: 'javascript-obfuscator',
+                link: '/front-end/javascript-obfuscator',
+              },
             ],
           },
         ],
       },
-
-      // 后端
+      // Backend
       {
-        text: '后端',
+        text: 'Backend',
         items: [
           { text: 'Linux', link: '/back-end/linux' },
           {
@@ -156,13 +142,13 @@ module.exports = resolve({
             link: '/back-end/nestjs/',
           },
           { text: 'SQL', link: '/back-end/sql' },
-          { text: '数据库', link: '/back-end/database' },
+          { text: 'Database', link: '/back-end/database' },
           { text: 'Docker', link: '/back-end/docker' },
           { text: 'Redis', link: '/back-end/redis' },
-          { text: 'Java', link: '/back-end/java' },
           {
-            text: 'Java框架',
+            text: 'Java',
             items: [
+              { text: 'Basic', link: '/back-end/java' },
               { text: 'Mybatis', link: '/back-end/java/mybatis' },
               { text: 'Spring', link: '/back-end/java/spring' },
               { text: 'Spring-MVC', link: '/back-end/java/spring-mvc' },
@@ -170,97 +156,58 @@ module.exports = resolve({
           },
         ],
       },
-
-      // 理财
-      {
-        text: '理财',
-        items: [
-          { text: '理财', link: '/financial/' },
-          { text: '法币交易', link: '/financial/trade' },
-          { text: '币币交易', link: '/financial/exchange' },
-          { text: '合约交易', link: '/financial/contract' },
-        ],
-        link: '',
-      },
-
       // 玩机
       {
-        text: '玩机',
-        link: '/wangji/',
-      },
-
-      // 关于我
-      {
-        text: '关于我',
+        text: 'Interest',
         items: [
-          // { text: 'me', link: '/me/about-me' },
-          { text: '看过的书', link: '/me/book' },
-          { text: '看过的电影', link: '/me/movie' },
-          { text: '看过的电视剧', link: '/me/teleplay' },
+          { text: 'Phone', link: '/interest/phone', },
+          { text: 'Mi Electric Scooter - m365', link: '/interest/scooter', },
         ],
+        
       },
-
-      // 开源库
+      // Open source
       {
-        text: '开源库',
+        text: 'Open source',
         items: [
-          { text: 'vue-simple-admin', link: '/vsa/' },
-          { text: 'web-storage-apis', link: '/web-storage-apis/' },
+          { text: 'Vue simple admin', link: '/vsa/' },
+          { text: 'Web storage apis', link: '/web-storage-apis/' },
           {
-            text: '博客主题',
+            text: 'Ghost theme',
             items: [
               {
                 text: 'Ghost-Theme-Frenemy',
                 link: 'https://github.com/SunSeekerX/Ghost-Theme-Frenemy',
               },
-              {
-                text: 'Doc-Github',
-                link: 'https://github.com/SunSeekerX/sunseekerx',
-              },
             ],
           },
-          // { text: 'Vue', link: '/front-end/vue/' },
         ],
       },
     ],
-
     sidebar: 'auto',
-
     // lastUpdated: 'Last Updated',
-
     // vuepress-theme-hope 主题配置
     baseLang: 'zh-CN',
-
     author: 'SunSeekerX',
-
     footer: {
       display: true,
     },
-
     blog: false,
-
     pwa: true,
-
     algolia: {
       apiKey: '096b749333c9e2a49cff2b30a786dc6c',
       indexName: 'sunseekerx',
     },
-
     comment: {
       type: 'valine',
       appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
       appKey: '13eOI19EMGKKtQepMDxLIn9u',
     },
-
-    repo: 'https://github.com/SunSeekerX/sunseekerx',
-
-    repoDisplay: false,
-
-    breadcrumb: false,
-
-    hostname: 'https://sunseekerx.yoouu.cn/',
+    repo: 'https://github.com/SunSeekerX/doc.yoouu.cn',
+    editLinks: false,
+    // 是否在导航栏右侧显示仓库链接，默认为 `true`
+    repoDisplay: true,
+    hostname: 'https://doc.yoouu.cn/',
   },
-
   plugins: [
     [
       '@mr-hope/comment',
@@ -272,10 +219,8 @@ module.exports = resolve({
       },
     ],
   ],
-
   markdown: {
     lineNumbers: true,
-
     extractHeaders: ['h2', 'h3', 'h4'],
   },
 })

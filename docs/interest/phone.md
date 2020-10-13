@@ -37,4 +37,5 @@ LR.Team定制版TWRP下载地址集合：[https://weibo.com/ttarticle/p/show?id=
 ### 常见问题
 
 - 第一次刷机安装了Edxpoed，完了EdXposedManager显示警告未激活？
+  
   > 可以尝试删除EdXposedManager，在安装一次

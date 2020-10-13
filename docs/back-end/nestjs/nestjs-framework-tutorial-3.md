@@ -1,26 +1,6 @@
 # Nestjs 框架教程（第三篇：控制器）
 
-2019-7-3 18:33 PM · [首页](https://keelii.com/)
-
 ![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
-
-## ++教程目录++
-
-> 请注意：本教程结合官方文档内容并添加了许多我自己学习过种中的理解，存在许多个人观点
-
-1. Nestjs 框架教程（第一篇：[简介](/back-end/nestjs/nestjs-framework-tutorial-1/)）
-2. Nestjs 框架教程（第二篇：[入门](/back-end/nestjs/nestjs-framework-tutorial-2/)）
-3. Nestjs 框架教程（第三篇：[控制器](/back-end/nestjs/nestjs-framework-tutorial-3/)）
-4. Nestjs 框架教程（第四篇：[Providers](/back-end/nestjs/nestjs-framework-tutorial-4/)）
-5. Nestjs 框架教程（第五篇：[模块](/back-end/nestjs/nestjs-framework-tutorial-5/)）
-6. Nestjs 框架教程（第六篇：[中间件](/back-end/nestjs/nestjs-framework-tutorial-6/)）
-7. Nestjs 框架教程（第七篇：[异常过滤器](/back-end/nestjs/nestjs-framework-tutorial-7/)）
-8. Nestjs 框架教程（第八篇：[管道](/back-end/nestjs/nestjs-framework-tutorial-8/)）
-9. Nestjs 框架教程（第九篇：[守卫](/back-end/nestjs/nestjs-framework-tutorial-9/)）
-10. Nestjs 框架教程（第十篇：[拦截器](/back-end/nestjs/nestjs-framework-tutorial-10/)）
-11. Nestjs 框架教程（第十一篇：自定义装饰器）
-
-
 
 ------
 
@@ -166,12 +146,3 @@ findOne(@Param('id') id): string {
 ## 路由顺序
 
 路由的注册顺序与控制器类中的**方法**顺序相关，如果你先装饰了一个 cats/:id 的路由，后面又装饰了一个 cats 路由，那么当用户访问到 GET /cats 时，后面的路由将不会被捕获，因为参数才都是**非必选**的。
-
-
-
-## 原文
-
-> 原文地址：[https://keelii.com/2019/07/03/nestjs-framework-tutorial-3/](https://keelii.com/2019/07/03/nestjs-framework-tutorial-3/) By @keelii
->
-> 本系列教程转载以获得作者同意！
-
