@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-13 17:53:49
+ * @LastEditTime: 2020-10-13 17:57:59
  */
 
 const resolve = require('vuepress-theme-hope/resolve')
@@ -49,7 +49,7 @@ module.exports = resolve({
       })();
       `,
     ],
-    // 谷歌分析
+    // 谷歌分析 sunseekerx.yoouu.cn
     [
       'script',
       {
@@ -66,6 +66,25 @@ module.exports = resolve({
         gtag('js', new Date());
 
         gtag('config', 'UA-160614210-1');
+      `,
+    ],
+    // 谷歌分析 doc.yoouu.cn
+    [
+      'script',
+      {
+        async: 'async',
+        src: 'https://www.googletagmanager.com/gtag/js?id=UA-160614210-3',
+      },
+    ],
+    [
+      'script',
+      {},
+      `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'UA-160614210-3');
       `,
     ],
   ],
@@ -174,10 +193,9 @@ module.exports = resolve({
       {
         text: 'Interest',
         items: [
-          { text: 'Phone', link: '/interest/phone', },
-          { text: 'Mi Electric Scooter - m365', link: '/interest/scooter', },
+          { text: 'Phone', link: '/interest/phone' },
+          { text: 'Mi Electric Scooter - m365', link: '/interest/scooter' },
         ],
-        
       },
       // Open source
       {
