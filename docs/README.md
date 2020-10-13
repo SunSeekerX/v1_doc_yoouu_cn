@@ -2,11 +2,11 @@
 home: true
 heroImage: /home.jpg
 heroText: SunSeekerX
-tagline: 这条路才刚刚开始啊 ~
+tagline: This is just the beginning of this road ~
 action:
-  - text: 指南 → 💡
+  - text: Getting start → 💡
     link: /guide/
-actionText: 指南 →
+actionText: Getting start → 💡
 actionLink: /guide/
 # footer: MIT Licensed | Copyright © 2020-present SunSeekerX
 ---
