@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-13 15:41:04
+ * @LastEditTime: 2020-10-13 17:53:49
  */
 
 const resolve = require('vuepress-theme-hope/resolve')
@@ -21,7 +21,7 @@ module.exports = resolve({
         href: '/favicon.ico',
       },
     ],
-    // 百度统计
+    // 百度统计 sunseekerx.yoouu.cn
     [
       'script',
       {},
@@ -30,6 +30,20 @@ module.exports = resolve({
       (function() {
         var hm = document.createElement("script");
         hm.src = "https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      `,
+    ],
+    // 百度统计 doc.yoouu.cn
+    [
+      'script',
+      {},
+      `
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?93bcc9d9514b7c6d557275aec42f74e8";
         var s = document.getElementsByTagName("script")[0]; 
         s.parentNode.insertBefore(hm, s);
       })();
