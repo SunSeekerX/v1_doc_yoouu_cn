@@ -1,6 +1,6 @@
 # Jenkins
 
-> 更新地址：[https://sunseekerx.yoouu.cn/common/jenkins.html](https://sunseekerx.yoouu.cn/common/jenkins.html)
+> 更新地址：[https://sunseekerx.yoouu.cn/basic/jenkins.html](https://sunseekerx.yoouu.cn/basic/jenkins.html)
 >
 > 更新时间：2020-05-05 20:39:33
 

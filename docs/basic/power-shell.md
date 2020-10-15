@@ -60,4 +60,4 @@ PS C:\Users\SunSeekerX\Desktop>
 
 去电源选项选择卓越性能就ok了
 
-![](https://image.yoouu.cn/sunseekerx/common/power-shell/super-power.png)
+![](https://image.yoouu.cn/sunseekerx/basic/power-shell/super-power.png)

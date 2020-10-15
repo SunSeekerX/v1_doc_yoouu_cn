@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-15 18:35:06
+ * @LastEditTime: 2020-10-15 20:56:35
  */
 
 module.exports = {
@@ -38,9 +38,8 @@ module.exports = {
       collapsable: false,
       children: [
         ['git', 'Git'],
-        ['regexp', 'RegExp'],
-        ['ide', 'IDE'],
-        ['other', 'Other'],
+        ['nodejs', 'Node.js'],
+        ['react', 'React'],
       ],
     },
     {
@@ -51,8 +50,8 @@ module.exports = {
       collapsable: false,
       children: [
         ['jenkins', 'Jenkins'],
-        ['script', 'Scripts'],
-        ['markdown', 'Markdown'],
+        ['others/script', 'Scripts'],
+        ['others/markdown', 'Markdown'],
       ],
     },
     {
@@ -169,18 +168,18 @@ module.exports = {
   //   },
   // ],
 
-  // '/open-source/': [
-  //   {
-  //     title: 'Open source',
-  //     prefix: 'open-source/',
-  //     // icon: 'markdown',
-  //     collapsable: false,
-  //     children: [
-  //       ['vsa', 'Vue simple admin'],
-  //       ['/web-storage-apis/README', 'Web storage apis'],
-  //     ],
-  //   },
-  // ],
+  '/open-source/': [
+    {
+      title: 'Open source',
+      // prefix: 'open-source/',
+      // icon: 'markdown',
+      collapsable: false,
+      children: [
+        ['vsa', 'Vue simple admin'],
+        ['web-storage-apis/', 'Web storage apis'],
+      ],
+    },
+  ],
 
   '/': ['', 'guide/', 'basic/', 'front-end/', 'back-end/', 'interest/'],
 }

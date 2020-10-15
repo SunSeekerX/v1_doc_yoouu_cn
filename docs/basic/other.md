@@ -2,13 +2,13 @@
 
 ### Windows文件夹结构
 
-![windows-folder-structure](./other.assets/windows-folder-structure.png)
+![windows-folder-structure](https://image.yoouu.cn/sunseekerx/basic/others/windows-folder-structure.png)
 
 
 
 ### Linux目录
 
-![Linux-folder](./other.assets/Linux-folder.png)
+![Linux-folder](https://image.yoouu.cn/sunseekerx/basic/others/Linux-folder.png)
 
 
 
@@ -64,7 +64,7 @@ Dart 语言本来已经死掉了，就是因为 Flutter 这个非常有前景的
 
 这个概念其实很好理解。根据爱因斯坦最著名的质能公式 E=mc²，能量即质量，任何释放能量的物体都必然会减轻质量。
 
-![img](./other.assets/bg2020041605.jpg)
+![img](https://image.yoouu.cn/sunseekerx/basic/others/bg2020041605.jpg)
 
 最近，我看到[有人](https://www.remote.tools/newsletter/knowledge-decay-and-half-life-of-information)提出了一个新的概念，他说信息也有半衰期。 **信息的半衰期指的是，一半的信息量变得无关紧要或者彻底过时所需的时间。**
 
@@ -72,7 +72,7 @@ Dart 语言本来已经死掉了，就是因为 Flutter 这个非常有前景的
 
 当代社会的趋势是，信息的半衰期越来越短，有一个词叫做"快餐文化"。以前，一本新书可以在书店里卖几年，现在卖几个月就下架了，被新的出版物取代。大部分书籍的半衰期就是几个月到一年。
 
-![img](./other.assets/bg2020041606.jpg)
+![img](https://image.yoouu.cn/sunseekerx/basic/others/bg2020041606.jpg)
 
 如果你写过软件文档，就会对半衰期有切身的体会。一旦软件版本升级，以前文档的价值立刻大减。我为 React 0.14 版写过教程，短短几年中，它的 API 至少变了三次，每变一次，原始教程的价值就降低一半。一算就知道，经过三轮半衰期，文档的价值只剩下八分之一。
 
@@ -118,7 +118,7 @@ Dart 语言本来已经死掉了，就是因为 Flutter 这个非常有前景的
 
 （4）**Uber-job**：指的是 Uber 那一类在网上接单的工作，一单一单计算报酬，属于临时承包商的性质，比如开网约车和外卖送餐。
 
-![img](https://image.yoouu.cn/sunseekerx/common/other/bg2020070123.jpg)
+![img](https://image.yoouu.cn/sunseekerx/basic/others/bg2020070123.jpg)
 
 我觉得，这些词很可能会变成常见词汇。因为现在，企业的存续期越来越短，大部分企业不是持续经营，存在十年、二十年，而是短期经营，一两年如果赚不到钱，就关门歇业了。最近疫情期间，尤其显著。
 

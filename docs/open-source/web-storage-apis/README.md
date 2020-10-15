@@ -459,7 +459,7 @@ try {
 
 ## 使用动图
 
-![example.gif](./example.gif)
+![example.gif](https://image.yoouu.cn/sunseekerx/open-source/web-storage-apis/example.gif)
 
 
 

@@ -2,7 +2,7 @@
 
 常用工作示例
 
-![工作流程图（来源于阮一峰老师的博客）](https://image.yoouu.cn/sunseekerx/common/git/bg2015120901.png)
+![工作流程图（来源于阮一峰老师的博客）](https://image.yoouu.cn/sunseekerx/basic/git/bg2015120901.png)
 
 
 
