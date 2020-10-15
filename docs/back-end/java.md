@@ -49,6 +49,8 @@ Path添加 `%MAVEN_HOME%\bin`
 
 
 
+
+
 ### **国内加速**
 
 打开 maven 的配置文件（ windows 机器一般在 maven 安装目录的 **conf/settings.xml** ），在<mirrors></mirrors>标签中添加 mirror 子节点:

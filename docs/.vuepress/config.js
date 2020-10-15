@@ -3,12 +3,14 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-13 18:00:44
+ * @LastEditTime: 2020-10-15 17:55:48
  */
 
-const resolve = require('vuepress-theme-hope/resolve')
+const { config } = require('vuepress-theme-hope')
+const navBarConfig  = require('./navBar')
+const sideBarConfig = require("./sideBar");
 
-module.exports = resolve({
+module.exports = config({
   base: '/',
   title: 'SunSeekerX',
   description: 'This road is just beginning ~',
@@ -30,7 +32,7 @@ module.exports = resolve({
     //   (function() {
     //     var hm = document.createElement("script");
     //     hm.src = "https://hm.baidu.com/hm.js?ce2c1d889cd6ba62b6b1027b18f1afd4";
-    //     var s = document.getElementsByTagName("script")[0]; 
+    //     var s = document.getElementsByTagName("script")[0];
     //     s.parentNode.insertBefore(hm, s);
     //   })();
     //   `,
@@ -88,134 +90,11 @@ module.exports = resolve({
       `,
     ],
   ],
+  extraWatchFiles: [".vuepress/navBar.js", ".vuepress/sideBar.js"],
   themeConfig: {
-    nav: [
-      // Guide
-      { text: 'Guide', link: '/guide/' },
-      // Basic
-      {
-        text: 'Basic',
-        items: [
-          {
-            text: 'Resource',
-            link: '/common/resource',
-          },
-          { text: 'Git commands', link: '/common/git' },
-          { text: 'RegExp', link: '/common/regexp' },
-          { text: 'IDE', link: '/common/ide' },
-          { text: 'Other', link: '/common/other' },
-          {
-            text: 'Learn',
-            items: [
-              { text: 'Git', link: '/common/coding/git' },
-              { text: 'Node.js', link: '/common/coding/nodejs' },
-              { text: 'React', link: '/common/coding/react' },
-            ],
-          },
-          {
-            text: 'Others',
-            items: [
-              { text: 'Jenkins', link: '/common/jenkins' },
-              { text: 'Scripts', link: '/common/other/script' },
-              { text: 'Markdown', link: '/common/other/markdown' },
-            ],
-          },
-          {
-            text: 'Troubleshooting',
-            items: [{ text: 'PowerShell', link: '/common/power-shell' }],
-          },
-        ],
-      },
-      // Frontend
-      {
-        text: 'Frontend',
-        items: [
-          {
-            text: 'Basic',
-            items: [
-              { text: 'Html', link: '/front-end/html' },
-              { text: 'Css', link: '/front-end/css' },
-              { text: 'JavaScript', link: '/front-end/javascript' },
-            ],
-          },
-          {
-            text: 'Skills',
-            items: [
-              { text: 'Npm', link: '/front-end/npm' },
-              { text: 'Vue', link: '/front-end/vue' },
-              { text: 'Uni-app', link: '/front-end/uni-app' },
-              {
-                text: 'Flutter',
-                link: '/front-end/flutter',
-              },
-              {
-                text: 'React Native',
-                link: '/front-end/react-native',
-              },
-            ],
-          },
-          {
-            text: 'Others',
-            items: [
-              {
-                text: 'javascript-obfuscator',
-                link: '/front-end/javascript-obfuscator',
-              },
-            ],
-          },
-        ],
-      },
-      // Backend
-      {
-        text: 'Backend',
-        items: [
-          { text: 'Linux', link: '/back-end/linux' },
-          {
-            text: 'NestJS',
-            link: '/back-end/nestjs/',
-          },
-          { text: 'SQL', link: '/back-end/sql' },
-          { text: 'Database', link: '/back-end/database' },
-          { text: 'Docker', link: '/back-end/docker' },
-          { text: 'Redis', link: '/back-end/redis' },
-          {
-            text: 'Java',
-            items: [
-              { text: 'Basic', link: '/back-end/java' },
-              { text: 'Mybatis', link: '/back-end/java/mybatis' },
-              { text: 'Spring', link: '/back-end/java/spring' },
-              { text: 'Spring-MVC', link: '/back-end/java/spring-mvc' },
-            ],
-          },
-        ],
-      },
-      // 玩机
-      {
-        text: 'Interest',
-        items: [
-          { text: 'Phone', link: '/interest/phone' },
-          { text: 'Mi Electric Scooter - m365', link: '/interest/scooter' },
-        ],
-      },
-      // Open source
-      {
-        text: 'Open source',
-        items: [
-          { text: 'Vue simple admin', link: '/vsa/' },
-          { text: 'Web storage apis', link: '/web-storage-apis/' },
-          {
-            text: 'Ghost theme',
-            items: [
-              {
-                text: 'Ghost-Theme-Frenemy',
-                link: 'https://github.com/SunSeekerX/Ghost-Theme-Frenemy',
-              },
-            ],
-          },
-        ],
-      },
-    ],
-    sidebar: 'auto',
+    // displayAllHeaders: true, // 默认值：false
+    nav: navBarConfig ,
+    sidebar: sideBarConfig,
     // lastUpdated: 'Last Updated',
     // vuepress-theme-hope 主题配置
     baseLang: 'zh-CN',
