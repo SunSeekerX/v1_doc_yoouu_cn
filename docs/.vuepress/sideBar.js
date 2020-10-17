@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-15 20:56:35
+ * @LastEditTime: 2020-10-17 15:40:34
  */
 
 module.exports = {
@@ -52,6 +52,7 @@ module.exports = {
         ['jenkins', 'Jenkins'],
         ['others/script', 'Scripts'],
         ['others/markdown', 'Markdown'],
+        ['others/about-work', 'About work'],
       ],
     },
     {

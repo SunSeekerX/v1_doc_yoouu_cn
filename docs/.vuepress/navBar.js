@@ -28,6 +28,7 @@ module.exports = [
           { text: 'Jenkins', link: '/basic/jenkins' },
           { text: 'Scripts', link: '/basic/others/script' },
           { text: 'Markdown', link: '/basic/others/markdown' },
+          { text: 'About work', link: '/basic/others/about-work' },
         ],
       },
       {
