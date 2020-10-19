@@ -64,6 +64,14 @@ module.exports = [
             text: 'React Native',
             link: '/front-end/react-native',
           },
+          {
+            text: 'Android',
+            link: '/front-end/android',
+          },
+          {
+            text: 'IOS',
+            link: '/front-end/ios',
+          },
         ],
       },
       {

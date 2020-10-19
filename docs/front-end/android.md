@@ -1,5 +1,13 @@
 # Android
 
+## Android studio 查看 SQLite 数据库
+
+使用 **SQLScout** 插件，插件市场下载
+
+
+
+
+
 ## 区块链钱包
 
 https://www.cnblogs.com/zhaoweiwei/p/address.html - 比特币地址生成算法详解

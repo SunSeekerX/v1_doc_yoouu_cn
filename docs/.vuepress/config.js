@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-15 17:55:48
+ * @LastEditTime: 2020-10-19 11:57:57
  */
 
 const { config } = require('vuepress-theme-hope')
@@ -130,6 +130,9 @@ module.exports = config({
       },
     ],
   ],
+  mdEnhance: {
+    enableAll: true,
+  },
   markdown: {
     lineNumbers: true,
     extractHeaders: ['h2', 'h3', 'h4'],

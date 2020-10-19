@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-17 15:40:34
+ * @LastEditTime: 2020-10-19 11:59:23
  */
 
 module.exports = {
@@ -88,6 +88,8 @@ module.exports = {
         ['uni-app', 'Uni-app'],
         ['flutter', 'Flutter'],
         ['react-native', 'React Native'],
+        ['android', 'Android'],
+        ['ios', 'IOS'],
       ],
     },
     {
