@@ -102,7 +102,7 @@ module.exports = [
       {
         text: 'Java',
         items: [
-          { text: 'Basic', link: '/back-end/java/' },
+          { text: 'Basic', link: '/back-end/java/basic' },
           { text: 'Mybatis', link: '/back-end/java/mybatis' },
           { text: 'Spring', link: '/back-end/java/spring' },
           { text: 'Spring-MVC', link: '/back-end/java/spring-mvc' },

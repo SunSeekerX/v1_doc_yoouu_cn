@@ -2,8 +2,8 @@
  * @name:
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-19 11:59:23
+ * @LastEditors: ,: SunSeekerX
+ * @LastEditTime: ,: 2020-10-21 14:35:02
  */
 
 module.exports = {
@@ -142,7 +142,7 @@ module.exports = {
       collapsable: false,
       children: [
         // '',
-        ['', 'Basic'],
+        ['basic', 'Basic'],
         // ['readme', 'Basic'],
         ['mybatis', 'Mybatis'],
         ['spring', 'Spring'],

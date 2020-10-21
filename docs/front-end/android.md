@@ -1,10 +1,93 @@
 # Android
 
+## Android studio 初始设置
+
+1. 更改所有编码为 `utf-8`
+2. 修改 indent 为2
+
+### Logcat 颜色设置
+
+默认所有级别都是 `BBBBBB`，很难区分。
+
+**打开设置搜索 logcat**
+
+找到 Color scheme > Android logcat
+
+| Log级别 | 色值   |
+| ------- | ------ |
+| ASSERT  | 909399 |
+| DEBUG   | 2B85E4 |
+| ERROR   | FA3534 |
+| INFO    | 19BE6B |
+| VERBOSE | 909399 |
+| WARN    | FF9900 |
+
 ## Android studio 查看 SQLite 数据库
 
-使用 **SQLScout** 插件，插件市场下载
+**使用自带的安装模拟器**
+
+创建一个最高 api 的模拟器，屏幕可以选择 480x800 节省资源
+
+设置 `Graphics` 为 `Hardware` 硬件显卡
+
+**运行你的app**
+
+下方 toolbar 会有 一个 Datebase inspector 就可以查看数据库里面的表了。
 
 
+
+## Butterknife 注解绑定试图和点击事件
+
+> 1、强大的View绑定和Click事件处理功能，简化代码，提升开发效率
+> 2、方便的处理Adapter里的ViewHolder绑定问题
+> 3、运行时不会影响APP效率，使用配置方便
+> 4、代码清晰，可读性强
+
+[Github - https://github.com/JakeWharton/butterknife](https://github.com/JakeWharton/butterknife)
+
+**Gradle - app**
+
+```groovy
+dependencies {
+  implementation 'com.jakewharton:butterknife:10.2.3'
+  annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+}
+```
+
+**buildscript**
+
+```groovy
+buildscript {
+  repositories {
+    mavenCentral()
+    google()
+  }
+  dependencies {
+    classpath 'com.jakewharton:butterknife-gradle-plugin:10.2.3'
+  }
+}
+```
+
+**在你项目模块中使用:**
+
+```groovy
+apply plugin: 'com.android.library'
+apply plugin: 'com.jakewharton.butterknife'
+```
+
+**使用 `R2` 代替 `R`**
+
+```groovy
+class ExampleActivity extends Activity {
+  @BindView(R2.id.user) EditText username;
+  @BindView(R2.id.pass) EditText password;
+...
+}
+```
+
+
+
+**编辑器插件 - Android ButterKnife Zelezny**
 
 
 
