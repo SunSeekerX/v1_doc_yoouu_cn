@@ -114,9 +114,7 @@ module.exports = [
   {
     text: 'Interest',
     // link: '/interest/phone',
-    items: [
-      { text: 'Phone', link: '/interest/phone' },
-    ],
+    items: [{ text: 'Phone', link: '/interest/phone' }],
   },
   // Open source
   {
@@ -126,11 +124,41 @@ module.exports = [
       { text: 'Vue simple admin', link: '/open-source/vsa' },
       { text: 'Web storage apis', link: '/open-source/web-storage-apis/' },
       {
+        text: 'markrgba-css',
+        link: 'https://github.com/SunSeekerX/markrgba-css',
+      },
+      {
+        text: 'Uni pushy',
+        items: [
+          {
+            text: 'uni-pushy-admin',
+            link: 'https://github.com/SunSeekerX/uni-pushy-admin',
+          },
+          {
+            text: 'uni-pushy-server',
+            link: 'https://github.com/SunSeekerX/uni-pushy-server',
+          },
+        ],
+      },
+      {
         text: 'Ghost theme',
         items: [
           {
+            text: 'ghost-theme-yamabuki',
+            link: 'https://github.com/SunSeekerX/ghost-theme-yamabuki',
+          },
+          {
             text: 'Ghost-Theme-Frenemy',
             link: 'https://github.com/SunSeekerX/Ghost-Theme-Frenemy',
+          },
+        ],
+      },
+      {
+        text: 'NodeJS',
+        items: [
+          {
+            text: 'nodejs-mysql-apis',
+            link: 'https://github.com/SunSeekerX/nodejs-mysql-apis',
           },
         ],
       },
