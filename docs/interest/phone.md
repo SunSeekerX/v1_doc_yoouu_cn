@@ -16,7 +16,7 @@ LR.Team定制版TWRP下载地址集合：[https://weibo.com/ttarticle/p/show?id=
 
 包括但不限于下面的手机型号
 
-![recovery](https://image.yoouu.cn/sunseekerx/wangji/recovery.png)
+![recovery](https://image.yoouu.cn/sunseekerx/interest/recovery.png)
 
 
 
@@ -39,3 +39,26 @@ LR.Team定制版TWRP下载地址集合：[https://weibo.com/ttarticle/p/show?id=
 - 第一次刷机安装了Edxpoed，完了EdXposedManager显示警告未激活？
   
   > 可以尝试删除EdXposedManager，在安装一次
+
+
+
+## MTK 刷机
+
+**条件**
+
+最好是 win7 的电脑（win10 的驱动是真的难搞）
+
+**注意事项**
+
+1. 一般 mtk 的不会亮屏，一般按住音量下键连接电脑就不会亮屏。
+2. 只要不是字库或者硬件损坏，基本是不死（都能刷机复原）的状态。
+
+**刷机包资源**
+
+[东海论坛 - http://bbs.eastsea.com.cn/](http://bbs.eastsea.com.cn/) - 基本国产、山寨手机，mtk 平台的刷机包都能找到
+
+
+
+**魅蓝note3 win10 2004 救砖成功**
+
+![mlnote3](https://image.yoouu.cn/sunseekerx/interest/mtk.png)
