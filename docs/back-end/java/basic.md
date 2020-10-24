@@ -1,5 +1,17 @@
 # Java basic
 
+## 安装
+
+**环境变量**
+
+添加 `JAVA_HOME` 指向你的 jdk 安装目录。例如：
+
+```
+JAVA_HOME C:\Program Files\Java\jdk1.8.0_271
+```
+
+在 path 添加 `%JAVA_HOME%\bin`
+
 ## 访问控制修饰符
 
 - **default** (即默认，什么也不写）: 在同一包内可见，不使用任何修饰符。使用对象：类、接口、变量、方法。
