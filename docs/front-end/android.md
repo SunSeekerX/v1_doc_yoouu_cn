@@ -1,5 +1,15 @@
 # Android
 
+## 添加 adb 环境变量
+
+找到你 android sdk 安装的路径，添加 `${sdk}/platform-tools` 到path，例如我的：
+
+```
+W:\ProgramFiles\Android\Sdk\platform-tools
+```
+
+
+
 ## Android studio 初始设置
 
 1. 更改所有编码为 `utf-8`
