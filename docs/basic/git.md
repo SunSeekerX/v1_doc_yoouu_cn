@@ -73,6 +73,9 @@ git config --global color.ui true # 显示git相关颜色
 # 需要你的代理软件在1080端口允许来自局域网的连接
 git config --global http.proxy http://127.0.0.1:1080
 git config --global https.proxy https://127.0.0.1:1080
+# clash
+git config --global http.proxy http://localhost:7890
+git config --global https.proxy https://localhost:7890
 
 # 恢复
 git config --global --unset http.proxy
