@@ -1,5 +1,34 @@
 # uni-app
 
+## 问题
+
+### 1：无法使用调试？
+
+参考解决：[https://ask.dcloud.net.cn/article/37973](https://ask.dcloud.net.cn/article/37973)
+
+```javascript
+const {
+  ignoreDefaultArgs = false,
+  args = [],
+  dumpio = false,
+  // 修改这里为你的 chrome 路径
+  executablePath = 'C://Program Files//Google//Chrome//Application//chrome.exe',
+  pipe = false,
+  env = process.env,
+  handleSIGINT = true,
+  handleSIGTERM = true,
+  handleSIGHUP = true,
+  ignoreHTTPSErrors = false,
+  defaultViewport = {width: 800, height: 600},
+  slowMo = 0,
+  timeout = 30000
+} = options;
+```
+
+
+
+
+
 ## 业务实现
 
 ### H5 复制内容到剪贴板
@@ -99,7 +128,18 @@ if (!packageNames.areNotificationsEnabled()) {//手机没有开启通知的权�
    this.$emit("abc")
    ```
 
-   
+
+## uview
+
+1. Cannot read property 'bottom' of null
+
+https://github.com/YanxinNet/uView/issues/239
+
+```
+chunk-vendors.js:10121 Uncaught TypeError: Cannot read property 'bottom' of null
+```
+
+
 
 ## Utils function
 
