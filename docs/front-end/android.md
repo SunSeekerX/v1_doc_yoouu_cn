@@ -134,6 +134,20 @@
 
 
 
+### SavedState
+
+当 activity 在后台，如果内存不足，activity 会被系统杀掉，甚至 onDestroy 也不会被调用。 ViewModel 的数据也就丢失了。
+
+![viewmodel_savedstate.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmodel_savedstate.png)
+
+
+
+### ViewModel + SavedState 生命周期
+
+![viewmode_savedstate_lifecycle.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmode_savedstate_lifecycle.png)
+
+
+
 ## LiveData
 
 ### mvc
@@ -180,6 +194,10 @@ android {
 
 
 
+## 注意事项
+
+1. 如果需要获取 activity 的上下文，不能直接传递 `this`，因为上下文会频繁的销毁和重建，如果传递会造成内存泄漏。可以使用 `getApplicationContext()` 方法传递上下文实例。（可以理解为指向 App 的顶级引用，单例模式，只要应用存在，就会有一个实例）
+
 ## 0x3 添加 adb 环境变量
 
 找到你 android sdk 安装的路径，添加 `${sdk}/platform-tools` 到path，例如我的：
@@ -211,6 +229,18 @@ W:\ProgramFiles\Android\Sdk\platform-tools
 | INFO    | 19BE6B |
 | VERBOSE | 909399 |
 | WARN    | FF9900 |
+
+
+
+### 控制台乱码
+
+实际上是调用 java 的 grade 编译输出中文乱码。需要设置虚拟机的 `-Dfile.encoding=UTF-8` 就行了。
+
+**操作步骤**
+
+Help > Edit custom VM options > 添加就行
+
+
 
 ## 0x5 Android studio 查看 SQLite 数据库
 
