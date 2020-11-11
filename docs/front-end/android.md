@@ -194,6 +194,18 @@ android {
 
 
 
+## Fragment
+
+### Navigation
+
+![fragment_navigation.png](https://image.yoouu.cn/sunseekerx/front-end/android/fragment_navigation.png)
+
+
+
+### ViewModel
+
+![viewmodel_fragment.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmodel_fragment.png)
+
 ## 注意事项
 
 1. 如果需要获取 activity 的上下文，不能直接传递 `this`，因为上下文会频繁的销毁和重建，如果传递会造成内存泄漏。可以使用 `getApplicationContext()` 方法传递上下文实例。（可以理解为指向 App 的顶级引用，单例模式，只要应用存在，就会有一个实例）
