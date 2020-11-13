@@ -7,8 +7,8 @@
  */
 
 const { config } = require('vuepress-theme-hope')
-const navBarConfig  = require('./navBar')
-const sideBarConfig = require("./sideBar");
+const navBarConfig = require('./navBar')
+const sideBarConfig = require('./sideBar')
 
 module.exports = config({
   base: '/',
@@ -90,10 +90,10 @@ module.exports = config({
       `,
     ],
   ],
-  extraWatchFiles: [".vuepress/navBar.js", ".vuepress/sideBar.js"],
+  extraWatchFiles: ['.vuepress/navBar.js', '.vuepress/sideBar.js'],
   themeConfig: {
     // displayAllHeaders: true, // 默认值：false
-    nav: navBarConfig ,
+    nav: navBarConfig,
     sidebar: sideBarConfig,
     // lastUpdated: 'Last Updated',
     // vuepress-theme-hope 主题配置

@@ -4,16 +4,12 @@
 
 ![工作流程图（来源于阮一峰老师的博客）](https://image.yoouu.cn/sunseekerx/basic/git/bg2015120901.png)
 
-
-
 专用名词解释：
 
 1. Workspace: 工作区
 2. Index / Stage: 暂存区
 3. Repository: 本地仓库
 4. Remote: 远程仓库（例如`Github`、`Gitlab`、 `码云`）
-
-
 
 ## 基本配置
 
@@ -38,30 +34,26 @@ git config --list  # 查看所有Git的配置(全局+本地+系统)
 git config --global color.ui true # 显示git相关颜色
 ```
 
-
-
 ## 常用指令
 
-|                         指令                          |                             说明                             |
-| :---------------------------------------------------: | :----------------------------------------------------------: |
-|                      **初始化**                       |                                                              |
-|                       git init                        |         把本地的目录变成git本地仓库（执行一次即可）          |
-|     git remote add [远程地址别名] [远程仓库地址]      |     将你本地仓库与远程仓库关联起来(一般关联一个地址即可)     |
-|                                                       |                                                              |
-|                     **常用操作**                      |                                                              |
-|                      git status                       |                     查看本地仓库文件状态                     |
-|                      git add -A                       |           添加整个工作区所有发生改变的文件到暂存区           |
-|            git commit -m 'Commit message'             |  将暂存区文件放到本地仓库，`-m`后面接注释写上本次更改的地方  |
-|        git pull [远程地址别名] [远程仓库分支]         |           合并远程仓库的更新（push之前必须先合并）           |
-|       git push -u [远程地址别名] [远程仓库分支]       | 将本地当前分支的commit推送到远程指定分支，（`-u`指定该远程地址为默认，后面就可以不加任何参数使用git push了） |
-|                                                       |                                                              |
-|                   **创建`ssh key`**                   |                                                              |
+| 指令 | 说明 |
+| :-: | :-: |
+| **初始化** |  |
+| git init | 把本地的目录变成 git 本地仓库（执行一次即可） |
+| git remote add [远程地址别名] [远程仓库地址] | 将你本地仓库与远程仓库关联起来(一般关联一个地址即可) |
+|  |  |
+| **常用操作** |  |
+| git status | 查看本地仓库文件状态 |
+| git add -A | 添加整个工作区所有发生改变的文件到暂存区 |
+| git commit -m 'Commit message' | 将暂存区文件放到本地仓库，`-m`后面接注释写上本次更改的地方 |
+| git pull [远程地址别名] [远程仓库分支] | 合并远程仓库的更新（push 之前必须先合并） |
+| git push -u [远程地址别名] [远程仓库分支] | 将本地当前分支的 commit 推送到远程指定分支，（`-u`指定该远程地址为默认，后面就可以不加任何参数使用 git push 了） |
+|  |  |
+| **创建`ssh key`** |  |
 | ssh-keygen -t rsa -b 4096 -C "your_email@example.com" | 创建一个`ssh key`，直接回车，文件存在，不用的直接删除目录，有用的就直接复制`ssh key` |
-|               clip < ~/.ssh/id_rsa.pub                |                       把密钥放在剪贴板                       |
+| clip < ~/.ssh/id_rsa.pub | 把密钥放在剪贴板 |
 
-
-
-## 配置全局http和https代理
+## 配置全局 http 和 https 代理
 
 > 提交`Github`和`Gitlab`的代码在某些时候非常慢，这个时候就可以配置代理加速代码提交和拉取。
 >
@@ -87,30 +79,26 @@ git config --global -l
 git config --global -e
 ```
 
-
-
 ## 常用操作
 
 ### 将文件添加到仓库
 
 ```bash
-# 将工作区的某个文件添加到暂存区   
-git add 文件名 
+# 将工作区的某个文件添加到暂存区
+git add 文件名
 
 # 添加所有被tracked文件中被修改或删除的文件信息到暂存区，不处理untracked的文件
-git add -u 
+git add -u
 
 # 添加所有被tracked文件中被修改或删除的文件信息到暂存区，包括untracked的文件
-git add -A 
+git add -A
 
 # 将当前工作区的所有文件都加入暂存区
-git add . 
+git add .
 
 # 进入交互界面模式，按需添加文件到缓存区
-git add -i 
+git add -i
 ```
-
-
 
 ### 将暂存区文件提交到本地仓库
 
@@ -122,95 +110,87 @@ git commit -m ${提交说明}
 git commit -a -m ${提交说明}
 ```
 
-
-
 ### 查看仓库当前状态
 
 ```bash
 git status
 ```
 
-
-
 ### 比较文件异同
 
 ```bash
 # 工作区与暂存区的差异
-git diff 
+git diff
 
 #工作区与某分支的差异，远程分支这样写：remotes/origin/分支名
-git diff 分支名 
+git diff 分支名
 
 # 工作区与HEAD指针指向的内容差异
-git diff HEAD  
+git diff HEAD
 
 # 工作区某文件当前版本与历史版本的差异
-git diff 提交id 文件路径 
+git diff 提交id 文件路径
 
 # 工作区文件与上次提交的差异(1.6 版本前用 --cached)
-git diff --stage 
+git diff --stage
 
 # 查看从某个版本后都改动内容
-git diff 版本TAG 
+git diff 版本TAG
 
 # 比较从分支A和分支B的差异(也支持比较两个TAG)
-git diff 分支A 分支B 
+git diff 分支A 分支B
 
 # 比较两分支在分开后各自的改动
-git diff 分支A...分支B 
+git diff 分支A...分支B
 
 # 另外：如果只想统计哪些文件被改动，多少行被改动，可以添加 --stat 参数
 ```
-
-
 
 ### 查看历史记录
 
 ```bash
 # 查看所有commit记录(SHA-A校验和，作者名称，邮箱，提交时间，提交说明)
-git log 
+git log
 
 # 查看最近多少次的提交记录
-git log -p -次数 
+git log -p -次数
 
 # 简略显示每次提交的内容更改
-git log --stat 
+git log --stat
 
 # 仅显示已修改的文件清单
-git log --name-only 
+git log --name-only
 
 # 显示新增，修改，删除的文件清单
-git log --name-status 
+git log --name-status
 
 # 让提交记录以精简的一行输出
-git log --oneline 
+git log --oneline
 
 # 图形展示分支的合并历史
-git log –graph –all --online 
+git log –graph –all --online
 
 # 查询作者的提交记录(和grep同时使用要加一个--all--match参数)
-git log --author=作者  
+git log --author=作者
 
 # 列出提交信息中包含过滤信息的提交记录
-git log --grep=过滤信息 
+git log --grep=过滤信息
 
 # 和--grep类似，S和查询内容间没有空格
-git log -S查询内容 
+git log -S查询内容
 
 # 查看某文件的修改记录，找背锅专用
-git log fileName 
+git log fileName
 ```
-
-
 
 ### 代码回滚
 
 ```bash
 # 恢复成上次提交的版本
-git reset HEAD^ 
+git reset HEAD^
 
 # 恢复成上上次提交的版本，就是多个^，以此类推或用~次数
-git reset HEAD^^ 
+git reset HEAD^^
 
 git reflog
 
@@ -221,24 +201,18 @@ git reset --hard 版本号
 --hard：修改HEAD指针指向，暂存区内容丢失，工作区恢复以前状态；
 ```
 
-
-
 ### 删除工作区文件
 
 ```bash
 git rm ${文件名}
 ```
 
-
-
 ### 本地仓库文件替换工作区的文件：撤销更改
 
 ```bash
 # 文件路径填“.”可以撤销当前工作区所有更改
-git checkout -- ${文件路径} 
+git checkout -- ${文件路径}
 ```
-
-
 
 ### 本地分支推送到远程分支
 
@@ -247,15 +221,11 @@ git checkout -- ${文件路径}
 git push -u ${远程仓库别名} ${本地分支名}:${远程分支名}
 ```
 
-
-
 ### 从远程仓库克隆项目到本地
 
 ```bash
 git clone ${项目地址}
 ```
-
-
 
 ### 创建分支
 
@@ -272,15 +242,11 @@ git branch ${新建分支名}
 git checkout ${本地分支名}
 ```
 
-
-
 ### 查看分支
 
 ```bash
 git branch
 ```
-
-
 
 ### 合并分支
 
@@ -292,8 +258,6 @@ git merge ${本地分支名}
 git merge --no-ff -m "merge with no-ff" ${本地分支名}
 ```
 
-
-
 ### 删除分支
 
 ```bash
@@ -301,15 +265,11 @@ git merge --no-ff -m "merge with no-ff" ${本地分支名}
 git branch -d ${本地分支名}
 ```
 
-
-
 ### 查看分支合并图
 
 ```bash
 git log --graph --pretty=oneline --abbrev-commit
 ```
-
-
 
 ### 查看远程库信息
 
@@ -318,19 +278,15 @@ git remote
 # -v 显示更详细的信息
 ```
 
-
-
 ### 撤消某次提交
 
 ```bash
 # 撤销最近的一个提交
-git revert HEAD 
+git revert HEAD
 
 # 撤销某次commit
-git revert ${版本号} 
+git revert ${版本号}
 ```
-
-
 
 ### 撤销本次所有更改
 
@@ -338,8 +294,6 @@ git revert ${版本号}
 # 撤销本次所有更改,会撤销本次所有的更改。不包括已经commit的
 git checkout -- .
 ```
-
-
 
 ### 拉取远程分支到本地仓库
 
@@ -357,16 +311,14 @@ git branch --set-upstream ${本地分支} ${远程分支
 git fetch origin 1.1.0:1.1.0
 ```
 
-
-
 ### 标签命令 - tag
 
 ```bash
 # 打标签命令，默认为HEAD
-git tag ${标签} 
+git tag ${标签}
 
 # 显示所有标签
-git tag 
+git tag
 
 # 给某个commit版本添加标签
 git tag ${标签} ${版本号}
@@ -374,8 +326,6 @@ git tag ${标签} ${版本号}
 # 显示某个标签的详细信息
 git show ${标签}
 ```
-
-
 
 ### 同步远程仓库更新
 
@@ -389,8 +339,6 @@ git fetch origin master
 # git fetch 比 git pull更加安全
 ```
 
-
-
 ### 终止合并
 
 ```bash
@@ -398,9 +346,7 @@ git fetch origin master
 git merge --abort
 ```
 
-
-
-### 怎么更换git远程仓库地址
+### 怎么更换 git 远程仓库地址
 
 方法一 ： 通过命令直接修改远程仓库地址
 
@@ -422,18 +368,13 @@ git remote rm ${远程地址别名}
 git remote add origin ${新的地址}
 ```
 
-
-
 ### 拉取指定分支代码
 
 ```bash
  git clone -b ${远程分支名} ${远程仓库地址}
 ```
 
-
-
 ## 参考链接
 
 - [如何进阶成公司 Git 小能手(常见问题总结)](http://www.inode.club/webframe/tool/git.html) By koala
 - [常用 Git 命令清单](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html) By 阮一峰
-

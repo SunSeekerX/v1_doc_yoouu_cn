@@ -1,6 +1,6 @@
-# 📄 Git快速入门
+# 📄 Git 快速入门
 
-> Git分为3个区,工作区,暂存区,本地库
+> Git 分为 3 个区,工作区,暂存区,本地库
 >
 > 💿 资源
 >
@@ -8,13 +8,11 @@
 >
 > 其他资料（较复杂）：https://www.liaoxuefeng.com/wiki/896043488029600
 >
-> Git快速入门：https://www.bilibili.com/video/av17183591?from=search&seid=5626772541729191161
+> Git 快速入门：https://www.bilibili.com/video/av17183591?from=search&seid=5626772541729191161
 >
-> Git进阶：https://www.bilibili.com/video/av24441039/
+> Git 进阶：https://www.bilibili.com/video/av24441039/
 >
 > 更新时间：2020-05-08 14:37:41
-
-
 
 # ⚙️ 安装
 
@@ -25,36 +23,32 @@
 > ```bash
 > git config --global user.name "Your Name"
 > git config --global user.email "email@example.com"
-> 
+>
 > # example
 > git config --global user.name "SunSeekerX"
 > git config --global user.email "1647800606@qq.com"
 > ```
 
-
-
 # 🔨 常用指令
 
-|                         指令                          |                             说明                             |
-| :---------------------------------------------------: | :----------------------------------------------------------: |
-|                      **初始化**                       |                                                              |
-|                       git init                        |         把本地的目录变成git本地仓库（执行一次即可）          |
-|     git remote add [远程地址别名] [远程仓库地址]      |     将你本地仓库与远程仓库关联起来(一般关联一个地址即可)     |
-|                                                       |                                                              |
-|                     **常用操作**                      |                                                              |
-|                      git status                       |                     查看本地仓库文件状态                     |
-|                      git add -A                       |           添加整个工作区所有发生改变的文件到暂存区           |
-|            git commit -m 'Commit message'             |  将暂存区文件放到本地仓库，`-m`后面接注释写上本次更改的地方  |
-|        git pull [远程地址别名] [远程仓库分支]         |           合并远程仓库的更新（push之前必须先合并）           |
-|       git push -u [远程地址别名] [远程仓库分支]       | 将本地当前分支的commit推送到远程指定分支，（`-u`指定该远程地址为默认，后面就可以不加任何参数使用git push了） |
-|                                                       |                                                              |
-|                   **创建`ssh key`**                   |                                                              |
+| 指令 | 说明 |
+| :-: | :-: |
+| **初始化** |  |
+| git init | 把本地的目录变成 git 本地仓库（执行一次即可） |
+| git remote add [远程地址别名] [远程仓库地址] | 将你本地仓库与远程仓库关联起来(一般关联一个地址即可) |
+|  |  |
+| **常用操作** |  |
+| git status | 查看本地仓库文件状态 |
+| git add -A | 添加整个工作区所有发生改变的文件到暂存区 |
+| git commit -m 'Commit message' | 将暂存区文件放到本地仓库，`-m`后面接注释写上本次更改的地方 |
+| git pull [远程地址别名] [远程仓库分支] | 合并远程仓库的更新（push 之前必须先合并） |
+| git push -u [远程地址别名] [远程仓库分支] | 将本地当前分支的 commit 推送到远程指定分支，（`-u`指定该远程地址为默认，后面就可以不加任何参数使用 git push 了） |
+|  |  |
+| **创建`ssh key`** |  |
 | ssh-keygen -t rsa -b 4096 -C "your_email@example.com" | 创建一个`ssh key`，直接回车，文件存在，不用的直接删除目录，有用的就直接复制`ssh key` |
-|               clip < ~/.ssh/id_rsa.pub                |                       把密钥放在剪贴板                       |
+| clip < ~/.ssh/id_rsa.pub | 把密钥放在剪贴板 |
 
-
-
-# 💻 Git命令行操作
+# 💻 Git 命令行操作
 
 ## 📁 本地库操作
 
@@ -136,9 +130,9 @@ git reset --hard HEAD~n
 
 
 ####### reset 参数解释
---soft 
+--soft
 # 1仅在本地库移动HEAD指针
---mixed 
+--mixed
 # 1.会在本地库移动HEAD指针
 # 2.重置缓存区
 --hard
@@ -159,8 +153,6 @@ git diff [本地库中的历史版本] [文件名]
 
 ```
 
-
-
 #### 🔨 分支管理
 
 ##### 说明
@@ -169,42 +161,40 @@ git diff [本地库中的历史版本] [文件名]
 
 好处：各个分支在开发的过程中，如果某一个分支开发失败，不会对其他分支造成任何影响，删除重新开始即可。
 
-> 初始化git仓库默认创建一个`master`分支
+> 初始化 git 仓库默认创建一个`master`分支
 >
 > 其他分支习惯以`feature_[name]`命名
 >
-> 主分支有bug去修复，习惯开分支为`hot_fix`进行修复，修复完`pull-request`到`master`分支
+> 主分支有 bug 去修复，习惯开分支为`hot_fix`进行修复，修复完`pull-request`到`master`分支
 >
-> > 因为主分支一般24小时不间断运行
+> > 因为主分支一般 24 小时不间断运行
 
 下面放的是流程图，由于`Vuepress`不支持该语法会造成打包非常慢，故先注释，本地用`typora`可以复制出来直接显示
 
-```
+````
 ​```mermaid
 graph LR
     start(project) -- branch --- hot_Fix((hot_Fix))
     start --branch--> master((master))
     start --branch--> feature_theme((feature_theme))
     start --branch--> feature_game((feature_game))
-    
+
     master --new_branch--> hot_Fix
     hot_Fix --fix_bug--> hot_Fix_commit_A
     hot_Fix_commit_A --merge--> master_commit_A
-    
+
     master --commit--> master_commit_A
-    
+
 	feature_theme --success_commit--> theme_commit_A
 	theme_commit_A --merge--> master_commit_A
 	feature_theme --fail--> delete_branch
-	
+
 	feature_game --success_commit--> game_commit_A
 	game_commit_A --merge--> master_commit_A
 	feature_game --fail--> delete_branch
 
 ​```
-```
-
-
+````
 
 ##### 0️⃣ 查看当前所有分支
 
@@ -241,17 +231,13 @@ git merge [有新内容的分支]
 # commit
 ```
 
-
-
 ## 📡 远程库操作
 
 > 如果是本地初始的仓库需要添加远程仓库地址，克隆仓库不需要。
 >
-> 可以使用http或者ssh方式
+> 可以使用 http 或者 ssh 方式
 >
-> http需要账户名和密码,ssh需要配置ssh-key
-
-
+> http 需要账户名和密码,ssh 需要配置 ssh-key
 
 ### 🔨 基本操作-本地初始仓库
 
@@ -278,7 +264,7 @@ git pull [远程地址别名（origin）] [远程仓库分支]
 # 具体的方法， 一个种方法： 是 从远端库拉下来代码 ， 本地要加入的代码放到远端库下载到本地的库， 然后提交上# 去 ， 因为这样的话， 你基于的库就是远端的库， 这是一次update了
 # 第二种方法：
 # 使用这个强制的方法
-git pull origin master --allow-unrelated-histories 
+git pull origin master --allow-unrelated-histories
 #  把两段不相干的 分支进行强行合并
 ```
 
@@ -306,8 +292,6 @@ git checkout [远程地址别名（origin）]/[远程仓库分支]
 git merge [远程地址别名（origin）]/[远程仓库分支]
 ```
 
-
-
 ### 🔨 基本操作-克隆远程仓库
 
 > 其他操作同`基本操作-本地初始仓库`
@@ -317,10 +301,6 @@ git merge [远程地址别名（origin）]/[远程仓库分支]
 ```shell
 git clone [远程仓库地址]
 ```
-
-
-
-
 
 ### 🔨 其他操作
 
@@ -333,9 +313,9 @@ git config --local -l
 ##### 1️⃣ 查看当前项目配置文件并编辑
 
 ```shell
-git config --local -e 
+git config --local -e
 # 等同于
-git config -e 
+git config -e
 #[remote "origin"]
 #       url = https://gitee.com/SunSeekerX/test.git
 #       fetch = +refs/heads/*:refs/remotes/origin/*
@@ -352,23 +332,17 @@ git config -e
 git checkout -- .
 ```
 
-
-
-
-
 ### ❗️ 注意
 
-##### 0️⃣ win10切换账户
+##### 0️⃣ win10 切换账户
 
-> 在win10上使用http方式，win10会记录用户名和密码，需要切换账户需要到
+> 在 win10 上使用 http 方式，win10 会记录用户名和密码，需要切换账户需要到
 >
 > `控制面板\所有控制面板项\凭据管理器`中找到自己的账户名和密码进行删除，然后就能重新输入用户名和密码
 
-##### 1️⃣ 设置ssh-key
+##### 1️⃣ 设置 ssh-key
 
 > 百度`Git 配置ssh key`
-
-
 
 #### Fork and pull request
 

@@ -35,8 +35,6 @@ tbify printenv npm_config_registry
 # -> https://r.npm.taobao.org
 ```
 
-
-
 ## ~~加速下载 -替换镜像~~
 
 ```bash
@@ -97,8 +95,6 @@ yarn config set node_inspector_cdnurl https://npm.taobao.org/mirrors/node-inspec
 yarn cache clean # 清空缓存
 ```
 
-
-
 ## 查看，更新，卸载全局安装的包
 
 > npm 查看全局安装过的包命令：
@@ -127,8 +123,6 @@ npm uninstall -g jshint
 npm update -g jshint
 ```
 
-
-
 ## 升级`package.json`依赖包
 
 安装：
@@ -137,33 +131,29 @@ npm update -g jshint
 npm install -g npm-check-updates
 ```
 
-使用： 检查package.json中dependencies的最新版本：
+使用： 检查 package.json 中 dependencies 的最新版本：
 
 ```bash
 ncu
 ```
 
-更新dependencies到新版本：
+更新 dependencies 到新版本：
 
 ```bash
 ncu -u
 ```
 
-更新全部dependencies到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -> ^4.3.0)：
+更新全部 dependencies 到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -> ^4.3.0)：
 
 ```bash
 ncu -a
 ```
 
-
-
-## yarn升级依赖
+## yarn 升级依赖
 
 ```bash
 yarn upgrade-interactive
 ```
-
-
 
 ## 清除缓存
 
@@ -179,10 +169,6 @@ yarn
 yarn cache clean
 ```
 
-
-
-
-
 # 📂 规范提交代码
 
 > [约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.2/)
@@ -197,8 +183,6 @@ yarn cache clean
 >
 > [如何配置 Git Commit Message - 伯艺](https://zhuanlan.zhihu.com/p/69635847)
 
-
-
 ## 1️⃣ 安装 [Commitizen](https://github.com/commitizen/cz-cli)
 
 > 替代你的 git commit（帮助我们生成符合规范的 commit message）
@@ -209,8 +193,6 @@ yarn cache clean
 # 推荐全局安装
 npm install -g commitizen
 ```
-
-
 
 ## 2️⃣ 安装 [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 
@@ -234,11 +216,9 @@ echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 
 **执行完这一步就可以使用了，下面的步骤为高级用法！**
 
-
-
 **局部安装（不推荐，虽然官方推荐）**
 
-接下来，通过键入命令初始化项目以使用cz-convention -changelog适配器
+接下来，通过键入命令初始化项目以使用 cz-convention -changelog 适配器
 
 ```bash
 # 有两种安装方式
@@ -268,11 +248,9 @@ commitizen init cz-conventional-changelog --yarn --dev --exact
 }
 ```
 
-
-
 ## 3️⃣ 自定义 adapter - [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
 
-> 可自定义的Commitizen插件。比如：默认的提交 types 可能特别多，有些时候我们可能只需要其中的某些 type，或者自定义type。
+> 可自定义的 Commitizen 插件。比如：默认的提交 types 可能特别多，有些时候我们可能只需要其中的某些 type，或者自定义 type。
 
 ```bash
 yarn add cz-customizable -D
@@ -297,53 +275,51 @@ module.exports = {
   types: [
     {
       value: 'feat',
-      name : 'feat:     A new feature'
+      name: 'feat:     A new feature',
     },
     {
       value: 'fix',
-      name : 'fix:      A bug fix'
+      name: 'fix:      A bug fix',
     },
     {
       value: 'docs',
-      name : 'docs:     Documentation only changes'
+      name: 'docs:     Documentation only changes',
     },
     {
       value: 'refactor',
-      name : 'refactor: A code change that neither fixes a bug nor adds a feature'
+      name: 'refactor: A code change that neither fixes a bug nor adds a feature',
     },
     {
       value: 'perf',
-      name : 'perf:     A code change that improves performance'
+      name: 'perf:     A code change that improves performance',
     },
     {
       value: 'test',
-      name : 'test:     Add missing tests or correcting existing tests'
+      name: 'test:     Add missing tests or correcting existing tests',
     },
     {
       value: 'build',
-      name : 'build:    Add missing tests or correcting existing tests'
+      name: 'build:    Add missing tests or correcting existing tests',
     },
     {
       value: 'revert',
-      name : 'revert:   Revert to a commit'
-    }
+      name: 'revert:   Revert to a commit',
+    },
   ],
-  allowBreakingChanges: ['feat', 'fix', 'refactor', 'perf', 'build', 'revert']
-};
+  allowBreakingChanges: ['feat', 'fix', 'refactor', 'perf', 'build', 'revert'],
+}
 ```
-
-
 
 ## 4️⃣ 校验 commit - [commitlint](https://github.com/conventional-changelog/commitlint)
 
 > `commitlint` 帮我们规范 `commit message`（`commitlint`的实现方式和`commitizen`差不多也需要个 adapter）
 >
 > - @commitlint/cli 【命令行工具】
-> - @commitlint/config-conventional 【校验规则】符合 Angular团队规范（不同于代码规范），当然还有其它规范。
+> - @commitlint/config-conventional 【校验规则】符合 Angular 团队规范（不同于代码规范），当然还有其它规范。
 
 ```bash
 # [推荐局部安装]
-yarn add @commitlint/config-conventional @commitlint/cli -D 
+yarn add @commitlint/config-conventional @commitlint/cli -D
 ```
 
 `package.json` 配置
@@ -360,11 +336,9 @@ yarn add @commitlint/config-conventional @commitlint/cli -D
 
 ```js
 module.exports = {
-  extends: ['@commitlint/config-conventional']
+  extends: ['@commitlint/config-conventional'],
 }
 ```
-
-
 
 **针对自定义的 Adapter 进行 Lint**
 
@@ -382,13 +356,9 @@ npm i -D commitlint-config-cz @commitlint/cli
 
 ```js
 module.exports = {
-  extends: [
-    'cz'
-  ]
-};
+  extends: ['cz'],
+}
 ```
-
-
 
 **第三步: Husky**
 
@@ -427,11 +397,9 @@ yarn add husky -D
 }
 ```
 
-
-
 **3.2 lint-staged**
 
-当我们运行eslint或stylelint的命令时，只会检查我们通过git add添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍。
+当我们运行 eslint 或 stylelint 的命令时，只会检查我们通过 git add 添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍。
 
 ```bash
 yarn add lint-staged -D
@@ -441,22 +409,17 @@ yarn add lint-staged -D
 
 ```json
 {
-    "husky": {
-        "hooks": {
-          "pre-commit": "lint-staged",
-          "commit-msg": "commitlint -e $GIT_PARAMS"
-        }
-    },
-    "lint-staged": {
-        "src/**/*.{tsx,ts}": [
-          "prettier --write",
-          "git add"
-        ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -e $GIT_PARAMS"
     }
+  },
+  "lint-staged": {
+    "src/**/*.{tsx,ts}": ["prettier --write", "git add"]
+  }
 }
 ```
-
-
 
 ## 5️⃣ standard-version
 
@@ -486,7 +449,7 @@ npm version minor。
 npm version major。
 ```
 
-关于release:
+关于 release:
 
 ```bash
 # 发布首个版本
@@ -496,11 +459,11 @@ npm run release -- --first-release
 # 例如：v1.0.0 -> v1.0.0-0
 npm run release -- --prerelease
 
-# 发布与首个 alpha 版本 
+# 发布与首个 alpha 版本
 # 例如：v1.0.0 -> 1.0.1-alpha.0
 npm run release -- --prerelease alpha
 
-# 发布 major、minor、patch 版本 
+# 发布 major、minor、patch 版本
 npm run release -- --release-as minor
 ```
 
@@ -514,14 +477,12 @@ yarn add standard-version -D
 
 ```json
 {
-    "script": {
-        // .....
-        "release": "standard-version"
-    }
+  "script": {
+    // .....
+    "release": "standard-version"
+  }
 }
 ```
-
-
 
 ## 6️⃣ 完整的配置
 
@@ -569,53 +530,51 @@ module.exports = {
   types: [
     {
       value: 'feat',
-      name : 'feat:     A new feature'
+      name: 'feat:     A new feature',
     },
     {
       value: 'fix',
-      name : 'fix:      A bug fix'
+      name: 'fix:      A bug fix',
     },
     {
       value: 'docs',
-      name : 'docs:     Documentation only changes'
+      name: 'docs:     Documentation only changes',
     },
     {
       value: 'refactor',
-      name : 'refactor: A code change that neither fixes a bug nor adds a feature'
+      name: 'refactor: A code change that neither fixes a bug nor adds a feature',
     },
     {
       value: 'perf',
-      name : 'perf:     A code change that improves performance'
+      name: 'perf:     A code change that improves performance',
     },
     {
       value: 'test',
-      name : 'test:     Add missing tests or correcting existing tests'
+      name: 'test:     Add missing tests or correcting existing tests',
     },
     {
       value: 'build',
-      name : 'build:    Add missing tests or correcting existing tests'
+      name: 'build:    Add missing tests or correcting existing tests',
     },
     {
       value: 'revert',
-      name : 'revert:   Revert to a commit'
-    }
+      name: 'revert:   Revert to a commit',
+    },
   ],
-  allowBreakingChanges: ['feat', 'fix', 'refactor', 'perf', 'build', 'revert']
-};
+  allowBreakingChanges: ['feat', 'fix', 'refactor', 'perf', 'build', 'revert'],
+}
 ```
 
 **.commitlintrc.js**
 
 ```js
 module.exports = {
-  extends: ['@commitlint/config-conventional']
+  extends: ['@commitlint/config-conventional'],
   // extends: ['cz']
   // cz 方式需要配合插件
   // yarn add commitlint-config-cz @commitlint/cli -D
 }
 ```
-
-
 
 ## 7️⃣ 提交代码
 
@@ -625,14 +584,11 @@ module.exports = {
 git-cz
 ```
 
-
-
-
 # 📂 版本号管理
 
 ## 1️⃣ 简介
 
-在Node.js项目中的前后端项目中，版本号管理使用的是NPM的命令——别跟我说，你是手动改 `package.json` 来更新版本号的。
+在 Node.js 项目中的前后端项目中，版本号管理使用的是 NPM 的命令——别跟我说，你是手动改 `package.json` 来更新版本号的。
 
 在命令行敲入 `npm version ?` 就可以看到可以使用的命令：
 
@@ -652,7 +608,7 @@ npm version [<newversion> | major | minor | patch | premajor | preminor | prepat
 >
 > prerelease：预发布版本
 >
-> 我的package.jsond的**当前version为6.0.0**，依次输入下面的命令，package的version会变更为提升后的版本号：
+> 我的 package.jsond 的**当前 version 为 6.0.0**，依次输入下面的命令，package 的 version 会变更为提升后的版本号：
 
 ```bash
 C:\Users\Administrator\Desktop\work\stage-view (master) (stage-view@6.0.0)
@@ -678,19 +634,17 @@ C:\Users\Administrator\Desktop\work\stage-view (master) (stage-view@7.0.0-0)
 v7.0.0
 ```
 
-如上所示，敲入`npm version preminor`，项目的version就从6.0.0变成了6.1.0-0。
+如上所示，敲入`npm version preminor`，项目的 version 就从 6.0.0 变成了 6.1.0-0。
 
-对了，项目的git status必须是clear，才能使用上述命令。
+对了，项目的 git status 必须是 clear，才能使用上述命令。
 
-如果你的项目中包含git，它还会自动给你提交更新到git，`git commit -m "X.Y.Z"`，所以还可以在npm version NEWVERSION 后面加上-m参数来指定自定义的commit message。比如：
+如果你的项目中包含 git，它还会自动给你提交更新到 git，`git commit -m "X.Y.Z"`，所以还可以在 npm version NEWVERSION 后面加上-m 参数来指定自定义的 commit message。比如：
 
 ```bash
 npm version patch -m "Upgrade to %s for reasons"
 ```
 
-message中的s%将会被替换为版本号。
-
-
+message 中的 s%将会被替换为版本号。
 
 ## 2️⃣ 版本号策略
 
@@ -702,7 +656,7 @@ message中的s%将会被替换为版本号。
 
 修订号：当你做了向后兼容的问题修正；
 
-处于开发阶段的项目版本号以0.Y.Z形式表示，此阶段正在开发基础功能、公众API；
+处于开发阶段的项目版本号以 0.Y.Z 形式表示，此阶段正在开发基础功能、公众 API；
 
 版本号只能增加，禁止下降，代码的修改必须以新版本形式更新；
 
@@ -710,11 +664,9 @@ message中的s%将会被替换为版本号。
 
 万一不小心把一个不兼容的改版当成了次版本号发行了该怎么办？一旦发现自己破坏了语义化版本控制的规范，就要修正这个问题，并发行一个新的次版本号来更正这个问题并且恢复向下兼容。即使是这种情况，也不能去修改已发行的版本。
 
-
-
 ## 3️⃣ 编程式
 
-在项目代码中有时候需要判断当前版本，可以通过读取package文件获取当前版本：
+在项目代码中有时候需要判断当前版本，可以通过读取 package 文件获取当前版本：
 
 ```javascript
 import { version } from './package.json'
@@ -723,17 +675,14 @@ import { version } from './package.json'
 要判断两个版本号字符串的大小，可以使用插件 `compare-versions`
 
 ```javascript
-compareVersions('10.1.8', '10.0.4'); //  1
-compareVersions('10.0.1', '10.0.1'); //  0
-compareVersions('10.1.1', '10.2.2'); // -1
+compareVersions('10.1.8', '10.0.4') //  1
+compareVersions('10.0.1', '10.0.1') //  0
+compareVersions('10.1.1', '10.2.2') // -1
 ```
-
-
 
 ## 4️⃣ 自动更新版本号
 
-在项目目录的 `.git/hooks/` 目录中新建文件: `post-commit`——是的，没有后缀名。
-然后粘贴以下代码并保存文件：
+在项目目录的 `.git/hooks/` 目录中新建文件: `post-commit`——是的，没有后缀名。然后粘贴以下代码并保存文件：
 
 ```bash
 #!/bin/shCOMMIT_MSG="$(git log --pretty=format:"%s" -1 head)"echo "$COMMIT_MSG" | grep  -q  "^[0-9]"if [ $? -ne 0 ];then  echo $(npm version patch)fi
@@ -741,4 +690,4 @@ compareVersions('10.1.1', '10.2.2'); // -1
 
 上面代码会在每次 `git commit` 执行后被运行，它检查 commit 的 message 是不是版本号，如果不是，它就会执行 `npm version patch` 更新版本号。
 
-> 来源：[版本号管理策略&&使用npm管理项目版本号-朱嘉伟](http://buzhundong.com/post/%E7%89%88%E6%9C%AC%E5%8F%B7%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5-%E4%BD%BF%E7%94%A8npm%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E5%8F%B7.html)
+> 来源：[版本号管理策略&&使用 npm 管理项目版本号-朱嘉伟](http://buzhundong.com/post/%E7%89%88%E6%9C%AC%E5%8F%B7%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5-%E4%BD%BF%E7%94%A8npm%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E5%8F%B7.html)

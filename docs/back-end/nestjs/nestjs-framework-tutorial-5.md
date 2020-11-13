@@ -2,15 +2,13 @@
 
 ![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
 
-------
-
-
+---
 
 **模块**（Module）是一个使用了 @Module() 装饰的类。@Module() 装饰器提供了一些 Nest 需要使用的元数据，用来组织应用程序的结构。
 
 ![img](https://image.yoouu.cn/sunseekerx/back-end/nestjs/5d19d7a33690e19033.png)
 
-每个应用都至少有一个根模块，根模块就是 Nest 应用的入口。Nest 会从这里查找出整个应用的依赖/调用[图](https://en.wikipedia.org/wiki/Graph_(abstract_data_type))。
+每个应用都至少有一个根模块，根模块就是 Nest 应用的入口。Nest 会从这里查找出整个应用的依赖/调用[图](<https://en.wikipedia.org/wiki/Graph_(abstract_data_type)>)。
 
 @Module() 装饰器接收一个参数对象，有以下取值：
 
@@ -38,7 +36,7 @@ import { CatsService } from './cats.service';
 export class CatsModule {}
 ```
 
-> ++小提示++：也可以使用 CLI 来自动生成模块：$ nest g module cats
+> ++小提示++：也可以使用 CLI 来自动生成模块：\$ nest g module cats
 
 这样我们就完成了一个模块的封装。
 
@@ -60,7 +58,7 @@ import { CatsService } from './cats.service';
   providers: [CatsService],
   exports: [CatsService] // 导出
 })
-export class CatsModule {} 
+export class CatsModule {}
 ```
 
 ## 模块的重复导出

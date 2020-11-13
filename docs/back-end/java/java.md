@@ -9,13 +9,13 @@
 
 ## Jdk and tomcat
 
-> 下载JDK12默认安装，环境变量path添加安装路径带`bin`，新建环境变量`JAVA_HOME`不带`bin`，命令行`java`和`javac`执行成功，`tomcat`启动成功
+> 下载 JDK12 默认安装，环境变量 path 添加安装路径带`bin`，新建环境变量`JAVA_HOME`不带`bin`，命令行`java`和`javac`执行成功，`tomcat`启动成功
 
 ### **环境变量**
 
-JAVA_HOME=`${jdk安装位置}`  例如：C:\Program Files\Java\jdk1.8.0_261
+JAVA_HOME=`${jdk安装位置}` 例如：C:\Program Files\Java\jdk1.8.0_261
 
-Path添加 `%JAVA_HOME%\bin`
+Path 添加 `%JAVA_HOME%\bin`
 
 验证成功
 
@@ -23,8 +23,6 @@ Path添加 `%JAVA_HOME%\bin`
 java
 javac
 ```
-
-
 
 ## IDEA
 
@@ -38,25 +36,21 @@ javac
 
 > 参考：[Maven - Environment Setup](https://www.tutorialspoint.com/maven/maven_environment_setup.htm)
 
-MAVEN_HOME=`${maven安装位置}`  例如：W:\Server\apache-maven-3.6.3
+MAVEN_HOME=`${maven安装位置}` 例如：W:\Server\apache-maven-3.6.3
 
-M2_HOME=`${maven安装位置}`  例如：W:\Server\apache-maven-3.6.3
+M2_HOME=`${maven安装位置}` 例如：W:\Server\apache-maven-3.6.3
 
 M2=%M2_HOME%\bin
 
 MAVEN_OPTS - `-Xms256m -Xmx512m`
 
-Path添加 `%MAVEN_HOME%\bin`
+Path 添加 `%MAVEN_HOME%\bin`
 
 验证成功
 
 ```
  mvn --version
 ```
-
-
-
-
 
 ### **国内加速**
 
@@ -102,8 +96,6 @@ Path添加 `%MAVEN_HOME%\bin`
 mvn install
 ```
 
-
-
 ### **本地仓库**
 
 setting 节点下新增
@@ -114,14 +106,10 @@ setting 节点下新增
 <localRepository>W:\Server\apache-maven-3.6.3\repository</localRepository>
 ```
 
-
-
 ### **注意事项**
 
-1. IDEA 配置了 maven 项目打开maven 配置可能会恢复为默认的，需要重新设置下。
+1. IDEA 配置了 maven 项目打开 maven 配置可能会恢复为默认的，需要重新设置下。
 2. 创建生成的 web.xml 文件 xml 版本可能过低，可能会出现历史遗留问题，最好保持和 tomcat 的 xml 版本一致。可以拷贝 tomcat 的 xml 文件头。
-
-
 
 ### 常见问题
 
@@ -149,8 +137,6 @@ setting 节点下新增
     </resources>
 </build>
 ```
-
-
 
 ## log4j
 
@@ -183,17 +169,13 @@ log4j.logger.java.sql.ResultSet=DEBUG
 log4j.logger.java.sql.PreparedStatement=DEBUG
 ```
 
-
-
-## windows tomcat输出乱码
+## windows tomcat 输出乱码
 
 文件路径 `conf/logging.properties`
 
 java.util.logging.ConsoleHandler.encoding = GBK
 
-
-
-## Tomcat设置项目管理用户
+## Tomcat 设置项目管理用户
 
 文件路径`conf/tomcat-users.xml`
 
@@ -204,8 +186,6 @@ java.util.logging.ConsoleHandler.encoding = GBK
               version="1.0">
 <user username="admin" password="12345678900" roles="manager-gui" />
 ```
-
-
 
 ## springboot tomcat 缓存
 
@@ -235,9 +215,7 @@ java.util.logging.ConsoleHandler.encoding = GBK
 </Context>
 ```
 
-
-
-## Http 响应状态码 
+## Http 响应状态码
 
 ```
 1**(信息类)：表示接收到请求并且继续处理
@@ -316,4 +294,3 @@ HTTP 500 - 服务器遇到错误，无法完成请求
 HTTP 502 - 网关错误
 HTTP 503：由于超载或停机维护，服务器目前无法使用，一段时间后可能恢复正常
 ```
-

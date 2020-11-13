@@ -10,15 +10,11 @@
 - **完整的单词，而不是缩写**。例如使用`middle_name`，不是`mid_nm`。
 - **使用常用缩写**。对于几个长词而言，缩写词比词本身更为常见，比如`i18n`和`l10n`，这时使用缩写。
 
-
-
 ## mysql
 
 > 关于`MySQL`
 
 ### 开放远程连接
-
-
 
 ```bash
 # 登录mysql
@@ -48,10 +44,6 @@ mysql -u root -p
 　　第六句：再重新查看user表时，有修改。。
 ```
 
-
-
-
-
 ## mariaDB
 
 ### 开放远程链接
@@ -65,4 +57,3 @@ GRANT ALL PRIVILEGES ON *.* TO 'root'@'%'IDENTIFIED BY '123456' WITH GRANT OPTIO
 
 flush privileges;
 ```
-

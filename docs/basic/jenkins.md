@@ -4,8 +4,6 @@
 >
 > 更新时间：2020-05-05 20:39:33
 
-
-
 ## 配置插件下载加速
 
 **第一次安装**
@@ -32,15 +30,13 @@
 
 6. 等待检查更新完毕，安装推荐的插件
 
-
-
 **普通替换**
 
 设置>插件>高级>升级站点>[https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json](https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json)
 
 这一步只是替换了插件列表下载加速，下载的时候还是国外的源。
 
-进入Jenkins工作目录，进入更新配置位置
+进入 Jenkins 工作目录，进入更新配置位置
 
 `${jenkins}/updates/default.json`
 
@@ -52,15 +48,11 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 
 每次更新了插件列表都要执行替换命令，否则下载地址会替换回去。
 
-
-
-## Vue项目自动化构建
+## Vue 项目自动化构建
 
 `Jenkins`安装查看`Docker`章节。
 
-`Jenkins`第一次安装完成最好重启一下，因为如果安装了语言包有些地方还是英文的。应该是个bug。
-
-
+`Jenkins`第一次安装完成最好重启一下，因为如果安装了语言包有些地方还是英文的。应该是个 bug。
 
 ## 前提
 
@@ -68,9 +60,7 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 - 有`Jenkins`环境
 - 有部署项目的服务器
 - 域名
-- Linux知识
-
-
+- Linux 知识
 
 ## 目标
 
@@ -80,11 +70,9 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 
 目前需要实现的就是这样的功能，但`Jenkins`能做的不只是这么多。不过对于我目前的项目来说足够了。
 
-
-
 ## 实现
 
-### 0x1 安装ssh发送插件 - `Publish Over SSH`
+### 0x1 安装 ssh 发送插件 - `Publish Over SSH`
 
 > 见名知意，通过`ssh`发布，用来将打包好的项目用`ssh`连接的方式发送到部署的服务器，并且执行其他的命令。
 
@@ -92,12 +80,9 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 2. 选择插件管理
 3. 页面直接`ctrl+f`搜索`ssh`，直接安装`Publish Over SSH`插件(不要用自带的过滤搜索没用)
 
+![plugin-publish-over-ssh](https://image.yoouu.cn/2020/Jenkins/plugin-publish-over-ssh.png)
 
-![plugin-publish-over-ssh]( https://image.yoouu.cn/2020/Jenkins/plugin-publish-over-ssh.png)
-
-
-
-### 0x2 配置`ssh`插件 
+### 0x2 配置`ssh`插件
 
 > 这里要配置的部署网站的服务器，我采用的方式是密码登录，也可以配置密钥文件登录的。看你的喜好。
 
@@ -113,15 +98,13 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 10. `Passphrase`填写密码
 11. 填写完了点击`Test Configuration`测试下是否连接成功
 
-![publish-over-ssh-setting]( https://image.yoouu.cn/2020/Jenkins/publish-over-ssh-setting.png)
-
-
+![publish-over-ssh-setting](https://image.yoouu.cn/2020/Jenkins/publish-over-ssh-setting.png)
 
 ### 0x3 安装`nodejs`插件
 
 1. 安装`nodejs`插件（`Jenkins`目前好像无法使用外部的`nodejs`）
 
-   > 这个插件用来打包vue项目，跟我们自己本地执行`yarn build`等命令无区别。
+   > 这个插件用来打包 vue 项目，跟我们自己本地执行`yarn build`等命令无区别。
 
    1. 选择系统管理
    2. 选择插件管理
@@ -134,10 +117,8 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
       2. 勾选自动安装
       3. 版本选择`12.16.3`，这是目前稳定的长期支持版本
       4. 保存
-   
-   ![plugin-nodejs]( https://image.yoouu.cn/2020/Jenkins/plugin-nodejs.png)
 
-
+   ![plugin-nodejs](https://image.yoouu.cn/2020/Jenkins/plugin-nodejs.png)
 
 ## 新建项目配置
 
@@ -145,17 +126,13 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 
 ### 0x2 输入名称
 
-![input-name]( https://image.yoouu.cn/2020/Jenkins/input-name.png)
-
-
+![input-name](https://image.yoouu.cn/2020/Jenkins/input-name.png)
 
 ### 0x3 源码管理选择你的项目的`Git`
 
 > 我的文档项目访问是公开的，可以直接访问，如果是私有项目还需要配置一个可访问的账号才可以。就是下面`Credentials`选项。
 
-![repositories]( https://image.yoouu.cn/2020/Jenkins/repositories.png)
-
-
+![repositories](https://image.yoouu.cn/2020/Jenkins/repositories.png)
 
 ### 0x4 构建触发器
 
@@ -165,17 +142,13 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 
 > 勾选`Provide Node & npm bin/ folder to PATH`，这是提供`Node`命令给我们使用。
 
-![build]( https://image.yoouu.cn/2020/Jenkins/build.png)
-
-
+![build](https://image.yoouu.cn/2020/Jenkins/build.png)
 
 ### 0x6 增加构建步骤 - `执行shell`
 
-![build-step]( https://image.yoouu.cn/2020/Jenkins/build-step.png)
+![build-step](https://image.yoouu.cn/2020/Jenkins/build-step.png)
 
-
-
-执行shell内容
+执行 shell 内容
 
 > 由于内部的`node`环境和外部隔离，所以我们第一次使用的时候需要安装`yarn`和设置一些国内源。
 >
@@ -202,14 +175,12 @@ yarn build
 # 进入生成打包文件的目录
 cd docs/.vuepress/dist
 # 把生成的项目打包成压缩包，方便移动到项目部署目录
-tar -zcvf sunseekerx.tar.gz * 
+tar -zcvf sunseekerx.tar.gz *
 ```
 
 执行完成之后会在服务器生成`sunseekerx.tar.gz`，下一步就是把这个文件发送到指定部署的服务器。进行解压。
 
-![build-file]( https://image.yoouu.cn/2020/Jenkins/build-file.png)
-
-
+![build-file](https://image.yoouu.cn/2020/Jenkins/build-file.png)
 
 ### 0x7 增加构建后的步骤
 
@@ -228,41 +199,32 @@ cd /www/wwwroot/sunseekerx.yoouu.cn
 \echo ">>>执行成功"
 ```
 
-![send-flie]( https://image.yoouu.cn/2020/Jenkins/send-flie.png)
-
-
+![send-flie](https://image.yoouu.cn/2020/Jenkins/send-flie.png)
 
 ### 0x8 测试构建
 
 > 可以看到服务器有了构建之后的文件
 
-![finish-build-files]( https://image.yoouu.cn/2020/Jenkins/finish-build-files.png)
-
-
+![finish-build-files](https://image.yoouu.cn/2020/Jenkins/finish-build-files.png)
 
 ### 0x9 访问下网站试试，nice😁
 
-![sunseekerx.yoouu.cn]( https://image.yoouu.cn/2020/Jenkins/sunseekerx.yoouu.cn.png)
+![sunseekerx.yoouu.cn](https://image.yoouu.cn/2020/Jenkins/sunseekerx.yoouu.cn.png)
 
-
-
-### 0x10 Git设置`Webhooks`
+### 0x10 Git 设置`Webhooks`
 
 前提是`Git`需要能访问到你的`Jenkins`，一旦有代码提交上来，`Git`就会去请求你这个地址，然后`Jenkins`触发构建动作。
 
 > 简单来说就是我提交代码告诉`Git`，`Git`告诉`Jenkins`你该构建了，完了`Jenkins`去构建。`Git`就像仓库管理员，`Jenkins`就是干苦力的。😁
 
-![github-webhook-setting]( https://image.yoouu.cn/2020/Jenkins/github-webhook-setting.png)
+![github-webhook-setting](https://image.yoouu.cn/2020/Jenkins/github-webhook-setting.png)
 
 ### 0x10 测试下提交构建
 
 在本地修改一些文件，提交上去，稍等一会儿查看`Jenkins`，这个处于等待中的任务就是提交的任务
 
-![git-webhook]( https://image.yoouu.cn/2020/Jenkins/git-webhook.png)
+![git-webhook](https://image.yoouu.cn/2020/Jenkins/git-webhook.png)
 
+访问[https://sunseekerx.yoouu.cn/](https://sunseekerx.yoouu.cn/)试试，更新成功 🤣
 
-
-访问[https://sunseekerx.yoouu.cn/](https://sunseekerx.yoouu.cn/)试试，更新成功🤣
-
-![new-website]( https://image.yoouu.cn/2020/Jenkins/new-website.png)
-
+![new-website](https://image.yoouu.cn/2020/Jenkins/new-website.png)

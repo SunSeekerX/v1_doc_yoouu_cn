@@ -5,6 +5,7 @@
   "scripts": {
     "serve": "vuepress dev docs",
     "build": "vuepress build docs",
+    "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "gc": "git add -A && git-cz && git pull && git push",
     "up": "yarn upgrade-interactive"
   },

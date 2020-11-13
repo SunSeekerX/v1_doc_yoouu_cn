@@ -23,6 +23,4 @@
 19. 异常过滤器 （路由，之后是控制器，之后是全局）
 20. 服务器响应
 
-
-
 ![请求模型](https://image.yoouu.cn/sunseekerx/back-end/nestjs/F68A427CBC78E6C8367392C33779D4D2.jpg)

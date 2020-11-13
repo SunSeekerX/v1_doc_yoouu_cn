@@ -2,11 +2,7 @@
 
 ![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
 
-------
-
-
-
-
+---
 
 **守卫**（Guards）是一个使用 @Injectable() 装饰的类，它必须实现 CanActivate 接口。
 
@@ -169,4 +165,3 @@ export class RolesGuard implements CanActivate {
 ```
 throw new UnauthorizedException();
 ```
-

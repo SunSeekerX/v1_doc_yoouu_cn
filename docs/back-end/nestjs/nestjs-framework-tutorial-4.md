@@ -2,9 +2,7 @@
 
 ![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
 
-------
-
-
+---
 
 **Provider** 主要的设计理念来自于[控制反转](https://zh.wikipedia.org/wiki/控制反转)（Inversion of Control，简称 IOC[1](https://keelii.com/2019/07/03/nestjs-framework-tutorial-4/#fn:-) ）模式中的依赖注入（Dependency Injection）特性。使用 `@Injectable()` 装饰的类就是一个 Provider，装饰器方法会优先于类被解析执行。
 
@@ -41,7 +39,7 @@ export class CatsService {
 }
 ```
 
-> ++小提示++：也可以使用 CLI 工具自动生成一个 Service $ nest g service cats
+> ++小提示++：也可以使用 CLI 工具自动生成一个 Service \$ nest g service cats
 
 有了 Service 我们就可以在控制器中注入并引用到它了
 
@@ -107,8 +105,8 @@ Nest 有一个内置的 IOC 容器，用来解析 Providers 之间的关系。�
 @Injectable()
 export class HttpService<T> {
   constructor(
-    @Optional() 
-    @Inject('HTTP_OPTIONS') 
+    @Optional()
+    @Inject('HTTP_OPTIONS')
     private readonly httpClient: T
   ) {}
 }
@@ -146,7 +144,6 @@ import { CatsService } from './cats/cats.service';
 export class ApplicationModule {}
 ```
 
-------
+---
 
 1. 控制反转 [[return\]](https://keelii.com/2019/07/03/nestjs-framework-tutorial-4/#fnref:-)
-
