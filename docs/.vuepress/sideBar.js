@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-10-24 15:50:50
+ * @LastEditTime: 2020-11-13 13:05:39
  */
 
 module.exports = {
@@ -75,6 +75,7 @@ module.exports = {
         ['html', 'Html'],
         ['css', 'Css'],
         ['javascript', 'JavaScript'],
+        ['basic', 'Basic'],
       ],
     },
     {
