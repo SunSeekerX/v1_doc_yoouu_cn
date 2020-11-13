@@ -96,7 +96,7 @@ module.exports = {
   // 在 *.vue 文件中 Script 和 Style 标签内的代码是否缩进 default:false
   vueIndentScriptAndStyle: true,
   // 末尾换行符 default:"lf"
-  endOfLine: 'lf',
+  endOfLine: 'auto',
   // default:"auto"
   embeddedLanguageFormatting: 'auto',
   overrides: [
@@ -229,7 +229,7 @@ module.exports = {
       "proseWrap": "never",
       "htmlWhitespaceSensitivity": "strict",
       "vueIndentScriptAndStyle": true,
-      "endOfLine": "lf",
+      "endOfLine": "auto",
       "embeddedLanguageFormatting": "auto",
       "overrides": [
         {
@@ -267,7 +267,7 @@ module.exports = {
   "prettier.proseWrap": "never",
   "prettier.htmlWhitespaceSensitivity": "strict",
   "prettier.vueIndentScriptAndStyle": true,
-  "prettier.endOfLine": "lf",
+  "prettier.endOfLine": "auto",
   "prettier.embeddedLanguageFormatting": "auto",
   "sync.gist": "7e4a454490b30e5e5934976993e322ce",
   "git.autofetch": true,
