@@ -2,9 +2,7 @@
 
 ![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
 
-------
-
-
+---
 
 这篇教程起，你将会学习到 Nest 的几个核心点。为了更好的了解 Nest 应用中的模块，我们将开发一个有基本 CRUD[1](https://keelii.com/2019/07/03/nestjs-framework-tutorial-2/#fn:Create-Read-Upda) 功能的入门级应用。
 
@@ -43,7 +41,7 @@ src
 Nest 的目标是一个平台无关的框架。这个意思就是说 Nest 本身并不造某个细分领域的轮子，他只构建一套构架体系，然后把一些好用的库或者平台融合进来。所以 Nest 可以衔接任何 HTTP 框架，默认支持 express 和 fastify 两个 web 框架。
 
 | `platform-express` | **[Express](https://expressjs.com/)** 是一个 Node web 框架，有很多社区成熟的资源。@nestjs/platform-express 默认会被引入，大家都很熟悉了，用起来会容易上手 |
-| ------------------ | ------------------------------------------------------------ |
+| --- | --- |
 | `platform-fastify` | **[Fastify](https://www.fastify.io/)** 是一个高能低耗的框架，致力于最大化效率与速度 |
 
 无论使用哪个平台，都要暴露自己的应用接口。上面两个平台暴露了对应的两个变量 `NestExpressApplication` and `NestFastifyApplication`。
@@ -56,6 +54,6 @@ const app = await NestFactory.create<NestExpressApplication>(ApplicationModule);
 
 不过一般情况下不需要指定这个类型。
 
-------
+---
 
 1. Create, Read, Update, Delete 通常对应于数据的增删改查功能 [[return\]](https://keelii.com/2019/07/03/nestjs-framework-tutorial-2/#fnref:Create-Read-Upda)

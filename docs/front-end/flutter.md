@@ -33,18 +33,14 @@ dart 的接口有点奇怪，如果实现的类是普通类，会将普通类和
 
 建议使用抽象类定义接口。
 
-
-
 ### mixins
 
-在 dart 中可以使用 mixins实现类似的多继承的功能（mixins使用的条件随着 dart 版本一直在变，以下是2.x的使用的条件）
+在 dart 中可以使用 mixins 实现类似的多继承的功能（mixins 使用的条件随着 dart 版本一直在变，以下是 2.x 的使用的条件）
 
-1. 作为 mixins的类只能继承自 Object，不能继承其他类
-2. 作为 mixins的类不能有构造函数
-3. 一个类可以 mixins多个 mixins 类
+1. 作为 mixins 的类只能继承自 Object，不能继承其他类
+2. 作为 mixins 的类不能有构造函数
+3. 一个类可以 mixins 多个 mixins 类
 4. mixins 绝不是继承，也不是接口，而是一种全新的特性
-
-
 
 ### 泛型
 
@@ -71,30 +67,26 @@ void main() {
 
 ```
 
-
-
 ### 第三方库
 
 ```dart
 Dart中的库主要有三种：
-1、我们自定义的库     
+1、我们自定义的库
     import 'lib/xxx.dart';
-2、系统内置库       
-    import 'dart:math';    
-    import 'dart:io'; 
+2、系统内置库
+    import 'dart:math';
+    import 'dart:io';
     import 'dart:convert';
-3、Pub包管理系统中的库  
+3、Pub包管理系统中的库
     https://pub.dev/packages
     https://pub.flutter-io.cn/packages
     https://pub.dartlang.org/flutter/
 
     1、需要在自己想项目根目录新建一个pubspec.yaml
     2、在pubspec.yaml文件 然后配置名称 、描述、依赖等信息
-    3、然后运行 pub get 获取包下载到本地  
+    3、然后运行 pub get 获取包下载到本地
     4、项目中引入库 import 'package:http/http.dart' as http; 看文档使用
 ```
-
-
 
 ## Flutter - 开发环境安装
 
@@ -104,7 +96,7 @@ flutter sdk 已经带了完整的 dart 语言运行环境。
 
 **下载地址**
 
- [https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
+[https://flutter.dev/docs/get-started/install](https://flutter.dev/docs/get-started/install)
 
 **安装**
 
@@ -123,15 +115,13 @@ FLUTTER_STORAGE_BASE_URL: https://mirrors.tuna.tsinghua.edu.cn/flutter
 PUB_HOSTED_URL: https://mirrors.tuna.tsinghua.edu.cn/dart-pub
 ```
 
-
-
 **检查安装是否正常**
 
 `flutter doctor`
 
 **Android studio 配置**
 
-安卓sdk 环境变量：ANDROID_SDK_ROOT=D:\ProgramFiles\Android\Sdk
+安卓 sdk 环境变量：ANDROID_SDK_ROOT=D:\ProgramFiles\Android\Sdk
 
 **同意安卓开发者协议**
 
@@ -153,20 +143,14 @@ SunSeekerX@SSX-PC  ~\Desktop                                              
 ❯
 ```
 
-
-
-
-
 ## Flutter - Android studio 创建项目
 
 ## Flutter- 注意事项
 
-### 创建项目可能卡 `create flutter project...` 
+### 创建项目可能卡 `create flutter project...`
 
 - 使用全局科学上网就行。
 - 检查是否使用了国内源的环境变量
-
-
 
 ### 运行卡 `Running Gradle task 'assembleDebug'... `
 
@@ -230,10 +214,8 @@ buildscript {
 }
 ```
 
-
-
 2. gradle 不完整
    1. 中止 gradle 构建
    2. 手动下载 gradle ，可以用迅雷很快: https://distfiles.macports.org/gradle/gradle-5.6.2-all.zip
-   3. 复制 gradle-5.6.2-all.zip 到 `C:\Users\ <MyUsername>\.gradle\wrapper\dists\gradle-5.6.2-all\9st6wgf78h16so49nn74lgtbb`  不同的版本 hash 值不同
+   3. 复制 gradle-5.6.2-all.zip 到 `C:\Users\ <MyUsername>\.gradle\wrapper\dists\gradle-5.6.2-all\9st6wgf78h16so49nn74lgtbb` 不同的版本 hash 值不同
    4. 重新运行 `fluuter run` 或者 `flutter run -v`

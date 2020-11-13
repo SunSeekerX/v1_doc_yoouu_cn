@@ -48,6 +48,7 @@ module.exports = [
           { text: 'Html', link: '/front-end/html' },
           { text: 'Css', link: '/front-end/css' },
           { text: 'JavaScript', link: '/front-end/javascript' },
+          { text: 'Basic', link: '/front-end/basic' },
         ],
       },
       {

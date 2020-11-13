@@ -79,8 +79,6 @@
 </project>
 ```
 
-
-
 ## log4j
 
 ### properties 参考配置
@@ -111,8 +109,6 @@ log4j.logger.java.sql.Statement=DEBUG
 log4j.logger.java.sql.ResultSet=DEBUG
 log4j.logger.java.sql.PreparedStatement=DEBUG
 ```
-
-
 
 ## 动态 SQL
 

@@ -49,7 +49,7 @@
 
 ## Common
 
-- token权限控制
+- token 权限控制
 - es6,es7
 - Mock.js
 
@@ -62,10 +62,10 @@
 - Postman
 - XAMPP Control Panel
 - XMind ZEN
-- 微信web开发者工具
+- 微信 web 开发者工具
 - Adobe Photoshop CC 2019
 
 ## Other
 
-- JS穷举
+- JS 穷举
 - 域名备案

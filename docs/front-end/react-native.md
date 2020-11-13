@@ -10,15 +10,13 @@
 
 1. 引入了字体图标，安装启动闪退。`cd android &&./gradlew clean`。清除 `Gradle` 打包出来的文件，理论上改变了原生配置都需要清除。
 
-
-
 ## 路径别名
 
 `../../../../../components/location` 这种路径看起来极度不友好，用惯了 vue 都习惯了 `@`，下面配置下路径别名方便使用。
 
 ```bash
 npm i babel-plugin-module-resolver -D
-# yarn 
+# yarn
 yarn add babel-plugin-module-resolver -D
 ```
 
@@ -52,12 +50,9 @@ module.exports = {
     ],
   ],
 }
-
 ```
 
 更新了记得重启项目。
-
-
 
 ## 字体图标
 
@@ -93,11 +88,8 @@ project.ext.vectoricons = [
 apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 ```
 
-
-
 **iconfont**
 
 一个项目不可能不自定义图标，国内 `iconfont` 是不二的选择。在 rn 中使用字体图标略有麻烦。推荐一个 cli 工具转换成 rn 组件，用起来非常方便。按照 github 示例使用即可。
 
 [**react-native-iconfont-cli**](https://github.com/iconfont-cli/react-native-iconfont-cli)
-

@@ -5,12 +5,12 @@ custom-build-vue
 ```shell
 #!/bin/sh
 ###
- # @name: 
+ # @name:
  # @author: SunSeekerX
  # @Date: 2020-06-29 14:19:04
  # @LastEditors: SunSeekerX
  # @LastEditTime: 2020-06-30 11:26:14
-### 
+###
 
 # 进入项目目录
 cd /root/coding/vue/sunseekerx
@@ -57,8 +57,6 @@ rm -rf sunseekerx.tar.gz
 echo "### 执行成功"
 
 ```
-
-
 
 set-nodejs
 
@@ -141,6 +139,3 @@ printf "%-10s %-8s\n" "yarn" `yarn -v`
 
 
 ```
-
-
-

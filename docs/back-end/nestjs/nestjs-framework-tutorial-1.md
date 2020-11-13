@@ -2,11 +2,7 @@
 
 ![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
 
-
-
-------
-
-
+---
 
 Nest 是一个用于构建高效、可扩展的 Node.js 服务端应用框架，基于 TypeScript 编写并且结合了 OOP[1](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/#fn:Object-Oriented)、FP[2](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/#fn:Functional-Progr)、FRP[3](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/#fn:Functional-React) 的相关理念。并且设计上很多灵感来自于 Angular[4](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/#fn:Angular-is-a-pla)。
 
@@ -95,7 +91,7 @@ $ ts-node -r tsconfig-paths/register src/main.ts
 
 整个 main.ts 文件就 8 行代码，使用 Nest 的工厂函数创建了一个应用实例，并且监听 3000 端口。注意，Nest 默认会使用 ES 的 async/await 语法，所以你再也不用怕嵌套回调函数了，以同步的编码方式获取异步的效率。
 
-------
+---
 
 1. Object Oriented Programming — 面向对象的编程 [[return\]](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/#fnref:Object-Oriented)
 2. Functional Programming — 函数式的编程 [[return\]](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/#fnref:Functional-Progr)

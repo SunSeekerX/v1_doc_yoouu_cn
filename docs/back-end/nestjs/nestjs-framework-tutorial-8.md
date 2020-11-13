@@ -2,11 +2,7 @@
 
 ![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
 
-------
-
-
-
-
+---
 
 ![img](https://image.yoouu.cn/sunseekerx/back-end/nestjs/5d1dc90b3606425009.png)
 
@@ -257,16 +253,15 @@ export interface ValidationPipeOptions extends ValidatorOptions {
 
 ValidatorOptions 又继承了如下所有 class-validator 的参数：
 
-| Option                   | Type       | Description                                                  |
-| ------------------------ | ---------- | ------------------------------------------------------------ |
-| `skipMissingProperties`  | `boolean`  | If set to true, validator will skip validation of all properties that are missing in the validating object. |
-| `whitelist`              | `boolean`  | If set to true, validator will strip validated (returned) object of any properties that do not use any validation decorators. |
-| `forbidNonWhitelisted`   | `boolean`  | If set to true, instead of stripping non-whitelisted properties validator will throw an exception. |
-| `forbidUnknownValues`    | `boolean`  | If set to true, attempts to validate unknown objects fail immediately. |
-| `disableErrorMessages`   | `boolean`  | If set to true, validation errors will not be returned to the client. |
-| `exceptionFactory`       | `Function` | Takes an array of the validation errors and returns an exception object to be thrown. |
-| `groups`                 | `string[]` | Groups to be used during validation of the object.           |
-| `dismissDefaultMessages` | `boolean`  | If set to true, the validation will not use default messages. Error message always will be `undefined` if its not explicitly set. |
-| `validationError.target` | `boolean`  | Indicates if target should be exposed in `ValidationError`   |
-| `validationError.value`  | `boolean`  | Indicates if validated value should be exposed in `ValidationError`. |
-
+| Option | Type | Description |
+| --- | --- | --- |
+| `skipMissingProperties` | `boolean` | If set to true, validator will skip validation of all properties that are missing in the validating object. |
+| `whitelist` | `boolean` | If set to true, validator will strip validated (returned) object of any properties that do not use any validation decorators. |
+| `forbidNonWhitelisted` | `boolean` | If set to true, instead of stripping non-whitelisted properties validator will throw an exception. |
+| `forbidUnknownValues` | `boolean` | If set to true, attempts to validate unknown objects fail immediately. |
+| `disableErrorMessages` | `boolean` | If set to true, validation errors will not be returned to the client. |
+| `exceptionFactory` | `Function` | Takes an array of the validation errors and returns an exception object to be thrown. |
+| `groups` | `string[]` | Groups to be used during validation of the object. |
+| `dismissDefaultMessages` | `boolean` | If set to true, the validation will not use default messages. Error message always will be `undefined` if its not explicitly set. |
+| `validationError.target` | `boolean` | Indicates if target should be exposed in `ValidationError` |
+| `validationError.value` | `boolean` | Indicates if validated value should be exposed in `ValidationError`. |

@@ -1,12 +1,12 @@
-## 如何查看LINUX发行版的名称及其版本号
+## 如何查看 LINUX 发行版的名称及其版本号
 
 2017-01-16
 
 最近跟合作方支付公司（一个北京的互联网支付公司，就不具体提名字啦）沟通的时候，需要对方生成非对称加密密钥公钥提供给我方，对方技术是个妹子。不懂怎么在预发／生产机器上面生成加密算法的公私钥，也不知道怎么查看系统版本。属于一问三不知类型，怎么办～ 我也只能打电话过去一步步手把手教如何查看发行版，如何安装命令，如何生成对应的公私钥。下面讲讲如何查看系统发行版和版本号。
 
-查看LINUX发行版的名称及其版本号的命令,这些信息对于添加正确的软件更新源很有用，而当你只能在命令行下工作的时候，下面的方法可以帮忙。
+查看 LINUX 发行版的名称及其版本号的命令,这些信息对于添加正确的软件更新源很有用，而当你只能在命令行下工作的时候，下面的方法可以帮忙。
 
-## 一、查看Linux内核版本命令（两种方法）：
+## 一、查看 Linux 内核版本命令（两种方法）：
 
 1、`cat /proc/version`
 
@@ -21,11 +21,11 @@ Linux version 2.6.18-194.8.1.el5.centos.plus
 
 ```
 [root@localhost ~]# uname -a
-Linux localhost.localdomain 2.6.18-194.8.1.el5.centos.plus 
+Linux localhost.localdomain 2.6.18-194.8.1.el5.centos.plus
 #1 SMP Wed Jul 7 11:50:45 EDT 2010 i686 i686 i386 GNU/Linux
 ```
 
-## 二、查看Linux系统版本的命令（3种方法）： 
+## 二、查看 Linux 系统版本的命令（3 种方法）： 
 
 1、`lsb_release -a`，即可列出所有版本信息：
 
@@ -38,14 +38,14 @@ Release: 6.5
 Codename: Final
 ```
 
-这个命令适用于所有的Linux发行版，包括Redhat、SuSE、Debian…等发行版。2、`cat /etc/redhat-release`，这种方法只适合Redhat系的Linux：
+这个命令适用于所有的 Linux 发行版，包括 Redhat、SuSE、Debian…等发行版。2、`cat /etc/redhat-release`，这种方法只适合 Redhat 系的 Linux：
 
 ```
 [root@localhost ~]# cat /etc/redhat-release
 CentOS release 6.7 (Final)
 ```
 
-3、`cat /etc/issue`，此命令也适用于所有的Linux发行版。
+3、`cat /etc/issue`，此命令也适用于所有的 Linux 发行版。
 
 ```
 [root@localhost ~]# cat /etc/issue
@@ -53,25 +53,19 @@ CentOS release 6.7 (Final)
 Kernel \r on an \m
 ```
 
-
-
 ## Ubuntu 更新软件和系统
 
 apt-get update: 升级安装包相关的命令,刷新可安装的软件列表(但是不做任何实际的安装动作)
 
 apt-get upgrade: 进行安装包的更新(软件版本的升级)
 
-apt-get dist-upgrade: 进行系统版本的升级(Ubuntu版本的升级)
+apt-get dist-upgrade: 进行系统版本的升级(Ubuntu 版本的升级)
 
-do-release-upgrade: Ubuntu官方推荐的系统升级方式,若加参数-d还可以升级到开发版本,但会不稳定
-
-
-
-
+do-release-upgrade: Ubuntu 官方推荐的系统升级方式,若加参数-d 还可以升级到开发版本,但会不稳定
 
 ## 申请通配符证书
 
-安装certbot
+安装 certbot
 
 ![certbot](https://image.yoouu.cn/sunseekerx/back-end/linux/1186922-0d4dbd223901c210.png)
 
@@ -80,10 +74,8 @@ $ sudo apt-get update
 $ sudo apt-get install software-properties-common
 $ sudo add-apt-repository ppa:certbot/certbot
 $ sudo apt-get update
-$ sudo apt-get install certbot 
+$ sudo apt-get install certbot
 ```
-
-
 
 ## 申请证书
 
@@ -97,17 +89,11 @@ sudo certbot certonly --manual -d example.com -d *.example.com --preferred-chall
 sudo certbot certonly --manual -d yoouu.cn -d *.yoouu.cn --preferred-challenges dns --server https://acme-v02.api.letsencrypt.org/directory
 ```
 
-
-
-按照提示设置DNS解析
+按照提示设置 DNS 解析
 
 ![DNS解析](https://image.yoouu.cn/sunseekerx/back-end/linux/1186922-365bfd53bc81a30f.png)
 
-
-
 # Nginx 配置
-
-
 
 ```dart
 server {
@@ -121,7 +107,7 @@ server {
     server_name example.com;
 
     charset     utf-8;
-    
+
     add_header X-Content-Type-Options nosniff;
 
     ssl on;

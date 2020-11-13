@@ -2,9 +2,7 @@
 
 ![Nestjs](https://image.yoouu.cn/sunseekerx/back-end/nestjs/nestjs-logo.png)
 
-------
-
-
+---
 
 **中间件**就是一个函数，在路由处理器之前调用。这就表示中间件函数可以访问到请求和响应对象以及应用的请求响应周期中的 next() 中间间函数。
 
@@ -41,7 +39,7 @@ export class LoggerMiddleware implements NestMiddleware {
 
 ## 应用中间件
 
-@Module() 装饰器中并不能指定中间件参数，我们可以在模块类的构 configure() 方法中应用中间件，下面的代码会应用一个 ApplicationModule级别的日志中间件 LoggerMiddleware
+@Module() 装饰器中并不能指定中间件参数，我们可以在模块类的构 configure() 方法中应用中间件，下面的代码会应用一个 ApplicationModule 级别的日志中间件 LoggerMiddleware
 
 ```
 @Module({

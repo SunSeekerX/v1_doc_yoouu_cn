@@ -1,18 +1,14 @@
 ## Xmind
 
-### Windows文件夹结构
+### Windows 文件夹结构
 
 ![windows-folder-structure](https://image.yoouu.cn/sunseekerx/basic/others/windows-folder-structure.png)
 
-
-
-### Linux目录
+### Linux 目录
 
 ![Linux-folder](https://image.yoouu.cn/sunseekerx/basic/others/Linux-folder.png)
 
-
-
-## Windows 💻 
+## Windows 💻
 
 ## 1.微软拼音输入自定义时间
 
@@ -26,11 +22,9 @@ Windows 10：`设置`→`时间和语言`→`语言`→`中文(中华人民共�
 
 > 然后拼音输入法状态下输入你定义的名字：例如我的为`utc`，输入`utc`回车就是显示当前时间
 
-
-
 ## 2.查看端口占用
 
-### 查看被占用端口对应的PID
+### 查看被占用端口对应的 PID
 
 ```powershell
 netstat -aon|findstr "49157"
@@ -42,21 +36,13 @@ netstat -aon|findstr "49157"
 tasklist|findstr "2720"
 ```
 
-
-
-输入tasklist|findstr "2720"
-
-
+输入 tasklist|findstr "2720"
 
 ## Something
 
 我喜欢学习新的东西，但我宁愿学习一些真正新的东西，而不仅仅是另一种完成同样任务的方法。
 
-
-
 Dart 语言本来已经死掉了，就是因为 Flutter 这个非常有前景的业务绑定了它，所以又活过来了。说到底，还是业务重要。好的技术不一定能活，坏的技术不一定会死，取决于有没有业务。
-
-
 
 ## 信息的半衰期
 
@@ -82,8 +68,6 @@ Dart 语言本来已经死掉了，就是因为 Flutter 这个非常有前景的
 
 > 来源：[科技爱好者周刊：第 103 期](http://www.ruanyifeng.com/blog/2020/04/weekly-issue-103.html)
 
-
-
 ## 如何培养领导力
 
 **第一阶段：熟悉自己的业务，知道问题在哪里，怎样可以解决。**
@@ -103,8 +87,6 @@ Dart 语言本来已经死掉了，就是因为 Flutter 这个非常有前景的
 如果你离开，团队也能正常运作下去，说明一切已经制度化了，你的领导已经成功了。这时，你可以让其他人接管团队，自己去实现下一个目标。
 
 > 来源：[科技爱好者周刊（第 112 期）](http://www.ruanyifeng.com/blog/2020/06/weekly-issue-112.html)
-
-
 
 ## U 盘化生存和 Uber-job
 
@@ -130,8 +112,6 @@ Dart 语言本来已经死掉了，就是因为 Flutter 这个非常有前景的
 
 > 来源：[科技爱好者周刊（第 114 期）](http://www.ruanyifeng.com/blog/2020/07/weekly-issue-114.html)
 
-
-
 ## `Typora`快捷键
 
 - 无序列表：输入-之后输入空格
@@ -153,8 +133,8 @@ Dart 语言本来已经死掉了，就是因为 Flutter 这个非常有前景的
 - 倾斜：ctrl+i
 - 下划线：ctrl+u
 - 删除线：alt+shift+5
-- 插入图片：直接拖动到指定位置即可或者ctrl+shift+i
+- 插入图片：直接拖动到指定位置即可或者 ctrl+shift+i
 - 插入链接：ctrl+k
 - 分割线：
   - `***`+回车
-  - `---`+回车  
+  - `---`+回车

@@ -11,9 +11,9 @@
 这段内容展示了在内容里面一些排版格式，比如：
 
 - **加粗** - `**加粗**`
-- *倾斜* - `*倾斜*`
+- _倾斜_ - `*倾斜*`
 - ~~删除线~~ - `~~删除线~~`
-- `Code 标记` - ``Code 标记``
+- `Code 标记` - `Code 标记`
 - [超级链接](https://hacpai.com) - `[超级链接](https://hacpai.com)`
 - [username@gmail.com](mailto:username@gmail.com) - `[username@gmail.com](mailto:username@gmail.com)`
 
@@ -32,8 +32,7 @@
 
 #### 一些表情例子
 
-😄 😆 😵 😭 😰 😅  😢 😤 😍 😌
-👍 👎 💯 👏 🔔 🎁 ❓ 💣 ❤️ ☕️ 🌀 🙇 💋 🙏 💢
+😄 😆 😵 😭 😰 😅 😢 😤 😍 😌 👍 👎 💯 👏 🔔 🎁 ❓ 💣 ❤️ ☕️ 🌀 🙇 💋 🙏 💢
 
 ### 大标题 - Heading 3
 
@@ -125,8 +124,8 @@ public class HelloWorld {
 
 #### 任务列表
 
-- [X] 发布 Sym
-- [X] 发布 Solo
+- [x] 发布 Sym
+- [x] 发布 Solo
 - [ ] 预约牙医
 
 ### 表格
@@ -170,13 +169,9 @@ $$
 
 公式 $a^2 + b^2 = \color{red}c^2$ 是行内。
 
-
-
 ### 流程图
 
-因为大多数markdown的渲染软件都没有很好的支持流程图，这里略过。
-
-
+因为大多数 markdown 的渲染软件都没有很好的支持流程图，这里略过。
 
 ### 多媒体
 

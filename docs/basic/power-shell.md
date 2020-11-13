@@ -11,11 +11,9 @@ netsh winhttp reset proxy
 netsh winhttp show proxy
 ```
 
-
-
 ## powershell 因为在此系统上禁止运行脚本…
 
-> 最近在自己电脑上使用react-native 初始化项目出现了下面的错误，猜测应该是微软更新导致
+> 最近在自己电脑上使用 react-native 初始化项目出现了下面的错误，猜测应该是微软更新导致
 
 ```bash
 react-native : 无法加载文件 C:\Users\SunSeekerX\AppData\Roaming\npm\react-native.ps1，因为在此系统上禁止运行脚本。有关
@@ -27,25 +25,21 @@ react-native : 无法加载文件 C:\Users\SunSeekerX\AppData\Roaming\npm\react-
     + FullyQualifiedErrorId : UnauthorizedAccess
 ```
 
-
-
 **解决**
 
-1. win+X启动 `windows PowerShell`（管理员）
+1. win+X 启动 `windows PowerShell`（管理员）
 
 2. 若要在本地计算机上运行您编写的未签名脚本和来自其他用户的签名脚本，请使用以下命令将计算机上的 执行策略更改为 RemoteSigned
 
    ```powershell
    # 更改执行策略
    set-ExecutionPolicy RemoteSigned
-   
+
    # 查看执行策略
    get-ExecutionPolicy
    ```
 
-
-
-## 开启win10卓越性能模式
+## 开启 win10 卓越性能模式
 
 桌面按住`shift`加上鼠标右键选择在此处打开`powershell`窗口执行
 
@@ -58,6 +52,6 @@ PS C:\Users\SunSeekerX\Desktop> powercfg -duplicatescheme e9a42b02-d5df-448d-aa0
 PS C:\Users\SunSeekerX\Desktop>
 ```
 
-去电源选项选择卓越性能就ok了
+去电源选项选择卓越性能就 ok 了
 
 ![](https://image.yoouu.cn/sunseekerx/basic/power-shell/super-power.png)

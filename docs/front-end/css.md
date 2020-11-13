@@ -2,7 +2,7 @@
 
 只推荐`阮一峰`的教程，很用心，每一个效果都有图片。结合开发实例很好理解上手。
 
-### flex布局
+### flex 布局
 
 [Flex 布局教程：语法篇](http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html) By 阮一峰
 
@@ -10,68 +10,58 @@
 
 [Flexbox 布局的最简单表单](http://www.ruanyifeng.com/blog/2018/10/flexbox-form.html) By 阮一峰
 
-### Grid布局
+### Grid 布局
 
 [CSS Grid 网格布局教程](https://www.ruanyifeng.com/blog/2019/03/grid-layout-tutorial.html) By 阮一峰
 
-
-
 ## 代码块
 
-### 01.css禁用鼠标事件
+### 01.css 禁用鼠标事件
 
 ```css
 .disabled {
-    pointer-events: none;
-    cursor: default;
-    opacity: 0.6;
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.6;
 }
 ```
 
-
-
-### 02.css禁止用户选择
+### 02.css 禁止用户选择
 
 ```css
-body{
--webkit-touch-callout: none;
--webkit-user-select: none;
--khtml-user-select: none;
--moz-user-select: none;
--ms-user-select: none;
-user-select: none;
+body {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 ```
 
-
-
-### 03. 如何修改chrome记住密码后自动填充表单的黄色背景 ？
+### 03. 如何修改 chrome 记住密码后自动填充表单的黄色背景 ？
 
 ```css
- input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
-    background-color: rgb(250, 255, 189); /* #FAFFBD; */
-    background-image: none;
-    color: rgb(0, 0, 0);
-  }
+input:-webkit-autofill,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+  background-color: rgb(250, 255, 189); /* #FAFFBD; */
+  background-image: none;
+  color: rgb(0, 0, 0);
+}
 ```
 
-
-
-### 04. 让页面里的字体变清晰，变细用CSS怎么做？
+### 04. 让页面里的字体变清晰，变细用 CSS 怎么做？
 
 ```css
 -webkit-font-smoothing: antialiased;
 ```
 
-
-
-### 05. 让overflow:scroll平滑滚动？
+### 05. 让 overflow:scroll 平滑滚动？
 
 ```css
 -webkit-overflow-scrolling: touch;
 ```
-
-
 
 ### 06. 开启硬件加速
 
@@ -80,58 +70,60 @@ user-select: none;
 目前，像Chrome/Filefox/Safari/IE9+以及最新版本Opera都支持硬件加速，当检测到某个DOM元素应用了某些CSS规则时就会自动开启，从而解决页面闪白，保证动画流畅。
 */
 .css {
-    -webkit-transform: translate3d(0,0,0);
-    -moz-transform: translate3d(0,0,0);
-    -ms-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -moz-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
 }
 ```
 
-
-
-### 07. 消除transtration闪屏
+### 07. 消除 transtration 闪屏
 
 ```css
 .css {
-    -webkit-transform-style: preserve-3d;
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
+  -webkit-transform-style: preserve-3d;
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
 }
 ```
-
-
 
 ### 08. 改变输入框内提示文字颜色
 
 ```css
-::-webkit-input-placeholder { /* WebKit browsers */
-    color: #999; }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-    color: #999; }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-    color: #999; }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-    color: #999; }
-input:focus::-webkit-input-placeholder{ color:#999; }
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: #999;
+}
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: #999;
+}
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: #999;
+}
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: #999;
+}
+input:focus::-webkit-input-placeholder {
+  color: #999;
+}
 ```
-
-
 
 ### 09. 手机上的多行省略
 
 ```css
-.overflow-hidden{
-    display: box !important;
-    display: -webkit-box !important;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;/*第几行出现省略号*/
-    /*text-align:justify;不能和溢出隐藏的代码一起写，会有bug*/
+.overflow-hidden {
+  display: box !important;
+  display: -webkit-box !important;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; /*第几行出现省略号*/
+  /*text-align:justify;不能和溢出隐藏的代码一起写，会有bug*/
 }
 ```
-
-
 
 ### 10. Css ellipsis
 
@@ -160,19 +152,15 @@ display: -webkit-box;
 -webkit-box-orient: vertical;
 ```
 
-
-
 ### 11. Hide scrollbar
 
 ```css
 ::-webkit-scrollbar {
-    width: 0;
-    height: 0;
-    color: transparent;
+  width: 0;
+  height: 0;
+  color: transparent;
 }
 ```
-
-
 
 ### 12 有哪些适合网页显示的字体
 
