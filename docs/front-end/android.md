@@ -108,6 +108,12 @@
 
 ![img](https://image.yoouu.cn/sunseekerx/front-end/android/activity_lifecycle.png)
 
+**感知生命周期**
+
+实现 `LifecycleObserver` 这个接口即可实现在自己的 `class` 中监听生命周期的回调。而不需要在 `activity` 中操作自己的 `class` 的状态。
+
+![lifecycle_feeling.png](https://image.yoouu.cn/sunseekerx/front-end/android/lifecycle_feeling.png)
+
 ### Service
 
 ### Broadcast
@@ -181,6 +187,10 @@ android {
 ### ViewModel
 
 ![viewmodel_fragment.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmodel_fragment.png)
+
+## Room
+
+![room_components.png](https://image.yoouu.cn/sunseekerx/front-end/android/room_components.png)
 
 ## 注意事项
 
