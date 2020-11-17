@@ -228,3 +228,79 @@ cd /www/wwwroot/sunseekerx.yoouu.cn
 访问[https://sunseekerx.yoouu.cn/](https://sunseekerx.yoouu.cn/)试试，更新成功 🤣
 
 ![new-website](https://image.yoouu.cn/2020/Jenkins/new-website.png)
+
+## uni-app 项目自动打包 docker 触发 rancher 自动更新
+
+**使用内置的 nodejs**
+
+**配置 webhook**
+
+需要设置 gitlab 分支过滤
+
+**Docker 打包脚本**
+
+```shell
+FROM nginx:stable-alpine
+COPY conf/Shanghai /etc/localtime
+COPY dist/ /usr/share/nginx/html/
+COPY conf/cdev/cdev-admin.hnybt.com.cn.conf /etc/nginx/conf.d/default.conf
+```
+
+**Nginx 配置**
+
+```nginx
+server {
+    listen 80;
+    server_name cdev-wap.hnybt.com.cn;
+
+    location / {
+        root /usr/share/nginx/html;
+        index index.html index.htm;
+        try_files $uri /index.html index.html;
+    }
+
+    error_page 500 502 503 504 /50x.html;
+    location = /50x.html {
+        root /usr/share/nginx/html;
+    }
+}
+
+```
+
+**jenkins 构建脚本**
+
+```shell
+#!/bin/bash -l
+# 远程仓库地址
+REMOTE_REGISTRY="registry.cn-hangzhou.aliyuncs.com"
+# 环境变量
+PROFILE="cdev"
+# 是否快照参数
+SNAPSHOT=
+# 版本号
+VERSION=0.1.0
+# 名称
+name="ybt-wap-${PROFILE}"
+# 远程仓库地址
+REMOTE_REP=$REMOTE_REGISTRY/ybt_$PROFILE
+# 进入工作空间
+cd $WORKSPACE/
+
+# 登录docker
+docker login --username=${username} -p ${password} $REMOTE_REGISTRY
+# 项目构建
+tyn
+yarn build:h5
+
+# Docke 构建镜像
+docker build -f ./Dockerfile.${PROFILE} -t $name:$VERSION$SNAPSHOT .
+
+# Docke 生成docker tag并推送到远端
+docker tag  $name:$VERSION$SNAPSHOT $REMOTE_REP/$name:$VERSION$SNAPSHOT
+docker push $REMOTE_REP/$name:$VERSION$SNAPSHOT
+docker tag  $name:$VERSION$SNAPSHOT $REMOTE_REP/$name:latest
+docker push $REMOTE_REP/$name:latest
+
+# Rancher 重启
+/usr/local/bin/kubectl --kubeconfig ~/.kube/ybt/config.cdev replace --force -f conf/cdev/ybt-wap-cdev.yaml
+```
