@@ -192,6 +192,22 @@ android {
 
 ![room_components.png](https://image.yoouu.cn/sunseekerx/front-end/android/room_components.png)
 
+## serializable
+
+就相当于 `JavaScript` 里面的 `JSON.stringify()` 序列化，`JSON.parse()` 反序列化。
+
+![serializable.png](https://image.yoouu.cn/sunseekerx/front-end/android/serializable.png)
+
+### 打开 idea 自动插入序列号功能
+
+setting > search `serializable class without 'serialVersionUID'` > 勾选
+
+如果你的类实现了序列化接口没写 `serialVersionUID` 就会警告。
+
+## kotlin
+
+![android/kotlin.png](https://image.yoouu.cn/sunseekerx/front-end/android/kotlin.png)
+
 ## 注意事项
 
 1. 如果需要获取 activity 的上下文，不能直接传递 `this`，因为上下文会频繁的销毁和重建，如果传递会造成内存泄漏。可以使用 `getApplicationContext()` 方法传递上下文实例。（可以理解为指向 App 的顶级引用，单例模式，只要应用存在，就会有一个实例）
