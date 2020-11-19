@@ -98,6 +98,31 @@ docker kill <container_id>
 docker cp <container_id>:<容器内的路径> <主机路径>
 ```
 
+## Docker desktop
+
+**Windows 加速**
+
+Docker 的镜像从 Docker Hub 上下载，使用国内的网络会比较慢，因此需要配置加速链接。
+
+docker 的配置文件的默认路径为：`C:\Users\用户名.docker\daemon.json`
+
+打开配置文件，用如下内容替换整个配置文件，保存。之后重启 Docker，即可。Docker 的重启可通过右击任务栏的 Docker 图标（如下图），之后选中**Restart**。
+
+```json
+{
+  "registry-mirrors": [
+    "https://registry.docker-cn.com",
+    "https://dockerhub.azk8s.cn",
+    "https://reg-mirror.qiniu.com",
+    "http://hub-mirror.c.163.com",
+    "https://docker.mirrors.ustc.edu.cn"
+  ],
+  "insecure-registries": [],
+  "debug": true,
+  "experimental": false
+}
+```
+
 ## 介绍
 
 ### 镜像
