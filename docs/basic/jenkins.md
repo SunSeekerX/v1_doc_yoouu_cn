@@ -4,6 +4,10 @@
 >
 > 更新时间：2020-05-05 20:39:33
 
+## devops
+
+![devops.png](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/devops/devops.png)
+
 ## 配置插件下载加速
 
 **第一次安装**

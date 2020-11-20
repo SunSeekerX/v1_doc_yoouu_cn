@@ -56,6 +56,7 @@ module.exports = [
         items: [
           { text: 'Npm', link: '/front-end/npm' },
           { text: 'Vue', link: '/front-end/vue' },
+          { text: 'React', link: '/front-end/react' },
           { text: 'Uni-app', link: '/front-end/uni-app' },
           {
             text: 'Flutter',
@@ -91,6 +92,7 @@ module.exports = [
     text: 'Backend',
     // link: '/back-end/linux',
     items: [
+      { text: 'Basic', link: '/back-end/basic' },
       { text: 'Linux', link: '/back-end/linux' },
       {
         text: 'NestJS',

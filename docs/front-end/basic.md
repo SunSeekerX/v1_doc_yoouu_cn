@@ -1,5 +1,7 @@
 # Basic
 
+![frontend.png](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/front-end/frontend.png)
+
 ## prettier
 
 代码格式化工具，可以配置在提交之前按照配置文件格式化好代码。保持风格一致。

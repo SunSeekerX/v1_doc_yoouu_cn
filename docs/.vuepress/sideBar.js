@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-11-13 13:05:39
+ * @LastEditTime: 2020-11-20 11:59:59
  */
 
 module.exports = {
@@ -86,6 +86,7 @@ module.exports = {
       children: [
         ['npm', 'Npm'],
         ['vue', 'Vue'],
+        ['react', 'React'],
         ['uni-app', 'Uni-app'],
         ['flutter', 'Flutter'],
         ['react-native', 'React Native'],
@@ -109,6 +110,7 @@ module.exports = {
       // icon: 'markdown',
       collapsable: false,
       children: [
+        ['basic', 'Basic'],
         ['linux', 'Linux'],
         ['sql', 'SQL'],
         ['database', 'Database'],
