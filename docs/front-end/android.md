@@ -214,7 +214,7 @@ setting > search `serializable class without 'serialVersionUID'` > 勾选
 
 1. 如果需要获取 activity 的上下文，不能直接传递 `this`，因为上下文会频繁的销毁和重建，如果传递会造成内存泄漏。可以使用 `getApplicationContext()` 方法传递上下文实例。（可以理解为指向 App 的顶级引用，单例模式，只要应用存在，就会有一个实例）
 
-## 0x3 添加 adb 环境变量
+## 添加 adb 环境变量
 
 找到你 android sdk 安装的路径，添加 `${sdk}/platform-tools` 到 path，例如我的：
 
@@ -222,7 +222,7 @@ setting > search `serializable class without 'serialVersionUID'` > 勾选
 W:\ProgramFiles\Android\Sdk\platform-tools
 ```
 
-## 0x4 Android studio 初始设置
+## Android studio 初始设置
 
 1. 更改所有编码为 `utf-8`
 2. 修改 indent 为 2
@@ -252,7 +252,7 @@ W:\ProgramFiles\Android\Sdk\platform-tools
 
 Help > Edit custom VM options > 添加就行
 
-## 0x5 Android studio 查看 SQLite 数据库
+## Android studio 查看 SQLite 数据库
 
 **使用自带的安装模拟器**
 
@@ -311,6 +311,49 @@ class ExampleActivity extends Activity {
 ```
 
 **编辑器插件 - Android ButterKnife Zelezny**
+
+## Gradle 加速
+
+1. 打开工程文件根目录 build.gradle
+2. 在 buildscript 和 allprojects 的 repositories 中分别注释掉 jcenter()，并使用国内镜像进行替换：maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
+3. 在 buildscript 的 repositories 添加：maven{url "https://jitpack.io"}
+
+```groovy
+buildscript {
+  repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    maven { url "https://jitpack.io" }
+    google()
+//        jcenter()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.2.1'
+    classpath "io.realm:realm-gradle-plugin:4.3.1"
+    classpath 'com.jakewharton:butterknife-gradle-plugin:8.8.1'
+    classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
+    classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+    classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
+  }
+}
+
+allprojects {
+  repositories {
+    maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+    google()
+//    jcenter()
+//    mavenCentral()
+//    maven { url "https://jitpack.io" }
+  }
+}
+
+task clean(type: Delete) {
+  delete rootProject.buildDir
+}
+
+ext {
+  supportVersion = '28.0.3'
+}
+```
 
 ## 区块链钱包
 
