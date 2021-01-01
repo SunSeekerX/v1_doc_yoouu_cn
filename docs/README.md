@@ -4,9 +4,9 @@ heroImage: /home.jpg
 heroText: SunSeekerX
 tagline: This is just the beginning of this road ~
 action:
-  - text: Getting start → 💡
+  - text: Go →
     link: /guide/
-actionText: Getting start → 💡
+actionText: Go →
 actionLink: /guide/
 # footer: MIT Licensed | Copyright © 2020-present SunSeekerX
 ---
