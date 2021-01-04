@@ -169,6 +169,16 @@ yarn
 yarn cache clean
 ```
 
+## 📂 NodeJs 版本管理
+
+**windows**
+
+使用 [nvm](https://github.com/coreybutler/nvm-windows) 进行管理，具体安装查看 github 说明。
+
+**mac**
+
+[nvm](https://github.com/nvm-sh/nvm) 具体安装查看 github 说明。
+
 # 📂 规范提交代码
 
 > [约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.2/)
