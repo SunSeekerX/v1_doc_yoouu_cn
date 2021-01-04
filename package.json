@@ -15,11 +15,11 @@
     }
   },
   "devDependencies": {
-    "@mr-hope/vuepress-plugin-comment": "^1.7.2",
-    "husky": "^4.3.5",
+    "@mr-hope/vuepress-plugin-comment": "^1.7.9",
+    "husky": "^4.3.6",
     "lint-staged": "^10.5.3",
     "prettier": "^2.2.1",
     "vuepress": "^1.7.1",
-    "vuepress-theme-hope": "^1.7.2"
+    "vuepress-theme-hope": "^1.7.9"
   }
 }
