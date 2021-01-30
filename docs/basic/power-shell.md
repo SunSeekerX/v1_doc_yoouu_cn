@@ -9,6 +9,11 @@ netsh winhttp set proxy 127.0.0.1:1080
 netsh winhttp reset proxy
 # 查看代理
 netsh winhttp show proxy
+
+# clash 复制 power shell
+$Env:http_proxy="http://127.0.0.1:7890";$Env:https_proxy="http://127.0.0.1:7890"
+# clash 复制 cmd
+set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890
 ```
 
 ## powershell 因为在此系统上禁止运行脚本…
