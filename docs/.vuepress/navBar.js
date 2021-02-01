@@ -117,7 +117,10 @@ module.exports = [
   {
     text: 'Interest',
     // link: '/interest/phone',
-    items: [{ text: 'Phone', link: '/interest/phone' }],
+    items: [
+      { text: 'Phone', link: '/interest/phone' },
+      { text: 'Blockchain', link: '/interest/blockchain' },
+    ],
   },
   // Open source
   {
