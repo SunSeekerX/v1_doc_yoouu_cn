@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-11-20 11:59:59
+ * @LastEditTime: 2021-02-01 09:38:23
  */
 
 module.exports = {
@@ -160,7 +160,10 @@ module.exports = {
       // prefix: 'java/',
       // icon: 'markdown',
       collapsable: false,
-      children: [['phone', 'Phone']],
+      children: [
+        ['phone', 'Phone'],
+        ['blockchain', 'Blockchain'],
+      ],
     },
   ],
 
