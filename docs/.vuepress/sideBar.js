@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-02-01 09:38:23
+ * @LastEditTime: 2021-03-15 00:18:43
  */
 
 module.exports = {
@@ -27,6 +27,7 @@ module.exports = {
         ['git', 'Git commands'],
         ['regexp', 'Regexp'],
         ['ide', 'IDE'],
+        ['windows', 'Windows'],
         ['other', 'Other'],
       ],
     },

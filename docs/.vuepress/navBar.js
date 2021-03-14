@@ -13,6 +13,7 @@ module.exports = [
       { text: 'Git commands', link: '/basic/git' },
       { text: 'RegExp', link: '/basic/regexp' },
       { text: 'IDE', link: '/basic/ide' },
+      { text: 'Windows', link: '/basic/windows' },
       { text: 'Other', link: '/basic/other' },
       {
         text: 'Learn',
