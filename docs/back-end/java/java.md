@@ -7,6 +7,18 @@
 - **public** : 对所有类可见。使用对象：类、接口、变量、方法
 - **protected** : 对同一包内的类和所有子类可见。使用对象：变量、方法。 **注意：不能修饰类（外部类）**。
 
+## 多线程
+
+### 概念
+
+同一时间执行多个任务。
+
+> 现在很多多线程是模拟出来的，真正的多线程指的是有多个 cpu，即多核，如服务器。如果是模拟出来的多线程，即在一个 cpu 的情况下，在同一个时间点，cpu 只能执行一个代码，因为切换的很快，所以就有同时执行的错觉。
+
+### 三种创建方式
+
+![java-thread-create.png](https://image.yoouu.cn/sunseekerx/back-end/java/java-thread-create.png)
+
 ## Jdk and tomcat
 
 > 下载 JDK12 默认安装，环境变量 path 添加安装路径带`bin`，新建环境变量`JAVA_HOME`不带`bin`，命令行`java`和`javac`执行成功，`tomcat`启动成功

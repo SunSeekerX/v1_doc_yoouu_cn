@@ -9,3 +9,7 @@ Windows 10：`设置`→`时间和语言`→`区域和语言`→`中文(中华�
 ```
 %yyyy%-%MM%-%dd% %HH%:%mm%:%ss% +0800
 ```
+
+### 右下角时间显示秒
+
+[http://iknow.lenovo.com.cn/detail/dc_173611.html](http://iknow.lenovo.com.cn/detail/dc_173611.html)
