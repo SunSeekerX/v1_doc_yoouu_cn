@@ -74,7 +74,17 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 
 目前需要实现的就是这样的功能，但`Jenkins`能做的不只是这么多。不过对于我目前的项目来说足够了。
 
-## 实现
+## 实现 - 2021-03-17
+
+> 原理：网站和部署都在 Jenkins 服务器。通过 Jenkins 拉取代码，通过远程登陆服务器，执行构建打包部署命令。
+
+### 安装远程执行 ssh 插件 `SSH`
+
+![](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/basic/jenkins/jenkins-plugin-ssh.png)
+
+## 实现 - old
+
+> 部署网站和 Jenkins 不在同一服务器。
 
 ### 0x1 安装 ssh 发送插件 - `Publish Over SSH`
 

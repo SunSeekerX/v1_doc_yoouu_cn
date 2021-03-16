@@ -221,6 +221,15 @@ git checkout -- ${文件路径}
 git push -u ${远程仓库别名} ${本地分支名}:${远程分支名}
 ```
 
+### 本地仓库推送到多个远程仓库
+
+```bash
+# 查看帮助
+git remote set-url origin --help
+git remote set-url --add <name> <newurl>
+git remote set-url --delete <name> <url>
+```
+
 ### 从远程仓库克隆项目到本地
 
 ```bash
