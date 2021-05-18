@@ -3,14 +3,13 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-03-15 00:18:43
+ * @LastEditTime: 2021-05-18 10:41:48
  */
 
 module.exports = {
   '/guide/': [
     {
       title: 'Guide',
-      // icon: 'creativefill',
       collapsable: false,
       children: [''],
     },
@@ -19,8 +18,6 @@ module.exports = {
   '/basic/': [
     {
       title: 'Basic',
-      // prefix: 'markdown/',
-      // icon: 'creativefill',
       collapsable: false,
       children: [
         ['resource', 'Resource'],
@@ -34,8 +31,6 @@ module.exports = {
     {
       title: 'Learn',
       prefix: 'coding/',
-      // prefix: 'markdown/',
-      // icon: 'markdown',
       collapsable: false,
       children: [
         ['git', 'Git'],
@@ -45,9 +40,6 @@ module.exports = {
     },
     {
       title: 'Others',
-      // prefix: 'coding/',
-      // prefix: 'markdown/',
-      // icon: 'markdown',
       collapsable: false,
       children: [
         ['jenkins', 'Jenkins'],
@@ -58,9 +50,6 @@ module.exports = {
     },
     {
       title: 'Troubleshooting',
-      // prefix: 'coding/',
-      // prefix: 'markdown/',
-      // icon: 'markdown',
       collapsable: false,
       children: [['power-shell', 'PowerShell']],
     },
@@ -69,8 +58,6 @@ module.exports = {
   '/front-end/': [
     {
       title: 'Basic',
-      // prefix: 'markdown/',
-      // icon: 'creativefill',
       collapsable: false,
       children: [
         ['html', 'Html'],
@@ -81,8 +68,6 @@ module.exports = {
     },
     {
       title: 'Skills',
-      // prefix: 'markdown/',
-      // icon: 'creativefill',
       collapsable: false,
       children: [
         ['npm', 'Npm'],
@@ -97,8 +82,6 @@ module.exports = {
     },
     {
       title: 'Others',
-      // prefix: 'markdown/',
-      // icon: 'creativefill',
       collapsable: false,
       children: [['javascript-obfuscator', 'Javascript obfuscator']],
     },
@@ -107,8 +90,6 @@ module.exports = {
   '/back-end/': [
     {
       title: 'Backend',
-      // prefix: 'linux/',
-      // icon: 'markdown',
       collapsable: false,
       children: [
         ['basic', 'Basic'],
@@ -122,7 +103,6 @@ module.exports = {
     {
       title: 'NestJS',
       prefix: 'nestjs/',
-      // icon: 'markdown',
       collapsable: false,
       children: [
         '',
@@ -142,15 +122,13 @@ module.exports = {
     {
       title: 'Java',
       prefix: 'java/',
-      // icon: 'markdown',
       collapsable: false,
       children: [
-        // '',
         ['java', 'Basic'],
-        // ['readme', 'Basic'],
         ['mybatis', 'Mybatis'],
         ['spring', 'Spring'],
         ['spring-mvc', 'Spring-MVC'],
+        ['spring-boot', 'Spring-Boot'],
       ],
     },
   ],
@@ -158,8 +136,6 @@ module.exports = {
   '/interest/': [
     {
       title: 'Interest',
-      // prefix: 'java/',
-      // icon: 'markdown',
       collapsable: false,
       children: [
         ['phone', 'Phone'],
@@ -168,21 +144,9 @@ module.exports = {
     },
   ],
 
-  // '/interest/': [
-  //   {
-  //     title: 'Interest',
-  //     // prefix: 'java/',
-  //     // icon: 'markdown',
-  //     collapsable: false,
-  //     children: [['phone', 'Phone']],
-  //   },
-  // ],
-
   '/open-source/': [
     {
       title: 'Open source',
-      // prefix: 'open-source/',
-      // icon: 'markdown',
       collapsable: false,
       children: [
         ['vsa', 'Vue simple admin'],

@@ -110,6 +110,7 @@ module.exports = [
           { text: 'Mybatis', link: '/back-end/java/mybatis' },
           { text: 'Spring', link: '/back-end/java/spring' },
           { text: 'Spring-MVC', link: '/back-end/java/spring-mvc' },
+          { text: 'Spring-Boot', link: '/back-end/java/spring-boot' },
         ],
       },
     ],

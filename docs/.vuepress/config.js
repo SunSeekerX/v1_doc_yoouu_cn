@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-03-17 11:51:29
+ * @LastEditTime: 2021-05-18 10:51:00
  */
 
 const { config } = require('vuepress-theme-hope')
@@ -98,5 +98,10 @@ module.exports = config({
   markdown: {
     lineNumbers: true,
     extractHeaders: ['h2', 'h3', 'h4'],
+  },
+  locales: {
+    '/': {
+      lang: 'zh-CN',
+    },
   },
 })
