@@ -1,3 +1,10 @@
+/**
+ * @name:
+ * @author: SunSeekerX
+ * @Date: 2020-11-29 21:41:57
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-05-28 09:55:54
+ */
 module.exports = [
   // Guide
   { text: 'Guide', link: '/guide/' },
@@ -136,8 +143,21 @@ module.exports = [
         link: 'https://github.com/SunSeekerX/markrgba-css',
       },
       {
+        text: 'uni-app',
+        items: [
+          {
+            text: 'uni-app-starter',
+            link: 'https://github.com/SunSeekerX/uni-app-starter',
+          },
+        ],
+      },
+      {
         text: 'Uni pushy',
         items: [
+          {
+            text: 'uni-pushy-client',
+            link: 'https://github.com/SunSeekerX/uni-pushy-client',
+          },
           {
             text: 'uni-pushy-admin',
             link: 'https://github.com/SunSeekerX/uni-pushy-admin',

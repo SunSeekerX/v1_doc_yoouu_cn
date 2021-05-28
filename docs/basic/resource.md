@@ -1,6 +1,6 @@
 # 资源
 
-## 📁 工具网站
+## **📁 工具网站**
 
 [刷新率在线测试-UFO Test: Framerates](https://www.testufo.com/)
 
@@ -8,7 +8,7 @@
 
 [📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍](https://emojipedia.org)
 
-## 📁 开源软件
+## **📁 开源软件**
 
 [frp](https://github.com/fatedier/frp) - frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp 协议，为 http 和 https 应用协议提供了额外的能力，且尝试性支持了点对点穿透。
 
@@ -58,9 +58,63 @@
 
 [hacker-laws-zh](https://github.com/nusr/hacker-laws-zh) - 💻📖 对开发人员有用的定律、理论、原则和模式。
 
+## 📁 简历模板
+
+[ResumeSample](https://github.com/geekcompany/ResumeSample) - 程序员简历模板系列
+
+[resume](https://github.com/Blankj/resume) - android 开发人员的简历模板。
+
+[reverse-interview-zh](https://github.com/yifeikong/reverse-interview-zh) - 技术面试最后反问面试官的话
+
+## 📁 开源项目
+
+[Slidev](https://github.com/slidevjs/slidev) - 这个工具使用 Markdown 格式编写 PPT 幻灯片，功能较多。
+
 ## 📁 开发
 
-### 学习项目
+### CSS
+
+[color-themes-for-google-code-prettify](https://github.com/jmblog/color-themes-for-google-code-prettify) - 为谷歌代码选择漂亮的颜色主题。
+
+### PHP
+
+[xxfpm](https://github.com/78/xxfpm) - 跨平台 FastCGI 进程管理器，可用作 php 的进程管理。
+
+### NodeJs
+
+[eggjs](https://github.com/eggjs/egg) - 基于 koa 的 nodejs 企业服务端框架
+
+[node-tenpay](https://github.com/befinal/node-tenpay) - 微信支付 for nodejs
+
+[sequelize-docs-Zh-CN](https://github.com/demopark/sequelize-docs-Zh-CN) - Sequelize Docs 中文版
+
+[Nodejs-Roadmap](https://github.com/Q-Angelo/Nodejs-Roadmap) - 【Nodejs-Roadmap】侧重于 Node.js 服务端的开发指南，公众号 “Nodejs 技术栈” [https://www.nodejs.red](https://www.nodejs.red/)
+
+[nodebestpractices](https://github.com/goldbergyoni/nodebestpractices) - ✅ Node.js 最佳实践列表(2020 年 4 月) [https://twitter.com/nodepractices/](https://twitter.com/nodepractices/)
+
+[easy-monitor](https://github.com/hyj1991/easy-monitor) - Node.js 应用的性能监控工具，可以定位线上故障。代码开源，支持私有部署。
+
+### NestJs
+
+[Nestjs 文档](https://docs.nestjs.cn/7/introduction) - `Nestjs ` 中文网
+
+[Nestjs 框架教程](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/)
+
+[Nestjs 学习教程](https://github.com/dzzzzzy/Nestjs-Learning)
+
+[nest-start](https://github.com/2214962083/nest-start) - `Nestjs ` 后端起手，快速开发
+
+[nestjs-mysql-api](https://github.com/kuangshp/nestjs-mysql-api) - 使用 `nestjs+mysql` 提供 `restful api`
+
+### 学习资源
+
+[凤凰架构](http://icyfenix.cn/) - 一本中文的开源书籍，介绍如何构建一套可靠的分布式大型软件系统，可以免费阅读。
+
+![img](https://cdn.beekka.com/blogimg/asset/202105/bg2021052607.jpg)
+
+[CSS 学习教程](https://web.dev/learn/css/) - 谷歌出品的 CSS 教程，内容很丰富全面，一共有 24 课。
+
+![img](https://cdn.beekka.com/blogimg/asset/202105/bg2021052201.jpg)
 
 [apshop](https://github.com/inmyjs/apshop) - 基于 egg.js 的商城系统（目前仅实现 PC 端），apshop 官网 [https://www.inmyjs.com](https://www.inmyjs.com/)
 
@@ -76,14 +130,6 @@
 
 ![design-patterns.jpg](https://image.yoouu.cn/sunseekerx/resource/design-patterns.jpg)
 
-### css
-
-[color-themes-for-google-code-prettify](https://github.com/jmblog/color-themes-for-google-code-prettify) - 为谷歌代码选择漂亮的颜色主题。
-
-### php
-
-[xxfpm](https://github.com/78/xxfpm) - 跨平台 FastCGI 进程管理器，可用作 php 的进程管理。
-
 ### 有趣的项目
 
 [mikutap](https://github.com/HFIProgramming/mikutap) - 有趣的音乐网站项目，超解压。[线上地址](https://app.yoouu.cn/app/mikutap/)。同类项目：[patatap](https://patatap.com/)
@@ -93,40 +139,6 @@
 [ChromeAppHeroes](https://github.com/zhaoolee/ChromeAppHeroes) - 🌈 谷粒-Chrome 插件英雄榜, 为优秀的 Chrome 插件写一本中文说明书, 让 Chrome 插件英雄们造福人类~
 
 [UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic) - 解锁网易云音乐客户端变灰歌曲
-
-### Nodejs
-
-[eggjs](https://github.com/eggjs/egg) - 基于 koa 的 nodejs 企业服务端框架
-
-[node-tenpay](https://github.com/befinal/node-tenpay) - 微信支付 for nodejs
-
-[sequelize-docs-Zh-CN](https://github.com/demopark/sequelize-docs-Zh-CN) - Sequelize Docs 中文版
-
-[Nodejs-Roadmap](https://github.com/Q-Angelo/Nodejs-Roadmap) - 【Nodejs-Roadmap】侧重于 Node.js 服务端的开发指南，公众号 “Nodejs 技术栈” [https://www.nodejs.red](https://www.nodejs.red/)
-
-[nodebestpractices](https://github.com/goldbergyoni/nodebestpractices) - ✅ Node.js 最佳实践列表(2020 年 4 月) [https://twitter.com/nodepractices/](https://twitter.com/nodepractices/)
-
-[easy-monitor](https://github.com/hyj1991/easy-monitor) - Node.js 应用的性能监控工具，可以定位线上故障。代码开源，支持私有部署。
-
-### ⚙ Nestjs
-
-[Nestjs 文档](https://docs.nestjs.cn/7/introduction) - `Nestjs ` 中文网
-
-[Nestjs 框架教程](https://keelii.com/2019/07/03/nestjs-framework-tutorial-1/)
-
-[Nestjs 学习教程](https://github.com/dzzzzzy/Nestjs-Learning)
-
-[nest-start](https://github.com/2214962083/nest-start) - `Nestjs ` 后端起手，快速开发
-
-[nestjs-mysql-api](https://github.com/kuangshp/nestjs-mysql-api) - 使用 `nestjs+mysql` 提供 `restful api`
-
-### 简历
-
-[ResumeSample](https://github.com/geekcompany/ResumeSample) - 程序员简历模板系列
-
-[resume](https://github.com/Blankj/resume) - android 开发人员的简历模板。
-
-[reverse-interview-zh](https://github.com/yifeikong/reverse-interview-zh) - 技术面试最后反问面试官的话
 
 ### Wordpress 主题
 
