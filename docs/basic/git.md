@@ -274,6 +274,19 @@ git merge --no-ff -m "merge with no-ff" ${本地分支名}
 git branch -d ${本地分支名}
 ```
 
+### 同步远程已删除的分支
+
+```bash
+# 删除远程分支
+git push origin --delete ${远程分支名}
+# 查看本地分支和追踪情况
+git remote show origin
+# 清理远程已删除本地还存在的分支
+git remote prune origin
+# 删除本地多余分支
+git branch -D ${本地分支名}
+```
+
 ### 查看分支合并图
 
 ```bash
