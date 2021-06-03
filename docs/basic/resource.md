@@ -1,6 +1,6 @@
 # 资源
 
-## **📁 工具网站**
+## 📌 工具网站
 
 [刷新率在线测试-UFO Test: Framerates](https://www.testufo.com/)
 
@@ -8,7 +8,7 @@
 
 [📙 Emojipedia — 😃 Home of Emoji Meanings 💁👌🎍😍](https://emojipedia.org)
 
-## **📁 开源软件**
+## 📌 开源软件
 
 [frp](https://github.com/fatedier/frp) - frp 是一个可用于内网穿透的高性能的反向代理应用，支持 tcp, udp 协议，为 http 和 https 应用协议提供了额外的能力，且尝试性支持了点对点穿透。
 
@@ -28,7 +28,7 @@
 
 ![responsively](https://image.yoouu.cn/sunseekerx/resource/responsively.gif)
 
-## 📁 软件
+## 📌 软件
 
 ### Windows 软件
 
@@ -42,7 +42,7 @@
 
 [ShadowsocksR-Windows](https://github.com/HMBSbige/ShadowsocksR-Windows) - ShadowsocksR for Windows
 
-## 📁 开发资源
+## 📌 开发资源
 
 [印记中文](https://docschina.org) - 印记中文 - 深入挖掘国外前端新领域，为中国 Web 前端开发人员提供优质文档！
 
@@ -58,7 +58,7 @@
 
 [hacker-laws-zh](https://github.com/nusr/hacker-laws-zh) - 💻📖 对开发人员有用的定律、理论、原则和模式。
 
-## 📁 简历模板
+## 📌 简历模板
 
 [ResumeSample](https://github.com/geekcompany/ResumeSample) - 程序员简历模板系列
 
@@ -66,11 +66,11 @@
 
 [reverse-interview-zh](https://github.com/yifeikong/reverse-interview-zh) - 技术面试最后反问面试官的话
 
-## 📁 开源项目
+## 📌 开源项目
 
 [Slidev](https://github.com/slidevjs/slidev) - 这个工具使用 Markdown 格式编写 PPT 幻灯片，功能较多。
 
-## 📁 开发
+## 📌 开发
 
 ### CSS
 
@@ -166,7 +166,7 @@
 
 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/) - 一个轻量的 Vuepress 主题
 
-## 📁 前端
+## 📌 前端
 
 [vConsole](https://github.com/Tencent/vConsole) - 一个轻量、可拓展、针对手机网页的前端开发者调试面板。
 
@@ -244,7 +244,7 @@
 
 [tbify](https://github.com/fjc0k/tbify) - 国内连接 npm 源服务器很慢，tbify 这个工具可以自动将 npm、yarn 等包管理工具连上国内的淘宝镜像，对工具和系统都是非侵入性的。
 
-## 📁 后端
+## 📌 后端
 
 [IntelliJ IDEA 激活码](http://idea.fxw.la/)
 
