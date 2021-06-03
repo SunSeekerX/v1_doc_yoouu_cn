@@ -1,6 +1,8 @@
 # NPM
 
-## 加速下载 - [tbify](https://github.com/fjc0k/tbify)
+> 记录相关 npm 技巧。
+
+## 📌 加速下载 - [tbify](https://github.com/fjc0k/tbify)
 
 **安装**
 
@@ -35,7 +37,7 @@ tbify printenv npm_config_registry
 # -> https://r.npm.taobao.org
 ```
 
-## ~~加速下载 -替换镜像~~
+## 📌 ~~加速下载 -替换镜像~~
 
 ```bash
 # 1、查看一下当前源
@@ -95,7 +97,7 @@ yarn config set node_inspector_cdnurl https://npm.taobao.org/mirrors/node-inspec
 yarn cache clean # 清空缓存
 ```
 
-## 查看，更新，卸载全局安装的包
+## 📌 查看，更新，卸载全局安装的包
 
 > npm 查看全局安装过的包命令：
 
@@ -123,7 +125,7 @@ npm uninstall -g jshint
 npm update -g jshint
 ```
 
-## 升级`package.json`依赖包
+## 📌 升级 package.json 依赖
 
 安装：
 
@@ -149,13 +151,29 @@ ncu -u
 ncu -a
 ```
 
-## yarn 升级依赖
+## 📌 排序 package.json
+
+对项目的 `package.json` 进行排序，满足你的强迫症
+
+1. **全局安装插件**
+
+   ```bash
+   npm install --global sort-package-json
+   ```
+
+2. **排序**
+
+   ```bash
+   npx sort-package-json
+   ```
+
+## 📌 yarn 升级依赖
 
 ```bash
 yarn upgrade-interactive
 ```
 
-## 清除缓存
+## 📌 清除缓存
 
 npm
 
@@ -169,7 +187,7 @@ yarn
 yarn cache clean
 ```
 
-## 📂 NodeJs 版本管理
+## 📌 NodeJs 版本管理
 
 **windows**
 
@@ -179,7 +197,7 @@ yarn cache clean
 
 [nvm](https://github.com/nvm-sh/nvm) 具体安装查看 github 说明。
 
-# 📂 规范提交代码
+## 📌 规范提交代码
 
 > [约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.2/)
 >
@@ -193,7 +211,7 @@ yarn cache clean
 >
 > [如何配置 Git Commit Message - 伯艺](https://zhuanlan.zhihu.com/p/69635847)
 
-## 1️⃣ 安装 [Commitizen](https://github.com/commitizen/cz-cli)
+### 1️⃣ 安装 [Commitizen](https://github.com/commitizen/cz-cli)
 
 > 替代你的 git commit（帮助我们生成符合规范的 commit message）
 >
@@ -204,7 +222,7 @@ yarn cache clean
 npm install -g commitizen
 ```
 
-## 2️⃣ 安装 [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
+### 2️⃣ 安装 [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 
 > 是一个`commitizen`的 adapter（适配器），一个符合 Angular 团队规范的 preset（按照我们指定的规范帮助我们生成 commit message）
 >
@@ -258,7 +276,7 @@ commitizen init cz-conventional-changelog --yarn --dev --exact
 }
 ```
 
-## 3️⃣ 自定义 adapter - [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
+### 3️⃣ 自定义 adapter - [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
 
 > 可自定义的 Commitizen 插件。比如：默认的提交 types 可能特别多，有些时候我们可能只需要其中的某些 type，或者自定义 type。
 
@@ -320,7 +338,7 @@ module.exports = {
 }
 ```
 
-## 4️⃣ 校验 commit - [commitlint](https://github.com/conventional-changelog/commitlint)
+### 4️⃣ 校验 commit - [commitlint](https://github.com/conventional-changelog/commitlint)
 
 > `commitlint` 帮我们规范 `commit message`（`commitlint`的实现方式和`commitizen`差不多也需要个 adapter）
 >
@@ -431,7 +449,7 @@ yarn add lint-staged -D
 }
 ```
 
-## 5️⃣ standard-version
+### 5️⃣ standard-version
 
 以上配置已经可以满足提交代码的常规要求，但是如果我们想自动生成 `CHANGELOG`，语义化我们的版本（[Semantic Versioning](https://semver.org/lang/zh-CN/)）。 就需要借助 [standard-version](https://github.com/conventional-changelog/standard-version)
 
@@ -494,7 +512,7 @@ yarn add standard-version -D
 }
 ```
 
-## 6️⃣ 完整的配置
+### 6️⃣ 完整的配置
 
 **package.json**
 
@@ -586,7 +604,7 @@ module.exports = {
 }
 ```
 
-## 7️⃣ 提交代码
+### 7️⃣ 提交代码
 
 使用`git cz`代替`git commit`会出现可选的命令行提交界面。
 
@@ -594,9 +612,9 @@ module.exports = {
 git-cz
 ```
 
-# 📂 版本号管理
+## 📌 版本号管理
 
-## 1️⃣ 简介
+### 1️⃣ 简介
 
 在 Node.js 项目中的前后端项目中，版本号管理使用的是 NPM 的命令——别跟我说，你是手动改 `package.json` 来更新版本号的。
 
@@ -656,7 +674,7 @@ npm version patch -m "Upgrade to %s for reasons"
 
 message 中的 s%将会被替换为版本号。
 
-## 2️⃣ 版本号策略
+### 2️⃣ 版本号策略
 
 版本号格式：主版本号**.**次版本号**.**修订号；
 
@@ -674,7 +692,7 @@ message 中的 s%将会被替换为版本号。
 
 万一不小心把一个不兼容的改版当成了次版本号发行了该怎么办？一旦发现自己破坏了语义化版本控制的规范，就要修正这个问题，并发行一个新的次版本号来更正这个问题并且恢复向下兼容。即使是这种情况，也不能去修改已发行的版本。
 
-## 3️⃣ 编程式
+### 3️⃣ 编程式
 
 在项目代码中有时候需要判断当前版本，可以通过读取 package 文件获取当前版本：
 
@@ -690,7 +708,7 @@ compareVersions('10.0.1', '10.0.1') //  0
 compareVersions('10.1.1', '10.2.2') // -1
 ```
 
-## 4️⃣ 自动更新版本号
+### 4️⃣ 自动更新版本号
 
 在项目目录的 `.git/hooks/` 目录中新建文件: `post-commit`——是的，没有后缀名。然后粘贴以下代码并保存文件：
 

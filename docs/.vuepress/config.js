@@ -3,12 +3,12 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-18 10:51:00
+ * @LastEditTime: 2021-06-03 10:59:28
  */
 
 const { config } = require('vuepress-theme-hope')
-const navBarConfig = require('./navBar')
-const sideBarConfig = require('./sideBar')
+const navBarConfig = require('./nav-bar')
+const sideBarConfig = require('./side-bar')
 
 module.exports = config({
   base: '/',

@@ -164,7 +164,7 @@
 
 ### Vuepress 主题
 
-[vuepress-theme-hope](https://vuepress-theme.mrhope.site/) - 一个轻量的 Vuepress 主题
+[vuepress-theme-hope](https://vuepress-theme-hope.github.io/) - 一个轻量的 Vuepress 主题
 
 ## 📁 前端
 
