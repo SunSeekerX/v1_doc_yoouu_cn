@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 18:14:24
+ * @LastEditTime: 2021-06-03 21:04:40
  */
 
 module.exports = {
@@ -12,7 +12,7 @@ module.exports = {
       title: '基础',
       collapsable: false,
       children: [
-        ['resource', '资源'],
+        ['resource', 'Resource'],
         ['git', 'Git commands'],
         ['regexp', 'Regexp'],
         ['ide', 'IDE'],
@@ -146,4 +146,5 @@ module.exports = {
       ],
     },
   ],
+  '/': [''],
 }
