@@ -3,24 +3,16 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-05-18 10:41:48
+ * @LastEditTime: 2021-06-03 18:14:24
  */
 
 module.exports = {
-  '/guide/': [
-    {
-      title: 'Guide',
-      collapsable: false,
-      children: [''],
-    },
-  ],
-
   '/basic/': [
     {
-      title: 'Basic',
+      title: '基础',
       collapsable: false,
       children: [
-        ['resource', 'Resource'],
+        ['resource', '资源'],
         ['git', 'Git commands'],
         ['regexp', 'Regexp'],
         ['ide', 'IDE'],
@@ -154,6 +146,4 @@ module.exports = {
       ],
     },
   ],
-
-  '/': ['', 'guide/', 'basic/', 'front-end/', 'back-end/', 'interest/'],
 }

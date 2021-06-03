@@ -4,7 +4,7 @@
 
 [online](https://sunseekerx.yoouu.cn/web-storage-apis/)
 
-[简体中文](README.md) **English**
+[简体中文](zh.md) **English**
 
 Make localstorage and sessionStorage easy to use.
 

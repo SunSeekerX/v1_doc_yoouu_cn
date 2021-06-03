@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "serve": "vuepress dev docs",
+    "serve": "vuepress dev docs no-cache",
     "build": "vuepress build docs",
     "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "gc": "git add -A && git-cz && git pull && git push",

@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 10:59:28
+ * @LastEditTime: 2021-06-03 18:07:28
  */
 
 const { config } = require('vuepress-theme-hope')
@@ -58,8 +58,12 @@ module.exports = config({
   ],
   extraWatchFiles: ['.vuepress/navBar.js', '.vuepress/sideBar.js'],
   themeConfig: {
+    hostname: 'https://doc.yoouu.cn/',
+
     nav: navBarConfig,
+
     sidebar: sideBarConfig,
+    iconPrefix: 'fas fa-',
     baseLang: 'zh-CN',
     author: 'SunSeekerX',
     footer: {
@@ -71,6 +75,7 @@ module.exports = config({
       apiKey: '096b749333c9e2a49cff2b30a786dc6c',
       indexName: 'sunseekerx',
     },
+    algoliaType: 'full',
     comment: {
       type: 'valine',
       appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
@@ -79,7 +84,6 @@ module.exports = config({
     repo: 'https://github.com/SunSeekerX/doc.yoouu.cn',
     editLinks: false,
     repoDisplay: true,
-    hostname: 'https://doc.yoouu.cn/',
   },
   plugins: [
     [

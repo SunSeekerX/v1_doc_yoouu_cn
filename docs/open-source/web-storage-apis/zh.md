@@ -4,7 +4,7 @@
 
 [online](https://sunseekerx.yoouu.cn/web-storage-apis/)
 
-**简体中文** [English](README-en.md)
+**简体中文** [English](en.md)
 
 帮助你更好地使用浏览器的数据存储功能
 

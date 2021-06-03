@@ -5,9 +5,9 @@ heroText: SunSeekerX
 tagline: This is just the beginning of this road ~
 action:
   - text: Go →
-    link: /guide/
+    link: /intro/
 actionText: Go →
-actionLink: /guide/
+actionLink: /intro/
 # footer: MIT Licensed | Copyright © 2020-present SunSeekerX
 ---
 

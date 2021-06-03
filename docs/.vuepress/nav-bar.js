@@ -3,36 +3,35 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 10:58:44
+ * @LastEditTime: 2021-06-03 18:01:44
  */
 
 module.exports = [
-  // Guide
-  { text: 'Guide', link: '/guide/' },
+  // Intro
+  { text: '简介', link: '/intro', icon: 'fa-solid fa-user' },
   // Basic
   {
-    text: 'Basic',
-    // link: '/basic/resource',
+    text: '基础',
     items: [
       {
-        text: 'Resource',
+        text: '资源',
         link: '/basic/resource',
       },
-      { text: 'Git commands', link: '/basic/git' },
-      { text: 'RegExp', link: '/basic/regexp' },
-      { text: 'IDE', link: '/basic/ide' },
+      { text: 'Git 命令', link: '/basic/git' },
+      { text: '正则表达式', link: '/basic/regexp' },
+      { text: '开发工具', link: '/basic/ide' },
       { text: 'Windows', link: '/basic/windows' },
-      { text: 'Other', link: '/basic/other' },
+      { text: '其他', link: '/basic/other' },
       {
-        text: 'Learn',
+        text: '学习',
         items: [
-          { text: 'Git', link: '/basic/coding/git' },
+          { text: 'Git 快速入门', link: '/basic/coding/git' },
           { text: 'Node.js', link: '/basic/coding/nodejs' },
           { text: 'React', link: '/basic/coding/react' },
         ],
       },
       {
-        text: 'Others',
+        text: '其他',
         items: [
           { text: 'Jenkins', link: '/basic/jenkins' },
           { text: 'Scripts', link: '/basic/others/script' },
@@ -41,18 +40,17 @@ module.exports = [
         ],
       },
       {
-        text: 'Troubleshooting',
+        text: '问题解决',
         items: [{ text: 'PowerShell', link: '/basic/power-shell' }],
       },
     ],
   },
   // Frontend
   {
-    text: 'Frontend',
-    // link: '/front-end/html',
+    text: '前端',
     items: [
       {
-        text: 'Basic',
+        text: '基础',
         items: [
           { text: 'Html', link: '/front-end/html' },
           { text: 'Css', link: '/front-end/css' },
@@ -61,7 +59,7 @@ module.exports = [
         ],
       },
       {
-        text: 'Skills',
+        text: '技能',
         items: [
           { text: 'Npm', link: '/front-end/npm' },
           { text: 'Vue', link: '/front-end/vue' },
@@ -86,7 +84,7 @@ module.exports = [
         ],
       },
       {
-        text: 'Others',
+        text: '其他',
         items: [
           {
             text: 'javascript-obfuscator',
@@ -98,10 +96,10 @@ module.exports = [
   },
   // Backend
   {
-    text: 'Backend',
+    text: '后端',
     // link: '/back-end/linux',
     items: [
-      { text: 'Basic', link: '/back-end/basic' },
+      { text: '基础', link: '/back-end/basic' },
       { text: 'Linux', link: '/back-end/linux' },
       {
         text: 'NestJS',
@@ -125,8 +123,7 @@ module.exports = [
   },
   // Interest
   {
-    text: 'Interest',
-    // link: '/interest/phone',
+    text: '爱好',
     items: [
       { text: 'Phone', link: '/interest/phone' },
       { text: 'Blockchain', link: '/interest/blockchain' },
@@ -134,18 +131,17 @@ module.exports = [
   },
   // Open source
   {
-    text: 'Open source',
-    // link: '/open-source/phone',
+    text: '开源项目',
     items: [
-      { text: 'Vue simple admin', link: '/open-source/vsa' },
-      { text: 'Web storage apis', link: '/open-source/web-storage-apis/' },
-      {
-        text: 'markrgba-css',
-        link: 'https://github.com/SunSeekerX/markrgba-css',
-      },
+      { text: 'Vue simple admin', link: '/open-source/vsa/' },
+      { text: 'Web storage apis', link: '/open-source/web-storage-apis/zh/' },
       {
         text: 'uni-app',
         items: [
+          {
+            text: 'markrgba-css',
+            link: 'https://github.com/SunSeekerX/markrgba-css',
+          },
           {
             text: 'uni-app-starter',
             link: 'https://github.com/SunSeekerX/uni-app-starter',
