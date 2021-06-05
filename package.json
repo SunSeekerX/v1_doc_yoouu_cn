@@ -8,17 +8,13 @@
     "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "gc": "git add -A && git-cz && git pull && git push",
     "up": "yarn upgrade-interactive",
-    "pkg:sort": "npx sort-package-json"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
+    "pkg:sort": "npx sort-package-json",
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "husky": "^4.3.8",
+    "husky": "^6.0.0",
     "lint-staged": "^11.0.0",
-    "prettier": "^2.3.0",
+    "prettier": "^2.3.1",
     "sort-package-json": "^1.50.0",
     "vuepress": "^1.8.2",
     "vuepress-theme-hope": "^1.18.0"

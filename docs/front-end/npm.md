@@ -97,6 +97,96 @@ yarn config set node_inspector_cdnurl https://npm.taobao.org/mirrors/node-inspec
 yarn cache clean # 清空缓存
 ```
 
+## 📌 husky 6.0
+
+### 官方 4.x 迁移到 6.x 教程
+
+[https://github.com/typicode/husky-4-to-6](https://github.com/typicode/husky-4-to-6)
+
+**使用**
+
+#### npm
+
+```shell
+npm install husky@6 --save-dev \
+  && npx husky-init \
+  && npm exec -- github:typicode/husky-4-to-6 --remove-v4-config
+  
+  # npm v6
+  npx github:typicode/husky-4-to-6 --remove-v4-config
+```
+
+#### yarn
+
+Yarn 1
+
+```shell
+yarn add husky@6 --dev \
+  && npx husky-init \
+  && npm exec -- github:typicode/husky-4-to-6 --remove-v4-config
+```
+
+Yarn 2
+
+```shell
+yarn add husky@6 --dev \
+  && yarn dlx husky-init --yarn2 \
+  && npm exec -- github:typicode/husky-4-to-6 --remove-v4-config
+```
+
+#### What each command does
+
+`husky init` sets up Git hooks and updates your `package.json` scripts (you may want to commit your changes to `package.json` before running `husky init`).
+
+`husky-4-to-6` creates hooks based on your husky v4 config. If `--remove-v4-config` is passed, previous config will be deleted (recommended).
+
+#### Revert
+
+If there's an error during the process, you can clean things up by running:
+
+```
+rm -rf .husky && git config --unset core.hooksPath
+```
+
+
+
+### 安装教程
+
+1. 安装husky
+
+```shell
+npm install -D husky
+```
+
+2. 在packgae.json中添加prepare脚本
+
+```json
+{
+  "scripts": {
+      "prepare": "husky install"
+  }
+}
+```
+
+prepare脚本会在`npm install`（不带参数）之后自动执行。也就是说当我们执行npm install安装完项目依赖后会执行 `husky install`命令，该命令会创建.husky/目录并指定该目录为git hooks所在的目录。
+
+3. 添加git hooks，运行一下命令创建git hooks
+
+```shell
+npx husky add .husky/pre-commit "npm run test"
+```
+
+运行完该命令后我们会看到.husky/目录下新增了一个名为pre-commit的shell脚本。也就是说在在执行git commit命令时会先执行pre-commit这个脚本。pre-commit脚本内容如下：
+
+```powershell
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+
+npm run  test
+```
+
+可以看到该脚本的功能就是执行npm run test这个命令
+
 ## 📌 查看，更新，卸载全局安装的包
 
 > npm 查看全局安装过的包命令：
