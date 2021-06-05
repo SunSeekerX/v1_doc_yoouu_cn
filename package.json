@@ -6,6 +6,7 @@
     "serve": "vuepress dev docs no-cache",
     "build": "vuepress build docs",
     "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "lint:lint-staged": "lint-staged",
     "gc": "git add -A && git-cz && git pull && git push",
     "up": "yarn upgrade-interactive",
     "pkg:sort": "npx sort-package-json",
