@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 21:04:40
+ * @LastEditTime: 2021-06-07 16:53:03
  */
 
 module.exports = {
@@ -132,6 +132,7 @@ module.exports = {
       children: [
         ['phone', 'Phone'],
         ['blockchain', 'Blockchain'],
+        ['jd', 'JD'],
       ],
     },
   ],

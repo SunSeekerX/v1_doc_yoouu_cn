@@ -8,6 +8,56 @@
 | 修 改 PermitRootLogin | 进入 ssh 配置界面后找到 PermitRootLogin，将它后面改为 yes，保存 (按 i 进入编辑模式，编辑完 esc 退出，:w 保存当前文件，:q 退出) |
 | 重启 ssh 服务 | 执行命令 sudo service ssh restart |
 
+## 📌 ubuntu 查看端口被占用并处理
+
+当启动程序出现端口号被占用的情况，需要查看端口使用情况，使用 netstat 命令，下面是常用的几个查看端口情况的命令：查看所有的服务端口（ESTABLISHED
+
+```shell
+netstat -a
+```
+
+查看所有的服务端口，显示 pid 号（LISTEN，ESTABLISHED）
+
+```shell
+netstat -ap
+```
+
+查看某一（\*\*）端口，则可以结合 grep 命令：
+
+```shell
+netstat -ap | grep **
+```
+
+如查看\*\*端口，也可以在终端中输入：
+
+```shell
+lsof -i:**
+```
+
+若要停止使用这个端口的程序，使用 kill +对应的 pid
+
+```shell
+kill pid
+```
+
+还有一个比较好用的命令，查看\*\*端口：
+
+```shell
+sudo netstat -lnp | grep **
+```
+
+查看端口号和运行程序：
+
+```shell
+netstat -atunp | more
+```
+
+查看进程所用端口：
+
+```shell
+netstat -tlnp|grep **
+```
+
 ## 📌 Ubuntu 更改 ssh 端口
 
 **一、更改 ssh 的端口**
