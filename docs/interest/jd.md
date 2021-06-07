@@ -2,6 +2,12 @@
 
 ## 📌 青龙面板
 
+> 群号：554072417
+>
+> 链接：[https://qm.qq.com/cgi-bin/qm/qr?k=p-PIdWRoqo19bSuYW8xFIagSN2c0PUCB&jump_from=webapi](https://qm.qq.com/cgi-bin/qm/qr?k=p-PIdWRoqo19bSuYW8xFIagSN2c0PUCB&jump_from=webapi)
+>
+> 二维码：![image-20210607195606194](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210607195608.png)
+
 ![](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215154.png)
 
 写在前面：由于需要获取 Cookie 这将导致信息泄漏以及侵权风险，本文章仅供大家技术交流之用！不为此承担任何责任！本人与本文章所涉及的所有工具均无利益相关性！不能为所涉及的工具承担任何使用风险！
@@ -253,6 +259,60 @@ chinnkarahoi_jd_scripts_jd_fruit
 > 并行执行脚本 docker exec -it qinglong task test.js conc
 
 ### 脚本仓库
+
+**【lxk0301】**
+
+```shell
+docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/chinnkarahoi/jd_scripts.git "jd_" "activity|backUp" "^jd[^_]|USER"
+```
+
+**【龙珠】** - 404
+
+```shell
+docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/nianyuguai/longzhuzhu.git "qx"
+```
+
+**【混沌】**
+
+```shell
+docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
+```
+
+**【passerby-b】（需要修改专用 ck 文件 jddj_cookie.js）**
+
+```shell
+docker exec -it qinglong ql repo https://github.com/passerby-b/JDDJ.git "jddj_" "scf_test_event" "jddj_cookie"
+```
+
+**【温某某】**
+
+```shell
+docker exec -it qinglong ql repo https://github.com/Wenmoux/scripts.git "jd"
+```
+
+**【柠檬（胖虎）】**
+
+```shell
+docker exec -it qinglong ql repo https://github.com/panghu999/panghu.git "jd_"
+```
+
+**【zoopanda（动物园）】**
+
+```shell
+docker exec -it qinglong ql repo https://github.com/zooPanda/zoo.git "zoo"
+```
+
+**【hyzaw】**
+
+```shell
+docker exec -it qinglong ql repo https://github.com/hyzaw/scripts.git "ddo_"
+```
+
+**【翻翻乐提现单文件】**
+
+```shell
+docker exec -it qinglong ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
+```
 
 [https://github.com/whyour/qinglong](https://github.com/whyour/qinglong) from
 
