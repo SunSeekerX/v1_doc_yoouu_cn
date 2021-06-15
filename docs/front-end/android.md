@@ -2,7 +2,7 @@
 
 ![roadmap.svg](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/front-end/android/roadmap.svg)
 
-## 0x1 Android 项目视图
+## 📌 0x1 Android 项目视图
 
 ### Project
 
@@ -104,7 +104,7 @@
 - **app/com：**项目源代码
 - **app/Libraries：**项目资源
 
-## 0x2 四大组件
+## 📌 0x2 四大组件
 
 ### Activity
 
@@ -122,7 +122,7 @@
 
 ### ContentProvider
 
-## ViewModel
+## 📌 ViewModel
 
 文档：[https://developer.android.google.cn/topic/libraries/architecture/viewmodel?hl=zh_cn#java](https://developer.android.google.cn/topic/libraries/architecture/viewmodel?hl=zh_cn#java)
 
@@ -144,7 +144,7 @@
 
 ![viewmode_savedstate_lifecycle.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmode_savedstate_lifecycle.png)
 
-## LiveData
+## 📌 LiveData
 
 ### mvc
 
@@ -160,7 +160,7 @@ View 跟 Controller 解耦，只需要控制数据，ViewModel 发生变化 View
 
 ![databinding.png](https://image.yoouu.cn/sunseekerx/front-end/android/databinding.png)
 
-## DataBinding
+## 📌 DataBinding
 
 编译环境
 
@@ -178,9 +178,9 @@ android {
 
 ```
 
-## ViewBinding
+## 📌 ViewBinding
 
-## Fragment
+## 📌 Fragment
 
 ### Navigation
 
@@ -190,11 +190,11 @@ android {
 
 ![viewmodel_fragment.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmodel_fragment.png)
 
-## Room
+## 📌 Room
 
 ![room_components.png](https://image.yoouu.cn/sunseekerx/front-end/android/room_components.png)
 
-## serializable
+## 📌 serializable
 
 就相当于 `JavaScript` 里面的 `JSON.stringify()` 序列化，`JSON.parse()` 反序列化。
 
@@ -206,15 +206,15 @@ setting > search `serializable class without 'serialVersionUID'` > 勾选
 
 如果你的类实现了序列化接口没写 `serialVersionUID` 就会警告。
 
-## kotlin
+## 📌 kotlin
 
 ![android/kotlin.png](https://image.yoouu.cn/sunseekerx/front-end/android/kotlin.png)
 
-## 注意事项
+## 📌 注意事项
 
 1. 如果需要获取 activity 的上下文，不能直接传递 `this`，因为上下文会频繁的销毁和重建，如果传递会造成内存泄漏。可以使用 `getApplicationContext()` 方法传递上下文实例。（可以理解为指向 App 的顶级引用，单例模式，只要应用存在，就会有一个实例）
 
-## 添加 adb 环境变量
+## 📌 添加 adb 环境变量
 
 找到你 android sdk 安装的路径，添加 `${sdk}/platform-tools` 到 path，例如我的：
 
@@ -222,7 +222,7 @@ setting > search `serializable class without 'serialVersionUID'` > 勾选
 W:\ProgramFiles\Android\Sdk\platform-tools
 ```
 
-## Android studio 初始设置
+## 📌 Android studio 初始设置
 
 1. 更改所有编码为 `utf-8`
 2. 修改 indent 为 2
@@ -252,7 +252,7 @@ W:\ProgramFiles\Android\Sdk\platform-tools
 
 Help > Edit custom VM options > 添加就行
 
-## Android studio 查看 SQLite 数据库
+## 📌 Android studio 查看 SQLite 数据库
 
 **使用自带的安装模拟器**
 
@@ -264,7 +264,7 @@ Help > Edit custom VM options > 添加就行
 
 下方 toolbar 会有 一个 Datebase inspector 就可以查看数据库里面的表了。
 
-## Butterknife 注解绑定试图和点击事件
+## 📌 Butterknife 注解绑定试图和点击事件
 
 > 1、强大的 View 绑定和 Click 事件处理功能，简化代码，提升开发效率 2、方便的处理 Adapter 里的 ViewHolder 绑定问题 3、运行时不会影响 APP 效率，使用配置方便 4、代码清晰，可读性强
 
@@ -312,7 +312,7 @@ class ExampleActivity extends Activity {
 
 **编辑器插件 - Android ButterKnife Zelezny**
 
-## Gradle 加速
+## 📌 Gradle 加速
 
 1. 打开工程文件根目录 build.gradle
 2. 在 buildscript 和 allprojects 的 repositories 中分别注释掉 jcenter()，并使用国内镜像进行替换：maven{url 'http://maven.aliyun.com/nexus/content/groups/public/'}
@@ -355,7 +355,57 @@ ext {
 }
 ```
 
-## 区块链钱包
+## 📌 无痛修改包名
+
+- 在开发中，我们多多少少不可避免需要更改项目中的包名，但是不规范的操作，可能会直接导致 Studio 崩溃的（我上次就遇到过，后面重装了 Studio），又或者导致编译跑不起来，现在我将之前踩过的坑总结出来了一些套路
+
+#### 修改步骤
+
+- 先对项目进行 clean 操作
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-3b7a83388bbf5bef.png)
+
+- 跑到所在的文件夹中新建整个包名目录
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-7c881d12fb7ac855.png)
+
+- 选择所需要的包，然后右击选择移动
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-0a4f0913ec8d8218.png)
+
+- 选择第一个，直接移动包
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-dc86e2ca69046cfc.png)
+
+- 在这里输入刚刚新建的包名
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-224801a5f1d9d937.png)
+
+- 几秒种后就完成了移动
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-7e320385e399b868.png)
+
+- 然后在项目右键中选择 **Replace in Path**
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-07c0f1b96070f40b.png)
+
+- 然后选择 **Replace All** 来替换
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-1d05c1b53da98945.png)
+
+- 再同步一下 Gradle 配置
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-8a2835e0ae270303.png)
+
+- 最后直接编译或者运行项目即可
+
+![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-8b98155360852185.png)
+
+**在本次测试用的是我自己搭建的架构项目，解决开发中遇到的坑，可以帮你减少开发时间和精力**
+
+> 作者：Android 轮子哥链接：https://www.jianshu.com/p/17327e191d2e 来源：简书著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+## 📌 区块链钱包
 
 https://www.cnblogs.com/zhaoweiwei/p/address.html - 比特币地址生成算法详解
 
