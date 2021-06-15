@@ -2,11 +2,7 @@
 
 ## 📌 青龙面板
 
-> 群号：554072417
->
-> 链接：[https://qm.qq.com/cgi-bin/qm/qr?k=p-PIdWRoqo19bSuYW8xFIagSN2c0PUCB&jump_from=webapi](https://qm.qq.com/cgi-bin/qm/qr?k=p-PIdWRoqo19bSuYW8xFIagSN2c0PUCB&jump_from=webapi)
->
-> 二维码：![image-20210607195606194](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210607195608.png)
+Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong)
 
 ![](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215154.png)
 
@@ -260,68 +256,105 @@ chinnkarahoi_jd_scripts_jd_fruit
 
 ### 脚本仓库
 
-**【lxk0301】**
+青龙新版本自动加了 `https://ghproxy.com/` 前缀用于拉取脚本，下面的脚本需要在 docker 内执行。
 
 ```shell
-docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/chinnkarahoi/jd_scripts.git "jd_" "activity|backUp" "^jd[^_]|USER"
+# 进入容器
+docker exec -it ${你容器的id} /bin/bash
 ```
 
-**【龙珠】** - 404
+**【lxk0301】** [https://github.com/chinnkarahoi/jd_scripts.git](https://github.com/chinnkarahoi/jd_scripts.git)
+
+```shell
+ql repo https://github.com/chinnkarahoi/jd_scripts.git "jd_" "activity|backUp" "^jd[^_]|USER"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/chinnkarahoi/jd_scripts.git "jd_" "activity|backUp" "^jd[^_]|USER"
+```
+
+**【混沌】** [https://github.com/whyour/hundun.git](https://github.com/whyour/hundun.git)
+
+```shell
+ql repo https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
+```
+
+**【passerby-b】（需要修改专用 ck 文件 jddj_cookie.js）** [https://github.com/passerby-b/JDDJ.git](https://github.com/passerby-b/JDDJ.git)
+
+```shell
+ql repo https://github.com/passerby-b/JDDJ.git "jddj_" "scf_test_event" "jddj_cookie"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/passerby-b/JDDJ.git "jddj_" "scf_test_event" "jddj_cookie"
+```
+
+**【柠檬（胖虎）】** [https://github.com/panghu999/panghu.git](https://github.com/panghu999/panghu.git)
+
+```shell
+ql repo https://github.com/panghu999/panghu.git "jd_"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/panghu999/panghu.git "jd_"
+```
+
+**【zoopanda（动物园）】** [https://github.com/zooPanda/zoo.git](https://github.com/zooPanda/zoo.git)
+
+```shell
+ql repo https://github.com/zooPanda/zoo.git "zoo"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/zooPanda/zoo.git "zoo"
+```
+
+**【ddo（hyzaw）】** [https://github.com/hyzaw/scripts.git](https://github.com/hyzaw/scripts.git)
+
+```shell
+ql repo https://github.com/hyzaw/scripts.git "ddo_"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/hyzaw/scripts.git "ddo_"
+```
+
+**【龙猪猪】** [https://github.com/longzhuzhu/nianyu.git](https://github.com/longzhuzhu/nianyu.git)
+
+```shell
+ql repo https://github.com/longzhuzhu/nianyu.git "qx" "main"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/longzhuzhu/nianyu.git "qx" "main"
+```
+
+**【Ariszy（Zhiyi-N）】** [https://github.com/Ariszy/Private-Script.git](https://github.com/Ariszy/Private-Script.git)
+
+```shell
+ql repo https://github.com/Ariszy/Private-Script.git "JD"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/Ariszy/Private-Script.git "JD"
+```
+
+**【翻翻乐提现单文件】**
+
+```shell
+docker exec -it qinglong ql raw https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
+```
+
+下面的已经失效
+
+---
+
+**【龙珠】**
 
 ```shell
 docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/nianyuguai/longzhuzhu.git "qx"
-```
-
-**【混沌】**
-
-```shell
-docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
-```
-
-**【passerby-b】（需要修改专用 ck 文件 jddj_cookie.js）**
-
-```shell
-docker exec -it qinglong ql repo https://github.com/passerby-b/JDDJ.git "jddj_" "scf_test_event" "jddj_cookie"
 ```
 
 **【温某某】**
 
 ```shell
 docker exec -it qinglong ql repo https://github.com/Wenmoux/scripts.git "jd"
-```
-
-**【柠檬（胖虎）】**
-
-```shell
-docker exec -it qinglong ql repo https://github.com/panghu999/panghu.git "jd_"
-```
-
-**【zoopanda（动物园）】**
-
-```shell
-docker exec -it qinglong ql repo https://github.com/zooPanda/zoo.git "zoo"
-```
-
-**【hyzaw】**
-
-```shell
-docker exec -it qinglong ql repo https://github.com/hyzaw/scripts.git "ddo_"
-```
-
-**【翻翻乐提现单文件】**
-
-```shell
-docker exec -it qinglong ql raw https://ghproxy.com/https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
-```
-
-[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong) from
-
-```shell
-docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/longzhuzhu/nianyu.git
-```
-
-```shell
-docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/chinnkarahoi/jd_scripts.git "jd_|jx_|getJDCookie" "activity|backUp" "^jd[^_]|USER"
 ```
 
 ## 📌 青龙面板扫码获取 Cookie
@@ -340,7 +373,7 @@ docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/chinnkar
 - 删除 cookie
 - 查看单用户日志
 
-### 说明
+**说明**
 
 本程序已开源，不存在后门等恶意代码。
 
@@ -581,6 +614,24 @@ firewall-cmd --zone=public --add-port=5700/tcp --permanent
 ### 京东账户和微信绑定
 
 ![a134f26ecb0f37ba5bf2bfdfc4ebb0b8](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/12476_1137571a134f26ecb0f37ba5bf2bfdfc4ebb0b8.png)
+
+## 📌 问题集锦
+
+1. 运行 cookie 没有问题，为啥访问主机 ip:5701 无法访问？
+
+   > 运行在虚拟机有这个问题，其他的未知。
+
+2. cookie 面板无法打开，访问 5701 无效。
+
+   直接执行 `./JDC`，可以看到日志。如果是 ok 的。关闭之后再执行 `nohup ./JDC &`。遇到端口冲突，直接杀掉冲突的程序号。linux 怎么杀进程自行百度。
+
+## 📌 交流群
+
+群号：554072417
+
+链接：[https://qm.qq.com/cgi-bin/qm/qr?k=p-PIdWRoqo19bSuYW8xFIagSN2c0PUCB&jump_from=webapi](https://qm.qq.com/cgi-bin/qm/qr?k=p-PIdWRoqo19bSuYW8xFIagSN2c0PUCB&jump_from=webapi)
+
+二维码：<img src="https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210607195608.png" alt="image-20210607195606194" style="zoom: 25%;" />
 
 ## 📌 来源
 
