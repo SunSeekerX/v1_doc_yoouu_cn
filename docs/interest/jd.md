@@ -331,13 +331,16 @@ docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/longzhuz
 ```shell
 ql repo https://github.com/Ariszy/Private-Script.git "JD"
 
-# docker外部执行备份
+# docker 外部执行备份
 docker exec -it qinglong ql repo https://github.com/Ariszy/Private-Script.git "JD"
 ```
 
 **【翻翻乐提现单文件】**
 
 ```shell
+ql raw https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
+
+# docker 外部执行备份
 docker exec -it qinglong ql raw https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
 ```
 
