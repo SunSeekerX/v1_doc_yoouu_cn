@@ -263,6 +263,12 @@ chinnkarahoi_jd_scripts_jd_fruit
 docker exec -it ${你容器的id} /bin/bash
 ```
 
+**【妖火整理】**[https://yaohuo.me/bbs-946732.html](https://yaohuo.me/bbs-946732.html)
+
+```shell
+ql repo https://github.com/colakele/jd.git "jd_|getJDCookie" "" "^jd[^_]|USER"
+```
+
 **【lxk0301】** [https://github.com/chinnkarahoi/jd_scripts.git](https://github.com/chinnkarahoi/jd_scripts.git)
 
 ```shell
