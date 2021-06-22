@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-22 15:43:18
+ * @LastEditTime: 2021-06-22 16:25:20
  */
 
 const { config } = require('vuepress-theme-hope')
@@ -99,8 +99,6 @@ module.exports = config({
       'md-enhance',
       {
         enableAll: true,
-        // Enable mermaid
-        mermaid: true,
       },
     ],
   ],
