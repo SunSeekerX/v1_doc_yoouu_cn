@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-07 16:52:50
+ * @LastEditTime: 2021-06-23 00:21:55
  */
 
 module.exports = [
@@ -126,8 +126,9 @@ module.exports = [
     text: '爱好',
     items: [
       { text: 'Phone', link: '/interest/phone' },
-      { text: 'Blockchain', link: '/interest/blockchain' },
+      { text: 'Blockchain', link: '/interest/blockchain/' },
       { text: 'JD', link: '/interest/jd' },
+      { text: 'Topic', link: '/interest/topic' },
     ],
   },
   // Open source

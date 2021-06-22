@@ -14,7 +14,7 @@
 
 [trilium](https://github.com/zadam/trilium) - 一个 Markdown 格式的笔记软件，使用目录层级整理笔记。可以下载安装桌面版，也可以自己架设在线版。
 
-![trilium.png](https://image.yoouu.cn/sunseekerx/resource/trilium.png)
+![trilium.png](https://static.yoouu.cn/imgs/2021/pic-go/trilium.png)
 
 [LightProxy](https://github.com/alibaba/lightproxy) - 一个本地的代理服务器，用于本地数据包捕获，可以实时 hosts 绑定、设置规则转发、mock 接口、修改请求和响应的内容等。
 
