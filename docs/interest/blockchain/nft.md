@@ -1,3 +1,19 @@
+> 最近，美国有一个东西非常火爆，叫做 NFT，价格飞涨到了离奇的地步。
+>
+> 请看这样一条[新闻](https://www.thepaper.cn/newsDetail_forward_11783283)。一个网名叫做 Beeple 的艺术家，从 2007 年 5 月 1 日开始，每天在 Instagram 发布一张数字艺术的图片，就像下面这种。
+>
+> ![img](https://static.yoouu.cn/imgs/doc/pic-go/bg2021032311.jpg)
+>
+> 到了今年，他已经连续发布了 5000 张。为了纪念这一天，他就把所有发布过的图片，合成为一张超大的 JPG 图片，交给佳士德公司拍卖。
+>
+> ![img](https://static.yoouu.cn/imgs/doc/pic-go/bg2021032312.jpg)
+>
+> **这里就有一个问题，JPG 图片怎么拍卖？** 那只是一段二进制编码，如果有人拷贝了一份，请问哪一份是真品，哪一份是赝品？
+>
+> Beeple 的做法就是，拍卖的不是 JPG 图片本身，而是这张图片的 NFT，结果拍出了 6934 万美元的天价！
+>
+> ![img](https://static.yoouu.cn/imgs/doc/pic-go/bg2021032313.jpg)
+>
 > NFT 到底是什么神奇的东西，使得一个图片文件值这么多钱？我感到非常好奇，就阅读了[一些资料](https://www.coindesk.com/its-an-nft-boom-do-you-know-where-your-digital-art-lives)，下面就是我的理解。很可能有不正确的地方，欢迎指正。
 >
 > **简单说，NFT 是区块链的一种应用，最大特点就是把网址写入区块链。** 大家知道，数据一旦写入区块链，就无法再修改（参考我的[《区块链入门教程》](https://www.ruanyifeng.com/blog/2017/12/blockchain-tutorial.html)）。因此，NFT 包含的网址是没法改的，然后可以通过区块链的买卖机制，跟某一个数字钱包相关联。
