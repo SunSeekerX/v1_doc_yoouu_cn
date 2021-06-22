@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 18:07:28
+ * @LastEditTime: 2021-06-22 15:43:18
  */
 
 const { config } = require('vuepress-theme-hope')
@@ -95,10 +95,15 @@ module.exports = config({
         appKey: '13eOI19EMGKKtQepMDxLIn9u',
       },
     ],
+    [
+      'md-enhance',
+      {
+        enableAll: true,
+        // Enable mermaid
+        mermaid: true,
+      },
+    ],
   ],
-  mdEnhance: {
-    enableAll: true,
-  },
   markdown: {
     lineNumbers: true,
     extractHeaders: ['h2', 'h3', 'h4'],
