@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-23 00:22:30
+ * @LastEditTime: 2021-06-23 10:47:28
  */
 
 module.exports = {
@@ -84,7 +84,6 @@ module.exports = {
       title: 'Backend',
       collapsable: false,
       children: [
-        ['basic', 'Basic'],
         ['linux', 'Linux'],
         ['sql', 'SQL'],
         ['database', 'Database'],
@@ -116,7 +115,7 @@ module.exports = {
       prefix: 'java/',
       collapsable: false,
       children: [
-        ['java', 'Basic'],
+        ['', 'Java'],
         ['mybatis', 'Mybatis'],
         ['spring', 'Spring'],
         ['spring-mvc', 'Spring-MVC'],

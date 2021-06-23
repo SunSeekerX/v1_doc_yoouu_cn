@@ -108,13 +108,13 @@
 
 ### Activity
 
-![img](https://image.yoouu.cn/sunseekerx/front-end/android/activity_lifecycle.png)
+![img](https://static.yoouu.cn/imgs/doc/front-end/android/activity_lifecycle.png)
 
 **感知生命周期**
 
 实现 `LifecycleObserver` 这个接口即可实现在自己的 `class` 中监听生命周期的回调。而不需要在 `activity` 中操作自己的 `class` 的状态。
 
-![lifecycle_feeling.png](https://image.yoouu.cn/sunseekerx/front-end/android/lifecycle_feeling.png)
+![lifecycle_feeling.png](https://static.yoouu.cn/imgs/doc/front-end/android/lifecycle_feeling.png)
 
 ### Service
 
@@ -138,27 +138,27 @@
 
 当 activity 在后台，如果内存不足，activity 会被系统杀掉，甚至 onDestroy 也不会被调用。 ViewModel 的数据也就丢失了。
 
-![viewmodel_savedstate.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmodel_savedstate.png)
+![viewmodel_savedstate.png](https://static.yoouu.cn/imgs/doc/front-end/android/viewmodel_savedstate.png)
 
 ### ViewModel + SavedState 生命周期
 
-![viewmode_savedstate_lifecycle.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmode_savedstate_lifecycle.png)
+![viewmode_savedstate_lifecycle.png](https://static.yoouu.cn/imgs/doc/front-end/android/viewmode_savedstate_lifecycle.png)
 
 ## 📌 LiveData
 
 ### mvc
 
-![livedata_mvc.png](https://image.yoouu.cn/sunseekerx/front-end/android/livedata_mvc.png)
+![livedata_mvc.png](https://static.yoouu.cn/imgs/doc/front-end/android/livedata_mvc.png)
 
 ### mvvm
 
-![livedata_mvvm.png](https://image.yoouu.cn/sunseekerx/front-end/android/livedata_mvvm.png)
+![livedata_mvvm.png](https://static.yoouu.cn/imgs/doc/front-end/android/livedata_mvvm.png)
 
 ### DataBinding
 
 View 跟 Controller 解耦，只需要控制数据，ViewModel 发生变化 ViewGroup 会自动更新（有点像 Vue）。DataBinding 是绑定试图到 Controller。
 
-![databinding.png](https://image.yoouu.cn/sunseekerx/front-end/android/databinding.png)
+![databinding.png](https://static.yoouu.cn/imgs/doc/front-end/android/databinding.png)
 
 ## 📌 DataBinding
 
@@ -184,21 +184,21 @@ android {
 
 ### Navigation
 
-![fragment_navigation.png](https://image.yoouu.cn/sunseekerx/front-end/android/fragment_navigation.png)
+![fragment_navigation.png](https://static.yoouu.cn/imgs/doc/front-end/android/fragment_navigation.png)
 
 ### ViewModel
 
-![viewmodel_fragment.png](https://image.yoouu.cn/sunseekerx/front-end/android/viewmodel_fragment.png)
+![viewmodel_fragment.png](https://static.yoouu.cn/imgs/doc/front-end/android/viewmodel_fragment.png)
 
 ## 📌 Room
 
-![room_components.png](https://image.yoouu.cn/sunseekerx/front-end/android/room_components.png)
+![room_components.png](https://static.yoouu.cn/imgs/doc/front-end/android/room_components.png)
 
 ## 📌 serializable
 
 就相当于 `JavaScript` 里面的 `JSON.stringify()` 序列化，`JSON.parse()` 反序列化。
 
-![serializable.png](https://image.yoouu.cn/sunseekerx/front-end/android/serializable.png)
+![serializable.png](https://static.yoouu.cn/imgs/doc/front-end/android/serializable.png)
 
 ### 打开 idea 自动插入序列号功能
 
@@ -208,7 +208,7 @@ setting > search `serializable class without 'serialVersionUID'` > 勾选
 
 ## 📌 kotlin
 
-![android/kotlin.png](https://image.yoouu.cn/sunseekerx/front-end/android/kotlin.png)
+![android/kotlin.png](https://static.yoouu.cn/imgs/doc/front-end/android/kotlin.png)
 
 ## 📌 注意事项
 

@@ -94,13 +94,13 @@ Visual Studio 代码扩展，提供 css 颜色的快速信息。
 
 > npm 插件自动引入
 
-![](https://image.yoouu.cn/sunseekerx/basic/ide/npm-Intellisense.gif)
+![](https://static.yoouu.cn/imgs/doc/basic/ide/npm-Intellisense.gif)
 
 #### One Monokai Theme
 
 > 暗色主题
 
-![](https://image.yoouu.cn/sunseekerx/basic/ide/one-monokai-theme.png)
+![](https://static.yoouu.cn/imgs/doc/basic/ide/one-monokai-theme.png)
 
 #### Path Intellisense
 
@@ -270,4 +270,4 @@ Visual Studio 代码扩展，提供 css 颜色的快速信息。
 
 效果图：
 
-![](https://image.yoouu.cn/sunseekerx/basic/ide/idea-2020-register.png)
+![](https://static.yoouu.cn/imgs/doc/basic/ide/idea-2020-register.png)

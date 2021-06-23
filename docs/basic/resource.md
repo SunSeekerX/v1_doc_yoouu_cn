@@ -18,15 +18,15 @@
 
 [LightProxy](https://github.com/alibaba/lightproxy) - 一个本地的代理服务器，用于本地数据包捕获，可以实时 hosts 绑定、设置规则转发、mock 接口、修改请求和响应的内容等。
 
-![lightproxy.png](https://image.yoouu.cn/sunseekerx/resource/lightproxy.png)
+![lightproxy.png](https://static.yoouu.cn/imgs/doc/resource/lightproxy.png)
 
 [Wifi 登录二维码](https://github.com/bndw/wifi-card) - 一个生成 Wifi 登录二维码的在线工具，手机扫码就可以登录 Wifi。
 
-![wifi-card.png](https://image.yoouu.cn/sunseekerx/resource/wifi-card.png)
+![wifi-card.png](https://static.yoouu.cn/imgs/doc/resource/wifi-card.png)
 
 [responsively](https://github.com/responsively-org/responsively-app) - 一个方便的桌面软件，集成了开发和调试响应式网页的各种功能。
 
-![responsively](https://image.yoouu.cn/sunseekerx/resource/responsively.gif)
+![responsively](https://static.yoouu.cn/imgs/doc/resource/responsively.gif)
 
 ## 📌 软件
 
@@ -52,7 +52,7 @@
 
 [FiraCode](https://github.com/tonsky/FiraCode) - Fira 代码:自由等宽字体与连字符
 
-![](https://image.yoouu.cn/sunseekerx/resource/FiraCode.svg)
+![](https://static.yoouu.cn/imgs/doc/resource/FiraCode.svg)
 
 [JetBrainsMono](https://github.com/JetBrains/JetBrainsMono) - IDEA 系字体
 
@@ -128,7 +128,7 @@
 
 [设计模式](https://refactoringguru.cn/design-patterns) - 该网站为中文教程，使用通俗的语言，介绍各种设计模式，图文并茂。此外，还有代码重构方面的英语内容。
 
-![design-patterns.jpg](https://image.yoouu.cn/sunseekerx/resource/design-patterns.jpg)
+![design-patterns.jpg](https://static.yoouu.cn/imgs/doc/resource/design-patterns.jpg)
 
 ### 有趣的项目
 
@@ -144,23 +144,23 @@
 
 [Adams](https://github.com/Tokinx/Adams) - 一套适用于 WordPress 的简洁、轻量的 Theme
 
-![](https://image.yoouu.cn/sunseekerx/resource/adams.jpg)
+![](https://static.yoouu.cn/imgs/doc/resource/adams.jpg)
 
 ### Typecho 主题
 
 [fantasy](https://github.com/Seevil/fantasy) - 一款极简 Typecho 博客主题
 
-![](https://image.yoouu.cn/sunseekerx/resource/fantasy.png)
+![](https://static.yoouu.cn/imgs/doc/resource/fantasy.png)
 
 ### Ghost 博客主题
 
 [ghost-theme-Moegi](https://github.com/moegi-design/ghost-theme-Moegi) - 一个优雅清新的 Ghost 主题。
 
-![](https://image.yoouu.cn/sunseekerx/resource/ghost-theme-Moegi.png)
+![](https://static.yoouu.cn/imgs/doc/resource/ghost-theme-Moegi.png)
 
 [Ghost-Theme-Frenemy](https://github.com/SunSeekerX/Ghost-Theme-Frenemy) - 适合阅读的`Ghost`主题。
 
-![Ghost-Theme-Frenemy.png](https://image.yoouu.cn/sunseekerx/resource/Ghost-Theme-Frenemy.png)
+![Ghost-Theme-Frenemy.png](https://static.yoouu.cn/imgs/doc/resource/Ghost-Theme-Frenemy.png)
 
 ### Vuepress 主题
 
@@ -264,4 +264,4 @@
 
 [Fuun.fun](https://fuun.fun/) - 该网站收集了一些有趣的网页小程序，主要是 HTML5 小游戏。
 
-![Fuun.fun.png](https://image.yoouu.cn/sunseekerx/resource/Fuun.fun.png)
+![Fuun.fun.png](https://static.yoouu.cn/imgs/doc/resource/Fuun.fun.png)

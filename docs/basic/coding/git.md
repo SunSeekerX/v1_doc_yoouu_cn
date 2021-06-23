@@ -169,10 +169,9 @@ git diff [本地库中的历史版本] [文件名]
 >
 > > 因为主分支一般 24 小时不间断运行
 
-下面放的是流程图，由于`Vuepress`不支持该语法会造成打包非常慢，故先注释，本地用`typora`可以复制出来直接显示
+<!--下面放的是流程图，由于`Vuepress`不支持该语法会造成打包非常慢，故先注释，本地用`typora`可以复制出来直接显示-->
 
-````
-​```mermaid
+```mermaid
 graph LR
     start(project) -- branch --- hot_Fix((hot_Fix))
     start --branch--> master((master))
@@ -192,9 +191,7 @@ graph LR
 	feature_game --success_commit--> game_commit_A
 	game_commit_A --merge--> master_commit_A
 	feature_game --fail--> delete_branch
-
-​```
-````
+```
 
 ##### 0️⃣ 查看当前所有分支
 

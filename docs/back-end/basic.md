@@ -1,3 +1,3 @@
 # Basic
 
-![backend.png](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/back-end/backend.png)
+![backend.png](https://static.yoouu.cn/imgs/doc/back-end/backend.png)

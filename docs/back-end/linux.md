@@ -166,7 +166,7 @@ do-release-upgrade: Ubuntu 官方推荐的系统升级方式,若加参数-d 还�
 
 安装 certbot
 
-![certbot](https://image.yoouu.cn/sunseekerx/back-end/linux/1186922-0d4dbd223901c210.png)
+![certbot](https://static.yoouu.cn/imgs/doc/back-end/linux/1186922-0d4dbd223901c210.png)
 
 ```bash
 $ sudo apt-get update
@@ -190,7 +190,7 @@ sudo certbot certonly --manual -d yoouu.cn -d *.yoouu.cn --preferred-challenges 
 
 按照提示设置 DNS 解析
 
-![DNS解析](https://image.yoouu.cn/sunseekerx/back-end/linux/1186922-365bfd53bc81a30f.png)
+![DNS解析](https://static.yoouu.cn/imgs/doc/back-end/linux/1186922-365bfd53bc81a30f.png)
 
 ### Nginx 配置
 

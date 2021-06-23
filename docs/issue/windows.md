@@ -4,7 +4,7 @@
 
 2、打开注册表定位到：HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\GraphicsDrivers\Configuration。查找 NOEDID 开头的项（我的电脑是最后一个），查找的项展开有个 00 项，00 项展开又还有个 00 项；会发现 PrimSurfSize.cx 和 PrimSurfSize.cy 不像其他几个跟屏幕分辨率一致。小一些。
 
-![win10-window-error.png](https://image.yoouu.cn/sunseekerx/issue/win10-window-error.png)
+![win10-window-error.png](https://static.yoouu.cn/imgs/doc/issue/win10-window-error.png)
 
 3、两个 00 项都要修改两个键值：PrimSurfSize.cx 和 PrimSurfSize.cy，把这两个键值双击修改，输入你电脑对应的正常分辨率数值，比如 PrimSurfSize.cx 为宽度 1920，PrimSurfSize.cy 为高度 1080。十进制十六进制随意，看其他几个的 00 下的“数据”一栏，都能看到对应的十进制和十六进制，0x780（1920），0x438（1080）
 

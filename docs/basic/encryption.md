@@ -47,7 +47,7 @@
 >
 >   symmetric encryption algorithm
 
-![symmetric-encryption.png](https://image.yoouu.cn/sunseekerx/basic/encryption/symmetric-encryption.png)
+![symmetric-encryption.png](https://static.yoouu.cn/imgs/doc/basic/encryption/symmetric-encryption.png)
 
 ### 对称密钥：DES TripleDES 算法
 
@@ -106,7 +106,7 @@ OFB：将分组密码作为同步序列密码运行，和 CFB 相似，不过 OF
 >
 >   asymmetric cryptographic algorithm
 
-![asymmetric-cryptographic.png](https://image.yoouu.cn/sunseekerx/basic/encryption/asymmetric-cryptographic.png)
+![asymmetric-cryptographic.png](https://static.yoouu.cn/imgs/doc/basic/encryption/asymmetric-cryptographic.png)
 
 ### 非对称加密算法比较
 

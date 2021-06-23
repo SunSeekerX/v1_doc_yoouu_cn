@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-23 00:21:55
+ * @LastEditTime: 2021-06-23 10:46:05
  */
 
 module.exports = [
@@ -112,7 +112,7 @@ module.exports = [
       {
         text: 'Java',
         items: [
-          { text: 'Basic', link: '/back-end/java/java' },
+          { text: 'Basic', link: '/back-end/java/' },
           { text: 'Mybatis', link: '/back-end/java/mybatis' },
           { text: 'Spring', link: '/back-end/java/spring' },
           { text: 'Spring-MVC', link: '/back-end/java/spring-mvc' },

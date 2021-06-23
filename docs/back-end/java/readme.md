@@ -17,7 +17,7 @@
 
 ### 三种创建方式
 
-![java-thread-create.png](https://image.yoouu.cn/sunseekerx/back-end/java/java-thread-create.png)
+![java-thread-create.png](https://static.yoouu.cn/imgs/doc/back-end/java/java-thread-create.png)
 
 ## Jdk and tomcat
 
@@ -66,7 +66,7 @@ Path 添加 `%MAVEN_HOME%\bin`
 
 ### **国内加速**
 
-打开 maven 的配置文件（ windows 机器一般在 maven 安装目录的 **conf/settings.xml** ），在<mirrors></mirrors>标签中添加 mirror 子节点:
+打开 maven 的配置文件（ windows 机器一般在 maven 安装目录的 **conf/settings.xml** ），在`<mirrors></mirrors>`标签中添加 mirror 子节点:
 
 ```xml
 <mirror>
@@ -77,7 +77,7 @@ Path 添加 `%MAVEN_HOME%\bin`
 </mirror>
 ```
 
-如果想使用其它代理仓库，可在<repositories></repositories>节点中加入对应的仓库使用地址。以使用 spring 代理仓为例：
+如果想使用其它代理仓库，可在`<repositories></repositories>`节点中加入对应的仓库使用地址。以使用 spring 代理仓为例：
 
 ```xml
 <repository>
@@ -92,7 +92,7 @@ Path 添加 `%MAVEN_HOME%\bin`
 </repository>
 ```
 
-在你的 **pom.xml** 文件<denpendencies></denpendencies>节点中加入你要引用的文件信息：
+在你的 **pom.xml** 文件`<denpendencies></denpendencies>`节点中加入你要引用的文件信息：
 
 ```xml
 <dependency>

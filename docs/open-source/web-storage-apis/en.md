@@ -416,7 +416,7 @@ Recently, the background management project of the development company needs to 
 
 ## Example gif
 
-![example.gif](https://image.yoouu.cn/sunseekerx/open-source/web-storage-apis/example.gif)
+![example.gif](https://static.yoouu.cn/imgs/doc/open-source/web-storage-apis/example.gif)
 
 ## Changelog
 

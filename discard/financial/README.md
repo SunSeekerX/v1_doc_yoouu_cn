@@ -33,7 +33,7 @@
   >
   > 并没有在前几天市场价格很低入场，最大的忌讳是市场下跌的时候停止投资。在市场价格低的时候买入成本更低，市场上涨，获利更多。
   >
-  > ![微笑曲线](https://image.yoouu.cn/sunseekerx/financial/curve.png)
+  > ![微笑曲线](https://static.yoouu.cn/imgs/doc/financial/curve.png)
 
 - [2020 从零开始的基金定投第二期：疫情影响下大跌，应该如何操作？每月 1000 一起升职加薪](https://www.bilibili.com/video/BV1U7411H7Hs) By 糖一呀
 
