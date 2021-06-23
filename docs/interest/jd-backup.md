@@ -6,7 +6,7 @@
 
 Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong)
 
-![](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215154.png)
+![](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215154.png)
 
 写在前面：由于需要获取 Cookie 这将导致信息泄漏以及侵权风险，本文章仅供大家技术交流之用！不为此承担任何责任！本人与本文章所涉及的所有工具均无利益相关性！不能为所涉及的工具承担任何使用风险！
 
@@ -26,7 +26,7 @@ Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong
 yum update
 ```
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215000.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215000.png)
 
 ### Docker 安装
 
@@ -50,11 +50,11 @@ sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/dock
 
 安装 Docker
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215024.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215024.png)
 
 完成安装
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215027.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215027.png)
 
 启动 Docker
 
@@ -86,7 +86,7 @@ docker run -dit \
 whyour/qinglong:latest
 ```
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215030.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215030.png)
 
 开放青龙端口
 
@@ -96,7 +96,7 @@ firewall-cmd --zone=public --add-port=5700/tcp --permanent
 
 然后就可以通过 http://ip:5700 访问面板了
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215034.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215034.png)
 
 默认账号：admin 密码：admin
 
@@ -118,7 +118,7 @@ cat /ql/config/auth.json
 
 更新面板，将面板更新至最新版本
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215045.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215045.png)
 
 完成后就可以添加自定义脚本源示例：
 
@@ -126,11 +126,11 @@ cat /ql/config/auth.json
 docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/chinnkarahoi/jd_scripts.git "jd_|jx_|getJDCookie" "activity|backUp" "^jd[^_]|USER"
 ```
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215053.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215053.png)
 
 就可以在面板中看到新添加的脚本了
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215103.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215103.png)
 
 至此就配置完成了。添加好 Cookie 就可以正常挂机了！
 
@@ -164,7 +164,7 @@ chinnkarahoi_jd_scripts_jd_fruit
 
 结果如下图所示：
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215114.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215114.png)
 
 保存设置后返回到定时任务。
 
@@ -172,13 +172,13 @@ chinnkarahoi_jd_scripts_jd_fruit
 
 互助码
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215122.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215122.png)
 
 运行后即可获取互助码了！
 
 运费日志如下图：
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215128.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215128.png)
 
 表示获取并设置成功！
 
@@ -490,6 +490,6 @@ firewall-cmd --zone=public --add-port=5700/tcp --permanent
 
 然后访问网址：http://ip:5701 即可进入如下界面：
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/2021/pic-go/qinglong/20210603215110.png)
+![img](https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210603215110.png)
 
 点击生成二维码，使用京东 APP 扫码登录即可。

@@ -1,6 +1,6 @@
 # Android
 
-![roadmap.svg](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/front-end/android/roadmap.svg)
+![roadmap.svg](https://static.yoouu.cn/imgs/doc/front-end/android/roadmap.svg)
 
 ## 📌 0x1 Android 项目视图
 
@@ -363,43 +363,43 @@ ext {
 
 - 先对项目进行 clean 操作
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-3b7a83388bbf5bef.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-3b7a83388bbf5bef.png)
 
 - 跑到所在的文件夹中新建整个包名目录
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-7c881d12fb7ac855.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-7c881d12fb7ac855.png)
 
 - 选择所需要的包，然后右击选择移动
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-0a4f0913ec8d8218.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-0a4f0913ec8d8218.png)
 
 - 选择第一个，直接移动包
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-dc86e2ca69046cfc.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-dc86e2ca69046cfc.png)
 
 - 在这里输入刚刚新建的包名
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-224801a5f1d9d937.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-224801a5f1d9d937.png)
 
 - 几秒种后就完成了移动
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-7e320385e399b868.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-7e320385e399b868.png)
 
 - 然后在项目右键中选择 **Replace in Path**
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-07c0f1b96070f40b.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-07c0f1b96070f40b.png)
 
 - 然后选择 **Replace All** 来替换
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-1d05c1b53da98945.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-1d05c1b53da98945.png)
 
 - 再同步一下 Gradle 配置
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-8a2835e0ae270303.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-8a2835e0ae270303.png)
 
 - 最后直接编译或者运行项目即可
 
-![img](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/pic-go/6038844-8b98155360852185.png)
+![img](https://static.yoouu.cn/imgs/doc/pic-go/6038844-8b98155360852185.png)
 
 **在本次测试用的是我自己搭建的架构项目，解决开发中遇到的坑，可以帮你减少开发时间和精力**
 

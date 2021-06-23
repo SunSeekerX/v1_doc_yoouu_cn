@@ -1,3 +1,3 @@
 # React
 
-![react.png](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/front-end/react/react.png)
+![react.png](https://static.yoouu.cn/imgs/doc/front-end/react/react.png)

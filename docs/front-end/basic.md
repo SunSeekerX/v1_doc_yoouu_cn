@@ -1,6 +1,6 @@
 # Basic
 
-![frontend.png](https://sunseekerx-images.oss-cn-shenzhen.aliyuncs.com/sunseekerx/front-end/frontend.png)
+![frontend.png](https://static.yoouu.cn/imgs/doc/front-end/frontend.png)
 
 ## prettier
 
