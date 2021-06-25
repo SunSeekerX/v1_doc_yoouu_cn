@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-23 10:46:05
+ * @LastEditTime: 2021-06-25 14:36:53
  */
 
 module.exports = [
@@ -129,6 +129,15 @@ module.exports = [
       { text: 'Blockchain', link: '/interest/blockchain/' },
       { text: 'JD', link: '/interest/jd' },
       { text: 'Topic', link: '/interest/topic' },
+      {
+        text: 'Tools',
+        items: [
+          {
+            text: 'Frp',
+            link: '/interest/frp',
+          },
+        ],
+      },
     ],
   },
   // Open source

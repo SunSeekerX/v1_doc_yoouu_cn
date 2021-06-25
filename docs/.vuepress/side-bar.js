@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-23 10:47:28
+ * @LastEditTime: 2021-06-25 14:37:15
  */
 
 module.exports = {
@@ -133,6 +133,7 @@ module.exports = {
         ['blockchain/', 'Blockchain'],
         ['jd', 'JD'],
         ['topic', 'Topic'],
+        ['frp', 'Topic'],
       ],
     },
   ],
