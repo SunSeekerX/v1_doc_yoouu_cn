@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-25 14:36:53
+ * @LastEditTime: 2021-06-26 10:02:30
  */
 
 module.exports = [
@@ -127,6 +127,7 @@ module.exports = [
     items: [
       { text: 'Phone', link: '/interest/phone' },
       { text: 'Blockchain', link: '/interest/blockchain/' },
+      { text: 'N1 盒子', link: '/interest/n1/' },
       { text: 'JD', link: '/interest/jd' },
       { text: 'Topic', link: '/interest/topic' },
       {
