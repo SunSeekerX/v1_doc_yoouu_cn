@@ -75,6 +75,28 @@ Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong
 
 看下面的脚本仓库，执行了代码访问面板就能看到脚本。
 
+### v2.2
+
+```shell
+docker pull drewnb/qinglong:arm-2.2-jdc
+```
+
+```shell
+docker run -dit \
+-v /root/ql/config:/ql/config \
+-v /root/ql/log:/ql/log \
+-v /root/ql/scripts:/ql/scripts \
+-p 5700:5700 \
+-p 5701:5701 \
+-e ENABLE_HANGUP=false \
+-e ENABLE_WEB_PANEL=true \
+-e ENABLE_WEB_JDC=true \
+--name qinglong \
+--hostname qinglong \
+--restart always \
+drewnb/qinglong:arm-2.2-jdc
+```
+
 ### v2.8
 
 2.8 为了生存。
@@ -166,7 +188,7 @@ combine_all
 
    ```shell
    # code_tsukasa.sh 根据你的脚本位置 path 可能不同
-   cp code_tsukasa.sh ${你的青龙容器id}:/ql/shell
+   docker cp code_tsukasa.sh ${你的青龙容器id}:/ql/shell
    ```
 
 2. 修改 `task_before.sh` 为上面的内容，`##helpStart` 和 `##helpEnd` 用来插入助力码
