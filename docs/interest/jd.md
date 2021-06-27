@@ -78,6 +78,7 @@ Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong
 ### v2.2
 
 ```shell
+# 我的是 n1 盒子架构为 arm，如果你是 x86 的 需要替换 arm-2.2-jdc 为你平台的架构
 docker pull drewnb/qinglong:arm-2.2-jdc
 ```
 
