@@ -77,6 +77,8 @@ Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong
 
 ### v2.2
 
+**自带 jdc**
+
 ```shell
 # 我的是 n1 盒子架构为 arm，如果你是 x86 的 需要替换 arm-2.2-jdc 为你平台的架构
 docker pull drewnb/qinglong:arm-2.2-jdc
@@ -96,6 +98,39 @@ docker run -dit \
 --hostname qinglong \
 --restart always \
 drewnb/qinglong:arm-2.2-jdc
+```
+
+**不带 jdc**
+
+```shell
+docker run -dit \
+-v /root/app/ql2/config:/ql/config \
+-v /root/app/ql2/log:/ql/log \
+-v /root/app/ql2/scripts:/ql/scripts \
+-p 5700:5700 \
+-p 5701:5701 \
+-e ENABLE_HANGUP=false \
+-e ENABLE_WEB_PANEL=true \
+-e ENABLE_WEB_JDC=true \
+--name qinglong \
+--hostname qinglong \
+--restart always \
+limoe/qinglong:arm64
+
+# 我的
+docker run -dit \
+-v /root/app/ql2/config:/ql/config \
+-v /root/app/ql2/log:/ql/log \
+-v /root/app/ql2/scripts:/ql/scripts \
+-p 5720:5700 \
+-p 5721:5701 \
+-e ENABLE_HANGUP=false \
+-e ENABLE_WEB_PANEL=true \
+-e ENABLE_WEB_JDC=true \
+--name qinglong2 \
+--hostname qinglong2 \
+--restart always \
+limoe/qinglong:arm64
 ```
 
 ### v2.8
