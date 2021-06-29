@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-26 10:02:44
+ * @LastEditTime: 2021-06-29 22:48:29
  */
 
 module.exports = {
@@ -89,6 +89,7 @@ module.exports = {
         ['database', 'Database'],
         ['docker', 'Docker'],
         ['redis', 'Redis'],
+        ['golang', 'Golang'],
       ],
     },
     {

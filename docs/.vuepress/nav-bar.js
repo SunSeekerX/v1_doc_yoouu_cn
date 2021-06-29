@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-26 10:02:30
+ * @LastEditTime: 2021-06-29 22:51:28
  */
 
 module.exports = [
@@ -118,6 +118,10 @@ module.exports = [
           { text: 'Spring-MVC', link: '/back-end/java/spring-mvc' },
           { text: 'Spring-Boot', link: '/back-end/java/spring-boot' },
         ],
+      },
+      {
+        text: 'Golang',
+        items: [{ text: 'Golang', link: '/back-end/golang' }],
       },
     ],
   },
