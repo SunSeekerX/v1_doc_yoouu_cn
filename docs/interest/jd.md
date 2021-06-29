@@ -77,6 +77,35 @@ Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong
 
 ### v2.2
 
+**limoe/qinglong**
+
+```shell
+docker pull limoe/qinglong:latest
+
+# 启动
+docker run -dit \
+   -v $PWD/ql2/config:/ql/config \
+   -v $PWD/ql2/log:/ql/log \
+   -v $PWD/ql2/db:/ql/db \
+   -p 5800:5700 \
+   --name ql2 \
+   --hostname ql2 \
+   --restart always \
+   limoe/qinglong:latest
+
+# backup
+docker run -dit \
+   -v /root/app/ql2/config:/ql/config \
+   -v /root/app/ql2/log:/ql/log \
+   -v /root/app/ql2/db:/ql/db \
+   -v /root/app/ql2/scripts:/ql/scripts \
+   -p 5720:5700 \
+   --name qinglong2 \
+   --hostname qinglong2 \
+   --restart always \
+   limoe/qinglong:latest
+```
+
 **自带 jdc - drewnb/qinglong**
 
 ```shell
