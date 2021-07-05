@@ -46,7 +46,7 @@ Github：[https://github.com/fatedier/frp](https://github.com/fatedier/frp)
 [common]
 bind_port = 7000
 vhost_http_port = 7070
-token = khuvvcfctthhhjjkkk
+token = xxxxxxxx
 
 dashboard_port = 7071
 ```
@@ -59,7 +59,7 @@ dashboard_port = 7071
 [common]
 server_addr = x.x.x.x
 server_port = 7000
-token = khuvvcfctthhhjjkkk
+token = xxxxxxxx
 
 [ssh]
 type = tcp
