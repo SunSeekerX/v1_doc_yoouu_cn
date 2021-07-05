@@ -124,13 +124,24 @@ custom_domains = docker.example.cn
    systemctl enable frp*.service
    ```
 
+**移除开机自启**
+
+```shell
+# 进入 /etc/systemd/system
+cd /etc/systemd/system
+# 关闭服务
+systemctl stop frps
+# 删除服务文件
+rm -rf frps.service
+```
+
 **客户端**
 
-1. ​ 复制
+1.  复制
 
-   ```shell
-   cp /root/app/frp_0.37.0_linux_arm64/systemd/frpc.service /etc/systemd/system
-   ```
+```shell
+cp /root/app/frp_0.37.0_linux_arm64/systemd/frpc.service /etc/systemd/system
+```
 
 2. 进入 `/etc/systemd/system`
 
@@ -171,6 +182,17 @@ custom_domains = docker.example.cn
    systemctl enable frp*.service
    ```
 
+**移除开机自启**
+
+```shell
+# 进入 /etc/systemd/system
+cd /etc/systemd/system
+# 关闭服务
+systemctl stop frpc
+# 删除服务文件
+rm -rf frpc.service
+```
+
 **其他命令**
 
 ```shell
@@ -179,4 +201,92 @@ systemctl enable frpc
 systemctl status frpc
 systemctl enable frps
 systemctl status frps
+
+# 启动服务：
+systemctl start vsftpd.service
+# 关闭服务：
+systemctl stop vsftpd.service
+# 重启服务：
+systemctl restart vsftpd.service
+# 显示服务的状态：
+systemctl status vsftpd.service
+# 在开机时启用服务：
+systemctl enable vsftpd.service
+# 在开机时禁用服务：
+systemctl disable vsftpd.service
+# 查看服务是否开机启动：
+systemctl is-enabled vsftpd.service
+# 查看已启动的服务列表：
+systemctl list-unit-files|grep enabled
+# 查看启动失败的服务列表：
+systemctl --failed
+```
+
+## Docker 部署
+
+### 服务端
+
+新建配置文件
+
+```shell
+mkdir -p /etc/frp/
+cd /etc/frp/
+touch frps.ini
+```
+
+写入配置文件，`frps.ini`，根据你自己的配置
+
+```ini
+[common]
+bind_port = 7000
+vhost_http_port = 7070
+token = xxxxxx
+
+dashboard_port = 7071
+```
+
+启动容器
+
+```shell
+docker run --restart=always --network host -d -v /etc/frp/frps.ini:/etc/frp/frps.ini --name frps snowdreamtech/frps
+```
+
+### 客户端
+
+新建配置文件
+
+```shell
+mkdir -p /etc/frp/
+cd /etc/frp/
+touch frpc.ini
+```
+
+写入配置文件，`frpc.ini`，根据你自己的配置
+
+```ini
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+token = xxxxxxxx
+
+admin_addr = 127.0.0.1
+admin_port = 7400
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 2233
+
+
+[a.example.com]
+type = http
+local_port = 2233
+custom_domains = a.example.com
+```
+
+启动容器
+
+```shell
+docker run --restart=always --network host -d -v /etc/frp/frpc.ini:/etc/frp/frpc.ini --name frpc snowdreamtech/frpc
 ```
