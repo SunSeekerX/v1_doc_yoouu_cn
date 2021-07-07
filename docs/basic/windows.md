@@ -37,3 +37,7 @@ chrome://net-internals/#dns
 找到 `Sockets`
 
 点击 `Flush socket pools` 刷新试试
+
+## PDF 压缩
+
+[https://zh.pdf24.org/](https://zh.pdf24.org/)

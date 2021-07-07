@@ -75,6 +75,12 @@ Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong
 
 看下面的脚本仓库，执行了代码访问面板就能看到脚本。
 
+### JDC 启动命令
+
+```shell
+nohup ./JDC &
+```
+
 ### v2.2
 
 **limoe/qinglong**
