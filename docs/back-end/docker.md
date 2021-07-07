@@ -228,6 +228,8 @@ Docker0：`172.18.0.1` 相当于路由器，其他所有启动的镜像都是接
 
 ## 0x2. Docker 安装 MariaDB
 
+**1.24.x**
+
 ```shell
 # 1.搜索mariadb镜像（非必须）
 $ docker search mariadb
@@ -258,6 +260,15 @@ $ docker start 容器id　　# 启动容器
 $ docker stop 容器id　　 # 停止容器
 ```
 
+**2.x**
+
+```shell
+# 创建数据卷
+docker volume create portainer_data
+# 启动容器
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+```
+
 ## 0x3. Docker 安装 MongoDB
 
 > ！如果外部目录存在老的数据文件，创建初始化用户不会生效。
@@ -286,6 +297,19 @@ $ mongo -u root -p 12345678900
 ```
 
 ## 0x4. Docker 安装 portainer
+
+**2.x**
+
+```shell
+# 创建数据卷
+docker volume create portainer_data
+# 启动容器
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+```
+
+---
+
+**1.24.x（不建议）**
 
 ```shell
 # 1.搜索MongoDB镜像（非必须）
@@ -412,4 +436,71 @@ $ docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher
 
 # Custom start
 $ docker run --name rancher -d --restart=unless-stopped -p 8082:80 -p 8083:443 rancher/rancher
+```
+
+## 0x9 Docker 安装 frps
+
+新建配置文件
+
+```shell
+mkdir -p /etc/frp/
+cd /etc/frp/
+touch frps.ini
+```
+
+写入配置文件，`frps.ini`，根据你自己的配置
+
+```ini
+[common]
+bind_port = 7000
+vhost_http_port = 7070
+token = xxxxxx
+
+dashboard_port = 7071
+```
+
+启动容器
+
+```shell
+docker run --restart=always --network host -d -v /etc/frp/frps.ini:/etc/frp/frps.ini --name frps snowdreamtech/frps
+```
+
+## 0x10 Docker 安装 frpc
+
+新建配置文件
+
+```shell
+mkdir -p /etc/frp/
+cd /etc/frp/
+touch frpc.ini
+```
+
+写入配置文件，`frpc.ini`，根据你自己的配置
+
+```ini
+[common]
+server_addr = x.x.x.x
+server_port = 7000
+token = xxxxxxxx
+
+admin_addr = 127.0.0.1
+admin_port = 7400
+
+[ssh]
+type = tcp
+local_ip = 127.0.0.1
+local_port = 22
+remote_port = 2233
+
+
+[a.example.com]
+type = http
+local_port = 2233
+custom_domains = a.example.com
+```
+
+启动容器
+
+```shell
+docker run --restart=always --network host -d -v /etc/frp/frpc.ini:/etc/frp/frpc.ini --name frpc snowdreamtech/frpc
 ```
