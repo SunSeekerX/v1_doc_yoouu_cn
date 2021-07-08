@@ -41,3 +41,11 @@ chrome://net-internals/#dns
 ## PDF 压缩
 
 [https://zh.pdf24.org/](https://zh.pdf24.org/)
+
+## EDGE 多开
+
+快捷方式添加参数
+
+```
+--user-data-dir="D:\edge\user1"
+```
