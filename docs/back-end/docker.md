@@ -6,7 +6,7 @@
 >
 > **Docker Hub**: [https://docs.docker.com/install/linux/docker-ce/centos/](https://docs.docker.com/install/linux/docker-ce/centos/)
 
-## 常用命令
+## 📌 常用命令
 
 ### 服务（service）重启
 
@@ -47,13 +47,18 @@ docker inspect [镜像名称:版本]
 docker search [关键字]
 # 镜像登陆
 docker login
-```
 
-### 镜像（images）补充命令
-
-```bash
 # 删除全部镜像
 docker rmi -f $(docker images -aq)
+```
+
+### 镜像推送（images）
+
+给镜像打 `tag`
+
+```shell
+# docker tag 镜像id dockerhub账号名称/dockerhub仓库名称:仓库标签
+docker tag 0ae3cc39ae0d sunseekerx/uni-pushy-server:latest
 ```
 
 ### 容器（container）常用命令
@@ -98,7 +103,7 @@ docker kill <container_id>
 docker cp <container_id>:<容器内的路径> <主机路径>
 ```
 
-## Docker desktop
+## 📌 Docker desktop
 
 **Windows 加速**
 
@@ -116,7 +121,7 @@ docker cp <container_id>:<容器内的路径> <主机路径>
 }
 ```
 
-## 介绍
+## 📌 介绍
 
 ### 镜像
 
@@ -161,7 +166,7 @@ docker commit
 docker commit -m=<提交的描述信息> -a=<作者> <容器id> 目标镜像名:[TAG]
 ```
 
-## 容器数据卷
+## 📌 容器数据卷
 
 ### 什么是容器数据卷
 
@@ -179,7 +184,7 @@ MySQL，容器删了，删库跑路！需求：MySQL 数据可以存储在本地
 
 **总结一句话：容器的持久化和同步操作！**
 
-## Dockerfile
+## 📌 Dockerfile
 
 ```bash
 FROM				# 基础镜镜像，—切从这里开始构建
@@ -198,7 +203,7 @@ ENV					# 构建的时候设置环境变量!
 
 ![image-20200829162756885](https://static.yoouu.cn/imgs/doc/back-end/docker/image-20200829162756885.png)
 
-## Docker 网络
+## 📌 Docker 网络
 
 ### 理解 Docker0
 
