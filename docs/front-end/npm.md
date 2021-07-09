@@ -37,6 +37,18 @@ tbify printenv npm_config_registry
 # -> https://r.npm.taobao.org
 ```
 
+## 📌 加速下载 - yarn 代理
+
+```powershell
+yarn config set proxy http://127.0.0.1:7890
+yarn config set https-proxy http://127.0.0.1:7890
+
+# 如果 SSL 报错，可以禁用校验
+yarn config set strict-ssl false
+# 设置淘宝源
+yarn config set registry https://registry.npm.taobao.org/
+```
+
 ## 📌 ~~加速下载 -替换镜像~~
 
 ```bash
