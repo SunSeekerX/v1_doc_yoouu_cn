@@ -1,5 +1,27 @@
 # power-shell
 
+## 刷新环境变量
+
+**powershell**
+
+```powershell
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+# or
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+```
+
+**cmd**
+
+> open cmd commend prompt window.
+>
+> input `set PATH=C` -> this will refresh the environment variables. close and restart cmd window. input `echo %PATH%` to test.
+
+```shell
+set PATH=C
+# 关闭窗口重新打开，输入
+echo %PATH%
+```
+
 ## 代理
 
 ```powershell
