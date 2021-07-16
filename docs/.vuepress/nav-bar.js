@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-29 22:51:28
+ * @LastEditTime: 2021-07-15 19:48:33
  */
 
 module.exports = [
@@ -133,6 +133,8 @@ module.exports = [
       { text: 'Blockchain', link: '/interest/blockchain/' },
       { text: 'N1 盒子', link: '/interest/n1/' },
       { text: 'JD', link: '/interest/jd' },
+      { text: '路由器', link: '/interest/router' },
+      { text: '滑板车', link: '/interest/scooter' },
       { text: 'Topic', link: '/interest/topic' },
       {
         text: 'Tools',
