@@ -412,7 +412,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 ## 0x7 Docker 安装 gogs
 
-```bash
+```shell
 # Pull image from Docker Hub.
 $ docker pull gogs/gogs
 
@@ -427,6 +427,15 @@ $ docker start gogs
 ```
 
 配置文件地址`/var/gogs/gogs/conf`
+
+**升级**
+
+```shell
+docker pull gogs/gogs
+docker stop gogs
+docker rm gogs
+# 重新创建容器
+```
 
 ## 0x8 Docker 安装 rancher
 

@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-29 22:48:29
+ * @LastEditTime: 2021-07-15 19:49:10
  */
 
 module.exports = {
@@ -134,7 +134,8 @@ module.exports = {
         ['blockchain/', 'Blockchain'],
         ['n1/', 'N1 盒子'],
         ['jd', 'JD'],
-        ['topic', 'Topic'],
+        ['router', '路由器'],
+        ['scooter', '滑板车'],
         ['frp', 'Topic'],
       ],
     },

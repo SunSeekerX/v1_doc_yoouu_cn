@@ -1,3 +1,7 @@
+## 机型
+
+[魅蓝 Note3](./wanji/miezu/m3-note.md)
+
 ## recovery 下载
 
 LR.Team 定制版 TWRP 下载地址集合：[https://weibo.com/ttarticle/p/show?id=2309404160776561631202](https://weibo.com/ttarticle/p/show?id=2309404160776561631202)
