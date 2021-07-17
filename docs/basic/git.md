@@ -267,11 +267,18 @@ git merge ${本地分支名}
 git merge --no-ff -m "merge with no-ff" ${本地分支名}
 ```
 
-### 删除分支
+### 删除本地分支
 
 ```bash
 # 删除本地分支，如果本地分支未完全合并是无法删除的，需要将-d改为-D表示强制删除
 git branch -d ${本地分支名}
+
+```
+
+### 删除远程分支
+
+```shell
+git push origin --delete <branchName>
 ```
 
 ### 同步远程已删除的分支
@@ -333,6 +340,8 @@ git branch --set-upstream ${本地分支} ${远程分支
 git fetch origin 1.1.0:1.1.0
 ```
 
+## tag
+
 ### 标签命令 - tag
 
 ```bash
@@ -347,6 +356,11 @@ git tag ${标签} ${版本号}
 
 # 显示某个标签的详细信息
 git show ${标签}
+
+# 删除一个本地标签
+git tag -d <tagname>
+# 删除一个远程标签
+git push origin :refs/tags/<tagname>
 ```
 
 ### 同步远程仓库更新
