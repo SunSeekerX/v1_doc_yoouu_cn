@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-15 19:48:33
+ * @LastEditTime: 2021-07-19 16:25:12
  */
 
 module.exports = [
@@ -142,6 +142,10 @@ module.exports = [
           {
             text: 'Frp',
             link: '/interest/frp',
+          },
+          {
+            text: 'NPS',
+            link: '/interest/nps',
           },
         ],
       },

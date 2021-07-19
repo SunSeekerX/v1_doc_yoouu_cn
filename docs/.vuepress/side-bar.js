@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-15 19:49:10
+ * @LastEditTime: 2021-07-19 16:25:21
  */
 
 module.exports = {
@@ -137,6 +137,7 @@ module.exports = {
         ['router', '路由器'],
         ['scooter', '滑板车'],
         ['frp', 'Topic'],
+        ['nps', 'NPS'],
       ],
     },
   ],
