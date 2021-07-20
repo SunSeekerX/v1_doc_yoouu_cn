@@ -365,6 +365,9 @@ $ chown -R 1000 /var/jenkins_home
 $ sudo ls -nd /var/jenkins_home/
 # 运行 Jenkins
 $ docker run --name jenkins -p 50001:8080 --restart=always -u root  -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JENKINS_UC="	https://updates.jenkins-zh.cn" -e JENKINS_UC_DOWNLOAD="https://mirrors.tuna.tsinghua.edu.cn/jenkins" -e JAVA_OPTS=-Duser.timezone=Asia/Shanghai -v $(which git):/usr/bin/git jenkins/jenkins:lts
+
+# 限制内存为 1.5 GB 腾讯云不限制构建 Vue 项目很容易把内存吃满然后其他服务挂掉
+docker run --name jenkins -m 1536M -p 50001:8080 --restart=always -u root  -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JAVA_OPTS=-Duser.timezone=Asia/Shanghai jenkins/jenkins:lts
 ```
 
 `jenkinsci/blueocean` - 官方推荐安装
