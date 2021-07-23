@@ -233,8 +233,6 @@ Docker0：`172.18.0.1` 相当于路由器，其他所有启动的镜像都是接
 
 ## 0x2. Docker 安装 MariaDB
 
-**1.24.x**
-
 ```shell
 # 1.搜索mariadb镜像（非必须）
 $ docker search mariadb
@@ -243,13 +241,13 @@ $ docker pull mariadb
 # 3.查看本地已有的所有镜像
 $ docker images
 # 4.建一个目录作为和容器的映射目录(-p:递归建立目录)
-$ mkdir -p /data/mariadb
+$ mkdir -p /root/data/mariadb
 # 5.启动MariaDB
-$ docker run --name mariadb -p 3306:3306 --restart=always -e MYSQL_ROOT_PASSWORD=输入数据库root用户的密码 -v /data/mariadb:/var/lib/mysql -d mariadb
+$ docker run --restart=always -d --name mariadb -p 3306:3306 --restart=always -e MYSQL_ROOT_PASSWORD=输入数据库root用户的密码 -v /root/data/mariadb:/var/lib/mysql mariadb
 #　　--name启动容器设置容器名称为mariadb
 #　　-p设置容器的3306端口映射到主机3306端口
 #　　-e MYSQL_ROOT_PASSWORD设置环境变量数据库root用户密码为输入数据库root用户的密码
-#　　-v设置容器目录/var/lib/mysql映射到本地目录/data/mariadb
+#　　-v设置容器目录/var/lib/mysql映射到本地目录/root/data/mariadb
 #　　-d后台运行容器mariadb并返回容器id
 # 6.查看容器是否运行
 $ docker ps -a
@@ -263,15 +261,6 @@ $ mysql -uroot -proot密码
 #其他常用命令：
 $ docker start 容器id　　# 启动容器
 $ docker stop 容器id　　 # 停止容器
-```
-
-**2.x**
-
-```shell
-# 创建数据卷
-docker volume create portainer_data
-# 启动容器
-docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 ```
 
 ## 0x3. Docker 安装 MongoDB
@@ -518,3 +507,5 @@ custom_domains = a.example.com
 ```shell
 docker run --restart=always --network host -d -v /etc/frp/frpc.ini:/etc/frp/frpc.ini --name frpc snowdreamtech/frpc
 ```
+
+## 0x11 Docker 安装 redis
