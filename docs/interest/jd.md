@@ -267,6 +267,13 @@ combine_all
 docker exec -it ${你容器的id} /bin/bash
 ```
 
+**【群里收集】**
+
+```shell
+ql repo https://github.com/cdle/jd_study.git "jd_"
+ql repo https://github.com/smiek2221/scripts.git "jd_|gua_" "" "ZooFaker_Necklace.js|JDJRValidator_Pure.js|sign_graphics_validate.js"
+```
+
 **【妖火整理】**[https://yaohuo.me/bbs-946732.html](https://yaohuo.me/bbs-946732.html)
 
 ```shell
