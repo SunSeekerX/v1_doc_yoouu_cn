@@ -33,7 +33,56 @@ const {
 
 将 `css` 改为 `scss` 即可。应该是编译的时候没走 webpack loader，或者 css loader 之类的处理方式导致的
 
+## 📌 原生插件
 
+### Android
+
+1. 调试调用插件无反应？
+
+   1. 检查是否将模块导入到 `app` 模块
+
+      ```groovy
+      // 类似
+      implementation project(':local-module:ssx_screenshot_listen')
+      ```
+
+   2. 检查 `dcloud_uniplugins.json` 是否配置好插件
+
+   3. 检查模块方法是否加上 `@UniJSMethod(uiThread = true)` 注释
+
+   4. 检查模块混淆规则配置文件 `proguard-rules.pro` 是否加上
+
+      ```properties
+      # Uni-app
+      -keep public class * extends io.dcloud.feature.uniapp.common.UniModule{*;}
+      ```
+
+   5. 如果你得的模块是放在二级文件夹的，并且开启了混淆压缩，类似如下配置
+
+      ```groovy
+      buildTypes {
+          release {
+            signingConfig signingConfigs.config
+            zipAlignEnabled true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+          }
+          debug {
+            signingConfig signingConfigs.config
+            zipAlignEnabled true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+          }
+        }
+      ```
+
+      ![image-20210727233153192](https://static.yoouu.cn/imgs/2021/pic-go/image-20210727233153192.png)
+
+      这样玩不得行，虽然你取消混淆是可以的，但我不确定打包出来的插件能不能用 😒。罢了放外面吧。估计没人像我这么玩。
+
+2. 启动新的 `actovity` 报 `You need to use a Theme.AppCompat theme (or descendant) with this activity.`
+
+   修改 `activity` 继承的父类为 `Activity`，不要用 `AppCompatActivity`
 
 ## 📌 HbuilderX
 
@@ -80,19 +129,17 @@ module.exports = {
   // 末尾换行符 default:"lf"
   endOfLine: 'auto',
   parsers: {
-    ".jsx": "flow",
-    ".scss": "scss",
-    ".ts": "typescript",
-    ".less": "css",
-    ".vue": "vue",
-    ".nvue": "vue",
-    ".ux": "vue",
-    ".yml": "yaml",
-  }
+    '.jsx': 'flow',
+    '.scss': 'scss',
+    '.ts': 'typescript',
+    '.less': 'css',
+    '.vue': 'vue',
+    '.nvue': 'vue',
+    '.ux': 'vue',
+    '.yml': 'yaml',
+  },
 }
 ```
-
-
 
 ## 📌 业务实现
 
@@ -188,7 +235,7 @@ if (!packageNames.areNotificationsEnabled()) {
    ```javascript
    // bad
    this.$emit('on-change-sort')
-   
+
    // good
    this.$emit('abc')
    ```
