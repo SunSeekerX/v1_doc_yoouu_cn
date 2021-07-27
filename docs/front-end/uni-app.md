@@ -41,7 +41,7 @@ const {
 
 ```javascript
 module.exports = {
-	// 行宽 default:80
+		// 行宽 default:80
 	  printWidth: 120,
 	  // tab 宽度 default:2
 	  tabWidth: 2,
