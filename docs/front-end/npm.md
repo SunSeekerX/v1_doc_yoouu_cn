@@ -197,6 +197,12 @@ npm run test
 
 可以看到该脚本的功能就是执行 npm run test 这个命令
 
+4. 赋予执行权限
+
+```shell
+chmod 700 .husky/pre-commit
+```
+
 ## 📌 查看，更新，卸载全局安装的包
 
 > npm 查看全局安装过的包命令：
