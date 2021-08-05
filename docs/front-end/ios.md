@@ -56,4 +56,16 @@
 
     <img src="https://static.yoouu.cn/imgs/doc/front-end/ios/202108041834119.png" alt="QQ20210804-182715@2x"  />
 
+- 重新编译生成 `UniPluginDemo` 项目，拿到生成的打包资源
+
 - 配置应用标识(Bundle Identifier)
+
+- 配置版本号和版本名称
+
+- 配置离线打包的 key
+
+- 配置 `HBuilder-Hello/control.xml` 的 `appid` 为你 Hbuilderx 获取到的 appid
+
+- 运行
+
+- 提交到 git，请注意需要将项目克隆到 `iOSSDK@3.1.22.80438_20210709` 类似的目录下，并且需要确保项目目录同级存在 `SDK` 文件夹。工程依赖 `SDK` 文件夹的库。官方下载地址：[https://nativesupport.dcloud.net.cn/AppDocs/download/ios](https://nativesupport.dcloud.net.cn/AppDocs/download/ios)
