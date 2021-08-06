@@ -96,9 +96,9 @@ const safeRunning = (name, fun) => {
 
 启动极验认证
 
-- `options` \<Object\> 配置参数
+- `options` <Object\> 配置参数
 
-  - `lang` \<String\> | \<null\> 国际化配置，默认为系统语言，支持的语言及语言短码如下：
+  - `lang` <String\> | <null\> 国际化配置，默认为系统语言，支持的语言及语言短码如下：
 
     ```
     /**
@@ -118,20 +118,20 @@ const safeRunning = (name, fun) => {
      */
     ```
 
-  - `initParams` \<Object\> 初始化参数 类似 `{"success":1,"challenge":"f876950b0c0189566e8bee4a87943c3c","gt":"9a7972a4d1a4c71e421ed8f7ce3cabfa"}`
+  - `initParams` <Object\> 初始化参数 类似 `{"success":1,"challenge":"f876950b0c0189566e8bee4a87943c3c","gt":"9a7972a4d1a4c71e421ed8f7ce3cabfa"}`
 
-- `callback` \<Function\> 结果回调
+- `callback` <Function\> 结果回调
 
   回调结果
 
-  - `success` \<Boolean\> 操作是否成功
-  - `code` \<Number\> 状态码
+  - `success` <Boolean\> 操作是否成功
+  - `code` <Number\> 状态码
     - `200` 操作成功
     - `401` 启动极验验证参数获取失败，请检查!
     - `402` 验证失败
-  - `msg` \<String\> 请求信息
-  - `data` \<Object\> 请求成功返回数据
-  - `err` \<String\> | \<Object\> 错误信息，不能直接提示给用户，可以用于 `debug`。
+  - `msg` <String\> 请求信息
+  - `data` <Object\> 请求成功返回数据
+  - `err` <String\> | <Object\> 错误信息，不能直接提示给用户，可以用于 `debug`。
 
 ### 权限列表
 
@@ -148,6 +148,8 @@ const safeRunning = (name, fun) => {
 **ios**
 
 <img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-ios1.jpg" alt="geetest-ios1" style="zoom:25%;" />
+
+<img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-ios2.jpg" alt="geetest-ios2" style="zoom:25%;" />
 
 **Android**
 
