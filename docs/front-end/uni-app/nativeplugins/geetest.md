@@ -149,8 +149,6 @@ const safeRunning = (name, fun) => {
 
 <img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-ios1.jpg" alt="geetest-ios1" style="zoom:25%;" />
 
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-ios2.jpg" alt="geetest-ios2" style="zoom:25%;" />
-
 **Android**
 
 <img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-android1.jpeg" alt="geetest-android1" style="zoom:25%;" />
