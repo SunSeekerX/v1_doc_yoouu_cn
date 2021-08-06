@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-19 16:25:21
+ * @LastEditTime: 2021-08-06 10:53:38
  */
 
 module.exports = {
@@ -66,6 +66,7 @@ module.exports = {
         ['vue', 'Vue'],
         ['react', 'React'],
         ['uni-app', 'Uni-app'],
+        ['uni-app-nativeplugins', 'Uni-app 原生插件'],
         ['flutter', 'Flutter'],
         ['react-native', 'React Native'],
         ['android', 'Android'],

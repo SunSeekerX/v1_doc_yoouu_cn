@@ -2,9 +2,13 @@
 
 ### 简介
 
+**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/geetest/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/geetest/)
+
 官网: [https://www.geetest.com/](https://www.geetest.com/)
 
 官方 uni-app 插件：[https://ext.dcloud.net.cn/plugin?id=2431](https://ext.dcloud.net.cn/plugin?id=2431)
+
+更多插件：[https://doc.yoouu.cn/front-end/uni-app-nativeplugins/](https://doc.yoouu.cn/front-end/uni-app-nativeplugins/)
 
 ### 平台兼容性
 

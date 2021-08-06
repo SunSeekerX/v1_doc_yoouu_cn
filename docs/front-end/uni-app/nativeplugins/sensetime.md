@@ -2,9 +2,13 @@
 
 ### 简介
 
+**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/sensetime/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/sensetime/)
+
 官网：[https://www.sensetime.com/senseid/home](https://www.sensetime.com/senseid/home)
 
 该插件需要单独定制，因为需要和证书绑定。
+
+更多插件：[https://doc.yoouu.cn/front-end/uni-app-nativeplugins/](https://doc.yoouu.cn/front-end/uni-app-nativeplugins/)
 
 ### 平台兼容性
 
@@ -23,14 +27,12 @@ onStartSenseId() {
     superModuleSensetime.onStartSenseId({
       name: '张三丰',
       idNumber: '张三丰的身份证号码',
-      url: `http://entry.bandex.lvyii.com/security/faceIdentify`,
-      nonce:
-      'a/+tNhvZgfeiK5LAL0Jjt4xIaJVZ6aQYZ19QunLQu02zfeMYB6Myxe/uhIZhlSy7REMiTIfwrdAFFSMbXMRC2pwuqRWAWj8EzTj2vwC6oF1P2hujqXDP4NAE5xrLZ0NP9EXcVoYnFr1pAhSzR9yiBrEATomw7Oe+GIEZnmELYyQ=',
-      sign: '05bdcf73df89b00cbee85a1e2e276de0',
-      token:
-      'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiI0NTJlZjhlYTZjMDM0YTE0YmM3YWQzMGQ1OTAwZmRiOSIsInNvdXJjZSI6ImFwcCIsImV4cCI6MTYyNDM0ODkxMCwiaWF0IjoxNjI0MjYyNTEwfQ.5RoYc1ztNFBFZC76qfji5_QVjtvCMDJIdBCi8kq9jmI',
-      apiKey: 'a77935d39fd24f1e8d3c009b501089e3',
-      apiSecret: 'dac0b459ada14c8ea63bc58dea4f9351',
+      url: 'xxxxxx',
+      nonce: 'xxxxxx',
+      sign: 'xxxxxx',
+      token:'xxxxxx',
+      apiKey: 'xxxxxx',
+      apiSecret: 'xxxxxx',
     })
   })
 }

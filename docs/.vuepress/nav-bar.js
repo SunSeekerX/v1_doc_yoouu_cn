@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-07-19 16:25:12
+ * @LastEditTime: 2021-08-06 10:39:16
  */
 
 module.exports = [
@@ -65,6 +65,7 @@ module.exports = [
           { text: 'Vue', link: '/front-end/vue' },
           { text: 'React', link: '/front-end/react' },
           { text: 'Uni-app', link: '/front-end/uni-app' },
+          { text: 'Uni-app 原生插件', link: '/front-end/uni-app-nativeplugins' },
           {
             text: 'Flutter',
             link: '/front-end/flutter',
