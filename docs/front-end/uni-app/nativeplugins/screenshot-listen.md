@@ -91,7 +91,7 @@ const safeRunning = (name, fun) => {
 
   - `data` <Object\> 请求成功返回数据
 
-    - `imgPath` <String\> | <null\> 图片绝对路径
+    - `imgPath` <String\> | <null\> 图片绝对路径，仅安卓！
 
       > 在 Android 11 之后可能无法查询出来！目前在 `miui 12.5` Android 11 是可以查询出来的。
 
@@ -133,7 +133,7 @@ const safeRunning = (name, fun) => {
 
 - `data` <Object\> 请求成功返回数据
 
-  - `imgPath` <String\> | <null\> 图片绝对路径
+  - `imgPath` <String\> | <null\> 图片绝对路径，仅安卓！
 
     > 在 Android 11 之后可能无法查询出来！目前在 `miui 12.5` Android 11 是可以查询出来的。
 
@@ -166,6 +166,23 @@ const safeRunning = (name, fun) => {
 <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-android-screenshot.jpeg" alt="screenshot-listen-android-screenshot" style="zoom:50%;" />
 
 ### 更新日志
+
+#### 1.0.2
+
+**功能（Features）**
+
+**Bug 修复 （Bug Fixes）**
+
+1. 【重要】ios 修复截屏之后会造成卡顿的问题，在 ios 不返回截屏图片路径
+2. 修复安卓截屏插件重复触发截屏事件
+
+#### 1.0.1
+
+**功能（Features）**
+
+1. 更新插件权限说明
+
+**Bug 修复 （Bug Fixes）**
 
 #### 1.0.0
 
