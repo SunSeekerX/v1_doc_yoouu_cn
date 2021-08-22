@@ -19,6 +19,6 @@
     "prettier": "^2.3.2",
     "sort-package-json": "^1.50.0",
     "vuepress": "^1.8.2",
-    "vuepress-theme-hope": "^1.19.2"
+    "vuepress-theme-hope": "^1.19.3"
   }
 }
