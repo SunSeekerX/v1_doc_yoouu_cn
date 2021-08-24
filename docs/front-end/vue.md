@@ -47,6 +47,88 @@ trim_trailing_whitespace = false
 insert_final_newline = true
 ```
 
+## 📌 导入 tailwindcss
+
+### vue2
+
+**安装依赖**
+
+```shell
+npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+```
+
+**创建您的配置文件**
+
+```shell
+npx tailwindcss init -p
+```
+
+`postcss.config.js`
+
+```javascript
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+`tailwind.config.js`
+
+```javascript
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+**配置 Tailwind 来移除生产环境下没有使用到的样式声明**
+
+`tailwind.config.js`
+
+```javascript
+module.exports = {
+  purge: ['./public/index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+**新增**
+
+`app/src/assets/styles/index.css`
+
+```css
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+**配置 main.js**
+
+`app/src/main.js`
+
+```javascript
+import './assets/styles/index.css'
+```
+
+### vue3
+
 ## 📌 遇到的问题
 
 ### 修改 data 内深层嵌套对象的属性页面不更新
