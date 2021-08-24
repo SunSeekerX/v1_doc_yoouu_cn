@@ -1,9 +1,9 @@
 /**
- * @name:
+ * Prettier 配置
  * @author: SunSeekerX
  * @Date: 2020-07-20 16:34:25
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2020-11-13 13:30:58
+ * @LastEditTime: 2021-08-24 12:00:09
  */
 
 module.exports = {

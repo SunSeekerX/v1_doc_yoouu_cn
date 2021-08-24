@@ -1,9 +1,9 @@
 /**
- * @name: lint-staged 配置
+ * 暂存区检查
  * @author: SunSeekerX
  * @Date: 2020-11-13 12:46:27
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-03 10:54:53
+ * @LastEditTime: 2021-08-24 12:00:03
  */
 
 module.exports = {
