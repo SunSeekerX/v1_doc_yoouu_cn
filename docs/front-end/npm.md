@@ -1,71 +1,30 @@
-# NPM
+记录相关 npm 技巧。
 
-> 记录相关 npm 技巧。
+## 📌 npm 常用命令
 
-## 📌 加速下载 - [tbify](https://github.com/fjc0k/tbify)
+```shell
+# 清除缓存
+npm cache clean -f
+# 查看全局安装的包
+npm list -g --depth 0
+# 卸载全局安装的包
+npm uninstall -g jshint
+# 更新全局安装的包
+npm install -g npm
 
-**安装**
+# 更改下载的包位置
+npm config set prefix "w:\data\node_package\npm"
+npm config set cache "w:\data\node_package\npm_cache"
+# 查看配置
+npm config list
 
-```bash
-# npm
-npm install tbify --global
-
-# yarn
-yarn global add tbify
-
-# pnpm
-pnpm add --global tbify
-```
-
-**使用**
-
-对于常用的包管理命令，`tbify` 提供了使用淘宝 NPM 镜像的等价命令，除了发布包到 npm 时必须使用 `npm publish` 外，都可以使用等价命令进行相关操作：
-
-| 原命令 | 使用淘宝 NPM 镜像的命令 | 示例                  |
-| ------ | ----------------------- | --------------------- |
-| `nvm`  | `tnvm` (或 `tbify nvm`) | `tnvm install 8.0.0`  |
-| `npm`  | `tnpm` (或 `tbify npm`) | `tnpm install react`  |
-| `npx`  | `tnpx` (或 `tbify npx`) | `tnpx kill-port 3000` |
-| `yarn` | `tyn` (或 `tbify yarn`) | `tyn add react`       |
-| `pnpm` | `tpm` (或 `tbify pnpm`) | `tpm add react`       |
-| `pnpx` | `tpx` (或 `tbify pnpx`) | `tpx kill-port 3000`  |
-
-对于其他命令，在使用时加上 `tbify` 前缀即可，比如：
-
-```bash
-tbify printenv npm_config_registry
-# -> https://r.npm.taobao.org
-```
-
-## 📌 加速下载 - yarn 代理
-
-```powershell
-yarn config set proxy http://127.0.0.1:7890
-yarn config set https-proxy http://127.0.0.1:7890
-
-# 如果 SSL 报错，可以禁用校验
-yarn config set strict-ssl false
-# 设置淘宝源
-yarn config set registry https://registry.npm.taobao.org/
-```
-
-## 📌 ~~加速下载 -替换镜像~~
-
-```bash
+# 加速下载常用
 # 1、查看一下当前源
 npm config get registry
 # 2、切换为淘宝源
 npm config set registry http://registry.npm.taobao.org/
 # 3、换成原来的
 npm config set registry https://registry.npmjs.org/
-
-# yarn
-# 1、查看一下当前源
-yarn config get registry
-# 2、切换为淘宝源
-yarn config set registry https://registry.npm.taobao.org
-# 3、或者切换为自带的
-yarn config set registry https://registry.yarnpkg.com
 
 # ==========================================================
 # NPM
@@ -88,6 +47,38 @@ npm config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/
 npm config set electron_mirror https://npm.taobao.org/mirrors/electron/
 
 npm cache clean --force # 清空缓存
+```
+
+## 📌 yarn 常用命令
+
+```shell
+# 升级依赖
+yarn upgrade-interactive
+# 清除缓存
+yarn cache clean
+
+# 更改下载的包位置
+yarn config set global-folder "w:\data\node_package\yarn"
+yarn config set cache-folder "w:\data\node_package\yarn_cache"
+# 查看配置
+yarn config list
+
+# 设置代理
+yarn config set proxy http://127.0.0.1:7890
+yarn config set https-proxy http://127.0.0.1:7890
+
+# 如果 SSL 报错，可以禁用校验
+yarn config set strict-ssl false
+# 设置淘宝源
+yarn config set registry https://registry.npm.taobao.org/
+
+# 加速下载常用
+# 1、查看一下当前源
+yarn config get registry
+# 2、切换为淘宝源
+yarn config set registry https://registry.npm.taobao.org
+# 3、或者切换为自带的
+yarn config set registry https://registry.yarnpkg.com
 
 # ==========================================================
 # YARN
@@ -105,13 +96,52 @@ yarn config set operadriver_cdnurl https://npm.taobao.org/mirrors/operadriver # 
 yarn config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs # phantomjs 二进制包镜像
 yarn config set selenium_cdnurl https://npm.taobao.org/mirrors/selenium # selenium 二进制包镜像
 yarn config set node_inspector_cdnurl https://npm.taobao.org/mirrors/node-inspector # node-inspector 二进制包镜像
+```
 
-yarn cache clean # 清空缓存
+## 📌 pnpm 常用命令
+
+```shell
+# 安装
+npm install -g pnpm
+# 设置下载的包位置
+pnpm config set store-dir "w:\data\node_package\pnpm"
+# 查看配置
+pnpm config list
+# 安装依赖
+pnpm install
+```
+
+## 📌 加速下载 - [tbify](https://github.com/fjc0k/tbify)
+
+**安装**
+
+```bash
+npm install -g tbify
+```
+
+**使用**
+
+对于常用的包管理命令，`tbify` 提供了使用淘宝 NPM 镜像的等价命令，除了发布包到 npm 时必须使用 `npm publish` 外，都可以使用等价命令进行相关操作：
+
+| 原命令 | 使用淘宝 NPM 镜像的命令 | 示例                  |
+| ------ | ----------------------- | --------------------- |
+| `nvm`  | `tnvm` (或 `tbify nvm`) | `tnvm install 8.0.0`  |
+| `npm`  | `tnpm` (或 `tbify npm`) | `tnpm install react`  |
+| `npx`  | `tnpx` (或 `tbify npx`) | `tnpx kill-port 3000` |
+| `yarn` | `tyn` (或 `tbify yarn`) | `tyn add react`       |
+| `pnpm` | `tpm` (或 `tbify pnpm`) | `tpm add react`       |
+| `pnpx` | `tpx` (或 `tbify pnpx`) | `tpx kill-port 3000`  |
+
+对于其他命令，在使用时加上 `tbify` 前缀即可，比如：
+
+```bash
+tbify printenv npm_config_registry
+# -> https://r.npm.taobao.org
 ```
 
 ## 📌 husky
 
-### 安装教程
+**安装**
 
 1. 安装 husky
 
@@ -154,13 +184,11 @@ npm run test
 chmod 700 .husky/pre-commit
 ```
 
-### 官方 4.x 迁移到 6.x 教程
+**官方 4.x 迁移到 6.x 教程**
 
 [https://github.com/typicode/husky-4-to-6](https://github.com/typicode/husky-4-to-6)
 
-**使用**
-
-#### npm
+npm
 
 ```shell
 npm install husky@6 --save-dev \
@@ -170,8 +198,6 @@ npm install husky@6 --save-dev \
 # npm v6
 npx github:typicode/husky-4-to-6 --remove-v4-config
 ```
-
-#### yarn
 
 Yarn 1
 
@@ -189,46 +215,18 @@ yarn add husky@6 --dev \
   && npm exec -- github:typicode/husky-4-to-6 --remove-v4-config
 ```
 
-#### What each command does
+**What each command does**
 
 `husky init` sets up Git hooks and updates your `package.json` scripts (you may want to commit your changes to `package.json` before running `husky init`).
 
 `husky-4-to-6` creates hooks based on your husky v4 config. If `--remove-v4-config` is passed, previous config will be deleted (recommended).
 
-#### Revert
+**Revert**
 
 If there's an error during the process, you can clean things up by running:
 
 ```
 rm -rf .husky && git config --unset core.hooksPath
-```
-
-## 📌 查看，更新，卸载全局安装的包
-
-> npm 查看全局安装过的包命令：
-
-```bash
-npm list -g --depth 0
-```
-
-解释一下：
-
-| 命令      |       解释       |
-| --------- | :--------------: |
-| npm list  |  显示安装过的包  |
-| -g        | 指全局安装过的包 |
-| --depth 0 | 限制输出模块层级 |
-
-> 卸载
-
-```bash
-npm uninstall -g jshint
-```
-
-> 更新
-
-```bash
-npm update -g jshint
 ```
 
 ## 📌 升级 package.json 依赖
@@ -261,36 +259,11 @@ ncu -a
 
 对项目的 `package.json` 进行排序，满足你的强迫症
 
-1. **全局安装插件**
-
-   ```bash
-   npm install --global sort-package-json
-   ```
-
-2. **排序**
-
-   ```bash
-   npx sort-package-json
-   ```
-
-## 📌 yarn 升级依赖
-
-```bash
-yarn upgrade-interactive
-```
-
-## 📌 清除缓存
-
-npm
-
-```bash
-npm cache clean -f
-```
-
-yarn
-
-```bash
-yarn cache clean
+```shell
+# 1.全局安装插件
+npm install --global sort-package-json
+# 2.排序
+npx sort-package-json
 ```
 
 ## 📌 NodeJs 版本管理
@@ -317,7 +290,7 @@ yarn cache clean
 >
 > [如何配置 Git Commit Message - 伯艺](https://zhuanlan.zhihu.com/p/69635847)
 
-### 1️⃣ 安装 [Commitizen](https://github.com/commitizen/cz-cli)
+1️⃣ 安装 [Commitizen](https://github.com/commitizen/cz-cli)
 
 > 替代你的 git commit（帮助我们生成符合规范的 commit message）
 >
@@ -328,7 +301,7 @@ yarn cache clean
 npm install -g commitizen
 ```
 
-### 2️⃣ 安装 [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
+2️⃣ 安装 [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 
 > 是一个`commitizen`的 adapter（适配器），一个符合 Angular 团队规范的 preset（按照我们指定的规范帮助我们生成 commit message）
 >
@@ -348,7 +321,7 @@ npm install -g cz-conventional-changelog
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
 
-**执行完这一步就可以使用了，下面的步骤为高级用法！**
+执行完这一步就可以使用了，下面的步骤为高级用法！
 
 **局部安装（不推荐，虽然官方推荐）**
 
@@ -382,7 +355,7 @@ commitizen init cz-conventional-changelog --yarn --dev --exact
 }
 ```
 
-### 3️⃣ 自定义 adapter - [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
+3️⃣ 自定义 adapter - [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
 
 > 可自定义的 Commitizen 插件。比如：默认的提交 types 可能特别多，有些时候我们可能只需要其中的某些 type，或者自定义 type。
 
@@ -444,7 +417,7 @@ module.exports = {
 }
 ```
 
-### 4️⃣ 校验 commit - [commitlint](https://github.com/conventional-changelog/commitlint)
+4️⃣ 校验 commit - [commitlint](https://github.com/conventional-changelog/commitlint)
 
 > `commitlint` 帮我们规范 `commit message`（`commitlint`的实现方式和`commitizen`差不多也需要个 adapter）
 >
@@ -555,7 +528,7 @@ yarn add lint-staged -D
 }
 ```
 
-### 5️⃣ standard-version
+5️⃣ standard-version
 
 以上配置已经可以满足提交代码的常规要求，但是如果我们想自动生成 `CHANGELOG`，语义化我们的版本（[Semantic Versioning](https://semver.org/lang/zh-CN/)）。 就需要借助 [standard-version](https://github.com/conventional-changelog/standard-version)
 
@@ -618,7 +591,7 @@ yarn add standard-version -D
 }
 ```
 
-### 6️⃣ 完整的配置
+6️⃣ 完整的配置
 
 **package.json**
 
@@ -710,7 +683,7 @@ module.exports = {
 }
 ```
 
-### 7️⃣ 提交代码
+7️⃣ 提交代码
 
 使用`git cz`代替`git commit`会出现可选的命令行提交界面。
 
@@ -720,7 +693,7 @@ git-cz
 
 ## 📌 版本号管理
 
-### 1️⃣ 简介
+1️⃣ 简介
 
 在 Node.js 项目中的前后端项目中，版本号管理使用的是 NPM 的命令——别跟我说，你是手动改 `package.json` 来更新版本号的。
 
@@ -780,7 +753,7 @@ npm version patch -m "Upgrade to %s for reasons"
 
 message 中的 s%将会被替换为版本号。
 
-### 2️⃣ 版本号策略
+2️⃣ 版本号策略
 
 版本号格式：主版本号**.**次版本号**.**修订号；
 
@@ -798,7 +771,7 @@ message 中的 s%将会被替换为版本号。
 
 万一不小心把一个不兼容的改版当成了次版本号发行了该怎么办？一旦发现自己破坏了语义化版本控制的规范，就要修正这个问题，并发行一个新的次版本号来更正这个问题并且恢复向下兼容。即使是这种情况，也不能去修改已发行的版本。
 
-### 3️⃣ 编程式
+3️⃣ 编程式
 
 在项目代码中有时候需要判断当前版本，可以通过读取 package 文件获取当前版本：
 
@@ -814,7 +787,7 @@ compareVersions('10.0.1', '10.0.1') //  0
 compareVersions('10.1.1', '10.2.2') // -1
 ```
 
-### 4️⃣ 自动更新版本号
+4️⃣ 自动更新版本号
 
 在项目目录的 `.git/hooks/` 目录中新建文件: `post-commit`——是的，没有后缀名。然后粘贴以下代码并保存文件：
 

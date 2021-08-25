@@ -1,23 +1,20 @@
 {
-  "name": "sunseekerx",
+  "name": "sunseekerx-doc",
   "version": "1.0.0",
   "license": "MIT",
   "scripts": {
-    "serve": "vuepress dev docs no-cache",
+    "serve": "vuepress dev docs",
     "build": "vuepress build docs",
     "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "lint:lint-staged": "lint-staged",
     "gc": "git add -A && git-cz && git pull && git push",
-    "up": "yarn upgrade-interactive",
     "pkg:sort": "npx sort-package-json",
-    "prepare": "husky install",
-    "sort-package-json": "npx sort-package-json"
+    "prepare": "husky install"
   },
   "devDependencies": {
-    "husky": "^7.0.1",
+    "husky": "^7.0.2",
     "lint-staged": "^11.1.2",
     "prettier": "^2.3.2",
-    "sort-package-json": "^1.50.0",
     "vuepress": "^1.8.2",
     "vuepress-theme-hope": "^1.19.3"
   }

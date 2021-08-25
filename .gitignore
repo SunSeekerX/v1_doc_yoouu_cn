@@ -1,13 +1,20 @@
 .DS_Store
-node_modules/
+node_modules
 dist/
 
-CONTRIBUTING.md
-npm-debug.log
+# Log files
+npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-yarn.lock
-package-lock.json
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
 
 # Editor directories and files
 .idea
@@ -16,3 +23,8 @@ package-lock.json
 *.ntvs*
 *.njsproj
 *.sln
+
+# Another files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml

@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-06-22 16:25:20
+ * @LastEditTime: 2021-08-25 20:39:00
  */
 
 const { config } = require('vuepress-theme-hope')
@@ -59,9 +59,7 @@ module.exports = config({
   extraWatchFiles: ['.vuepress/navBar.js', '.vuepress/sideBar.js'],
   themeConfig: {
     hostname: 'https://doc.yoouu.cn/',
-
     nav: navBarConfig,
-
     sidebar: sideBarConfig,
     iconPrefix: 'fas fa-',
     baseLang: 'zh-CN',

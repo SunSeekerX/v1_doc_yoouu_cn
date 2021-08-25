@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-06 10:39:16
+ * @LastEditTime: 2021-08-25 21:34:42
  */
 
 module.exports = [
@@ -52,10 +52,10 @@ module.exports = [
       {
         text: '基础',
         items: [
+          { text: 'Basic', link: '/front-end/basic' },
           { text: 'Html', link: '/front-end/html' },
           { text: 'Css', link: '/front-end/css' },
           { text: 'JavaScript', link: '/front-end/javascript' },
-          { text: 'Basic', link: '/front-end/basic' },
         ],
       },
       {
@@ -102,14 +102,17 @@ module.exports = [
     items: [
       { text: '基础', link: '/back-end/basic' },
       { text: 'Linux', link: '/back-end/linux' },
-      {
-        text: 'NestJS',
-        link: '/back-end/nestjs/',
-      },
       { text: 'SQL', link: '/back-end/sql' },
       { text: 'Database', link: '/back-end/database' },
       { text: 'Docker', link: '/back-end/docker' },
       { text: 'Redis', link: '/back-end/redis' },
+      {
+        text: 'NodeJs',
+        items: [
+          { text: 'NodeJs', link: '/back-end/nodejs/' },
+          { text: 'NestJS', link: '/back-end/nestjs/' },
+        ],
+      },
       {
         text: 'Java',
         items: [
