@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-25 21:35:00
+ * @LastEditTime: 2021-08-25 22:13:18
  */
 
 module.exports = {
@@ -164,7 +164,7 @@ module.exports = {
       collapsable: false,
       children: [
         ['vsa', 'Vue simple admin'],
-        ['web-storage-apis/', 'Web storage apis'],
+        ['web-storage-apis/zh/', 'Web storage apis'],
       ],
     },
   ],
