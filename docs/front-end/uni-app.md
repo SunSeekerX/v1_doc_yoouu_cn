@@ -84,6 +84,21 @@ const {
 
    修改 `activity` 继承的父类为 `Activity`，不要用 `AppCompatActivity`
 
+3. 获取 Application 上下文？
+
+   ```java
+   // 需要强转
+   (Application) mUniSDKInstance.getContext().getApplicationContext()
+   ```
+
+4. 同步方法获取不到参数？
+
+   检查你的模块方法是否设置了不在 ui 线程，运行在 ui 线程无法直接获取返回值。
+
+   ```java
+   @UniJSMethod (uiThread = false)
+   ```
+
 ## 📌 配置 eslint + prettier + stylelint + lint-staged + husky
 
 ### 0x2 规范提交代码
