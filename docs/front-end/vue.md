@@ -1,6 +1,135 @@
-# vue
+## 📌 创建项目
 
-## 遇到的问题
+### vue2
+
+**安装 Vue CLI**
+
+```shell
+npm install -g @vue/cli
+```
+
+**检查是否安装**
+
+```shell
+vue --version
+```
+
+**创建项目**
+
+```shell
+vue create hello-world
+```
+
+### vue3
+
+## 📌 项目初始化
+
+1. 新建 layout
+2. 配置路由
+3. 配置 app.vue
+4. 配置 main.js
+5. 导入 axios
+
+`.editorconfig`
+
+```
+# EditorConfig is awesome: https://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+[*]
+indent_style = space
+indent_size = 2
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = false
+insert_final_newline = true
+```
+
+## 📌 导入 tailwindcss
+
+### vue2
+
+**安装依赖**
+
+```shell
+npm install -D tailwindcss@npm:@tailwindcss/postcss7-compat @tailwindcss/postcss7-compat postcss@^7 autoprefixer@^9
+```
+
+**创建您的配置文件**
+
+```shell
+npx tailwindcss init -p
+```
+
+`postcss.config.js`
+
+```javascript
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
+}
+```
+
+`tailwind.config.js`
+
+```javascript
+module.exports = {
+  purge: [],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+**配置 Tailwind 来移除生产环境下没有使用到的样式声明**
+
+`tailwind.config.js`
+
+```javascript
+module.exports = {
+  purge: ['./public/index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
+  darkMode: false, // or 'media' or 'class'
+  theme: {
+    extend: {},
+  },
+  variants: {
+    extend: {},
+  },
+  plugins: [],
+}
+```
+
+**新增**
+
+`app/src/assets/styles/index.css`
+
+```css
+/*! @import */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+```
+
+**配置 main.js**
+
+`app/src/main.js`
+
+```javascript
+import './assets/styles/index.css'
+```
+
+### vue3
+
+## 📌 遇到的问题
 
 ### 修改 data 内深层嵌套对象的属性页面不更新
 
@@ -29,7 +158,7 @@
 
 混淆第三方库和 vue 生命周期加载时机。
 
-## i18n 语言标识
+## 📌 i18n 语言标识
 
 ```
 简体中文(中国)        zh_CN
@@ -92,7 +221,7 @@
 西班牙语 (智利)    es_CL
 ```
 
-## vue 移动端适配
+## 📌 vue 移动端适配
 
 > 作者：走啊丶去拯救世界
 >
@@ -181,7 +310,7 @@ module.exports = ({ file }) => {
 
 既然设置成了 37.5 那么我们必须在写样式时，也将值改为设计图的一半。
 
-## 路由权限管理
+## 📌 路由权限管理
 
 `${app}/src/router/index.js`
 
@@ -230,11 +359,11 @@ router.beforeEach(async (to, from, next) => {
 
 在路由守卫进行判断拦截，如果登录用户直接放行，未登录用户如果访问公开页面直接放行，否则拦截跳转到登录页面。
 
-## Api 接口加密
+## 📌 Api 接口加密
 
 待定
 
-## 源码加密
+## 📌 源码加密
 
 我们希望生产环境下的 js 代码不是源码那么易读，用来隐藏一些特殊信息，
 
@@ -242,11 +371,11 @@ router.beforeEach(async (to, from, next) => {
 
 待定
 
-## 网络状态监听
+## 📌 网络状态监听
 
 待定
 
-## ❔ 常见问题
+## 📌 常见问题
 
 ### `node-sass`安装较慢怎么解决？
 

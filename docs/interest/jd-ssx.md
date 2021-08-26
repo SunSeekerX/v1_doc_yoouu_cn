@@ -4,7 +4,7 @@
 
 车位数：`40`
 
-扫码地址：[https://ql-cookie.yoouu.cn/#/](https://ql-cookie.yoouu.cn/#/)
+扫码地址：[https://ql-cookie.yoouu.cn/#/login](https://ql-cookie.yoouu.cn/#/login)
 
 > 扫码显示人数不正确。
 >

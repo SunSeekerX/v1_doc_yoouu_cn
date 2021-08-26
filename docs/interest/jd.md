@@ -1,6 +1,6 @@
 # JD
 
-> 2021-06-23 14:59:54
+> 2021-08-10 14:33:30
 
 ## 📌 安装部署
 
@@ -39,6 +39,25 @@ Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong
    --hostname qinglong \
    --restart always \
    whyour/qinglong:latest
+
+   # Ninja
+   docker run -dit \
+     -v $PWD/ql/config:/ql/config \
+     -v $PWD/ql/log:/ql/log \
+     -v $PWD/ql/db:/ql/db \
+     -v $PWD/ql/repo:/ql/repo \
+     -v $PWD/ql/raw:/ql/raw \
+     -v $PWD/ql/scripts:/ql/scripts \
+     -v $PWD/ql/jbot:/ql/jbot \
+     -v $PWD/ql/ninja:/ql/ninja \
+     -p 5700:5700 \
+     -p 5701:5701 \
+     -e ENABLE_HANGUP=true \
+     -e ENABLE_WEB_PANEL=true \
+     --name qinglong \
+     --hostname qinglong \
+     --restart unless-stopped \
+     whyour/qinglong:latest
    ```
 
 5. 开放端口
@@ -58,6 +77,7 @@ Github：[https://github.com/whyour/qinglong](https://github.com/whyour/qinglong
    反回到 shell 输入：
 
    ```bash
+   # 注意你的路径
    cat /ql/config/auth.json
    ```
 
@@ -154,58 +174,16 @@ drewnb/${tag}
 
 ### v2.8
 
-2.8 为了生存。
-
-#### `code_tsukasa.sh`
-
-```shell
-###
-```
+教程：[https://github.com/Tsukasa007/my_script](https://github.com/Tsukasa007/my_script)
 
 #### `task_before.sh`
 
 ```shell
 #!/usr/bin/env bash
 
-# 从日志提取互助码，编号和配置文件中Cookie编号完全对应，如果为空就是所有日志中都没有。
-
-# 即使某个MyXxx变量未赋值，也可以将其变量名填在ForOtherXxx中，jtask脚本会自动过滤空值。
-
-# 你选择的互助码模板为：按账号编号优先。
-
 ##helpStart
 ##helpEnd
 
-env_name=(
-  FRUITSHARECODES
-  PETSHARECODES
-  PLANT_BEAN_SHARECODES
-  DREAM_FACTORY_SHARE_CODES
-  DDFACTORY_SHARECODES
-  JDZZ_SHARECODES
-  JDJOY_SHARECODES
-  JXNC_SHARECODES
-  BOOKSHOP_SHARECODES
-  JD_CASH_SHARECODES
-  JDSGMH_SHARECODES
-  JDCFD_SHARECODES
-  JDHEALTH_SHARECODES
-)
-var_name=(
-  ForOtherFruit
-  ForOtherPet
-  ForOtherBean
-  ForOtherDreamFactory
-  ForOtherJdFactory
-  ForOtherJdzz
-  ForOtherJoy
-  ForOtherJxnc
-  ForOtherBookShop
-  ForOtherCash
-  ForOtherSgmh
-  ForOtherCfd
-  ForOtherHealth
-)
 
 combine_sub() {
     local what_combine=$1
@@ -237,26 +215,148 @@ combine_all
 
 #### 导入互助码到 `task_before.sh`
 
-1. 在容器内部 `/ql/shell` 新建一个文件 `code_tsukasa.sh` 或者群文件上传到容器内部
+1.根据上述拉取仓库后,青龙添加如下任务
 
-   或者使用 docker 复制
+task /ql/repo/Tsukasa007_my_script_master/code_tsukasa.sh
 
-   ```shell
-   # code_tsukasa.sh 根据你的脚本位置 path 可能不同
-   docker cp code_tsukasa.sh ${你的青龙容器id}:/ql/shell
-   ```
+[![image](https://user-images.githubusercontent.com/28201662/128467629-6f9dd427-d4f3-4ef3-a364-a6a9511402c2.png)](https://user-images.githubusercontent.com/28201662/128467629-6f9dd427-d4f3-4ef3-a364-a6a9511402c2.png)
 
-2. 修改 `task_before.sh` 为上面的内容，`##helpStart` 和 `##helpEnd` 用来插入助力码
+2.配置文件--config
 
-3. 新建一个任务
+[![img1](https://user-images.githubusercontent.com/28201662/128215529-bf9d1f70-48dd-45fa-8434-1830d6d4e68e.png)](https://user-images.githubusercontent.com/28201662/128215529-bf9d1f70-48dd-45fa-8434-1830d6d4e68e.png)
 
-   名称：提取互助码
+拉到文件的最下面，在最下面粘贴以下代码
 
-   命令：`bash /ql/shell/code_tsukasa.sh`
+```shell
+env_name=(
+  FRUITSHARECODES
+  PETSHARECODES
+  PLANT_BEAN_SHARECODES
+  DREAM_FACTORY_SHARE_CODES
+  DDFACTORY_SHARECODES
+  JDZZ_SHARECODES
+  JDJOY_SHARECODES
+  JXNC_SHARECODES
+  BOOKSHOP_SHARECODES
+  JD_CASH_SHARECODES
+  JDSGMH_SHARECODES
+  JDCFD_SHARECODES
+  JDHEALTH_SHARECODES
+)
+var_name=(
+  ForOtherFruit
+  ForOtherPet
+  ForOtherBean
+  ForOtherDreamFactory
+  ForOtherJdFactory
+  ForOtherJdzz
+  ForOtherJoy
+  ForOtherJxnc
+  ForOtherBookShop
+  ForOtherCash
+  ForOtherSgmh
+  ForOtherCfd
+  ForOtherHealth
+)
 
-   定时规则：`30 7 * * *`
+## name_js为脚本文件名，如果使用ql repo命令拉取，文件名含有作者名
+## 所有有互助码的活动，把脚本名称列在 name_js 中，对应 config.sh 中互助码后缀列在 name_config 中，中文名称列在 name_chinese 中。
+## name_js、name_config 和 name_chinese 中的三个名称必须一一对应。
+name_js=(
+  xxxxxxxx_jd_scripts_jd_fruit
+  xxxxxxxx_jd_scripts_jd_pet
+  xxxxxxxx_jd_scripts_jd_plantBean
+  xxxxxxxx_jd_scripts_jd_dreamFactory
+  xxxxxxxx_jd_scripts_jd_jdfactory
+  xxxxxxxx_jd_scripts_jd_jdzz
+  xxxxxxxx_jd_scripts_jd_crazy_joy
+  xxxxxxxx_jd_scripts_jd_jxnc
+  xxxxxxxx_jd_bookshop
+  xxxxxxxx_jd_scripts_jd_cash
+  xxxxxxxx_jd_scripts_jd_sgmh
+  xxxxxxxx_jd_scripts_jd_cfd
+  xxxxxxxx_jd_scripts_jd_health
+)
+name_config=(
+  Fruit
+  Pet
+  Bean
+  DreamFactory
+  JdFactory
+  Jdzz
+  Joy
+  Jxnc
+  BookShop
+  Cash
+  Sgmh
+  Cfd
+  Health
+)
+name_chinese=(
+  东东农场
+  东东萌宠
+  京东种豆得豆
+  京喜工厂
+  东东工厂
+  京东赚赚
+  crazyJoy任务
+  京喜农场
+  口袋书店
+  签到领现金
+  闪购盲盒
+  京喜财富岛
+  东东健康社区
+)
+```
 
-4. 添加完成运行一遍，查看下 `task_before.sh` 互助码是否导入成功。
+3.粘贴后的 xxxxx 需要修改为你这些脚本 js 的仓库主的前缀
+
+比如种豆得豆得豆是这样的 [![img3](https://user-images.githubusercontent.com/28201662/128215559-e029028c-ea3f-449a-9556-94b91c6de730.png)](https://user-images.githubusercontent.com/28201662/128215559-e029028c-ea3f-449a-9556-94b91c6de730.png)
+
+task JDHelloWorld_jd_scripts_jd_plantBean.js
+
+那上面 xxxxxxxx_jd_scripts_jd_plantBean
+
+改成 JDHelloWorld_jd_scripts_jd_plantBean
+
+4.配置文件--task_before.sh 修改为如下 直接覆盖！
+
+```
+#!/usr/bin/env bash
+
+##helpStart
+##helpEnd
+
+
+combine_sub() {
+    local what_combine=$1
+    local combined_all=""
+    local tmp1 tmp2
+    local envs=$(eval echo "\$JD_COOKIE")
+    local array=($(echo $envs | sed 's/&/ /g'))
+    local user_sum=${#array[*]}
+    for ((i = 1; i <= $user_sum; i++)); do
+        local tmp1=$what_combine$i
+        local tmp2=${!tmp1}
+        combined_all="$combined_all&$tmp2"
+    done
+    echo $combined_all | perl -pe "{s|^&||; s|^@+||; s|&@|&|g; s|@+&|&|g; s|@+|@|g; s|@+$||}"
+}
+
+## 正常依次运行时，组合所有账号的Cookie与互助码
+combine_all() {
+    for ((i = 0; i < ${#env_name[*]}; i++)); do
+        result=$(combine_sub ${var_name[i]})
+        if [[ $result ]]; then
+            export ${env_name[i]}="$result"
+        fi
+    done
+}
+
+combine_all
+```
+
+5.手动运行 1.的定时任务 不动脑互助配置完成
 
 ## 📌 脚本仓库
 
@@ -274,37 +374,41 @@ ql repo https://github.com/cdle/jd_study.git "jd_"
 ql repo https://github.com/smiek2221/scripts.git "jd_|gua_" "" "ZooFaker_Necklace.js|JDJRValidator_Pure.js|sign_graphics_validate.js"
 ```
 
-**【妖火整理】**[https://yaohuo.me/bbs-946732.html](https://yaohuo.me/bbs-946732.html)
+**【JDHelloWorld】** [https://github.com/JDHelloWorld/jd_scripts](https://github.com/JDHelloWorld/jd_scripts)
 
 ```shell
-ql repo https://github.com/colakele/jd.git "jd_|getJDCookie" "" "^jd[^_]|USER"
+ql repo https://github.com/JDHelloWorld/jd_scripts.git "jd_|jx_|getJDCookie" "activity|backUp|jd_delCoupon" "^jd[^_]|USER"
 ```
 
-**【lxk0301】** [https://github.com/chinnkarahoi/jd_scripts.git](https://github.com/chinnkarahoi/jd_scripts.git)
+**【Tsukasa007】**[https://github.com/Tsukasa007/my_script](https://github.com/Tsukasa007/my_script)
 
 ```shell
-ql repo https://github.com/chinnkarahoi/jd_scripts.git "jd_" "activity|backUp" "^jd[^_]|USER"
-
-# docker外部执行备份
-docker exec -it qinglong ql repo https://github.com/chinnkarahoi/jd_scripts.git "jd_" "activity|backUp" "^jd[^_]|USER"
-```
-
-**【混沌】** [https://github.com/whyour/hundun.git](https://github.com/whyour/hundun.git)
-
-```shell
-ql repo https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
-
-# docker外部执行备份
-docker exec -it qinglong ql repo https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
+ql repo https://github.com/Tsukasa007/my_script.git "" "jdCookie|USER_AGENTS|sendNotify|backup" "" "master"
 ```
 
 **【passerby-b】（需要修改专用 ck 文件 jddj_cookie.js）** [https://github.com/passerby-b/JDDJ.git](https://github.com/passerby-b/JDDJ.git)
 
 ```shell
 ql repo https://github.com/passerby-b/JDDJ.git "jddj_" "scf_test_event" "jddj_cookie"
+```
 
-# docker外部执行备份
-docker exec -it qinglong ql repo https://github.com/passerby-b/JDDJ.git "jddj_" "scf_test_event" "jddj_cookie"
+**【Ariszy（Zhiyi-N）】** [https://github.com/Ariszy/Private-Script.git](https://github.com/Ariszy/Private-Script.git)
+
+```shell
+ql repo https://github.com/Ariszy/Private-Script.git "JD"
+```
+
+**下面的已经失效！！！下面的已经失效！！！下面的已经失效！！！**
+
+---
+
+**【翻翻乐提现单文件】**
+
+```shell
+ql raw https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
+
+# docker 外部执行备份
+docker exec -it qinglong ql raw https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
 ```
 
 **【柠檬（胖虎）】** [https://github.com/panghu999/panghu.git](https://github.com/panghu999/panghu.git)
@@ -343,27 +447,29 @@ ql repo https://github.com/longzhuzhu/nianyu.git "qx" "main"
 docker exec -it qinglong ql repo https://ghproxy.com/https://github.com/longzhuzhu/nianyu.git "qx" "main"
 ```
 
-**【Ariszy（Zhiyi-N）】** [https://github.com/Ariszy/Private-Script.git](https://github.com/Ariszy/Private-Script.git)
+**【妖火整理】**[https://yaohuo.me/bbs-946732.html](https://yaohuo.me/bbs-946732.html)
 
 ```shell
-ql repo https://github.com/Ariszy/Private-Script.git "JD"
-
-# docker 外部执行备份
-docker exec -it qinglong ql repo https://github.com/Ariszy/Private-Script.git "JD"
+ql repo https://github.com/colakele/jd.git "jd_|getJDCookie" "" "^jd[^_]|USER"
 ```
 
-**【翻翻乐提现单文件】**
+**【lxk0301】** [https://github.com/chinnkarahoi/jd_scripts.git](https://github.com/chinnkarahoi/jd_scripts.git)
 
 ```shell
-ql raw https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
+ql repo https://github.com/chinnkarahoi/jd_scripts.git "jd_" "activity|backUp" "^jd[^_]|USER"
 
-# docker 外部执行备份
-docker exec -it qinglong ql raw https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_ffl.js
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/chinnkarahoi/jd_scripts.git "jd_" "activity|backUp" "^jd[^_]|USER"
 ```
 
-下面的已经失效
+**【混沌】** [https://github.com/whyour/hundun.git](https://github.com/whyour/hundun.git)
 
----
+```shell
+ql repo https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
+
+# docker外部执行备份
+docker exec -it qinglong ql repo https://github.com/whyour/hundun.git "quanx" "tokens|caiyun|didi|donate|fold|Env"
+```
 
 **【龙珠】**
 

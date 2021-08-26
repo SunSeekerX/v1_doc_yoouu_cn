@@ -2,7 +2,7 @@
 
 [Github](https://github.com/SunSeekerX/web-storage-apis)
 
-[online](https://sunseekerx.yoouu.cn/web-storage-apis/)
+[online](https://doc.yoouu.cn/open-source/web-storage-apis/zh/)
 
 **简体中文** [English](en.md)
 

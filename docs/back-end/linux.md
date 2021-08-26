@@ -1,3 +1,7 @@
+## 📌 学习资源
+
+[Linux 命令大全](https://wangchujiang.com/linux-command/)
+
 ## 📌 腾讯云获取 root
 
 | 步骤 | 方法 |
