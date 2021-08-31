@@ -1,9 +1,9 @@
 /**
- * @name:
+ * 侧边栏
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-25 22:18:45
+ * @LastEditTime: 2021-08-31 14:11:38
  */
 
 module.exports = {
@@ -86,7 +86,7 @@ module.exports = {
       collapsable: false,
       children: [
         ['linux', 'Linux'],
-        ['sql', 'SQL'],
+        // ['sql', 'SQL'],
         ['database', 'Database'],
         ['docker', 'Docker'],
         ['redis', 'Redis'],

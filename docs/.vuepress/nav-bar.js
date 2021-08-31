@@ -1,9 +1,9 @@
 /**
- * @name:
+ * 导航栏
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-25 21:34:42
+ * @LastEditTime: 2021-08-31 14:11:32
  */
 
 module.exports = [
@@ -102,7 +102,8 @@ module.exports = [
     items: [
       { text: '基础', link: '/back-end/basic' },
       { text: 'Linux', link: '/back-end/linux' },
-      { text: 'SQL', link: '/back-end/sql' },
+      { text: 'C', link: '/back-end/c' },
+      // { text: 'SQL', link: '/back-end/sql' },
       { text: 'Database', link: '/back-end/database' },
       { text: 'Docker', link: '/back-end/docker' },
       { text: 'Redis', link: '/back-end/redis' },
