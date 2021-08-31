@@ -1,5 +1,25 @@
 # C
 
+## 开发环境安装
+
+Windows
+
+1. 下载 [mingw-w64](https://sourceforge.net/projects/mingw-w64/files/)
+
+2. 选择 `x86_64-posix-seh`
+
+3. 解压到自定义路径
+
+4. 将 bin 路径添加到环境变量
+
+5. 测试安装成功
+
+   ```shell
+   gcc -v
+   ```
+
+## 开发
+
 程序入口
 
 ```c
