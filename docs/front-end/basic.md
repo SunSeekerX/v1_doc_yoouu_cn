@@ -751,7 +751,7 @@ npx husky install
 
 添加 git hooks，运行以下命令创建 git hooks
 
-```she
+```shell
 npx husky add .husky/pre-commit "npm run lint:lint-staged"
 ```
 
