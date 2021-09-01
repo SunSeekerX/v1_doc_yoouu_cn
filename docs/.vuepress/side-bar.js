@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-31 14:11:38
+ * @LastEditTime: 2021-09-01 16:34:15
  */
 
 module.exports = {
@@ -35,6 +35,7 @@ module.exports = {
       collapsable: false,
       children: [
         ['jenkins', 'Jenkins'],
+        ['nginx', 'Nginx'],
         ['others/script', 'Scripts'],
         ['others/markdown', 'Markdown'],
         ['others/about-work', 'About work'],

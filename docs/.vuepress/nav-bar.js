@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-31 14:11:32
+ * @LastEditTime: 2021-09-01 16:33:47
  */
 
 module.exports = [
@@ -34,6 +34,7 @@ module.exports = [
         text: '其他',
         items: [
           { text: 'Jenkins', link: '/basic/jenkins' },
+          { text: 'Nginx', link: '/basic/nginx' },
           { text: 'Scripts', link: '/basic/others/script' },
           { text: 'Markdown', link: '/basic/others/markdown' },
           { text: 'About work', link: '/basic/others/about-work' },

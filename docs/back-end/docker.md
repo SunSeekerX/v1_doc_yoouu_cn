@@ -231,7 +231,9 @@ Docker0：`172.18.0.1` 相当于路由器，其他所有启动的镜像都是接
 
 **打通是单向的！**
 
-## 0x2. Docker 安装 MariaDB
+## 📌 部署服务
+
+### 0x2. Docker 安装 MariaDB
 
 ```shell
 # 1.搜索mariadb镜像（非必须）
@@ -263,7 +265,7 @@ $ docker start 容器id　　# 启动容器
 $ docker stop 容器id　　 # 停止容器
 ```
 
-## 0x3. Docker 安装 MongoDB
+### 0x3. Docker 安装 MongoDB
 
 > ！如果外部目录存在老的数据文件，创建初始化用户不会生效。
 
@@ -290,7 +292,7 @@ $ docker exec -it mongodb bash
 $ mongo -u root -p 12345678900
 ```
 
-## 0x4. Docker 安装 portainer
+### 0x4. Docker 安装 portainer
 
 **2.x**
 
@@ -318,7 +320,7 @@ $ docker run -d -p 9000:9000 --restart=always -v /var/run/docker.sock:/var/run/d
 $ docker ps -a
 ```
 
-## 0x5. Docker 安装 nondanee/unblockneteasemusic
+### 0x5. Docker 安装 nondanee/unblockneteasemusic
 
 ```shell
 # 1.搜索MongoDB镜像（非必须）
@@ -333,7 +335,7 @@ $ docker run -d -p 65535:8080 --restart=always --name music nondanee/unblocknete
 $ docker ps -a
 ```
 
-## 0x6. Docker 安装 jenkins
+### 0x6. Docker 安装 jenkins
 
 > Jenkins 是开源 CI&CD 软件领导者， 提供超过 1000 个插件来支持构建、部署、自动化， 满足任何项目的需要。
 >
@@ -383,7 +385,7 @@ $ docker run \
 $ docker run --name jenkins-blueocean -u root -d -p 8081:8080 -v /var/jenkins_blueocean_home:/var/jenkins_home -v /var/run/docker.sock:/var/run/docker.sock jenkinsci/blueocean
 ```
 
-### 配置 Jenkins
+**配置 Jenkins**
 
 > 第一次进入需要加载依赖和配置需要一段时间，可以通过`docker logs <容器id> -f`监控 jenkins 运行日志
 
@@ -405,7 +407,7 @@ cat /var/jenkins_home/secrets/initialAdminPassword
 
 复制输出的内容，粘贴到 Administrator password，输入 exit 退出容器，此时进行下一步你会看到此界面，点击 Install suggested plugins，然后创建管理用户。
 
-## 0x7 Docker 安装 gogs
+### 0x7 Docker 安装 gogs
 
 ```shell
 # Pull image from Docker Hub.
@@ -432,7 +434,7 @@ docker rm gogs
 # 重新创建容器
 ```
 
-## 0x8 Docker 安装 rancher
+### 0x8 Docker 安装 rancher
 
 > 文档：[https://docs.rancher.cn/](https://docs.rancher.cn/)
 
@@ -447,7 +449,7 @@ $ docker run -d --restart=unless-stopped -p 80:80 -p 443:443 rancher/rancher
 $ docker run --name rancher -d --restart=unless-stopped -p 8082:80 -p 8083:443 rancher/rancher
 ```
 
-## 0x9 Docker 安装 frps
+### 0x9 Docker 安装 frps
 
 新建配置文件
 
@@ -474,7 +476,7 @@ dashboard_port = 7071
 docker run --restart=always --network host -d -v /etc/frp/frps.ini:/etc/frp/frps.ini --name frps snowdreamtech/frps
 ```
 
-## 0x10 Docker 安装 frpc
+### 0x10 Docker 安装 frpc
 
 新建配置文件
 
@@ -514,4 +516,17 @@ custom_domains = a.example.com
 docker run --restart=always --network host -d -v /etc/frp/frpc.ini:/etc/frp/frpc.ini --name frpc snowdreamtech/frpc
 ```
 
-## 0x11 Docker 安装 redis
+### 0x11 Docker 安装 redis
+
+### 0x12 Docker 安装 zentao
+
+镜像地址：[https://hub.docker.com/r/easysoft/zentao](https://hub.docker.com/r/easysoft/zentao)
+
+```shell
+# 拉取镜像
+docker pull easysoft/zentao
+# 创建一个网络
+docker network create --subnet=172.172.172.0/24 zentaonet
+# 启动容器
+docker run --name zentao -p [主机端口]:80 --network=[网络驱动名] --ip [容器IP] --mac-address [mac地址] -v [主机禅道目录]:/www/zentaopms -v [主机mysql目录]:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=[数据库密码] -d easysoft/zentao:[镜像标签]
+```
