@@ -527,6 +527,14 @@ docker run --restart=always --network host -d -v /etc/frp/frpc.ini:/etc/frp/frpc
 docker pull easysoft/zentao
 # 创建一个网络
 docker network create --subnet=172.172.172.0/24 zentaonet
+# 创建禅道数据目录
+mkdir -p /root/app/zentao
+# 创建禅道 mysql 目录
+mkdir -p /root/app/zentao-db
 # 启动容器
-docker run --name zentao -p [主机端口]:80 --network=[网络驱动名] --ip [容器IP] --mac-address [mac地址] -v [主机禅道目录]:/www/zentaopms -v [主机mysql目录]:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=[数据库密码] -d easysoft/zentao:[镜像标签]
+docker run --name zentao -p 8081:80 --network=zentaonet --ip 172.172.172.172 --mac-address 02:42:ac:11:00:00 -v /root/app/zentao:/www/zentaopms -v /root/app/zentao-db:/var/lib/mysql -d easysoft/zentao
 ```
+
+遗留问题
+
+nginx 反向代理无法正常工作，禅道工作目录为 www/
