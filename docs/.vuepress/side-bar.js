@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-01 16:34:15
+ * @LastEditTime: 2021-09-01 19:30:32
  */
 
 module.exports = {
@@ -153,7 +153,21 @@ module.exports = {
         ['jd', 'JD'],
         ['router', '路由器'],
         ['scooter', '滑板车'],
-        ['frp', 'Topic'],
+        ['topic', 'Topic'],
+      ],
+    },
+    {
+      title: 'Adobe',
+      prefix: 'adobe/',
+      collapsable: false,
+      children: [['photoshop', 'PhotoShop']],
+    },
+    {
+      title: 'Tools',
+      prefix: '',
+      collapsable: false,
+      children: [
+        ['frp', 'Frp'],
         ['nps', 'NPS'],
       ],
     },
