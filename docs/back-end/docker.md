@@ -538,3 +538,11 @@ docker run --name zentao -p 8081:80 --network=zentaonet --ip 172.172.172.172 --m
 遗留问题
 
 nginx 反向代理无法正常工作，禅道工作目录为 www/
+
+### 0x13 Docker 安装 mysql
+
+镜像地址：[https://hub.docker.com/\_/mysql?tab=reviews](https://hub.docker.com/_/mysql?tab=reviews)
+
+```
+docker run --name mysql57 -p 33066:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7
+```
