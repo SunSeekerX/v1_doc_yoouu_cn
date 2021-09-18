@@ -22,6 +22,28 @@ vue create hello-world
 
 ### vue3
 
+**vue-cli**
+
+需要 `vue-cli 4.x`
+
+```shell
+vue create hello-world
+```
+
+**vite**
+
+```shell
+# npm 6.x
+$ npm init vite@latest <project-name> --template vue
+
+# npm 7+，需要加上额外的双短横线
+$ npm init vite@latest <project-name> -- --template vue
+
+$ cd <project-name>
+$ npm install
+$ npm run dev
+```
+
 ## 📌 项目初始化
 
 1. 新建 layout
@@ -128,6 +150,10 @@ import './assets/styles/index.css'
 ```
 
 ### vue3
+
+- 修改 `.gitignore`
+- 安装 `normalize.css`，在 `main.js` 导入
+-
 
 ## 📌 遇到的问题
 
