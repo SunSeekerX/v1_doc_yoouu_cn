@@ -151,6 +151,8 @@ import './assets/styles/index.css'
 
 ### vue3
 
+配置代码检查: [https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3/](https://vueschool.io/articles/vuejs-tutorials/eslint-and-prettier-with-vite-and-vue-js-3/)
+
 - 修改 `.gitignore`
 - 安装 `normalize.css`，在 `main.js` 导入
 -
