@@ -167,6 +167,14 @@ const safeRunning = (name, fun) => {
 
 ### 更新日志
 
+#### 1.0.3
+
+**功能（Features）**
+
+**Bug 修复 （Bug Fixes）**
+
+1. 修复华为手机重复触发截屏事件
+
 #### 1.0.2
 
 **功能（Features）**
