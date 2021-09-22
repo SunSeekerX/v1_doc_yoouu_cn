@@ -149,10 +149,7 @@ const safeRunning = (name, fun) => {
 
 ```xml
 <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-  <uses-permission
-    android:name="android.permission.WRITE_EXTERNAL_STORAGE"
-    android:maxSdkVersion="28" />
-  <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
+<uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
 ```
 
 ### 演示截图
@@ -166,6 +163,15 @@ const safeRunning = (name, fun) => {
 <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-android-screenshot.jpeg" alt="screenshot-listen-android-screenshot" style="zoom:50%;" />
 
 ### 更新日志
+
+#### 1.0.3 2021-09-22
+
+**功能（Features）**
+
+**Bug 修复 （Bug Fixes）**
+
+1. 修复华为手机重复触发截屏事件
+2. 修复与 `uni.chooseImage` 冲突，导致无法使用的问题
 
 #### 1.0.2
 
