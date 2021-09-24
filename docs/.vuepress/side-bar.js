@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-10-15 16:26:36
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-01 19:30:32
+ * @LastEditTime: 2021-09-24 14:28:17
  */
 
 module.exports = {
@@ -154,6 +154,7 @@ module.exports = {
         ['router', '路由器'],
         ['scooter', '滑板车'],
         ['topic', 'Topic'],
+        ['postgraduate', 'Postgraduate'],
       ],
     },
     {

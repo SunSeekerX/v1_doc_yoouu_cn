@@ -1,9 +1,9 @@
 /**
- * @name: config.js
+ * vuepress 配置
  * @author: SunSeekerX
  * @Date: 2020-04-12 22:42:30
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-08-25 20:39:00
+ * @LastEditTime: 2021-09-24 16:22:50
  */
 
 const { config } = require('vuepress-theme-hope')
@@ -12,7 +12,7 @@ const sideBarConfig = require('./side-bar')
 
 module.exports = config({
   base: '/',
-  title: 'SunSeekerX',
+  title: 'SunSeekerX 的笔记',
   description: 'This road is just beginning ~',
   head: [
     [

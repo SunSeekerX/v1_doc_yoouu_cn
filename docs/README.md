@@ -1,7 +1,6 @@
 ---
 home: true
 heroImage: /home.jpg
-heroText: SunSeekerX
 tagline: This is just the beginning of this road ~
 action:
   - text: Go →

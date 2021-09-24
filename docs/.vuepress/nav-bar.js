@@ -3,7 +3,7 @@
  * @author: SunSeekerX
  * @Date: 2020-11-29 21:41:57
  * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-01 19:25:33
+ * @LastEditTime: 2021-09-24 14:28:25
  */
 
 module.exports = [
@@ -142,6 +142,7 @@ module.exports = [
       { text: '路由器', link: '/interest/router' },
       { text: '滑板车', link: '/interest/scooter' },
       { text: 'Topic', link: '/interest/topic' },
+      { text: 'Postgraduate', link: '/interest/postgraduate' },
       {
         text: 'Adobe',
         items: [
