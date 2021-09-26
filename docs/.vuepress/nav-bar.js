@@ -21,6 +21,7 @@ module.exports = [
       { text: '正则表达式', link: '/basic/regexp' },
       { text: '开发工具', link: '/basic/ide' },
       { text: 'Windows', link: '/basic/windows' },
+      { text: 'Mac', link: '/basic/mac' },
       { text: '其他', link: '/basic/other' },
       {
         text: '学习',

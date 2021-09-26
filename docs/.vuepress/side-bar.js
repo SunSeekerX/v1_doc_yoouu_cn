@@ -17,6 +17,7 @@ module.exports = {
         ['regexp', 'Regexp'],
         ['ide', 'IDE'],
         ['windows', 'Windows'],
+        ['mac', 'Mac'],
         ['other', 'Other'],
       ],
     },

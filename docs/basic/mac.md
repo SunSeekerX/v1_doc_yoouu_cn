@@ -1,4 +1,22 @@
-### 2.Mac 系统下的环境变量：
+## 📌 软件推荐
+
+[hyperdock](https://macwk.com/soft/hyperdock)
+
+docker 栏窗口预览，Windows 自带，mac 没有这个功能。
+
+[magnet](https://macwk.com/soft/magnet)
+
+分屏神器。
+
+CleanMyMac
+
+清除垃圾工具
+
+tomenu
+
+增强右键菜单
+
+## 📌 Mac 系统下的环境变量：
 
 ```
 a. /etc/profile
