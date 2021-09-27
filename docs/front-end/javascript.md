@@ -1,5 +1,11 @@
 # JavaScript
 
+## 📌 文章
+
+[JavaScript 发布-订阅模式 - https://juejin.im/post/6844903850105634824#comment](https://juejin.im/post/6844903850105634824#comment)
+
+[JSDoc - https://www.shouce.ren/api/view/a/13232](https://www.shouce.ren/api/view/a/13232)
+
 ## 📌 排序
 
 ```javascript
