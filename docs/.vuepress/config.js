@@ -12,7 +12,7 @@ const sideBarConfig = require('./side-bar')
 
 module.exports = config({
   base: '/',
-  title: 'SunSeekerX 的笔记',
+  title: 'SunSeekerX 的笔记',
   description: 'This road is just beginning ~',
   head: [
     [
