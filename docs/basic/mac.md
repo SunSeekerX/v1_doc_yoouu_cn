@@ -16,6 +16,22 @@ tomenu
 
 增强右键菜单
 
+## 📌 问题解决
+
+**2K 显示器缩放到 1080p 很模糊？**
+
+需要开启 hidpi
+
+[一键开启脚本 - https://github.com/xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
+
+```shell
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)"
+```
+
+[RDM - https://github.com/avibrazil/RDM](https://github.com/avibrazil/RDM)
+
+[下载地址 - https://avi.alkalay.net/software/RDM/](https://avi.alkalay.net/software/RDM/)
+
 ## 📌 Mac 系统下的环境变量：
 
 ```
