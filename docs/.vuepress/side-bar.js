@@ -68,6 +68,7 @@ module.exports = {
         ['vue', 'Vue'],
         ['react', 'React'],
         ['uni-app', 'Uni-app'],
+        ['mp', '微信小程序'],
         ['uni-app-nativeplugins', 'Uni-app 原生插件'],
         ['flutter', 'Flutter'],
         ['react-native', 'React Native'],

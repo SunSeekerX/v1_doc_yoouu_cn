@@ -66,6 +66,7 @@ module.exports = [
           { text: 'Npm', link: '/front-end/npm' },
           { text: 'Vue', link: '/front-end/vue' },
           { text: 'React', link: '/front-end/react' },
+          { text: '微信小程序', link: '/front-end/mp' },
           { text: 'Uni-app', link: '/front-end/uni-app' },
           { text: 'Uni-app 原生插件', link: '/front-end/uni-app-nativeplugins' },
           {
