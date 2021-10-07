@@ -169,6 +169,11 @@ module.exports = [
       },
     ],
   },
+  // 区块链
+  {
+    text: '区块链',
+    items: [{ text: '区块链', link: '/blockchain/' }],
+  },
   // Open source
   {
     text: '开源项目',
