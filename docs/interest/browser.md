@@ -23,13 +23,3 @@ nuomiphp.com
 codeleading.com
 pianshen.com
 ```
-
-**baidu.com**
-
-<img src="../../../google-hit-list/assets/baidu-search-setting1.png" alt="baidu-search-setting1" style="zoom:50%;" />
-
-![baidu-search-setting2](../../../google-hit-list/assets/baidu-search-setting2.png)
-
-**google.com**
-
-![](https://static.yoouu.cn/imgs/doc/interest/202110081322984.png)
