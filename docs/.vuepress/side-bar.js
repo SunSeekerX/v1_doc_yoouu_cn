@@ -150,7 +150,7 @@ module.exports = {
       collapsable: false,
       children: [
         ['phone', 'Phone'],
-        ['blockchain/', 'Blockchain'],
+        // ['blockchain/', 'Blockchain'],
         ['n1', 'N1 盒子'],
         ['jd', 'JD'],
         ['router', '路由器'],
@@ -172,6 +172,18 @@ module.exports = {
       children: [
         ['frp', 'Frp'],
         ['nps', 'NPS'],
+      ],
+    },
+  ],
+
+  '/blockchain/': [
+    {
+      title: '区块链',
+      collapsable: false,
+      children: [
+        ['', 'Readme'],
+        ['ethereum', 'Ethereum'],
+        ['nft', 'NFT'],
       ],
     },
   ],

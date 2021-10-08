@@ -138,7 +138,7 @@ module.exports = [
     text: '爱好',
     items: [
       { text: 'Phone', link: '/interest/phone' },
-      { text: 'Blockchain', link: '/interest/blockchain/' },
+      // { text: 'Blockchain', link: '/interest/blockchain/' },
       { text: 'N1 盒子', link: '/interest/n1/' },
       { text: 'JD', link: '/interest/jd' },
       { text: '路由器', link: '/interest/router' },
@@ -172,7 +172,11 @@ module.exports = [
   // 区块链
   {
     text: '区块链',
-    items: [{ text: '区块链', link: '/blockchain/' }],
+    items: [
+      { text: '区块链', link: '/blockchain/' },
+      { text: 'Ethereum', link: '/blockchain/ethereum' },
+      { text: 'NFT', link: '/blockchain/nft' },
+    ],
   },
   // Open source
   {
