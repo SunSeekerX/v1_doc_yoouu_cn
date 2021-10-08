@@ -140,6 +140,7 @@ module.exports = [
       { text: 'Phone', link: '/interest/phone' },
       // { text: 'Blockchain', link: '/interest/blockchain/' },
       { text: 'N1 盒子', link: '/interest/n1/' },
+      { text: '浏览器', link: '/interest/browser/' },
       { text: 'JD', link: '/interest/jd' },
       { text: '路由器', link: '/interest/router' },
       { text: '滑板车', link: '/interest/scooter' },

@@ -51,3 +51,11 @@ Binance Smart Chain
 ### pancakeswap
 
 [https://pancakeswap.finance/swap](https://pancakeswap.finance/swap)
+
+## 📌 开发相关
+
+**种子选取**
+
+首先选取一个熵，从 1-2 的 256 次方这个范围内选一个数作为种子，2 的 256 次方大概是 10 的 77 次方。
+
+可见宇宙内的原子数大概是 10 的 80 次方。
