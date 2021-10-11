@@ -151,6 +151,7 @@ module.exports = {
       children: [
         ['phone', 'Phone'],
         // ['blockchain/', 'Blockchain'],
+        ['browser', '浏览器'],
         ['n1', 'N1 盒子'],
         ['jd', 'JD'],
         ['router', '路由器'],
