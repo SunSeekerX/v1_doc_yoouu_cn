@@ -49,3 +49,7 @@ chrome://net-internals/#dns
 ```
 --user-data-dir="D:\edge\user1"
 ```
+
+## Win11 上恢复 Win10 经典文件资源管理器样式
+
+[https://finance.sina.com.cn/tech/2021-08-05/doc-ikqcfncc1009508.shtml](https://finance.sina.com.cn/tech/2021-08-05/doc-ikqcfncc1009508.shtml)
