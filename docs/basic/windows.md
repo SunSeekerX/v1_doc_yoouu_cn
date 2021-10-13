@@ -53,3 +53,7 @@ chrome://net-internals/#dns
 ## Win11 上恢复 Win10 经典文件资源管理器样式
 
 [https://finance.sina.com.cn/tech/2021-08-05/doc-ikqcfncc1009508.shtml](https://finance.sina.com.cn/tech/2021-08-05/doc-ikqcfncc1009508.shtml)
+
+## Win11 上恢复 Win10 右键菜单
+
+https://www.sordum.org/14479/windows-11-classic-context-menu-v1-0/
