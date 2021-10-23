@@ -1,5 +1,31 @@
 # Hackintosh
 
+## 📌 重装
+
+- 下载 chrome
+- 下载 typora
+  - 更换所有 md 文档用 typora 打开
+- 下载 vscode
+- 下载百度输入法
+- 关闭鼠标自然滚动
+- 切换 ctrl 和 command 位置 设置 > 键盘 > 修饰键
+- 下载微信
+- 下载 qq
+- 下载 hackintool 电源 > 修复深度休眠预留空间
+- 迁移三码
+- 复制 efi 到引导盘
+- 下载 maczip
+  - 更换所有 zip 文档用 maczip 打开
+- 设置 finder
+  - 设置文件夹显示在前
+  - 设置默认按照名称排序 （右键空白地方显示选项）
+- 下载 nodejs
+
+## 📌 命令行优化
+
+- 安装 item2
+-
+
 ## 📌 nuc8
 
 Mac 镜像下载地址
