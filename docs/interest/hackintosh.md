@@ -21,11 +21,6 @@
   - 设置默认按照名称排序 （右键空白地方显示选项）
 - 下载 nodejs
 
-## 📌 命令行优化
-
-- 安装 item2
--
-
 ## 📌 nuc8
 
 Mac 镜像下载地址
@@ -37,7 +32,21 @@ Mac 镜像下载地址
 
 ### Bios 设置
 
-**豆子峡谷**（NUC8ixBEx）的具体设置项如下：（启用为勾选，禁用为不勾选） 1、开机时，连续点按 F2 进入 BIOS，为了避免之前有其他不合适的改动，建议先按 F9 重置 BIOS 默认设置。 2、Boot->Boot Priority->Legacy Boot Priority-> « Legacy Boot » ：禁用 3、Boot->Boot Configuration-> UEFI Boot->« Fast Boot »： 禁用 UEFI Boot->« Boot USB Devices First » ： 启用 UEFI Boot->« Boot Network Devices Last » ：启用 Boot Devices->«Network Boot» ：设置为 « Disable » 4、Boot->Secure Boot-> « Secure Boot » ：禁用 5、Security->Security Features-> « Inter VT for directed I/VO (VT-d) » ： 禁用 6、Power->Secondary Power Settings-> « Wake on LAN from S4/S5 » ： 设置为 « Stay Off » 以下为使用白果拆机卡的用户设置： 7、Devices->Onboard Devices-> « WLAN » 和 « Bluetooth » ：禁用
+```
+豆子峡谷（NUC8ixBEx）的具体设置项如下：（启用为勾选，禁用为不勾选）
+1、开机时，连续点按 F2 进入 BIOS，为了避免之前有其他不合适的改动，建议先按 F9 重置 BIOS 默认设置。
+2、Boot->Boot Priority->Legacy Boot Priority-> « Legacy Boot » ：禁用
+3、Boot->Boot Configuration->
+UEFI Boot->« Fast Boot »： 禁用
+UEFI Boot->« Boot USB Devices First » ： 启用
+UEFI Boot->« Boot Network Devices Last » ：启用
+Boot Devices->«Network Boot» ：设置为 « Disable »
+4、Boot->Secure Boot-> « Secure Boot » ：禁用
+5、Security->Security Features-> « Inter VT for directed I/VO (VT-d) » ： 禁用
+6、Power->Secondary Power Settings-> « Wake on LAN from S4/S5 » ： 设置为 « Stay Off »
+以下为使用白果拆机卡的用户设置：
+7、Devices->Onboard Devices-> « WLAN » 和 « Bluetooth » ：禁用
+```
 
 ### 工具
 
@@ -47,6 +56,24 @@ Mac 镜像下载地址
 
 - [NUC8（豆子峡谷）黑苹果新手指南 Q&A](https://zhuanlan.zhihu.com/p/165596210) by weachy
 - [NUC8（豆子峡谷）在线安装 macOS，这才是 OpenCore 正确的打开方式](https://zhuanlan.zhihu.com/p/165608087) by weachy
+
+## 📌 问题解决
+
+### 1. mac 和 windows 时间不正确
+
+办法也很简单，就是让Windows把硬件时间当作 UTC 时间，保持和 macOS 一致。
+
+Window7 用户点击左下角 开始 -> 运行 -> 输入CMD
+
+Window8/10用户按下 Win+X 组合键，使用管理员模式进入CMD
+
+输入以下命令：
+
+```powershell
+Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+```
+
+
 
 ## 📌 虚拟机安装
 
