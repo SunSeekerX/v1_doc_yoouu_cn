@@ -140,7 +140,7 @@ plugins=(git zsh-autosuggestions)
 
 如果有看不到自动补全的内容，确保以下两个颜色不是相近的：
 
-```mipsasm
+```shell
 iTerm > Preferences > Profiles > Colors > ANSI Colors > Bright > Black
 iTerm > Preferences > Profiles > Colors > Basic Colors > Background
 ```
