@@ -12,7 +12,7 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "husky": "^7.0.2",
+    "husky": "^7.0.4",
     "lint-staged": "^11.2.3",
     "prettier": "^2.4.1",
     "vuepress": "^1.8.2",

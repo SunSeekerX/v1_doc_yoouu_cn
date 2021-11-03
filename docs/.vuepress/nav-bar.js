@@ -17,20 +17,18 @@ module.exports = [
         text: '资源',
         link: '/basic/resource',
       },
+      {
+        text: '工具资源',
+        link: '/basic/resource-tool',
+      },
       { text: 'Git 命令', link: '/basic/git' },
+      { text: 'Git 快速入门', link: '/basic/git-starter' },
       { text: '正则表达式', link: '/basic/regexp' },
       { text: '开发工具', link: '/basic/ide' },
+      { text: 'PowerShell', link: '/basic/powershell' },
       { text: 'Windows', link: '/basic/windows' },
       { text: 'Mac', link: '/basic/mac' },
-      { text: '其他', link: '/basic/other' },
-      {
-        text: '学习',
-        items: [
-          { text: 'Git 快速入门', link: '/basic/coding/git' },
-          { text: 'Node.js', link: '/basic/coding/nodejs' },
-          { text: 'React', link: '/basic/coding/react' },
-        ],
-      },
+      { text: 'Linux', link: '/basic/linux' },
       {
         text: '其他',
         items: [
@@ -40,10 +38,6 @@ module.exports = [
           { text: 'Markdown', link: '/basic/others/markdown' },
           { text: 'About work', link: '/basic/others/about-work' },
         ],
-      },
-      {
-        text: '问题解决',
-        items: [{ text: 'PowerShell', link: '/basic/power-shell' }],
       },
     ],
   },

@@ -57,3 +57,50 @@ chrome://net-internals/#dns
 ## Win11 上恢复 Win10 右键菜单
 
 https://www.sordum.org/14479/windows-11-classic-context-menu-v1-0/
+
+## 查看端口占用
+
+**查看被占用端口对应的 PID**
+
+```powershell
+netstat -aon|findstr "49157"
+```
+
+**查看是哪个进程或者程序占用了`2720`端口**
+
+```powershell
+tasklist|findstr "2720"
+```
+
+输入 tasklist|findstr "2720"
+
+## Windows 文件夹结构
+
+![windows-folder-structure](https://static.yoouu.cn/imgs/doc/basic/others/windows-folder-structure.png)
+
+## `Typora`快捷键
+
+- 无序列表：输入-之后输入空格
+- 有序列表：输入数字+“.”之后输入空格
+- 任务列表：-[空格]空格 文字
+- 标题：ctrl+数字
+- 表格：ctrl+t
+- 生成目录：[TOC]按回车
+- 选中一整行：ctrl+l
+- 选中单词：ctrl+d
+- 选中相同格式的文字：ctrl+e
+- 跳转到文章开头：ctrl+home
+- 跳转到文章结尾：ctrl+end
+- 搜索：ctrl+f
+- 替换：ctrl+h
+- 引用：输入>之后输入空格
+- 代码块：ctrl+alt+f
+- 加粗：ctrl+b
+- 倾斜：ctrl+i
+- 下划线：ctrl+u
+- 删除线：alt+shift+5
+- 插入图片：直接拖动到指定位置即可或者 ctrl+shift+i
+- 插入链接：ctrl+k
+- 分割线：
+  - `***`+回车
+  - `---`+回车
