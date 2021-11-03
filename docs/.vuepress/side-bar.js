@@ -12,23 +12,16 @@ module.exports = {
       title: '基础',
       collapsable: false,
       children: [
-        ['resource', 'Resource'],
-        ['git', 'Git commands'],
-        ['regexp', 'Regexp'],
-        ['ide', 'IDE'],
+        ['resource', '资源'],
+        ['resource-tool', '工具资源'],
+        ['git', 'Git 命令'],
+        ['git-starter', 'Git 快速入门'],
+        ['regexp', '正则表达式'],
+        ['powershell', 'PowerShell'],
+        ['ide', '开发工具'],
         ['windows', 'Windows'],
         ['mac', 'Mac'],
-        ['other', 'Other'],
-      ],
-    },
-    {
-      title: 'Learn',
-      prefix: 'coding/',
-      collapsable: false,
-      children: [
-        ['git', 'Git'],
-        ['nodejs', 'Node.js'],
-        ['react', 'React'],
+        ['linux', 'Linux'],
       ],
     },
     {
@@ -41,11 +34,6 @@ module.exports = {
         ['others/markdown', 'Markdown'],
         ['others/about-work', 'About work'],
       ],
-    },
-    {
-      title: 'Troubleshooting',
-      collapsable: false,
-      children: [['power-shell', 'PowerShell']],
     },
   ],
 
