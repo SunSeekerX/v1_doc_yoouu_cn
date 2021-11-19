@@ -23,8 +23,11 @@ pnpm-debug.log*
 *.njsproj
 *.sln
 
-# Another files
-package-lock.json
-yarn.lock
-pnpm-lock.yaml
-.DS_Store
+# Yarn
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
