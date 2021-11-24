@@ -6,6 +6,28 @@
 
 [TokenPocket - https://www.tokenpocket.pro/](https://www.tokenpocket.pro/)
 
+## 📌 工具
+
+**空投表格**
+
+[朱安邦的在线投稿收集](https://docs.google.com/spreadsheets/d/1Xb2r8Tf-DUb4wS8b9qSyo1j-hZ_W-UZZ6mVi7kLyVGU/edit#gid=1411316977)
+
+> 来源：https://anbang.blog/post/admin/contribute.html
+
+英文收集：https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#
+
+BlockFIsh 链游：https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2
+
+貔貅盘查询工具：[https://www.honeypot.is/](https://www.honeypot.is/)
+
+市值查询气泡：[https://cryptobubbles.net/](https://cryptobubbles.net/)
+
+<img src="https://static.yoouu.cn/imgs/doc/blockchain/202111241526766.png" alt="202111241526766.png" style="zoom:25%;" />
+
+DEFI 挖矿查询年化：[https://kingdata.com/apy/mining?lang=cn](https://kingdata.com/apy/mining?lang=cn)
+
+可以查看 k 线的链上交易工具：[https://www.dextools.io/](https://www.dextools.io/)
+
 ## 📌 博客
 
 [安邦的博客](https://anbang.blog/)

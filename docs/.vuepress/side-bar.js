@@ -173,6 +173,7 @@ module.exports = {
         ['', 'Readme'],
         ['ethereum', 'Ethereum'],
         ['nft', 'NFT'],
+        ['apps', '项目'],
       ],
     },
   ],
