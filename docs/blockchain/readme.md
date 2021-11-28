@@ -32,6 +32,8 @@ DEFI 挖矿查询年化：[https://kingdata.com/apy/mining?lang=cn](https://king
 
 查看各种链的 tvl 变化：[https://defillama.com/chains](https://defillama.com/chains)
 
+[https://mycointool.com/](https://mycointool.com/)
+
 ## 📌 博客
 
 [安邦的博客](https://anbang.blog/)
