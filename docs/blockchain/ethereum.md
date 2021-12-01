@@ -17,3 +17,7 @@
 ### 快捷添加
 
 https://chainlist.org/
+
+## 论坛社区
+
+区块链中文技术社区：https://www.bcskill.com/
