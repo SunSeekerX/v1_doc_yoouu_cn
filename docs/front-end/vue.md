@@ -1,3 +1,5 @@
+2021-12-05 16:36:33
+
 ## 📌 文章
 
 [vue-cli4 全面配置 - https://staven630.github.io/vue-cli4-config/](https://staven630.github.io/vue-cli4-config/)
@@ -46,6 +48,124 @@ $ npm init vite@latest <project-name> -- --template vue
 $ cd <project-name>
 $ npm install
 $ npm run dev
+```
+
+**配置**
+
+- vue3
+- ts
+- vite
+- vue-router
+- vuex
+- element-plus
+
+`.gitignore`
+
+```
+node_modules
+.DS_Store
+dist
+dist-ssr
+*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Env
+.env.**
+!.env.example
+```
+
+#### vue-router
+
+官方中文：[https://next.router.vuejs.org/zh/introduction.html](https://next.router.vuejs.org/zh/introduction.html)
+
+**安装**
+
+```shell
+npm install vue-router@4
+```
+
+#### vuex
+
+官方中文：[https://next.vuex.vuejs.org/zh/index.html](https://next.vuex.vuejs.org/zh/index.html)
+
+**安装**
+
+```shell
+npm install vuex@next --save
+```
+
+#### element-plus
+
+官方中文：[https://element-plus.gitee.io/zh-CN/component/button.html](https://element-plus.gitee.io/zh-CN/component/button.html)
+
+```shell
+npm install element-plus --save
+# 图标
+npm install @element-plus/icons
+```
+
+#### unplugin-auto-import
+
+> 不需要自己从库引入一些函数，帮你自动导入，配置完成会在本地生成 `auto-imports.d.ts` 文件用来代码提示
+
+官方 github：[https://github.com/antfu/unplugin-auto-import](https://github.com/antfu/unplugin-auto-import)
+
+默认导入的预设：[https://github.com/antfu/unplugin-auto-import/tree/main/src/presets](https://github.com/antfu/unplugin-auto-import/tree/main/src/presets)
+
+```shell
+npm i -D unplugin-auto-import
+```
+
+` ite.config.ts`
+
+```typescript
+// vite.config.ts
+import AutoImport from 'unplugin-auto-import/vite'
+
+export default defineConfig({
+  plugins: [
+    AutoImport({
+      /* options */
+    }),
+  ],
+})
+```
+
+#### unplugin-vue-components
+
+> 组件按需自动导入
+
+官方 github：[https://github.com/antfu/unplugin-vue-components](https://github.com/antfu/unplugin-vue-components)
+
+```shell
+npm i unplugin-vue-components -D
+```
+
+`vite.config.ts`
+
+```typescript
+// vite.config.ts
+import Components from 'unplugin-vue-components/vite'
+
+export default defineConfig({
+  plugins: [
+    Components({
+      /* options */
+    }),
+  ],
+})
 ```
 
 ## 📌 项目初始化
