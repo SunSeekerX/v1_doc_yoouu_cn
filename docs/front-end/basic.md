@@ -89,6 +89,16 @@ module.exports = {
   vueIndentScriptAndStyle: false,
   // 末尾换行符 default:"lf"
   endOfLine: 'auto',
+  parsers: {
+    '.jsx': 'flow',
+    '.scss': 'scss',
+    '.ts': 'typescript',
+    '.less': 'css',
+    '.vue': 'vue',
+    '.nvue': 'vue',
+    '.ux': 'vue',
+    '.yml': 'yaml',
+  },
 }
 ```
 
