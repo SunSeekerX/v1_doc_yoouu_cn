@@ -51,20 +51,6 @@ npm cache clean --force # 清空缓存
 
 ## 📌 yarn 常用命令
 
-### 升级到 yarn3
-
-[https://yarnpkg.com/getting-started/migration](https://yarnpkg.com/getting-started/migration)
-
-1. Run `npm install -g yarn` to update the global yarn version to latest v1
-2. Go into your project directory
-3. Run `yarn set version berry` to enable v2 (cf [Install](https://yarnpkg.com/getting-started/install) for more details)
-4. If you used `.npmrc` or `.yarnrc`, you'll need to turn them into the [new format](https://yarnpkg.com/configuration/yarnrc) (see also [1](https://yarnpkg.com/getting-started/migration#update-your-configuration-to-the-new-settings), [2](https://yarnpkg.com/getting-started/migration#dont-use-npmrc-files))
-5. Add [`nodeLinker: node-modules`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) in your `.yarnrc.yml` file
-6. Commit the changes so far (`yarn-X.Y.Z.js`, `.yarnrc.yml`, ...)
-7. Run `yarn install` to migrate the lockfile
-8. Take a look at [this article](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored) to see what should be gitignored
-9. Commit everything remaining
-
 ```shell
 # 升级依赖
 yarn upgrade-interactive
@@ -110,6 +96,94 @@ yarn config set operadriver_cdnurl https://npm.taobao.org/mirrors/operadriver # 
 yarn config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs # phantomjs 二进制包镜像
 yarn config set selenium_cdnurl https://npm.taobao.org/mirrors/selenium # selenium 二进制包镜像
 yarn config set node_inspector_cdnurl https://npm.taobao.org/mirrors/node-inspector # node-inspector 二进制包镜像
+```
+
+### 升级到 yarn3
+
+[https://yarnpkg.com/getting-started/migration](https://yarnpkg.com/getting-started/migration)
+
+1. Run `npm install -g yarn` to update the global yarn version to latest v1
+
+2. Go into your project directory
+
+3. Run `yarn set version berry` to enable v2 (cf [Install](https://yarnpkg.com/getting-started/install) for more details)
+
+4. If you used `.npmrc` or `.yarnrc`, you'll need to turn them into the [new format](https://yarnpkg.com/configuration/yarnrc) (see also [1](https://yarnpkg.com/getting-started/migration#update-your-configuration-to-the-new-settings), [2](https://yarnpkg.com/getting-started/migration#dont-use-npmrc-files))
+
+5. Add [`nodeLinker: node-modules`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) in your `.yarnrc.yml` file
+
+   ```shell
+   httpProxy: 'http://127.0.0.1:7890'
+
+   httpsProxy: 'http://127.0.0.1:7890'
+
+   npmRegistryServer: 'https://registry.npmmirror.com'
+
+   nodeLinker: node-modules
+
+   plugins:
+     - path: .yarn/plugins/@yarnpkg/plugin-version.cjs
+       spec: '@yarnpkg/plugin-version'
+
+   yarnPath: .yarn/releases/yarn-3.1.1.cjs
+   ```
+
+6. Commit the changes so far (`yarn-X.Y.Z.js`, `.yarnrc.yml`, ...)
+
+7. Run `yarn install` to migrate the lockfile
+
+8. Take a look at [this article](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored) to see what should be gitignored
+
+9. 安装版本插件
+
+   ```shell
+   yarn plugin import version
+   ```
+
+10. 添加 `.gitignore`
+
+    ```shell
+    # yarn 2.0+
+    .pnp.*
+    .yarn/*
+    !.yarn/patches
+    !.yarn/plugins
+    !.yarn/releases
+    !.yarn/sdks
+    !.yarn/versions
+    ```
+
+11. Commit everything remaining
+
+### lerna
+
+首先使用 [npm](https://www.npmjs.com/) 将 Lerna 安装到全局环境中：
+
+推荐使用 Lerna 2.x 版本。
+
+```
+npm install --global lerna
+```
+
+接下来，我们将创建一个新的 git 代码仓库：
+
+```
+git init lerna-repo && cd lerna-repo
+```
+
+现在，我们将上述仓库转变为一个 Lerna 仓库：
+
+```
+lerna init
+```
+
+你的代码仓库目前应该是如下结构：
+
+```
+lerna-repo/
+  packages/
+  package.json
+  lerna.json
 ```
 
 ## 📌 pnpm 常用命令
