@@ -98,6 +98,57 @@ yarn config set selenium_cdnurl https://npm.taobao.org/mirrors/selenium # seleni
 yarn config set node_inspector_cdnurl https://npm.taobao.org/mirrors/node-inspector # node-inspector 二进制包镜像
 ```
 
+### Workspace
+
+```shell
+# 查看工作区列表
+yarn workspaces list
+# 在指定的package中运行指定的命令。
+yarn workspace <workspace_name> <command>
+# 在所有package中运行指定的命令，若某个package中没有对应的命令则会报错。
+yarn workspaces run <command>
+```
+
+**安装根目录包**
+
+- -D: 作为开发依赖安装
+- -W: `--ignore-workspace-root-check` 表示安装到工作区的根目录
+
+```shell
+yarn add [package_name] -D -W
+yarn remove [package_name] -W
+```
+
+**安装 dependencies**
+
+```shell
+yarn workspace [package_name] add [package_name]@[version]
+```
+
+**安装 devDependencies**
+
+```shell
+yarn workspace [package_name] add -D [package_name]@[version]
+```
+
+**删除包**
+
+```shell
+yarn workspace [package_name] remove [package_name]
+```
+
+**查看信息**
+
+```shell
+yarn workspaces info --json
+```
+
+**启动**
+
+```shell
+yarn workspaces run test
+```
+
 ### 升级到 yarn3
 
 [https://yarnpkg.com/getting-started/migration](https://yarnpkg.com/getting-started/migration)
