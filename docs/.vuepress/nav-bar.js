@@ -171,7 +171,7 @@ module.exports = [
       { text: '区块链', link: '/blockchain/' },
       { text: 'Ethereum', link: '/blockchain/ethereum' },
       { text: 'NFT', link: '/blockchain/nft' },
-      { text: '项目', link: '/blockchain/apps' },
+      { text: '项目', link: '/blockchain/apps/' },
     ],
   },
   // Open source
