@@ -46,6 +46,22 @@ Developer - Telegram：[https://t.me/binancechaindevs](https://t.me/binancechain
 
 Telegram：[https://t.me/BinanceDEXchange](https://t.me/BinanceDEXchange)
 
+### Celo
+
+Celo 的目标是在由用户社区运营的去中心化平台上，使世界上任何地方拥有智能手机的任何人都可以使用金融服务，向电话号码汇款并向商家付款。
+
+为了实现这一目标，Celo 是一整套新的区块链软件，在该区块链上运行的核心库以及最终用户应用程序（包括与该逻辑进行通信的电子钱包应用程序）的完整堆栈。
+
+官网：[https://celo.org/](https://celo.org/)
+
+Github：[https://github.com/celo-org](https://github.com/celo-org)
+
+Twitter：[https://twitter.com/CeloOrg](https://twitter.com/CeloOrg)
+
+Medium：[https://medium.com/celoorg](https://medium.com/celoorg)
+
+Discord：[https://discord.com/invite/6yWMkgM](https://discord.com/invite/6yWMkgM)
+
 ### Dfinity
 
 [https://dfinity.org/](https://dfinity.org/)

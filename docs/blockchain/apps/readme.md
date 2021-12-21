@@ -12,11 +12,31 @@
 
 ## 📌 ETH（以太链）
 
+#### Ens
+
+以太坊基础设施，去中心化应用的域名服务。
+
+官网：[https://app.ens.domains/](https://app.ens.domains/)
+
+Github：[https://github.com/ensdomains](https://github.com/ensdomains)
+
+coinmarketcap：[https://coinmarketcap.com/zh/currencies/ethereum-name-service/](https://coinmarketcap.com/zh/currencies/ethereum-name-service/)
+
+ens 合约地址（eth）：0xC18360217D8F7Ab5e7c516566761Ea12Ce7F9D72
+
 #### Swarm
 
 [https://www.ethswarm.org/](https://www.ethswarm.org/)
 
 相关资料：[Swarm](./apps/swarm)
+
+### SocialFi
+
+#### mazury
+
+Mazury 是一个 web3 职业信誉平台。收集徽章和推荐人，以便在最酷的初创企业和 DAO 获得工作!
+
+[https://mazury.xyz/](https://mazury.xyz/)
 
 ### meme
 
@@ -48,6 +68,18 @@ Tg: [https://t.me/mongooseportal](https://t.me/mongooseportal)
 
 [https://pancakeswap.finance/swap](https://pancakeswap.finance/swap)
 
+#### nftb
+
+bsc 的 ido ，以及 nft 交易平台，需要购买 NFTB 质押获得 ido 资格。
+
+官网：[https://nftb.io/](https://nftb.io/)
+
+Twitter：[https://twitter.com/nftbmarket](https://twitter.com/nftbmarket)
+
+Discord：[https://discord.gg/xEPCR6VnT4](https://discord.gg/xEPCR6VnT4)
+
+nftb 合约地址（BSC）：[0xde3dbbe30cfa9f437b293294d1fd64b26045c71a](https://pancakeswap.finance/swap?outputCurrency=0xde3dbbe30cfa9f437b293294d1fd64b26045c71a)
+
 ### SocialFi
 
 #### myMessage
@@ -61,6 +93,24 @@ Telegram: [https://t.co/HUxZOADU7W](https://t.co/HUxZOADU7W)
 BSC 代币合约(MESA): [0xb192d5fc358d35194282a1a06814aba006198010](https://pancakeswap.finance/info/token/0xb192d5fc358d35194282a1a06814aba006198010)
 
 ### GameFi
+
+#### Diviner
+
+链游，预测市场，完成任务，社交，推荐等赚取。
+
+在 [pancakeswap](https://pancakeswap.finance/ifo) 进行 ifo，[nftb](https://nftb.io/launchpad/diviner-protocol/) 进行 ido。
+
+官网：[https://diviner.me/](https://diviner.me/)
+
+TG：[https://t.me/DivinerProtocolOfficial](https://t.me/DivinerProtocolOfficial)
+
+Twitter：[https://twitter.com/DivinerProtocol](https://twitter.com/DivinerProtocol)
+
+Medium：[https://medium.com/@Diviner_Protocol](https://medium.com/@Diviner_Protocol)
+
+coinmarketcap：[https://coinmarketcap.com/zh/currencies/diviner-protocol/ico/](https://coinmarketcap.com/zh/currencies/diviner-protocol/ico/)
+
+DPT 合约地址（BSC）：[0xE69cAef10A488D7AF31Da46c89154d025546e990](https://bscscan.com/token/0xE69cAef10A488D7AF31Da46c89154d025546e990)
 
 #### DRACE
 
@@ -168,6 +218,28 @@ BSC pancake 代币
 
 0x69083b64988933e8b4783e8302b9bbf90163280e
 
+## 📌 Celo
+
+### DeFi
+
+#### celolaunch
+
+celo 上的 ido 平台。
+
+官网：[https://celolaunch.io/](https://celolaunch.io/)
+
+Github：[https://github.com/celolaunch](https://github.com/celolaunch)
+
+Twitter：[https://twitter.com/celolaunch](https://twitter.com/celolaunch)
+
+Medium：[https://celolaunch.medium.com/](https://celolaunch.medium.com/)
+
 ## 📌 Polygon （马蹄链）
 
 ## 📌 AVAX （雪崩链）
+
+#### hurricaneswap
+
+swap
+
+App：[https://hurricaneswap.com/#/](https://hurricaneswap.com/#/)
