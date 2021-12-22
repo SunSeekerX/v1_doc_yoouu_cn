@@ -10,6 +10,34 @@
 项目简介
 ```
 
+## 📌 跨链
+
+### zapper
+
+资产管理工具支持多链，目前支持 eth、avax、BSC、ftm、matic 等
+
+完成一二期的 quest 可以获得不错的回报。
+
+官网：[https://zapper.fi/](https://zapper.fi/)
+
+### rabbithole
+
+区块链任务平台，会不定期发布任务，基本都是体验不同链的项目完成任务可以获得奖励或 nft 之类的。
+
+官网：[https://app.rabbithole.gg/](https://app.rabbithole.gg/)
+
+Discord：[https://discord.com/invite/Qx65fZXZSx](https://discord.com/invite/Qx65fZXZSx)
+
+Twitter：[https://twitter.com/rabbithole_gg](https://twitter.com/rabbithole_gg)
+
+Mirror：[https://rabbithole.mirror.xyz/-UWjheu5bsRvMUa78_O242czkl5AwHs58jT9S-p-0u0](https://rabbithole.mirror.xyz/-UWjheu5bsRvMUa78_O242czkl5AwHs58jT9S-p-0u0)
+
+### SushiSwap
+
+跨链 swap。
+
+官网：[https://app.sushi.com/swap](https://app.sushi.com/swap)
+
 ## 📌 ETH（以太链）
 
 #### Ens
@@ -243,3 +271,45 @@ Medium：[https://celolaunch.medium.com/](https://celolaunch.medium.com/)
 swap
 
 App：[https://hurricaneswap.com/#/](https://hurricaneswap.com/#/)
+
+### DeFi
+
+#### pangolin（穿山甲）
+
+avax 上的 swap。
+
+官网：[https://app.pangolin.exchange/#/](https://app.pangolin.exchange/#/)
+
+#### traderjoe
+
+avax 上的 swap。
+
+官网：[https://traderjoexyz.com/#/home](https://traderjoexyz.com/#/home)
+
+Github：[https://github.com/traderjoe-xyz/](https://github.com/traderjoe-xyz/)
+
+TG：[https://t.me/traderjoe_xyz](https://t.me/traderjoe_xyz)
+
+Discord：[https://discord.com/invite/GHZceZhbZU](https://discord.com/invite/GHZceZhbZU)
+
+Twitter：[https://twitter.com/traderjoe_xyz](https://twitter.com/traderjoe_xyz)
+
+Medium：[https://traderjoe-xyz.medium.com/](https://traderjoe-xyz.medium.com/)
+
+Reddit：[https://www.reddit.com/r/traderjoe_xyz/](https://www.reddit.com/r/traderjoe_xyz/)
+
+#### yieldyak
+
+流动性代币质押获得收益的工具。
+
+官网：[https://yieldyak.com/](https://yieldyak.com/)
+
+Github：[https://github.com/yieldyak](https://github.com/yieldyak)
+
+Twitter：[https://twitter.com/yieldyak\_](https://twitter.com/yieldyak_)
+
+TG：[https://t.me/yieldyak](https://t.me/yieldyak)
+
+Discord：[https://discord.com/invite/JBbPKzX4rg](https://discord.com/invite/JBbPKzX4rg)
+
+Medium：[https://yieldyak.medium.com/](https://yieldyak.medium.com/)
