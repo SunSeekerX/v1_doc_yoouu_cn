@@ -26,6 +26,13 @@ npm config set registry http://registry.npm.taobao.org/
 # 3、换成原来的
 npm config set registry https://registry.npmjs.org/
 
+# 设置代理
+npm config set proxy http://127.0.0.1:7890
+npm config set https-proxy http://127.0.0.1:7890
+# 取消代理
+npm config delete proxy
+npm config delete https-proxy
+
 # ==========================================================
 # NPM
 # ==========================================================
