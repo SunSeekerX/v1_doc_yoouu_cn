@@ -2545,17 +2545,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuepress/core@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/core@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fcore%2Fdownload%2F%40vuepress%2Fcore-1.8.2.tgz"
+"@vuepress/core@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/core@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fcore%2Fdownload%2F%40vuepress%2Fcore-1.8.3.tgz"
   dependencies:
     "@babel/core": ^7.8.4
     "@vue/babel-preset-app": ^4.1.2
-    "@vuepress/markdown": 1.8.2
-    "@vuepress/markdown-loader": 1.8.2
-    "@vuepress/plugin-last-updated": 1.8.2
-    "@vuepress/plugin-register-components": 1.8.2
-    "@vuepress/shared-utils": 1.8.2
+    "@vuepress/markdown": 1.8.3
+    "@vuepress/markdown-loader": 1.8.3
+    "@vuepress/plugin-last-updated": 1.8.3
+    "@vuepress/plugin-register-components": 1.8.3
+    "@vuepress/shared-utils": 1.8.3
     autoprefixer: ^9.5.1
     babel-loader: ^8.0.4
     cache-loader: ^3.0.0
@@ -2587,42 +2587,42 @@ __metadata:
     webpack-dev-server: ^3.5.1
     webpack-merge: ^4.1.2
     webpackbar: 3.2.0
-  checksum: 062f2b82ea95ec0ca500a676eeb8e11ea0ca49c5221239a0331a74be2594ac0bebe9f3264a1804d772e056fd8155b575fba0536a7fe55f10aac0bf00e7de262c
+  checksum: eabaaf6295019109c707268c9c8e1b419feee466db74a231e665b2e83cc97d0ce15fb9113bfc5c0de5ea1d8463b504a55f1eb074bc8cb658be0afdea9cdfa410
   languageName: node
   linkType: hard
 
-"@vuepress/markdown-loader@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/markdown-loader@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fmarkdown-loader%2Fdownload%2F%40vuepress%2Fmarkdown-loader-1.8.2.tgz"
+"@vuepress/markdown-loader@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/markdown-loader@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fmarkdown-loader%2Fdownload%2F%40vuepress%2Fmarkdown-loader-1.8.3.tgz"
   dependencies:
-    "@vuepress/markdown": 1.8.2
+    "@vuepress/markdown": 1.8.3
     loader-utils: ^1.1.0
     lru-cache: ^5.1.1
-  checksum: 91f049ee025d990a39cbfc05ac3ca4081b057779b1050a8b67d1397d3e541e70f7f25ed7c1c193f83f8a92ea500877530fef3f861bdc898ef0cc85055a937f21
+  checksum: c2a3fb2c9a2423b89eb7122ab82779b8c0a26a01ce4511b427101e72ac5125a215673c0033237c9ecfc2bdbd88b859f8973ff2a5d71eb300e864977364748583
   languageName: node
   linkType: hard
 
-"@vuepress/markdown@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/markdown@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fmarkdown%2Fdownload%2F%40vuepress%2Fmarkdown-1.8.2.tgz"
+"@vuepress/markdown@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/markdown@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fmarkdown%2Fdownload%2F%40vuepress%2Fmarkdown-1.8.3.tgz"
   dependencies:
-    "@vuepress/shared-utils": 1.8.2
+    "@vuepress/shared-utils": 1.8.3
     markdown-it: ^8.4.1
     markdown-it-anchor: ^5.0.2
     markdown-it-chain: ^1.3.0
     markdown-it-emoji: ^1.4.0
     markdown-it-table-of-contents: ^0.4.0
     prismjs: ^1.13.0
-  checksum: ce5795cc77e3827c2a8d5ab7c29af9cb87a54fb17a31a99b572a3921d392d04196ee4b00e7920d31d361f9fd1bd0567d8032d937f79006cc7f368cf418619364
+  checksum: aaeb2567720b234ea658d2a0f85a59fd959c16e1015500f94a1d3deec1a1f312c69548164b29226440cede25931b137dfde48ef4f1aa7f505d6bb17fa8fe2649
   languageName: node
   linkType: hard
 
-"@vuepress/plugin-active-header-links@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/plugin-active-header-links@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-active-header-links%2Fdownload%2F%40vuepress%2Fplugin-active-header-links-1.8.2.tgz"
+"@vuepress/plugin-active-header-links@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/plugin-active-header-links@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-active-header-links%2Fdownload%2F%40vuepress%2Fplugin-active-header-links-1.8.3.tgz"
   dependencies:
     lodash.debounce: ^4.0.8
-  checksum: d997a5b90e9d7df7fca55f67aa35203eeec647859e4677ffed78632364e928d604d50153b74c33ef2c5ef0f99f14ae551206a475e38fcdb58600346247d286d3
+  checksum: 907910868821526810ebe065114849f847b261219d7801bcc213ea3db6341fa03f3e26431e03cd922de62f5f96ff92f56254bcf5d3300638c00b5a925d12916a
   languageName: node
   linkType: hard
 
@@ -2642,41 +2642,58 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuepress/plugin-last-updated@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/plugin-last-updated@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-last-updated%2Fdownload%2F%40vuepress%2Fplugin-last-updated-1.8.2.tgz"
+"@vuepress/plugin-last-updated@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/plugin-last-updated@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-last-updated%2Fdownload%2F%40vuepress%2Fplugin-last-updated-1.8.3.tgz"
   dependencies:
     cross-spawn: ^6.0.5
-  checksum: 054abf076759c70f992dd01c2a550452c658a98d03528dea896e0b751654534db88dbcb0781abf12f74c5b45c9624f69717a8e1459acc480676d152924ee766f
+  checksum: 05a2581948fd3bb21de05e7456350f8c4839b33e6eee385490cda5fe3804b581837af96bc86c726eed99f7f3ce50303dd183136350a9ec2376122c7b8525cb24
   languageName: node
   linkType: hard
 
-"@vuepress/plugin-nprogress@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/plugin-nprogress@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-nprogress%2Fdownload%2F%40vuepress%2Fplugin-nprogress-1.8.2.tgz"
+"@vuepress/plugin-nprogress@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/plugin-nprogress@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-nprogress%2Fdownload%2F%40vuepress%2Fplugin-nprogress-1.8.3.tgz"
   dependencies:
     nprogress: ^0.2.0
-  checksum: 16839e052fbe459823488c67ee81d0eb550e1e3477f22a6eaac8a1c9ffc7ba3cf6b44c70665478728b6795f0ddff63be8300621808f86d0da2e17c8b55c350ab
+  checksum: 593cc1be7f2c2f1ea95bcbb9d6b91c36c8ffa811612e1fcc754f7c84bc3098058057283fe7ec39719ed659b566ef84f16b4c73fb3ecf09ba09c522ca61b746fa
   languageName: node
   linkType: hard
 
-"@vuepress/plugin-register-components@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/plugin-register-components@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-register-components%2Fdownload%2F%40vuepress%2Fplugin-register-components-1.8.2.tgz"
+"@vuepress/plugin-register-components@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/plugin-register-components@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-register-components%2Fdownload%2F%40vuepress%2Fplugin-register-components-1.8.3.tgz"
   dependencies:
-    "@vuepress/shared-utils": 1.8.2
-  checksum: a9de3d88388522e718edffc839543973c1856dbc12dc88cac83622a8fb5d3e9fc6ee452c896094b7d6e32ef99c90e537c675476d74354c4fdf953b6becc98836
+    "@vuepress/shared-utils": 1.8.3
+  checksum: 52cd20d4778ea5d6658bdbbf0c99424413572d04f86b42b9300392f55c8bbb468ee06fc2d7bb0f2e0698f5a6a8ac6220d84d1250d403e7de407c7be783ea993d
   languageName: node
   linkType: hard
 
-"@vuepress/plugin-search@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/plugin-search@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-search%2Fdownload%2F%40vuepress%2Fplugin-search-1.8.2.tgz"
-  checksum: ce4d55b54f1bfd3f66a66ced96e8887a7e8ed7d56582da76339ff97769e3a15320be07014bd98032af9a4a580d06d3ccaf603a3b0bf9a71dca57f0c9345ae72b
+"@vuepress/plugin-search@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/plugin-search@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fplugin-search%2Fdownload%2F%40vuepress%2Fplugin-search-1.8.3.tgz"
+  checksum: 0b6a0db418bcee58aaae76f3791551eb596682143bbfdd98b8cdd60b1c7791ee95cb06522344cd014ea6333dbbf09ac1a0eab9fc3aa31ecb4a2b4e49bed414b3
   languageName: node
   linkType: hard
 
-"@vuepress/shared-utils@npm:1.8.2, @vuepress/shared-utils@npm:^1.2.0":
+"@vuepress/shared-utils@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/shared-utils@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fshared-utils%2Fdownload%2F%40vuepress%2Fshared-utils-1.8.3.tgz"
+  dependencies:
+    chalk: ^2.3.2
+    escape-html: ^1.0.3
+    fs-extra: ^7.0.1
+    globby: ^9.2.0
+    gray-matter: ^4.0.1
+    hash-sum: ^1.0.2
+    semver: ^6.0.0
+    toml: ^3.0.0
+    upath: ^1.1.0
+  checksum: 8216fb3ec1f6b397a2b3b15e2de23f7b13aa5744cc114b0dbb9d577b79cd3a8ac150c3c05650ee433909c89d80bb55dca3d275070c53210c1ac504ae5bc3bd21
+  languageName: node
+  linkType: hard
+
+"@vuepress/shared-utils@npm:^1.2.0":
   version: 1.8.2
   resolution: "@vuepress/shared-utils@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Fshared-utils%2Fdownload%2F%40vuepress%2Fshared-utils-1.8.2.tgz"
   dependencies:
@@ -2693,20 +2710,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuepress/theme-default@npm:1.8.2":
-  version: 1.8.2
-  resolution: "@vuepress/theme-default@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Ftheme-default%2Fdownload%2F%40vuepress%2Ftheme-default-1.8.2.tgz"
+"@vuepress/theme-default@npm:1.8.3":
+  version: 1.8.3
+  resolution: "@vuepress/theme-default@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2F%40vuepress%2Ftheme-default%2Fdownload%2F%40vuepress%2Ftheme-default-1.8.3.tgz"
   dependencies:
-    "@vuepress/plugin-active-header-links": 1.8.2
-    "@vuepress/plugin-nprogress": 1.8.2
-    "@vuepress/plugin-search": 1.8.2
+    "@vuepress/plugin-active-header-links": 1.8.3
+    "@vuepress/plugin-nprogress": 1.8.3
+    "@vuepress/plugin-search": 1.8.3
     docsearch.js: ^2.5.2
     lodash: ^4.17.15
     stylus: ^0.54.8
     stylus-loader: ^3.0.2
     vuepress-plugin-container: ^2.0.2
     vuepress-plugin-smooth-scroll: ^0.0.3
-  checksum: 897c0c3c44e3ee8403eac2c43b0c23584041264565336f7b85216e3827de79af5cc3ef91eccf58b7319bf3774e3ba8c616b4db6e9d1574630d8ba5f4d7b11413
+  checksum: 4c1789f0e32af22433d9f198fec3b641d2d7c252a3f2fa16fb104b169a8b0fda0943c69f49dc7894bfe63e4b67513897cbcd9520076536ac28ae709ec849e0c5
   languageName: node
   linkType: hard
 
@@ -13062,7 +13079,7 @@ __metadata:
     husky: ^7.0.4
     lint-staged: ^12.1.3
     prettier: ^2.5.1
-    vuepress: ^1.8.2
+    vuepress: ^1.8.3
     vuepress-theme-hope: ^1.21.0
   languageName: unknown
   linkType: soft
@@ -14241,19 +14258,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"vuepress@npm:^1.8.2":
-  version: 1.8.2
-  resolution: "vuepress@npm:1.8.2::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvuepress%2Fdownload%2Fvuepress-1.8.2.tgz"
+"vuepress@npm:^1.8.3":
+  version: 1.8.3
+  resolution: "vuepress@npm:1.8.3::__archiveUrl=https%3A%2F%2Fregistry.npmmirror.com%2Fvuepress%2Fdownload%2Fvuepress-1.8.3.tgz"
   dependencies:
-    "@vuepress/core": 1.8.2
-    "@vuepress/theme-default": 1.8.2
+    "@vuepress/core": 1.8.3
+    "@vuepress/theme-default": 1.8.3
     cac: ^6.5.6
     envinfo: ^7.2.0
     opencollective-postinstall: ^2.0.2
     update-notifier: ^4.0.0
   bin:
     vuepress: cli.js
-  checksum: ac61f14663e8a34c660ae0c610525b78ef6c19b465855e0218756f76256feb5f7f6e3f9a510bd6b89c503f084d141475ecc2e6d92b7cae510021d6574562a357
+  checksum: 8e0634a80476728c537165cd930175d1eec1850217439d5b8d2f65c098087cf3dfc78574920c1138548c2d70432d90907d24494c72522f0c1de3afc97870e6df
   languageName: node
   linkType: hard
 
