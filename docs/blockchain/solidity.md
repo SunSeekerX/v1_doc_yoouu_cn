@@ -8,6 +8,8 @@
 
 ## 📌 Truffle
 
+开发，测试，部署框架。
+
 [https://learnblockchain.cn/docs/truffle/index.html](https://learnblockchain.cn/docs/truffle/index.html)
 
 **安装**
@@ -54,6 +56,10 @@ truffle develop
 ```shell
 truffle console
 ```
+
+### ethpm 包管理
+
+官网：[https://www.ethpm.com/](https://www.ethpm.com/)
 
 ### Ganache
 

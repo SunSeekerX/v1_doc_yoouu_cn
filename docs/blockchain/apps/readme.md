@@ -38,6 +38,12 @@ Mirror：[https://rabbithole.mirror.xyz/-UWjheu5bsRvMUa78_O242czkl5AwHs58jT9S-p-
 
 官网：[https://app.sushi.com/swap](https://app.sushi.com/swap)
 
+### superfluid
+
+流支付，很新奇的玩意，可以设置一个时间和发送金额，慢慢的流入到另外一个地址。
+
+官网：[https://www.superfluid.finance/](https://www.superfluid.finance/)
+
 ## 📌 ETH（以太链）
 
 #### Ens

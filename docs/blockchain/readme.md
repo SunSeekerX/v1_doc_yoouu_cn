@@ -72,6 +72,24 @@ Discord：[https://discord.com/invite/6yWMkgM](https://discord.com/invite/6yWMkg
 
 [Apps](./apps/)
 
+## 📌 资讯
+
+### 巴比特
+
+官网：[https://www.8btc.com/](https://www.8btc.com/)
+
+### 金色财经
+
+官网：[https://www.jinse.com/](https://www.jinse.com/)
+
+### coinmarketcap
+
+官网：[https://coinmarketcap.com/zh/](https://coinmarketcap.com/zh/)
+
+### 吴说
+
+官网：[https://www.wu-talk.com/](https://www.wu-talk.com/)
+
 ## 📌 钱包
 
 钱包是存储区块链代币的应用程序。钱包是一种数字钱包，允许用户存储和管理比特币和以太币等。 区块链钱包由区块链提供，是一种允许个人存储和转移加密货币的电子钱包。钱包分为热钱包和冷钱包。
@@ -94,7 +112,35 @@ Discord：[https://discord.com/invite/6yWMkgM](https://discord.com/invite/6yWMkg
 
 ## 📌 工具
 
-**空投表格**
+### cryptorank
+
+加密货币排名
+
+官网：[https://cryptorank.io/](https://cryptorank.io/)
+
+### glassnode
+
+行情分析
+
+官网：[https://glassnode.com/](https://glassnode.com/)
+
+### chainlist
+
+快捷添加链
+
+官网：[https://chainlist.org/](https://chainlist.org/)
+
+### defi apy 排行
+
+可以查看不同链 defi 的 apy。
+
+官网：[https://apy.top/](https://apy.top/)
+
+### 带 k 线的链上交易数据图表
+
+官网：[https://avedex.cc/](https://avedex.cc/)
+
+### 空投表格
 
 [朱安邦的在线投稿收集](https://docs.google.com/spreadsheets/d/1Xb2r8Tf-DUb4wS8b9qSyo1j-hZ_W-UZZ6mVi7kLyVGU/edit#gid=1411316977)
 
@@ -102,21 +148,35 @@ Discord：[https://discord.com/invite/6yWMkgM](https://discord.com/invite/6yWMkg
 
 英文收集：https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#
 
-BlockFIsh 链游：https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2
+### BlockFIsh 链游
 
-貔貅盘查询工具：[https://www.honeypot.is/](https://www.honeypot.is/)
+https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2
 
-市值查询气泡：[https://cryptobubbles.net/](https://cryptobubbles.net/)
+### 貔貅盘查询工具
+
+[https://www.honeypot.is/](https://www.honeypot.is/)
+
+### 市值查询气泡
+
+[https://cryptobubbles.net/](https://cryptobubbles.net/)
 
 <img src="https://static.yoouu.cn/imgs/doc/blockchain/202111241526766.png" alt="202111241526766.png" style="zoom:25%;" />
 
-DEFI 挖矿查询年化：[https://kingdata.com/apy/mining?lang=cn](https://kingdata.com/apy/mining?lang=cn)
+### DEFI 挖矿查询年化
 
-可以查看 k 线的链上交易工具：[https://www.dextools.io/](https://www.dextools.io/)
+[https://kingdata.com/apy/mining?lang=cn](https://kingdata.com/apy/mining?lang=cn)
 
-查投资机构下的项目：[https://www.cypherhunter.com/zh-hans/](https://www.cypherhunter.com/zh-hans/)
+### 可以查看 k 线的链上交易工具
 
-查看各种链的 tvl 变化：[https://defillama.com/chains](https://defillama.com/chains)
+[https://www.dextools.io/](https://www.dextools.io/)
+
+### 查投资机构下的项目
+
+[https://www.cypherhunter.com/zh-hans/](https://www.cypherhunter.com/zh-hans/)
+
+### 查看各种链的 tvl 变化
+
+[https://defillama.com/chains](https://defillama.com/chains)
 
 [https://mycointool.com/](https://mycointool.com/)
 
@@ -125,6 +185,12 @@ DEFI 挖矿查询年化：[https://kingdata.com/apy/mining?lang=cn](https://king
 [安邦的博客](https://anbang.blog/)
 
 ## 📌 开发相关
+
+### 开发社区
+
+#### 登链社区
+
+官网：[https://learnblockchain.cn/](https://learnblockchain.cn/)
 
 **种子选取**
 
