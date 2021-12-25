@@ -68,11 +68,57 @@ Discord：[https://discord.com/invite/6yWMkgM](https://discord.com/invite/6yWMkg
 
 相关资料：[Dfinity](./apps/dfinity)
 
+## 📌 开发相关
+
+区块链数据大小统计
+
+以太坊：[https://bitinfocharts.com/ethereum/](https://bitinfocharts.com/ethereum/)
+
+以太坊经典：[https://bitinfocharts.com/ethereum%20classic/](https://bitinfocharts.com/ethereum%20classic/)
+
+在线合约编辑器：[https://remix.ethereum.org](https://remix.ethereum.org)
+
+**合约代码仓库**
+
+[https://github.com/ethereumbook/ethereumbook](https://github.com/ethereumbook/ethereumbook)
+
+### Solidity
+
+[solidity](./solidity)
+
+### 学习项目
+
+OlympusDAO：[https://github.com/OlympusDAO](https://github.com/OlympusDAO)
+
+前端：[https://app.olympusdao.finance/#/dashboard](https://app.olympusdao.finance/#/dashboard)
+
+稳定币项目包含合约和前端。
+
+### 社区
+
+#### 登链社区
+
+官网：[https://learnblockchain.cn/](https://learnblockchain.cn/)
+
+#### 区块链中文技术社区
+
+官网：[https://www.bcskill.com/](https://www.bcskill.com/)
+
+**种子选取**
+
+首先选取一个熵，从 1-2 的 256 次方这个范围内选一个数作为种子，2 的 256 次方大概是 10 的 77 次方。
+
+可见宇宙内的原子数大概是 10 的 80 次方。
+
 ## 📌 项目
+
+收集一些玩过的项目。
 
 [Apps](./apps/)
 
 ## 📌 资讯
+
+区块链资讯网站。
 
 ### 巴比特
 
@@ -102,11 +148,13 @@ Discord：[https://discord.com/invite/6yWMkgM](https://discord.com/invite/6yWMkg
 
 热钱包（Hot Wallet），与冷钱包相对应，也称在线钱包或者联网钱包（Online Wallet），区块链钱包种类之一，也就是网络能够访问到用户私钥的钱包。热钱包因其联网特性，外人可能通过互联网访问用户的私钥，因此安全性比冷钱包低，但比冷钱包更便利。另外，无论是使用冷钱包还是热钱包，私钥都是关键所在。
 
-### 钱包列表
+### 钱包应用列表
 
 [Wallets](./wallets)
 
 ## 📌 关键词
+
+记录一写币圈专属的关键词解释。
 
 [Keywords](./keywords)
 
@@ -183,17 +231,3 @@ https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2
 ## 📌 博客
 
 [安邦的博客](https://anbang.blog/)
-
-## 📌 开发相关
-
-### 开发社区
-
-#### 登链社区
-
-官网：[https://learnblockchain.cn/](https://learnblockchain.cn/)
-
-**种子选取**
-
-首先选取一个熵，从 1-2 的 256 次方这个范围内选一个数作为种子，2 的 256 次方大概是 10 的 77 次方。
-
-可见宇宙内的原子数大概是 10 的 80 次方。

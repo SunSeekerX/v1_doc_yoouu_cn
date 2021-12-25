@@ -171,7 +171,7 @@ module.exports = {
       collapsable: false,
       children: [
         ['', 'Readme'],
-        ['ethereum', 'Ethereum'],
+        ['solidity', 'Solidity'],
         ['nft', 'NFT'],
         ['apps/', '项目'],
       ],

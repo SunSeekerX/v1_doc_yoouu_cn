@@ -169,7 +169,7 @@ module.exports = [
     text: '区块链',
     items: [
       { text: '区块链', link: '/blockchain/' },
-      { text: 'Ethereum', link: '/blockchain/ethereum' },
+      { text: 'Solidity', link: '/blockchain/solidity' },
       { text: 'NFT', link: '/blockchain/nft' },
       { text: '项目', link: '/blockchain/apps/' },
     ],
