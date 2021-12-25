@@ -62,6 +62,22 @@ Medium：[https://medium.com/celoorg](https://medium.com/celoorg)
 
 Discord：[https://discord.com/invite/6yWMkgM](https://discord.com/invite/6yWMkgM)
 
+### Terra
+
+去中心化的稳定币。可以使用官方的链桥将资产转移到其他链。例如 eth、BSC、
+
+有自己的钱包，助记词为 24 个。
+
+官网：[terra.money](https://www.terra.money/)
+
+Github:[https://github.com/terra-money/](https://github.com/terra-money/)
+
+文档：[https://docs.terra.money/](https://docs.terra.money/)
+
+链桥：[https://bridge.terra.money/](https://bridge.terra.money/)
+
+Terra Station chrome 扩展: [https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp/related](https://chrome.google.com/webstore/detail/terra-station/aiifbnbfobpmeekipheeijimdpnlpgpp/related)
+
 ### Dfinity
 
 [https://dfinity.org/](https://dfinity.org/)
