@@ -16,58 +16,309 @@
 
 中文文档：[https://learnblockchain.cn/docs/truffle/index.html](https://learnblockchain.cn/docs/truffle/index.html)
 
-**安装**
+### 1. 安装
 
 ```shell
-# 一般是安装不上的😒需要 npm 代理
 npm install -g truffle
+# 安装到项目
+npm install --save-dev truffle
 ```
 
-**生成样板项目**
+### 2. 新建合约
 
-到一个空目录执行
+`contracts/Box.sol`
 
-```shell
-truffle unbox metacoin
-# 或者初始化一个空的项目
-truffle init
+```solidity
+// contracts/Box.sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+contract Box {
+  uint256 private _value;
+
+  // Emitted when the stored value changes
+  event ValueChanged(uint256 value);
+
+  // Stores a new value in the contract
+  function store(uint256 value) public {
+    _value = value;
+    emit ValueChanged(value);
+  }
+
+  // Reads the last stored value
+  function retrieve() public view returns (uint256) {
+    return _value;
+  }
+}
 ```
 
-**测试项目**
+### 3. 编译合约
 
-```shell
-truffle test ./test/TestMetacoin.sol
+**新建配置文件**
+
+`truffle-config.js`
+
+```javascript
+module.exports = {
+  compilers: {
+    solc: {
+      version: '^0.8.0',
+    },
+  },
+}
 ```
 
 **编译合约**
 
 ```shell
-truffle compile
+npx truffle compile
 ```
 
-**部署测试**
+### 4. 添加更多合约
 
-truffle 自带了一个本地的模拟区块链。可以用来测试
+`contracts/Auth.sol`
+
+```solidity
+// contracts/access-control/Auth.sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+contract Auth {
+  address private _administrator;
+
+  constructor(address deployer) {
+    // Make the deployer of the contract the administrator
+    _administrator = deployer;
+  }
+
+  function isAdministrator(address user) public view returns (bool) {
+    return user == _administrator;
+  }
+}
+```
+
+导入
+
+`contracts/Box.sol`
+
+```solidity
+// contracts/Box.sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+// Import Auth from the access-control subdirectory
+import './access-control/Auth.sol';
+
+contract Box {
+  uint256 private _value;
+  Auth private _auth;
+
+  event ValueChanged(uint256 value);
+
+  constructor() {
+    _auth = new Auth(msg.sender);
+  }
+
+  function store(uint256 value) public {
+    // Require that the caller is registered as an administrator in Auth
+    require(_auth.isAdministrator(msg.sender), 'Unauthorized');
+
+    _value = value;
+    emit ValueChanged(value);
+  }
+
+  function retrieve() public view returns (uint256) {
+    return _value;
+  }
+}
+```
+
+### 5. 使用 OpenZeppelin 合约
+
+**导入 OpenZeppelin 合约**
 
 ```shell
-truffle develop
+npm install --save-dev @openzeppelin/contracts
 ```
 
-运行上面的命令之后会进入 truffle 的交互式命令行，可以直接输入命令，不需要加 truffle 前缀。
+`Box.sol`
 
-**链接 Ganache**
+```solidity
+// contracts/Box.sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
 
-为了和合约进行交互，我们可以使用 Truffle 的控制台：`truffle console`， Truffle console 和 Truffle Develop 类似，仅仅是他们连接的链不一样而已，这里是连接 Ganache 。
+// Import Ownable from the OpenZeppelin Contracts library
+import '@openzeppelin/contracts/access/Ownable.sol';
+
+// Make Box inherit from the Ownable contract
+contract Box is Ownable {
+  uint256 private _value;
+
+  event ValueChanged(uint256 value);
+
+  // The onlyOwner modifier restricts who can call the store function
+  function store(uint256 value) public onlyOwner {
+    _value = value;
+    emit ValueChanged(value);
+  }
+
+  function retrieve() public view returns (uint256) {
+    return _value;
+  }
+}
+```
+
+### 6. 部署测试准备
+
+**启动本地区块链**
+
+> 最受欢迎的本地区块链是[Ganache](https://github.com/trufflesuite/ganache-cli)。要将其安装到您的项目中，请运行：
 
 ```shell
-truffle console
+npm install --save-dev ganache-cli
 ```
 
-**部署到 Ganache**
+> 启动时，Ganache 将随机创建一组未锁定的帐户并为它们提供以太币。为了获得将在本指南中使用的相同地址，您可以在确定性模式下启动 Ganache：
 
 ```shell
-truffle migrate
+npx ganache-cli --deterministic
 ```
+
+**新建部署脚本**
+
+> Truffle 使用[迁移](https://www.trufflesuite.com/docs/truffle/getting-started/running-migrations)来部署合约。迁移由 JavaScript 文件和一个特殊的迁移合约组成，用于跟踪链上的迁移。
+>
+> 我们将创建一个 JavaScript 迁移来部署我们的 Box 合约。我们将此文件另存为`migrations/2_deploy.js`.
+
+`migrations/2_deploy.js`
+
+```javascript
+// migrations/2_deploy.js
+const Box = artifacts.require('Box')
+
+module.exports = async function (deployer) {
+  await deployer.deploy(Box)
+}
+```
+
+> 在我们部署之前，我们需要配置到 ganache 的连接。我们需要为 localhost 和端口 8545 添加一个开发网络，这是我们本地区块链正在使用的。
+
+`truffle-config.js`
+
+```javascript
+module.exports = {
+  networks: {
+    development: {
+      host: '127.0.0.1', // Localhost (default: none)
+      port: 8545, // Standard Ethereum port (default: none)
+      network_id: '*', // Any network (default: none)
+    },
+  },
+  compilers: {
+    solc: {
+      version: '0.8.4',
+    },
+  },
+}
+```
+
+### 7. 部署
+
+注意需要在另外的命令行面板启动一个本地界面才能进行部署测试！
+
+```shell
+npx truffle migrate --network development
+```
+
+### 8. 测试交互 - 控制台
+
+```shell
+npx truffle console --network development
+```
+
+执行以上命令行就进入了 `nodejs` 的命令交互面板
+
+获取需要操作的合约对象
+
+```javascript
+const box = await Box.deployed()
+```
+
+**发送交易**
+
+```javascript
+await box.store(42)
+```
+
+**查询状态**
+
+> `Box`的另一个函数被调用`retrieve`，它返回存储在合约中的整数值。这是区块链状态的*查询*，所以我们不需要发送交易：
+
+```javascript
+await box.retrieve()
+```
+
+> 因为查询只读取状态而不发送事务，所以没有要报告的事务哈希。这也意味着使用查询不需要任何以太币，并且可以在任何网络上免费使用。
+>
+> 我们的`Box`合约返回`uint256`的数字对于 JavaScript 来说太大了，所以我们返回的是一个大数字对象。我们可以使用 将大数显示为字符串`(await box.retrieve()).toString()`。
+
+```javascript
+;(await box.retrieve()).toString()
+```
+
+### 9. 测试交互 - 编程
+
+新建一个 `scripts/index.js` 文件，里面写上需要测试的代码
+
+我们的代码都写入到 `main` 函数内
+
+`scripts/index.js`
+
+```javascript
+// scripts/index.js
+module.exports = async function main(callback) {
+  try {
+    // Our code will go here
+    // Retrieve accounts from the local node
+    const accounts = await web3.eth.getAccounts()
+    console.log(accounts)
+    callback(0)
+  } catch (error) {
+    console.error(error)
+    callback(1)
+  }
+}
+```
+
+**运行测试**
+
+```shell
+npx truffle exec --network development ./scripts/index.js
+```
+
+**获取合约实例**
+
+> 为了与[`Box`](https://docs.openzeppelin.com/learn/deploying-and-interacting?pref=truffle#box-contract)我们部署的合约进行交互，我们将使用 Truffle 合约抽象，这是一个 JavaScript 对象，代表我们在区块链上的合约。
+
+```javascript
+// Set up a Truffle contract, representing our deployed Box instance
+const Box = artifacts.require('Box')
+const box = await Box.deployed()
+
+// 获取盒子里的值
+const value1 = await box.retrieve()
+console.log('Box value is', value1.toString())
+
+// 存入一个新的值
+await box.store(23)
+
+// 获取存入的值
+const value2 = await box.retrieve()
+console.log('Box value is', value2.toString())
+```
+
+### 10. 编写单元测试
 
 ### ethpm 包管理
 
@@ -93,21 +344,43 @@ truffle migrate
 npm install --save-dev hardhat
 ```
 
-### 2. 生成配置文件
+### 2. 新建合约
 
-选择 `Create an empty hardhat.config.js`
+`contracts/Box.sol`
+
+```solidity
+// contracts/Box.sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+contract Box {
+  uint256 private _value;
+
+  // Emitted when the stored value changes
+  event ValueChanged(uint256 value);
+
+  // Stores a new value in the contract
+  function store(uint256 value) public {
+    _value = value;
+    emit ValueChanged(value);
+  }
+
+  // Reads the last stored value
+  function retrieve() public view returns (uint256) {
+    return _value;
+  }
+}
+```
+
+### 3. 编译合约
+
+**生成配置文件**
 
 ```shell
 npx hardhat
 ```
 
-**编译合约代码**
-
-以太坊虚拟机 (EVM) 不能直接执行 Solidity 代码：我们首先需要将其编译为 EVM 字节码。
-
-```shell
-npx hardhat compile
-```
+选择 `Create an empty hardhat.config.js`
 
 可以在 `hardhat.config` 配置编译器版本
 
@@ -120,7 +393,110 @@ module.exports = {
 }
 ```
 
-### 3. 部署测试准备
+**编译合约代码**
+
+以太坊虚拟机 (EVM) 不能直接执行 Solidity 代码：我们首先需要将其编译为 EVM 字节码。
+
+```shell
+npx hardhat compile
+```
+
+### 4. 添加更多合约
+
+`contracts/Auth.sol`
+
+```solidity
+// contracts/access-control/Auth.sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+contract Auth {
+  address private _administrator;
+
+  constructor(address deployer) {
+    // Make the deployer of the contract the administrator
+    _administrator = deployer;
+  }
+
+  function isAdministrator(address user) public view returns (bool) {
+    return user == _administrator;
+  }
+}
+```
+
+导入
+
+`contracts/Box.sol`
+
+```solidity
+// contracts/Box.sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+// Import Auth from the access-control subdirectory
+import './access-control/Auth.sol';
+
+contract Box {
+  uint256 private _value;
+  Auth private _auth;
+
+  event ValueChanged(uint256 value);
+
+  constructor() {
+    _auth = new Auth(msg.sender);
+  }
+
+  function store(uint256 value) public {
+    // Require that the caller is registered as an administrator in Auth
+    require(_auth.isAdministrator(msg.sender), 'Unauthorized');
+
+    _value = value;
+    emit ValueChanged(value);
+  }
+
+  function retrieve() public view returns (uint256) {
+    return _value;
+  }
+}
+```
+
+### 5. 使用 OpenZeppelin 合约
+
+**导入 OpenZeppelin 合约**
+
+```shell
+npm install --save-dev @openzeppelin/contracts
+```
+
+`Box.sol`
+
+```solidity
+// contracts/Box.sol
+// SPDX-License-Identifier: UNLICENSED
+pragma solidity ^0.8.0;
+
+// Import Ownable from the OpenZeppelin Contracts library
+import '@openzeppelin/contracts/access/Ownable.sol';
+
+// Make Box inherit from the Ownable contract
+contract Box is Ownable {
+  uint256 private _value;
+
+  event ValueChanged(uint256 value);
+
+  // The onlyOwner modifier restricts who can call the store function
+  function store(uint256 value) public onlyOwner {
+    _value = value;
+    emit ValueChanged(value);
+  }
+
+  function retrieve() public view returns (uint256) {
+    return _value;
+  }
+}
+```
+
+### 6. 部署测试准备
 
 hardhat 自带了一个本地测试网络,每次启动都会创建一个新的本地区块节点。
 
@@ -168,7 +544,7 @@ main()
   })
 ```
 
-### 4. 部署
+### 7. 部署
 
 注意需要在另外的命令行面板启动一个本地界面才能进行部署测试！
 
@@ -176,7 +552,7 @@ main()
 npx hardhat run --network localhost scripts/deploy.js
 ```
 
-### 5. 测试交互 - 控制台
+### 8. 测试交互 - 控制台
 
 ```shell
 npx hardhat console --network localhost
@@ -224,7 +600,7 @@ await box.retrieve()
 // '42'
 ```
 
-### 6. 测试交互 - 编程
+### 9. 测试交互 - 编程
 
 新建一个 `scripts/index.js` 文件，里面写上需要测试的代码
 
@@ -281,7 +657,7 @@ const value2 = await box.retrieve()
 console.log('Box value is', value2.toString())
 ```
 
-### 7. 编写单元测试
+### 10. 编写单元测试
 
 ## 📌 openzeppelin
 
