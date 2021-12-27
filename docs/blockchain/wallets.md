@@ -1,5 +1,15 @@
 # Wallets
 
+## 📌 浏览器扩展
+
+### rabby
+
+debank 开发的浏览器扩展支持多链。
+
+官网：[https://rabby.io/](https://rabby.io/)
+
+chrome：[https://chrome.google.com/webstore/detail/rabby/acmacodkjbdgmoleebolmdjonilkdbch](https://chrome.google.com/webstore/detail/rabby/acmacodkjbdgmoleebolmdjonilkdbch)
+
 ## 📌 Apps
 
 一般用的最多的钱包应用程序

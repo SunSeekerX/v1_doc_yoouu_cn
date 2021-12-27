@@ -28,7 +28,7 @@ Github：[https://github.com/ethereum](https://github.com/ethereum)
 
 Twitter：[https://twitter.com/ethdotorg](https://twitter.com/ethdotorg)
 
-Discord：https://discord.gg/CetY6Y4
+Discord：[https://discord.gg/CetY6Y4](https://discord.gg/CetY6Y4)
 
 ### BSC
 
@@ -210,11 +210,11 @@ OlympusDAO：[https://github.com/OlympusDAO](https://github.com/OlympusDAO)
 
 > 来源：https://anbang.blog/post/admin/contribute.html
 
-英文收集：https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#
+英文收集：[https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#](https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#)
 
 ### BlockFIsh 链游
 
-https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2
+[https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2](https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2)
 
 ### 貔貅盘查询工具
 
@@ -247,3 +247,27 @@ https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2
 ## 📌 博客
 
 [安邦的博客](https://anbang.blog/)
+
+## 📌 其他信息
+
+### 大 V 的钱包地址
+
+> 0x220866b1a2219f40e72f5c628b65d54268ca3a9d V 神 1
+>
+> 0xab5801a7d398351b8be11c439e05c5b3259aec9b V 神 2
+>
+> 0x1db3439a222c519ab44bb1144fc28167b4fa6ee6 V 神 3
+>
+> 0x3ddfa8ec3052539b6c9549f12cea2c295cff5296 孙割
+>
+> 0x05e793ce0c6027323ac150f6d45c2344d28b6019 a16z
+>
+> 0xca436e14855323927d6e6264470ded36455fc8bd 神鱼
+>
+> 0x8e04af7f7c76daa9ab429b1340e0327b5b835748 三箭资本
+>
+> 0xde0b295669a9fd93d5f28d9ec85e40f4cb697bae 以太坊基金会
+>
+> 0x6cf9aa65ebad7028536e353393630e2340ca6049 匿名巨鳄
+
+公开的巨鲸地址：[https://docs.google.com/spreadsheets/d/1X7aKw7XEGoGw5AX1WnX6Rs-T8BXMDg7LvC5zSHR5Wn4/edit#gid=0](https://docs.google.com/spreadsheets/d/1X7aKw7XEGoGw5AX1WnX6Rs-T8BXMDg7LvC5zSHR5Wn4/edit#gid=0)
