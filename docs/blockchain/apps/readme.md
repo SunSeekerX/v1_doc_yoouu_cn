@@ -98,6 +98,18 @@ SOS 相关数据：[https://www.notion.so/SOS-12-25-cf6113c4262d422a9bad066e02ff
 
 合约地址：[0x3b484b82567a09e2588a13d54d032153f0c0aee0](https://app.uniswap.org/#/swap?use=V2&inputCurrency=ETH&outputCurrency=0x3b484b82567a09e2588a13d54d032153f0c0aee0)
 
+#### Vera
+
+NFT defi，质押 nft 获取收益。
+
+官网：[https://vera.financial/](https://vera.financial/)
+
+Tg：[https://t.me/veranetwork](https://t.me/veranetwork)
+
+Discord：[https://vera.financial/discord](https://vera.financial/discord)
+
+Blog：[https://blog.vera.financial/](https://blog.vera.financial/)
+
 ### SocialFi
 
 #### mazury
@@ -171,6 +183,38 @@ Discord：[https://discord.com/invite/8YquFwfw3N](https://discord.com/invite/8Yq
 Youtube：[https://www.youtube.com/channel/UCCwZh5FBKusmzmT5Q3Yisdg](https://www.youtube.com/channel/UCCwZh5FBKusmzmT5Q3Yisdg)
 
 Twitter：[https://twitter.com/moonpotdotcom](https://twitter.com/moonpotdotcom)
+
+#### NAOS Finance
+
+官网：[https://naos.finance/](https://naos.finance/)
+
+Github：[https://github.com/NAOS-Finance](https://github.com/NAOS-Finance)
+
+Docs：[https://naosfinance.gitbook.io/naos-finance/](https://naosfinance.gitbook.io/naos-finance/)
+
+Tg：[https://t.me/naos_finance](https://t.me/naos_finance)
+
+Twitter：[https://twitter.com/naos_finance](https://twitter.com/naos_finance)
+
+Medium：[https://medium.com/naos-finance](https://medium.com/naos-finance)
+
+Discord：[https://discord.com/invite/rRaPwCVTaA](https://discord.com/invite/rRaPwCVTaA)
+
+Reddit：[https://www.reddit.com/r/NAOS_Finance/](https://www.reddit.com/r/NAOS_Finance/)
+
+#### Woo Network
+
+官网：[https://woo.org/](https://woo.org/)
+
+#### Kaco Finance
+
+官网：[https://www.kaco.finance/](https://www.kaco.finance/)
+
+Doc：[https://coinversationprotocol.gitbook.io/kaco-doc/](https://coinversationprotocol.gitbook.io/kaco-doc/)
+
+Twitter：[https://twitter.com/KACOFinance](https://twitter.com/KACOFinance)
+
+Tg：[https://t.me/coinversationofficial](https://t.me/coinversationofficial)
 
 ### SocialFi
 
