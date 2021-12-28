@@ -20,7 +20,7 @@
 
 官网：[https://zapper.fi/](https://zapper.fi/)
 
-### rabbithole
+### Rabbithole
 
 区块链任务平台，会不定期发布任务，基本都是体验不同链的项目完成任务可以获得奖励或 nft 之类的。
 
@@ -31,6 +31,20 @@ Discord：[https://discord.com/invite/Qx65fZXZSx](https://discord.com/invite/Qx6
 Twitter：[https://twitter.com/rabbithole_gg](https://twitter.com/rabbithole_gg)
 
 Mirror：[https://rabbithole.mirror.xyz/-UWjheu5bsRvMUa78_O242czkl5AwHs58jT9S-p-0u0](https://rabbithole.mirror.xyz/-UWjheu5bsRvMUa78_O242czkl5AwHs58jT9S-p-0u0)
+
+### Project Galaxy
+
+区块链任务平台
+
+官网：[https://galaxy.eco/](https://galaxy.eco/)
+
+Twitter：[https://twitter.com/ProjectGalaxyHQ](https://twitter.com/ProjectGalaxyHQ)
+
+medium：[https://blog.galaxy.eco/](https://blog.galaxy.eco/)
+
+Discord：[https://discord.io/ProjectGalaxyHQ](https://discord.io/ProjectGalaxyHQ)
+
+Tg：[https://t.me/ProjectGalaxyHQ](https://t.me/ProjectGalaxyHQ)
 
 ### SushiSwap
 
@@ -43,6 +57,14 @@ Mirror：[https://rabbithole.mirror.xyz/-UWjheu5bsRvMUa78_O242czkl5AwHs58jT9S-p-
 流支付，很新奇的玩意，可以设置一个时间和发送金额，慢慢的流入到另外一个地址。
 
 官网：[https://www.superfluid.finance/](https://www.superfluid.finance/)
+
+### cyberconnect
+
+CyberConnect 正在构建第一个去中心化的社交图谱协议。与 Web3 的论点一致，我们将社交图数据的所有权归还给用户自己。
+
+官网：[https://cyberconnect.me/](https://cyberconnect.me/)
+
+Twitter：[https://twitter.com/cyberconnecthq](https://twitter.com/cyberconnecthq)
 
 ## 📌 ETH（以太链）
 
@@ -125,6 +147,30 @@ Twitter：[https://twitter.com/nftbmarket](https://twitter.com/nftbmarket)
 Discord：[https://discord.gg/xEPCR6VnT4](https://discord.gg/xEPCR6VnT4)
 
 nftb 合约地址（BSC）：[0xde3dbbe30cfa9f437b293294d1fd64b26045c71a](https://pancakeswap.finance/swap?outputCurrency=0xde3dbbe30cfa9f437b293294d1fd64b26045c71a)
+
+#### alpacafinance
+
+官网：[https://www.alpacafinance.org/](https://www.alpacafinance.org/)
+
+Twitter：[https://twitter.com/alpacafinance](https://twitter.com/alpacafinance)
+
+Discord：[https://discord.com/invite/2UvgmqcVDQ](https://discord.com/invite/2UvgmqcVDQ)
+
+Tg：[https://t.me/alpacafinance](https://t.me/alpacafinance)
+
+#### moonpot.com
+
+官网：[https://moonpot.com/](https://moonpot.com/)
+
+Github：[https://github.com/moonpotdev](https://github.com/moonpotdev)
+
+Tg：[https://t.me/moonpotdotcom](https://t.me/moonpotdotcom)
+
+Discord：[https://discord.com/invite/8YquFwfw3N](https://discord.com/invite/8YquFwfw3N)
+
+Youtube：[https://www.youtube.com/channel/UCCwZh5FBKusmzmT5Q3Yisdg](https://www.youtube.com/channel/UCCwZh5FBKusmzmT5Q3Yisdg)
+
+Twitter：[https://twitter.com/moonpotdotcom](https://twitter.com/moonpotdotcom)
 
 ### SocialFi
 
