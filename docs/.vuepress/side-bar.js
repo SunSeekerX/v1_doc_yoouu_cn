@@ -172,8 +172,9 @@ module.exports = {
       children: [
         ['', 'Readme'],
         ['solidity', 'Solidity'],
-        ['nft', 'NFT'],
         ['apps/', '项目'],
+        ['bookmark', '书签'],
+        ['nft', 'NFT'],
       ],
     },
   ],
