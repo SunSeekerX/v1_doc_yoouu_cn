@@ -66,6 +66,36 @@ CyberConnect 正在构建第一个去中心化的社交图谱协议。与 Web3 �
 
 Twitter：[https://twitter.com/cyberconnecthq](https://twitter.com/cyberconnecthq)
 
+### Hop Protocol
+
+资产跨链协议。
+
+官网：[https://app.hop.exchange/send](https://app.hop.exchange/send)
+
+Github：[https://github.com/hop-protocol](https://github.com/hop-protocol)
+
+Discord：[https://discord.com/invite/PwCF88emV4](https://discord.com/invite/PwCF88emV4)
+
+Twitter：[https://twitter.com/HopProtocol](https://twitter.com/HopProtocol)
+
+Medium：[https://medium.com/hop-protocol](https://medium.com/hop-protocol)
+
+### Synapse Protocol
+
+资产跨链协议。
+
+官网：[https://synapseprotocol.com/landing](https://synapseprotocol.com/landing)
+
+Github：[https://github.com/synapsecns](https://github.com/synapsecns)
+
+Doc：[https://docs.synapseprotocol.com/](https://docs.synapseprotocol.com/)
+
+Twitter：[https://twitter.com/SynapseProtocol](https://twitter.com/SynapseProtocol)
+
+Discord：[https://discord.com/invite/synapseprotocol](https://discord.com/invite/synapseprotocol)
+
+Tg：[https://t.me/synapseprotocol](https://t.me/synapseprotocol)
+
 ## 📌 ETH（以太链）
 
 #### Ens
