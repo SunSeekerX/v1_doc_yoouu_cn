@@ -404,6 +404,12 @@ Medium：[https://celolaunch.medium.com/](https://celolaunch.medium.com/)
 
 ## 📌 Polygon （马蹄链）
 
+#### Angle Protocol
+
+Angle 协议是一个完全去中心化的稳定币协议
+
+官网：[https://www.angle.money/](https://www.angle.money/)
+
 ## 📌 AVAX （雪崩链）
 
 #### hurricaneswap
@@ -411,6 +417,16 @@ Medium：[https://celolaunch.medium.com/](https://celolaunch.medium.com/)
 swap
 
 App：[https://hurricaneswap.com/#/](https://hurricaneswap.com/#/)
+
+#### islander
+
+官网：[https://theislander.io/](https://theislander.io/)
+
+Twitter：[https://twitter.com/Islander_io](https://twitter.com/Islander_io)
+
+Medium：[https://islander-io.medium.com/](https://islander-io.medium.com/)
+
+Tg：[https://t.me/islander_official](https://t.me/islander_official)
 
 ### DeFi
 
@@ -467,6 +483,20 @@ Terra 上面的收益彩票。
 Twitter：[https://twitter.com/InkProtocol\_\_](https://twitter.com/InkProtocol__)
 
 Tg：[https://t.me/InkProtocol_official](https://t.me/InkProtocol_official)
+
+## 📌 Dfinity
+
+### DeFi
+
+#### ICPSwap
+
+官网：[https://icpswap.com/](https://icpswap.com/)
+
+Twitter：[https://twitter.com/ICPSwap](https://twitter.com/ICPSwap)
+
+Tg：[https://t.me/ICPSwap_Official](https://t.me/ICPSwap_Official)
+
+Medium：[https://icpswap.medium.com/](https://icpswap.medium.com/)
 
 ## 📌 投资项目
 
