@@ -76,7 +76,7 @@ const {
         }
       ```
 
-      ![image-20210727233153192](https://static.yoouu.cn/imgs/2021/pic-go/image-20210727233153192.png)
+      <img src="https://static.yoouu.cn/imgs/2021/pic-go/image-20210727233153192.png" alt="image-20210727233153192" style="zoom:50%;" />
 
       这样玩不得行，虽然你取消混淆是可以的，但我不确定打包出来的插件能不能用 😒。罢了放外面吧。估计没人像我这么玩。
 
@@ -98,6 +98,14 @@ const {
    ```java
    @UniJSMethod (uiThread = false)
    ```
+
+5. 云打包失败？
+
+   检查 `package.json` 依赖是否配置正确。有 `activity` 可以引入 `androidx.legacy:legacy-support-v4:1.0.0` 试试。
+
+6. 打包 aar 内有元信息冲突？
+
+   删除冲突的元信息。
 
 ## 📌 离线打包
 
