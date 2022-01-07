@@ -1,5 +1,25 @@
 # 工具
 
+##
+
+## 生成工具
+
+### 中国山水画生成
+
+Github：[https://github.com/LingDong-/shan-shui-inf](https://github.com/LingDong-/shan-shui-inf)
+
+### 随机动漫房屋生成
+
+地址：[http://oskarstalberg.com/Townscaper/](http://oskarstalberg.com/Townscaper/)
+
+### 动漫头像生成
+
+地址：[https://huggingface.co/spaces/akhaliq/AnimeGANv2](https://huggingface.co/spaces/akhaliq/AnimeGANv2)
+
+### Unicode 日历生成器
+
+地址：[https://qwerty.dev/calendar-generator/](https://qwerty.dev/calendar-generator/)
+
 ## 181
 
 > https://www.ruanyifeng.com/blog/2021/10/weekly-issue-181.html
