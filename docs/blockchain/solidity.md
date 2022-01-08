@@ -6,6 +6,59 @@
 
 [https://cryptozombies.io/zh/course](https://cryptozombies.io/zh/course)
 
+## 📌 openzeppelin
+
+标准合约库。使用 npm 进行分发。
+
+官网：[https://openzeppelin.com/](https://openzeppelin.com/)
+
+合约库官网：[https://openzeppelin.com/contracts/](https://openzeppelin.com/contracts/)
+
+合约库文档：[https://docs.openzeppelin.com/contracts/4.x/](https://docs.openzeppelin.com/contracts/4.x/)
+
+Github：[https://github.com/OpenZeppelin](https://github.com/OpenZeppelin)
+
+### @openzeppelin/contracts
+
+**知识相关**
+
+- 新手入门：[https://docs.openzeppelin.com/learn/developing-smart-contracts](https://docs.openzeppelin.com/learn/developing-smart-contracts)
+- 权限控制：[https://docs.openzeppelin.com/contracts/4.x/access-control](https://docs.openzeppelin.com/contracts/4.x/access-control)
+- erc20：[https://docs.openzeppelin.com/contracts/4.x/erc20](https://docs.openzeppelin.com/contracts/4.x/erc20)
+- erc721：[https://docs.openzeppelin.com/contracts/4.x/erc721](https://docs.openzeppelin.com/contracts/4.x/erc721)
+- 公共函数（父合约）：[https://docs.openzeppelin.com/contracts/4.x/utilities](https://docs.openzeppelin.com/contracts/4.x/utilities)
+
+**安装**
+
+需要和 truffle 配合使用
+
+```shell
+npm install @openzeppelin/contracts
+```
+
+**使用**
+
+直接继承库合约就行
+
+```solidity
+// contracts/MyNFT.sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+
+contract MyNFT is ERC721 {
+    constructor() ERC721("MyNFT", "MNFT") {
+    }
+}
+```
+
+## 📌 Metamask
+
+小狐狸钱包。
+
+文档地址：[https://docs.metamask.io/guide/](https://docs.metamask.io/guide/)
+
 ## 📌 Truffle
 
 开发，测试，部署框架。
@@ -658,53 +711,6 @@ console.log('Box value is', value2.toString())
 ```
 
 ### 10. 编写单元测试
-
-## 📌 openzeppelin
-
-标准合约库。使用 npm 进行分发。
-
-官网：[https://openzeppelin.com/](https://openzeppelin.com/)
-
-合约库官网：[https://openzeppelin.com/contracts/](https://openzeppelin.com/contracts/)
-
-合约库文档：[https://docs.openzeppelin.com/contracts/4.x/](https://docs.openzeppelin.com/contracts/4.x/)
-
-Github：[https://github.com/OpenZeppelin](https://github.com/OpenZeppelin)
-
-### @openzeppelin/contracts
-
-**知识相关**
-
-- 新手入门：[https://docs.openzeppelin.com/learn/developing-smart-contracts](https://docs.openzeppelin.com/learn/developing-smart-contracts)
-- 权限控制：[https://docs.openzeppelin.com/contracts/4.x/access-control](https://docs.openzeppelin.com/contracts/4.x/access-control)
-- erc20：[https://docs.openzeppelin.com/contracts/4.x/erc20](https://docs.openzeppelin.com/contracts/4.x/erc20)
-- erc721：[https://docs.openzeppelin.com/contracts/4.x/erc721](https://docs.openzeppelin.com/contracts/4.x/erc721)
-- 公共函数（父合约）：[https://docs.openzeppelin.com/contracts/4.x/utilities](https://docs.openzeppelin.com/contracts/4.x/utilities)
-
-**安装**
-
-需要和 truffle 配合使用
-
-```shell
-npm install @openzeppelin/contracts
-```
-
-**使用**
-
-直接继承库合约就行
-
-```solidity
-// contracts/MyNFT.sol
-// SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
-
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-
-contract MyNFT is ERC721 {
-    constructor() ERC721("MyNFT", "MNFT") {
-    }
-}
-```
 
 ## 📌 EIP
 
