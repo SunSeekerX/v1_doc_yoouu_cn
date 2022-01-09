@@ -402,6 +402,34 @@ Twitter：[https://twitter.com/celolaunch](https://twitter.com/celolaunch)
 
 Medium：[https://celolaunch.medium.com/](https://celolaunch.medium.com/)
 
+### GameFi
+
+#### CeloToadz
+
+持有 nft 会空投 MetaCelo 的代币。
+
+来源：[https://weibo.com/1735433913/L9W7btIES](https://weibo.com/1735433913/L9W7btIES)
+
+官网：[https://www.celotoadz.com/](https://www.celotoadz.com/)
+
+合约地址（celo）：0x6Fc1C8d59FdC261c55273f9b8e64B7E88C45E208
+
+#### MetaCelo
+
+celo 上的游戏。
+
+官网：[https://metacelo.io/](https://metacelo.io/)
+
+文档：[https://docs.metacelo.io/](https://docs.metacelo.io/)
+
+Twitter：[https://twitter.com/Meta_Celo](https://twitter.com/Meta_Celo)
+
+Tg Channel：[https://t.me/metacelo_ann](https://t.me/metacelo_ann)
+
+Tg Discussion：[https://t.me/metacelo_official](https://t.me/metacelo_official)
+
+Discord：[https://discord.gg/SnXAAewAyC](
+
 ## 📌 Polygon （马蹄链）
 
 #### Angle Protocol
