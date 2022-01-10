@@ -292,11 +292,13 @@ $ docker exec -it mongodb bash
 $ mongo -u root -p 12345678900
 ```
 
-### 0x4. Docker 安装 portainer
+### 0x4. Docker 安装 Portainer
 
 **2.x**
 
 ```shell
+# 拉取镜像
+docker pull portainer/portainer-ce
 # 创建数据卷
 docker volume create portainer_data
 # 启动容器
