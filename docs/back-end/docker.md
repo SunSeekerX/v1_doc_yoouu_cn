@@ -335,6 +335,14 @@ $ docker images
 $ docker run -d -p 65535:8080 --restart=always --name music nondanee/unblockneteasemusic
 # 5.查看容器是否运行
 $ docker ps -a
+
+
+# 新版本
+# Github：https://github.com/UnblockNeteaseMusic/server
+# 下载镜像
+$ docker run pan93412/unblock-netease-music-enhanced
+# 启动
+$ docker run -d -p 65535:8080 --restart=always --name music pan93412/unblock-netease-music-enhanced
 ```
 
 ### 0x6. Docker 安装 jenkins
