@@ -59,6 +59,20 @@ contract MyNFT is ERC721 {
 
 文档地址：[https://docs.metamask.io/guide/](https://docs.metamask.io/guide/)
 
+## 📌 NFT
+
+### hashlips_art_engine
+
+HashLips 艺术引擎是一个用于根据提供的图层创建多个不同实例的艺术作品的工具。
+
+Github：[https://github.com/HashLips/hashlips_art_engine](https://github.com/HashLips/hashlips_art_engine)
+
+### Pinata
+
+管理上传到 ipfs 的文件。
+
+官网：[https://www.pinata.cloud/](https://www.pinata.cloud/)
+
 ## 📌 Truffle
 
 开发，测试，部署框架。
