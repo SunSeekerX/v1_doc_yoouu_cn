@@ -61,3 +61,7 @@ Initial Digital Assects Offering
 Initial Public Offering
 
 首次公开发行,指股份公司首次向社会公众公开招股的发行方式。
+
+## 夹子
+
+滑点大，就有夹子。至于什么是夹子。就是 你 买入之前买入，等你买入，马上卖出，你滑点 20，你就亏 20 个点。这样子。

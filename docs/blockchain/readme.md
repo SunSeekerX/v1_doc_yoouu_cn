@@ -4,6 +4,14 @@
 
 公链是区块链的基础，去中心化应用都是构建在公链上。在 比特币，以太坊之后出现了很多优秀的公链，他们都有各自的特点。区块链的世界从这里开始。
 
+> 一、EVM 兼容链：原生兼容 EVM：BSC Polygon HECO OEC 后来兼容 EVM：Avalanche, Fantom
+>
+> 二、非 EVM 链： Solana Terra
+>
+> 三、非 EVM 母链(生产公链的平台链)： Polkadot(平行链), Cosmos(SDK 链), Near(分片链), Oasis(Paratimes 链), Avalanche(子网)
+>
+> 四、母链兼容 EVM 的子链： Cosmos：Cronos, EVMOS Polkadot：Moonbeam Near：Aurora Avalanche：C 链 Oasis：Emerald
+
 ### Bitcoin
 
 英语：Bitcoin，缩写：BTC 或 XBT）是一种基于去中心化，采用点对点网络与共识主动性，开放源代码，以区块链作为底层技术的加密货币，比特币由中本聪（网名）（Satoshi Nakamoto）于 2008 年 10 月 31 日发表论文，2009 年 1 月 3 日，创世区块诞生。在某些国家、央行、政府机关、学术界则将比特币视为虚拟商品，而不认为是货币。货币金融学认为货币具有交易介质、记账单位、价值储藏三种基本职能，但由于其高度波动性因此不具有后两种基本职能从而不是货币。
@@ -83,6 +91,16 @@ Terra Station chrome 扩展: [https://chrome.google.com/webstore/detail/terra-st
 [https://dfinity.org/](https://dfinity.org/)
 
 相关资料：[Dfinity](./apps/dfinity)
+
+### Cosmos
+
+暂时不清楚是公链还是什么。先把能找到的资料收集下。
+
+官网：[https://cosmos.network/](https://cosmos.network/)
+
+osmosis：[https://osmosis.zone/](https://osmosis.zone/)
+
+cosmos 生态区块链的 channel id：[https://www.mintscan.io/cosmos/relayers](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2VQVjhjTzVob2FJUlA2SmFueVRqdUJ5alIwd3xBQ3Jtc0ttZk1Mdms1VVV0eXlSQ2Yzc2lKdWdLSU5uaXJfa1E4Qk1xLXBFOFJydzY3dWp3X1FGQm1qU0xRT2h1M2dvbUJ4SXNfS0F1X3RXaV82ZktuX19jTTBxRkxUU2tyelVvOTVoSEJWTml4ZW8tbkFxazJ0QQ&q=https%3A%2F%2Fwww.mintscan.io%2Fcosmos%2Frelayers)
 
 ## 📌 开发相关
 
@@ -173,6 +191,14 @@ OlympusDAO：[https://github.com/OlympusDAO](https://github.com/OlympusDAO)
 记录一写币圈专属的关键词解释。
 
 [Keywords](./keywords)
+
+## 📌 技巧
+
+### Discord 翻译插件
+
+betterdiscord：[https://betterdiscord.app/](https://betterdiscord.app/)
+
+Translator：[https://betterdiscord.app/plugin/Translator](https://betterdiscord.app/plugin/Translator)
 
 ## 📌 工具
 
