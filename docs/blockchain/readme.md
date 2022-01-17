@@ -270,6 +270,10 @@ Translator：[https://betterdiscord.app/plugin/Translator](https://betterdiscord
 
 [https://mycointool.com/](https://mycointool.com/)
 
+## 📌 法律
+
+数字货币诈骗定罪：https://lawyer.110.com/5756994/article/show/type/2/aid/886099/
+
 ## 📌 博客
 
 [安邦的博客](https://anbang.blog/)

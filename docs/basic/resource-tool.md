@@ -18,6 +18,20 @@ Github：[https://github.com/LingDong-/shan-shui-inf](https://github.com/LingDon
 
 地址：[https://qwerty.dev/calendar-generator/](https://qwerty.dev/calendar-generator/)
 
+## 192
+
+> https://www.ruanyifeng.com/blog/2022/01/weekly-issue-192.html
+
+[HTTP Toolkit](https://httptoolkit.tech/) - 一个桌面软件，用于拦截本机的 HTTP 通信。
+
+<img src="https://static.yoouu.cn/imgs/doc/basic/resource/202201172053422.webp" alt="img" style="zoom:50%;" />
+
+## 190
+
+[SpiderFlow](https://github.com/ssssssss-team/spider-flow) - 一个开源的简历生成器，只要在自己的 GitHub 仓库存入数据文件，然后访问它提供的在线模板，就会自动生成个人简历。（[@visiky](https://github.com/ruanyf/weekly/issues/2131) 投稿）
+
+![img](https://cdn.beekka.com/blogimg/asset/202112/bg2021123002.webp)
+
 ## 181
 
 > https://www.ruanyifeng.com/blog/2021/10/weekly-issue-181.html
