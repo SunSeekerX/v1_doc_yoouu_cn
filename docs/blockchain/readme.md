@@ -102,6 +102,8 @@ osmosis：[https://osmosis.zone/](https://osmosis.zone/)
 
 cosmos 生态区块链的 channel id：[https://www.mintscan.io/cosmos/relayers](https://www.youtube.com/redirect?event=video_description&redir_token=QUFFLUhqa2VQVjhjTzVob2FJUlA2SmFueVRqdUJ5alIwd3xBQ3Jtc0ttZk1Mdms1VVV0eXlSQ2Yzc2lKdWdLSU5uaXJfa1E4Qk1xLXBFOFJydzY3dWp3X1FGQm1qU0xRT2h1M2dvbUJ4SXNfS0F1X3RXaV82ZktuX19jTTBxRkxUU2tyelVvOTVoSEJWTml4ZW8tbkFxazJ0QQ&q=https%3A%2F%2Fwww.mintscan.io%2Fcosmos%2Frelayers)
 
+keplr 钱包扩展界面：[https://wallet.keplr.app/#/dashboard](https://wallet.keplr.app/#/dashboard)
+
 ## 📌 开发相关
 
 区块链数据大小统计
@@ -201,6 +203,10 @@ betterdiscord：[https://betterdiscord.app/](https://betterdiscord.app/)
 Translator：[https://betterdiscord.app/plugin/Translator](https://betterdiscord.app/plugin/Translator)
 
 ## 📌 工具
+
+### 取消合约授权
+
+> HECO hecoinfo.com/tokenapprovalchecker BSC bscscan.com/tokenapprovalchecker ETH etherscan.io/tokenapprovalchecker
 
 ### cryptorank
 
