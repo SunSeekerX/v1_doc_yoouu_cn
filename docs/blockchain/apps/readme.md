@@ -96,6 +96,18 @@ Discord：[https://discord.com/invite/synapseprotocol](https://discord.com/invit
 
 Tg：[https://t.me/synapseprotocol](https://t.me/synapseprotocol)
 
+### Bridge Network
+
+跨链协议
+
+官网: [https://www.bridgenetwork.com/](https://www.bridgenetwork.com/)
+
+Discord: [https://t.co/2ZchwKoNas](https://t.co/2ZchwKoNas)
+
+Twitter: [https://twitter.com/bridgenetwork0x](https://twitter.com/bridgenetwork0x)
+
+TG: [http://t.me/BridgeNetwork0x](https://t.co/uWA0kgoQBP)
+
 ## 📌 ETH（以太链）
 
 #### Ens
