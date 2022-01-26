@@ -16,6 +16,50 @@ tomenu
 
 增强右键菜单
 
+### 控制安卓手机 - scrcpy
+
+记得使用代理安装！
+
+The application is available in [Homebrew](https://brew.sh/). Just install it:
+
+```
+brew install scrcpy
+```
+
+You need `adb`, accessible from your `PATH`. If you don't have it yet:
+
+```
+# 查看 brew 版本
+brew -v
+
+# Homebrew >= 2.6.0
+brew install --cask android-platform-tools
+
+# Homebrew < 2.6.0
+brew cask install android-platform-tools
+```
+
+It's also available in [MacPorts](https://www.macports.org/), which sets up adb for you:
+
+```
+sudo port install scrcpy
+```
+
+You can also [build the app manually](https://github.com/Genymobile/scrcpy/blob/master/BUILD.md).
+
+### homebrews
+
+代理
+
+brew 用 curl 下载，所以给 curl 挂上 socks5 的代理即可。
+
+在~/.curlrc 文件中输入代理地址即可。
+
+```shell
+# clash
+socks5 = "127.0.0.1:7890"
+```
+
 ## 📌 问题解决
 
 **2K 显示器缩放到 1080p 很模糊？**
