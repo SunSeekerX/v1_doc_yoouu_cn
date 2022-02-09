@@ -124,11 +124,19 @@ keplr 钱包扩展界面：[https://wallet.keplr.app/#/dashboard](https://wallet
 
 ### 学习项目
 
-OlympusDAO：[https://github.com/OlympusDAO](https://github.com/OlympusDAO)
+**OlympusDAO**
+
+Github：[https://github.com/OlympusDAO](https://github.com/OlympusDAO)
 
 前端：[https://app.olympusdao.finance/#/dashboard](https://app.olympusdao.finance/#/dashboard)
 
 稳定币项目包含合约和前端。
+
+**buildspace**
+
+有知名的区块链项目在招人，里面包含区块链合约、nft 开发教程。
+
+官网：[https://buildspace.so/](https://buildspace.so/)
 
 ### 社区
 
