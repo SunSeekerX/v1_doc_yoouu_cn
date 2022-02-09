@@ -58,6 +58,16 @@ chrome://net-internals/#dns
 
 https://www.sordum.org/14479/windows-11-classic-context-menu-v1-0/
 
+## Win11 关闭客户体验改善计划
+
+该条目会造成一个 Microsoft 兼容性遥测的程序大量占用 cpu 造成 卡顿
+
+1.按“Windows+R”键，打开“运行”，输入“gpedit.msc”，点击“确定”，打开“本地组策略编辑器”。
+
+![](https://static.yoouu.cn/imgs/doc/basic/windows/202202091034151.png)
+
+[完全禁用 Microsoft Compatibility Telemetry](https://blog.csdn.net/m0_49448331/article/details/113824078)
+
 ## 查看端口占用
 
 **查看被占用端口对应的 PID**
