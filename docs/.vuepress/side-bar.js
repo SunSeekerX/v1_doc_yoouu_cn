@@ -171,6 +171,7 @@ module.exports = {
       collapsable: false,
       children: [
         ['', 'Readme'],
+        ['notebook', '学习笔记'],
         ['solidity', 'Solidity'],
         ['apps/', '项目'],
         ['bookmark', '书签'],
