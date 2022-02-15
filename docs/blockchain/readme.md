@@ -94,7 +94,7 @@ Terra Station chrome 扩展: [https://chrome.google.com/webstore/detail/terra-st
 
 ### Cosmos
 
-暂时不清楚是公链还是什么。先把能找到的资料收集下。
+公链，支持一种叫 ibc 链间通讯的技术。有点类似波卡。
 
 官网：[https://cosmos.network/](https://cosmos.network/)
 
