@@ -252,6 +252,12 @@ Translator：[https://betterdiscord.app/plugin/Translator](https://betterdiscord
 
 英文收集：[https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#](https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#)
 
+[BIGPLAYER 遊戲藝術傢](https://m.weibo.cn/profile/5415312550)
+
+[http://t.cn/A6xQm3CX](http://t.cn/A6xQm3CX)
+
+来源：[https://m.weibo.cn/status/4736060611105790?sourceType=qq&from=10BB195010&wm=5311_4002&featurecode=newtitle](https://m.weibo.cn/status/4736060611105790?sourceType=qq&from=10BB195010&wm=5311_4002&featurecode=newtitle)
+
 ### BlockFIsh 链游
 
 [https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2](https://docs.qq.com/sheet/DRERid2hmaldpWkNY?tab=BB08J2)
