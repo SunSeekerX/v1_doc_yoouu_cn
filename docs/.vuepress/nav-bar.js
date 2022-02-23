@@ -28,7 +28,6 @@ module.exports = [
       { text: 'PowerShell', link: '/basic/powershell' },
       { text: 'Windows', link: '/basic/windows' },
       { text: 'Mac', link: '/basic/mac' },
-      { text: 'Linux', link: '/basic/linux' },
       {
         text: '其他',
         items: [

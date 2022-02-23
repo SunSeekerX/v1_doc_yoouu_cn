@@ -21,7 +21,6 @@ module.exports = {
         ['ide', '开发工具'],
         ['windows', 'Windows'],
         ['mac', 'Mac'],
-        ['linux', 'Linux'],
       ],
     },
     {
