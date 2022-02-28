@@ -83,13 +83,41 @@ PS C:\Users\SunSeekerX\Desktop>
 
 ![](https://static.yoouu.cn/imgs/doc/basic/power-shell/super-power.png)
 
+## 📌 基础命令
+
+```powershell
+# 查看版本
+$PSVersionTable
+
+# 查找命令
+Get-Command -Name '*Process'
+
+# 安装最新的 PowerShellGet
+Install-Module -Name PowerShellGet -Force
+
+# 更新 PowerShellGet
+Update-Module -Name PowerShellGet
+Exit
+
+# 获取安装的模块
+Get-InstalledModule
+
+# 获取安装在默认位置未导入会话的模块
+Get-Module -ListAvailable
+
+# 获取已经导入会话的模块
+Get-Module
+
+# 删除模块
+Uninstall-Module [模块名] -Force -Verbose
+```
+
 ## 📌 强化 win10 下的命令行 - 颜值和实用并存
 
 > 更新时间：2021-01-03 20:18:15
 >
 > - 2021-10-21 10:40:57
->
->   - 增加 PSReadLine 插件
+> - 增加 PSReadLine 插件
 >
 > - 2021-01-04 10:49:08
 >   - 抄了更多小马哥的文章！！！
@@ -111,21 +139,17 @@ win10 选择 `PowerShell-7.1.0-preview.7-win-x64.msi` 这种安装即可
 
 <img src="https://image.yoouu.cn/2020/win10-terminal/poweishell-core.png" alt="poweishell-core" style="zoom:50%;" />
 
-## 0x3 安装字体（可选）
+## 0x3 安装字体
 
-[FiraCode](https://github.com/tonsky/FiraCode/releases) - 连字符字体
-
-<img src="https://image.yoouu.cn/sunseekerx/resource/FiraCode.svg" alt="FiraCode" style="zoom: 33%;" />
-
-[JetBrainsMono](https://github.com/JetBrains/JetBrainsMono) - IDEA 系字体
-
-[更纱黑体 Sarasa-Gothic](https://github.com/be5invis/Sarasa-Gothic)
+这里推荐使用 [Nerd Fonts](https://www.nerdfonts.com/) 系列字体，它们在支持各种特殊字符的同时，设计也比较养眼。访问 Nerd Fonts 的 [下载界面](https://www.nerdfonts.com/font-downloads)，从中任意选择一个心仪的字体包，下载压缩包后解压，再安装进系统即可。笔者使用的是 Agave Nerd Font，Oh my posh 官方推荐 Meslo LGM NF。
 
 ## 0x4 安装 PowerShell 模块
 
 通过在 **PowerShell** 中执行下面的命令安装, 以超级管理员运行 **PowerShell**
 
 右键桌面空白的地方选择 **PowerShell** > **Open Here as Administrator**
+
+或者 win+x
 
 **CurrentUser** 是仅为当前用户安装模块
 
@@ -176,15 +200,64 @@ netsh winhttp show proxy
 
 ```powershell
 Install-Module posh-git -Scope CurrentUser
-# 输出 Install-Module posh-git -Scope CurrentUser -Verbose
 ```
 
 ### oh-my-posh
 
+需要使用 [Scoop](https://scoop.sh/) 进行安装
+
 ```powershell
-Install-Module oh-my-posh -Scope CurrentUser
-# 输出 Install-Module oh-my-posh -Scope CurrentUser -Verbose
+# 安装 Scoop
+Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+# 安装 curl
+scoop install curl
+
+# 安装 oh-my-posh
+scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
 ```
+
+**修改终端配置文件**
+
+确定 Oh my posh 已经安装成功后，读者可以提前到项目官网的 [主题页面](https://ohmyposh.dev/docs/themes) 预览内置主题的效果，记下需要使用的主题在本地的路径。以 wopian 主题为例，使用不同安装方式得到的主题路径参考下表：
+
+| **安装方式**         | **路径**                                                     |
+| -------------------- | ------------------------------------------------------------ |
+| Windows Scoop        | `~\scoop\apps\oh-my-posh\current\themes\wopian.omp.json`     |
+| Windows Choco/Winget | `~\AppData\Local\Programs\oh-my-posh\themes\wopian.omp.json` |
+| macOS Brew           | `~/.poshthemes/wopian.omp.json`                              |
+| GNU/Linux 命令行     | `~/.poshthemes/wopian.omp.json`                              |
+| 自行下载             | Oh my Posh 和 Themes 需要填完整的自定义路径                  |
+
+万事俱备，下面我们需要修改终端的配置文件。不同的终端配置文件位置不同。如果你不知道自己使用的是什么终端，可以键入`oh-my-posh --print-shell`获得答案。
+
+三大系统上的 PowerShell 配置文件有内置的变量`$Profile`。键入`$Profile`终端会显示配置文件的路径。编辑此文件，若没有，则新建一个。新增如下代码，重启终端就能看到效果。
+
+```shell
+oh-my-posh --init --shell pwsh --config 主题路径 | Invoke-Expression
+
+# Windows Scoop
+oh-my-posh --init --shell pwsh --config ~\scoop\apps\oh-my-posh\current\themes\cloud-native-azure.omp.json | Invoke-Expression
+```
+
+Bash 的配置文件一般是`~/.bashrc` 或者`~/.profile`，同上文一样，编辑对应的文件，若没有，则新建一个，新增下面一行代码并重启终端 1：
+
+```shell
+eval "$(oh-my-posh --init --shell bash --config 主题路径)"
+```
+
+Zsh 的配置文件为`~/.zshrc`，需要新增的代码需要将`bash`改为`zsh`：
+
+```shell
+eval "$(oh-my-posh --init --shell zsh --config 主题路径)"
+```
+
+在 Windows 的 Linux 子系统中使用 Oh my posh 无需像一般 GNU/Linux 那样另外安装，可以采用 `oh-my-posh-wsl`命令。需要注意，WSL 上同一文件的路径和 Windows 是不一样的，`c:/` 应该写成`/mnt/c/`，例如，WSL 上的 Ubuntu .bashrc 文件应该添加：
+
+```shell
+eval "$(oh-my-posh-wsl --init --shell bash --config /mnt/c/users/用户名/AppData/Local/Programs/oh-my-posh/themes/wopian.omp.json)"
+```
+
+fish 和 nu 用户可以参阅 [官方文档](https://ohmyposh.dev/docs/linux)。
 
 ### PSColor
 
@@ -214,19 +287,7 @@ Import-Module PSColor
 
 ### DirColors
 
-```
-Install-Module DirColors
-```
-
 哪些文件类型可以被加亮显示是可以配置的，在 [PSColor](https://github.com/Davlind/PSColor) 官方的 README 中有介绍，这里就不转述了。不过这个配置方式是 PowerShell 式的，如果能直接像上面使用 itermcolors 文件配置控制台色彩一样，直接用 Linux 平台上的现成的 dircolors 配置文件的话，会不会更方便呢？这个想法很好，而且还真的有人实现了，它就是 [DirColors](https://github.com/DHowett/DirColors)。
-
-这也是一个 PowerShell 模块，安装方式跟 [PSColor](https://github.com/Davlind/PSColor) 一样，使用：
-
-```
-Install-Module DirColors
-```
-
-或者
 
 ```
 Install-Module DirColors -Scope CurrentUser
@@ -260,7 +321,7 @@ Exit
 然后安装
 
 ```powershell
-Install-Module PSReadLine -AllowPrerelease -Force
+Install-Module PSReadLine -Force
 # 稳定版本
 Install-Module PSReadLine
 ```
@@ -305,13 +366,13 @@ Import-Module DirColors
 Import-Module posh-git
 
 # 引入 oh-my-posh
-Import-Module oh-my-posh
+oh-my-posh --init --shell pwsh --config ~\scoop\apps\oh-my-posh\current\themes\cloud-native-azure.omp.json | Invoke-Expression
 
 # 引入 ps-read-line
 Import-Module PSReadLine
 
 # 设置 PowerShell 主题
-Set-Theme Paradox
+# Set-PoshPrompt Paradox
 # Import Modules END
 
 
@@ -337,18 +398,6 @@ Set-PSReadLineKeyHandler -Key UpArrow -Function HistorySearchBackward
 # 设置向下键为前向搜索历史纪录
 Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 # Set Hot-keys END
-```
-
-**0x4 保存后关闭记事本, 在终端中输入以下命令生效(这里不要照抄 下面执行的 是 上文中$PROFILE 的值)**
-
-```powershell
-C:\Users\SunSeekerX\Documents\PowerShell\Microsoft.PowerShell_profile.ps1
-```
-
-**0x5 切换主题**
-
-```powershell
-Set-Theme $主题名字
 ```
 
 ## 0x6 配置 Windows Terminal
