@@ -86,6 +86,11 @@ PS C:\Users\SunSeekerX\Desktop>
 ## 📌 基础命令
 
 ```powershell
+# 关闭休眠，使用硬盘，建议关闭
+powercfg -h off
+# 打开休眠
+powercfg -h on
+
 # 查看版本
 $PSVersionTable
 
