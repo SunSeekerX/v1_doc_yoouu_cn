@@ -13,8 +13,8 @@ npm uninstall -g jshint
 npm install -g npm
 
 # 更改下载的包位置
-npm config set prefix "w:\data\node_package\npm"
-npm config set cache "w:\data\node_package\npm_cache"
+npm config set prefix "d:\data\node_package\npm"
+npm config set cache "d:\data\node_package\npm_cache"
 # 查看配置
 npm config list
 
@@ -43,8 +43,8 @@ yarn upgrade-interactive
 yarn cache clean
 
 # 更改下载的包位置
-yarn config set global-folder "w:\data\node_package\yarn"
-yarn config set cache-folder "w:\data\node_package\yarn_cache"
+yarn config set global-folder "d:\data\node_package\yarn"
+yarn config set cache-folder "d:\data\node_package\yarn_cache"
 # 查看配置
 yarn config list
 
@@ -179,6 +179,8 @@ yarn workspaces run test
 
 ### lerna
 
+多 Workspace 管理包的，未作深入研究。
+
 首先使用 [npm](https://www.npmjs.com/) 将 Lerna 安装到全局环境中：
 
 推荐使用 Lerna 2.x 版本。
@@ -214,14 +216,18 @@ lerna-repo/
 # 安装
 npm install -g pnpm
 # 设置下载的包位置
-pnpm config set store-dir "w:\data\node_package\pnpm"
+pnpm config set store-dir "d:\data\node_package\pnpm"
 # 查看配置
 pnpm config list
 # 安装依赖
 pnpm install
 ```
 
-## 📌 加速下载 - [tbify](https://github.com/fjc0k/tbify)
+## 📌 常用模块
+
+### tbify
+
+强烈建议使用该工具替换那种换源的方式进行下载加速。
 
 **安装**
 
@@ -249,7 +255,9 @@ tbify printenv npm_config_registry
 # -> https://r.npm.taobao.org
 ```
 
-## 📌 husky
+### husky
+
+git 钩子。
 
 **安装**
 
@@ -339,7 +347,7 @@ If there's an error during the process, you can clean things up by running:
 rm -rf .husky && git config --unset core.hooksPath
 ```
 
-## 📌 升级 package.json 依赖
+### npm-check-updates
 
 安装：
 
@@ -365,7 +373,7 @@ ncu -u
 ncu -a
 ```
 
-## 📌 排序 package.json
+### sort-package-json
 
 对项目的 `package.json` 进行排序，满足你的强迫症
 
@@ -374,6 +382,42 @@ ncu -a
 npm install --global sort-package-json
 # 2.排序
 npx sort-package-json
+```
+
+## 📌 常见问题
+
+### node-gyp 报错
+
+```
+npm ERR! gyp ERR! find VS **************************************************************
+npm ERR! gyp ERR! find VS You need to install the latest version of Visual Studio
+npm ERR! gyp ERR! find VS including the "Desktop development with C++" workload.
+npm ERR! gyp ERR! find VS For more information consult the documentation at:
+npm ERR! gyp ERR! find VS https://github.com/nodejs/node-gyp#on-windows
+npm ERR! gyp ERR! find VS **************************************************************
+npm ERR! gyp ERR! find VS
+npm ERR! gyp ERR! configure error
+npm ERR! gyp ERR! stack Error: Could not find any Visual Studio installation to use
+npm ERR! gyp ERR! stack     at VisualStudioFinder.fail (D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:122:47)
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:75:16
+npm ERR! gyp ERR! stack     at VisualStudioFinder.findVisualStudio2013 (D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:363:14)
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:71:14
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:384:16
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\util.js:54:7
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\util.js:33:16
+npm ERR! gyp ERR! stack     at ChildProcess.exithandler (node:child_process:406:5)
+npm ERR! gyp ERR! stack     at ChildProcess.emit (node:events:520:28)
+npm ERR! gyp ERR! stack     at maybeClose (node:internal/child_process:1092:16)
+npm ERR! gyp ERR! System Windows_NT 10.0.22000
+npm ERR! gyp ERR! command "D:\\app\\code\\nodejs\\node.exe" "D:\\app\\code\\nvm\\v16.14.0\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js" "rebuild"
+```
+
+安装最新的 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/downloads/)，勾选 `Desktop development with c++` 选项
+
+~~win+x 使用管理员的 `powershell` 执行~~
+
+```shell
+npm install -g --production windows-build-tools
 ```
 
 ## 📌 NodeJs 版本管理 - nvm
