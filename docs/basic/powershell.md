@@ -1,28 +1,4 @@
-# power-shell
-
-## 刷新环境变量
-
-**powershell**
-
-```powershell
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
-# or
-$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
-```
-
-**cmd**
-
-> open cmd commend prompt window.
->
-> input `set PATH=C` -> this will refresh the environment variables. close and restart cmd window. input `echo %PATH%` to test.
-
-```shell
-set PATH=C
-# 关闭窗口重新打开，输入
-echo %PATH%
-```
-
-## 代理
+# PowerShell 技巧
 
 ```powershell
 # 设置代理
@@ -37,51 +13,6 @@ $Env:http_proxy="http://127.0.0.1:7890";$Env:https_proxy="http://127.0.0.1:7890"
 # clash 复制 cmd
 set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890
 ```
-
-## powershell 因为在此系统上禁止运行脚本…
-
-> 最近在自己电脑上使用 react-native 初始化项目出现了下面的错误，猜测应该是微软更新导致
-
-```bash
-react-native : 无法加载文件 C:\Users\SunSeekerX\AppData\Roaming\npm\react-native.ps1，因为在此系统上禁止运行脚本。有关
-详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。
-所在位置 行:1 字符: 1
-+ react-native init demo
-+ ~~~~~~~~~~~~
-    + CategoryInfo          : SecurityError: (:) []，PSSecurityException
-    + FullyQualifiedErrorId : UnauthorizedAccess
-```
-
-**解决**
-
-1. win+X 启动 `windows PowerShell`（管理员）
-
-2. 若要在本地计算机上运行您编写的未签名脚本和来自其他用户的签名脚本，请使用以下命令将计算机上的 执行策略更改为 RemoteSigned
-
-   ```powershell
-   # 更改执行策略
-   set-ExecutionPolicy RemoteSigned
-
-   # 查看执行策略
-   get-ExecutionPolicy
-   ```
-
-## 开启 win10 卓越性能模式
-
-桌面按住`shift`加上鼠标右键选择在此处打开`powershell`窗口执行
-
-```powershell
-powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-
-# 输出
-PS C:\Users\SunSeekerX\Desktop> powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
-电源方案 GUID: 124d9932-ad06-41b8-85a6-342c4b5c6db9  (卓越性能)
-PS C:\Users\SunSeekerX\Desktop>
-```
-
-去电源选项选择卓越性能就 ok 了
-
-![](https://static.yoouu.cn/imgs/doc/basic/power-shell/super-power.png)
 
 ## 📌 基础命令
 
@@ -112,26 +43,82 @@ Get-Module
 Uninstall-Module [模块名] -Force -Verbose
 ```
 
-## 📌 强化 win10 下的命令行 - 颜值和实用并存
+### powershell 因为在此系统上禁止运行脚本…
 
-> 更新时间：2021-01-03 20:18:15
->
-> - 2021-10-21 10:40:57
-> - 增加 PSReadLine 插件
->
-> - 2021-01-04 10:49:08
->   - 抄了更多小马哥的文章！！！
-> - 2021-01-03 20:18:15
->   - 增加 `PSColor` 模块安装说明
->   - 发现一个很好的文章 [PowerShell 美化指南](https://coolcode.org/2018/03/16/how-to-make-your-powershell-beautiful/) by 小马哥
+> 最近在自己电脑上使用 react-native 初始化项目出现了下面的错误，猜测应该是微软更新导致
 
-## 0x1 安装 Windows Terminal
+```bash
+react-native : 无法加载文件 C:\Users\SunSeekerX\AppData\Roaming\npm\react-native.ps1，因为在此系统上禁止运行脚本。有关
+详细信息，请参阅 https:/go.microsoft.com/fwlink/?LinkID=135170 中的 about_Execution_Policies。
+所在位置 行:1 字符: 1
++ react-native init demo
++ ~~~~~~~~~~~~
+    + CategoryInfo          : SecurityError: (:) []，PSSecurityException
+    + FullyQualifiedErrorId : UnauthorizedAccess
+```
+
+**解决**
+
+1. win+X 启动 `windows PowerShell`（管理员）
+
+2. 若要在本地计算机上运行您编写的未签名脚本和来自其他用户的签名脚本，请使用以下命令将计算机上的 执行策略更改为 RemoteSigned
+
+   ```powershell
+   # 更改执行策略
+   Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Confirm
+
+   # 查看执行策略
+   Get-ExecutionPolicy
+   ```
+
+### 开启 win10 卓越性能模式
+
+桌面按住`shift`加上鼠标右键选择在此处打开`powershell`窗口执行
+
+```powershell
+powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+
+# 输出
+PS C:\Users\SunSeekerX\Desktop> powercfg -duplicatescheme e9a42b02-d5df-448d-aa00-03f14749eb61
+电源方案 GUID: 124d9932-ad06-41b8-85a6-342c4b5c6db9  (卓越性能)
+PS C:\Users\SunSeekerX\Desktop>
+```
+
+去电源选项选择卓越性能就 ok 了
+
+![](https://static.yoouu.cn/imgs/doc/basic/power-shell/super-power.png)
+
+### 刷新环境变量
+
+**powershell**
+
+```powershell
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine")
+# or
+$env:Path = [System.Environment]::GetEnvironmentVariable("Path","Machine") + ";" + [System.Environment]::GetEnvironmentVariable("Path","User")
+```
+
+**cmd**
+
+> open cmd commend prompt window.
+>
+> input `set PATH=C` -> this will refresh the environment variables. close and restart cmd window. input `echo %PATH%` to test.
+
+```shell
+set PATH=C
+# 关闭窗口重新打开，输入
+echo %PATH%
+```
+
+## 📌 强化 PowerShell
+
+### 1️⃣ 安装 Windows Terminal
 
 在 **Microsoft Store** 中下载 `Windows Terminal` 注意系统要求
 
 <img src="https://image.yoouu.cn/2020/win10-terminal/win10-terminal.png" alt="win10-terminal" style="zoom:50%;" />
 
-## 0x2 安装 PowerShell core
+### 2️⃣ 安装 PowerShell core
 
 下载地址：[https://github.com/PowerShell/PowerShell/releases](https://github.com/PowerShell/PowerShell/releases)
 
@@ -139,70 +126,43 @@ win10 选择 `PowerShell-7.1.0-preview.7-win-x64.msi` 这种安装即可
 
 <img src="https://image.yoouu.cn/2020/win10-terminal/poweishell-core.png" alt="poweishell-core" style="zoom:50%;" />
 
-## 0x3 安装字体
+### 3️⃣ 安装字体
 
 这里推荐使用 [Nerd Fonts](https://www.nerdfonts.com/) 系列字体，它们在支持各种特殊字符的同时，设计也比较养眼。访问 Nerd Fonts 的 [下载界面](https://www.nerdfonts.com/font-downloads)，从中任意选择一个心仪的字体包，下载压缩包后解压，再安装进系统即可。笔者使用的是 Agave Nerd Font，Oh my posh 官方推荐 Meslo LGM NF。
 
-## 0x4 安装 PowerShell 模块
+我是用的是 `Hack Nerd Font`。
 
-通过在 **PowerShell** 中执行下面的命令安装, 以超级管理员运行 **PowerShell**
+### 4️⃣ 安装 PowerShell 模块
 
-右键桌面空白的地方选择 **PowerShell** > **Open Here as Administrator**
+win+x 选择 Windows 终端（管理员）
 
-或者 win+x
+- **CurrentUser** 是仅为当前用户安装模块
 
-**CurrentUser** 是仅为当前用户安装模块
+- 安装过程中加上 `-Verbose` 可以看到输出
 
-安装过程中加上 `-Verbose` 可以看到输出
+- 如果在安装过程中遇到类似于这样的提示：
 
-### 注意事项
+  ```
+  不受信任的存储库你正在从不受信任的存储库安装模块。如果你信任该存储库，请通过运行 Set-PSRepositorycmdlet 更改其 InstallationPolicy 值。是否确实要从“PSGallery”安装模块?[Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助
+  ```
 
-> ！如果出现 **PowerShell 因为在此系统上禁止运行脚本…**
->
-> 输入以下命令
->
-> ```powershell
-> # 更改执行策略
-> set-ExecutionPolicy RemoteSigned
->
-> # 查看执行策略
-> get-ExecutionPolicy
-> ```
+  你可以按 Y 或 A 键，但是如果你觉得每次都这样麻烦的话，可以先执行下面的命令：
 
-如果在安装过程中遇到类似于这样的提示：
+  ```powershell
+  Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+  ```
 
-```
-不受信任的存储库你正在从不受信任的存储库安装模块。如果你信任该存储库，请通过运行 Set-PSRepositorycmdlet 更改其 InstallationPolicy 值。是否确实要从“PSGallery”安装模块?[Y] 是(Y)  [A] 全是(A)  [N] 否(N)  [L] 全否(L)  [S] 暂停(S)  [?] 帮助
-```
+  之后再安装模块就不会出现这个提示了。
 
-你可以按 Y 或 A 键，但是如果你觉得每次都这样麻烦的话，可以先执行下面的命令：
+#### posh-git
+
+PowerShell 与 git 集成，可以在 PowerShell 显示 git 仓库信息，同时提供了 git 命令补全。
 
 ```powershell
-Set-PSRepository -Name PSGallery -InstallationPolicy Trusted
+PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 ```
 
-之后再安装模块就不会出现这个提示了。
-
-**0x2 如果下载慢的话可以使用命令行代理**
-
-```powershell
-# 设置代理（填写你本地的端口）
-netsh winhttp set proxy 127.0.0.1:1080
-# 取消代理
-netsh winhttp reset proxy
-# 查看代理
-netsh winhttp show proxy
-```
-
-**命令行下载依旧很慢的可以试试全局科学上网！！！**
-
-### posh-git
-
-```powershell
-Install-Module posh-git -Scope CurrentUser
-```
-
-### oh-my-posh
+#### oh-my-posh
 
 需要使用 [Scoop](https://scoop.sh/) 进行安装
 
@@ -214,6 +174,16 @@ scoop install curl
 
 # 安装 oh-my-posh
 scoop install https://github.com/JanDeDobbeleer/oh-my-posh/releases/latest/download/oh-my-posh.json
+# 更新
+scoop update oh-my-posh
+```
+
+或者使用 winget
+
+```powershell
+winget install JanDeDobbeleer.OhMyPosh
+# 更新
+winget upgrade JanDeDobbeleer.OhMyPosh
 ```
 
 **修改终端配置文件**
@@ -259,7 +229,7 @@ eval "$(oh-my-posh-wsl --init --shell bash --config /mnt/c/users/用户名/AppDa
 
 fish 和 nu 用户可以参阅 [官方文档](https://ohmyposh.dev/docs/linux)。
 
-### PSColor
+#### PSColor
 
 在默认情况下， PowerShell 的文件列表并不会彩色显示。
 
@@ -285,7 +255,7 @@ Install-Module PSColor -Scope CurrentUser
 Import-Module PSColor
 ```
 
-### DirColors
+#### DirColors
 
 哪些文件类型可以被加亮显示是可以配置的，在 [PSColor](https://github.com/Davlind/PSColor) 官方的 README 中有介绍，这里就不转述了。不过这个配置方式是 PowerShell 式的，如果能直接像上面使用 itermcolors 文件配置控制台色彩一样，直接用 Linux 平台上的现成的 dircolors 配置文件的话，会不会更方便呢？这个想法很好，而且还真的有人实现了，它就是 [DirColors](https://github.com/DHowett/DirColors)。
 
@@ -309,7 +279,7 @@ Update-DirColors ~\dir_colors
 
 其中 `~\dir_colors` 就是配置文件的路径，关于 dir_colors 的配置文件，在 github 上可以搜到不少，比如：[dircolors-solarized](https://github.com/seebi/dircolors-solarized)。这里就不再列举更多了。
 
-### PSReadLine
+#### PSReadLine
 
 如果是使用自带的 powershell，先执行
 
@@ -326,13 +296,13 @@ Install-Module PSReadLine -Force
 Install-Module PSReadLine
 ```
 
-## 0x5 配置 PowerShell
+### 5️⃣ 配置 PowerShell
 
-### 字体配置
+#### 字体配置
 
-![ps-font.png](https://image.yoouu.cn/2020/win10-terminal/ps-font.png)
+![](https://static.yoouu.cn/imgs/doc/basic/power-shell/202203051436183.png)
 
-### 模块配置
+#### 模块配置
 
 **0x1 输入：**
 
@@ -349,13 +319,9 @@ if (!(Test-Path -Path $PROFILE )) { New-Item -Type File -Path $PROFILE -Force }
 notepad $PROFILE
 ```
 
-**0x3 在打开的文件中添加**： **Set-Theme Paradox** 是设置默认主题
+**0x3 在打开的文件中添加**
 
-> 该文件是每次启动 PowerShell 执行的文件，加载两个模块和设置主题。
->
-> 其他可选主题有
->
-> **Agnoster、Avit、Darkblood、Fish、Honukai、Paradox、Sorin、tehrob**, **PowerLine**
+该文件是每次启动 PowerShell 执行的文件，加载模块和初始化设置
 
 ```powershell
 # Import Modules BEGIN
@@ -366,15 +332,11 @@ Import-Module DirColors
 Import-Module posh-git
 
 # 引入 oh-my-posh
-oh-my-posh --init --shell pwsh --config ~\scoop\apps\oh-my-posh\current\themes\cloud-native-azure.omp.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\gmay.omp.json | Invoke-Expression
 
 # 引入 ps-read-line
 Import-Module PSReadLine
-
-# 设置 PowerShell 主题
-# Set-PoshPrompt Paradox
 # Import Modules END
-
 
 # Set Hot-keys BEGIN
 # 设置预测文本来源为历史记录
@@ -400,240 +362,11 @@ Set-PSReadLineKeyHandler -Key DownArrow -Function HistorySearchForward
 # Set Hot-keys END
 ```
 
-## 0x6 配置 Windows Terminal
+### 6️⃣ 配置 Windows Terminal
 
-[官网详细配置说明](https://docs.microsoft.com/zh-cn/windows/terminal/)
+#### 添加 Windows Terminal 到右键
 
-### 配置主题配色
-
-**0x1 打开配置文件 setting.json**
-
-<img src="https://image.yoouu.cn/2020/win10-terminal/pwsh.png" alt="pwsh" style="zoom: 50%;" />
-
-**0x2 参考以下配置**
-
-可自行修改，一定要符合 json 的内容格式，不然会报错，还有就是图片的的路径要与己系统对应
-
-改的比较多的就是 `profiles > defaults` 和 `schemes` ，前者是启动的配置，后者是主题配色。
-
-下面的配置不要全部复制，可以选择性的更改你的配置！
-
-```json
-{
-  "$schema": "https://aka.ms/terminal-profiles-schema",
-  "defaultProfile": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-  "copyOnSelect": false,
-  "copyFormatting": false,
-  "profiles": {
-    "defaults": {
-      "fontFace": "Sarasa Term SC", // oh-my-posh 主题原因，使用其他的字体可能会出现乱码
-      // "backgroundImage": "C:\\bash-bg.jpg", // 背景图片地址
-      // "backgroundImageOpacity": 0.5, // 透明度
-      "colorScheme": "Ayu Mirage", // 颜色方案
-      "acrylicOpacity": 0.7,
-      "useAcrylic": true,
-      "fontSize": 14
-      // Put settings here that you want to apply to all profiles.
-    },
-    "list": [
-      {
-        // Make changes here to the powershell.exe profile.
-        "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
-        "name": "Windows PowerShell",
-        "commandline": "powershell.exe",
-        "hidden": false,
-        "startingDirectory": null
-      },
-      {
-        // Make changes here to the cmd.exe profile.
-        "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
-        "name": "命令提示符",
-        "commandline": "cmd.exe",
-        "hidden": false,
-        "startingDirectory": null
-      },
-      {
-        "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
-        "hidden": false,
-        "name": "PowerShell",
-        "source": "Windows.Terminal.PowershellCore",
-        "startingDirectory": null
-      },
-      {
-        "guid": "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
-        "hidden": false,
-        "name": "Azure Cloud Shell",
-        "source": "Windows.Terminal.Azure",
-        "startingDirectory": null
-      }
-    ]
-  },
-  // 配色方案
-  "schemes": [
-    {
-      "name": "Andromeda",
-      "black": "#000000",
-      "red": "#cd3131",
-      "green": "#05bc79",
-      "yellow": "#09da0f",
-      "blue": "#2472c8",
-      "purple": "#bc3fbc",
-      "cyan": "#0fa8cd",
-      "white": "#e5e5e5",
-      "brightBlack": "#666666",
-      "brightRed": "#cd3131",
-      "brightGreen": "#05bc79",
-      "brightYellow": "#09da0f",
-      "brightBlue": "#2472c8",
-      "brightPurple": "#bc3fbc",
-      "brightCyan": "#0fa8cd",
-      "brightWhite": "#e5e5e5",
-      "background": "#262a33",
-      "foreground": "#e5e5e5"
-    },
-    {
-      "name": "Campbell",
-      "foreground": "#F2F2F2",
-      "background": "#0C0C0C",
-      "colors": [
-        "#0C0C0C",
-        "#C50F1F",
-        "#13A10E",
-        "#C19C00",
-        "#0037DA",
-        "#881798",
-        "#3A96DD",
-        "#CCCCCC",
-        "#767676",
-        "#E74856",
-        "#16C60C",
-        "#F9F1A5",
-        "#3B78FF",
-        "#B4009E",
-        "#61D6D6",
-        "#F2F2F2"
-      ]
-    },
-    {
-      "name": "Solarized Dark",
-      "foreground": "#FDF6E3",
-      "background": "#073642",
-      "colors": [
-        "#073642",
-        "#D30102",
-        "#859900",
-        "#B58900",
-        "#268BD2",
-        "#D33682",
-        "#2AA198",
-        "#EEE8D5",
-        "#002B36",
-        "#CB4B16",
-        "#586E75",
-        "#657B83",
-        "#839496",
-        "#6C71C4",
-        "#93A1A1",
-        "#FDF6E3"
-      ]
-    },
-    {
-      "background": "#fafafa",
-      "black": "#000000",
-      "blue": "#3199e1",
-      "brightBlack": "#686868",
-      "brightBlue": "#399ee6",
-      "brightCyan": "#4cbf99",
-      "brightGreen": "#86b300",
-      "brightPurple": "#a37acc",
-      "brightRed": "#f07171",
-      "brightWhite": "#d1d1d1",
-      "brightYellow": "#f2ae49",
-      "cyan": "#46ba94",
-      "foreground": "#6c7680",
-      "green": "#99bf4d",
-      "name": "Ayu Light",
-      "purple": "#9e75c7",
-      "red": "#ea6c6d",
-      "white": "#c7c7c7",
-      "yellow": "#eca944"
-    },
-    {
-      "background": "#0a0e14",
-      "black": "#01060e",
-      "blue": "#53bdfa",
-      "brightBlack": "#686868",
-      "brightBlue": "#59c2ff",
-      "brightCyan": "#95e6cb",
-      "brightGreen": "#c2d94c",
-      "brightPurple": "#ffee99",
-      "brightRed": "#f07178",
-      "brightWhite": "#ffffff",
-      "brightYellow": "#ffb454",
-      "cyan": "#90e1c6",
-      "foreground": "#b3b1ad",
-      "green": "#91b362",
-      "name": "Ayu Dark",
-      "purple": "#fae994",
-      "red": "#ea6c73",
-      "white": "#c7c7c7",
-      "yellow": "#f9af4f"
-    },
-    {
-      "background": "#1f2430",
-      "black": "#191e2a",
-      "blue": "#6dcbfa",
-      "brightBlack": "#686868",
-      "brightBlue": "#73d0ff",
-      "brightCyan": "#95e6cb",
-      "brightGreen": "#bae67e",
-      "brightPurple": "#d4bfff",
-      "brightRed": "#f28779",
-      "brightWhite": "#ffffff",
-      "brightYellow": "#ffd580",
-      "cyan": "#90e1c6",
-      "foreground": "#cbccc6",
-      "green": "#a6cc70",
-      "name": "Ayu Mirage",
-      "purple": "#cfbafa",
-      "red": "#ed8274",
-      "white": "#c7c7c7",
-      "yellow": "#fad07b"
-    }
-  ],
-  "keybindings": [
-    {
-      "command": {
-        "action": "copy",
-        "singleLine": false
-      },
-      "keys": "ctrl+c"
-    },
-    {
-      "command": "paste",
-      "keys": "ctrl+v"
-    },
-    {
-      "command": "find",
-      "keys": "ctrl+shift+f"
-    },
-    {
-      "command": {
-        "action": "splitPane",
-        "split": "auto",
-        "splitMode": "duplicate"
-      },
-      "keys": "alt+shift+d"
-    }
-  ]
-}
-```
-
-**0x3 官方更多配色**
-
-[https://docs.microsoft.com/zh-cn/windows/terminal/customize-settings/color-schemes](https://docs.microsoft.com/zh-cn/windows/terminal/customize-settings/color-schemes)
-
-### 添加 Windows Terminal 到右键
+如果是 win11 官方镜像的系统，默认应该就已经安装到了右键。没有安装的可以手动安装下。
 
 <img src="https://image.yoouu.cn/2020/win10-terminal/right-menu.png" alt="right-menu" style="zoom:50%;" />
 
@@ -690,7 +423,7 @@ Windows Registry Editor Version 5.00
 
 > 这个是修改右键启动路径为当前运行命令的路径。
 
-## 配置 vscode 取消 logo
+#### 配置 vscode 取消 logo
 
 加入下面这个在启动的时候就不会有 logo 打印了，就是诸如 `加载个人文件花费了多少毫秒的提示`
 
@@ -698,13 +431,15 @@ Windows Registry Editor Version 5.00
 "terminal.integrated.shellArgs.windows": ["-NoLogo", "-NoExit", "-Command", "& { Write-Host }"]
 ```
 
-## 0x7 结语
+### 7️⃣ 结语
 
 平时工作中命令行 `git` 命令用的比较多，安装了扩展，输入命令可以按 `Tab` 来自动补全方便了很多。
 
 Windows 下的命令行还有很多的玩法，比如支持 Linux 命令的 `MSYS2`，集成了 `pacman`。 可以参考 [Win10 终端神器——Windows Terminal 与 MSYS2 MinGW64 集成记](https://ttys3.net/post/windows/windows-terminal-msys2-mingw64-setup/) 进行安装。
 
-## 0x8 参考链接
+### 参考链接
+
+- [Oh My Posh：全平台终端提示符个性化工具](https://sspai.com/post/69911) by 柯帕
 
 - [推荐一款 颜值爆表的主题终端 (windows )](https://juejin.im/post/6850037258955784205), by iwhao_top
 - [添加 Windows Terminal 到鼠标右键菜单](https://zhuanlan.zhihu.com/p/91259377)，by Jerry
