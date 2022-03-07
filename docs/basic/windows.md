@@ -1,3 +1,11 @@
+## 关闭虚拟内存释放空间
+
+我的电脑 右键属性，然后高级系统设置 -> 系统属性 -> 高级 -> 设置(性能) 无分页文件
+
+## 关闭兼容性遥测
+
+使用 dism++ 关闭服务。
+
 ## 微软拼音输入自定义时间
 
 Windows 10：`设置`→`时间和语言`→`区域和语言`→`中文(中华人民共和国)`→`选项`→`微软拼音`→`选项`→`词库和自学习`→`添加新的或编辑现有的用户自定义短语`→`添加`。
@@ -57,6 +65,16 @@ chrome://net-internals/#dns
 ## Win11 上恢复 Win10 右键菜单
 
 https://www.sordum.org/14479/windows-11-classic-context-menu-v1-0/
+
+## Win11 关闭客户体验改善计划
+
+该条目会造成一个 Microsoft 兼容性遥测的程序大量占用 cpu 造成 卡顿
+
+1.按“Windows+R”键，打开“运行”，输入“gpedit.msc”，点击“确定”，打开“本地组策略编辑器”。
+
+![](https://static.yoouu.cn/imgs/doc/basic/windows/202202091034151.png)
+
+[完全禁用 Microsoft Compatibility Telemetry](https://blog.csdn.net/m0_49448331/article/details/113824078)
 
 ## 查看端口占用
 

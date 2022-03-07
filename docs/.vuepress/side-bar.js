@@ -21,7 +21,6 @@ module.exports = {
         ['ide', '开发工具'],
         ['windows', 'Windows'],
         ['mac', 'Mac'],
-        ['linux', 'Linux'],
       ],
     },
     {
@@ -170,7 +169,9 @@ module.exports = {
       title: '区块链',
       collapsable: false,
       children: [
-        ['', 'Readme'],
+        ['', '区块链'],
+        ['capital', '投资机构'],
+        ['notebook', '学习笔记'],
         ['solidity', 'Solidity'],
         ['apps/', '项目'],
         ['bookmark', '书签'],

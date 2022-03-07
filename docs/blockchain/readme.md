@@ -94,7 +94,7 @@ Terra Station chrome 扩展: [https://chrome.google.com/webstore/detail/terra-st
 
 ### Cosmos
 
-暂时不清楚是公链还是什么。先把能找到的资料收集下。
+公链，支持一种叫 ibc 链间通讯的技术。有点类似波卡。
 
 官网：[https://cosmos.network/](https://cosmos.network/)
 
@@ -124,11 +124,19 @@ keplr 钱包扩展界面：[https://wallet.keplr.app/#/dashboard](https://wallet
 
 ### 学习项目
 
-OlympusDAO：[https://github.com/OlympusDAO](https://github.com/OlympusDAO)
+**OlympusDAO**
+
+Github：[https://github.com/OlympusDAO](https://github.com/OlympusDAO)
 
 前端：[https://app.olympusdao.finance/#/dashboard](https://app.olympusdao.finance/#/dashboard)
 
 稳定币项目包含合约和前端。
+
+**buildspace**
+
+有知名的区块链项目在招人，里面包含区块链合约、nft 开发教程。
+
+官网：[https://buildspace.so/](https://buildspace.so/)
 
 ### 社区
 
@@ -243,6 +251,12 @@ Translator：[https://betterdiscord.app/plugin/Translator](https://betterdiscord
 > 来源：https://anbang.blog/post/admin/contribute.html
 
 英文收集：[https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#](https://docs.google.com/spreadsheets/d/1f_9c8P28dXG5K6DXlHGeTQUww5K8Ft6GgCKYZ8scjb0/htmlview#)
+
+[BIGPLAYER 遊戲藝術傢](https://m.weibo.cn/profile/5415312550)
+
+[http://t.cn/A6xQm3CX](http://t.cn/A6xQm3CX)
+
+来源：[https://m.weibo.cn/status/4736060611105790?sourceType=qq&from=10BB195010&wm=5311_4002&featurecode=newtitle](https://m.weibo.cn/status/4736060611105790?sourceType=qq&from=10BB195010&wm=5311_4002&featurecode=newtitle)
 
 ### BlockFIsh 链游
 

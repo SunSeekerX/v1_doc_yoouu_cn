@@ -13,8 +13,8 @@ npm uninstall -g jshint
 npm install -g npm
 
 # 更改下载的包位置
-npm config set prefix "w:\data\node_package\npm"
-npm config set cache "w:\data\node_package\npm_cache"
+npm config set prefix "d:\data\node_package\npm"
+npm config set cache "d:\data\node_package\npm_cache"
 # 查看配置
 npm config list
 
@@ -22,7 +22,7 @@ npm config list
 # 1、查看一下当前源
 npm config get registry
 # 2、切换为淘宝源
-npm config set registry http://registry.npm.taobao.org/
+npm config set registry https://registry.npmmirror.com
 # 3、换成原来的
 npm config set registry https://registry.npmjs.org/
 
@@ -32,28 +32,6 @@ npm config set https-proxy http://127.0.0.1:7890
 # 取消代理
 npm config delete proxy
 npm config delete https-proxy
-
-# ==========================================================
-# NPM
-# ==========================================================
-
-npm config set disturl https://npm.taobao.org/dist # node-gyp 编译依赖的 node 源码镜像
-
-## 以下选择添加
-npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass # node-sass 二进制包镜像
-npm config set electron_mirror https://npm.taobao.org/mirrors/electron/ # electron 二进制包镜像
-npm config set puppeteer_download_host https://npm.taobao.org/mirrors # puppeteer 二进制包镜像
-npm config set chromedriver_cdnurl https://npm.taobao.org/mirrors/chromedriver # chromedriver 二进制包镜像
-npm config set operadriver_cdnurl https://npm.taobao.org/mirrors/operadriver # operadriver 二进制包镜像
-npm config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs # phantomjs 二进制包镜像
-npm config set selenium_cdnurl https://npm.taobao.org/mirrors/selenium # selenium 二进制包镜像
-npm config set node_inspector_cdnurl https://npm.taobao.org/mirrors/node-inspector # node-inspector 二进制包镜像
-npm config set node_sqlite3_binary_host_mirror https://npm.taobao.org/mirrors
-npm config set sass_binary_site https://npm.taobao.org/mirrors/node-sass/
-npm config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs/
-npm config set electron_mirror https://npm.taobao.org/mirrors/electron/
-
-npm cache clean --force # 清空缓存
 ```
 
 ## 📌 yarn 常用命令
@@ -65,8 +43,8 @@ yarn upgrade-interactive
 yarn cache clean
 
 # 更改下载的包位置
-yarn config set global-folder "w:\data\node_package\yarn"
-yarn config set cache-folder "w:\data\node_package\yarn_cache"
+yarn config set global-folder "d:\data\node_package\yarn"
+yarn config set cache-folder "d:\data\node_package\yarn_cache"
 # 查看配置
 yarn config list
 
@@ -76,33 +54,14 @@ yarn config set https-proxy http://127.0.0.1:7890
 
 # 如果 SSL 报错，可以禁用校验
 yarn config set strict-ssl false
-# 设置淘宝源
-yarn config set registry https://registry.npm.taobao.org/
 
 # 加速下载常用
 # 1、查看一下当前源
 yarn config get registry
 # 2、切换为淘宝源
-yarn config set registry https://registry.npm.taobao.org
+yarn config set registry https://registry.npmmirror.com
 # 3、或者切换为自带的
 yarn config set registry https://registry.yarnpkg.com
-
-# ==========================================================
-# YARN
-# ==========================================================
-
-yarn config set registry https://r.npm.taobao.org # 注册模块镜像
-yarn config set disturl https://npm.taobao.org/dist # node-gyp 编译依赖的 node 源码镜像
-
-## 以下选择添加
-yarn config set sass_binary_site https://npm.taobao.org/mirrors/node-sass # node-sass 二进制包镜像
-yarn config set electron_mirror https://npm.taobao.org/mirrors/electron/ # electron 二进制包镜像
-yarn config set puppeteer_download_host https://npm.taobao.org/mirrors # puppeteer 二进制包镜像
-yarn config set chromedriver_cdnurl https://npm.taobao.org/mirrors/chromedriver # chromedriver 二进制包镜像
-yarn config set operadriver_cdnurl https://npm.taobao.org/mirrors/operadriver # operadriver 二进制包镜像
-yarn config set phantomjs_cdnurl https://npm.taobao.org/mirrors/phantomjs # phantomjs 二进制包镜像
-yarn config set selenium_cdnurl https://npm.taobao.org/mirrors/selenium # selenium 二进制包镜像
-yarn config set node_inspector_cdnurl https://npm.taobao.org/mirrors/node-inspector # node-inspector 二进制包镜像
 ```
 
 ### Workspace
@@ -158,62 +117,69 @@ yarn workspaces run test
 
 ### 升级到 yarn3
 
-[https://yarnpkg.com/getting-started/migration](https://yarnpkg.com/getting-started/migration)
+官方文档：[https://yarnpkg.com/getting-started/migration](https://yarnpkg.com/getting-started/migration)
 
-1. Run `npm install -g yarn` to update the global yarn version to latest v1
-
-2. Go into your project directory
-
-3. Run `yarn set version berry` to enable v2 (cf [Install](https://yarnpkg.com/getting-started/install) for more details)
-
-4. If you used `.npmrc` or `.yarnrc`, you'll need to turn them into the [new format](https://yarnpkg.com/configuration/yarnrc) (see also [1](https://yarnpkg.com/getting-started/migration#update-your-configuration-to-the-new-settings), [2](https://yarnpkg.com/getting-started/migration#dont-use-npmrc-files))
-
-5. Add [`nodeLinker: node-modules`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) in your `.yarnrc.yml` file
+1. 升级全局安装的 yarn 到最新的 v1
 
    ```shell
-   httpProxy: 'http://127.0.0.1:7890'
+   npm install -g yarn
+   ```
 
+2. 进入你项目的根目录
+
+3. 启用 v2
+
+   ```shell
+   yarn set version berry
+   ```
+
+4. 如果使用了 `.npmrc` or `.yarnrc` 需要切换为[新的格式](https://yarnpkg.com/configuration/yarnrc)
+
+5. 添加[`nodeLinker: node-modules`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) 到 `.yarnrc.yml`
+
+   ```yaml
+   # 代理选择添加
+   httpProxy: 'http://127.0.0.1:7890'
+   # 代理选择添加
    httpsProxy: 'http://127.0.0.1:7890'
 
    npmRegistryServer: 'https://registry.npmmirror.com'
 
    nodeLinker: node-modules
 
-   plugins:
-     - path: .yarn/plugins/@yarnpkg/plugin-version.cjs
-       spec: '@yarnpkg/plugin-version'
-
    yarnPath: .yarn/releases/yarn-3.1.1.cjs
    ```
 
-6. Commit the changes so far (`yarn-X.Y.Z.js`, `.yarnrc.yml`, ...)
-
-7. Run `yarn install` to migrate the lockfile
-
-8. Take a look at [this article](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored) to see what should be gitignored
-
-9. 安装版本插件
+6. 安装版本插件
 
    ```shell
    yarn plugin import version
    ```
 
-10. 添加 `.gitignore`
+7. 添加 `.gitignore`，[更多参考](https://yarnpkg.com/getting-started/qa#which-files-should-be-gitignored)
 
-    ```shell
-    # yarn 2.0+
-    .pnp.*
-    .yarn/*
-    !.yarn/patches
-    !.yarn/plugins
-    !.yarn/releases
-    !.yarn/sdks
-    !.yarn/versions
-    ```
+   ```shell
+   # yarn 2.0+
+   .pnp.*
+   .yarn/*
+   !.yarn/patches
+   !.yarn/plugins
+   !.yarn/releases
+   !.yarn/sdks
+   !.yarn/versions
+   ```
 
-11. Commit everything remaining
+8. 生成新版本的 `lockfile`
+
+   ```shell
+   yarn
+   ```
+
+9. 提交你的修改
 
 ### lerna
+
+多 Workspace 管理包的，未作深入研究。
 
 首先使用 [npm](https://www.npmjs.com/) 将 Lerna 安装到全局环境中：
 
@@ -250,14 +216,18 @@ lerna-repo/
 # 安装
 npm install -g pnpm
 # 设置下载的包位置
-pnpm config set store-dir "w:\data\node_package\pnpm"
+pnpm config set store-dir "d:\data\node_package\pnpm"
 # 查看配置
 pnpm config list
 # 安装依赖
 pnpm install
 ```
 
-## 📌 加速下载 - [tbify](https://github.com/fjc0k/tbify)
+## 📌 常用模块
+
+### tbify
+
+强烈建议使用该工具替换那种换源的方式进行下载加速。
 
 **安装**
 
@@ -285,7 +255,9 @@ tbify printenv npm_config_registry
 # -> https://r.npm.taobao.org
 ```
 
-## 📌 husky
+### husky
+
+git 钩子。
 
 **安装**
 
@@ -375,7 +347,7 @@ If there's an error during the process, you can clean things up by running:
 rm -rf .husky && git config --unset core.hooksPath
 ```
 
-## 📌 升级 package.json 依赖
+### npm-check-updates
 
 安装：
 
@@ -401,7 +373,7 @@ ncu -u
 ncu -a
 ```
 
-## 📌 排序 package.json
+### sort-package-json
 
 对项目的 `package.json` 进行排序，满足你的强迫症
 
@@ -412,15 +384,94 @@ npm install --global sort-package-json
 npx sort-package-json
 ```
 
-## 📌 NodeJs 版本管理
+## 📌 常见问题
 
-**windows**
+### node-gyp 报错
+
+```
+npm ERR! gyp ERR! find VS **************************************************************
+npm ERR! gyp ERR! find VS You need to install the latest version of Visual Studio
+npm ERR! gyp ERR! find VS including the "Desktop development with C++" workload.
+npm ERR! gyp ERR! find VS For more information consult the documentation at:
+npm ERR! gyp ERR! find VS https://github.com/nodejs/node-gyp#on-windows
+npm ERR! gyp ERR! find VS **************************************************************
+npm ERR! gyp ERR! find VS
+npm ERR! gyp ERR! configure error
+npm ERR! gyp ERR! stack Error: Could not find any Visual Studio installation to use
+npm ERR! gyp ERR! stack     at VisualStudioFinder.fail (D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:122:47)
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:75:16
+npm ERR! gyp ERR! stack     at VisualStudioFinder.findVisualStudio2013 (D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:363:14)
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:71:14
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:384:16
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\util.js:54:7
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\util.js:33:16
+npm ERR! gyp ERR! stack     at ChildProcess.exithandler (node:child_process:406:5)
+npm ERR! gyp ERR! stack     at ChildProcess.emit (node:events:520:28)
+npm ERR! gyp ERR! stack     at maybeClose (node:internal/child_process:1092:16)
+npm ERR! gyp ERR! System Windows_NT 10.0.22000
+npm ERR! gyp ERR! command "D:\\app\\code\\nodejs\\node.exe" "D:\\app\\code\\nvm\\v16.14.0\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js" "rebuild"
+```
+
+安装最新的 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/downloads/)，勾选 `Desktop development with c++` 选项
+
+~~win+x 使用管理员的 `powershell` 执行~~
+
+```shell
+npm install -g --production windows-build-tools
+```
+
+## 📌 NodeJs 版本管理 - nvm
+
+### windows
 
 使用 [nvm](https://github.com/coreybutler/nvm-windows) 进行管理，具体安装查看 github 说明。
 
-**mac**
+### mac
 
 [nvm](https://github.com/nvm-sh/nvm) 具体安装查看 github 说明。
+
+### ubuntu 安装 nvm
+
+由于 linux 特殊的用户系统，如果安装在了 root 用户下，切换到其他的用户是无法使用的。
+
+1. 首先修改 /ect/profile 配置 nvm node 的安装地址
+
+   ```shell
+   vim /etc/profile
+   ```
+
+   添加
+
+   ```shell
+   export NVM_BIN="/usr/local/nvm/versions/node" # node安装地址
+   export NVM_DIR="/usr/local/nvm" # nvm安装地址
+   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+   ```
+
+2. 更新配置
+
+   ```shell
+   source /etc/profile # 更新配置
+   ```
+
+3. 创建文件夹
+
+   ```shell
+   mkdir /usr/local/nvm
+   ```
+
+4. 基本使用
+
+   ```shell
+   # 查看远程可用
+   nvm ls-remote
+   # 安装指定版本
+   nvm install v16.14.0 # or 16.3.0, 12.22.1, etc
+   # 使用指定版本
+   nvm use v16.14.0
+   ```
+
+参考：[linux 下为所有用户安装 nvm](https://www.soulfree.cn/?p=486)
 
 ## 📌 规范提交代码
 

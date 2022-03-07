@@ -28,7 +28,6 @@ module.exports = [
       { text: 'PowerShell', link: '/basic/powershell' },
       { text: 'Windows', link: '/basic/windows' },
       { text: 'Mac', link: '/basic/mac' },
-      { text: 'Linux', link: '/basic/linux' },
       {
         text: '其他',
         items: [
@@ -169,6 +168,8 @@ module.exports = [
     text: '区块链',
     items: [
       { text: '区块链', link: '/blockchain/' },
+      { text: '投资机构', link: '/blockchain/capital' },
+      { text: '学习笔记', link: '/blockchain/notebook' },
       { text: 'Solidity', link: '/blockchain/solidity' },
       { text: '项目', link: '/blockchain/apps/' },
       { text: '书签', link: '/blockchain/bookmark/' },
