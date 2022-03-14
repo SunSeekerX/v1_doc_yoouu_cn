@@ -407,10 +407,16 @@ ext {
 
 ## 📌 生成 keysore 证书
 
+jdk 版本过高无法使用，会报不是有效的 keystore 文件
+
 需要有 java 环境，使用 keytool -genkey 命令生成证书：
 
 ```shell
 keytool -genkey -alias testalias -keyalg RSA -keysize 2048 -validity 36500 -keystore test.keystore
+
+keytool -importkeystore -srckeystore test.keystore -destkeystore test.keystore -deststoretype pkcs12
+
+keytool -list -v -keystore test.keystore
 ```
 
 - testalias 是证书别名，可修改为自己想设置的字符，建议使用英文字母和数字

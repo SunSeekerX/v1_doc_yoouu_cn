@@ -90,6 +90,87 @@ f. ~/.bashrc
 
 其中 a 和 b 是`系统级别`的，系统启动就会加载，其余是用户接别的。c,d,e 按照从前往后的`顺序读取`，如果 c 文件存在，则后面的几个文件就会被忽略`不读了`，以此类推。~/.bashrc 没有上述规则，它是 bash shell 打开的时候载入的。这里建议在 c 中添加环境变量，以下也是以在 c 中添加环境变量来演示的:
 
+## 📌 finder 显示隐藏文件
+
+```shell
+# 显示
+defaults write com.apple.finder AppleShowAllFiles TRUE
+killall Finder
+# 重新打开
+
+# 关闭
+defaults write com.apple.finder AppleShowAllFiles FALSE
+killall Finder
+```
+
+## 📌 java 版本管理
+
+[jEnv](https://www.jenv.be/)
+
+1. 安装
+
+   ```shell
+   brew install jenv
+   ```
+
+2. 配置环境变量
+
+   ```shell
+   # Bash
+   echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.bash_profile
+   echo 'eval "$(jenv init -)"' >> ~/.bash_profile
+
+   # Zsh
+   echo 'export PATH="$HOME/.jenv/bin:$PATH"' >> ~/.zshrc
+   echo 'eval "$(jenv init -)"' >> ~/.zshrc
+   ```
+
+3. 配置文件增加
+
+   ```shell
+   export PATH="$HOME/.jenv/bin:$PATH"
+   eval "$(jenv init -)"
+
+   # To enable shims and autocompletion add to your profile:
+   if which jenv > /dev/null; then eval "$(jenv init -)"; fi
+
+   # To use Homebrew's directories rather than ~/.jenv add to your profile:
+   export JENV_ROOT=/usr/local/opt/jenv
+   ```
+
+4. jEnv 命令
+
+   ```shell
+   # 检查运行是否正常
+   jenv doctor
+
+   # 添加到 jEnv
+   jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
+
+   # 显示已经添加的版本
+   jenv versions
+
+   # 查看版本
+   jenv --version
+
+   # 设置全局 jdk 版本
+   jenv global oracle64-1.6.0.39
+   # 设置文件夹版本 // Configure local version (per directory)
+   jenv local oracle64-1.6.0.39
+   # 设置当前会话版本
+   jenv shell oracle64-1.6.0.39
+
+   # 查看安装的 jdk 版本
+   /usr/libexec/java_home -V
+
+   # 输出
+    ssx@ssxdeMac-mini  ~  /usr/libexec/java_home -V
+   Matching Java Virtual Machines (3):
+       1.8.321.07 (x86_64) "Oracle Corporation" - "Java" /Library/Internet Plug-Ins/JavaAppletPlugin.plugin/Contents/Home
+       1.8.0_321 (x86_64) "Oracle Corporation" - "Java SE 8" /Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
+       1.7.0_80 (x86_64) "Oracle Corporation" - "Java SE 7" /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
+   ```
+
 ## 📌 iterm2 配置
 
 ### 安装 iterm2
