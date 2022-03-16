@@ -103,6 +103,20 @@ defaults write com.apple.finder AppleShowAllFiles FALSE
 killall Finder
 ```
 
+## 📌 取消系统更新小红点
+
+```shell
+# 取消
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
+killall Dock
+
+# 恢复
+sudo softwareupdate --reset-ignored
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
+```
+
+
+
 ## 📌 java 版本管理
 
 [jEnv](https://www.jenv.be/)
@@ -143,26 +157,26 @@ killall Finder
    ```shell
    # 检查运行是否正常
    jenv doctor
-
+   
    # 添加到 jEnv
    jenv add /Library/Java/JavaVirtualMachines/jdk1.8.0_321.jdk/Contents/Home
-
+   
    # 显示已经添加的版本
    jenv versions
-
+   
    # 查看版本
    jenv --version
-
+   
    # 设置全局 jdk 版本
    jenv global oracle64-1.6.0.39
    # 设置文件夹版本 // Configure local version (per directory)
    jenv local oracle64-1.6.0.39
    # 设置当前会话版本
    jenv shell oracle64-1.6.0.39
-
+   
    # 查看安装的 jdk 版本
    /usr/libexec/java_home -V
-
+   
    # 输出
     ssx@ssxdeMac-mini  ~  /usr/libexec/java_home -V
    Matching Java Virtual Machines (3):
