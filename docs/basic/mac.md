@@ -278,8 +278,6 @@ ZSH_THEME="agnoster"
 git clone https://gitee.com/imirror/zsh-autosuggestions.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 
-最后执行`source ~/.zshrc`生效。
-
 2.在`Oh My Zsh`配置启用插件
 
 打开`~/.zshrc`，找到`plugins`，追加`zsh-autosuggestions`。
@@ -297,6 +295,8 @@ iTerm > Preferences > Profiles > Colors > ANSI Colors > Bright > Black
 iTerm > Preferences > Profiles > Colors > Basic Colors > Background
 ```
 
+最后执行`source ~/.zshrc`生效。
+
 #### 2. zsh-syntax-highlighting
 
 语法高亮。
@@ -309,7 +309,7 @@ git clone https://gitee.com/imirror/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/
 
 2.在`Oh My Zsh`配置启用插件
 
-打开`~/.zshrc`，找到`plugins`，追加`zsh-autosuggestions`。
+打开`~/.zshrc`，找到`plugins`，追加`zsh-syntax-highlighting`。
 
 `git`为默认配置。
 
@@ -318,3 +318,11 @@ plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 ```
 
 最后执行`source ~/.zshrc`生效。
+
+#### 我启用的插件列表
+
+```shell
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting bundler dotenv macos rake rbenv ruby)
+
+```
+
