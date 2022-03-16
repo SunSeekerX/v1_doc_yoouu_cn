@@ -115,6 +115,19 @@ sudo softwareupdate --reset-ignored
 defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
 ```
 
+## 📌 添加 adb 环境变量
+
+前提
+已经成功安装了 Android Studio.
+
+```shell
+echo 'export ANDROID_HOME=/Users/$USER/Library/Android/sdk' >> ~/.zshrc
+echo 'export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> ~/.zshrc
+
+# 刷新
+source ~/.zshrc
+```
+
 
 
 ## 📌 java 版本管理
