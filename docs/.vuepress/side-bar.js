@@ -137,7 +137,7 @@ module.exports = {
       collapsable: false,
       children: [
         ['phone', 'Phone'],
-        // ['blockchain/', 'Blockchain'],
+        ['hackintosh', '黑苹果'],
         ['browser', '浏览器'],
         ['n1', 'N1 盒子'],
         ['jd', 'JD'],

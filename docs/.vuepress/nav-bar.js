@@ -131,7 +131,7 @@ module.exports = [
     text: '爱好',
     items: [
       { text: 'Phone', link: '/interest/phone' },
-      // { text: 'Blockchain', link: '/interest/blockchain/' },
+      { text: '黑苹果', link: '/interest/hackintosh' },
       { text: 'N1 盒子', link: '/interest/n1/' },
       { text: '浏览器', link: '/interest/browser/' },
       { text: 'JD', link: '/interest/jd' },
