@@ -2,7 +2,7 @@
 
 ## 📌 演示 APP
 
-### **Android**
+### Android
 
 #### 1.0
 
@@ -10,7 +10,7 @@
 
 ![](https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starterv1.0-100.png)
 
-**IOS**
+### IOS
 
 没有证书
 
