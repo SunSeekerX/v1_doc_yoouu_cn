@@ -1,5 +1,19 @@
 # Uni-app 原生插件
 
+## 📌 演示 APP
+
+### **Android**
+
+#### 1.0
+
+插件需要一些 申请的key，可能已经过期。实际只要能启动就代表能使用。
+
+![](https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starterv1.0-100.png)
+
+**IOS**
+
+没有证书
+
 ## 📌 Crisp 客服
 
 文档地址：[crisp.md](./uni-app/nativeplugins/crisp.md)
