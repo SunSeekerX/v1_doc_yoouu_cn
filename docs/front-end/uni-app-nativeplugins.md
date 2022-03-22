@@ -43,11 +43,13 @@
   <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-ios-screenshot.jpg" width="400"/>
   <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-android-screenshot.jpeg" width="400"/>
 </center>
+
+
 ## 📌 SuperWebp
 
 文档地址：[superwebp.md](./uni-app/nativeplugins/superwebp.md)
 
-插件地址：[https://ext.dcloud.net.cn/plugin?id=5791](https://ext.dcloud.net.cn/plugin?id=5791)
+插件地址：[https://ext.dcloud.net.cn/plugin?id=7679](https://ext.dcloud.net.cn/plugin?id=7679)
 
 截图预览：
 

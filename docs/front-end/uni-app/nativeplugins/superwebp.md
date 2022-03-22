@@ -10,6 +10,8 @@
 
 官网: ~
 
+插件地址：[https://ext.dcloud.net.cn/plugin?id=7679](https://ext.dcloud.net.cn/plugin?id=7679)
+
 Github: [https://github.com/crisp-im](https://github.com/crisp-im)
 
 ### 平台兼容性
@@ -20,7 +22,7 @@ Github: [https://github.com/crisp-im](https://github.com/crisp-im)
 
 ### 使用示例
 
-下载插件字节使用
+下载插件，配置原生插件，直接在模块使用
 
 ```html
 <!-- 远程 url -->
@@ -82,6 +84,16 @@ Github: [https://github.com/crisp-im](https://github.com/crisp-im)
 
 ### 更新日志
 
+### 1.0.1
+
+**功能（Features）**
+
+- 完成第一版本
+
+**Bug 修复 （Bug Fixes）**
+
+**技术预研（Research）**
+
 #### 1.0.0
 
 **功能（Features）**
@@ -95,3 +107,4 @@ Github: [https://github.com/crisp-im](https://github.com/crisp-im)
 ### 问题反馈
 
 虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以在评论区留言，或添加 `QQ: 1647800606` 进行反馈。
+
