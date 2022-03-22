@@ -43,6 +43,15 @@
   <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-ios-screenshot.jpg" width="400"/>
   <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-android-screenshot.jpeg" width="400"/>
 </center>
+## 📌 SuperWebp
+
+文档地址：[superwebp.md](./uni-app/nativeplugins/superwebp.md)
+
+插件地址：[https://ext.dcloud.net.cn/plugin?id=5791](https://ext.dcloud.net.cn/plugin?id=5791)
+
+截图预览：
+
+<img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app-nativeplugins/202203221053019.webp" style="zoom:33%;" />
 
 ## 📌 Sensetime 商汤人脸识别
 
