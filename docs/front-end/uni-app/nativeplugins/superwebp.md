@@ -16,9 +16,9 @@ Github: [https://github.com/crisp-im](https://github.com/crisp-im)
 
 ### 平台兼容性
 
-|  Android   | iOS |
-| :--------: | :-: |
-| 4.4 - 12.0 |  ~  |
+|  Android   | iOS  |
+| :--------: | :--: |
+| 4.4 - 12.0 |  ~   |
 
 ### 使用示例
 
@@ -84,11 +84,11 @@ Github: [https://github.com/crisp-im](https://github.com/crisp-im)
 
 ### 更新日志
 
-### 1.0.1
+#### 1.0.1
 
 **功能（Features）**
 
-- 完成第一版本
+- 文档优化
 
 **Bug 修复 （Bug Fixes）**
 
@@ -107,4 +107,3 @@ Github: [https://github.com/crisp-im](https://github.com/crisp-im)
 ### 问题反馈
 
 虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以在评论区留言，或添加 `QQ: 1647800606` 进行反馈。
-
