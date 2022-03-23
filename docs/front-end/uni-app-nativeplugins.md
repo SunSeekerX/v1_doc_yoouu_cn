@@ -1,5 +1,19 @@
 # Uni-app 原生插件
 
+## 📌 演示 APP
+
+### Android
+
+#### 1.0
+
+插件需要一些 申请的key，可能已经过期。实际只要能启动就代表能使用。
+
+![](https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starterv1.0-100.png)
+
+### IOS
+
+没有证书
+
 ## 📌 Crisp 客服
 
 文档地址：[crisp.md](./uni-app/nativeplugins/crisp.md)
@@ -43,6 +57,17 @@
   <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-ios-screenshot.jpg" width="400"/>
   <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-android-screenshot.jpeg" width="400"/>
 </center>
+
+
+## 📌 SuperWebp
+
+文档地址：[superwebp.md](./uni-app/nativeplugins/superwebp.md)
+
+插件地址：[https://ext.dcloud.net.cn/plugin?id=7679](https://ext.dcloud.net.cn/plugin?id=7679)
+
+截图预览：
+
+<img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app-nativeplugins/202203221053019.webp" style="zoom:33%;" />
 
 ## 📌 Sensetime 商汤人脸识别
 

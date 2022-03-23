@@ -152,7 +152,7 @@ source ~/.zshrc
    echo 'eval "$(jenv init -)"' >> ~/.zshrc
    ```
 
-3. 配置文件增加
+3. 配置文件增加的内容 `~/.zshrc`
 
    ```shell
    export PATH="$HOME/.jenv/bin:$PATH"
@@ -165,6 +165,13 @@ source ~/.zshrc
    export JENV_ROOT=/usr/local/opt/jenv
    ```
 
+4. To make sure `JAVA_HOME` is set, make sure to enable the `export` plugin:
+
+   ```shell
+   jenv enable-plugin export
+   exec $SHELL -l
+   ```
+   
 4. jEnv 命令
 
    ```shell
