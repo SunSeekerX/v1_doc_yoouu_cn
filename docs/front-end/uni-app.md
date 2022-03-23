@@ -139,7 +139,27 @@ const {
 
 ## 📌 配置 eslint + prettier + stylelint + lint-staged + husky
 
-### 0x2 规范提交代码
+eslint
+
+用来检查代码的完整性，潜在的错误。
+
+prettier
+
+用来格式化代码。
+
+stylelint
+
+用来格式化 css、scss、less 等代码。
+
+lint-staged
+
+顾名思义，用来检查提交到 git 暂存区的代码。
+
+husky
+
+用来配置 git 钩子，在 commit 之前配合 lint-staged 检查提交到暂存区的代码。
+
+### 规范提交代码说明
 
 可以参考[约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.4/)
 
@@ -147,7 +167,7 @@ const {
 
 简单来说就是提交代码的规范。
 
-已经详细记录到个人的文档网站，这里不做详细介绍 [地址](https://sunseekerx.yoouu.cn/front-end/npm.html#%E2%9C%85%E8%A7%84%E8%8C%83%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81)
+已经详细记录到个人的文档网站，这里不做详细介绍 [地址](https://doc.yoouu.cn/front-end/npm/#%F0%9F%93%8C-%E8%A7%84%E8%8C%83%E6%8F%90%E4%BA%A4%E4%BB%A3%E7%A0%81)
 
 ### 0x3 安装需要用到的依赖
 
@@ -157,6 +177,16 @@ npm i eslint babel-eslint eslint-plugin-vue husky lint-staged prettier @vue/esli
 yarn add eslint babel-eslint eslint-plugin-vue husky lint-staged prettier @vue/eslint-config-prettier eslint-plugin-prettier stylelint stylelint-config-prettier stylelint-config-standard stylelint-order -D
 ```
 
+### 依赖说明
+
+#### stylelint-config-standard
+
+Stylelint 的标准可共享配置。继承于 [https://github.com/stylelint/stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended)
+
+#### stylelint-config-prettier
+
+关闭所有不必要的或可能与 Prettier 冲突的规则。这让你在使用 Prettier 时，可以使用你最喜欢的可共享的配置，而不会让它的风格选择受到影响。
+
 - eslint - 校验代码的核心
 - babel-eslint - babel 插件，用 babel 解析 js 文件
 - eslint-plugin-vue - vue 官方的 eslint 插件
@@ -164,7 +194,7 @@ yarn add eslint babel-eslint eslint-plugin-vue husky lint-staged prettier @vue/e
 - lint-staged - 可以在 git staged 阶段的文件上执行 linters，简单点来说就是当我们运行 `eslint` 或 `stylelint` 的命令时，只会检查我们通过 `git add` 添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍
 - `stylelint` 检查样式
 
-### 0x4 配置
+### 0x4 配置文件
 
 > 以下设置适用于 `cli` 创建的项目，`HbuilderX` 创建的项目，路径需要修改。例如 `./src/` 改成 `./` 这样。
 
@@ -187,9 +217,18 @@ npx husky add .husky/pre-commit "npm run lint:lint-staged"
 `${app}/prettier.config.js`
 
 ```javascript
+/**
+ * uni-app prettier 配置,和 vue 项目有一些区别！！！
+ * @url https://prettier.io/docs/en/options.html
+ * @author: SunSeekerX
+ * @Date: 2020-07-20 16:34:25
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-05-25 11:21:47
+ */
+
 module.exports = {
   // 行宽 default:80
-  printWidth: 100,
+  printWidth: 120,
   // tab 宽度 default:2
   tabWidth: 2,
   // 使用 tab 键 default:false
@@ -207,7 +246,7 @@ module.exports = {
   // 在对象字面量声明所使用的的花括号后（{）和前（}）输出空格 default:true
   bracketSpacing: true,
   // 将 > 多行 JSX 元素放在最后一行的末尾，而不是单独放在下一行（不适用于自闭元素）。default:false
-  jsxBracketSameLine: false,
+  bracketSameLine: false,
   // (x) => {} 是否要有小括号 default:"always"
   arrowParens: 'always',
   // default:0
@@ -219,23 +258,13 @@ module.exports = {
   // default:false
   requirePragma: false,
   // 不包装 markdown text default:"preserve"
-  proseWrap: 'never',
+  proseWrap: 'preserve',
   // HTML空白敏感性 default:"css"
   htmlWhitespaceSensitivity: 'strict',
   // 在 *.vue 文件中 Script 和 Style 标签内的代码是否缩进 default:false
-  vueIndentScriptAndStyle: true,
+  vueIndentScriptAndStyle: false,
   // 末尾换行符 default:"lf"
   endOfLine: 'auto',
-  // default:"auto"
-  embeddedLanguageFormatting: 'auto',
-  overrides: [
-    {
-      files: '*.md',
-      options: {
-        tabWidth: 2,
-      },
-    },
-  ],
 }
 ```
 
