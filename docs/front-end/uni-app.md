@@ -139,6 +139,8 @@ const {
 
 ## 📌 配置 eslint + prettier + stylelint + lint-staged + husky
 
+项目示例：[https://github.com/SunSeekerX/uni-app-starter](https://github.com/SunSeekerX/uni-app-starter)
+
 eslint
 
 用来检查代码的完整性，潜在的错误。
@@ -171,28 +173,78 @@ husky
 
 ### 0x3 安装需要用到的依赖
 
+- husky - 可以让 git hooks 的使用变得更简单方便
+- lint-staged - 可以在 git staged 阶段的文件上执行 linters，简单点来说就是当我们运行 `eslint` 或 `stylelint` 的命令时，只会检查我们通过 `git add` 添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍
+
 ```bash
-npm i eslint babel-eslint eslint-plugin-vue husky lint-staged prettier @vue/eslint-config-prettier eslint-plugin-prettier stylelint stylelint-config-prettier stylelint-config-standard stylelint-order -D
-# or yarn
-yarn add eslint babel-eslint eslint-plugin-vue husky lint-staged prettier @vue/eslint-config-prettier eslint-plugin-prettier stylelint stylelint-config-prettier stylelint-config-standard stylelint-order -D
+yarn add eslint @babel/eslint-parser eslint-plugin-vue @vue/eslint-config-prettier eslint-plugin-prettier stylelint stylelint-config-prettier stylelint-config-property-sort-order-smacss stylelint-config-recommended-vue stylelint-config-standard-scss stylelint-order husky lint-staged prettier -D
 ```
 
-### 依赖说明
+### 依赖说明 - eslint
+
+#### eslint
+
+Github: [https://github.com/eslint/eslint](https://github.com/eslint/eslint)
+
+NPM: [https://www.npmjs.com/package/eslint](https://www.npmjs.com/package/eslint)
+
+### 依赖说明 - stylelint
+
+#### stylelint
+
+stylelint 主要 cli 工具库。
+
+Github: [https://github.com/stylelint/stylelint](https://github.com/stylelint/stylelint)
+
+NPM: [https://www.npmjs.com/package/stylelint](https://www.npmjs.com/package/stylelint)
 
 #### stylelint-config-standard
 
+Github: [https://github.com/stylelint/stylelint-config-standard](https://github.com/stylelint/stylelint-config-standard)
+
+NPM: [https://www.npmjs.com/package/stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard)
+
 Stylelint 的标准可共享配置。继承于 [https://github.com/stylelint/stylelint-config-recommended](https://github.com/stylelint/stylelint-config-recommended)
+
+#### stylelint-config-standard-scss
+
+Github: [https://github.com/stylelint-scss/stylelint-config-standard-scss](https://github.com/stylelint-scss/stylelint-config-standard-scss)
+
+NPM: [https://www.npmjs.com/package/stylelint-config-standard-scss](https://www.npmjs.com/package/stylelint-config-standard-scss)
+
+scss 校验配置，已经包含了 `stylelint-config-standard` 的配置。
 
 #### stylelint-config-prettier
 
+Github: [https://github.com/prettier/stylelint-config-prettier](https://github.com/prettier/stylelint-config-prettier)
+
+NPM: [https://www.npmjs.com/package/stylelint-config-prettier](https://www.npmjs.com/package/stylelint-config-prettier)
+
 关闭所有不必要的或可能与 Prettier 冲突的规则。这让你在使用 Prettier 时，可以使用你最喜欢的可共享的配置，而不会让它的风格选择受到影响。
 
-- eslint - 校验代码的核心
-- babel-eslint - babel 插件，用 babel 解析 js 文件
-- eslint-plugin-vue - vue 官方的 eslint 插件
-- husky - 可以让 git hooks 的使用变得更简单方便
-- lint-staged - 可以在 git staged 阶段的文件上执行 linters，简单点来说就是当我们运行 `eslint` 或 `stylelint` 的命令时，只会检查我们通过 `git add` 添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍
-- `stylelint` 检查样式
+#### stylelint-order
+
+Github: [https://github.com/hudochenkov/stylelint-order](https://github.com/hudochenkov/stylelint-order)
+
+NPM: [https://www.npmjs.com/package/stylelint-order](https://www.npmjs.com/package/stylelint-order)
+
+css 顺序排序。
+
+#### stylelint-config-recess-order
+
+Github: [https://github.com/stormwarning/stylelint-config-recess-order](https://github.com/stormwarning/stylelint-config-recess-order)
+
+NPM: [https://www.npmjs.com/package/stylelint-config-recess-order](https://www.npmjs.com/package/stylelint-config-recess-order)
+
+css 顺序排序规则。`stylelint-order` 是排序插件，这个是排序的规则。
+
+#### stylelint-config-property-sort-order-smacss
+
+Github: [https://github.com/cahamilton/stylelint-config-property-sort-order-smacss](https://github.com/cahamilton/stylelint-config-property-sort-order-smacss)
+
+NPM: [https://www.npmjs.com/package/stylelint-config-property-sort-order-smacss](https://www.npmjs.com/package/stylelint-config-property-sort-order-smacss)
+
+css 顺序排序规则。`stylelint-order` 是排序插件，这个是排序的规则。
 
 ### 0x4 配置文件
 
@@ -279,27 +331,35 @@ src/components/uni-**
 
 #### eslint
 
-> eslint 的配置复制于 `PanJiaChen` 大佬的项目，[vue-admin-template](https://github.com/PanJiaChen/vue-admin-template)，关闭了一些实在是太变态的警告。。。（大部分是格式问题）
+已经升级到 v8。
 
 `${app}/.eslintrc.js`
 
 ```javascript
 module.exports = {
-  root: true,
   env: {
     browser: true,
+    es2021: true,
     node: true,
   },
-  // 配置js全局变量，因为是uni-app，全局的uni是不需要引入的，还有5+的plus对象
+  // uni-app 内可以直接访问的全局变量
   globals: {
     uni: 'readonly',
     plus: 'readonly',
     wx: 'readonly',
+    getApp: 'readonly',
   },
-  extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
+  extends: ['eslint:recommended', 'plugin:vue/essential', '@vue/prettier'],
   parserOptions: {
-    parser: 'babel-eslint',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    parser: '@babel/eslint-parser',
+    requireConfigFile: false,
+    babelOptions: {
+      rootMode: 'upward',
+    },
   },
+  plugins: ['vue'],
   rules: {
     'no-console': [
       'warn',
@@ -307,221 +367,9 @@ module.exports = {
         allow: ['warn', 'error'],
       },
     ],
-    'no-eval': 'error',
-    'no-alert': 'error',
-    'vue/max-attributes-per-line': [
-      0,
-      {
-        singleline: 10,
-        multiline: {
-          max: 1,
-          allowFirstLine: false,
-        },
-      },
-    ],
-    'vue/singleline-html-element-content-newline': 'off',
-    'vue/multiline-html-element-content-newline': 'off',
-    'vue/name-property-casing': ['error', 'PascalCase'],
-    'vue/no-v-html': 'off',
-    'accessor-pairs': 2,
-
-    'block-spacing': [2, 'always'],
-    'brace-style': [
-      2,
-      '1tbs',
-      {
-        allowSingleLine: true,
-      },
-    ],
-    camelcase: [
-      0,
-      {
-        properties: 'always',
-      },
-    ],
-    'comma-dangle': [2, 'only-multiline'],
-    'comma-style': [2, 'last'],
-    'constructor-super': 2,
-    curly: [2, 'multi-line'],
-    'dot-location': [2, 'property'],
-    'eol-last': 2,
-    eqeqeq: [
-      'warn',
-      'always',
-      {
-        null: 'ignore',
-      },
-    ],
-    'generator-star-spacing': [
-      2,
-      {
-        before: true,
-        after: true,
-      },
-    ],
-    'handle-callback-err': [2, '^(err|error)$'],
-    'jsx-quotes': [2, 'prefer-single'],
-    'new-cap': [
-      2,
-      {
-        newIsCap: true,
-        capIsNew: false,
-      },
-    ],
-    'new-parens': 2,
-    'no-array-constructor': 2,
-    'no-caller': 2,
-    'no-class-assign': 2,
-    'no-cond-assign': 2,
-    'no-const-assign': 2,
-    'no-control-regex': 0,
-    'no-delete-var': 2,
-    'no-dupe-args': 2,
-    'no-dupe-class-members': 2,
-    'no-dupe-keys': 2,
-    'no-duplicate-case': 2,
-    'no-empty-character-class': 2,
-    'no-empty-pattern': 2,
-    'no-ex-assign': 2,
-    'no-extend-native': 2,
-    'no-extra-bind': 2,
-    'no-extra-boolean-cast': 2,
-    'no-extra-parens': [2, 'functions'],
-    'no-fallthrough': 2,
-    'no-floating-decimal': 2,
-    'no-func-assign': 2,
-    'no-implied-eval': 2,
-    'no-inner-declarations': [2, 'functions'],
-    'no-invalid-regexp': 2,
-    'no-irregular-whitespace': 2,
-    'no-iterator': 2,
-    'no-label-var': 2,
-    'no-labels': [
-      2,
-      {
-        allowLoop: false,
-        allowSwitch: false,
-      },
-    ],
-    'no-lone-blocks': 2,
-    'no-mixed-spaces-and-tabs': 1,
-    'no-multi-spaces': 2,
-    'no-multi-str': 2,
-
-    'no-native-reassign': 2,
-    'no-negated-in-lhs': 2,
-    'no-new-object': 2,
-    'no-new-require': 2,
-    'no-new-symbol': 2,
-    'no-new-wrappers': 2,
-    'no-obj-calls': 2,
-    'no-octal': 2,
-    'no-octal-escape': 2,
-    'no-path-concat': 2,
-    'no-proto': 2,
-    'no-redeclare': 2,
-    'no-regex-spaces': 2,
-    'no-return-assign': [2, 'except-parens'],
-    'no-self-assign': 2,
-    'no-self-compare': 2,
-    'no-sequences': 2,
-    'no-shadow-restricted-names': 2,
-    'no-spaced-func': 2,
-    'no-sparse-arrays': 2,
-    'no-this-before-super': 2,
-    'no-throw-literal': 2,
-    'no-trailing-spaces': 0,
-    'no-undef': 2,
-    'no-undef-init': 2,
-    'no-unexpected-multiline': 2,
-    'no-unmodified-loop-condition': 2,
-    'no-unneeded-ternary': [
-      2,
-      {
-        defaultAssignment: false,
-      },
-    ],
-    'no-unreachable': 2,
-    'no-unsafe-finally': 2,
-    'no-unused-vars': [
-      2,
-      {
-        vars: 'all',
-        args: 'none',
-      },
-    ],
-    'no-useless-call': 2,
-    'no-useless-computed-key': 2,
-    'no-useless-constructor': 2,
-    'no-useless-escape': 0,
-    'no-whitespace-before-property': 2,
-    'no-with': 2,
-    'one-var': [
-      2,
-      {
-        initialized: 'never',
-      },
-    ],
-    'operator-linebreak': [
-      2,
-      'after',
-      {
-        overrides: {
-          '?': 'before',
-          ':': 'before',
-        },
-      },
-    ],
-    'padded-blocks': [2, 'never'],
-    quotes: [
-      2,
-      'single',
-      {
-        avoidEscape: true,
-        allowTemplateLiterals: true,
-      },
-    ],
-    'semi-spacing': [
-      2,
-      {
-        before: false,
-        after: true,
-      },
-    ],
-
-    'space-in-parens': [2, 'never'],
-    'space-infix-ops': 1,
-    'space-unary-ops': [
-      2,
-      {
-        words: true,
-        nonwords: false,
-      },
-    ],
-    'template-curly-spacing': [2, 'never'],
-    'use-isnan': 2,
-    'valid-typeof': 2,
-    'wrap-iife': [2, 'any'],
-    'yield-star-spacing': [2, 'both'],
-    yoda: [2, 'never'],
-    'prefer-const': 2,
-    'array-bracket-spacing': [2, 'never'],
-    'no-prototype-builtins': 0,
-    // 自定义开始
-    'vue/html-indent': 0,
-    'vue/html-closing-bracket-newline': 0,
-    'vue/html-self-closing': 0,
-    indent: 0,
-    semi: 0,
-    'comma-spacing': 0,
-    'space-before-blocks': 0,
-    'keyword-spacing': 0,
-    'key-spacing': 0,
-    'no-multiple-empty-lines': 0,
-    'spaced-comment': 0,
-    'space-before-function-paren': 0,
-    'arrow-spacing': 0,
-    'object-curly-spacing': 0,
+    'prettier/prettier': 0,
+    // nvue
+    'vue/comment-directive': 0,
   },
 }
 ```
@@ -544,35 +392,29 @@ components/uni-**
 `${app}/stylelint.config.js`
 
 ```javascript
+/**
+ * CSS 样式格式化
+ * @author: SunSeekerX
+ * @Date: 2022-03-23 17:49:16
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-05-26 18:08:09
+ */
+
 module.exports = {
-  root: true,
   plugins: ['stylelint-order'],
-  extends: ['stylelint-config-standard', 'stylelint-config-prettier'],
+  extends: [
+    'stylelint-config-standard-scss',
+    'stylelint-config-recommended-vue',
+    'stylelint-config-property-sort-order-smacss',
+    'stylelint-config-prettier',
+  ],
   rules: {
-    'selector-pseudo-class-no-unknown': [
+    'scss/at-import-partial-extension': 'always',
+    'selector-class-pattern': null,
+    'unit-no-unknown': [
       true,
       {
-        ignorePseudoClasses: ['global'],
-      },
-    ],
-    'at-rule-no-unknown': [
-      true,
-      {
-        ignoreAtRules: ['function', 'if', 'each', 'include', 'mixin', 'for'],
-      },
-    ],
-    'no-duplicate-selectors': null,
-    'no-empty-source': null,
-    'unicode-bom': 'never',
-    'no-descending-specificity': null,
-    'font-family-no-missing-generic-family-keyword': null,
-    'declaration-colon-space-after': 'always-single-line',
-    'declaration-colon-space-before': 'never',
-    'declaration-block-trailing-semicolon': 'always',
-    'rule-empty-line-before': [
-      'always',
-      {
-        ignore: ['after-comment', 'first-nested'],
+        ignoreUnits: ['rpx', 'upx'],
       },
     ],
     'property-no-unknown': [
@@ -581,173 +423,27 @@ module.exports = {
         ignoreProperties: ['lines'],
       },
     ],
-    'media-feature-name-no-unknown': [
+    'selector-type-no-unknown': [
       true,
       {
-        ignoreMediaFeatureNames: 'min-device-pixel-ratio',
+        ignoreTypes: [
+          'page',
+          'picker-view',
+          'uni-scroll-view',
+          'uni-button',
+          'scroll-view',
+          'uni-picker',
+          'uni-image',
+          'uni-textarea',
+          'uni-page-body',
+          'uni-input',
+        ],
       },
     ],
-    'unit-no-unknown': [
-      true,
-      {
-        ignoreUnits: ['rpx'],
-      },
-    ],
-    'selector-pseudo-element-no-unknown': [
-      true,
-      {
-        ignorePseudoElements: ['v-deep'],
-      },
-    ],
-    // 指定声明块内属性的字母顺序
-    'order/properties-order': [
-      'position',
-      'top',
-      'right',
-      'bottom',
-      'left',
-      'z-index',
-      'display',
-      'float',
-      'width',
-      'height',
-      'max-width',
-      'max-height',
-      'min-width',
-      'min-height',
-      'padding',
-      'padding-top',
-      'padding-right',
-      'padding-bottom',
-      'padding-left',
-      'margin',
-      'margin-top',
-      'margin-right',
-      'margin-bottom',
-      'margin-left',
-      'margin-collapse',
-      'margin-top-collapse',
-      'margin-right-collapse',
-      'margin-bottom-collapse',
-      'margin-left-collapse',
-      'overflow',
-      'overflow-x',
-      'overflow-y',
-      'clip',
-      'clear',
-      'font',
-      'font-family',
-      'font-size',
-      'font-smoothing',
-      'osx-font-smoothing',
-      'font-style',
-      'font-weight',
-      'hyphens',
-      'src',
-      'line-height',
-      'letter-spacing',
-      'word-spacing',
-      'color',
-      'text-align',
-      'text-decoration',
-      'text-indent',
-      'text-overflow',
-      'text-rendering',
-      'text-size-adjust',
-      'text-shadow',
-      'text-transform',
-      'word-break',
-      'word-wrap',
-      'white-space',
-      'vertical-align',
-      'list-style',
-      'list-style-type',
-      'list-style-position',
-      'list-style-image',
-      'pointer-events',
-      'cursor',
-      'background',
-      'background-attachment',
-      'background-color',
-      'background-image',
-      'background-position',
-      'background-repeat',
-      'background-size',
-      'border',
-      'border-collapse',
-      'border-top',
-      'border-right',
-      'border-bottom',
-      'border-left',
-      'border-color',
-      'border-image',
-      'border-top-color',
-      'border-right-color',
-      'border-bottom-color',
-      'border-left-color',
-      'border-spacing',
-      'border-style',
-      'border-top-style',
-      'border-right-style',
-      'border-bottom-style',
-      'border-left-style',
-      'border-width',
-      'border-top-width',
-      'border-right-width',
-      'border-bottom-width',
-      'border-left-width',
-      'border-radius',
-      'border-top-right-radius',
-      'border-bottom-right-radius',
-      'border-bottom-left-radius',
-      'border-top-left-radius',
-      'border-radius-topright',
-      'border-radius-bottomright',
-      'border-radius-bottomleft',
-      'border-radius-topleft',
-      'content',
-      'quotes',
-      'outline',
-      'outline-offset',
-      'opacity',
-      'filter',
-      'visibility',
-      'size',
-      'zoom',
-      'transform',
-      'box-align',
-      'box-flex',
-      'box-orient',
-      'box-pack',
-      'box-shadow',
-      'box-sizing',
-      'table-layout',
-      'animation',
-      'animation-delay',
-      'animation-duration',
-      'animation-iteration-count',
-      'animation-name',
-      'animation-play-state',
-      'animation-timing-function',
-      'animation-fill-mode',
-      'transition',
-      'transition-delay',
-      'transition-duration',
-      'transition-property',
-      'transition-timing-function',
-      'background-clip',
-      'backface-visibility',
-      'resize',
-      'appearance',
-      'user-select',
-      'interpolation-mode',
-      'direction',
-      'marks',
-      'page',
-      'set-link-source',
-      'unicode-bidi',
-      'speak',
-    ],
+    // nvue 至少需要一个 style 标签
+    'no-empty-source': null,
+    // nvue 字体设置
+    'font-family-no-missing-generic-family-keyword': null,
   },
 }
 ```
@@ -768,6 +464,14 @@ src/components/uni-**
 `${app}/lint-staged.config.js`
 
 ```javascript
+/**
+ * 暂存区检查配置
+ * @author: SunSeekerX
+ * @Date: 2020-11-13 12:46:27
+ * @LastEditors: SunSeekerX
+ * @LastEditTime: 2021-01-13 19:08:29
+ */
+
 module.exports = {
   '*.{js,jsx,ts,tsx}': ['eslint --fix', 'prettier --write'],
   '{!(package)*.json,*.code-snippets,.!(browserslist)*rc}': ['prettier --write--parser json'],
@@ -787,12 +491,13 @@ module.exports = {
 ```json
 {
   "scripts": {
-    "lint:eslint": "eslint --fix --ext \"src/**/*.{vue,less,css,scss}\"",
+    "gc": "git add -A && git-cz && git pull && git push",
+    "lint:eslint": "eslint --fix \"src/**/*.{vue,js}\"",
+    "lint:lint-staged": "lint-staged",
     "lint:prettier": "prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
-    "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/",
-    "gc": "git add -A && git-cz && git pull && git push"
-  },
-  "husky": { "hooks": { "pre-commit": "lint-staged" } }
+    "lint:stylelint": "stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --allow-empty-input --cache --cache-location node_modules/.cache/stylelint/",
+    "pkg:sort": "npx sort-package-json"
+  }
 }
 ```
 
@@ -813,25 +518,19 @@ git add -A && git cz && git pull && git push
 #### 代码校验 - lint:eslint
 
 ```bash
-yarn lint:prettier
-# 实际执行
-prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"
+yarn lint:eslint
 ```
 
 #### 代码校验 - lint:prettier
 
 ```bash
 yarn lint:prettier
-# 实际执行
-prettier --write --loglevel warn \"src/**/*.{js,json,tsx,css,less,scss,vue,html,md}\"
 ```
 
 #### 代码校验 - lint:stylelint
 
 ```bash
 yarn lint:prettier
-# 实际执行
-stylelint --fix \"**/*.{vue,less,postcss,css,scss}\" --cache --cache-location node_modules/.cache/stylelint/
 ```
 
 ## 📌 HbuilderX
