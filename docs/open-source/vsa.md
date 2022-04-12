@@ -4,7 +4,7 @@
 >
 > 基于最新的依赖进行构建。
 >
-> [线上地址:https://vsa.yoouu.cn/](https://vsa.yoouu.cn/)
+> ~~[线上地址:https://vsa.yoouu.cn/](https://vsa.yoouu.cn/)~~
 
 ## 个人改造
 

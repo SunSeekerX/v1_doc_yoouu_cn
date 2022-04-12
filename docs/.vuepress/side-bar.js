@@ -185,6 +185,7 @@ module.exports = {
       title: 'Open source',
       collapsable: false,
       children: [
+        ['', 'README'],
         ['vsa', 'Vue simple admin'],
         ['web-storage-apis/zh', 'Web storage apis'],
       ],

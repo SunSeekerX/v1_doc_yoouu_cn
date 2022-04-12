@@ -177,63 +177,64 @@ module.exports = [
     ],
   },
   // Open source
-  {
-    text: '开源项目',
-    items: [
-      { text: 'Vue simple admin', link: '/open-source/vsa/' },
-      { text: 'Web storage apis', link: '/open-source/web-storage-apis/zh/' },
-      {
-        text: 'uni-app',
-        items: [
-          {
-            text: 'markrgba-css',
-            link: 'https://github.com/SunSeekerX/markrgba-css',
-          },
-          {
-            text: 'uni-app-starter',
-            link: 'https://github.com/SunSeekerX/uni-app-starter',
-          },
-        ],
-      },
-      {
-        text: 'Uni pushy',
-        items: [
-          {
-            text: 'uni-pushy-client',
-            link: 'https://github.com/SunSeekerX/uni-pushy-client',
-          },
-          {
-            text: 'uni-pushy-admin',
-            link: 'https://github.com/SunSeekerX/uni-pushy-admin',
-          },
-          {
-            text: 'uni-pushy-server',
-            link: 'https://github.com/SunSeekerX/uni-pushy-server',
-          },
-        ],
-      },
-      {
-        text: 'Ghost theme',
-        items: [
-          {
-            text: 'ghost-theme-yamabuki',
-            link: 'https://github.com/SunSeekerX/ghost-theme-yamabuki',
-          },
-          {
-            text: 'Ghost-Theme-Frenemy',
-            link: 'https://github.com/SunSeekerX/Ghost-Theme-Frenemy',
-          },
-        ],
-      },
-      {
-        text: 'NodeJS',
-        items: [
-          {
-            text: 'nodejs-mysql-apis',
-            link: 'https://github.com/SunSeekerX/nodejs-mysql-apis',
-          },
-        ],
-      },
-    ],
-  },
+  { text: '开源项目', link: '/open-source/' },
+  // {
+  //   text: '开源项目',
+  //   items: [
+  //     { text: 'Vue simple admin', link: '/open-source/vsa/' },
+  //     { text: 'Web storage apis', link: '/open-source/web-storage-apis/zh/' },
+  //     {
+  //       text: 'uni-app',
+  //       items: [
+  //         {
+  //           text: 'markrgba-css',
+  //           link: 'https://github.com/SunSeekerX/markrgba-css',
+  //         },
+  //         {
+  //           text: 'uni-app-starter',
+  //           link: 'https://github.com/SunSeekerX/uni-app-starter',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       text: 'Uni pushy',
+  //       items: [
+  //         {
+  //           text: 'uni-pushy-client',
+  //           link: 'https://github.com/SunSeekerX/uni-pushy-client',
+  //         },
+  //         {
+  //           text: 'uni-pushy-admin',
+  //           link: 'https://github.com/SunSeekerX/uni-pushy-admin',
+  //         },
+  //         {
+  //           text: 'uni-pushy-server',
+  //           link: 'https://github.com/SunSeekerX/uni-pushy-server',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       text: 'Ghost theme',
+  //       items: [
+  //         {
+  //           text: 'ghost-theme-yamabuki',
+  //           link: 'https://github.com/SunSeekerX/ghost-theme-yamabuki',
+  //         },
+  //         {
+  //           text: 'Ghost-Theme-Frenemy',
+  //           link: 'https://github.com/SunSeekerX/Ghost-Theme-Frenemy',
+  //         },
+  //       ],
+  //     },
+  //     {
+  //       text: 'NodeJS',
+  //       items: [
+  //         {
+  //           text: 'nodejs-mysql-apis',
+  //           link: 'https://github.com/SunSeekerX/nodejs-mysql-apis',
+  //         },
+  //       ],
+  //     },
+  //   ],
+  // },
 ]
