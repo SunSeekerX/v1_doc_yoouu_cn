@@ -166,6 +166,10 @@
 
 [vuepress-theme-hope](https://vuepress-theme-hope.github.io/) - 一个轻量的 Vuepress 主题
 
+[vuepress-theme-vdoing](https://github.com/xugaoyi/vuepress-theme-vdoing) - 🚀 一款简洁高效的 VuePress 知识管理&博客(blog)主题
+
+[vuepress-theme-antdocs](https://github.com/zpfz/vuepress-theme-antdocs) - 🔥🎨 An Ant Design style theme for VuePress. (QQ Group: 867711329) [NOTE: The AntDocs-next is WIP.]
+
 ## 📌 前端
 
 [vConsole](https://github.com/Tencent/vConsole) - 一个轻量、可拓展、针对手机网页的前端开发者调试面板。
