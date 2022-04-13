@@ -675,6 +675,65 @@ if (!packageNames.areNotificationsEnabled()) {
 // #endif
 ```
 
+### 微信支付和支付宝支付
+
+```javascript
+const payOrder =
+  this.payType === 'wxpay'
+    ? {
+        appid: res.data.appid,
+        noncestr: res.data.noncestr,
+        package: res.data.package,
+        partnerid: res.data.partnerid,
+        prepayid: res.data.prepayid,
+        timestamp: res.data.timestamp,
+        key: res.data.unique_identifier,
+        sign: res.data.sign,
+      }
+    : res.data.pay_str
+
+uni.requestPayment({
+  provider: this.payType,
+  orderInfo: payOrder,
+  success: (res) => {
+    console.warn(res)
+    uni.$u.toast('支付成功')
+    this.isClick = true
+    this.$refs.uToast.hide()
+    setTimeout(() => {
+      uni.navigateBack({})
+    }, 1500)
+  },
+  fail: (res) => {
+    console.warn(res)
+    uni.$u.toast('支付失败')
+    this.isClick = true
+    this.$refs.uToast.hide()
+  },
+})
+```
+
+微信订单数据示例
+
+```
+{
+  "appid": "wx6d3ffd250a0c6373",
+  "noncestr": "CQ5u8Ejog9Uch6eqV4JYywnmN7f1dx0H",
+  "package": "Sign=WXPay",
+  "partnerid": "1622013925",
+  "prepayid": "wx13101132913906a7dcdfed10a126a10000",
+  "timestamp": 1649815892,
+  "key": "QBApjv9cfdOHUzSEToVlrym08aI7gtk2",
+  "sign": "E58BD95A072D07FFE8841BCC205BD599"
+}
+```
+
+支付宝订单数据示例
+
+```
+app_id=2021003124663518&version=1.0&alipay_sdk=alipay-sdk-PHP-4.11.14.ALL&charset=UTF-8&format=JSON&sign_type=RSA2&method=alipay.trade.app.pay&timestamp=2022-04-13+10%3A11%3A55&notify_url=https%3A%2F%2Fapi.facetap.cn%2Fapi%2Fpay%2FaliNotify&biz_content=%7B%22subject%22%3A%22%E7%BB%88%E8%BA%ABvip%22%2C%22out_trade_no%22%3A%22M3NjmuSCtTVwGikvFXpxB7I0l2crPebh%22%2C%22total_amount%22%3A%22159.00%22%2C%22product_code%22%3A%22QUICK_MSECURITY_PAY%22%7D&sign=TwwkHHs4XM9CXvzbeP6V6aQFBpaF%2BD8H6mNK0ghSy%2FzeB05L20pMB44W8PUhL2nj7nvZNC0dTNC3piPpa6QHf6aa068wAiQ%2F7AS8jdieD4gtcGN5nfdo4WEZY%2BA4jGoR5TWLwBeyyCOuX9LI%2BfwHeKnV3ULlYl3eNSeHbjpfKAE9QiMEbDh78zY%2BC7TSECyM4l5QTtMkb0pfG3QiNt%2B4prneuIzBL5i0AscFtmzgSq4AI35h4gZeKHAACvMcvSye8KVir5dkfO5fW16YOVo3djWjRmsJYDOvsMelQDPfl7%2Fyg%2FK0vM83TzM%2Bi7fXuz3X%2Fz%2Boncw0CUtt4y7U4bqI3w%3D%3D
+```
+
 ## 📌 nvue
 
 ### 注意事项
