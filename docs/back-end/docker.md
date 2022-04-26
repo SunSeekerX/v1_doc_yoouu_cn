@@ -556,3 +556,23 @@ nginx 反向代理无法正常工作，禅道工作目录为 www/
 ```
 docker run --name mysql57 -p 33066:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7
 ```
+
+### 0x14 Docker 安装 Bookstack
+
+参数需要提前设置好, 官方文档：[https://www.bookstackapp.com/docs/admin/installation/#docker](https://www.bookstackapp.com/docs/admin/installation/#docker)
+
+```shell
+docker run -d \
+  --name=bookstack \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e APP_URL=https://bookstack.yoouu.cn \
+  -e DB_HOST=192.168.0.1 \
+  -e DB_USER=${your-db-user} \
+  -e DB_PASS=${your-db-password} \
+  -e DB_DATABASE=${your-db} \
+  -p 6875:80 \
+  -v /root/data/bookstack:/config \
+  --restart unless-stopped \
+  lscr.io/linuxserver/bookstack
+```
