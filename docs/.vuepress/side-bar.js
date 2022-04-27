@@ -112,6 +112,12 @@ module.exports = {
       ],
     },
     {
+      title: 'Kotlin',
+      prefix: '',
+      collapsable: false,
+      children: [['kotlin', 'Kotlin']],
+    },
+    {
       title: 'Java',
       prefix: 'java/',
       collapsable: false,

@@ -111,6 +111,10 @@ module.exports = [
         ],
       },
       {
+        text: 'Kotlin',
+        items: [{ text: 'Kotlin', link: '/back-end/kotlin/' }],
+      },
+      {
         text: 'Java',
         items: [
           { text: 'Basic', link: '/back-end/java/' },
