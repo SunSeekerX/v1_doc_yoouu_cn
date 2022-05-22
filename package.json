@@ -18,5 +18,5 @@
     "vuepress": "^1.9.7",
     "vuepress-theme-hope": "1.29.0"
   },
-  "packageManager": "yarn@3.1.0"
+  "packageManager": "yarn@3.2.1"
 }

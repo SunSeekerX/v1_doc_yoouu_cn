@@ -41,6 +41,8 @@ npm config delete https-proxy
 yarn upgrade-interactive
 # 清除缓存
 yarn cache clean
+# 升级到最新的稳定 yarn 版本
+yarn set version latest
 
 # 更改下载的包位置
 yarn config set global-folder "d:\data\node_package\yarn"

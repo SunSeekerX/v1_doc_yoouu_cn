@@ -7,6 +7,7 @@
  */
 
 module.exports = {
+  // 基础笔记
   '/basic/': [
     {
       title: '基础',
@@ -35,13 +36,13 @@ module.exports = {
       ],
     },
   ],
-
+  // 前端 - front-end
   '/front-end/': [
     {
       title: 'Basic',
       collapsable: false,
       children: [
-        ['basic', 'Basic'],
+        ['guide', 'Guide'],
         ['html', 'Html'],
         ['css', 'Css'],
         ['javascript', 'JavaScript'],
@@ -54,14 +55,31 @@ module.exports = {
         ['npm', 'Npm'],
         ['vue', 'Vue'],
         ['react', 'React'],
-        ['uni-app', 'Uni-app'],
         ['mp', '微信小程序'],
-        ['uni-app-nativeplugins', 'Uni-app 原生插件'],
         ['flutter', 'Flutter'],
         ['react-native', 'React Native'],
-        ['android', 'Android'],
-        ['ios', 'IOS'],
       ],
+    },
+    {
+      title: 'Uni-app',
+      collapsable: false,
+      children: [
+        ['uni-app', 'Uni-app - 概览'],
+        ['uni-app-nativeplugins', 'Uni-app -  原生插件'],
+      ],
+    },
+    {
+      title: 'Android',
+      collapsable: false,
+      children: [
+        ['android/', 'Android - 概览'],
+        ['/front-end/android/dev', 'Android - 开发'],
+      ],
+    },
+    {
+      title: 'IOS',
+      collapsable: false,
+      children: [['ios', 'IOS - 概览']],
     },
     {
       title: 'Others',
@@ -69,39 +87,18 @@ module.exports = {
       children: [['javascript-obfuscator', 'Javascript obfuscator']],
     },
   ],
-
+  // 后端 - back-end
   '/back-end/': [
     {
       title: 'Backend',
       collapsable: false,
       children: [
         ['linux', 'Linux'],
-        // ['sql', 'SQL'],
         ['database', 'Database'],
         ['docker', 'Docker'],
         ['redis', 'Redis'],
-        // ['golang', 'Golang'],
       ],
     },
-    // {
-    //   title: 'NestJS',
-    //   prefix: 'nestjs/',
-    //   collapsable: false,
-    //   children: [
-    //     '',
-    //     'nestjs-framework-tutorial-1',
-    //     'nestjs-framework-tutorial-2',
-    //     'nestjs-framework-tutorial-3',
-    //     'nestjs-framework-tutorial-4',
-    //     'nestjs-framework-tutorial-5',
-    //     'nestjs-framework-tutorial-6',
-    //     'nestjs-framework-tutorial-7',
-    //     'nestjs-framework-tutorial-8',
-    //     'nestjs-framework-tutorial-9',
-    //     'nestjs-framework-tutorial-10',
-    //     'nestjs-framework-tutorial-12',
-    //   ],
-    // },
     {
       title: 'NodeJs',
       prefix: '',
@@ -136,7 +133,7 @@ module.exports = {
       children: [['golang', 'Golang']],
     },
   ],
-
+  // 兴趣
   '/interest/': [
     {
       title: 'Interest',
@@ -169,7 +166,7 @@ module.exports = {
       ],
     },
   ],
-
+  // 区块链
   '/blockchain/': [
     {
       title: '区块链',
@@ -185,7 +182,7 @@ module.exports = {
       ],
     },
   ],
-
+  // 开源项目 -  Open source
   '/open-source/': [
     {
       title: 'Open source',

@@ -2,10 +2,6 @@
 
 ![roadmap.svg](https://static.yoouu.cn/imgs/doc/front-end/android/roadmap.svg)
 
-## 📌 文章收集
-
-[像大牛一样写代码: 31 个 Android 开发者工具](https://www.jcodecraeer.com/a/anzhuokaifa/androidkaifa/2017/0526/7973.html) - 泡在网上的日子
-
 ## 📌 0x1 Android 项目视图
 
 ### Project

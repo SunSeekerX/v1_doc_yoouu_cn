@@ -7,9 +7,9 @@
  */
 
 module.exports = [
-  // Intro
+  // 简介
   { text: '简介', link: '/intro', icon: 'fa-solid fa-user' },
-  // Basic
+  // 基础笔记
   {
     text: '基础',
     items: [
@@ -40,14 +40,14 @@ module.exports = [
       },
     ],
   },
-  // Frontend
+  // 前端 - front-end
   {
     text: '前端',
     items: [
       {
         text: '基础',
         items: [
-          { text: 'Basic', link: '/front-end/basic' },
+          { text: 'Guide', link: '/front-end/guide' },
           { text: 'Html', link: '/front-end/html' },
           { text: 'Css', link: '/front-end/css' },
           { text: 'JavaScript', link: '/front-end/javascript' },
@@ -60,8 +60,6 @@ module.exports = [
           { text: 'Vue', link: '/front-end/vue' },
           { text: 'React', link: '/front-end/react' },
           { text: '微信小程序', link: '/front-end/mp' },
-          { text: 'Uni-app', link: '/front-end/uni-app' },
-          { text: 'Uni-app 原生插件', link: '/front-end/uni-app-nativeplugins' },
           {
             text: 'Flutter',
             link: '/front-end/flutter',
@@ -70,12 +68,33 @@ module.exports = [
             text: 'React Native',
             link: '/front-end/react-native',
           },
+        ],
+      },
+      {
+        text: 'Uni-app',
+        items: [
+          { text: 'Uni-app - 概览', link: '/front-end/uni-app' },
+          { text: 'Uni-app -  原生插件', link: '/front-end/uni-app-nativeplugins' },
+        ],
+      },
+      {
+        text: 'Android',
+        items: [
           {
-            text: 'Android',
-            link: '/front-end/android',
+            text: 'Android - 概览',
+            link: '/front-end/android/',
           },
           {
-            text: 'IOS',
+            text: 'Android - 开发',
+            link: '/front-end/android/dev',
+          },
+        ],
+      },
+      {
+        text: 'IOS',
+        items: [
+          {
+            text: 'IOS - 概览',
             link: '/front-end/ios',
           },
         ],
@@ -91,7 +110,7 @@ module.exports = [
       },
     ],
   },
-  // Backend
+  // 后端 - back-end
   {
     text: '后端',
     // link: '/back-end/linux',
@@ -130,7 +149,7 @@ module.exports = [
       },
     ],
   },
-  // Interest
+  // 兴趣
   {
     text: '爱好',
     items: [
@@ -180,65 +199,6 @@ module.exports = [
       { text: 'NFT', link: '/blockchain/nft' },
     ],
   },
-  // Open source
+  // 开源项目 -  Open source
   { text: '开源项目', link: '/open-source/' },
-  // {
-  //   text: '开源项目',
-  //   items: [
-  //     { text: 'Vue simple admin', link: '/open-source/vsa/' },
-  //     { text: 'Web storage apis', link: '/open-source/web-storage-apis/zh/' },
-  //     {
-  //       text: 'uni-app',
-  //       items: [
-  //         {
-  //           text: 'markrgba-css',
-  //           link: 'https://github.com/SunSeekerX/markrgba-css',
-  //         },
-  //         {
-  //           text: 'uni-app-starter',
-  //           link: 'https://github.com/SunSeekerX/uni-app-starter',
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       text: 'Uni pushy',
-  //       items: [
-  //         {
-  //           text: 'uni-pushy-client',
-  //           link: 'https://github.com/SunSeekerX/uni-pushy-client',
-  //         },
-  //         {
-  //           text: 'uni-pushy-admin',
-  //           link: 'https://github.com/SunSeekerX/uni-pushy-admin',
-  //         },
-  //         {
-  //           text: 'uni-pushy-server',
-  //           link: 'https://github.com/SunSeekerX/uni-pushy-server',
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       text: 'Ghost theme',
-  //       items: [
-  //         {
-  //           text: 'ghost-theme-yamabuki',
-  //           link: 'https://github.com/SunSeekerX/ghost-theme-yamabuki',
-  //         },
-  //         {
-  //           text: 'Ghost-Theme-Frenemy',
-  //           link: 'https://github.com/SunSeekerX/Ghost-Theme-Frenemy',
-  //         },
-  //       ],
-  //     },
-  //     {
-  //       text: 'NodeJS',
-  //       items: [
-  //         {
-  //           text: 'nodejs-mysql-apis',
-  //           link: 'https://github.com/SunSeekerX/nodejs-mysql-apis',
-  //         },
-  //       ],
-  //     },
-  //   ],
-  // },
 ]
