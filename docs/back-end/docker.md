@@ -429,6 +429,9 @@ $ mkdir -p /var/gogs
 # Use `docker run` for the first time.
 $ docker run --restart=always -d --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs
 
+# 接入到 docker 路由
+docker run --restart=always -d --name=gogs -p 10022:22 -p 10080:3000 -v /var/gogs:/data gogs/gogs --network=dockernet
+
 # Use `docker start` if you have stopped it.
 $ docker start gogs
 ```
@@ -561,6 +564,12 @@ docker run --name mysql57 -p 33066:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d m
 
 参数需要提前设置好, 官方文档：[https://www.bookstackapp.com/docs/admin/installation/#docker](https://www.bookstackapp.com/docs/admin/installation/#docker)
 
+> 默认
+>
+> username: admin@admin.com
+>
+> pwd: **password**
+
 ```shell
 docker run -d \
   --name=bookstack \
@@ -574,5 +583,21 @@ docker run -d \
   -p 6875:80 \
   -v /root/data/bookstack:/config \
   --restart unless-stopped \
+  lscr.io/linuxserver/bookstack
+
+  # 自己加入了网络
+  docker run -d \
+  --name=bookstack \
+  -e PUID=1000 \
+  -e PGID=1000 \
+  -e APP_URL=https://bookstack.yoouu.cn \
+  -e DB_HOST=192.168.0.1 \
+  -e DB_USER=${your-db-user} \
+  -e DB_PASS=${your-db-password} \
+  -e DB_DATABASE=${your-db} \
+  -p 6875:80 \
+  -v /root/data/bookstack:/config \
+  --restart unless-stopped \
+  --network=dockernet \
   lscr.io/linuxserver/bookstack
 ```
