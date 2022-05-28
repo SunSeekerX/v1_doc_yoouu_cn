@@ -1,34 +1,17 @@
 # Hackintosh
 
-## 📌 重装
+## 📌 nuc8 安装单盘双系统
 
-- 下载 chrome
-- 下载 typora
-  - 更换所有 md 文档用 typora 打开
-- 下载 vscode
-- 下载百度输入法
-- 关闭鼠标自然滚动
-- 切换 ctrl 和 command 位置 设置 > 键盘 > 修饰键
-- 下载微信
-- 下载 qq
-- 下载 hackintool 电源 > 修复深度休眠预留空间
-- 迁移三码
-- 复制 efi 到引导盘
-- 下载 maczip
-  - 更换所有 zip 文档用 maczip 打开
-- 设置 finder
-  - 设置文件夹显示在前
-  - 设置默认按照名称排序 （右键空白地方显示选项）
-- 下载 nodejs
+### 参考教程
 
-## 📌 nuc8
+[NUC8（豆子峡谷）在线安装 macOS，这才是 OpenCore 正确的打开方式](https://zhuanlan.zhihu.com/p/165608087)
 
 Mac 镜像下载地址
 
 - 官方（需要 App store）：https://support.apple.com/zh-cn/HT201372
 - msdn（只有 Catalina）：https://next.itellyou.cn/
 
-## 📌 安装教程
+nuc8 bios 下载地址: https://www.intel.cn/content/www/cn/zh/download/19303/bios-update-becfl357.html
 
 ### Bios 设置
 
@@ -51,6 +34,31 @@ Boot Devices->«Network Boot» ：设置为 « Disable »
 ### 工具
 
 [balenaEtche](https://www.balena.io/etcher/)
+
+1. 先安装 mac os 然后安装 windows。
+2. 下载 mac os 镜像使用 `balenaEtcher` 写入到 16G 以上的 u 盘 作为 mac os 安装镜像。记得处理 efi 分区 替换为适合的 efi 文件
+3. 下载 windows 镜像写入到 8g 以上的 u 盘 作为 windows 安装镜像。
+
+## 📌 重装
+
+- 下载 chrome
+- 下载 typora
+  - 更换所有 md 文档用 typora 打开
+- 下载 vscode
+- 下载百度输入法
+- 关闭鼠标自然滚动
+- 切换 ctrl 和 command 位置 设置 > 键盘 > 修饰键
+- 下载微信
+- 下载 qq
+- 下载 hackintool 电源 > 修复深度休眠预留空间
+- 迁移三码
+- 复制 efi 到引导盘
+- 下载 maczip
+  - 更换所有 zip 文档用 maczip 打开
+- 设置 finder
+  - 设置文件夹显示在前
+  - 设置默认按照名称排序 （右键空白地方显示选项）
+- 下载 nodejs
 
 ## 📌 文章
 
