@@ -76,7 +76,7 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/mast
 
 [下载地址 - https://avi.alkalay.net/software/RDM/](https://avi.alkalay.net/software/RDM/)
 
-## 📌 Mac 系统下的环境变量：
+## 📌 Mac 系统下的环境变量
 
 ```
 a. /etc/profile
@@ -235,34 +235,31 @@ chsh -s /usr/local/bin/zsh
 iTerm2 -> Make ITerm2 Default Term
 ```
 
-### 安装 oh-my-zsh
+### iTerm2 颜色配置
+
+[https://iterm2colorschemes.com/](https://iterm2colorschemes.com/)
+
+## 📌 oh-my-zsh
+
+[https://ohmyz.sh/](https://ohmyz.sh/)
 
 选择下面其中一种脚本安装：
 
 curl：
 
 ```shell
-export REMOTE=https://gitee.com/imirror/ohmyzsh.git
-sh -c "$(curl -fsSL https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
 wget：
 
 ```shell
-export REMOTE=https://gitee.com/imirror/ohmyzsh.git
-sh -c "$(wget -O- https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh/tools/install.sh)"
-```
-
-fetch：
-
-```shell
-export REMOTE=https://gitee.com/imirror/ohmyzsh.git
-sh -c "$(fetch -o - https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh/tools/install.sh)"
+sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O -)"
 ```
 
 ### 配置主题
 
-官方收集了一些主题（不再收录新主题），你可以访问 [主题&&截图](https://link.segmentfault.com/?enc=kC1TQKiMI7IcZqZ1bk2Sww%3D%3D.6tr%2FteU0wp8wfJK8zQdYiGQKovCsY5ET485uWbBAcTMaI2BRfkd0LutXTiLYNNSG) 页面查看并选取。
+官方收集了一些主题（不再收录新主题），你可以访问 [主题&&截图](https://github.com/ohmyzsh/ohmyzsh/wiki/Themes) 页面查看并选取。
 
 这里以`agnoster`为例说明。
 
@@ -270,7 +267,6 @@ sh -c "$(fetch -o - https://cdn.jsdelivr.net/gh/ohmyzsh/ohmyzsh/tools/install.sh
 
 ```shell
 ZSH_THEME="agnoster"
-# 主题介绍请访问 https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster
 ```
 
 ### 功能增强
