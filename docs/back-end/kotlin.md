@@ -25,3 +25,265 @@ val 是一个只读变量，这种声明变量的方式相当于 java 中的 fin
 lateinit 和 lazy 是 Kotlin 中的两种不同的延迟初始化的实现，
 
 by lazy 只能用在 val 声明的变量上，为什么上面代码也解释了，并且是线程安全的。
+
+### let，run，with，apply及also
+
+> Kotlin 标准库包含几个函数，它们的唯一目的是在对象的上下文中执行代码块。当对一个对象调用这样的函数并提供一个 lambda 表达式时，它会形成一个临时作用域。在此作用域中，可以访问该对象而无需其名称。这些函数称为作用域函数。
+
+简单来说，**作用域函数是为了方便对一个对象进行访问和操作，你可以对它进行空检查或者修改它的属性或者直接返回它的值等操作**，下面提供了案例对作用域函数进行了详细说明。
+
+#### let
+
+```kotlin
+public inline fun <T, R> T.let(block: (T) -> R): R 
+```
+
+let函数是参数化类型 T 的扩展函数。在let块内可以通过 it 指代该对象。返回值为let块的最后一行或指定return表达式。
+
+我们以一个Book对象为例，类中包含Book的name和price，如下：
+
+```kotlin
+class Book() {
+    var name = "《数据结构》"
+    var price = 60
+    fun displayInfo() = print("Book name : $name and price : $price")
+}
+fun main(args: Array<String>) {
+    val book = Book().let {
+        it.name = "《计算机网络》"
+        "This book is ${it.name}"
+    }
+    print(book)
+}
+
+控制台输出：
+This book is 《计算机网络》
+```
+
+在上面案例中，我们对Book对象使用let作用域函数，在函数块的最后一句添加了一行字符串代码，并且对Book对象进行打印，我们可以看到最后控制台输出的结果为字符串“This book is 《计算机网络》”。
+
+按照我们的编程思想，打印一个对象，输出必定是对象，但是使用let函数后，输出为最后一句字符串。这是由于let函数的特性导致。因为在Kotlin中，如果**let块中的最后一条语句是非赋值语句，则默认情况下它是返回语句。**
+
+那如果我们将let块中最后一条语句修改为赋值语句，会发生什么变化？
+
+```kotlin
+fun main(args: Array<String>) {
+    val book = Book().let {
+        it.name = "《计算机网络》"
+    }
+    print(book)
+}
+
+控制台输出：
+kotlin.Unit
+```
+
+可以看到我们将Book对象的name值进行了赋值操作，同样对Book对象进行打印，但是最后控制台的输出结果为“kotlin.Unit”，这是因为在let函数块的最后一句是赋值语句，print则将其当做是一个函数来看待。
+
+这是**let**角色设定的**第一点**：1️⃣
+
+- **let块中的最后一条语句如果是非赋值语句，则默认情况下它是返回语句，反之，则返回的是一个 Unit类型**
+
+我们来看**let**的**第二点**：2️⃣
+
+- **let可用于空安全检查。**
+
+如需对非空对象执行操作，可对其使用安全调用操作符 ?. 并调用 let 在 lambda 表达式中执行操作。如下案例：
+
+```kotlin
+var name: String? = null
+fun main(args: Array<String>) {
+    val nameLength = name?.let {
+        it.length
+    } ?: "name为空时的值"
+    print(nameLength)
+}
+```
+
+我们设置name为一个可空字符串，利用name?.let来进行空判断，只有当name不为空时，逻辑才能走进let函数块中。在这里，我们可能还看不出来let空判断的优势，但是当你有大量name的属性需要编写的时候，就能发现let的快速和简洁。
+
+**let**的**第三点**：3️⃣
+
+- **let可对调用链的结果进行操作。**
+
+关于这一点，官方教程给出了一个案例，在这里就直接使用：
+
+```kotlin
+fun main(args: Array<String>) { 
+    val numbers = mutableListOf("One","Two","Three","Four","Five")
+    val resultsList = numbers.map { it.length }.filter { it > 3 }
+    print(resultsList)
+}
+```
+
+我们的目的是获取数组列表中长度大于3的值。因为我们必须打印结果，所以我们将结果存储在一个单独的变量中，然后打印它。但是使用“let”操作符，我们可以将代码修改为:
+
+```kotlin
+fun main(args: Array<String>) {
+    val numbers = mutableListOf("One","Two","Three","Four","Five")
+    numbers.map { it.length }.filter { it > 3 }.let {
+        print(it)
+    }
+}
+```
+
+使用let后可以直接对数组列表中长度大于3的值进行打印，去掉了变量赋值这一步。
+
+另外，let函数还存在一个特点。
+
+**let**的**第四点**：4️⃣
+
+- **let可以将“It”重命名为一个可读的lambda参数。**
+
+let是通过使用“It”关键字来引用对象的上下文，因此，这个“It”可以被重命名为一个可读的lambda参数，如下将**it**重命名为**book**：
+
+```kotlin
+fun main(args: Array<String>) {
+    val book = Book().let {book ->
+        book.name = "《计算机网络》"
+    }
+    print(book)
+}
+```
+
+#### run
+
+**run**函数以“**this**”作为上下文对象，且它的调用方式与**let**一致。
+
+另外，第一点：1️⃣ **当 lambda 表达式同时包含对象初始化和返回值的计算时，run更适合**。
+
+这句话是什么意思？我们还是用案例来说话：
+
+```kotlin
+fun main(args: Array<String>) {
+
+    Book().run {
+        name = "《计算机网络》"
+        price = 30
+        displayInfo()
+    }
+}
+
+控制台输出：
+Book name : 《计算机网络》 and price : 30
+```
+
+如果不使用**run**函数，相同功能下代码会怎样？来看一看：
+
+```kotlin
+fun main(args: Array<String>) {
+
+    val book = Book()
+    book.name = "《计算机网络》"
+    book.price = 30
+    book.displayInfo()
+}
+
+控制台输出：
+Book name : 《计算机网络》 and price : 30
+```
+
+输出结果还是一样，但是run函数所带来的代码简洁程度已经显而易见。
+
+除此之外，让我们来看看run函数的其他优点：
+
+通过查看源码，了解到**run函数**存在**两种声明方式，**
+
+**1、与let一样，run是作为T的扩展函数；**
+
+```kotlin
+inline fun <T, R> T.run(block: T.() -> R): R 
+```
+
+**2、第二个run的声明方式则不同，它不是扩展函数，并且块中也没有输入值，因此，它不是用于传递对象并更改属性的类型，而是可以使你在需要表达式的地方就可以执行一个语句。**
+
+```kotlin
+inline fun <R> run(block: () -> R): R
+```
+
+如下利用run函数块执行方法，而不是作为一个扩展函数：
+
+```kotlin
+run {
+        val book = Book()
+        book.name = "《计算机网络》"
+        book.price = 30
+        book.displayInfo()
+    }
+```
+
+#### with
+
+```kotlin
+inline fun <T, R> with(receiver: T, block: T.() -> R): R 
+```
+
+**with属于非扩展函数，直接输入一个对象receiver，当输入receiver后，便可以更改receiver的属性，同时，它也与run做着同样的事情。**
+
+还是提供一个案例说明：
+
+```js
+fun main(args: Array<String>) {
+    val book = Book()
+   
+    with(book) {
+        name = "《计算机网络》"
+        price = 40
+    }
+    print(book)
+}
+```
+
+以上面为例，with（T）类型传入了一个参数book，则可以在with的代码块中访问book的name和price属性，并做更改。
+
+**with使用的是非null的对象，当函数块中不需要返回值时，可以使用with。**
+
+#### apply
+
+```kotlin
+inline fun <T> T.apply(block: T.() -> Unit): T
+复制代码
+```
+
+apply是 T 的扩展函数,与**run**函数有些相似，它将**对象的上下文引用为“this”而不是“it”，并且提供空安全检查**，不同的是，**apply不接受函数块中的返回值，返回的是自己的T类型对象。**
+
+```kotlin
+fun main(args: Array<String>) {
+    Book().apply {
+        name = "《计算机网络》"
+        price = 40
+
+    }
+    print(book)
+}
+
+控制台输出：
+com.fuusy.kotlintest.Book@61bbe9ba
+```
+
+前面看到的 **let**、**with** 和 **run** 函数返回的值都是 **R**。但是，**apply** 和下面查看的 **also** 返回 **T**。例如，在 **let** 中，没有在函数块中返回的值，最终会成为 Unit 类型，但在 **apply** 中，最后返回对象本身 （T） 时，它成为 Book 类型。
+
+apply函数**主要用于初始化或更改对象，因为它用于在不使用对象的函数的情况下返回自身。**
+
+#### also
+
+```kotlin
+inline fun <T> T.also(block: (T) -> Unit): T 
+```
+
+**also是 T 的扩展函数，返回值与apply一致，直接返回T**。also函数的用法类似于let函数，将**对象的上下文引用为“it”而不是“this”以及提供空安全检查方面**。
+
+因为T作为block函数的输入，可以使用also来访问属性。所以，在不使用或不改变对象属性的情况下也使用also。
+
+```js
+fun main(args: Array<String>) {
+    val book  = Book().also {
+        it.name = "《计算机网络》"
+        it.price = 40
+    }
+    print(book)
+}
+
+控制台输出：
+com.fuusy.kotlintest.Book@61bbe9ba
+```
