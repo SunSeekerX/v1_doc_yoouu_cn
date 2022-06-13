@@ -386,6 +386,44 @@ npm install --global sort-package-json
 npx sort-package-json
 ```
 
+### tree-node-cli
+
+用来生成文件树的插件，因为 windows 提供的 `tree` 不太好用。
+
+安装
+
+```shell
+npm install -g tree-node-cli
+```
+
+使用示例
+
+```shell
+treee -L 3 -I "node_modules|.idea|objects|.git|.yarn" -a --dirs-first
+```
+
+帮助
+
+```
+$ tree -h
+
+  Usage: tree [options]
+
+  Options:
+
+    -V, --version             output the version number
+    -a, --all-files           All files, include hidden files, are printed.
+    --dirs-first              List directories before files.
+    -d, --dirs-only           List directories only.
+    -s, --sizes               Show filesizes.
+    -I, --exclude [patterns]  Exclude files that match the pattern. | separates alternate patterns. Wrap your entire pattern in double quotes. E.g. `"node_modules|coverage".
+    -L, --max-depth <n>       Max display depth of the directory tree.
+    -r, --reverse             Sort the output in reverse alphabetic order.
+    -F, --trailing-slash      Append a '/' for directories.
+    -S, --line-ascii          Turn on ASCII line graphics.
+    -h, --help                output usage information
+```
+
 ## 📌 常见问题
 
 ### node-gyp 报错
