@@ -213,6 +213,7 @@ setting > search `serializable class without 'serialVersionUID'` > 勾选
 ## 📌 注意事项
 
 1. 如果需要获取 activity 的上下文，不能直接传递 `this`，因为上下文会频繁的销毁和重建，如果传递会造成内存泄漏。可以使用 `getApplicationContext()` 方法传递上下文实例。（可以理解为指向 App 的顶级引用，单例模式，只要应用存在，就会有一个实例）
+1. 使用 Fresco 加载 `webp` 的时候出现重复图片的问题，卸载重新安装调试的 app 就好了，应该是缓存的问题。
 
 ## 📌 添加 adb 环境变量
 
