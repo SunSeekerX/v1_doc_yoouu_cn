@@ -140,16 +140,18 @@ yarn workspaces run test
 5. 添加[`nodeLinker: node-modules`](https://yarnpkg.com/configuration/yarnrc#nodeLinker) 到 `.yarnrc.yml`
 
    ```yaml
-   # 代理选择添加
-   httpProxy: 'http://127.0.0.1:7890'
-   # 代理选择添加
-   httpsProxy: 'http://127.0.0.1:7890'
+   # httpProxy: "http://127.0.0.1:7890" # 代理选择打开
+
+   # httpsProxy: "http://127.0.0.1:7890" # 代理选择打开
+
+   # 如果不配置这个 jenkins 无法安装依赖，看原因是需要将 yarn.lock 提交上来
+   enableImmutableInstalls: false
 
    npmRegistryServer: 'https://registry.npmmirror.com'
 
    nodeLinker: node-modules
 
-   yarnPath: .yarn/releases/yarn-3.1.1.cjs
+   yarnPath: .yarn/releases/yarn-3.2.1.cjs
    ```
 
 6. 安装版本插件
