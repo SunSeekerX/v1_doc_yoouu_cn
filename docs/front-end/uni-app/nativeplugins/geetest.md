@@ -143,6 +143,12 @@ const safeRunning = (name, fun) => {
 
 无
 
+**本插件采集的数据、发送的服务器地址、以及数据用途说明**
+
+采集数据：设备电量、型号、屏幕尺寸等基础信息。用途：为动态安全对抗提供识别黑产依据。
+
+极验 sdk 隐私政策：[https://www.geetest.com/Private](https://www.geetest.com/Private)
+
 ### 演示截图
 
 **ios**
@@ -158,6 +164,25 @@ const safeRunning = (name, fun) => {
 <img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-android2.jpeg" alt="geetest-android2" style="zoom:25%;" />
 
 ### 更新日志
+
+#### 1.0.2
+
+**功能（Features）**
+
+1. 升级 android `sdk` 版本到 `geetest_sensebot_android_v4.3.5.4_20220429.aar`
+1. Android 插件添加需要的依赖
+
+**Bug 修复 （Bug Fixes）**
+
+1. 修复安卓部分情况下打包无法使用的问题
+
+#### 1.0.1
+
+**功能（Features）**
+
+1. 更新插件采集数据说明
+
+**Bug 修复 （Bug Fixes）**
 
 #### 1.0.0
 
