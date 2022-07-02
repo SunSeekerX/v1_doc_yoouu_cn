@@ -253,6 +253,22 @@ W:\ProgramFiles\Android\Sdk\platform-tools
 
 Help > Edit custom VM options > 添加就行
 
+### 编辑器报红能编译运行
+
+#### 0x1 先 clean 项目，再 build
+
+![](https://static.yoouu.cn/imgs/doc/front-end/android/202207021943881.png)
+
+#### 0x2 如果 1 不行，再试 invalidate cache / restart
+
+![](https://static.yoouu.cn/imgs/doc/front-end/android/202207021939504.png)
+
+#### 0x3 如果上述都不行，来个终结方法
+
+![](https://static.yoouu.cn/imgs/doc/front-end/android/202207021944546.png)
+
+先关闭 Android Studio，然后删除项目目录下面的 .idea 文件夹和 .gradle 文件夹，然后重新打开 AS ，发现问题解决
+
 ## 📌 Android studio 查看 SQLite 数据库
 
 **使用自带的安装模拟器**
