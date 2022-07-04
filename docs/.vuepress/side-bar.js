@@ -74,6 +74,7 @@ module.exports = {
       children: [
         ['android/', 'Android - 概览'],
         ['/front-end/android/dev', 'Android - 开发'],
+        ['/front-end/android/issue', 'Android - 问题'],
       ],
     },
     {

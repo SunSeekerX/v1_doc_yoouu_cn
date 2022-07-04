@@ -88,6 +88,10 @@ module.exports = [
             text: 'Android - 开发',
             link: '/front-end/android/dev',
           },
+          {
+            text: 'Android - 问题',
+            link: '/front-end/android/issue',
+          },
         ],
       },
       {
