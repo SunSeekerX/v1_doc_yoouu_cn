@@ -20,3 +20,6 @@
 
    无解。
 
+3. `ClickableSpan` 造成内存泄漏?
+
+   实现 `NoCopySpan` 接口，然后对 textview 设置 `android:importantForAccessibility="no"` 属性，否则应用会崩溃
