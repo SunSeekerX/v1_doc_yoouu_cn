@@ -155,7 +155,10 @@ module.exports = {
       title: 'Adobe',
       prefix: 'adobe/',
       collapsable: false,
-      children: [['photoshop', 'PhotoShop']],
+      children: [
+        ['photoshop', 'PhotoShop'],
+        ['premiere', 'Premiere'],
+      ],
     },
     {
       title: 'Tools',

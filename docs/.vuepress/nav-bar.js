@@ -173,6 +173,10 @@ module.exports = [
             text: 'PhotoShop',
             link: '/interest/adobe/photoshop',
           },
+          {
+            text: 'Premiere',
+            link: '/interest/adobe/premiere',
+          },
         ],
       },
       {
