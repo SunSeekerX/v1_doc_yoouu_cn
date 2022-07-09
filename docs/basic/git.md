@@ -221,6 +221,19 @@ git checkout -- ${文件路径}
 git push -u ${远程仓库别名} ${本地分支名}:${远程分支名}
 ```
 
+### 推送本地所有分支到远程仓库
+
+```shell
+git push newremote --tags refs/remotes/origin/*:refs/heads/*
+
+# 如果你的第二个远程仓库是通过 git remote set-url --add origin [your url] 这种方式添加的
+git push origin --tags refs/remotes/origin/*:refs/heads/*
+
+# 如果你添加了第二个远程提交信息
+# git remote add origin2 [your url]
+git push origin2 --tags refs/remotes/origin/*:refs/heads/*
+```
+
 ### 本地仓库推送到多个远程仓库
 
 ```bash
