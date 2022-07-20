@@ -23,3 +23,5 @@
 3. `ClickableSpan` 造成内存泄漏?
 
    实现 `NoCopySpan` 接口，然后对 textview 设置 `android:importantForAccessibility="no"` 属性，否则应用会崩溃
+
+4. 微信支付 `支付验证签名失败` code 为 `-2` 这个过程能调起微信了，说明 sdk 这边处理没有问题。微信返回字段有个`package`为保留字段，无法直接用过 key 名，让后端改为 `wxpayPackage`，随后签名验证失败，实际上这个字段可以写死。
