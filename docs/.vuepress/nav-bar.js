@@ -17,17 +17,31 @@ module.exports = [
         text: '资源',
         link: '/basic/resource',
       },
-      {
-        text: '工具资源',
-        link: '/basic/resource-tool',
-      },
-      { text: 'Git 命令', link: '/basic/git' },
-      { text: 'Git 快速入门', link: '/basic/git-starter' },
       { text: '正则表达式', link: '/basic/regexp' },
-      { text: '开发工具', link: '/basic/ide' },
-      { text: 'PowerShell', link: '/basic/powershell' },
-      { text: 'Windows', link: '/basic/windows' },
-      { text: 'Mac', link: '/basic/mac' },
+      {
+        text: 'Git',
+        items: [
+          { text: 'Git 命令', link: '/basic/git' },
+          { text: 'Git 快速入门', link: '/basic/git-starter' },
+        ],
+      },
+      {
+        text: '文章',
+        items: [{ text: '文章', link: '/basic/article' }],
+      },
+      {
+        text: '工具',
+        items: [
+          {
+            text: '工具资源',
+            link: '/basic/resource-tool',
+          },
+          { text: '开发工具', link: '/basic/ide' },
+          { text: 'PowerShell', link: '/basic/powershell' },
+          { text: 'Windows', link: '/basic/windows' },
+          { text: 'Mac', link: '/basic/mac' },
+        ],
+      },
       {
         text: '其他',
         items: [
