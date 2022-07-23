@@ -14,12 +14,29 @@ module.exports = {
       collapsable: false,
       children: [
         ['resource', '资源'],
-        ['resource-tool', '工具资源'],
+        ['regexp', '正则表达式'],
+      ],
+    },
+    {
+      title: 'Git',
+      collapsable: false,
+      children: [
         ['git', 'Git 命令'],
         ['git-starter', 'Git 快速入门'],
-        ['regexp', '正则表达式'],
-        ['powershell', 'PowerShell'],
+      ],
+    },
+    {
+      title: '文章',
+      collapsable: false,
+      children: [['article', '文章']],
+    },
+    {
+      title: '工具',
+      collapsable: false,
+      children: [
+        ['resource-tool', '工具资源'],
         ['ide', '开发工具'],
+        ['powershell', 'PowerShell'],
         ['windows', 'Windows'],
         ['mac', 'Mac'],
       ],

@@ -601,3 +601,32 @@ docker run -d \
   --network=dockernet \
   lscr.io/linuxserver/bookstack
 ```
+
+### 0x15 Docker 安装 Gitea
+
+> [Gitea](https://gitea.io/zh-cn/)
+
+```shell
+mkdir -p /var/gitea
+
+docker pull gitea/gitea:latest
+# 注意 DB_HOST 和 dockernet 需要新建 docker 网络
+docker run -d \
+--name=gitea \
+-e USER_UID=1000 \
+-e USER_GID=1000 \
+-e DB_TYPE=mysql \
+-e DB_HOST=192.168.0.1:3306 \
+-e DB_NAME=db_name \
+-e DB_USER=db_user \
+-e DB_PASSWD=db_pwd \
+-p 222:22 \
+-p 3000:3000 \
+--network=dockernet \
+--restart=always \
+-v /var/gitea:/data \
+-v /etc/timezone:/etc/timezone:ro \
+-v /etc/localtime:/etc/localtime:ro \
+gitea/gitea:latest
+```
+
