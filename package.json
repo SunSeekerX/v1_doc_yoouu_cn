@@ -16,7 +16,7 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "vuepress": "^1.9.7",
-    "vuepress-theme-hope": "1.28.4"
+    "vuepress-theme-hope": "1.30.0"
   },
   "packageManager": "yarn@3.2.1"
 }
