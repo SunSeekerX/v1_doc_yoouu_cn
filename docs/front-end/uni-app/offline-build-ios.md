@@ -42,17 +42,88 @@
 
 ## 运行 SDK 内的 `HBuilder-Hello`
 
+官方配置教程: [https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/ios)
+
 - 将 `HBuilder-Hello` 放在 ios 工程目录下
 
-  ![](https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-list.webp)
+  <img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-list.webp" style="zoom:25%;" />
+
+- 添加 `.gitignore`
+
+  ```shell
+  # OS X
+  .DS_Store
+  
+  # Xcode
+  build/
+  *.pbxuser
+  !default.pbxuser
+  *.mode1v3
+  !default.mode1v3
+  *.mode2v3
+  !default.mode2v3
+  *.perspectivev3
+  !default.perspectivev3
+  xcuserdata
+  *.xccheckout
+  profile
+  *.moved-aside
+  DerivedData
+  *.hmap
+  *.ipa
+  
+  # CocoaPods
+  Pods
+  ```
+
+- 创建 git 本地仓库，并进行本地 commit，防止更改了未知项，无法回退
 
 - 将 SDK 文件夹放在 `HBuilder-Hello` 项目同级，不要放在项目内， uni-app 通过相对路径导入 SDK 内的文件
 
   > 这一步如果你运行 app 的话应该是可以正常跑起来的。只不过会提醒 appkey 未配置或者错误
 
-  ![](https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-frist-run.webp)
+  <img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-frist-run.webp" style="zoom:25%;" />
 
-- 配置 Appkey
+- 配置 `dcloud_appkey` [链接](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey), `${app}/HBuilder-Hello/HBuilder-Hello/HBuilder-Hello-Info.plist`
+
+  <img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-dcloud_appkey.webp" style="zoom:25%;" />
+
+- 生成离线打包资源放入 `${app}/HBuilder-Hello/HBuilder-Hello/Pandora/apps/__UNI__XXXXXXX/www`
+
+  `__UNI__XXXXXXX` 需要修改为你的 `appid`
+
+- 修改 `${app}/HBuilder-Hello/HBuilder-Hello/control.xml`
+
+  `__UNI__XXXXXXX` 需要修改为你的 `appid`
+
+  <img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-control-xml.webp" style="zoom: 25%;" />
+
+  > 内置资源更新
+  > 如果您更新了内置资源，重新运行App加载的还是旧的资源时请检查下面的配置：
+  >
+  > 工程 Bundle Identifier 已经改成您自己的；
+  > 内置的资源版本名称和版本号需要高于上一个版本；
+  > control.xml 中 debug 改成 false
+
+- 配置应用标识(Bundle Identifier)
+
+  选择左侧应用工程根目录，选中TARGETS下的HBuilder打开工程属性界面，在General下修改Identity的值：
+
+  ![](https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-boundle-id.webp)
+
+- 配置应用名称
+
+  > 在打开的原生工程中，点击工程的targets和点开manifest文件，然后将manifest文件里的“name”字段的内容 和原生工程里的Display Name 的写成一样。
+  >
+  > 注意，manifest文件里的”name“ 对应的是HBuilderX打开的工程里的“基础配置”里的应用名称。如下图红色框所示：
+  >
+  > <img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-name.webp" style="zoom:25%;" />
+  >
+  > 
+  >
+  > <img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app/uni-app-ios-project-name2.webp" style="zoom:25%;" />
+
+  这里自己测试还需要修改国际化下面的 `CFBundleDisplayName` 这个 key 值才能生效
 
 ## 修改 SDK 内的 `HBuilder-Hello` 默认项目跑起来
 
