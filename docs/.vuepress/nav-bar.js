@@ -89,6 +89,8 @@ module.exports = [
         items: [
           { text: 'Uni-app - 概览', link: '/front-end/uni-app' },
           { text: 'Uni-app -  原生插件', link: '/front-end/uni-app-nativeplugins' },
+          { text: 'Uni-app -  Android 离线打包', link: '/front-end/uni-app/offline-build-android' },
+          { text: 'Uni-app -  IOS 离线打包', link: '/front-end/uni-app/offline-build-ios' },
         ],
       },
       {
