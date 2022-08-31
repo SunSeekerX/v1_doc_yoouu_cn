@@ -15,6 +15,7 @@ module.exports = {
       children: [
         ['resource', '资源'],
         ['regexp', '正则表达式'],
+        ['proxy', '代理设置大全'],
       ],
     },
     {
@@ -83,6 +84,8 @@ module.exports = {
       children: [
         ['uni-app', 'Uni-app - 概览'],
         ['uni-app-nativeplugins', 'Uni-app -  原生插件'],
+        ['/front-end/uni-app/offline-build-android', 'Uni-app -  Android 离线打包'],
+        ['/front-end/uni-app/offline-build-ios', 'Uni-app -  IOS 离线打包'],
       ],
     },
     {

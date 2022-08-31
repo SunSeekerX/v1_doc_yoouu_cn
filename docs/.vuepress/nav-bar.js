@@ -18,6 +18,7 @@ module.exports = [
         link: '/basic/resource',
       },
       { text: '正则表达式', link: '/basic/regexp' },
+      { text: '代理设置大全', link: '/basic/proxy' },
       {
         text: 'Git',
         items: [
@@ -89,6 +90,8 @@ module.exports = [
         items: [
           { text: 'Uni-app - 概览', link: '/front-end/uni-app' },
           { text: 'Uni-app -  原生插件', link: '/front-end/uni-app-nativeplugins' },
+          { text: 'Uni-app -  Android 离线打包', link: '/front-end/uni-app/offline-build-android' },
+          { text: 'Uni-app -  IOS 离线打包', link: '/front-end/uni-app/offline-build-ios' },
         ],
       },
       {

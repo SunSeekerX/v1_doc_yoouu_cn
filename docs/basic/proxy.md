@@ -1,0 +1,131 @@
+# 代理设置大全
+
+记录下开发需要用到的网络代理设置。
+
+## Android studio
+
+Android开发中我们会用到两种模式，一种是直接IDE编译运行，一种是直接在命令行运行，两种场景下的代理配置并不一致。其中在命令行下运行时的代理配置与shell下的一致，因此不再专门介绍，仅仅介绍IDE的环境变量配置。
+
+Android studio提供了IDE全局的环境变量的配置模式，就在 Appearance & Behavior > System Settings > HTTP Proxy 中，由于这个配置是全局的，因此开发中并不是很方便，主要表现在：
+
+- 不同的项目可能不一定需要配置代理，或者需要的代理并不一致
+- 如果项目有多个开发者，每个开发者都需要配置一次
+
+因此个人更多的都是直接修改项目相关的配置文件来设置项目相关的代理。具体的就是在项目的根目录的gradle.properties中添加如下的配置：
+
+```groovy
+systemProp.http.proxyHost='proxy.com'
+systemProp.http.proxyPort='8080'
+# 过滤不使用代理的域名
+systemProp.http.nonProxyHosts=*.bihe0832.com
+systemProp.https.proxyHost='proxy.com'
+systemProp.https.proxyPort='8080'
+# 过滤不使用代理的域名
+systemProp.https.nonProxyHosts=*.bihe0832.com
+```
+
+这里需要注意的是，很多android的maven依赖都是使用https的，因此不要仅仅配置http相关的代理，需要同时配置https的
+
+
+
+## pip 代理设置
+
+正如前面提到的，在某些情况下会出现shell配置了代理，但是并没有生效的情况。例如pip，这里介绍一下pip设置代理的方法，比如我们安装Appium-Python-Client。
+
+#### 代理设置
+
+如果在安装时需要代理，只需要在命令参数中加上` --proxy `参数，例如：
+
+```shell
+➜  temp  pip3.7 install Appium-Python-Client --proxy http://127.0.0.1:8080
+```
+
+如果在安装时不需要代理，只需要在命令参数中去除` --proxy `参数，例如：
+
+```shell
+➜  temp  pip3.7 install Appium-Python-Client
+```
+
+#### 修改pip的镜像源
+
+由于国外官方pypi经常被墙，所以我们最好是将自己使用的pip源更换一下。iMac下，修改 ~/.pip/pip.conf (没有就创建一个)内容如下:
+
+```shell
+ [global]
+ index-url = https://pypi.tuna.tsinghua.edu.cn/simple
+```
+
+
+
+## gem 代理设置
+
+正如前面提到的，在某些情况下会出现shell配置了代理，但是并没有生效的情况。例如gem，这里介绍一下gem设置代理的方法，比如我们安装github-pages。
+
+#### 代理设置
+
+如果在安装时需要代理，只需要在命令参数中加上` --http-proxy `参数，例如：
+
+```shell
+➜  temp  gem install --http-proxy http://proxy.com:8080 github-pages
+
+# 示例
+# sudo gem install cocoapods --http-proxy http://127.0.0.1:7890
+```
+
+如果在安装时不需要代理，只需要在命令参数中去除` --http-proxy `参数，例如：
+
+```shell
+➜  temp  gem install github-pages
+```
+
+#### 修改镜像
+
+除了通过配置代理来访问资源外，我们还可以通过直接修改gem的镜像源地址。这样即使不用代理也可访问。gem源的修改方法如下：
+
+```shell
+➜  temp  gem source --add <new registry url>  --remove  <new registry url>
+```
+
+具体示例如下：
+
+```shell
+➜  temp  gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/
+➜  temp  gem sources -l
+/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/ruby/2.3.0/universal-darwin17/rbconfig.rb:214: warning: Insecure world writable dir /Users/hardyshi/lib/android-sdk in PATH, mode 040777
+*** CURRENT SOURCES ***
+
+https://gems.ruby-china.org
+```
+
+如果修改镜像，建议只保留一个即可，其余的都删除，然后根据剩余的镜像确定是否使用代理，这样会大大提升效率。你也可以直接修改`~/.gemrc`，添加镜像源。示例如下：
+
+```shell
+➜  ~  cat ~/.gemrc
+---
+:backtrace: false
+:bulk_threshold: 1000
+:sources:
+- https://gems.ruby-china.com/
+:update_sources: true
+:verbose: true
+```
+
+#### 本地安装
+
+当然，gem除了设置代理或者直接修改镜像以外, 还可以直接本地安装，比如我们要安装 github-pages, 先到 [https://gems.ruby-china.org](https://gems.ruby-china.org/) 或者其余镜像源把 github-pages 下载到本地, 然后在本地安装:
+
+```shell
+➜  temp  gem install --local ~/temp/github-pages-localname.gem
+```
+
+
+
+## Mac shell
+
+```shell
+export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
+```
+
+
+
+## pod
