@@ -15,6 +15,7 @@ module.exports = {
       children: [
         ['resource', '资源'],
         ['regexp', '正则表达式'],
+        ['proxy', '代理设置大全'],
       ],
     },
     {

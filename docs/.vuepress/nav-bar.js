@@ -18,6 +18,7 @@ module.exports = [
         link: '/basic/resource',
       },
       { text: '正则表达式', link: '/basic/regexp' },
+      { text: '代理设置大全', link: '/basic/proxy' },
       {
         text: 'Git',
         items: [
