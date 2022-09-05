@@ -279,7 +279,7 @@ pnpm dlx husky-init && pnpm install # pnpm
 > hint: You can disable this warning with `git config advice.ignoredHook false`.
 >
 > ```shell
-> 
+> chmod ug+x .husky/*
 > ```
 
 ### npm-check-updates
