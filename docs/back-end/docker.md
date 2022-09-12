@@ -590,7 +590,7 @@ docker run --name redis \
 - -d redis redis-server /etc/redis/redis.conf：表示后台启动redis，以配置文件启动redis，加载容器内的conf文件。
 - appendonly yes：开启redis 持久化。
 
-### 7、检查redis运行状态
+7、检查redis运行状态
 
 ```bash
 docker ps
@@ -695,5 +695,14 @@ docker run -d \
 -v /etc/timezone:/etc/timezone:ro \
 -v /etc/localtime:/etc/localtime:ro \
 gitea/gitea:latest
+```
+
+### 0x16 Docker 安装 AppHost
+
+```shell
+# 新建数据目录
+mkdir -p ~/data/app-host
+
+docker run --name app_host -v ~/data/app-host:/app/shared -p 3001:8686 -d tinyc/app-host:lastest
 ```
 
