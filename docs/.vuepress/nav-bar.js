@@ -118,6 +118,10 @@ module.exports = [
             text: 'IOS - 概览',
             link: '/front-end/ios',
           },
+          {
+            text: 'IOS - 问题',
+            link: '/front-end/ios-issue',
+          },
         ],
       },
       {

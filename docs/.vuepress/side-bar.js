@@ -100,7 +100,10 @@ module.exports = {
     {
       title: 'IOS',
       collapsable: false,
-      children: [['ios', 'IOS - 概览']],
+      children: [
+        ['ios', 'IOS - 概览'],
+        ['ios-issue', 'IOS - 问题'],
+      ],
     },
     {
       title: 'Others',
