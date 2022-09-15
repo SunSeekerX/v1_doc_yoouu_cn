@@ -10,7 +10,333 @@
 
 解决方法：在 vscode 导入 ios 工程，在 vscode 格式化完成然后在 xcode 改
 
+### Clang-Format 统一 Xcode 代码格式化规范
 
+> 原文: [https://devfutao.com/archives/265/](https://devfutao.com/archives/265/)
+
+#### 安装步骤：
+
+1、安装clang-format
+
+```ruby
+brew install clang-format
+```
+
+查看是否安装成功
+
+```ruby
+clang-format --version
+```
+
+2、添加自动化服务
+
+![1.png](https://static.yoouu.cn/imgs/doc/front-end/ios/2280749423.png)
+
+选择快速操作
+
+![2.png](https://static.yoouu.cn/imgs/doc/front-end/ios/2233056075.png)
+
+将shell拖拽到右侧
+
+![3.png](https://static.yoouu.cn/imgs/doc/front-end/ios/1720226373.png)
+
+添加内容并勾选，**保存**并命名为`CodeFormat`
+
+![4.png](https://static.yoouu.cn/imgs/doc/front-end/ios/2701569200.png)
+
+```ruby
+export PATH=/usr/local/bin:$PATH
+clang-format
+```
+
+查看文件保存的位置：
+
+```ruby
+open ~/Library/Services
+```
+
+3、创建 `.clang-format` 文件并放到根目录
+
+创建 `.clang-format` 文件：
+
+```ruby
+touch .clang-format
+```
+
+`.clang-format` 文件内容：
+
+```ruby
+# 工具 https://github.com/mapbox/XcodeClangFormat(需要添加签名使用)
+# 函数名详细地址 英文 http://clang.llvm.org/docs/ClangFormatStyleOptions.html
+# 函数名详细地址 中文 https://www.cnblogs.com/PaulpauL/p/5929753.html
+
+# OC语言
+Language: ObjC
+
+# 基于LLVM格式
+# BasedOnStyle: LLVM
+
+# 对齐注释
+AlignTrailingComments: true
+
+# 指针和引用的对齐方式
+PointerAlignment: Right
+
+# 用于缩进的列数
+IndentWidth: 4
+
+# 针对OC的block的缩进宽度
+ObjCBlockIndentWidth: 4
+
+# OC的block嵌套参数不换行
+ObjCBreakBeforeNestedBlockParam: false
+
+# switch的case缩进
+IndentCaseLabels: true
+
+# OC里面，在@property后加空格
+ObjCSpaceAfterProperty: false
+
+# 括号中的(),{},[]代码对齐方式
+AlignAfterOpenBracket: Align
+
+#ContinuationIndentWidth: 0
+
+# 赋值=对齐
+AlignConsecutiveAssignments: false
+
+# 声明参数对齐
+AlignConsecutiveDeclarations: false
+
+# 运算符位置
+BreakBeforeBinaryOperators: None
+
+# 如果为真（true）, 三元运算符将被放置在换行后
+BreakBeforeTernaryOperators: false
+
+# 总是在逗号和对齐逗号跟冒号前把构造函数初始化式换行
+BreakConstructorInitializersBeforeComma: false
+
+# 允许短的函数放在同一行
+#AllowShortFunctionsOnASingleLine: None
+
+# 允许case在同一行
+AllowShortCaseLabelsOnASingleLine: false
+
+# OC里面，在Protocol前后加空格
+ObjCSpaceBeforeProtocolList: true
+
+# 单行注释前的空格数
+SpacesBeforeTrailingComments: 1
+
+# 连续的空行保留几行
+MaxEmptyLinesToKeep: 1
+
+# 保留block里面的空行
+KeepEmptyLinesAtTheStartOfBlocks: false
+
+# 每行字符的限制，0表示没有限制
+ColumnLimit: 0
+
+# []中添加空格
+SpacesInSquareBrackets: false
+
+# ()中添加空格
+SpacesInParentheses : false
+
+# @[]里面两边空格，默认true
+SpacesInContainerLiterals: false
+
+# 赋值运算符前加空格
+SpaceBeforeAssignmentOperators: true
+
+# 在空括号中加空格
+SpaceInEmptyParentheses: false
+
+# 在<>中间插入空格
+SpacesInAngles: false
+
+# 换行的时候对齐操作符
+AlignOperands: true
+
+# 允许if在同一行
+AllowShortIfStatementsOnASingleLine: true
+
+# 允许while在同一行
+AllowShortLoopsOnASingleLine: false
+
+# 允许将简单的语句块放到同一行
+AllowShortBlocksOnASingleLine: true
+
+# 缩进函数名
+IndentWrappedFunctionNames: false
+
+# 形参 如果为false要么都在同一行，要么各有一行
+BinPackParameters: false
+
+# 实参 如果为false要么都在同一行，要么各有一行
+BinPackArguments: false
+
+# 大括号换行
+BreakBeforeBraces: Custom
+BraceWrapping:
+  # class定义后面
+  AfterClass: true
+  # 控制语句后面
+  AfterControlStatement: false
+  # enum定义后面
+  AfterEnum: false
+  # 函数定义后面
+  AfterFunction: false
+  # 命名空间定义后面
+  AfterNamespace: false
+  # struct定义后面
+  AfterStruct: false
+  # union定义后面
+  AfterUnion: false
+  # catch之前
+  BeforeCatch: false
+```
+
+打开根目录
+
+```ruby
+open ~
+```
+
+4、设置快捷键：
+系统偏好->键盘->快捷键->app快捷键->选择Xcode->设置快捷键按钮
+快捷键按钮建议设置: `control+A` ,系统格式化快捷键为: `control+I` 方便记忆
+
+![5.png](https://static.yoouu.cn/imgs/doc/front-end/ios/1828562928.png)
+
+5、查看效果：
+
+快捷键按钮方式：重新打开Xcode->选中需要格式化的代码->按下之前设置的快捷键按钮
+手动选择方式：选中需要格式化的代码->右键->`Services`->`CodeFormat`
+![check.png](https://static.yoouu.cn/imgs/doc/front-end/ios/2459538858.png)
+
+#### 可能出现的问题
+
+1、clang-format, bash 命令未找到
+
+需要修改bash_profile文件，添加运行路径。具体为vim ~/.bash_profile, 在文件内添加clang-format存放路径，保存后退出。 source ~/.bash_profile
+
+2、Swift代码没法格式化
+
+用来格式化Swift代码的命令行工具是 `SwiftFormat`，安装教程：[Swift代码自动格式化](https://devfutao.com/go/aHR0cHM6Ly93d3cuamlhbnNodS5jb20vcC8xYWRkMTRmMzAwMmU=)
+
+#### TODO:
+
+`NS_OPTIONS`类型的枚举不符合预期，目前是手动调整，不知道有没有可以直接配 `.clang-format`的方案。
+
+预期效果：
+
+```objectivec
+typedef NS_OPTIONS(NSUInteger, UIBorderSideType) {
+    UIBorderSideTypeAll    = 0,
+    UIBorderSideTypeTop    = 1 << 0,
+    UIBorderSideTypeLeft   = 1 << 1,
+    UIBorderSideTypeRight  = 1 << 2,
+    UIBorderSideTypeBottom = 1 << 3,
+};
+```
+
+实际效果：
+
+```objectivec
+typedef NS_OPTIONS(NSUInteger, UIBorderSideType) {
+    UIBorderSideTypeAll = 0,
+    UIBorderSideTypeTop = 1 << 0,
+    UIBorderSideTypeLeft = 1 << 1,
+    UIBorderSideTypeRight = 1 << 2,
+    UIBorderSideTypeBottom = 1 << 3,
+};
+```
+
+参考：
+
+[Xcode代码格式化 .clang-format配置与使用_CCSH的博客-CSDN博客_xcode 代码格式化](https://devfutao.com/go/aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3FxXzMwNzEwMDU1L2FydGljbGUvZGV0YWlscy8xMTM4NTAxMzE=)
+
+[clang format 官方文档自定义参数介绍（中英文） - PaulpauL - 博客园](https://devfutao.com/go/aHR0cHM6Ly93d3cuY25ibG9ncy5jb20vUGF1bHBhdUwvcC81OTI5NzUzLmh0bWw=)
+
+[Clang Format在Mac上的安装与使用 - 掘金](https://devfutao.com/go/aHR0cHM6Ly9qdWVqaW4uY24vcG9zdC82ODQ0OTAzODg2MzkwNTU4NzMz)
+
+
+
+
+
+### 移除 Xcode 安装 APP 产生的缓存文件
+
+只要重新运行Xcode就一定会重新生成，而且会随着运行程序的增多，占用空间会越来越大。删除后在重新运行程序可能会稍微慢一点，建议定期清理。
+
+1. 按 `Cmd + Shift + K` 或 `shift + cmd + alt + k` 进行清理，然后退出Xcode。
+2. 删除缓存 `rm -rf ~/Library/Developer/Xcode/DerivedData` 在终端中运行
+3. 打开项目，`re-build`
+
+### 移除 APP 打包的 ipa 历史版本
+
+删除后不可恢复，文件夹是按照日期排列的，所以如果你不想全部删除，就只保留最新的几个版本就好了，个人建议全部删除。
+
+```
+~/Library/Developer/Xcode/Archives
+```
+
+### 移除模拟器的缓存数据
+
+模拟器的相关数据。每个版本的模拟器占用的内存空间大约为10M左右。每个文件夹里包含的就是一个特定系统版本的设备的数据。每个文件夹对应哪个设备可以在其下device.plist中查看。删除之后，如果立即运行程序会报错，先关闭Xcode，再重新打开程序，运行即可。运行该路径下会立马生成模拟器对应版本的文件。
+
+```
+~/Library/Developer/CoreSimulator/Devices/
+```
+
+### 移除对旧设备的支持
+
+一般是占用内存空间最大的文件夹，即使全部删，再连接设备调试时，会重新自动生成。一般iOS只向下兼容两个版本就可以了，所以我移除了9.0以下的所有版本。
+
+```
+~/Library/Developer/Xcode/iOS DeviceSupport
+```
+
+### 移除 Xcode 中的无效的插件
+
+因为之前你可能安装了一些 Xcode 的插件，比如HighlightSelectedString、VVDocumenter-Xcode等非常方便好用的第三方插件，在Xcode升级到version 8.0以后，就失效了，Xcode在内部已经集成了类似的方法，所以之前安装的也都没有用了，但是还在原来的位置占用着内存空间，建议删除。
+
+```
+~/Library/Application Support/Developer/Shared/Xcode/Plug-ins
+```
+
+### 移除旧版本的模拟器支持
+
+如果你不小心安装了很多个版本的模拟器，那么你可以删除一些旧版本的。但是当你需要旧版本的模拟器时，就需要重新下载了。建议留下1~2个版本就好了，其余的都删了吧。
+
+```
+~/Library/Developer/CoreSimulator/Profiles/Runtimes/
+```
+
+### 移除 playground 的项目缓存
+
+删除后可重新生成，可以全部删除。再次运行程序会缓存。
+
+```
+~/Library/Developer/XCPGDevices/
+```
+
+### 移除旧的文档
+
+删除后不可恢复，该目录下存储的为开发文档，一般有三个文件com.apple.adc.documentation.iOS.docset(1.68GB)、com.apple.adc.documentation.OSX.docset(2.62GB)和com.apple.adc.documentation.Xcode.docset(256.4M)，如果你只做iOS开发，其实你可以把OSX.docset删除掉的，因为它占用了2.62GB的内存。
+
+```
+~/Library/Developer/Shared/Documentation/DocSets
+```
+
+### 移除模拟器中的 SDK 版本
+
+不可恢复，操作请慎重。我个人的此路径下的只有最新版本的sdk，除非当你有多个版本的sdk再酌情删除。
+
+```
+~/application/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/
+```
 
 ## iOS证书(.p12)和描述文件(.mobileprovision)申请
 

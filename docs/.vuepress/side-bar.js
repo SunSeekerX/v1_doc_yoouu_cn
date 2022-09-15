@@ -64,6 +64,8 @@ module.exports = {
         ['html', 'Html'],
         ['css', 'Css'],
         ['javascript', 'JavaScript'],
+        ['oc', 'Objective-C 基础'],
+        ['oc-advance', 'Objective-C 高级'],
       ],
     },
     {
