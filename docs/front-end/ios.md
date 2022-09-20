@@ -4,6 +4,67 @@
 
 ## xcode
 
+### 历史版本下载
+
+[https://developer.apple.com/download/all/](https://developer.apple.com/download/all/)
+
+### ios 系统版本发布时间
+
+|        Version         | Build No. | Architecture  | **Last Update** | End Of Life                                                  |
+| :--------------------: | :-------: | :-----------: | :-------------: | :----------------------------------------------------------- |
+|       **1.1.4**        |   4A102   |  32-bit ARM   |   26 Feb 2008   | N/A                                                          |
+|       **2.2.1**        |   5H11    |  32-bit ARM   |   27 Jan 2009   | N/A                                                          |
+|       **3.1.3**        |   7E18    |  32-bit ARM   |   02 Feb 2010   | iPhone 1st Gen iPod 1st Gen                                  |
+|       **4.3.5**        |    8L1    |  32-bit ARM   |  25 July 2011   | iPhone 3G iPod 2nd Gen                                       |
+|       **5.1.1**        |   9B206   |  32-bit ARM   |   07 May 2012   | iPad 1st Gen iPod 3rd Gen                                    |
+|       **6.1.6**        |  10B500   |  32-bit ARM   |   21 Feb 2014   | iPhone 3GS iPod 4th Gen                                      |
+|       **7.1.2**        |  11D257   | 32/64-bit ARM |   30 Jun 2014   | iPhone 4                                                     |
+|       **8.4.1**        |  12H321   | 32/64-bit ARM |   13 Aug 2015   | N/A                                                          |
+|       **9.3.5**        |   13G36   | 32/64-bit ARM |   25 Aug 2016   | iPad 2, 3rd, Mini (WiFi) iPod 5th                            |
+|       **9.3.6**        |   13G37   | 32/64-bit ARM |  22 July 2019   | iPhone 4S iPad Mini (Wi-Fi + Cellular)                       |
+|       **10.3.3**       |   14G60   | 32/64-bit ARM |  19 July 2017   | iPhone 5C iPad 4th Gen (WiFi)                                |
+|       **10.3.4**       |   14G61   | 32/64-bit ARM |  22 July 2019   | iPhone 5 iPad 4th Gen (WiFi+ Cellular)                       |
+|       **11.4.1**       |   15G77   |  64-bit ARM   |  09 July 2018   | N/A                                                          |
+|    ***\*12.5.6\****    |   16H71   |  64-bit ARM   |   31 Aug 2022   | iPhone 5S, 6/6 Plus iPad Mini 2, Mini 3, Air 1st iPod 6th Gen |
+|        **13.7**        |   17H35   |  64-bit ARM   |   01 Sep 2020   | iPad Air 2nd, Mini 4                                         |
+|    ***\*14.\**8.1**    |  18H107   |  64-bit ARM   |   26 Oct 2021   | N/A                                                          |
+|        **15.7**        |   19H12   |  64-bit ARM   |   12 Sep 2022   | iPhone 6S, 7, SE iPad Air 2, Mini 4 iPod 7th                 |
+|        **16.0**        |  20A362   |  64-bit ARM   |   12 Sep 2022   | N/A                                                          |
+| **16.0.1** (iPhone 14) |  20A371   |  64-bit ARM   |   15 Sep 2022   | N/A                                                          |
+|    **16.1 Beta 1**     | 20B5045d  |  64-bit ARM   |   14 Sep 2022   | N/A                                                          |
+
+来源: [https://www.gkgigs.com/list-apple-ios-version-history/](https://www.gkgigs.com/list-apple-ios-version-history/)
+
+### Xcode 最低要求和支持的 SDK
+
+| Xcode 版本   | 要求的最低 OS 版本                                           | SDK                                                          | 架构                                                  | 部署目标                                                     | 模拟器                                                 | Swift                       |
+| :----------- | :----------------------------------------------------------- | :----------------------------------------------------------- | :---------------------------------------------------- | :----------------------------------------------------------- | :----------------------------------------------------- | :-------------------------- |
+| Xcode 14     | macOS Monterey 12.5                                          | iOS 16 macOS 12.3 tvOS 16 watchOS 9 DriverKit 22             | i386 x86_64 armv7k arm64 arm64e arm64_32              | iOS 11-16 iPadOS 13-16 macOS 10.13-12.5 tvOS 9-16 watchOS 4-9 DriverKit 19-22 | iOS 12.4-16 tvOS 12.4-16 watchOS 7-9                   | Swift 4 Swift 4.2 Swift 5.7 |
+| Xcode 13.4   | macOS Monterey 12                                            | iOS 15.5 macOS 12.3 Apple tvOS 15.4 watchOS 8.5 DriverKit 21.4 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-15.5 iPadOS 13-15.5 macOS 10.9-12.3 Apple tvOS 9-15.4 watchOS 2-8.5 DriverKit 19-21.4 | iOS 12.4-15.5 Apple tvOS 12.4-15.4 watchOS 7-8.5       | Swift 4 Swift 4.2 Swift 5.6 |
+| Xcode 13.3   | macOS Monterey 12                                            | iOS 15.4 macOS 12.3 Apple tvOS 15.4 watchOS 8.5 DriverKit 21.4 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-15.4 iPadOS 13-15.4 macOS 10.9-12.3 Apple tvOS 9-15.4 watchOS 2-8.5 DriverKit 19-21.4 | iOS 12.4-15.4 Apple tvOS 12.4-15.4 watchOS 7-8.5       | Swift 4 Swift 4.2 Swift 5.6 |
+| Xcode 13.2   | macOS Big Sur 11.3                                           | iOS 15.2 macOS 12.1 Apple tvOS 15.2 watchOS 8.3 DriverKit 21.2 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-15.2 iPadOS 13-15.2 macOS 10.9-12.2 Apple tvOS 9-15.2 watchOS 2-8.3 DriverKit 19-21.2 | iOS 10.3.1-15.2 Apple tvOS 10.2-15.2 watchOS 3.2-8.3   | Swift 4 Swift 4.2 Swift 5.5 |
+| Xcode 13.1   | macOS Big Sur 11.3                                           | iOS 15 macOS 12 Apple tvOS 15 watchOS 8 DriverKit 21.0.1     | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-15 iPadOS 13-15 macOS 10.9-12 Apple tvOS 9-15 watchOS 2-8 DriverKit 19-21.0.1 | iOS 10.3.1-15 Apple tvOS 10.2-15 watchOS 3.2-8         | Swift 4 Swift 4.2 Swift 5.5 |
+| Xcode 13     | macOS Big Sur 11.3                                           | iOS 15 macOS 11.3 Apple tvOS 15 watchOS 8 DriverKit 20.4     | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-15 iPadOS 13-15 macOS 10.9-11.3 Apple tvOS 9-15 watchOS 2-8 DriverKit 19-20.4 | iOS 10.3.1-15 Apple tvOS 10.2-15 watchOS 3.2-8         | Swift 4 Swift 4.2 Swift 5.5 |
+| Xcode 12.5.1 | macOS Big Sur 11                                             | iOS 14.5 macOS 11.3 Apple tvOS 14.5 watchOS 7.4 DriverKit 20.4 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-14.7 iPadOS 13-14.7 macOS 10.9-11.5 Apple tvOS 9-14.7 watchOS 2-7.6 DriverKit 19-20.4 | iOS 10.3.1-14.5 Apple tvOS 10.2-14.5 watchOS 3.2-7.4   | Swift 4 Swift 4.2 Swift 5.4 |
+| Xcode 12.5   | macOS Big Sur 11                                             | iOS 14.5 macOS 11.3 Apple tvOS 14.5 watchOS 7.4 DriverKit 20.4 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-14.6 iPadOS 13-14.6 macOS 10.9-11.4 Apple tvOS 9-14.6 watchOS 2-7.5 DriverKit 19-20.4 | iOS 10.3.1-14.5 Apple tvOS 10.2-14.5 watchOS 3.2-7.4   | Swift 4 Swift 4.2 Swift 5.4 |
+| Xcode 12.4   | macOS Catalina 10.15.4 (搭载 Intel 芯片的 Mac)  macOS Big Sur 11 (搭载 Apple 芯片的 Mac) | iOS 14.4 macOS 11.1 Apple tvOS 14.3 watchOS 7.2 DriverKit 20.2 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-14.4 iPadOS 13-14.4 macOS 10.9-11.1 Apple tvOS 9-14.3 watchOS 2-7.2 DriverKit 19-20.2 | iOS 10.3.1-14.4 Apple tvOS 10.2-14.3 watchOS 3.2-7.2   | Swift 4 Swift 4.2 Swift 5.3 |
+| Xcode 12.3   | macOS Catalina 10.15.4 (搭载 Intel 芯片的 Mac)  macOS Big Sur 11 (搭载 Apple 芯片的 Mac) | iOS 14.3 macOS 11.1 Apple tvOS 14.3 watchOS 7.2 DriverKit 20.2 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-14.3 iPadOS 13-14.3 macOS 10.9-11.1 Apple tvOS 9-14.3 watchOS 2-7.2 DriverKit 19-20.2 | iOS 10.3.1-14.3 Apple tvOS 10.2-14.3 watchOS 3.2-7.2   | Swift 4 Swift 4.2 Swift 5.3 |
+| Xcode 12.2   | macOS Catalina 10.15.4 (搭载 Intel 芯片的 Mac)  macOS Big Sur 11 (搭载 Apple 芯片的 Mac) | iOS 14.2 macOS 11 Apple tvOS 14.2 watchOS 7.1 DriverKit 20   | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-14.2 iPadOS 13-14.2 macOS 10.9-11 Apple tvOS 9-14.2 watchOS 2-7.1 DriverKit 19-20 | iOS 10.3.1-14.2 Apple tvOS 10.2-14.2 watchOS 3.2-7.1   | Swift 4 Swift 4.2 Swift 5.3 |
+| Xcode 12.1   | macOS Catalina 10.15.4 (搭载 Intel 芯片的 Mac)  macOS Big Sur 11 (搭载 Apple 芯片的 Mac) | iOS 14.1 macOS 10.15.6 Apple tvOS 14 watchOS 7 DriverKit 19  | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-14.1 iPadOS 13-14.1 macOS 10.9-11 Apple tvOS 9-14 watchOS 2-7 DriverKit 19 | iOS 10.3.1-14.1 Apple tvOS 10.2-14 watchOS 2-7         | Swift 4 Swift 4.2 Swift 5.3 |
+| Xcode 12     | macOS Catalina 10.15.4 (基于 Intel 的 Mac)                   | iOS 14 macOS 10.15.6 Apple tvOS 14 watchOS 7 DriverKit 19    | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 9-14 iPadOS 13-14 macOS 10.6-10.15.6 Apple tvOS 9-14 watchOS 2-7 DriverKit 19 | iOS 10.3.1-14 Apple tvOS 10.2-14 watchOS 3.2-7         | Swift 4 Swift 4.2 Swift 5.3 |
+| Xcode 11.7   | macOS Catalina 10.15.2                                       | iOS 13.7 macOS 10.15.6 Apple tvOS 13.4 watchOS 6.2 DriverKit 19 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-13.7 iPadOS 13-13.7 macOS 10.6-10.15.6 Apple tvOS 9-13.4 watchOS 2-6.2 DriverKit 19 | iOS 10.3.1-13.7 Apple tvOS 10.2-13.4 watchOS 3.2-6.2   | Swift 4 Swift 4.2 Swift 5.2 |
+| Xcode 11.6   | macOS Catalina 10.15.2                                       | iOS 13.6 macOS 10.15.6 Apple tvOS 13.4 watchOS 6.2 DriverKit 19 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-13.6 iPadOS 13-13.6 macOS 10.6-10.5.6 Apple tvOS 9-13.4 watchOS 2-6.2 DriverKit 19 | iOS 10.3.1-13.6 Apple tvOS 10.2-13.4 watchOS 3.2-6.2   | Swift 4 Swift 4.2 Swift 5.2 |
+| Xcode 11.5   | macOS Catalina 10.15.2                                       | iOS 13.5 macOS 10.15.4 Apple tvOS 13.4 watchOS 6.2 DriverKit 19 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-13.5 iPadOS 13-13.5 macOS 10.6-10.15.4 Apple tvOS 9-13.4 watchOS 2-6.2 DriverKit 19 | iOS 10.3.1-13.5 Apple tvOS 10.2-13.4 watchOS 3.2-6.2   | Swift 4 Swift 4.2 Swift 5.2 |
+| Xcode 11.4.x | macOS Catalina 10.15.2                                       | iOS 13.4 macOS 10.15.4 Apple tvOS 13.4 watchOS 6.2 DriverKit 19 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-13.4.x iPadOS 13-13.4.x macOS 10.6-10.15.4 Apple tvOS 9-13.4 watchOS 2-6.2 DriverKit 19 | iOS 10.3.1-13.4.x Apple tvOS 10.2-13.4 watchOS 3.2-6.2 | Swift 4 Swift 4.2 Swift 5.2 |
+| Xcode 11.3.x | macOS Mojave 10.14.4                                         | iOS 13.3 macOS 10.15.2 Apple tvOS 13.3 watchOS 6.1.1 DriverKit 19 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-13.3 iPadOS 13-13.3 macOS 10.6-10.15.2 Apple tvOS 9-13.3 watchOS 2-6.1.1 DriverKit 19 | iOS 10.3.1-13.3 Apple tvOS 10.2-13.3 watchOS 3.2-6.1.1 | Swift 4 Swift 4.2 Swift 5.1 |
+| Xcode 11.2.x | macOS Mojave 10.14.4                                         | iOS 13.2 macOS 10.15.1 Apple tvOS 13.2 watchOS 6.1 DriverKit 19 | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-13.2.x iPadOS 13-13.2.x macOS 10.6-10.15.1 Apple tvOS 9-13.2 watchOS 2-6.1 DriverKit 19 | iOS 10.3.1-13.2.x Apple tvOS 10.2-13.2 watchOS 3.2-6.1 | Swift 4 Swift 4.2 Swift 5.1 |
+| Xcode 11.1   | macOS Mojave 10.14.4                                         | iOS 13.1 macOS 10.15 Apple tvOS 13 watchOS 6 DriverKit 19    | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-13.1 iPadOS 13-13.1 macOS 10.6-10.15 Apple tvOS 9-13 watchOS 2-6 DriverKit 19 | iOS 10.3.1-13.1 Apple tvOS 10.2-13 watchOS 3.2-6       | Swift 4 Swift 4.2 Swift 5.1 |
+| Xcode 11     | macOS Mojave 10.14.4                                         | iOS 13 macOS 10.15 Apple tvOS 13 watchOS 6 DriverKit 19      | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-13 iPadOS 13 macOS 10.6-10.15 Apple tvOS 9-13 watchOS 2-6 DriverKit 19 | iOS 10.3.1-13 Apple tvOS 10.2-13 watchOS 3.2-6         | Swift 4 Swift 4.2 Swift 5.1 |
+| Xcode 10.3   | macOS Mojave 10.14.3                                         | iOS 12.4 macOS 10.14.6 Apple tvOS 12.4 watchOS 5.3           | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-12.4 macOS 10.6-10.14.6 Apple tvOS 9-12.4 watchOS 2-5.3 | iOS 10.3.1-12.4 Apple tvOS 10.2-12.4 watchOS 3.2-5.3   | Swift 4 Swift 4.2 Swift 5   |
+| Xcode 10.2.x | macOS Mojave 10.14.3                                         | iOS 12.2 macOS 10.14.4 Apple tvOS 12.2 watchOS 5.2           | i386 x86_64 armv7 armv7s armv7k arm64 arm64e arm64_32 | iOS 8-12.2 macOS 10.6-10.14.4 Apple tvOS 9-12.2 watchOS 2-5.2 | iOS 8.1-12.2 Apple tvOS 9-12.2 watchOS 2-5.2           | Swift 4 Swift 4.2 Swift 5   |
+
+来源: [https://developer.apple.com/cn/support/xcode/](https://developer.apple.com/cn/support/xcode/)
+
 ### 格式化 json 文件
 
 暂时未发现方法。
