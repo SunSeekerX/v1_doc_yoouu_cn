@@ -1,5 +1,65 @@
 # Uni-app - Android 离线打包
 
+## 0x1 生成证书
+
+[Android 平台签名证书(.keystore)生成指南](https://ask.dcloud.net.cn/article/35777)
+
+测试需要 jdk 1.7 的 keytool 生成的证书才能使用。
+
+进入 jdk7 安装目录执行 `C:\Program Files\Java\jdk1.7.0_80\bin` 如果在这里路径下记得使用管理员权限，否则无法创建证书文件。
+
+```shell
+keytool -genkey -alias testalias -keyalg RSA -keysize 2048 -validity 36500 -keystore test.keystore
+```
+
+例如我执行的
+
+```shell
+.\keytool -genkey -alias cn.yoouu.uniplugin.demo -keyalg RSA -keysize 2048 -validity 36500 -keystore cn-yoouu-uniplugin-demo.keystore
+```
+
+```
+Enter keystore password:  //输入证书文件密码，输入完成回车
+Re-enter new password:   //再次输入证书文件密码，输入完成回车
+What is your first and last name?
+  [Unknown]:  //输入名字和姓氏，输入完成回车
+What is the name of your organizational unit?
+  [Unknown]:  //输入组织单位名称，输入完成回车
+What is the name of your organization?
+  [Unknown]:  //输入组织名称，输入完成回车
+What is the name of your City or Locality?
+  [Unknown]:  //输入城市或区域名称，输入完成回车
+What is the name of your State or Province?
+  [Unknown]:  //输入省/市/自治区名称，输入完成回车
+What is the two-letter country code for this unit?
+  [Unknown]:  //输入国家/地区代号（两个字母），中国为CN，输入完成回车
+Is CN=XX, OU=XX, O=XX, L=XX, ST=XX, C=XX correct?
+  [no]:  //确认上面输入的内容是否正确，输入y，回车
+
+Enter key password for <testalias>
+        (RETURN if same as keystore password):  //确认证书密码与证书文件密码一样（HBuilder|HBuilderX要求这两个密码一致），直接回车就可以
+```
+
+### 查看证书信息
+
+```shell
+keytool -list -v -keystore test.keystore
+Enter keystore password: //输入密码，回车
+```
+
+```
+其中证书指纹信息（Certificate fingerprints）：
+
+MD5
+证书的MD5指纹信息（安全码MD5）
+SHA1
+证书的SHA1指纹信息（安全码SHA1）
+SHA256
+证书的SHA256指纹信息（安全码SHA245）
+```
+
+## 0x2 修改步骤
+
 1. 下载离线打包需要的文件，[链接](https://nativesupport.dcloud.net.cn/AppDocs/download/android)
 
 2. 申请 `Appkey`,[链接](https://nativesupport.dcloud.net.cn/AppDocs/usesdk/appkey)
@@ -21,6 +81,8 @@
 7. 放入 uni-app 打包生成的资源。
 
 8. 修改 `dcloud_control.xml` 的 `appid`
+
+9. 修改打包证书
 
 **遇到的问题**
 
