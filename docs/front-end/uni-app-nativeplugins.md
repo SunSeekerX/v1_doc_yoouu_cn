@@ -4,9 +4,13 @@
 
 ### Android
 
+#### 2.1.0
+
+![app-release_v2.1.0-210](https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starter-app-release_v2.1.0-210.png)
+
 #### 1.0
 
-插件需要一些 申请的key，可能已经过期。实际只要能启动就代表能使用。
+插件需要一些 申请的 key，可能已经过期。实际只要能启动就代表能使用。
 
 ![](https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starterv1.0-100.png)
 
@@ -57,7 +61,6 @@
   <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-ios-screenshot.jpg" width="400"/>
   <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-android-screenshot.jpeg" width="400"/>
 </center>
-
 
 ## 📌 SuperWebp
 
