@@ -407,6 +407,8 @@ npm install -g --production windows-build-tools
 
 由于 linux 特殊的用户系统，如果安装在了 root 用户下，切换到其他的用户是无法使用的。
 
+参考：[linux 下为所有用户安装 nvm](https://www.soulfree.cn/?p=486
+
 1. 首先修改 /ect/profile 配置 nvm node 的安装地址
 
    ```shell
@@ -433,18 +435,51 @@ npm install -g --production windows-build-tools
    mkdir /usr/local/nvm
    ```
 
-4. 基本使用
+4. 安装 nvm
+
+   ```shell
+   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+   ```
+
+5. 基本使用
 
    ```shell
    # 查看远程可用
    nvm ls-remote
+   # 查看远程可用 lts 版本
+   nvm ls-remote --lts
    # 安装指定版本
-   nvm install v16.14.0 # or 16.3.0, 12.22.1, etc
+   nvm install v16.17.1
    # 使用指定版本
-   nvm use v16.14.0
+   nvm use v16.17.1
+   # 指定默认的版本
+   nvm alias default node
+   nvm alias default v16.17.1
    ```
 
-参考：[linux 下为所有用户安装 nvm](https://www.soulfree.cn/?p=486)
+### 其他用户使用 nvm
+
+需要重新安装一份。
+
+```shell
+# 进入用户文件夹，这里以 ssx 用户为例
+cd $HOME
+# 创建文件夹
+mkdir -p  work/app
+# 编辑用户的配置文件
+vim .profile
+# 添加
+export NVM_BIN="/home/ssx/work/app/nvm/versions/node" # node安装地址
+export NVM_DIR="/home/ssx/work/app/nvm" # nvm安装地址
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# 创建文件夹
+mkdir -p /home/ssx/work/app/nvm
+# 安装 nvm
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
+# 退出当前用户，重新登录下，就可以使用 nvm 了
+```
+
+
 
 ## 📌 规范提交代码
 
@@ -968,3 +1003,4 @@ compareVersions('10.1.1', '10.2.2') // -1
 上面代码会在每次 `git commit` 执行后被运行，它检查 commit 的 message 是不是版本号，如果不是，它就会执行 `npm version patch` 更新版本号。
 
 > 来源：[版本号管理策略&&使用 npm 管理项目版本号-朱嘉伟](http://buzhundong.com/post/%E7%89%88%E6%9C%AC%E5%8F%B7%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5-%E4%BD%BF%E7%94%A8npm%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E5%8F%B7.html)
+
