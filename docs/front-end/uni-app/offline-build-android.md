@@ -16,6 +16,8 @@ keytool -genkey -alias testalias -keyalg RSA -keysize 2048 -validity 36500 -keys
 
 ```shell
 .\keytool -genkey -alias cn.yoouu.uniplugin.demo -keyalg RSA -keysize 2048 -validity 36500 -keystore cn-yoouu-uniplugin-demo.keystore
+# mac
+keytool -genkey -alias com.app10x.client -keyalg RSA -keysize 2048 -validity 36500 -keystore com-app10x-client.keystore
 ```
 
 ```
@@ -44,18 +46,12 @@ Enter key password for <testalias>
 
 ```shell
 keytool -list -v -keystore test.keystore
-Enter keystore password: //输入密码，回车
 ```
 
-```
-其中证书指纹信息（Certificate fingerprints）：
+### 迁移密钥库类型
 
-MD5
-证书的MD5指纹信息（安全码MD5）
-SHA1
-证书的SHA1指纹信息（安全码SHA1）
-SHA256
-证书的SHA256指纹信息（安全码SHA245）
+```shell
+keytool -importkeystore -srckeystore foo.keystore -destkeystore foo.keystore -deststoretype pkcs12
 ```
 
 ## 0x2 修改步骤
