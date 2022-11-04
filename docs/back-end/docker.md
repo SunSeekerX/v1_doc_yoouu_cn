@@ -706,3 +706,13 @@ mkdir -p ~/data/app-host
 docker run --name app_host -v ~/data/app-host:/app/shared -p 3001:8686 -d tinyc/app-host:lastest
 ```
 
+### 0x17 Docker 安装 twikoo 评论系统
+
+```shell
+# 新建数据目录
+mkdir -p ~/data/twikoo
+# 启动容器
+# 3002 我服务器可用的端口号
+docker run --name twikoo -e TWIKOO_THROTTLE=1000 -p 3002:8080 -v ~/data/twikoo:/app/data -d imaegoo/twikoo
+```
+

@@ -6,6 +6,16 @@
 
 [Linux 命令大全](https://wangchujiang.com/linux-command/)
 
+
+
+## 📌 ssh 登录服务器
+
+```shell
+ssh -p 12333 root@${your ip}
+```
+
+
+
 ## 📌 腾讯云获取 root
 
 | 步骤 | 方法 |
