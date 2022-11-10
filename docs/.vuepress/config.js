@@ -25,7 +25,7 @@ module.exports = config({
     ],
   ],
   themeConfig: {
-    hostname: 'https://doc.yoouu.cn/',
+    hostname: 'https://v1-doc.yoouu.cn',
     nav: navBarConfig,
     sidebar: sideBarConfig,
     iconPrefix: 'fas fa-',
