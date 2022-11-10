@@ -12,7 +12,7 @@ module.exports = config({
       'script',
       {
         type: 'text/javascript',
-        async: 'async',
+        async: true,
         src: 'https://www.googletagmanager.com/gtag/js?id=G-WCYE3ZF8Z7',
       },
       `
