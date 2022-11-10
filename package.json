@@ -30,6 +30,7 @@
     ]
   },
   "devDependencies": {
+    "@vuepress/plugin-google-analytics": "^1.9.7",
     "@vuepress/plugin-search": "^1.9.7",
     "husky": "^8.0.2",
     "lint-staged": "^13.0.3",

@@ -6,24 +6,6 @@ module.exports = config({
   title: `SunSeekerX's Notebook`,
   description:
     'Javascript、HTML、CSS、Android、iOS、Flutter、NPM、NodeJS、Vue、React、Uni-app、JAVA、Kotlin、NodeJS、Golang、Linux、Docker、Mysql、Solidity、NFT、ETH、BNB、BTC、Windows、Mac、Power shell、zsh、Nginx、Git、Proxy、刷机、黑苹果、Adobe',
-  head: [
-    // 谷歌分析 https://v1-doc.yoouu.cn/
-    [
-      'script',
-      {
-        type: 'text/javascript',
-        async: true,
-        src: 'https://www.googletagmanager.com/gtag/js?id=G-WCYE3ZF8Z7',
-      },
-      `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-WCYE3ZF8Z7');
-      `,
-    ],
-  ],
   themeConfig: {
     hostname: 'https://v1-doc.yoouu.cn',
     nav: navBarConfig,
@@ -70,6 +52,13 @@ module.exports = config({
       '@vuepress/search',
       {
         searchMaxSuggestions: 10,
+      },
+    ],
+    // 谷歌分析 https://v1-doc.yoouu.cn/
+    [
+      '@vuepress/google-analytics',
+      {
+        ga: 'G-WCYE3ZF8Z7',
       },
     ],
   ],
