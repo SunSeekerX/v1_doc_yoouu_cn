@@ -7,40 +7,20 @@ module.exports = config({
   description:
     'Javascript、HTML、CSS、Android、iOS、Flutter、NPM、NodeJS、Vue、React、Uni-app、JAVA、Kotlin、NodeJS、Golang、Linux、Docker、Mysql、Solidity、NFT、ETH、BNB、BTC、Windows、Mac、Power shell、zsh、Nginx、Git、Proxy、刷机、黑苹果、Adobe',
   head: [
-    [
-      'link',
-      {
-        rel: 'icon',
-        href: '/favicon.ico',
-      },
-    ],
-    [
-      'script',
-      {},
-      `
-      var _hmt = _hmt || [];
-      (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?93bcc9d9514b7c6d557275aec42f74e8";
-        var s = document.getElementsByTagName("script")[0]; 
-        s.parentNode.insertBefore(hm, s);
-      })();
-      `,
-    ],
-    // 谷歌分析 doc.yoouu.cn
+    // 谷歌分析 https://v1-doc.yoouu.cn/
     [
       'script',
       {
         type: 'text/javascript',
         async: 'async',
-        src: 'https://www.googletagmanager.com/gtag/js?id=UA-160614210-3',
+        src: 'https://www.googletagmanager.com/gtag/js?id=G-WCYE3ZF8Z7',
       },
       `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
-      gtag('config', 'UA-160614210-3');
+
+      gtag('config', 'G-WCYE3ZF8Z7');
       `,
     ],
   ],

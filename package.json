@@ -1,17 +1,19 @@
 {
   "name": "sunseekerx-doc",
   "version": "1.0.0",
+  "private": true,
+  "description": "sunseekerx's notebook v1.",
   "license": "MIT",
   "scripts": {
-    "serve": "vuepress dev docs",
     "build": "vuepress build docs",
-    "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
-    "lint:lint-staged": "lint-staged",
     "gc": "git add -A && git-cz && git pull && git push",
-    "pkg:sort": "npx sort-package-json",
     "postinstall": "husky install",
+    "lint:lint-staged": "lint-staged",
+    "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
     "prepack": "pinst --disable",
-    "postpack": "pinst --enable"
+    "postpack": "pinst --enable",
+    "pkg:sort": "npx sort-package-json",
+    "serve": "vuepress dev docs"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
