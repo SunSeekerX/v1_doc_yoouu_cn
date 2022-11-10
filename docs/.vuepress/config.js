@@ -66,7 +66,7 @@ module.exports = config({
       appId: 'KwMbVerMPAH4oclxQ5LtCLPR-gzGzoHsz',
       appKey: '13eOI19EMGKKtQepMDxLIn9u',
     },
-    repo: 'https://github.com/SunSeekerX/doc.yoouu.cn',
+    repo: 'https://github.com/SunSeekerX/v1-doc.yoouu.cn',
     editLinks: false,
     repoDisplay: true,
   },
