@@ -109,4 +109,5 @@ module.exports = config({
       lang: 'zh-CN',
     },
   },
+  shouldPrefetch: false,
 })
