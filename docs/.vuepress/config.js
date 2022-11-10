@@ -1,19 +1,11 @@
-/**
- * vuepress 配置
- * @author: SunSeekerX
- * @Date: 2020-04-12 22:42:30
- * @LastEditors: SunSeekerX
- * @LastEditTime: 2021-09-24 16:22:50
- */
-
 const { config } = require('vuepress-theme-hope')
 const navBarConfig = require('./nav-bar')
 const sideBarConfig = require('./side-bar')
 
 module.exports = config({
-  base: '/',
-  title: 'SunSeekerX 的笔记',
-  description: 'This road is just beginning ~',
+  title: `SunSeekerX's Notebook`,
+  description:
+    'Javascript、HTML、CSS、Android、iOS、Flutter、NPM、NodeJS、Vue、React、Uni-app、JAVA、Kotlin、NodeJS、Golang、Linux、Docker、Mysql、Solidity、NFT、ETH、BNB、BTC、Windows、Mac、Power shell、zsh、Nginx、Git、Proxy、刷机、黑苹果、Adobe',
   head: [
     [
       'link',
@@ -22,7 +14,6 @@ module.exports = config({
         href: '/favicon.ico',
       },
     ],
-    // 百度统计 doc.yoouu.cn
     [
       'script',
       {},
@@ -40,13 +31,10 @@ module.exports = config({
     [
       'script',
       {
+        type: 'text/javascript',
         async: 'async',
         src: 'https://www.googletagmanager.com/gtag/js?id=UA-160614210-3',
       },
-    ],
-    [
-      'script',
-      {},
       `
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
@@ -56,7 +44,6 @@ module.exports = config({
       `,
     ],
   ],
-  extraWatchFiles: ['.vuepress/navBar.js', '.vuepress/sideBar.js'],
   themeConfig: {
     hostname: 'https://doc.yoouu.cn/',
     nav: navBarConfig,
@@ -69,10 +56,10 @@ module.exports = config({
     },
     blog: false,
     pwa: true,
-    algolia: {
-      apiKey: '096b749333c9e2a49cff2b30a786dc6c',
-      indexName: 'sunseekerx',
-    },
+    // algolia: {
+    //   apiKey: '096b749333c9e2a49cff2b30a786dc6c',
+    //   indexName: 'sunseekerx',
+    // },
     algoliaType: 'full',
     comment: {
       type: 'valine',
@@ -97,6 +84,12 @@ module.exports = config({
       'md-enhance',
       {
         enableAll: true,
+      },
+    ],
+    [
+      '@vuepress/search',
+      {
+        searchMaxSuggestions: 10,
       },
     ],
   ],

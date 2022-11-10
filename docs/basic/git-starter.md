@@ -1,5 +1,7 @@
 # 📄 Git 快速入门
 
+更新时间：2022-03-04 15:48:06
+
 > Git 分为 3 个区,工作区,暂存区,本地库
 >
 > 💿 资源
@@ -11,88 +13,92 @@
 > Git 快速入门：https://www.bilibili.com/video/av17183591?from=search&seid=5626772541729191161
 >
 > Git 进阶：https://www.bilibili.com/video/av24441039/
->
-> 更新时间：2020-05-08 14:37:41
 
-# ⚙️ 安装
+## ⚙️ 安装
 
-> 1. 官网下载：https://git-scm.com/
-> 2. 安装：next()
-> 3. 配置基本信息
->
-> ```bash
-> git config --global user.name "Your Name"
-> git config --global user.email "email@example.com"
->
-> # example
-> git config --global user.name "SunSeekerX"
-> git config --global user.email "1647800606@qq.com"
-> ```
+1. 官网下载：https://git-scm.com/downloads
+2. 配置基本信息
 
-# 🔨 常用指令
+```shell
+git config --global user.name "Your Name"
+git config --global user.email "email@example.com"
+```
 
-| 指令 | 说明 |
-| :-: | :-: |
-| **初始化** |  |
-| git init | 把本地的目录变成 git 本地仓库（执行一次即可） |
-| git remote add [远程地址别名] [远程仓库地址] | 将你本地仓库与远程仓库关联起来(一般关联一个地址即可) |
-|  |  |
-| **常用操作** |  |
-| git status | 查看本地仓库文件状态 |
-| git add -A | 添加整个工作区所有发生改变的文件到暂存区 |
-| git commit -m 'Commit message' | 将暂存区文件放到本地仓库，`-m`后面接注释写上本次更改的地方 |
-| git pull [远程地址别名] [远程仓库分支] | 合并远程仓库的更新（push 之前必须先合并） |
-| git push -u [远程地址别名] [远程仓库分支] | 将本地当前分支的 commit 推送到远程指定分支，（`-u`指定该远程地址为默认，后面就可以不加任何参数使用 git push 了） |
-|  |  |
-| **创建`ssh key`** |  |
-| ssh-keygen -t rsa -b 4096 -C "your_email@example.com" | 创建一个`ssh key`，直接回车，文件存在，不用的直接删除目录，有用的就直接复制`ssh key` |
-| clip < ~/.ssh/id_rsa.pub | 把密钥放在剪贴板 |
+## 🔨 常用命令
 
-# 💻 Git 命令行操作
+```shell
+# 把本地的目录变成 git 本地仓库（执行一次即可）
+git init
+
+# 将你本地仓库与远程仓库关联起来(可以关联多个地址)
+git remote add [远程地址别名] [远程仓库地址]
+
+# 查看本地仓库文件状态
+git status
+
+# 添加整个工作区所有发生改变的文件到暂存区
+git add -A
+
+# 将暂存区文件放到本地仓库，`-m`后面接注释写上本次更改的地方
+git commit -m 'Commit message'
+
+# 合并远程仓库的更新（push 之前必须先合并）
+git pull [远程地址别名] [远程仓库分支]
+
+# 将本地当前分支的 commit 推送到远程指定分支，（`-u`指定该远程地址为默认，后面就可以不加任何参数使用 git push 了）
+git push -u [远程地址别名] [远程仓库分支]
+```
+
+创建 github token
+
+```shell
+# 创建一个 ssh key，直接回车，文件存在，不用的直接删除目录，存在就直接复制 ssh key
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+
+# 把密钥放在剪贴板
+clip < ~/.ssh/id_rsa.pub
+```
 
 ## 📁 本地库操作
 
 ### 🔨 基本操作
 
-> 基本操作命令
-
-##### 0️⃣ 初始化
+#### 0️⃣ 初始化
 
 ```shell
 git init
 # Initialized empty Git repository in C:/Users/SunSeekerX/Desktop/git/.git/
 ```
 
-##### 1️⃣ 状态查看
+#### 1️⃣ 状态查看
 
 ```shell
 git status
 # 查看工作区，暂存区的状态
 ```
 
-##### 2️⃣ 添加文件到暂存区
+#### 2️⃣ 添加文件到暂存区
 
 ```shell
 git add [file name]
 git add . # 添加所有发生改变的文件 （操作的对象是当前目录下的所有变更，. 表示当前目录。）
 git add -A # 添加所有发生改变的文件（操作的对象是整个工作区的所有变更，无论当前位于那个目录下。）
 git add -u # 添加所有发生改变的文件（操作的对象是正个工作区已经跟踪的变更，无论当前位于那个目录下。）
-
 ```
 
-##### 3️⃣ 移除暂存区文件
+#### 3️⃣ 移除暂存区文件
 
 ```shell
 git rm --cached [file name]
 ```
 
-##### 4️⃣ 暂存区提交到本地库
+#### 4️⃣ 暂存区提交到本地库
 
 ```shell
 git commit -m 'commit message'
 ```
 
-##### 5️⃣ 查看提交记录
+#### 5️⃣ 查看提交记录
 
 ```shell
 git log
@@ -112,7 +118,7 @@ git reflog
 # HEAD@{1}: 大括号内显示需要移动的步数
 ```
 
-##### 6️⃣ 版本前进后退
+#### 6️⃣ 版本前进后退
 
 ```shell
 # 本质：移动HEAD指针到某个指定的commit版本上
@@ -141,7 +147,7 @@ git reset --hard HEAD~n
 # 3.重置工作区
 ```
 
-##### 7️⃣ 比较文件差异
+#### 7️⃣ 比较文件差异
 
 ```shell
 git diff
@@ -153,9 +159,7 @@ git diff [本地库中的历史版本] [文件名]
 
 ```
 
-#### 🔨 分支管理
-
-##### 说明
+### 🔨 分支管理
 
 简介：在版本控制过程中，使用多条线同时推进多个任务。
 
@@ -167,7 +171,7 @@ git diff [本地库中的历史版本] [文件名]
 >
 > 主分支有 bug 去修复，习惯开分支为`hot_fix`进行修复，修复完`pull-request`到`master`分支
 >
-> > 因为主分支一般 24 小时不间断运行
+> 因为主分支一般 24 小时不间断运行
 
 <!--下面放的是流程图，由于`Vuepress`不支持该语法会造成打包非常慢，故先注释，本地用`typora`可以复制出来直接显示-->
 
@@ -193,39 +197,31 @@ graph LR
 	feature_game --fail--> delete_branch
 ```
 
-##### 0️⃣ 查看当前所有分支
+#### 0️⃣ 查看当前所有分支
 
 ```shell
 git branch -v
 ```
 
-##### 1️⃣ 创建新的分支
+#### 1️⃣ 创建新的分支
 
 ```shell
 git branch [分支名]
 ```
 
-##### 2️⃣ 切换分支
+#### 2️⃣ 切换分支
 
 ```shell
 git checkout [分支名]
 ```
 
-##### 3️⃣ 合并分支
+#### 3️⃣ 合并分支
 
 ```shell
 # 1.切换到接受修改的分支上（被合并，增加新内容）
 git checkout [分支名]
 # 2.合并分支
 git merge [有新内容的分支]
-```
-
-##### 4️⃣ 解决冲突
-
-```shell
-# 找到冲突的文件解决冲突
-# 添加解决修改的文件
-# commit
 ```
 
 ## 📡 远程库操作
@@ -236,21 +232,21 @@ git merge [有新内容的分支]
 >
 > http 需要账户名和密码,ssh 需要配置 ssh-key
 
-### 🔨 基本操作-本地初始仓库
+### 🔨 基本操作
 
-##### 0️⃣ 查看当前仓库远程地址
+#### 0️⃣ 查看当前仓库远程地址
 
 ```shell
 git remote -v
 ```
 
-##### 1️⃣ 添加远程仓库地址
+#### 1️⃣ 添加远程仓库地址
 
 ```shell
 git remote add origin [远程地址]
 ```
 
-##### 2️⃣ 合并远程仓库代码
+#### 2️⃣ 合并远程仓库代码
 
 ```shell
 git pull [远程地址别名（origin）] [远程仓库分支]
@@ -265,35 +261,31 @@ git pull origin master --allow-unrelated-histories
 #  把两段不相干的 分支进行强行合并
 ```
 
-##### 3️⃣ 推送代码
+#### 3️⃣ 推送代码
 
 ```shell
 git push [远程地址别名（origin）] [远程仓库分支]
 ```
 
-##### 4️⃣ 抓取仓库内容
+#### 4️⃣ 抓取仓库内容
 
 ```shell
 git fetch [远程地址别名（origin）] [远程仓库分支]
 ```
 
-##### 5️⃣ 切换到抓取分支上
+#### 5️⃣ 切换到抓取分支上
 
 ```shell
 git checkout [远程地址别名（origin）]/[远程仓库分支]
 ```
 
-##### 6️⃣ 合并远程抓取的内容
+#### 6️⃣ 合并远程抓取的内容
 
 ```shell
 git merge [远程地址别名（origin）]/[远程仓库分支]
 ```
 
-### 🔨 基本操作-克隆远程仓库
-
-> 其他操作同`基本操作-本地初始仓库`
-
-##### 0️⃣ 克隆远程仓库
+#### 7️⃣ 克隆远程仓库
 
 ```shell
 git clone [远程仓库地址]
@@ -301,13 +293,13 @@ git clone [远程仓库地址]
 
 ### 🔨 其他操作
 
-##### 0️⃣ 查看当前项目配置文件
+#### 0️⃣ 查看当前项目配置文件
 
 ```shell
 git config --local -l
 ```
 
-##### 1️⃣ 查看当前项目配置文件并编辑
+#### 1️⃣ 查看当前项目配置文件并编辑
 
 ```shell
 git config --local -e
@@ -323,24 +315,16 @@ git config -e
 # 此处配置了默认pull和push的远程地址和合并分支名
 ```
 
-##### 2️⃣ 撤销本地工作区当前所有更改
+#### 2️⃣ 撤销本地工作区当前所有更改
 
 ```shell
 git checkout -- .
 ```
 
-### ❗️ 注意
+## ❗️ 注意
 
-##### 0️⃣ win10 切换账户
+#### 0️⃣ win10 切换账户
 
 > 在 win10 上使用 http 方式，win10 会记录用户名和密码，需要切换账户需要到
 >
 > `控制面板\所有控制面板项\凭据管理器`中找到自己的账户名和密码进行删除，然后就能重新输入用户名和密码
-
-##### 1️⃣ 设置 ssh-key
-
-> 百度`Git 配置ssh key`
-
-#### Fork and pull request
-
-> 略

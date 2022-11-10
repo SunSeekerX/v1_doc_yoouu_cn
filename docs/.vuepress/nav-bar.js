@@ -8,7 +8,7 @@
 
 module.exports = [
   // 简介
-  { text: '简介', link: '/intro', icon: 'fa-solid fa-user' },
+  { text: '简介', link: '/intro/', icon: 'fa-solid fa-user' },
   // 基础笔记
   {
     text: '基础',

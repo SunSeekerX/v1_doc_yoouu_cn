@@ -2852,7 +2852,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vuepress/plugin-search@npm:1.9.7":
+"@vuepress/plugin-search@npm:1.9.7, @vuepress/plugin-search@npm:^1.9.7":
   version: 1.9.7
   resolution: "@vuepress/plugin-search@npm:1.9.7"
   dependencies:
@@ -13816,6 +13816,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "sunseekerx-doc@workspace:."
   dependencies:
+    "@vuepress/plugin-search": ^1.9.7
     husky: ^8.0.2
     lint-staged: ^13.0.3
     pinst: ^3.0.0

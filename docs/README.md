@@ -1,13 +1,39 @@
 ---
 home: true
+icon: home
+title: SunSeekerX 的笔记
 heroImage: /home.jpg
-tagline: This is just the beginning of this road ~
+heroText: SunSeekerX 的笔记
+tagline: 这条路才刚刚开始啊~
 action:
-  - text: Go →
+  - text: 💡 Go →
     link: /intro/
-actionText: Go →
-actionLink: /intro/
-# footer: MIT Licensed | Copyright © 2020-present SunSeekerX
+    type: primary
+features:
+  - title: SunSeekerX 的博客
+    details: 这条路才刚刚开始啊~
+    link: https://yoouu.cn/
+  - title: SunSeekerX 的笔记
+    details: 这条路才刚刚开始啊~
+    link: https://doc.yoouu.cn/
+  - title: Github
+    details: Github 个人主页
+    link: https://github.com/SunSeekerX/
+  - title: 掘金
+    details: 掘金 个人主页
+    link: https://juejin.cn/user/4195392103136616/
+  - title: Uni-app 插件
+    details: 我开发的 Uni-app 插件
+    link: https://ext.dcloud.net.cn/publisher?id=64103
+  - title: 简书
+    details: 简书 个人主页
+    link: https://www.jianshu.com/u/cedbc8e7bb7b
+  - title: CSDN
+    details: CSDN 个人主页
+    link: https://blog.csdn.net/a1647800606
+  - title: 微博
+    details: 新浪微博
+    link: https://weibo.com/u/5264665709
 ---
 
 > 定风波·莫听穿林打叶声-苏轼

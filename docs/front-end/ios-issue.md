@@ -8,8 +8,6 @@
    error build: Undefined symbol: _OBJC_CLASS_$_MTKView
    ```
 
-   
-
 ## 完美修改项目名
 
 ### 1.修改工程名字
@@ -18,15 +16,15 @@
 
 ![img](https://static.yoouu.cn/imgs/doc/front-end/ios/SouthEast.png)
 
-此时会弹出一个对话框，点击Rename
+此时会弹出一个对话框，点击 Rename
 
 ![img](https://static.yoouu.cn/imgs/doc/front-end/ios/SouthEast-20220917130547926.png)
 
-### 2. 修改scheme名称
+### 2. 修改 scheme 名称
 
 ![img](https://static.yoouu.cn/imgs/doc/front-end/ios/SouthEast-20220917130615698.png)
 
-弹出对话框 会车直接修改 修改完成之后 点击Close
+弹出对话框 会车直接修改 修改完成之后 点击 Close
 
 ![img](https://static.yoouu.cn/imgs/doc/front-end/ios/SouthEast-20220917130638915.png)
 
@@ -58,7 +56,7 @@
 
 ![img](https://static.yoouu.cn/imgs/doc/front-end/ios/SouthEast-20220917131057710.png)
 
-双击打开.pbxproj文件
+双击打开.pbxproj 文件
 
 ![img](https://static.yoouu.cn/imgs/doc/front-end/ios/SouthEast-20220917131118418.png)
 
@@ -66,9 +64,9 @@
 
 ![img](https://static.yoouu.cn/imgs/doc/front-end/ios/SouthEast-20220917131206417.png)
 
-### 6.如果有pod (无pod 忽略)
+### 6.如果有 pod (无 pod 忽略)
 
-删除原来的pod对应的三项
+删除原来的 pod 对应的三项
 
 ![img](https://static.yoouu.cn/imgs/doc/front-end/ios/SouthEast-20220917131238030.png)
 

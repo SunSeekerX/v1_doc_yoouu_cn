@@ -34,26 +34,32 @@ git config --list  # 查看所有Git的配置(全局+本地+系统)
 git config --global color.ui true # 显示git相关颜色
 ```
 
-## 常用指令
+## 常用命令
 
-| 指令 | 说明 |
-| :-: | :-: |
-| **初始化** |  |
-| git init | 把本地的目录变成 git 本地仓库（执行一次即可） |
-| git remote add [远程地址别名] [远程仓库地址] | 将你本地仓库与远程仓库关联起来(一般关联一个地址即可) |
-|  |  |
-| **常用操作** |  |
-| git status | 查看本地仓库文件状态 |
-| git add -A | 添加整个工作区所有发生改变的文件到暂存区 |
-| git commit -m 'Commit message' | 将暂存区文件放到本地仓库，`-m`后面接注释写上本次更改的地方 |
-| git pull [远程地址别名] [远程仓库分支] | 合并远程仓库的更新（push 之前必须先合并） |
-| git push -u [远程地址别名] [远程仓库分支] | 将本地当前分支的 commit 推送到远程指定分支，（`-u`指定该远程地址为默认，后面就可以不加任何参数使用 git push 了） |
-|  |  |
-| **创建`ssh key`** |  |
-| ssh-keygen -t rsa -b 4096 -C "your_email@example.com" | 创建一个`ssh key`，直接回车，文件存在，不用的直接删除目录，有用的就直接复制`ssh key` |
-| clip < ~/.ssh/id_rsa.pub | 把密钥放在剪贴板 |
+```shell
+# 把本地的目录变成 git 本地仓库（执行一次即可）
+git init
 
-## 配置全局 http 和 https 代理
+# 将你本地仓库与远程仓库关联起来(可以关联多个地址)
+git remote add [远程地址别名] [远程仓库地址]
+
+# 查看本地仓库文件状态
+git status
+
+# 添加整个工作区所有发生改变的文件到暂存区
+git add -A
+
+# 将暂存区文件放到本地仓库，`-m`后面接注释写上本次更改的地方
+git commit -m 'Commit message'
+
+# 合并远程仓库的更新（push 之前必须先合并）
+git pull [远程地址别名] [远程仓库分支]
+
+# 将本地当前分支的 commit 推送到远程指定分支，（`-u`指定该远程地址为默认，后面就可以不加任何参数使用 git push 了）
+git push -u [远程地址别名] [远程仓库分支]
+```
+
+## 全局 http 和 https 代理
 
 > 提交`Github`和`Gitlab`的代码在某些时候非常慢，这个时候就可以配置代理加速代码提交和拉取。
 >
@@ -65,6 +71,7 @@ git config --global color.ui true # 显示git相关颜色
 # 需要你的代理软件在1080端口允许来自局域网的连接
 git config --global http.proxy http://127.0.0.1:1080
 git config --global https.proxy https://127.0.0.1:1080
+
 # clash
 git config --global http.proxy http://localhost:7890
 git config --global https.proxy https://localhost:7890

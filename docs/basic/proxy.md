@@ -4,14 +4,14 @@
 
 ## Android studio
 
-Android开发中我们会用到两种模式，一种是直接IDE编译运行，一种是直接在命令行运行，两种场景下的代理配置并不一致。其中在命令行下运行时的代理配置与shell下的一致，因此不再专门介绍，仅仅介绍IDE的环境变量配置。
+Android 开发中我们会用到两种模式，一种是直接 IDE 编译运行，一种是直接在命令行运行，两种场景下的代理配置并不一致。其中在命令行下运行时的代理配置与 shell 下的一致，因此不再专门介绍，仅仅介绍 IDE 的环境变量配置。
 
-Android studio提供了IDE全局的环境变量的配置模式，就在 Appearance & Behavior > System Settings > HTTP Proxy 中，由于这个配置是全局的，因此开发中并不是很方便，主要表现在：
+Android studio 提供了 IDE 全局的环境变量的配置模式，就在 Appearance & Behavior > System Settings > HTTP Proxy 中，由于这个配置是全局的，因此开发中并不是很方便，主要表现在：
 
 - 不同的项目可能不一定需要配置代理，或者需要的代理并不一致
 - 如果项目有多个开发者，每个开发者都需要配置一次
 
-因此个人更多的都是直接修改项目相关的配置文件来设置项目相关的代理。具体的就是在项目的根目录的gradle.properties中添加如下的配置：
+因此个人更多的都是直接修改项目相关的配置文件来设置项目相关的代理。具体的就是在项目的根目录的 gradle.properties 中添加如下的配置：
 
 ```groovy
 systemProp.http.proxyHost='proxy.com'
@@ -24,46 +24,42 @@ systemProp.https.proxyPort='8080'
 systemProp.https.nonProxyHosts=*.bihe0832.com
 ```
 
-这里需要注意的是，很多android的maven依赖都是使用https的，因此不要仅仅配置http相关的代理，需要同时配置https的
-
-
+这里需要注意的是，很多 android 的 maven 依赖都是使用 https 的，因此不要仅仅配置 http 相关的代理，需要同时配置 https 的
 
 ## pip 代理设置
 
-正如前面提到的，在某些情况下会出现shell配置了代理，但是并没有生效的情况。例如pip，这里介绍一下pip设置代理的方法，比如我们安装Appium-Python-Client。
+正如前面提到的，在某些情况下会出现 shell 配置了代理，但是并没有生效的情况。例如 pip，这里介绍一下 pip 设置代理的方法，比如我们安装 Appium-Python-Client。
 
 #### 代理设置
 
-如果在安装时需要代理，只需要在命令参数中加上` --proxy `参数，例如：
+如果在安装时需要代理，只需要在命令参数中加上`--proxy`参数，例如：
 
 ```shell
 ➜  temp  pip3.7 install Appium-Python-Client --proxy http://127.0.0.1:8080
 ```
 
-如果在安装时不需要代理，只需要在命令参数中去除` --proxy `参数，例如：
+如果在安装时不需要代理，只需要在命令参数中去除`--proxy`参数，例如：
 
 ```shell
 ➜  temp  pip3.7 install Appium-Python-Client
 ```
 
-#### 修改pip的镜像源
+#### 修改 pip 的镜像源
 
-由于国外官方pypi经常被墙，所以我们最好是将自己使用的pip源更换一下。iMac下，修改 ~/.pip/pip.conf (没有就创建一个)内容如下:
+由于国外官方 pypi 经常被墙，所以我们最好是将自己使用的 pip 源更换一下。iMac 下，修改 ~/.pip/pip.conf (没有就创建一个)内容如下:
 
 ```shell
  [global]
  index-url = https://pypi.tuna.tsinghua.edu.cn/simple
 ```
 
-
-
 ## gem 代理设置
 
-正如前面提到的，在某些情况下会出现shell配置了代理，但是并没有生效的情况。例如gem，这里介绍一下gem设置代理的方法，比如我们安装github-pages。
+正如前面提到的，在某些情况下会出现 shell 配置了代理，但是并没有生效的情况。例如 gem，这里介绍一下 gem 设置代理的方法，比如我们安装 github-pages。
 
 #### 代理设置
 
-如果在安装时需要代理，只需要在命令参数中加上` --http-proxy `参数，例如：
+如果在安装时需要代理，只需要在命令参数中加上`--http-proxy`参数，例如：
 
 ```shell
 ➜  temp  gem install --http-proxy http://proxy.com:8080 github-pages
@@ -72,7 +68,7 @@ systemProp.https.nonProxyHosts=*.bihe0832.com
 # sudo gem install cocoapods --http-proxy http://127.0.0.1:7890
 ```
 
-如果在安装时不需要代理，只需要在命令参数中去除` --http-proxy `参数，例如：
+如果在安装时不需要代理，只需要在命令参数中去除`--http-proxy`参数，例如：
 
 ```shell
 ➜  temp  gem install github-pages
@@ -80,7 +76,7 @@ systemProp.https.nonProxyHosts=*.bihe0832.com
 
 #### 修改镜像
 
-除了通过配置代理来访问资源外，我们还可以通过直接修改gem的镜像源地址。这样即使不用代理也可访问。gem源的修改方法如下：
+除了通过配置代理来访问资源外，我们还可以通过直接修改 gem 的镜像源地址。这样即使不用代理也可访问。gem 源的修改方法如下：
 
 ```shell
 ➜  temp  gem source --add <new registry url>  --remove  <new registry url>
@@ -112,20 +108,16 @@ https://gems.ruby-china.org
 
 #### 本地安装
 
-当然，gem除了设置代理或者直接修改镜像以外, 还可以直接本地安装，比如我们要安装 github-pages, 先到 [https://gems.ruby-china.org](https://gems.ruby-china.org/) 或者其余镜像源把 github-pages 下载到本地, 然后在本地安装:
+当然，gem 除了设置代理或者直接修改镜像以外, 还可以直接本地安装，比如我们要安装 github-pages, 先到 [https://gems.ruby-china.org](https://gems.ruby-china.org/) 或者其余镜像源把 github-pages 下载到本地, 然后在本地安装:
 
 ```shell
 ➜  temp  gem install --local ~/temp/github-pages-localname.gem
 ```
-
-
 
 ## Mac shell
 
 ```shell
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 ```
-
-
 
 ## pod

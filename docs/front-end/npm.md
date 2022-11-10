@@ -275,8 +275,7 @@ pnpm dlx husky-init && pnpm install # pnpm
 
 查看文档进行手动安装 [https://typicode.github.io/husky/#/?id=manual](https://typicode.github.io/husky/#/?id=manual)
 
-> hint: The '.husky/pre-commit' hook was ignored because it's not set as executable.
-> hint: You can disable this warning with `git config advice.ignoredHook false`.
+> hint: The '.husky/pre-commit' hook was ignored because it's not set as executable. hint: You can disable this warning with `git config advice.ignoredHook false`.
 >
 > ```shell
 > chmod ug+x .husky/*
@@ -478,8 +477,6 @@ mkdir -p /home/ssx/work/app/nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 # 退出当前用户，重新登录下，就可以使用 nvm 了
 ```
-
-
 
 ## 📌 规范提交代码
 
@@ -1003,4 +1000,3 @@ compareVersions('10.1.1', '10.2.2') // -1
 上面代码会在每次 `git commit` 执行后被运行，它检查 commit 的 message 是不是版本号，如果不是，它就会执行 `npm version patch` 更新版本号。
 
 > 来源：[版本号管理策略&&使用 npm 管理项目版本号-朱嘉伟](http://buzhundong.com/post/%E7%89%88%E6%9C%AC%E5%8F%B7%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5-%E4%BD%BF%E7%94%A8npm%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E5%8F%B7.html)
-

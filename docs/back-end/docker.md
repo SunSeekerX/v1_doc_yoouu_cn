@@ -531,7 +531,7 @@ docker run --restart=always --network host -d -v /etc/frp/frpc.ini:/etc/frp/frpc
 
 ### 0x11 Docker 安装 redis
 
-1、拉取redis镜像
+1、拉取 redis 镜像
 
 ```bash
 docker pull redis
@@ -543,7 +543,7 @@ docker pull redis
 mkdir -p /root/app/docker-data/redis && cd /root/app/docker-data/redis
 ```
 
-3、下载redis.conf文件
+3、下载 redis.conf 文件
 
 ```bash
 wget http://download.redis.io/redis-stable/redis.conf
@@ -572,7 +572,7 @@ requirepass 123456
 appendonly yes
 ```
 
-6、docker启动redis
+6、docker 启动 redis
 
 ```bash
 docker run --name redis \
@@ -587,16 +587,14 @@ docker run --name redis \
 - -p 63799:6379：端口映射，前面是宿主机，后面是容器。
 - –name redis：指定该容器名称。
 - -v 挂载文件或目录：前面是宿主机，后面是容器。
-- -d redis redis-server /etc/redis/redis.conf：表示后台启动redis，以配置文件启动redis，加载容器内的conf文件。
-- appendonly yes：开启redis 持久化。
+- -d redis redis-server /etc/redis/redis.conf：表示后台启动 redis，以配置文件启动 redis，加载容器内的 conf 文件。
+- appendonly yes：开启 redis 持久化。
 
-7、检查redis运行状态
+7、检查 redis 运行状态
 
 ```bash
 docker ps
 ```
-
-
 
 ### 0x12 Docker 安装 zentao
 
@@ -703,7 +701,7 @@ gitea/gitea:latest
 # 新建数据目录
 mkdir -p ~/data/app-host
 
-docker run --name app_host -v ~/data/app-host:/app/shared -p 3001:8686 -d tinyc/app-host:lastest
+docker run --name app_host --restart=always -v ~/data/app-host:/app/shared -p 3001:8686 -d tinyc/app-host:lastest
 ```
 
 ### 0x17 Docker 安装 twikoo 评论系统
@@ -715,4 +713,3 @@ mkdir -p ~/data/twikoo
 # 3002 我服务器可用的端口号
 docker run --name twikoo -e TWIKOO_THROTTLE=1000 -p 3002:8080 -v ~/data/twikoo:/app/data -d imaegoo/twikoo
 ```
-
