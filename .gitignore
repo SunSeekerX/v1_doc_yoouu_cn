@@ -32,7 +32,6 @@ pnpm-debug.log*
 !.yarn/sdks
 !.yarn/versions
 
-# 
+# Another files
 docs/.vuepress/.cache/
 docs/.vuepress/.temp/
-yarn.lock
