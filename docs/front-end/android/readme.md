@@ -4,7 +4,7 @@
 
 [Android Studio 精品插件集](https://github.com/getActivity/StudioPlugins) - Android 轮子哥
 
-[中国 Android 个人技术开源排行榜 - https://github.com/getActivity/AndroidGithubBoss](https://github.com/getActivity/AndroidGithubBoss) - Android 轮子哥
+[中国 Android 个人技术开源排行榜](https://github.com/getActivity/AndroidGithubBoss) - Android 轮子哥
 
 [安卓 offer 收割基 - https://github.com/Blankj/AndroidOfferKiller](https://github.com/Blankj/AndroidOfferKiller) - 布兰柯基
 
