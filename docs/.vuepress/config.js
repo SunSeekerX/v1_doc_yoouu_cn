@@ -1,6 +1,5 @@
 const { config } = require('vuepress-theme-hope')
 const navBarConfig = require('./nav-bar')
-const sideBarConfig = require('./side-bar')
 
 module.exports = config({
   title: `SunSeekerX's Notebook`,
@@ -9,7 +8,7 @@ module.exports = config({
   themeConfig: {
     hostname: 'https://v1-doc.yoouu.cn',
     nav: navBarConfig,
-    sidebar: sideBarConfig,
+    sidebar: false,
     iconPrefix: 'fas fa-',
     baseLang: 'zh-CN',
     author: 'SunSeekerX',

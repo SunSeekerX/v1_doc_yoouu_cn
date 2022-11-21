@@ -1,3 +1,5 @@
+# Kotlin
+
 ## kotlin 简介
 
 > **Kotlin**是一种在[Java 虚拟机](https://zh.wikipedia.org/wiki/Java虛擬機)上执行的[静态类型](https://zh.wikipedia.org/wiki/静态类型)[编程语言](https://zh.wikipedia.org/wiki/编程语言)，它也可以被编译成为[JavaScript](https://zh.wikipedia.org/wiki/JavaScript)源代码。它主要是由[俄罗斯](https://zh.wikipedia.org/wiki/俄羅斯)[圣彼得堡](https://zh.wikipedia.org/wiki/聖彼得堡)的[JetBrains](https://zh.wikipedia.org/wiki/JetBrains)开发团队所发展出来的编程语言，其名称来自于圣彼得堡附近的[科特林岛](https://zh.wikipedia.org/wiki/科特林島)。[[1\]](https://zh.wikipedia.org/wiki/Kotlin#cite_note-oracle_interview-1)2012年1月，著名期刊《[Dr. Dobb's Journal](https://zh.wikipedia.org/w/index.php?title=Dr._Dobb's_Journal&action=edit&redlink=1)》中Kotlin被认定为该月的最佳语言。[[2\]](https://zh.wikipedia.org/wiki/Kotlin#cite_note-dobbs-2)虽然与Java语法并不兼容，但在[JVM](https://zh.wikipedia.org/wiki/JVM)环境中Kotlin被设计成可以和Java代码相互运作，并可以重复使用如[Java集合框架](https://zh.wikipedia.org/wiki/Java集合框架)等的现有[Java引用的函数库](https://zh.wikipedia.org/w/index.php?title=Java引用的函数库&action=edit&redlink=1)。Hathibelagal写道，“如果你正在为Android开发寻找一种替代编程语言，那么应该试下Kotlin。它很容易在Android项目中替代Java或者同Java一起使用。”

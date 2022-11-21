@@ -85,6 +85,8 @@ Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsU
 
 https://sysin.org/blog/how-to-install-macos-big-sur/
 
+## 📌 神州 K650D-G4D1
+
 ## 📌 下载文件校验
 
 ### Mac
