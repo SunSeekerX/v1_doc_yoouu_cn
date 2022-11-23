@@ -54,13 +54,6 @@ module.exports = config({
         searchMaxSuggestions: 10,
       },
     ],
-    // 谷歌分析 https://v1-doc.yoouu.cn/
-    [
-      '@vuepress/google-analytics',
-      {
-        ga: 'G-WCYE3ZF8Z7',
-      },
-    ],
   ],
   markdown: {
     lineNumbers: true,
@@ -71,5 +64,6 @@ module.exports = config({
       lang: 'zh-CN',
     },
   },
+  // 使用 pwa 设置
   shouldPrefetch: false,
 })
