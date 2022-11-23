@@ -23,12 +23,16 @@ export default ({
       m.parentNode.insertBefore(a, m)
     })(window, document, 'script', 'https://www.googletagmanager.com/gtag/js', 'gtag')
 
-    gtag('js', new Date())
-    gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true })
+    if (gtag) {
+      gtag('js', new Date())
+      gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true, debug_mode: true })
+    }
 
     router.afterEach(function (to) {
-      gtag('config', GA_MEASUREMENT_ID, { page_path: to.fullPath })
-      gtag('event', 'page_view', { send_to: GA_MEASUREMENT_ID })
+      if (gtag) {
+        gtag('config', GA_MEASUREMENT_ID, { page_path: to.fullPath, debug_mode: true })
+        gtag('event', 'page_view', { send_to: GA_MEASUREMENT_ID })
+      }
     })
   }
 }
