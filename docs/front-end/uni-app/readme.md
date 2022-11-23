@@ -157,6 +157,15 @@ const {
 
    删除冲突的元信息。
 
+### Ios
+
+#### Q: 依赖库冲突 “duplicate symbols for ...”
+
+A：如果您依赖的三方库与 SDK 依赖的三方库冲突
+
+- 为了保证 SDK 功能的完整性所以请您使用 SDK 内置的三方库，移除您依赖的三方库，对于源码开源的三方库比如 SDWebImage、ZXing 等，这些库的 .h 头文件存放在 SDK/inc 路径中的，将对应库的头文件引入到插件工程中使用即可，如果您使用内置的三方库导致原生功能异常，请反馈给我们；
+- 如果引入的是 .a 或 .framework 库里面包含某个三方库导致符号定义冲突，可根据 [这篇文档](https://www.jianshu.com/p/274f93ef6c1c) 移除对应库的符号，然后测试一下功能是否正常；
+
 ## 📌 配置 eslint + prettier + stylelint + lint-staged + husky
 
 项目示例：[https://github.com/SunSeekerX/uni-app-starter](https://github.com/SunSeekerX/uni-app-starter)
