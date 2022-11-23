@@ -1998,3 +1998,7 @@ NS_ASSUME_NONNULL_END
 - typedef 定义的类型的 nullability 特性通常依赖于上下文，即使是在 Audited Regions 中，也不能假定它为 nonnull。
 - 复杂的指针类型(如 id _)必须显示去指定是 nonnull 还是 nullable。例如，指定一个指向 nullable 对象的 nonnull 指针，可以使用”\_\_nullable id _ \_\_nonnull”。
 - 我们经常使用的 NSError \*\*通常是被假定为一个指向 nullable NSError 对象的 nullable 指针。
+
+## 来源
+
+[https://www.yiibai.com/objective_c/objective_c_overview.html](https://www.yiibai.com/objective_c/objective_c_overview.html)

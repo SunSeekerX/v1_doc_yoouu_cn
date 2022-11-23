@@ -1,4 +1,4 @@
-# 💿 Data base
+# Data base
 
 ## 📌 Common
 

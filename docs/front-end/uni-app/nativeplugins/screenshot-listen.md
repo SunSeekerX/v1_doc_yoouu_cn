@@ -2,11 +2,11 @@
 
 ### 简介
 
-**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/screenshot-listen/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/screenshot-listen/)
+**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/screenshot-listen](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/screenshot-listen)
 
 监听系统截屏事件，返回截图图片路径。
 
-更多插件：[https://doc.yoouu.cn/front-end/uni-app-nativeplugins/](https://doc.yoouu.cn/front-end/uni-app-nativeplugins/)
+更多插件：[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
 
 ### 平台兼容性
 

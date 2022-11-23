@@ -1,3 +1,5 @@
+# Ios
+
 ## 信息
 
 开发者官网：[https://developer.apple.com/account/](https://developer.apple.com/account/)
@@ -25,9 +27,9 @@
 | **10.3.3** | 14G60 | 32/64-bit ARM | 19 July 2017 | iPhone 5C iPad 4th Gen (WiFi) |
 | **10.3.4** | 14G61 | 32/64-bit ARM | 22 July 2019 | iPhone 5 iPad 4th Gen (WiFi+ Cellular) |
 | **11.4.1** | 15G77 | 64-bit ARM | 09 July 2018 | N/A |
-| **\*\*12.5.6\*\*** | 16H71 | 64-bit ARM | 31 Aug 2022 | iPhone 5S, 6/6 Plus iPad Mini 2, Mini 3, Air 1st iPod 6th Gen |
+| **12.5.6** | 16H71 | 64-bit ARM | 31 Aug 2022 | iPhone 5S, 6/6 Plus iPad Mini 2, Mini 3, Air 1st iPod 6th Gen |
 | **13.7** | 17H35 | 64-bit ARM | 01 Sep 2020 | iPad Air 2nd, Mini 4 |
-| **\*\*14.\*\*8.1** | 18H107 | 64-bit ARM | 26 Oct 2021 | N/A |
+| **14.8.1** | 18H107 | 64-bit ARM | 26 Oct 2021 | N/A |
 | **15.7** | 19H12 | 64-bit ARM | 12 Sep 2022 | iPhone 6S, 7, SE iPad Air 2, Mini 4 iPod 7th |
 | **16.0** | 20A362 | 64-bit ARM | 12 Sep 2022 | N/A |
 | **16.0.1** (iPhone 14) | 20A371 | 64-bit ARM | 15 Sep 2022 | N/A |

@@ -1,6 +1,8 @@
+# 刷机
+
 ## 机型
 
-[魅蓝 Note3](./wanji/miezu/m3-note.md)
+[魅蓝 Note3](./m3-note.md)
 
 ## recovery 下载
 

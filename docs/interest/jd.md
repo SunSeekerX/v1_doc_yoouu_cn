@@ -521,10 +521,6 @@ PUSH_PLUS_TOKEN 是 https://pushplus.plus/ 注册登录后提供的 Token，必�
 
 二维码：<img src="https://static.yoouu.cn/imgs/2021/pic-go/qinglong/20210607195608.png" alt="image-20210607195606194" style="zoom: 25%;" />
 
-## 📌 备份
-
-[jd-backup](jd-backup.md)
-
 ## 📌 来源
 
 [京东挂机 青龙面板的安装与使用以及互助+Cookie 的获取](https://www.feiji.work/2021/185.html) - by [孤岛](https://www.feiji.work/)

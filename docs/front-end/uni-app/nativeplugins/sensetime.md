@@ -2,13 +2,13 @@
 
 ### 简介
 
-**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/sensetime/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/sensetime/)
+**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/sensetime](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/sensetime)
 
 官网：[https://www.sensetime.com/senseid/home](https://www.sensetime.com/senseid/home)
 
 该插件需要单独定制，因为需要和证书绑定。
 
-更多插件：[https://doc.yoouu.cn/front-end/uni-app-nativeplugins/](https://doc.yoouu.cn/front-end/uni-app-nativeplugins/)
+更多插件：[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
 
 ### 平台兼容性
 

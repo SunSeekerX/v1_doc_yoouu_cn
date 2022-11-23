@@ -1,5 +1,17 @@
 # JavaScript
 
+互联网上已经有许多非常成熟、易懂、免费的公共资源，这里放几个他山之石，都是非常优质的资源。
+
+[网道 / WangDoc.com - JavaScript 教程](https://wangdoc.com/javascript/)
+
+[网道 / WangDoc.com - ES6 教程](https://wangdoc.com/es6/)
+
+[网道 / WangDoc.com - Web API 教程](https://wangdoc.com/webapi/)
+
+[JavaScript 教程| 菜鸟教程](https://www.runoob.com/js/js-tutorial.html)
+
+[JavaScript - MDN Web Docs - Mozilla](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript)
+
 ## 📌 文章
 
 [JavaScript 发布-订阅模式 - https://juejin.im/post/6844903850105634824#comment](https://juejin.im/post/6844903850105634824#comment)

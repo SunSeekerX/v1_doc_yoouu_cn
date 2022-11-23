@@ -2,7 +2,7 @@
 
 ### 简介
 
-**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/superwebp/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/superwebp/)
+**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/superwebp](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/superwebp)
 
 安卓端 webp 图片显示加强，不会出现闪烁，卡顿。nvue 自带的图片显示器，显示 webp 效果并不好，并且无法支持圆角。
 
