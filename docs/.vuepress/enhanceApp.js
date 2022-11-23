@@ -26,8 +26,6 @@ export default ({
     gtag('js', new Date())
     gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true })
 
-    console.log(123123)
-
     router.afterEach(function (to) {
       gtag('config', GA_MEASUREMENT_ID, { page_path: to.fullPath })
       gtag('event', 'page_view', { send_to: GA_MEASUREMENT_ID })
