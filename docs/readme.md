@@ -2,7 +2,7 @@
 home: true
 icon: home
 title: SunSeekerX 的笔记
-heroImage: /home.jpg
+heroImage: /doc.yoouu.cn.png
 heroText: SunSeekerX 的笔记
 tagline: 这条路才刚刚开始啊~
 action:

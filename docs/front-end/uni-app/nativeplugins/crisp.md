@@ -1,8 +1,12 @@
-## 📌 Crisp 客服
+# 📌 Crisp 客服
 
-### 简介
+## ⚠️ 警告
 
-**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/crisp](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/crisp)
+**插件市场的文档解析有问题！方法名解析有丢失，例如 `on start 放在一起就不见了`**
+
+**查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/crisp](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/crisp)
+
+## 简介
 
 官网: [https://crisp.chat/en/](https://crisp.chat/en/)
 
@@ -10,13 +14,13 @@ Github: [https://github.com/crisp-im](https://github.com/crisp-im)
 
 更多插件：[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
 
-### 平台兼容性
+## 平台兼容性
 
 |  Android   |   iOS   |
 | :--------: | :-----: |
 | 5.0 - 13.0 | 13 - 16 |
 
-### 使用示例
+## 使用示例
 
 1. 选中原生插件
 2. 在可视化区域配置 `websiteId` 参数
@@ -78,9 +82,9 @@ const safeRunning = (name, fun) => {
 }
 ```
 
-### 模块方法
+## 模块方法
 
-#### onInitConfigure(options): result
+### onInitConfigure(options): result
 
 初始化 Crisp。
 
@@ -94,7 +98,7 @@ const safeRunning = (name, fun) => {
     - `401` 请勿重复初始化!
   - `msg` <String\> 请求信息
 
-#### onStartCrisp(options?): result
+### onStartCrisp(options?): result
 
 启动 Crisp。
 
@@ -112,7 +116,7 @@ const safeRunning = (name, fun) => {
   - `200` 启动成功!
 - `msg` <String\> 请求信息
 
-#### onInvokeCrispFun(options): result
+### onInvokeCrispFun(options): result
 
 调用 SDK 其他的方法。ios 方法名参考 android sdk 方法名调用。官方 Android 文档: [https://docs.crisp.chat/guides/chatbox-sdks/android-sdk/](https://docs.crisp.chat/guides/chatbox-sdks/android-sdk/)
 
@@ -139,7 +143,7 @@ const res = superModuleCrisp.onInvokeCrispFun({
 toast(`onInvokeCrispFun - ${name}`, res)
 ```
 
-### 权限列表
+## 权限列表
 
 **Ios**
 
@@ -158,17 +162,13 @@ toast(`onInvokeCrispFun - ${name}`, res)
 
 Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/privacy/)
 
-### 演示截图
+## 演示截图
 
-**Ios**
+| IOS | Android |
+| :-: | :-: |
+| <img src="https://static.yoouu.cn/imgs/2021/pic-go/crisp-ios-screenshot.png" alt="ios-screenshot" style="zoom: 25%;" /> | <img src="https://static.yoouu.cn/imgs/2021/pic-go/crisp-android-screenshot.jpeg" alt="android-screenshot" style="zoom: 25%;" /> |
 
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/crisp-ios-screenshot.png" alt="ios-screenshot" style="zoom:50%;" />
-
-**Android**
-
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/crisp-android-screenshot.jpeg" alt="android-screenshot" style="zoom:50%;" />
-
-### 测试文件代码
+## 测试文件代码
 
 ```html
 <template>
@@ -699,9 +699,9 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
 </style>
 ```
 
-### 更新日志
+## 更新日志
 
-#### 2.0.0 2022-09-24
+### 2.0.0 2022-09-24
 
 **功能（Features）**
 
@@ -713,7 +713,7 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
 - Android 使用的 `sdk` 版本：`crisp-sdk-1.0.11.aar`
 - Ios 使用的 `sdk` 版本：`Crisp_1.6.4.zip`
 
-#### 1.0.1
+### 1.0.1
 
 **功能（Features）**
 
@@ -721,7 +721,7 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
 
 **Bug 修复 （Bug Fixes）**
 
-#### 1.0.0
+### 1.0.0
 
 **功能（Features）**
 
@@ -730,6 +730,17 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
 
 **Bug 修复 （Bug Fixes）**
 
-### 问题反馈
+## 问题反馈
 
-虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以在评论区留言，或添加 `QQ: 1647800606` 进行反馈。
+虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以
+
+- 在评论区留言，收到通知邮件我会第一次时间查看
+- 或添加 `微信: sunseekerx` 进行反馈
+- 或添加 `QQ: 1647800606` 进行反馈
+
+## 更多插件
+
+- [在线插件介绍](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
+- [uni-app 插件市场](https://ext.dcloud.net.cn/publisher?id=64103)
+
+如有插件定制需求，也可以联系我哦。

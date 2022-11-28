@@ -6,13 +6,20 @@
 
 ### Android
 
-| 2.1.0 | 1.0 |
-| --- | --- |
-| <img src="https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starter-app-release_v2.1.0-210.png" alt="app-release_v2.1.0-210" style="zoom: 50%;" /> | <img src="https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starterv1.0-100.png" style="zoom:50%;" /> |
+| 版本号 | 二维码 |
+| :-: | :-: |
+| 2.1.0 | <img src="https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starter-app-release_v2.1.0-210.png" alt="app-release_v2.1.0-210" style="zoom: 50%;" /> |
+| 1.0 | <img src="https://static.yoouu.cn/imgs/doc/pic-go/uni-plugin-android-starterv1.0-100.png" style="zoom:50%;" /> |
 
 ### IOS
 
 没有证书
+
+## 📌 海康威视 SADP SDK_IOS - Super-Module-HKWS
+
+文档地址：[super-module-hkws-sadp.md](./super-module-hkws-sadp.md)
+
+插件地址：[https://ext.dcloud.net.cn/plugin?id=10241](https://ext.dcloud.net.cn/plugin?id=10241)
 
 ## 📌 Crisp 客服
 

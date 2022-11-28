@@ -1,8 +1,12 @@
-## 📌 Jumio
+# 📌 Jumio
 
-### 简介
+## ⚠️ 警告
 
-**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/jumio](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/jumio)
+**插件市场的文档解析有问题！方法名解析有丢失，例如 `on start 放在一起就不见了`**
+
+**查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/jumio](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/jumio)
+
+## 简介
 
 Jumio kyc 平台插件
 
@@ -12,13 +16,13 @@ Jumio kyc 平台插件
 
 Github: [https://github.com/Jumio](https://github.com/Jumio)
 
-### 平台兼容性
+## 平台兼容性
 
 |  Android   | iOS |
 | :--------: | :-: |
 | 4.4 - 11.0 |     |
 
-### 使用示例
+## 使用示例
 
 ```javascript
 const superModuleJumio = uni.requireNativePlugin('Super-Module-Jumio')
@@ -80,7 +84,7 @@ const safeRunning = (name, fun) => {
 }
 ```
 
-### 模块方法
+## 模块方法
 
 ### onStartJumio(options, callback) : Void
 
@@ -105,11 +109,11 @@ const safeRunning = (name, fun) => {
     - `500` 应用程序错误
   - `err` <String\> 错误信息
 
-### 全局事件
+## 全局事件
 
 none
 
-### 权限列表
+## 权限列表
 
 **ios**
 
@@ -121,17 +125,15 @@ none
 <uses-permission android:name="android.permission.VIBRATE" />
 ```
 
-### 演示截图
+## 演示截图
 
-**Ios**
+| IOS | Android |
+| :-: | :-: |
+|  | <img src="https://static.yoouu.cn/imgs/2021/pic-go/jumio-android-screenshot.jpg" alt="e0cff53506fd1b5769925a276608871" style="zoom: 25%;" /> |
 
-**Android**
+## 更新日志
 
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/jumio-android-screenshot.jpg" alt="e0cff53506fd1b5769925a276608871" style="zoom:50%;" />
-
-### 更新日志
-
-#### 1.0.0
+### 1.0.0
 
 **功能（Features）**
 
@@ -141,6 +143,17 @@ none
 
 **技术预研（Research）**
 
-### 问题反馈
+## 问题反馈
 
-虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以在评论区留言，或添加 `QQ: 1647800606` 进行反馈。
+虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以
+
+- 在评论区留言，收到通知邮件我会第一次时间查看
+- 或添加 `微信: sunseekerx` 进行反馈
+- 或添加 `QQ: 1647800606` 进行反馈
+
+## 更多插件
+
+- [在线插件介绍](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
+- [uni-app 插件市场](https://ext.dcloud.net.cn/publisher?id=64103)
+
+如有插件定制需求，也可以联系我哦。

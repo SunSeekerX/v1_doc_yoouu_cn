@@ -1,8 +1,12 @@
-## 📌 Geetest 极验
+# 📌 Geetest 极验
 
-### 简介
+## ⚠️ 警告
 
-**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/geetest](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/geetest)
+**插件市场的文档解析有问题！方法名解析有丢失，例如 `on start 放在一起就不见了`**
+
+**查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/geetest](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/geetest)
+
+## 简介
 
 官网: [https://www.geetest.com/](https://www.geetest.com/)
 
@@ -10,13 +14,13 @@
 
 更多插件：[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
 
-### 平台兼容性
+## 平台兼容性
 
 |  Android   |  iOS   |
 | :--------: | :----: |
 | 4.4 - 11.0 | 9 - 14 |
 
-### 使用示例
+## 使用示例
 
 ```javascript
 const superModuleGeetest = uni.requireNativePlugin('Super-Module-Geetest')
@@ -90,9 +94,9 @@ const safeRunning = (name, fun) => {
 }
 ```
 
-### 模块方法
+## 模块方法
 
-#### onStartGeetestVerify(options, callback)
+### onStartGeetestVerify(options, callback)
 
 启动极验认证
 
@@ -133,7 +137,7 @@ const safeRunning = (name, fun) => {
   - `data` <Object\> 请求成功返回数据
   - `err` <String\> | <Object\> 错误信息，不能直接提示给用户，可以用于 `debug`。
 
-### 权限列表
+## 权限列表
 
 **ios**
 
@@ -149,23 +153,16 @@ const safeRunning = (name, fun) => {
 
 极验 sdk 隐私政策：[https://www.geetest.com/Private](https://www.geetest.com/Private)
 
-### 演示截图
+## 演示截图
 
-**ios**
+| IOS | Android |
+| :-: | :-: |
+| <img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-ios1.jpg" alt="geetest-ios1" style="zoom:25%;" /> | <img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-android1.jpeg" alt="geetest-android1" style="zoom:25%;" /> |
+| <img src="https://static.yoouu.cn/imgs/doc/front-end/uni-app-nativeplugins/super-module-geetest-01.webp" alt="super-module-geetest-01" style="zoom:25%;" /> | <img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-android2.jpeg" alt="geetest-android2" style="zoom:25%;" /> |
 
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-ios1.jpg" alt="geetest-ios1" style="zoom:25%;" />
+## 更新日志
 
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-ios2.jpg" alt="geetest-ios2" style="zoom:25%;" />
-
-**Android**
-
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-android1.jpeg" alt="geetest-android1" style="zoom:25%;" />
-
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/geetest-android2.jpeg" alt="geetest-android2" style="zoom:25%;" />
-
-### 更新日志
-
-#### 1.0.2
+### 1.0.2
 
 **功能（Features）**
 
@@ -176,7 +173,7 @@ const safeRunning = (name, fun) => {
 
 1. 修复安卓部分情况下打包无法使用的问题
 
-#### 1.0.1
+### 1.0.1
 
 **功能（Features）**
 
@@ -184,7 +181,7 @@ const safeRunning = (name, fun) => {
 
 **Bug 修复 （Bug Fixes）**
 
-#### 1.0.0
+### 1.0.0
 
 **功能（Features）**
 
@@ -193,6 +190,17 @@ const safeRunning = (name, fun) => {
 
 **Bug 修复 （Bug Fixes）**
 
-### 问题反馈
+## 问题反馈
 
-虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以在评论区留言，或添加 `QQ: 1647800606` 进行反馈。
+虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以
+
+- 在评论区留言，收到通知邮件我会第一次时间查看
+- 或添加 `微信: sunseekerx` 进行反馈
+- 或添加 `QQ: 1647800606` 进行反馈
+
+## 更多插件
+
+- [在线插件介绍](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
+- [uni-app 插件市场](https://ext.dcloud.net.cn/publisher?id=64103)
+
+如有插件定制需求，也可以联系我哦。

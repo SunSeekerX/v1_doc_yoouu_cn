@@ -1,20 +1,24 @@
-## 📌 Screenshot 截屏监听
+# 📌 Screenshot 截屏监听 - Super-Module-ScreenshotListen
 
-### 简介
+## ⚠️ 警告
 
-**插件市场的文档解析有问题！方法名都解析出问题！查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/screenshot-listen](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/screenshot-listen)
+**插件市场的文档解析有问题！方法名解析有丢失，例如 `on start 放在一起就不见了`**
+
+**查看在线文档：**[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/screenshot-listen](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/screenshot-listen)
+
+## 简介
 
 监听系统截屏事件，返回截图图片路径。
 
 更多插件：[https://doc.yoouu.cn/front-end/uni-app/nativeplugins/](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
 
-### 平台兼容性
+## 平台兼容性
 
 |  Android   |  iOS   |
 | :--------: | :----: |
 | 4.4 - 11.0 | 9 - 14 |
 
-### 使用示例
+## 使用示例
 
 ```javascript
 const superModuleScreenshotListen = uni.requireNativePlugin('Super-Module-ScreenshotListen')
@@ -70,9 +74,9 @@ const safeRunning = (name, fun) => {
 }
 ```
 
-### 模块方法
+## 模块方法
 
-#### onStartListenScreenshot([callback]) : result
+### onStartListenScreenshot([callback]) : result
 
 启动截屏监听。
 
@@ -105,7 +109,7 @@ const safeRunning = (name, fun) => {
     - `400` 禁止重复添加截屏事件
   - `msg` <String\> 请求信息
 
-#### onStopListenScreenshot() : result
+### onStopListenScreenshot() : result
 
 关闭截屏监听。
 
@@ -116,9 +120,9 @@ const safeRunning = (name, fun) => {
     - `400` 未监听截屏事件
   - `msg` <String\> 请求信息
 
-### 全局事件
+## 全局事件
 
-#### onScreenshot
+### onScreenshot
 
 截屏之后触发。
 
@@ -139,7 +143,7 @@ const safeRunning = (name, fun) => {
 
 - `err` <String\> 错误信息（仅安卓）
 
-### 权限列表
+## 权限列表
 
 **ios**
 
@@ -152,19 +156,15 @@ const safeRunning = (name, fun) => {
 <uses-permission android:name="android.permission.ACCESS_MEDIA_LOCATION"/>
 ```
 
-### 演示截图
+## 演示截图
 
-**Ios**
+| IOS | Android |
+| :-: | :-: |
+| <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-ios-screenshot.jpg" alt="screenshot-listen-ios-screenshot" style="zoom: 25%;" /> | <img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-android-screenshot.jpeg" alt="screenshot-listen-android-screenshot" style="zoom: 25%;" /> |
 
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-ios-screenshot.jpg" alt="screenshot-listen-ios-screenshot" style="zoom:50%;" />
+## 更新日志
 
-**Android**
-
-<img src="https://static.yoouu.cn/imgs/2021/pic-go/screenshot-listen-android-screenshot.jpeg" alt="screenshot-listen-android-screenshot" style="zoom:50%;" />
-
-### 更新日志
-
-#### 1.0.3
+### 1.0.3
 
 **功能（Features）**
 
@@ -173,7 +173,7 @@ const safeRunning = (name, fun) => {
 1. 修复华为手机重复触发截屏事件
 2. 修复与 `uni.chooseImage` 冲突，导致无法使用的问题
 
-#### 1.0.2
+### 1.0.2
 
 **功能（Features）**
 
@@ -182,7 +182,7 @@ const safeRunning = (name, fun) => {
 1. 【重要】ios 修复截屏之后会造成卡顿的问题，在 ios 不返回截屏图片路径
 2. 修复安卓截屏插件重复触发截屏事件
 
-#### 1.0.1
+### 1.0.1
 
 **功能（Features）**
 
@@ -190,7 +190,7 @@ const safeRunning = (name, fun) => {
 
 **Bug 修复 （Bug Fixes）**
 
-#### 1.0.0
+### 1.0.0
 
 **功能（Features）**
 
@@ -198,6 +198,17 @@ const safeRunning = (name, fun) => {
 
 **Bug 修复 （Bug Fixes）**
 
-### 问题反馈
+## 问题反馈
 
-虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以在评论区留言，或添加 `QQ: 1647800606` 进行反馈。
+虽然插件已经经过开发者测试和使用，但不排除某些场景下产生问题的可能性，如遇到 `Bug` 可以
+
+- 在评论区留言，收到通知邮件我会第一次时间查看
+- 或添加 `微信: sunseekerx` 进行反馈
+- 或添加 `QQ: 1647800606` 进行反馈
+
+## 更多插件
+
+- [在线插件介绍](https://doc.yoouu.cn/front-end/uni-app/nativeplugins/)
+- [uni-app 插件市场](https://ext.dcloud.net.cn/publisher?id=64103)
+
+如有插件定制需求，也可以联系我哦。
