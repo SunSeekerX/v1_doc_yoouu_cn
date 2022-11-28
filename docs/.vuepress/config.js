@@ -30,6 +30,7 @@ module.exports = config({
     repo: 'https://github.com/SunSeekerX/v1-doc.yoouu.cn',
     editLinks: false,
     repoDisplay: true,
+    themeColor: false,
   },
   plugins: [
     [
