@@ -4,6 +4,8 @@
 
 [魅蓝 Note3](./m3-note.md)
 
+[小米 10T / 10T Pro / 红米 K30S 至尊纪念版 (apollo) ](./k30s-apollo.md)
+
 ## recovery 下载
 
 LR.Team 定制版 TWRP 下载地址集合：[https://weibo.com/ttarticle/p/show?id=2309404160776561631202](https://weibo.com/ttarticle/p/show?id=2309404160776561631202)

@@ -19,7 +19,7 @@
 
 文档地址：[super-module-hkws-sadp.md](./super-module-hkws-sadp.md)
 
-插件地址：[https://ext.dcloud.net.cn/plugin?id=10241](https://ext.dcloud.net.cn/plugin?id=10241)
+插件地址：[https://ext.dcloud.net.cn/plugin?id=10275](https://ext.dcloud.net.cn/plugin?id=10275)
 
 ## 📌 Crisp 客服
 

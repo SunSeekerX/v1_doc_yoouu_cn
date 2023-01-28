@@ -542,7 +542,7 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
           },
 
           // setUserEmail
-          email: '1647800606@qq.com',
+          email: 'sunseekerxi@gmail.com',
 
           // setUserNickname
           nickname: '不知道起啥昵称',

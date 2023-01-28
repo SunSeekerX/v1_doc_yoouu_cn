@@ -2,16 +2,62 @@
 
 记录下开发需要用到的网络代理设置。
 
+## Git
+
+```shell
+# clash
+git config --global http.proxy http://localhost:7890
+git config --global https.proxy https://localhost:7890
+
+# 恢复
+git config --global --unset http.proxy
+git config --global --unset https.proxy
+
+# 如果发现取消代理的命令不生效，可以用以下命令查看全局配置信息
+git config --global -l
+# 编辑全局配置，会启动编辑器，你可以手动去除代理信息
+git config --global -e
+```
+
+## PowerShell
+
+```powershell
+# clash 复制 power shell
+$Env:http_proxy="http://127.0.0.1:7890";$Env:https_proxy="http://127.0.0.1:7890"
+```
+
+## CMD
+
+```shell
+# clash 复制 cmd
+set http_proxy=http://127.0.0.1:7890 & set https_proxy=http://127.0.0.1:7890
+```
+
+## Windows
+
+```powershell
+# 设置代理
+netsh winhttp set proxy 127.0.0.1:1080
+# 取消代理
+netsh winhttp reset proxy
+# 查看代理
+netsh winhttp show proxy
+```
+
 ## Android studio
 
 Android 开发中我们会用到两种模式，一种是直接 IDE 编译运行，一种是直接在命令行运行，两种场景下的代理配置并不一致。其中在命令行下运行时的代理配置与 shell 下的一致，因此不再专门介绍，仅仅介绍 IDE 的环境变量配置。
+
+### gradle
 
 Android studio 提供了 IDE 全局的环境变量的配置模式，就在 Appearance & Behavior > System Settings > HTTP Proxy 中，由于这个配置是全局的，因此开发中并不是很方便，主要表现在：
 
 - 不同的项目可能不一定需要配置代理，或者需要的代理并不一致
 - 如果项目有多个开发者，每个开发者都需要配置一次
 
-因此个人更多的都是直接修改项目相关的配置文件来设置项目相关的代理。具体的就是在项目的根目录的 gradle.properties 中添加如下的配置：
+具体的就是在项目的根目录的 gradle.properties 中添加如下的配置：
+
+这里需要注意的是，很多 android 的 maven 依赖都是使用 https 的，因此不要仅仅配置 http 相关的代理，需要同时配置 https 的
 
 ```groovy
 systemProp.http.proxyHost='proxy.com'
@@ -23,8 +69,6 @@ systemProp.https.proxyPort='8080'
 # 过滤不使用代理的域名
 systemProp.https.nonProxyHosts=*.bihe0832.com
 ```
-
-这里需要注意的是，很多 android 的 maven 依赖都是使用 https 的，因此不要仅仅配置 http 相关的代理，需要同时配置 https 的
 
 ## pip 代理设置
 
@@ -119,5 +163,3 @@ https://gems.ruby-china.org
 ```shell
 export https_proxy=http://127.0.0.1:7890 http_proxy=http://127.0.0.1:7890 all_proxy=socks5://127.0.0.1:7890
 ```
-
-## pod

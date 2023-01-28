@@ -173,7 +173,8 @@ PowerShellGet\Install-Module posh-git -Scope CurrentUser -Force
 
 ```powershell
 # 安装 Scoop
-Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
+Set-ExecutionPolicy RemoteSigned -Scope CurrentUser # Optional: Needed to run a remote script the first time
+irm get.scoop.sh | iex
 # 安装 curl
 scoop install curl
 
@@ -337,7 +338,7 @@ Import-Module DirColors
 Import-Module posh-git
 
 # 引入 oh-my-posh
-oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\gmay.omp.json | Invoke-Expression
+oh-my-posh --init --shell pwsh --config ~\AppData\Local\Programs\oh-my-posh\themes\powerlevel10k_rainbow.omp.json | Invoke-Expression
 
 # 引入 ps-read-line
 Import-Module PSReadLine

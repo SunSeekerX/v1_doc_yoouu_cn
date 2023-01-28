@@ -13,8 +13,6 @@
 
 ## 基本配置
 
-> 为了让别人知道是谁提交了代码。
-
 ```bash
 # 安装完Git后第一件要做的事，设置用户信息(global可换成local在单独项目生效)：
 git config --global user.name "Your Name" # 设置用户名
@@ -24,7 +22,7 @@ git config --global user.email   # 查看邮箱是否配置
 
 # example
 git config --global user.name "SunSeekerX"
-git config --global user.email "1647800606@qq.com"
+git config --global user.email "sunseekerxi@gmail.com"
 
 # 其他查看配置相关
 git config --global --list  # 查看全局设置相关参数列表
@@ -61,17 +59,13 @@ git push -u [远程地址别名] [远程仓库分支]
 
 ## 全局 http 和 https 代理
 
-> 提交`Github`和`Gitlab`的代码在某些时候非常慢，这个时候就可以配置代理加速代码提交和拉取。
->
-> **只有`http`和`https`方式可以代理**，`ssh`使用方式无法使用。
+提交`Github`和`Gitlab`的代码在某些时候非常慢，这个时候就可以配置代理加速代码提交和拉取。
+
+**只有`http`和`https`方式可以代理**，`ssh`使用方式无法使用。
+
+设置代理 http.proxy 后面接你的本地代理地址和端口
 
 ```bash
-# 设置代理 http.proxy 后面接你的本地代理地址和端口，一般是这个
-# 不过我的1080端口老是被冲突，所以我改成了65534,然后。
-# 需要你的代理软件在1080端口允许来自局域网的连接
-git config --global http.proxy http://127.0.0.1:1080
-git config --global https.proxy https://127.0.0.1:1080
-
 # clash
 git config --global http.proxy http://localhost:7890
 git config --global https.proxy https://localhost:7890
@@ -84,6 +78,14 @@ git config --global --unset https.proxy
 git config --global -l
 # 编辑全局配置，会启动编辑器，你可以手动去除代理信息
 git config --global -e
+```
+
+## 命题解决
+
+```shell
+# 重装系统出现 fatal: detected dubious ownership in repository
+# 添加全部目录
+git config --global --add safe.directory "*"
 ```
 
 ## 常用操作

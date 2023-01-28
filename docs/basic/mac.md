@@ -1,6 +1,27 @@
 # Mac 技巧
 
-## 📌 软件推荐
+## hidpi
+
+Github：[https://github.com/xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
+
+Github 文档：[https://github.com/xzhih/one-key-hidpi/blob/master/README-zh.md](https://github.com/xzhih/one-key-hidpi/blob/master/README-zh.md)
+
+```shell
+bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)"
+```
+
+分辨率
+
+```shell
+# 3440x1440
+2560x1072 5120x2144 2752x1152 5504x2304
+```
+
+[RDM - https://github.com/avibrazil/RDM](https://github.com/avibrazil/RDM)
+
+[下载地址 - https://avi.alkalay.net/software/RDM/](https://avi.alkalay.net/software/RDM/)
+
+## 软件推荐
 
 [hyperdock](https://macwk.com/soft/hyperdock)
 
@@ -62,23 +83,27 @@ brew 用 curl 下载，所以给 curl 挂上 socks5 的代理即可。
 socks5 = "127.0.0.1:7890"
 ```
 
-## 📌 问题解决
+## 关闭/打开聚焦索引
 
-**2K 显示器缩放到 1080p 很模糊？**
+背景：Mac 上的 Spotlight 会调用 mds、mdworker 等进程，占用 cpu 使用率，造成系统卡顿。如果电脑配置比较低的话可以将 Spotlight 关闭，如果需要使用 Spotlight 或者 Alfred 等功能时，就需要将 Spotlight 开启。
 
-需要开启 hidpi
-
-[一键开启脚本 - https://github.com/xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
+关闭 Spotlight： 方法 1： 使用 launchctl 管理 MacOS 服务。这里卸载 Spotlight 的配置. 卸载配置之后，就不会再启动 mds 等进程来扫描文件，这样后续新增 App 或者文件，在 Spotlight 和 Alfred 中也就搜索不到了。
 
 ```shell
-bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/master/hidpi.sh)"
+# 方法一
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+# 方法二
+sudo mdutil -a -i off
+
+# 重启Spotlight: 方法1：使用 launchctl 管理 MacOS 服务。这里加载Spotlight的配置，重启mds等进程扫描文件。
+# 方法一
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+# 方法2：
+sudo mdutil -a -i on
+# 如果方法2中的命令后抛出 Spotlight server is disabled 这样的错误，那么就要用方法1中的操作了。
 ```
 
-[RDM - https://github.com/avibrazil/RDM](https://github.com/avibrazil/RDM)
-
-[下载地址 - https://avi.alkalay.net/software/RDM/](https://avi.alkalay.net/software/RDM/)
-
-## 📌 Mac 系统下的环境变量
+## Mac 系统下的环境变量
 
 ```
 a. /etc/profile
@@ -92,7 +117,7 @@ f. ~/.bashrc
 
 其中 a 和 b 是`系统级别`的，系统启动就会加载，其余是用户接别的。c,d,e 按照从前往后的`顺序读取`，如果 c 文件存在，则后面的几个文件就会被忽略`不读了`，以此类推。~/.bashrc 没有上述规则，它是 bash shell 打开的时候载入的。这里建议在 c 中添加环境变量，以下也是以在 c 中添加环境变量来演示的:
 
-## 📌 finder 显示隐藏文件
+## finder 显示隐藏文件
 
 ```shell
 # 显示
@@ -105,7 +130,7 @@ defaults write com.apple.finder AppleShowAllFiles FALSE
 killall Finder
 ```
 
-## 📌 取消系统更新小红点
+## 取消系统更新小红点
 
 ```shell
 # 取消
@@ -117,7 +142,7 @@ sudo softwareupdate --reset-ignored
 defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
 ```
 
-## 📌 添加 adb 环境变量
+## 添加 adb 环境变量
 
 前提已经成功安装了 Android Studio.
 
@@ -129,7 +154,7 @@ echo 'export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> ~
 source ~/.zshrc
 ```
 
-## 📌 java 版本管理
+## java 版本管理
 
 [jEnv](https://www.jenv.be/)
 
@@ -204,7 +229,7 @@ source ~/.zshrc
        1.7.0_80 (x86_64) "Oracle Corporation" - "Java SE 7" /Library/Java/JavaVirtualMachines/jdk1.7.0_80.jdk/Contents/Home
    ```
 
-## 📌 iterm2 配置
+## iterm2 配置
 
 ### 安装 iterm2
 
@@ -238,7 +263,7 @@ iTerm2 -> Make ITerm2 Default Term
 
 [https://iterm2colorschemes.com/](https://iterm2colorschemes.com/)
 
-## 📌 oh-my-zsh
+## oh-my-zsh
 
 [https://ohmyz.sh/](https://ohmyz.sh/)
 
