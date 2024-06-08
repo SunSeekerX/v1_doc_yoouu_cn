@@ -35,3 +35,6 @@ pnpm-debug.log*
 # Another files
 docs/.vuepress/.cache/
 docs/.vuepress/.temp/
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
