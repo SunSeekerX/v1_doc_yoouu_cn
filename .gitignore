@@ -1,29 +1,29 @@
-.DS_Store
-node_modules
-dist/
+# local env files
+.env.local
+.env.*.local
 
 # Log files
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-pnpm-debug.log*
 
 # Editor directories and files
+.project
 .idea
+.vscode/*
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
-*.sw?
+*.sw*
 
-# Editor directories and files
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
+# IDE - VSCode
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
 
-# Yarn
+# yarn 2.0+
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -31,6 +31,37 @@ pnpm-debug.log*
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# Node modules
+node_modules/
+
+# Build files
+docs/shared/lib/
+packages/*/lib/
+
+# Vuepress Cache
+.cache/
+# Vuepress Temp
+.temp/
+# Vuepress Output
+dist/
+
+# Rollup Cache
+.rollup.cache/
+
+# Typescript build info
+*.tsbuildinfo
+
+# Coverage Files
+coverage/
+
+# macOS
+.DS_Store
+
+# App
+pnpm-lock.yaml
+yarn.lock
+package-lock.json
 
 # Another files
 docs/.vuepress/.cache/
