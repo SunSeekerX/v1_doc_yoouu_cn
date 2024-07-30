@@ -249,11 +249,7 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
     </view>
     <view class="input"> <input v-model="crisp.url" type="text" placeholder="请输入 url" /> </view>
     <view class="input">
-      <input
-        v-model="crisp.companyDescription"
-        type="text"
-        placeholder="请输入 companyDescription"
-      />
+      <input v-model="crisp.companyDescription" type="text" placeholder="请输入 companyDescription" />
     </view>
     <view class="input">
       <input v-model="crisp.employment.role" type="text" placeholder="请输入 employment.role" />
@@ -265,11 +261,7 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
       <input v-model="crisp.geolocation.city" type="text" placeholder="请输入 geolocation.city" />
     </view>
     <view class="input">
-      <input
-        v-model="crisp.geolocation.country"
-        type="text"
-        placeholder="请输入 geolocation.country"
-      />
+      <input v-model="crisp.geolocation.country" type="text" placeholder="请输入 geolocation.country" />
     </view>
     <button
       type="primary"
@@ -336,11 +328,7 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
 
     <!-- setSessionBool -->
     <view class="input">
-      <input
-        v-model="crisp.setSessionBool.key"
-        type="text"
-        placeholder="请输入 setSessionBool.key"
-      />
+      <input v-model="crisp.setSessionBool.key" type="text" placeholder="请输入 setSessionBool.key" />
     </view>
     <view class="input">
       <text>setSessionBool.value</text>
@@ -373,11 +361,7 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
       <input v-model="crisp.setSessionInt.key" type="text" placeholder="请输入 setSessionInt.key" />
     </view>
     <view class="input">
-      <input
-        v-model="crisp.setSessionInt.value"
-        type="text"
-        placeholder="请输入 setSessionInt.value"
-      />
+      <input v-model="crisp.setSessionInt.value" type="text" placeholder="请输入 setSessionInt.value" />
     </view>
 
     <button
@@ -396,18 +380,10 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
 
     <!-- setSessionString -->
     <view class="input">
-      <input
-        v-model="crisp.setSessionString.key"
-        type="text"
-        placeholder="请输入 setSessionString.key"
-      />
+      <input v-model="crisp.setSessionString.key" type="text" placeholder="请输入 setSessionString.key" />
     </view>
     <view class="input">
-      <input
-        v-model="crisp.setSessionString.value"
-        type="text"
-        placeholder="请输入 setSessionString.value"
-      />
+      <input v-model="crisp.setSessionString.value" type="text" placeholder="请输入 setSessionString.value" />
     </view>
 
     <button
@@ -444,11 +420,7 @@ Crisp sdk 隐私政策：[https://crisp.chat/en/privacy/](https://crisp.chat/en/
 
     <!-- pushSessionEvent -->
     <view class="input">
-      <input
-        v-model="crisp.pushSessionEvent.text"
-        type="text"
-        placeholder="请输入 pushSessionEvent.text"
-      />
+      <input v-model="crisp.pushSessionEvent.text" type="text" placeholder="请输入 pushSessionEvent.text" />
     </view>
     <view class="input" @tap="state.isShowColorPicker = true">
       <text>crisp.pushSessionEvent.color: {{ crisp.pushSessionEvent.color }}</text>

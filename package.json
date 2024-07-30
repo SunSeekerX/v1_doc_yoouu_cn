@@ -5,7 +5,8 @@
   "description": "sunseekerx's notebook v1.",
   "license": "MIT",
   "scripts": {
-    "build": "vuepress build docs",
+    "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs",
     "gc": "git add -A && git-cz && git pull && git push",
     "postinstall": "husky install",
     "lint:lint-staged": "lint-staged",
@@ -13,7 +14,7 @@
     "prepack": "pinst --disable",
     "postpack": "pinst --enable",
     "pkg:sort": "npx sort-package-json",
-    "serve": "vuepress dev docs"
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -30,13 +31,14 @@
     ]
   },
   "devDependencies": {
-    "@vuepress/plugin-search": "^1.9.8",
-    "husky": "^8.0.3",
-    "lint-staged": "^13.1.0",
+    "@vuepress/plugin-search": "^1.9.10",
+    "cross-env": "^7.0.3",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
     "pinst": "^3.0.0",
-    "prettier": "^2.8.3",
-    "vuepress": "^1.9.8",
+    "prettier": "^3.3.3",
+    "vuepress": "^1.9.10",
     "vuepress-theme-hope": "1.30.0"
   },
-  "packageManager": "yarn@3.3.1"
+  "packageManager": "yarn@4.3.1"
 }

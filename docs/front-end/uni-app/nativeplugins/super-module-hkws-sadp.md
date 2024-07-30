@@ -68,9 +68,7 @@ export function safeRunning(name, fun) {
     <!-- 海康威视 -->
     <view class="gap"><text>📌 海康威视 - SADP</text></view>
     <button type="primary" @click="onStart">开始搜索设备: onStart</button>
-    <button type="primary" @click="onSetFindDeviceCallback"
-      >设置设备回调监听: onSetFindDeviceCallback</button
-    >
+    <button type="primary" @click="onSetFindDeviceCallback">设置设备回调监听: onSetFindDeviceCallback</button>
     <button type="primary" @click="onRefresh">刷新: onRefresh</button>
 
     <view class="wd-py-10">
@@ -150,7 +148,7 @@ export function safeRunning(name, fun) {
             },
             (result) => {
               toast('onActivate', result)
-            }
+            },
           )
         })
       },
