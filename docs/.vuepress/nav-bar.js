@@ -7,9 +7,8 @@
  */
 
 module.exports = [
-  // 简介
   { text: '简介', link: '/intro/', icon: 'fa-solid fa-user' },
-  // 基础笔记
+  { text: 'AI', link: '/ai/' },
   {
     text: '基础',
     items: [
@@ -33,7 +32,9 @@ module.exports = [
           { text: '开发工具技巧', link: '/basic/ide' },
           { text: 'PowerShell', link: '/basic/powershell' },
           { text: 'Windows 技巧', link: '/basic/windows' },
+          { text: 'Windows wsl 技巧', link: '/basic/windows-wsl' },
           { text: 'Mac 技巧', link: '/basic/mac' },
+          { text: '浏览器技巧', link: '/basic/browser' },
         ],
       },
       {
@@ -69,6 +70,7 @@ module.exports = [
           { text: 'NPM 技巧', link: '/front-end/npm' },
           { text: 'Vue', link: '/front-end/vue' },
           { text: 'React', link: '/front-end/react' },
+          { text: 'Next.js', link: '/front-end/nextjs' },
           { text: '小程序', link: '/front-end/mp' },
           {
             text: 'Flutter',
@@ -84,6 +86,7 @@ module.exports = [
         text: 'Uni-app',
         items: [
           { text: 'Uni-app - 概览', link: '/front-end/uni-app/' },
+          { text: 'Uni-app - awesome', link: '/front-end/uni-app/awesome-uni-app' },
           { text: 'Uni-app -  原生插件', link: '/front-end/uni-app/nativeplugins/' },
           { text: 'Uni-app -  Android 离线打包', link: '/front-end/uni-app/offline-build-android' },
           { text: 'Uni-app -  IOS 离线打包', link: '/front-end/uni-app/offline-build-ios' },
@@ -111,11 +114,15 @@ module.exports = [
         items: [
           {
             text: 'IOS - 概览',
-            link: '/front-end/ios',
+            link: '/front-end/ios/',
+          },
+          {
+            text: 'IOS - 开发',
+            link: '/front-end/ios/dev',
           },
           {
             text: 'IOS - 问题',
-            link: '/front-end/ios-issue',
+            link: '/front-end/ios/issue',
           },
         ],
       },
@@ -137,22 +144,27 @@ module.exports = [
     items: [
       { text: '概览', link: '/back-end/' },
       { text: 'Linux', link: '/back-end/linux' },
-      { text: 'C', link: '/back-end/c' },
+      // { text: 'C', link: '/back-end/c' },
       // { text: 'SQL', link: '/back-end/sql' },
       { text: 'Database', link: '/back-end/database' },
       { text: 'Docker', link: '/back-end/docker' },
       { text: 'Redis', link: '/back-end/redis' },
       {
-        text: 'NodeJs',
+        text: 'Lang',
         items: [
-          { text: 'NodeJs', link: '/back-end/nodejs/' },
+          { text: 'C', link: '/back-end/c' },
+          { text: 'NodeJs', link: '/back-end/nodejs' },
           { text: 'NestJS', link: '/back-end/nestjs/' },
+          { text: 'Kotlin', link: '/back-end/kotlin' },
+          { text: 'Golang', link: '/back-end/golang' },
+          { text: 'Rust', link: '/back-end/rust' },
+          { text: 'Python', link: '/back-end/python' },
         ],
       },
-      {
-        text: 'Kotlin',
-        items: [{ text: 'Kotlin', link: '/back-end/kotlin' }],
-      },
+      // {
+      //   text: 'Kotlin',
+      //   items: [{ text: 'Kotlin', link: '/back-end/kotlin' }],
+      // },
       {
         text: 'Java',
         items: [
@@ -161,10 +173,10 @@ module.exports = [
           { text: 'Spring-Boot', link: '/back-end/java/spring-boot' },
         ],
       },
-      {
-        text: 'Golang',
-        items: [{ text: 'Golang', link: '/back-end/golang' }],
-      },
+      // {
+      //   text: 'Golang',
+      //   items: [{ text: 'Golang', link: '/back-end/golang' }],
+      // },
     ],
   },
   // 兴趣
@@ -174,6 +186,7 @@ module.exports = [
       { text: '刷机', link: '/interest/flash/' },
       { text: '黑苹果', link: '/interest/hackintosh' },
       { text: 'N1 盒子', link: '/interest/n1' },
+      { text: 'R1 音响', link: '/interest/phicomm_r1' },
       { text: '浏览器', link: '/interest/browser' },
       { text: 'JD', link: '/interest/jd' },
       { text: '话题', link: '/interest/topic' },
@@ -210,12 +223,13 @@ module.exports = [
     text: '区块链',
     items: [
       { text: '概览', link: '/blockchain/' },
-      { text: '投资机构', link: '/blockchain/capital' },
-      { text: '学习笔记', link: '/blockchain/notebook' },
-      { text: 'Solidity', link: '/blockchain/solidity' },
-      { text: '项目', link: '/blockchain/apps/' },
-      { text: '书签', link: '/blockchain/bookmark' },
-      { text: 'NFT', link: '/blockchain/nft' },
+      { text: '铭文', link: '/blockchain/inscription' },
+      { text: '工具', link: '/blockchain/tools' },
+      { text: 'Bitcoin', link: '/blockchain/bitcoin' },
+      { text: 'Evm 系列', link: '/blockchain/evm' },
+      { text: 'Solana', link: '/blockchain/solana' },
+      { text: 'Solidity 开发', link: '/blockchain/solidity' },
+      { text: '玩过的项目', link: '/blockchain/apps/' },
     ],
   },
   // 开源项目 -  Open source

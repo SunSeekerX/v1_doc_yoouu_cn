@@ -6,6 +6,29 @@
 >
 > **Docker Hub**: [https://docs.docker.com/install/linux/docker-ce/centos/](https://docs.docker.com/install/linux/docker-ce/centos/)
 
+## 📌 镜像加速
+
+国内从 DockerHub 拉取镜像有时会遇到困难，此时可以配置镜像加速器。Docker 官方和国内很多云服务商都提供了国内加速器服务，例如：
+
+- 科大镜像：https://docker.mirrors.ustc.edu.cn
+- 网易：https://hub-mirror.c.163.com
+- 阿里云：**https://<你的 ID>.mirror.aliyuncs.com**
+- 七牛云加速器：https://reg-mirror.qiniu.com
+
+当配置某一个加速器地址之后，若发现拉取不到镜像，请切换到另一个加速器地址。国内各大云服务商均提供了 Docker 镜像加速服务，建议根据运行 Docker 的云平台选择对应的镜像加速服务。
+
+阿里云镜像获取地址：https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors，登陆后，左侧菜单选中镜像加速器就可以看到你的专属地址了：
+
+### Docker desktop
+
+```json
+"registry-mirrors": [
+    "https://docker.mirrors.ustc.edu.cn",
+    "https://hub-mirror.c.163.com",
+  "https://reg-mirror.qiniu.com"
+  ]
+```
+
 ## 📌 常用命令
 
 ### 服务（service）重启
@@ -290,6 +313,11 @@ $ docker container update --restart=always 容器id
 $ docker exec -it mongodb bash
 # 9.在容器内登录数据库
 $ mongo -u root -p 12345678900
+
+docker run --name mongodb -p 27018:27017 --restart=always -v /data/docker_data/mongodb7x:/data/db -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=my-secret-pw -d mongo
+
+# 3.x
+docker run --name mongodb3x -p 27019:27017 --restart=always -v /data/docker_data/mongodb3x:/data/db -e MONGO_INITDB_ROOT_USERNAME=root -e MONGO_INITDB_ROOT_PASSWORD=my-secret-pw -d mongo:3.6.23
 ```
 
 ### 0x4. Docker 安装 Portainer
@@ -301,7 +329,30 @@ $ mongo -u root -p 12345678900
 docker pull portainer/portainer-ce
 # 创建数据卷
 docker volume create portainer_data
+# 删除原来的容器
+docker rm portainer -f
 # 启动容器
+docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
+
+# Linux
+docker run -d \
+--name portainer \
+--restart=always \
+-p 8000:8000 \
+-p 9000:9000 \
+-p 9443:9443 \
+-v /var/run/docker.sock:/var/run/docker.sock \
+-v /data/docker_data/portainer:/data portainer/portainer-ce
+
+# Win
+docker run -d `
+--name portainer `
+--restart=always `
+-p 8000:8000 `
+-p 9000:9000 `
+-p 9443:9443 `
+-v /var/run/docker.sock:/var/run/docker.sock `
+-v D:\data\docker_data\portainer:/data portainer/portainer-ce
 docker run -d -p 8000:8000 -p 9000:9000 --name=portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce
 ```
 
@@ -356,6 +407,18 @@ $ docker run -d -p 65535:8080 --restart=always --name music pan93412/unblock-net
 > Docker 镜像：[https://hub.docker.com/r/jenkins/jenkins](https://hub.docker.com/r/jenkins/jenkins)
 
 ```bash
+# lts-jdk17 8192M
+docker run --name jenkins -m 8192M -p 50001:8080 --restart=always -u root -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JAVA_OPTS="-Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8" jenkins/jenkins:lts-jdk17
+
+# jdk 11 8192M
+docker run --name jenkins -m 8192M -p 50001:8080 --restart=always -u root -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JAVA_OPTS="-Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8" jenkins/jenkins:lts-jdk11
+
+# 限制内存为 1.5 GB 腾讯云不限制构建 Vue 项目很容易把内存吃满然后其他服务挂掉
+docker run --name jenkins -m 1536M -p 50001:8080 -p 50000:50000 --restart=always -u root -d -v /var/run/docker.sock:/var/run/docker.sock -v /data/docker_data/jenkins_home:/var/jenkins_home -e JAVA_OPTS="-Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8" jenkins/jenkins:jdk21
+
+# 端口 8080：用于访问 Jenkins 的 Web 管理界面。
+# 端口 50000：用于 Jenkins 主节点和代理节点之间的通信。
+
 # 拉取长期服务版
 $ docker pull jenkins/jenkins:lts
 # 在启动Jenkins时，需要先创建一个Jenkins的配置目录，并且挂载到docker 里的Jenkins目录下
@@ -366,12 +429,6 @@ $ chown -R 1000 /var/jenkins_home
 $ sudo ls -nd /var/jenkins_home/
 # 运行 Jenkins
 $ docker run --name jenkins -p 50001:8080 --restart=always -u root  -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JENKINS_UC="	https://updates.jenkins-zh.cn" -e JENKINS_UC_DOWNLOAD="https://mirrors.tuna.tsinghua.edu.cn/jenkins" -e JAVA_OPTS=-Duser.timezone=Asia/Shanghai -v $(which git):/usr/bin/git jenkins/jenkins:lts
-
-# 限制内存为 1.5 GB 腾讯云不限制构建 Vue 项目很容易把内存吃满然后其他服务挂掉
-docker run --name jenkins -m 1536M -p 50001:8080 --restart=always -u root -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JAVA_OPTS="-Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8" jenkins/jenkins:lts
-
-# jdk 11
-docker run --name jenkins -m 1536M -p 50001:8080 --restart=always -u root -d -v /var/run/docker.sock:/var/run/docker.sock -v /var/jenkins_home:/var/jenkins_home -e JAVA_OPTS="-Duser.timezone=Asia/Shanghai -Dfile.encoding=UTF-8" jenkins/jenkins:lts-jdk11
 ```
 
 `jenkinsci/blueocean` - 官方推荐安装
@@ -464,7 +521,32 @@ $ docker run --name rancher -d --restart=unless-stopped -p 8082:80 -p 8083:443 r
 
 ### 0x9 Docker 安装 frps
 
+https://gofrp.org/
+
+https://hub.docker.com/r/snowdreamtech/frps
+
 新建配置文件
+
+```shell
+mkdir -p /data/docker_data/frps/ && cd /data/docker_data/frps/
+touch frps.toml
+```
+
+写入配置文件，`frps.toml`，根据你自己的配置
+
+```ini
+bindPort = 7000
+vhostHTTPPort = 7070
+vhostHTTPSPort = 7443
+
+auth.method = "token"
+auth.token = "xxxxxx"
+
+webServer.addr = "0.0.0.0"
+webServer.port = 7071
+```
+
+~~新建配置文件~~
 
 ```shell
 mkdir -p /etc/frp/
@@ -472,7 +554,7 @@ cd /etc/frp/
 touch frps.ini
 ```
 
-写入配置文件，`frps.ini`，根据你自己的配置
+~~写入配置文件，`frps.ini`，根据你自己的配置~~
 
 ```ini
 [common]
@@ -486,12 +568,30 @@ dashboard_port = 7071
 启动容器
 
 ```shell
+# Linux
+docker run -d \
+--name frps \
+--network host \
+--restart=always \
+-p 33077:3306 \
+-v /data/docker_data/frps/frps.toml:/etc/frp/frps.toml snowdreamtech/frps
+
+# 旧版本
 docker run --restart=always --network host -d -v /etc/frp/frps.ini:/etc/frp/frps.ini --name frps snowdreamtech/frps
 ```
 
 ### 0x10 Docker 安装 frpc
 
-新建配置文件
+frpc.toml
+
+```toml
+serverAddr = "x.x.x.x"
+serverPort = 7000
+auth.method = "token"
+auth.token = "xxxxxx"
+```
+
+~~新建配置文件~~
 
 ```shell
 mkdir -p /etc/frp/
@@ -499,7 +599,7 @@ cd /etc/frp/
 touch frpc.ini
 ```
 
-写入配置文件，`frpc.ini`，根据你自己的配置
+~~写入配置文件，`frpc.ini`，根据你自己的配置~~
 
 ```ini
 [common]
@@ -531,56 +631,73 @@ docker run --restart=always --network host -d -v /etc/frp/frpc.ini:/etc/frp/frpc
 
 ### 0x11 Docker 安装 redis
 
-1、拉取 redis 镜像
+1. 创建挂载目录
 
-```bash
-docker pull redis
-```
+   ```shell
+   mkdir -p /data/docker_data/redis7x && cd /data/docker_data/redis7x
+   ```
 
-2、创建挂载目录
+2. 下载 redis.conf 文件
 
-```bash
-mkdir -p /root/app/docker-data/redis && cd /root/app/docker-data/redis
-```
+   ```shell
+   wget https://download.redis.io/redis-stable/redis.conf
+   ```
 
-3、下载 redis.conf 文件
+3. 权限
 
-```bash
-wget http://download.redis.io/redis-stable/redis.conf
-```
+   ```shell
+   chmod 777 redis.conf
+   ```
 
-4、权限
+4. 修改默认配置信息
 
-```bash
-chmod 777 redis.conf
-```
+   ```bash
+   vi redis.conf
 
-5、修改默认配置信息
+   # 这行要注释掉，解除本地连接限制 配置绑定 ip，搜索 bind 127.0.0.1 -::1
+   bind 0.0.0.0
+   # 默认yes，如果设置为yes，则只允许在本机的回环连接，其他机器无法连接。
+   protected-mode no
+   # 默认no 为不守护进程模式，docker部署不需要改为yes，docker run -d本身就是后台启动，不然会冲突
+   daemonize no
+   # 密码，搜索 requirepass foobared
+   requirepass my-secret-pw
+   # 持久化
+   appendonly yes
+   ```
 
-```bash
-vi redis.conf
+5. docker 启动 redis
 
-# 这行要注释掉，解除本地连接限制
-bind 127.0.0.1 -::1
-# 默认yes，如果设置为yes，则只允许在本机的回环连接，其他机器无法连接。
-protected-mode no
-# 默认no 为不守护进程模式，docker部署不需要改为yes，docker run -d本身就是后台启动，不然会冲突
-daemonize no
-# 设置密码
-requirepass 123456
-# 持久化
-appendonly yes
-```
+   ```shell
+   # Linux
+   docker run --name redis7x \
+   --restart=always \
+   -p 63799:6379 \
+   --log-opt max-size=100m --log-opt max-file=2 \
+   -v /data/docker_data/redis7x/redis.conf:/etc/redis/redis.conf \
+   -v /data/docker_data/redis7x:/data \
+   -d redis:7.2 redis-server /etc/redis/redis.conf --appendonly yes
 
-6、docker 启动 redis
+   # Win
+   docker run --name redis7x `
+   --restart=always `
+   -p 63799:6379 `
+   --log-opt max-size=100m `
+   --log-opt max-file=2 `
+   -v D:\data\docker_data\redis7x\redis.conf:/etc/redis/redis.conf `
+   -v D:\data\docker_data\redis7x\:/data `
+   -d redis:7.2 `
+   redis-server /etc/redis/redis.conf --appendonly yes
 
-```bash
-docker run --name redis \
--p 63799:6379 \
--v /root/app/docker-data/redis/redis.conf:/etc/redis/redis.conf \
--v /root/app/docker-data/redis:/data \
--d redis redis-server /etc/redis/redis.conf --appendonly yes
-```
+   # Mac
+   docker run --name redis7x \
+   --restart=always \
+   -p 63799:6379 \
+   --log-opt max-size=100m --log-opt max-file=2 \
+   -v ~/work/data/docker_data/redis7x/redis.conf:/etc/redis/redis.conf \
+   -v ~/work/data/docker_data/redis7x:/data \
+   -d redis:7.2 redis-server /etc/redis/redis.conf --appendonly yes
+   ```
 
 **说明：**
 
@@ -589,12 +706,6 @@ docker run --name redis \
 - -v 挂载文件或目录：前面是宿主机，后面是容器。
 - -d redis redis-server /etc/redis/redis.conf：表示后台启动 redis，以配置文件启动 redis，加载容器内的 conf 文件。
 - appendonly yes：开启 redis 持久化。
-
-7、检查 redis 运行状态
-
-```bash
-docker ps
-```
 
 ### 0x12 Docker 安装 zentao
 
@@ -621,8 +732,84 @@ nginx 反向代理无法正常工作，禅道工作目录为 www/
 
 镜像地址：[https://hub.docker.com/\_/mysql?tab=reviews](https://hub.docker.com/_/mysql?tab=reviews)
 
+**mysql 57**
+
+```shell
+docker run --name --restart=always mysql57 -p 33066:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7
+
+# Linux
+docker run -d \
+--name mysql57 \
+--privileged=true \
+--restart=always \
+-p 33066:3306 \
+-v /data/docker_data/mysql57x/data:/var/lib/mysql \
+-v /data/docker_data/mysql57x/config:/etc/mysql/conf.d  \
+-v /data/docker_data/mysql57x/logs:/logs \
+-e MYSQL_ROOT_PASSWORD=my-secret-pw \
+-e TZ=Asia/Shanghai mysql:5.7
+
+# Win
+docker run -d `
+--name mysql57 `
+--privileged=true `
+--restart=always `
+-p 33066:3306 `
+-v D:\data\docker_data\mysql57x\data:/var/lib/mysql `
+-v D:\data\docker_data\mysql57x\config:/etc/mysql/conf.d `
+-v D:\data\docker_data\mysql57x\logs:/logs `
+-e MYSQL_ROOT_PASSWORD=root `
+-e TZ=Asia/Shanghai mysql:5.7
 ```
-docker run --name mysql57 -p 33066:3306 -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:5.7
+
+**mysql 8.x**
+
+```shell
+# Linux
+docker run -d \
+--name mysql8x \
+--privileged=true \
+--restart=always \
+-p 33077:3306 \
+-v /data/docker_data/mysql8x/data:/var/lib/mysql \
+-v /data/docker_data/mysql8x/config:/etc/mysql/conf.d  \
+-v /data/docker_data/mysql8x/logs:/logs \
+-e MYSQL_ROOT_PASSWORD=my-secret-pw \
+-e TZ=Asia/Shanghai mysql:8.3
+
+# Win
+docker run -d `
+--name mysql8x `
+--privileged=true `
+--restart=always `
+-p 33077:3306 `
+-v D:\data\docker_data\mysql8x\data:/var/lib/mysql `
+-v D:\data\docker_data\mysql8x\config:/etc/mysql/conf.d `
+-v D:\data\docker_data\mysql8x\logs:/logs `
+-e MYSQL_ROOT_PASSWORD=root `
+-e TZ=Asia/Shanghai mysql:8.3
+
+# Mac
+docker run  -d  \
+--name mysql8x \
+--privileged=true \
+--restart=always \
+-p 33077:3306 \
+-v ~/work/data/docker_data/mysql8/data:/var/lib/mysql \
+-v ~/work/data/docker_data/mysql8/config:/etc/mysql/conf.d  \
+-v ~/work/data/docker_data/logs:/logs \
+-e MYSQL_ROOT_PASSWORD=my-secret-pw \
+-e TZ=Asia/Shanghai mysql:8.3
+
+# 开放远程访问
+# 进入容器
+docker exec -it <container_id_or_name> /bin/bash
+# 登录 mysql
+mysql -u root -p
+# 开放权限
+ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'my-secret-pw';
+# 刷新权限
+flush privileges;
 ```
 
 ### 0x14 Docker 安装 Bookstack
@@ -672,16 +859,17 @@ docker run -d \
 > [Gitea](https://gitea.io/zh-cn/)
 
 ```shell
-mkdir -p /var/gitea
+# 创建一个网络
+docker network create -d macvlan --subnet=172.172.172.0/24 --gateway=172.172.172.1 -o parent=eth0 dockernet
 
-docker pull gitea/gitea:latest
 # 注意 DB_HOST 和 dockernet 需要新建 docker 网络
+# Linux & mac
 docker run -d \
 --name=gitea \
 -e USER_UID=1000 \
 -e USER_GID=1000 \
 -e DB_TYPE=mysql \
--e DB_HOST=192.168.0.1:3306 \
+-e DB_HOST=172.172.172.1:3306 \
 -e DB_NAME=db_name \
 -e DB_USER=db_user \
 -e DB_PASSWD=db_pwd \
@@ -689,19 +877,73 @@ docker run -d \
 -p 3000:3000 \
 --network=dockernet \
 --restart=always \
--v /var/gitea:/data \
+-v /data/docker_data/gitea:/data \
 -v /etc/timezone:/etc/timezone:ro \
 -v /etc/localtime:/etc/localtime:ro \
 gitea/gitea:latest
+
+# win
+docker run -d --name=gitea -e USER_UID=1000 -e USER_GID=1000 -e DB_TYPE=mysql -e DB_HOST=172.172.172.1:3306 -e DB_NAME=db_name -e DB_USER=db_user -e DB_PASSWD=db_pwd -p 222:22 -p 3030:3000 --network=dockernet --restart=always -v D:\data\gitea:/data -v /etc/timezone:/etc/timezone:ro -v /etc/localtime:/etc/localtime:ro gitea/gitea:latest
+
+# 备份和恢复
+# 查看 1000 用户名
+grep ':1000:' /etc/passwd
+# ubuntu 恢复
+docker exec -u <OS_USERNAME> -it -w <--tempdir> $(docker ps -qf 'name=^<NAME_OF_DOCKER_CONTAINER>$') bash -c '/usr/local/bin/gitea dump -c </path/to/app.ini>'
+
+mkdir -p /data/docker_data/gitea_backup
+docker exec -u root -it -w /data/docker_data/gitea_backup $(docker ps -qf 'name=^gitea$') bash -c '/usr/local/bin/gitea dump -c /data/gitea/conf/app.ini'
 ```
 
 ### 0x16 Docker 安装 AppHost
 
 ```shell
 # 新建数据目录
-mkdir -p ~/data/app-host
+mkdir -p /data/docker_data/app_host
 
-docker run --name app_host --restart=always -v ~/data/app-host:/app/shared -p 3001:8686 -d tinyc/app-host:lastest
+docker run --name app_host --restart=always -v /data/docker_data/app_host:/app/shared -p 8686:8686 -d tinyc/app-host:lastest
+```
+
+测试可以成功访问的 nginx 反向代理配置文件，不按照这个配置可能无法使用，
+
+https://x/users/new 这里新建用户
+
+```
+
+#PROXY-START/
+
+location ^~ /
+{
+    proxy_pass http://127.0.0.1:8686;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_set_header X-Forwarded-Port $server_port;
+    proxy_set_header REMOTE-HOST $remote_addr;
+    # proxy_hide_header Upgrade;
+
+    add_header X-Cache $upstream_cache_status;
+    #Set Nginx Cache
+
+    set $static_fileK05aa2de 0;
+    if ( $uri ~* "\.(gif|png|jpg|css|js|woff|woff2)$" )
+    {
+        set $static_fileK05aa2de 1;
+        expires 1m;
+    }
+    if ( $static_fileK05aa2de = 0 )
+    {
+        add_header Cache-Control no-cache;
+    }
+}
+#PROXY-END/
+```
+
+记得修改 nginx 上传配置
+
+```
+client_max_body_size 250m;
 ```
 
 ### 0x17 Docker 安装 twikoo 评论系统
@@ -712,4 +954,220 @@ mkdir -p ~/data/twikoo
 # 启动容器
 # 3002 我服务器可用的端口号
 docker run --name twikoo -e TWIKOO_THROTTLE=1000 -p 3002:8080 -v ~/data/twikoo:/app/data -d imaegoo/twikoo
+```
+
+### 0x18 Docker 安装 artalk 评论系统
+
+```shell
+# 更新镜像
+docker pull artalk/artalk-go:latest
+
+# 新建数据目录
+mkdir -p ~/data/artalk
+# 启动容器
+docker run -d \
+    --name artalk \
+    -p 23366:23366 \
+    -v ~/data/artalk:/data \
+    --restart=always \
+    artalk/artalk-go
+```
+
+### 0x19 Docker 安装 gitness
+
+```shell
+# mac
+docker run -d \
+  -p 3456:3000 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v ~/work/data/gitness:/data \
+  --name gitness \
+  --restart always \
+  harness/gitness
+
+docker run -d \
+  -p 3000:3000 \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  -v /tmp/gitness:/data \
+  --name gitness \
+  --restart always \
+  harness/gitness
+```
+
+### 0x20 Docker 安装 minio
+
+GitHub: https://github.com/minio/minio
+
+Doc: https://min.io/docs/minio/container/index.html
+
+```shell
+# Linux
+docker run -d \
+   --restart=always \
+   -p 9000:9000 \
+   -p 9001:9001 \
+   --name minio \
+   -v ~/data/docker_data/minio/data:/data \
+   -e "MINIO_ROOT_USER=ROOTNAME" \
+   -e "MINIO_ROOT_PASSWORD=CHANGEME123" \
+   quay.io/minio/minio server /data --console-address ":9001"
+```
+
+### 0x21 Docker 安装 nginx
+
+```shell
+# 新建一个文件夹 D:\data\docker_data\nginx12x\html
+# 新建一个配置文件 D:\data\docker_data\nginx12x\default.conf
+
+docker run -d `
+--restart=always `
+--name nginx `
+--network host `
+-v D:\data\docker_data\nginx12x\html:/usr/share/nginx/html `
+-v D:\data\docker_data\nginx12x\default.conf:/etc/nginx/conf.d/default.conf `
+nginx
+
+# 测试配置文件 win
+nginx -t -c D:\data\docker_data\nginx12x\default.conf
+# 运行 Nginx
+start nginx
+# 重新加载配置
+nginx -s reload
+# 强制停止
+nginx -s stop
+# 优雅停止
+nginx -s quit
+```
+
+default.conf
+
+```nginx
+
+#user  nobody;
+worker_processes 1;
+
+#error_log  logs/error.log;
+#error_log  logs/error.log  notice;
+#error_log  logs/error.log  info;
+
+#pid        logs/nginx.pid;
+events {
+    worker_connections 1024;
+}
+
+
+http {
+    include mime.types;
+    default_type application/octet-stream;
+
+    #log_format  main  '$remote_addr - $remote_user [$time_local] "$request" '
+    #                  '$status $body_bytes_sent "$http_referer" '
+    #                  '"$http_user_agent" "$http_x_forwarded_for"';
+
+    #access_log  logs/access.log  main;
+    sendfile on;
+    #tcp_nopush     on;
+
+    #keepalive_timeout  0;
+    keepalive_timeout 65;
+
+    #gzip  on;
+
+    server {
+        listen 80;
+        server_name xxx.yyy.com;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        location / {
+            root /app2/site;
+            index index.html;
+        }
+        location /api/ {
+            proxy_pass http://127.0.0.1:8088/dk/;
+        }
+    }
+
+}
+
+```
+
+### 0x22 Docker 安装 Ghost blog 系统
+
+来源：https://hub.docker.com/_/ghost/
+
+```shell
+# Linux
+docker run -d \
+  --name ghost \
+  --network host \
+  --restart always \
+  -e database__client=mysql \
+  -e database__connection__host=127.0.0.1 \
+  -e database__connection__user=<db_user> \
+  -e database__connection__password=<db_pwd> \
+  -e database__connection__database=<db_name> \
+  -e url=http://localhost:2368/ \
+  -v /data/docker_data/ghost:/var/lib/ghost/content \
+  ghost:5
+```
+
+### 0x23 Docker 安装 rustdesk
+
+镜像 https://hub.docker.com/r/rustdesk/rustdesk-server/tags
+
+官方文档：https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-oss/install/
+
+```shell
+# 镜像 https://hub.docker.com/r/rustdesk/rustdesk-server/tags
+# 官方文档：https://rustdesk.com/docs/zh-cn/self-host/rustdesk-server-oss/install/
+sudo docker run --name hbbs -p 21115:21115 -p 21116:21116 -p 21116:21116/udp -p 21118:21118 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbbs -r <relay-server-ip[:port]>
+sudo docker run --name hbbr -p 21117:21117 -p 21119:21119 -v `pwd`:/root -td --net=host rustdesk/rustdesk-server hbb
+
+mkdir -p /data/docker_data/rustdesk
+touch /data/docker_data/rustdesk/docker-compose.yml
+cd /data/docker_data/rustdesk
+docker compose up -d
+
+# 开放 21115-21119
+```
+
+docker-compose.yml 配置内容，替换下 <your_public_ip> 和 <your_key>
+
+```yaml
+version: '3'
+
+networks:
+  rustdesk-net:
+    external: false
+
+services:
+  hbbs:
+    container_name: hbbs
+    ports:
+      - 21115:21115
+      - 21116:21116
+      - 21116:21116/udp
+      - 21118:21118
+    image: rustdesk/rustdesk-server:latest
+    command: hbbs -r <your_public_ip>:21117 --key <your_key>
+    volumes:
+      - ./data:/root
+    networks:
+      - rustdesk-net
+    depends_on:
+      - hbbr
+    restart: unless-stopped
+
+  hbbr:
+    container_name: hbbr
+    ports:
+      - 21117:21117
+      - 21119:21119
+    image: rustdesk/rustdesk-server:latest
+    command: hbbr --key <your_key>
+    volumes:
+      - ./data:/root
+    networks:
+      - rustdesk-net
+    restart: unless-stopped
 ```

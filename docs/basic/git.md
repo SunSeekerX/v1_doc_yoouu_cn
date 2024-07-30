@@ -22,7 +22,7 @@ git config --global user.email   # 查看邮箱是否配置
 
 # example
 git config --global user.name "SunSeekerX"
-git config --global user.email "sunseekerxi@gmail.com"
+git config --global user.email "sunseekerx@outlook.com"
 
 # 其他查看配置相关
 git config --global --list  # 查看全局设置相关参数列表
@@ -30,6 +30,16 @@ git config --local --list # 查看本地设置相关参数列表
 git config --system --list # 查看系统配置参数列表
 git config --list  # 查看所有Git的配置(全局+本地+系统)
 git config --global color.ui true # 显示git相关颜色
+
+# 创建一个`ssh key`，直接回车，文件存在，不用的直接删除目录，有用的就直接复制`ssh key`
+ssh-keygen -t rsa -b 4096 -C "sunseekerx@outlook.com"
+# 把密钥放在剪贴板
+clip < ~/.ssh/id_rsa.pub
+# mac
+cat ~/.ssh/id_rsa.pub | pbcopy
+
+# 添加所有目录为安全目录
+git config --global --add safe.directory "*"
 ```
 
 ## 常用命令
@@ -80,13 +90,119 @@ git config --global -l
 git config --global -e
 ```
 
-## 命题解决
+## 问题解决
 
 ```shell
 # 重装系统出现 fatal: detected dubious ownership in repository
 # 添加全部目录
 git config --global --add safe.directory "*"
 ```
+
+### kex_exchange_identification: read: Software caused connection abort
+
+使用 clash 出现
+
+https://github.com/vernesong/OpenClash/issues/2074 https://github.com/vernesong/OpenClash/issues/1960
+
+把模式改为 Redir 模式
+
+覆写设置 > 规则设置添加下面的规则
+
+```
+- DST-PORT,22,DIRECT
+```
+
+全文
+
+```
+script:
+rules:
+...
+##- DST-PORT,80,DIRECT #匹配数据目标端口(直连)
+##- SRC-PORT,7777,DIRECT #匹配数据源端口(直连)
+- DST-PORT,22,DIRECT
+##排序在上的规则优先生效,如添加（去除规则前的#号）：
+##IP段：192.168.1.2-192.168.1.200 直连
+##- SRC-IP-CIDR,192.168.1.2/31,DIRECT
+##- SRC-IP-CIDR,192.168.1.4/30,DIRECT
+##- SRC-IP-CIDR,192.168.1.8/29,DIRECT
+##- SRC-IP-CIDR,192.168.1.16/28,DIRECT
+##- SRC-IP-CIDR,192.168.1.32/27,DIRECT
+##- SRC-IP-CIDR,192.168.1.64/26,DIRECT
+##- SRC-IP-CIDR,192.168.1.128/26,DIRECT
+##- SRC-IP-CIDR,192.168.1.192/29,DIRECT
+##- SRC-IP-CIDR,192.168.1.200/32,DIRECT
+...
+```
+
+或者改为
+
+```
+Host github.com
+Hostname ssh.github.com
+Port 443
+User git
+IdentityFile .....
+```
+
+## mac 安装 git 验证中心
+
+解决 mac git 无法使用账号密码登录
+
+```
+brew tap microsoft/git
+brew install --cask git-credential-manager-core
+```
+
+## 多个 git 账号
+
+1. 生成不同的 ssh key
+
+   ```
+   # 创建一个`ssh key`，直接回车，文件存在，不用的直接删除目录，有用的就直接复制`ssh key`
+   ssh-keygen -t rsa -b 4096 -C "sunseekerxi@gmail.com"
+   # 把密钥放在剪贴板
+   clip < ~/.ssh/id_rsa.pub
+   # mac
+   cat ~/.ssh/id_rsa.pub | pbcopy
+   ```
+
+2. 配置 ssh 文件
+
+   **注意这里配置的是私钥，gihub 添加的是公钥**
+
+   C:\Users\your-username\\.ssh\config
+
+   `ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p` 这一段是 ssh 代理，不用可以不添加
+
+   ```
+   ProxyCommand connect -S 127.0.0.1:7890 -a none %h %p
+
+   # default 默认 git 账户
+
+   Host github.com
+   HostName github.com
+   User git
+   IdentityFile ~/.ssh/id_rsa
+
+   # your_eamil@gmail.com
+   Host two.github.com
+   HostName github.com
+   User your_user@gmail.com
+   IdentityFile ~/.ssh/id_rsa_your_eamil@gmail.com
+   ```
+
+   如果 git 地址是 `git clone git@github.com:xxxxxx/yyyyyyyyy.git`
+
+   换成用
+
+   ```
+   git clone git@alias:xxxxxx/yyyyyyyyy.git
+   ```
+
+   就可以 clone 代码了
+
+3. 到 github 添加 ssh 公钥
 
 ## 常用操作
 
@@ -233,6 +349,9 @@ git push -u ${远程仓库别名} ${本地分支名}:${远程分支名}
 ### 推送本地所有分支到远程仓库
 
 ```shell
+git push --all origin
+git push origin --tags refs/remotes/origin/*:refs/heads/*
+
 git push newremote --tags refs/remotes/origin/*:refs/heads/*
 
 # 如果你的第二个远程仓库是通过 git remote set-url --add origin [your url] 这种方式添加的
@@ -242,6 +361,42 @@ git push origin --tags refs/remotes/origin/*:refs/heads/*
 # git remote add origin2 [your url]
 git push origin2 --tags refs/remotes/origin/*:refs/heads/*
 ```
+
+### 推送 origin 所有的远程分支 到 origin2
+
+1. 确保你已经添加了 `origin2` 这个远程仓库。如果没有添加，你可以使用下面的命令进行添加：
+
+   ```shell
+   git remote add origin2 <url-to-origin2>
+   ```
+
+2. 获取所有 `origin` 的远程分支：
+
+   ```shell
+   git fetch origin
+   ```
+
+3. 创建并检出所有远程分支。此步骤可能需要一些自动化。在 Bash shell 中，你可以使用以下命令：
+
+   ```shell
+   for branch in `git branch -r | grep -v HEAD`;do
+       git branch --track ${branch#origin/} $branch
+   done
+   ```
+
+4. 现在你可以把所有分支推送到 `origin2`：
+
+   ```shell
+   git push --all origin2
+   ```
+
+   以上命令将推送所有本地分支到 `origin2` 远程仓库。
+
+   注意：如果 `origin2` 中的某些分支已经存在，并且你想要强制覆盖它们，你可以使用 `--force` 或 `-f` 选项进行强制推送：
+
+   ```shell
+   git push --all -f origin2
+   ```
 
 ### 本地仓库推送到多个远程仓库
 

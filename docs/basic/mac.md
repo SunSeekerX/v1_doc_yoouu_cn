@@ -1,6 +1,8 @@
 # Mac 技巧
 
-## hidpi
+## 系统技巧
+
+### hidpi
 
 Github：[https://github.com/xzhih/one-key-hidpi](https://github.com/xzhih/one-key-hidpi)
 
@@ -20,6 +22,100 @@ bash -c "$(curl -fsSL https://raw.githubusercontent.com/xzhih/one-key-hidpi/mast
 [RDM - https://github.com/avibrazil/RDM](https://github.com/avibrazil/RDM)
 
 [下载地址 - https://avi.alkalay.net/software/RDM/](https://avi.alkalay.net/software/RDM/)
+
+### 关闭/打开聚焦索引
+
+背景：Mac 上的 Spotlight 会调用 mds、mdworker 等进程，占用 cpu 使用率，造成系统卡顿。如果电脑配置比较低的话可以将 Spotlight 关闭，如果需要使用 Spotlight 或者 Alfred 等功能时，就需要将 Spotlight 开启。
+
+关闭 Spotlight： 方法 1： 使用 launchctl 管理 MacOS 服务。这里卸载 Spotlight 的配置. 卸载配置之后，就不会再启动 mds 等进程来扫描文件，这样后续新增 App 或者文件，在 Spotlight 和 Alfred 中也就搜索不到了。
+
+```shell
+# 方法一
+sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+# 方法二
+sudo mdutil -a -i off
+
+# 重启Spotlight: 方法1：使用 launchctl 管理 MacOS 服务。这里加载Spotlight的配置，重启mds等进程扫描文件。
+# 方法一
+sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
+# 方法2：
+sudo mdutil -a -i on
+# 如果方法2中的命令后抛出 Spotlight server is disabled 这样的错误，那么就要用方法1中的操作了。
+```
+
+### 修改 LaunchPad(启动台)图标大小的数量
+
+```shell
+defaults write com.apple.dock springboard-columns -int 8
+defaults write com.apple.dock springboard-rows -int 5
+killall Dock
+```
+
+以上命令都是干嘛的？
+
+1. 调整每一列显示图标数量，8 表示每一列显示 8 个，数字部分可根据个人喜好进行设置。
+2. 调整多少行显示图标数量，这里我用的是默认的 5，数字部分你也可以设置成 6 或者其他
+3. 重启 Dock
+
+恢复默认设置的方法，同样在终端中执行以下 4 行命令（全部复制）
+
+```shell
+defaults write com.apple.dock springboard-rows Default
+defaults write com.apple.dock springboard-columns Default
+defaults write com.apple.dock ResetLaunchPad -bool TRUE
+killall Dock
+```
+
+### Mac 系统下的环境变量
+
+```
+a. /etc/profile
+b. /etc/paths
+c. ~/.bash_profile
+d. ~/.bash_login
+e. ~/.profile
+f. ~/.bashrc
+复制代码
+```
+
+其中 a 和 b 是`系统级别`的，系统启动就会加载，其余是用户接别的。c,d,e 按照从前往后的`顺序读取`，如果 c 文件存在，则后面的几个文件就会被忽略`不读了`，以此类推。~/.bashrc 没有上述规则，它是 bash shell 打开的时候载入的。这里建议在 c 中添加环境变量，以下也是以在 c 中添加环境变量来演示的:
+
+### finder 显示隐藏文件
+
+```shell
+# 显示
+defaults write com.apple.finder AppleShowAllFiles TRUE
+killall Finder
+# 重新打开
+
+# 关闭
+defaults write com.apple.finder AppleShowAllFiles FALSE
+killall Finder
+```
+
+### 取消系统更新小红点
+
+```shell
+# 取消
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
+killall Dock
+
+# 恢复
+sudo softwareupdate --reset-ignored
+defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
+```
+
+### 添加 adb 环境变量
+
+前提已经成功安装了 Android Studio.
+
+```shell
+echo 'export ANDROID_HOME=/Users/$USER/Library/Android/sdk' >> ~/.zshrc
+echo 'export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> ~/.zshrc
+
+# 刷新
+source ~/.zshrc
+```
 
 ## 软件推荐
 
@@ -70,88 +166,23 @@ sudo port install scrcpy
 
 You can also [build the app manually](https://github.com/Genymobile/scrcpy/blob/master/BUILD.md).
 
-### homebrews
+## homebrew
 
-代理
+### 官网
 
-brew 用 curl 下载，所以给 curl 挂上 socks5 的代理即可。
+安装脚本在官网，需要用代理。
 
-在~/.curlrc 文件中输入代理地址即可。
+[https://brew.sh/](https://brew.sh/)
 
-```shell
-# clash
-socks5 = "127.0.0.1:7890"
-```
-
-## 关闭/打开聚焦索引
-
-背景：Mac 上的 Spotlight 会调用 mds、mdworker 等进程，占用 cpu 使用率，造成系统卡顿。如果电脑配置比较低的话可以将 Spotlight 关闭，如果需要使用 Spotlight 或者 Alfred 等功能时，就需要将 Spotlight 开启。
-
-关闭 Spotlight： 方法 1： 使用 launchctl 管理 MacOS 服务。这里卸载 Spotlight 的配置. 卸载配置之后，就不会再启动 mds 等进程来扫描文件，这样后续新增 App 或者文件，在 Spotlight 和 Alfred 中也就搜索不到了。
+### 命令
 
 ```shell
-# 方法一
-sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
-# 方法二
-sudo mdutil -a -i off
-
-# 重启Spotlight: 方法1：使用 launchctl 管理 MacOS 服务。这里加载Spotlight的配置，重启mds等进程扫描文件。
-# 方法一
-sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist
-# 方法2：
-sudo mdutil -a -i on
-# 如果方法2中的命令后抛出 Spotlight server is disabled 这样的错误，那么就要用方法1中的操作了。
-```
-
-## Mac 系统下的环境变量
-
-```
-a. /etc/profile
-b. /etc/paths
-c. ~/.bash_profile
-d. ~/.bash_login
-e. ~/.profile
-f. ~/.bashrc
-复制代码
-```
-
-其中 a 和 b 是`系统级别`的，系统启动就会加载，其余是用户接别的。c,d,e 按照从前往后的`顺序读取`，如果 c 文件存在，则后面的几个文件就会被忽略`不读了`，以此类推。~/.bashrc 没有上述规则，它是 bash shell 打开的时候载入的。这里建议在 c 中添加环境变量，以下也是以在 c 中添加环境变量来演示的:
-
-## finder 显示隐藏文件
-
-```shell
-# 显示
-defaults write com.apple.finder AppleShowAllFiles TRUE
-killall Finder
-# 重新打开
-
-# 关闭
-defaults write com.apple.finder AppleShowAllFiles FALSE
-killall Finder
-```
-
-## 取消系统更新小红点
-
-```shell
-# 取消
-defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
-killall Dock
-
-# 恢复
-sudo softwareupdate --reset-ignored
-defaults write com.apple.systempreferences AttentionPrefBundleIDs 0
-```
-
-## 添加 adb 环境变量
-
-前提已经成功安装了 Android Studio.
-
-```shell
-echo 'export ANDROID_HOME=/Users/$USER/Library/Android/sdk' >> ~/.zshrc
-echo 'export PATH=${PATH}:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools' >> ~/.zshrc
-
-# 刷新
-source ~/.zshrc
+# 升级 homebrew
+brew update
+# 升级软件包
+brew upgrade
+# 查看版本
+brew --version
 ```
 
 ## java 版本管理
@@ -189,14 +220,25 @@ source ~/.zshrc
    export JENV_ROOT=/usr/local/opt/jenv
    ```
 
-4. To make sure `JAVA_HOME` is set, make sure to enable the `export` plugin:
+4. 添加安装的 JAVA 到 jEnv然后就可以了，如果没添加会出现类似下面的结果
+
+   ```
+   $ jenv doctor                                                                                                     ‹system: ruby 2.6.10p210›
+   [OK]	No JAVA_HOME set
+   [ERROR]	Java binary in path is not in the jenv shims.
+   [ERROR]	Please check your path, or try using /path/to/java/home is not a valid path to java installation.
+   	PATH : /usr/local/Cellar/jenv/0.5.6/libexec/libexec:/Users/ssx/.jenv/shims:/Users/ssx/.jenv/bin:/Users/ssx/.nvm/versions/node/v18.17.0/bin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/Apple/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
+   [OK]	Jenv is correctly loaded
+   ```
+
+5. To make sure `JAVA_HOME` is set, make sure to enable the `export` plugin:
 
    ```shell
    jenv enable-plugin export
    exec $SHELL -l
    ```
 
-5. jEnv 命令
+6. jEnv 命令
 
    ```shell
    # 检查运行是否正常
@@ -290,8 +332,11 @@ sh -c "$(wget https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh -O 
 1.编辑`~/.zshrc`文件，修改`ZSH_THEME`配置：
 
 ```shell
-ZSH_THEME="agnoster"
+ZSH_THEME="amuse"
 ```
+
+- agnoster
+- amuse
 
 ### 功能增强
 

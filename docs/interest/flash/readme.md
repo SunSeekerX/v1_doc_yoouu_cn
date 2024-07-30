@@ -1,12 +1,32 @@
-# 刷机
+# 玩机
 
-## 机型
+## Android
+
+### Root
+
+**SuperSU**
+
+Android 版本 7.1 及以下使用 SuperSU 来 ROOT 手机，Android 版本 8.0 及以上使用 Magisk 来 ROOT 手机。
+
+一 SuperSU 支持至安卓 7.1，且不再更新
+
+[https://supersuroot.org/](https://supersuroot.org/)
+
+**Magisk**
+
+Supporting devices higher than Android 5.0.
+
+[https://github.com/topjohnwu/Magisk](https://github.com/topjohnwu/Magisk)
+
+## 机型分区
+
+[红米9 redmi9](./redmi9)
 
 [魅蓝 Note3](./m3-note.md)
 
 [小米 10T / 10T Pro / 红米 K30S 至尊纪念版 (apollo) ](./k30s-apollo.md)
 
-## recovery 下载
+## Recovery 下载
 
 LR.Team 定制版 TWRP 下载地址集合：[https://weibo.com/ttarticle/p/show?id=2309404160776561631202](https://weibo.com/ttarticle/p/show?id=2309404160776561631202)
 

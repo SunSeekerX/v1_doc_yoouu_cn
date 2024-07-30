@@ -8,23 +8,206 @@
 
 [Linux 命令大全](https://wangchujiang.com/linux-command/)
 
+## oh-my-zsh
+
+- 检查是否安装 zsh
+
+  ```shell
+  zsh --version
+  ```
+
+- 如果没安装
+
+  ```shell
+  # 显示默认的 shell
+  echo $SHELL
+  # 安装 zsh
+  sudo apt install zsh
+  # 检查是否安装 zsh
+  zsh --version
+  # 设置为默认 shell
+  chsh -s $(which zsh)
+  # 设置为默认 shell（Fedora）
+  sudo lchsh $USER
+  ```
+
+  不行的话查看文档：[https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH)
+
+- 安装 oh-my-zsh [官方文档](https://github.com/ohmyzsh/ohmyzsh#prerequisites)
+
+  ```shell
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  ```
+
+- 剩下的可以查看 mac 下的配置：[https://doc.yoouu.cn/basic/mac.html#oh-my-zsh](https://doc.yoouu.cn/basic/mac.html#oh-my-zsh)
+
 ## 📌 ssh 登录服务器
 
 ```shell
 ssh -p 12333 root@${your ip}
+# 使用密钥文件
+ssh -i ~/work/data/id_rsa -p 22 root@{your ip}
 ```
 
-## 📌 腾讯云获取 root
+## 配置 ssh 密钥文件登录
 
-| 步骤 | 方法 |
-| :-- | :-- |
-| 修改 root 密码 | 执行命令 sudo passwd root |
-| 输入密码 | 可以和 ubuntu 密码一致，也可以修改 (密码会让你输入两次) |
-| 修改 ssh 配置 | 执行命令 sudo vi /etc/ssh/sshd_config |
-| 修 改 PermitRootLogin | 进入 ssh 配置界面后找到 PermitRootLogin，将它后面改为 yes，保存 (按 i 进入编辑模式，编辑完 esc 退出，:w 保存当前文件，:q 退出) |
-| 重启 ssh 服务 | 执行命令 sudo service ssh restart |
+需要检查密钥文件是否存在，请运行`ls`命令`ls -l ~/.ssh/id_*.pub`检查是否存在。
 
-## 📌 ubuntu 查看端口被占用并处理
+### 1. 制作密钥对
+
+首先在服务器上制作密钥对。首先用密码登录到你打算使用密钥登录的账户，然后执行以下命令：
+
+```shell
+ssh-keygen -t rsa -b 4096 -C "your_email@domain.com"
+```
+
+```
+Generating public/private rsa key pair.
+Enter file in which to save the key (/root/.ssh/id_rsa): <== 按 Enter
+Created directory '/root/.ssh'.
+Enter passphrase (empty for no passphrase): <== 输入密钥锁码，或直接按 Enter 留空
+Enter same passphrase again: <== 再输入一遍密钥锁码
+Your identification has been saved in /root/.ssh/id_rsa. <== 私钥
+Your public key has been saved in /root/.ssh/id_rsa.pub. <== 公钥
+The key fingerprint is:
+0f:d3:e7:1a:1c:bd:5c:03:f1:19:f1:22:df:9b:cc:08 root@host
+```
+
+密钥锁码在使用私钥时必须输入，这样就可以保护私钥不被盗用。当然，也可以留空，实现无密码登录。
+
+现在，在 root 用户的家目录中生成了一个 .ssh 的隐藏目录，内含两个密钥文件。id_rsa 为私钥，id_rsa.pub 为公钥。
+
+### 2. 在服务器上安装公钥
+
+现在您本地 Ubuntu 计算机有了 SSH 密钥，下一步是将公用密钥复制到要管理的远程服务器。
+
+将公钥复制到服务器的最简单和建议的方法是使用`ssh-copy-id`命令。运行命令`ssh-copy-id server_username@server_ip_address`即可复制远程服务器。
+
+`server_username`是远程服务器用户的名称，`server_ip_address`是你的服务器 IP 地址。系统将提示您输入远程用户密码。
+
+通过身份验证后，公钥`~/.ssh/id_rsa.pub`将追加到远程用户`~/.ssh/authorized_keys`文件中，然后 ssh-copy-id 将会退出。
+
+并且提示你可以运行命令`ssh 'username@server_ip_address'`登录到远程服务器。
+
+```bash
+ssh-copy-id remote_username@server_ip_address
+remote_username@server_ip_address's password:
+```
+
+如果由于某些原因您的本地计算机上没有`ssh-copy-id`实用程序，请使用以下命令复制公钥。
+
+```bash
+cat ~/.ssh/id_rsa.pub | ssh remote_username@server_ip_address "mkdir -p ~/.ssh && chmod 700 ~/.ssh && cat >> ~/.ssh/authorized_keys && chmod 600 ~/.ssh/authorized_keys"
+Number of key(s) added: 1
+
+Now try logging into the machine, with:   "ssh 'username@server_ip_address'"
+and check to make sure that only the key(s) you wanted were added.
+```
+
+完成上述步骤后，您应该能够免密码登录到远程服务器。要测试它，请尝试通过 SSH 登录到服务器。
+
+键入以下命令，在服务器上安装公钥：
+
+```
+[root@host ~]$ cd .ssh
+[root@host .ssh]$ cat id_rsa.pub >> authorized_keys
+```
+
+如此便完成了公钥的安装。为了确保连接成功，请保证以下文件权限正确：
+
+```shell
+[root@host .ssh]$ chmod 600 authorized_keys
+[root@host .ssh]$ chmod 700 ~/.ssh
+# Ubuntu ssh免密配置之后仍然需要输入密码
+chmod go-w ~/
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/authorized_keys
+```
+
+### 3. 设置 SSH，打开密钥登录功能
+
+编辑 /etc/ssh/sshd_config 文件，进行如下设置：
+
+```
+RSAAuthentication yes
+PubkeyAuthentication yes
+```
+
+另外，请留意 root 用户能否通过 SSH 登录：
+
+```
+PermitRootLogin yes
+```
+
+当你完成全部设置，并以密钥方式登录成功后，再禁用密码登录：
+
+```
+PasswordAuthentication no
+```
+
+最后，重启 SSH 服务：
+
+```shell
+# RHEL/CentOS系统
+service sshd restart
+# Ubuntu系统
+service ssh restart
+# Debian系统
+/etc/init.d/ssh restart
+```
+
+## 📌 ubuntu
+
+### 安装 zsh 和配置
+
+教程来源：https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH
+
+```shell
+
+# 安装 zsh
+sudo apt install zsh
+# 检查 zsh 是否安装和查看版本
+zsh --version
+# 设置 Zsh 为默认 Shell
+chsh -s $(which zsh)
+# 此命令会将当前用户的默认 shell 更改为 Zsh。你需要退出当前会话并重新登录，或者直接重启系统以使更改生效。
+# 配置 Zsh 安装 Oh My Zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# 或者，如果你没有 curl，可以使用 wget
+sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+# 验证默认 Shell 输出应该是 /usr/bin/zsh 或 /bin/zsh。
+echo $SHELL
+
+# 国内安装
+sh -c "$(curl -fsSL https://gitee.com/mirrors/oh-my-zsh/raw/master/tools/install.sh)"
+```
+
+### 挂载硬盘
+
+### ubuntu22.4 开启 root 登录
+
+1. 使用管理权限打开`/etc/ssh/sshd_config`文件，并更改以下行
+
+```yaml
+FROM:
+#PermitRootLogin prohibit-password
+TO:
+PermitRootLogin yes
+```
+
+或者使用以下命令快速替换
+
+```bash
+sudo sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/' /etc/ssh/sshd_config
+```
+
+重启 ssh 服务
+
+```
+sudo systemctl restart ssh
+```
+
+### ubuntu 查看端口被占用并处理
 
 ```shell
 netstat -tunlp | grep 端口号
@@ -48,7 +231,7 @@ lsof -i:**
 kill pid
 ```
 
-## 📌 Ubuntu 更改 ssh 端口
+### 更改 ssh 端口
 
 **一、更改 ssh 的端口**
 
@@ -85,6 +268,27 @@ vim /etc/ssh/sshd_config
 
 ```bash
 service sshd restart
+```
+
+### 修改 root 密码
+
+| 步骤 | 方法 |
+| :-- | :-- |
+| 修改 root 密码 | 执行命令 sudo passwd root |
+| 输入密码 | 可以和 ubuntu 密码一致，也可以修改 (密码会让你输入两次) |
+| 修改 ssh 配置 | 执行命令 sudo vi /etc/ssh/sshd_config |
+| 修 改 PermitRootLogin | 进入 ssh 配置界面后找到 PermitRootLogin，将它后面改为 yes，保存 (按 i 进入编辑模式，编辑完 esc 退出，:w 保存当前文件，:q 退出) |
+| 重启 ssh 服务 | 执行命令 sudo service ssh restart |
+
+### 连接虚拟机中的 ubuntu
+
+```shell
+# 1 安装ssh
+sudo apt-get install openssh-server
+# 2 启动ssh服务和确认
+sudo /etc/init.d/ssh start
+# 3 确认ssh服务启动
+ps -e | grep ssh
 ```
 
 ## 📌 查看 LINUX 发行版本名和版本号

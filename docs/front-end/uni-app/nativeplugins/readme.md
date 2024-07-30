@@ -15,6 +15,12 @@
 
 没有证书
 
+## 📌 食方 AI 秤 - super-module-sf
+
+文档地址：[super-module-sf.md](./super-module-sf.md)
+
+插件地址：[https://ext.dcloud.net.cn/plugin?id=11963](https://ext.dcloud.net.cn/plugin?id=11963)
+
 ## 📌 海康威视 SADP SDK_IOS - Super-Module-HKWS
 
 文档地址：[super-module-hkws-sadp.md](./super-module-hkws-sadp.md)
