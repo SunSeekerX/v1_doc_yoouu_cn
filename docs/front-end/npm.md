@@ -1,5 +1,81 @@
 # NPM 技巧
 
+## 设置包缓存目录
+
+mac 一般不需要，因为不分区
+
+### windows
+
+新建
+
+```
+d:\data\node_package\npm
+d:\data\node_package\npm_cache
+d:\data\node_package\yarn
+d:\data\node_package\yarn_cache
+d:\data\node_package\.pnpm-store
+```
+
+更改
+
+```shell
+# npm
+npm config set prefix "d:\data\node_package\npm"
+npm config set cache "d:\data\node_package\npm_cache"
+
+# yarn
+yarn config set global-folder "d:\data\node_package\yarn"
+yarn config set cache-folder "d:\data\node_package\yarn_cache"
+
+# pnpm
+pnpm config set store-dir "d:\data\node_package\.pnpm-store"
+```
+
+### wsl
+
+wsl 还是别改了。等下一堆问题
+
+```shell
+# npm
+npm config set prefix "/mnt/d/data/wsl/node_package/npm"
+npm config set cache "/mnt/d/data/wsl/node_package/npm_cache"
+# 删除
+npm config delete prefix
+npm config delete cache
+
+# yarn
+yarn config set global-folder "/mnt/d/data/wsl/node_package/yarn"
+yarn config set cache-folder "/mnt/d/data/wsl/node_package/yarn_cache"
+
+# pnpm
+pnpm config set store-dir "/mnt/d/data/wsl/node_package/.pnpm-store"
+```
+
+### wsl 添加环境变量
+
+```shell
+# bash
+echo 'export PATH="/mnt/d/data/wsl/node_package/npm/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+
+# zsh
+echo 'export PATH="/mnt/d/data/wsl/node_package/npm/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+### 查看配置
+
+```shell
+# npm
+npm config list
+
+# yarn
+yarn config list
+
+# pnpm
+pnpm config list
+```
+
 ## 📌 npm 常用命令
 
 ```shell
@@ -181,7 +257,7 @@ yarn workspaces run test
 
 9. 提交你的修改
 
-### lerna
+**lerna**
 
 多 Workspace 管理包的，未作深入研究。
 
@@ -227,7 +303,17 @@ pnpm config list
 pnpm install
 ```
 
-## 📌 常用模块
+## 📌 一键安装常用全局模块
+
+### 快捷安装
+
+```shell
+# 淘宝镜像
+npm i yarn pnpm tbify sort-package-json http-server npm-check-updates cross-env pm2 commitizen cz-conventional-changelog nodemon -g --registry=https://registry.npmmirror.com
+
+# 原版
+npm i yarn pnpm tbify sort-package-json http-server npm-check-updates cross-env pm2 commitizen cz-conventional-changelog nodemon -g
+```
 
 ### tbify
 
@@ -257,54 +343,6 @@ npm install -g tbify
 ```bash
 tbify printenv npm_config_registry
 # -> https://r.npm.taobao.org
-```
-
-### husky
-
-当您提交或推送时，您可以使用它来检查**您的提交消息**、**运行测试**、检查**代码**等。Husky 支持[所有 Git 钩子](https://git-scm.com/docs/githooks)。
-
-**安装 husky（v8）**
-
-```shell
-# 自动安装
-npx husky-init && npm install       # npm
-npx husky-init && yarn              # Yarn 1
-yarn dlx husky-init --yarn2 && yarn # Yarn 2+
-pnpm dlx husky-init && pnpm install # pnpm
-```
-
-查看文档进行手动安装 [https://typicode.github.io/husky/#/?id=manual](https://typicode.github.io/husky/#/?id=manual)
-
-> hint: The '.husky/pre-commit' hook was ignored because it's not set as executable. hint: You can disable this warning with `git config advice.ignoredHook false`.
->
-> ```shell
-> chmod ug+x .husky/*
-> ```
-
-### npm-check-updates
-
-安装：
-
-```bash
-npm install -g npm-check-updates
-```
-
-使用： 检查 package.json 中 dependencies 的最新版本：
-
-```bash
-ncu
-```
-
-更新 dependencies 到新版本：
-
-```bash
-ncu -u
-```
-
-更新全部 dependencies 到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -> ^4.3.0)：
-
-```bash
-ncu -a
 ```
 
 ### sort-package-json
@@ -356,40 +394,164 @@ $ tree -h
     -h, --help                output usage information
 ```
 
-## 📌 常见问题
+### http-server
 
-### node-gyp 报错
-
-```
-npm ERR! gyp ERR! find VS **************************************************************
-npm ERR! gyp ERR! find VS You need to install the latest version of Visual Studio
-npm ERR! gyp ERR! find VS including the "Desktop development with C++" workload.
-npm ERR! gyp ERR! find VS For more information consult the documentation at:
-npm ERR! gyp ERR! find VS https://github.com/nodejs/node-gyp#on-windows
-npm ERR! gyp ERR! find VS **************************************************************
-npm ERR! gyp ERR! find VS
-npm ERR! gyp ERR! configure error
-npm ERR! gyp ERR! stack Error: Could not find any Visual Studio installation to use
-npm ERR! gyp ERR! stack     at VisualStudioFinder.fail (D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:122:47)
-npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:75:16
-npm ERR! gyp ERR! stack     at VisualStudioFinder.findVisualStudio2013 (D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:363:14)
-npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:71:14
-npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:384:16
-npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\util.js:54:7
-npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\util.js:33:16
-npm ERR! gyp ERR! stack     at ChildProcess.exithandler (node:child_process:406:5)
-npm ERR! gyp ERR! stack     at ChildProcess.emit (node:events:520:28)
-npm ERR! gyp ERR! stack     at maybeClose (node:internal/child_process:1092:16)
-npm ERR! gyp ERR! System Windows_NT 10.0.22000
-npm ERR! gyp ERR! command "D:\\app\\code\\nodejs\\node.exe" "D:\\app\\code\\nvm\\v16.14.0\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js" "rebuild"
-```
-
-安装最新的 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/downloads/)，勾选 `Desktop development with c++` 选项
-
-~~win+x 使用管理员的 `powershell` 执行~~
+安装
 
 ```shell
-npm install -g --production windows-build-tools
+npm i http-server -g
+```
+
+使用，进入到需要使用静态服务器的目录直接执行
+
+```shell
+http-server
+```
+
+### npm-check-updates
+
+安装：
+
+```bash
+npm install -g npm-check-updates
+```
+
+使用： 检查 package.json 中 dependencies 的最新版本：
+
+```bash
+ncu
+```
+
+更新 dependencies 到新版本：
+
+```bash
+ncu -u
+```
+
+更新全部 dependencies 到最新版本(包括当前指定版本范围满足最新版本号的,比如^4.2.0 -> ^4.3.0)：
+
+```bash
+ncu -a
+```
+
+### cross-env
+
+安装
+
+```shell
+npm i cross-env -g
+```
+
+## 📌 常用项目模块
+
+### husky
+
+当您提交或推送时，您可以使用它来检查**您的提交消息**、**运行测试**、检查**代码**等。Husky 支持[所有 Git 钩子](https://git-scm.com/docs/githooks)。
+
+**安装 husky（v8）**
+
+```shell
+# 自动安装
+npx husky-init && npm install       # npm
+npx husky-init && yarn              # Yarn 1
+yarn dlx husky-init --yarn2 && yarn # Yarn 2+
+pnpm dlx husky-init && pnpm install # pnpm
+```
+
+查看文档进行手动安装 [https://typicode.github.io/husky/#/?id=manual](https://typicode.github.io/husky/#/?id=manual)
+
+> hint: The '.husky/pre-commit' hook was ignored because it's not set as executable. hint: You can disable this warning with `git config advice.ignoredHook false`.
+>
+> ```shell
+> chmod ug+x .husky/*
+> ```
+
+### pm2
+
+基本命令
+
+```shell
+# 1. 安装 PM2
+# 安装 pm2
+npm install pm2@latest -g
+
+# 2. 启动应用
+# 启动一个 Node.js 应用
+pm2 start app.js
+
+# 启动时指定应用的名称
+pm2 start app.js --name my-app
+
+# 3. 查看应用状态
+# 查看当前正在运行的所有应用的状态
+pm2 list
+
+# 4. 停止应用
+# 停止一个正在运行的应用
+pm2 stop app.js
+
+# 使用应用名称或ID来停止
+pm2 stop my-app
+# 或者
+pm2 stop 0
+
+# 5. 重启应用
+# 重启应用
+pm2 restart app.js
+
+# 使用应用名称或ID来重启
+pm2 restart my-app
+# 或者
+pm2 restart 0
+
+# 6. 删除应用
+# 从 PM2 进程列表中删除一个应用
+pm2 delete app.js
+
+# 使用应用名称或ID来删除
+pm2 delete my-app
+# 或者
+pm2 delete 0
+
+# 7. 监控应用
+# 实时监控应用的 CPU 和内存使用情况
+pm2 monit
+
+# 8. 日志管理
+# 查看所有应用的日志
+pm2 logs
+
+# 查看特定应用的日志
+pm2 logs my-app
+# 或者
+pm2 logs 0
+
+# 9. 保存和恢复进程列表
+# 保存当前的进程列表，以便在系统重启后恢复
+pm2 save
+
+# 在系统重启后，恢复保存的进程列表
+pm2 resurrect
+
+# 10. 自动启动
+# 设置 PM2 在系统启动时自动启动
+pm2 startup
+
+# 根据提示执行生成的命令
+
+# 11. 环境变量
+# 在启动应用时设置环境变量
+pm2 start app.js --env production
+
+# 12. 进程间通信
+# 发送自定义信号给应用
+pm2 sendSignal SIGUSR2 my-app
+
+# 13. 配置文件
+# 使用配置文件启动多个应用
+# 创建一个 ecosystem.config.js 文件
+# 然后使用配置文件启动应用
+pm2 start ecosystem.config.js
 ```
 
 ## 📌 NodeJs 版本管理 - nvm
@@ -402,45 +564,37 @@ npm install -g --production windows-build-tools
 
 [nvm](https://github.com/nvm-sh/nvm) 具体安装查看 github 说明。
 
-### ubuntu 安装 nvm
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+# 大陆加速安装 nvm
+export NVM_SOURCE=https://gitee.com/mirrors/nvm.git
+curl -o- https://gitee.com/mirrors/nvm/raw/master/install.sh | bash
 
-由于 linux 特殊的用户系统，如果安装在了 root 用户下，切换到其他的用户是无法使用的。
+# 如果没有自动添加环境变量，按照以下方式添加，注意是 zsh 的
 
-参考：[linux 下为所有用户安装 nvm](https://www.soulfree.cn/?p=486
+# 或者使用 vim
+vim ~/.zshrc
+# 在你的 ~/.zshrc 文件中，添加以下行：
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+# 保存并关闭配置文件
+# 如果你使用的是 nano，按 Ctrl + X 然后按 Y 保存并退出。如果你使用的是 vim，按 Esc，然后输入 :wq 并按回车。
+# 重新加载 Zsh 配置文件
+# 在终端中运行以下命令以重新加载你的 Zsh 配置文件：
+source ~/.zshrc
+# 验证 NVM 是否正确安装
+nvm --version
+```
 
-1. 首先修改 /ect/profile 配置 nvm node 的安装地址
+### ubuntu
 
-   ```shell
-   vim /etc/profile
-   ```
+```shell
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
+```
 
-   添加
-
-   ```shell
-   export NVM_BIN="/usr/local/nvm/versions/node" # node安装地址
-   export NVM_DIR="/usr/local/nvm" # nvm安装地址
-   [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-   ```
-
-2. 更新配置
-
-   ```shell
-   source /etc/profile # 更新配置
-   ```
-
-3. 创建文件夹
-
-   ```shell
-   mkdir /usr/local/nvm
-   ```
-
-4. 安装 nvm
-
-   ```shell
-   curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
-   ```
-
-5. 基本使用
+1. 基本使用
 
    ```shell
    # 查看远程可用
@@ -456,9 +610,7 @@ npm install -g --production windows-build-tools
    nvm alias default v16.17.1
    ```
 
-### 其他用户使用 nvm
-
-需要重新安装一份。
+~~其他用户使用 nvm，需要重新安装一份。~~
 
 ```shell
 # 进入用户文件夹，这里以 ssx 用户为例
@@ -478,7 +630,7 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 # 退出当前用户，重新登录下，就可以使用 nvm 了
 ```
 
-## 📌 规范提交代码
+## 📌 规范提交代码 Commitizen
 
 > [约定式提交](https://www.conventionalcommits.org/zh-hans/v1.0.0-beta.2/)
 >
@@ -492,40 +644,41 @@ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.2/install.sh | bash
 >
 > [如何配置 Git Commit Message - 伯艺](https://zhuanlan.zhihu.com/p/69635847)
 
-1️⃣ 安装 [Commitizen](https://github.com/commitizen/cz-cli)
+### 1. 安装 [Commitizen](https://github.com/commitizen/cz-cli)
 
-> 替代你的 git commit（帮助我们生成符合规范的 commit message）
->
-> commitizen 为我们提供一些 cli 命令，比如：commitizen init、 git cz
+替代你的 git commit（帮助我们生成符合规范的 commit message）
+
+commitizen 为我们提供一些 cli 命令，比如：commitizen init、 git cz
+
+推荐全局安装
 
 ```bash
-# 推荐全局安装
 npm install -g commitizen
 ```
 
-2️⃣ 安装 [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
+### 2. 安装 [cz-conventional-changelog](https://github.com/commitizen/cz-conventional-changelog)
 
-> 是一个`commitizen`的 adapter（适配器），一个符合 Angular 团队规范的 preset（按照我们指定的规范帮助我们生成 commit message）
->
-> 还有很多花里胡哨的适配器可以选择，看你们团队的选择了，例如带 `emoji` 表情的。。。😆
+是一个`commitizen`的 adapter（适配器），一个符合 Angular 团队规范的 preset（按照我们指定的规范帮助我们生成 commit message）
 
-**全局安装**
+还有很多花里胡哨的适配器可以选择，看你们团队的选择了，例如带 `emoji` 表情的。。。😆
 
-> 个人推荐全局安装，因为这个包貌似和其他的包会产生某些冲突，导致项目用 `yarn` 方式安装的包无法使用，只能用 `npm`。
+个人推荐全局安装，因为这个包貌似和其他的包会产生某些冲突，导致项目用 `yarn` 方式安装的包无法使用，只能用 `npm`。
 
 ```bash
 npm install -g cz-conventional-changelog
 ```
 
-使用 `bash` 环境执行以下命令，`Windows` 用 `power shell` 测试文件编码会有问题。这是指定全局的适配器路径
+### 3. 全局指定配置器
+
+使用 `bash` 环境执行以下命令，这是指定全局的适配器路径
 
 ```bash
 echo '{ "path": "cz-conventional-changelog" }' > ~/.czrc
 ```
 
-执行完这一步就可以使用了，下面的步骤为高级用法！
+**执行完这一步就可以使用了，下面的步骤为高级用法！一般是不需要下面的玩法了！！！**
 
-**局部安装（不推荐，虽然官方推荐）**
+### 4. 局部安装（项目级别，全局安装不需要）
 
 接下来，通过键入命令初始化项目以使用 cz-convention -changelog 适配器
 
@@ -557,9 +710,9 @@ commitizen init cz-conventional-changelog --yarn --dev --exact
 }
 ```
 
-3️⃣ 自定义 adapter - [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
+### 5. 自定义 adapter - [cz-customizable](https://github.com/leonardoanalista/cz-customizable)
 
-> 可自定义的 Commitizen 插件。比如：默认的提交 types 可能特别多，有些时候我们可能只需要其中的某些 type，或者自定义 type。
+可自定义的 Commitizen 插件。比如：默认的提交 types 可能特别多，有些时候我们可能只需要其中的某些 type，或者自定义 type。
 
 ```bash
 yarn add cz-customizable -D
@@ -619,12 +772,12 @@ module.exports = {
 }
 ```
 
-4️⃣ 校验 commit - [commitlint](https://github.com/conventional-changelog/commitlint)
+### 6. 校验 commit - [commitlint](https://github.com/conventional-changelog/commitlint)
 
-> `commitlint` 帮我们规范 `commit message`（`commitlint`的实现方式和`commitizen`差不多也需要个 adapter）
->
-> - @commitlint/cli 【命令行工具】
-> - @commitlint/config-conventional 【校验规则】符合 Angular 团队规范（不同于代码规范），当然还有其它规范。
+`commitlint` 帮我们规范 `commit message`（`commitlint`的实现方式和`commitizen`差不多也需要个 adapter）
+
+- @commitlint/cli 【命令行工具】
+- @commitlint/config-conventional 【校验规则】符合 Angular 团队规范（不同于代码规范），当然还有其它规范。
 
 ```bash
 # [推荐局部安装]
@@ -669,11 +822,9 @@ module.exports = {
 }
 ```
 
-**第三步: Husky**
+### 7. Husky
 
 在提交代码前通常我们会通过 `eslint` 等工具来校验 我们的代码，然后再进行提交，由于 git 提供了 `hook` 机制，所以我们可以通过 `git hook` 在 **pre-commit 进行 eslint**，在 **commit-msg 阶段进行 commit message lint**。
-
-**3.1 pre-commit**
 
 [https://github.com/typicode/huskygithub.com](https://github.com/typicode/husky)
 
@@ -681,32 +832,19 @@ module.exports = {
 
 ```bash
 # 安装
-yarn add husky -D
+npx husky-init && npm install       # npm
+npx husky-init && yarn              # Yarn 1
+yarn dlx husky-init --yarn2 && yarn # Yarn 2+
+pnpm dlx husky-init && pnpm install # pnpm
 ```
 
-配置 `package.json`
+配置 `.husky/pre-commit`
 
-```js
-"husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
-}
+```shell
+npm run lint:lint-staged
 ```
 
-或者，使用配置文件：`.huskyrc`
-
-```js
-{
-  "hooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "commitlint -e $GIT_PARAMS"
-  }
-}
-```
-
-**3.2 lint-staged**
+### 8. lint-staged
 
 当我们运行 eslint 或 stylelint 的命令时，只会检查我们通过 git add 添加到暂存区的文件，可以避免我们每次检查都把整个项目的代码都检查一遍。
 
@@ -718,19 +856,13 @@ yarn add lint-staged -D
 
 ```json
 {
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
-  },
   "lint-staged": {
     "src/**/*.{tsx,ts}": ["prettier --write", "git add"]
   }
 }
 ```
 
-5️⃣ standard-version
+### 9. standard-version
 
 以上配置已经可以满足提交代码的常规要求，但是如果我们想自动生成 `CHANGELOG`，语义化我们的版本（[Semantic Versioning](https://semver.org/lang/zh-CN/)）。 就需要借助 [standard-version](https://github.com/conventional-changelog/standard-version)
 
@@ -793,26 +925,16 @@ yarn add standard-version -D
 }
 ```
 
-6️⃣ 完整的配置
+### 10. 完整的配置
 
 **package.json**
 
 ```js
 "scripts": {
     // ....
+    "gc": "git add -A && git-cz && git pull && git push",
     "commit": "git-cz",
     "release": "standard-version"
-  },
-  "config": {
-    "commitizen": {
-      "path": "node_modules/cz-customizable"
-    }
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "commit-msg": "commitlint -e $GIT_PARAMS"
-    }
   },
   "lint-staged": {
     "src/**/*.{tsx,ts}": [
@@ -885,7 +1007,7 @@ module.exports = {
 }
 ```
 
-7️⃣ 提交代码
+### 11. 提交代码
 
 使用`git cz`代替`git commit`会出现可选的命令行提交界面。
 
@@ -895,7 +1017,7 @@ git-cz
 
 ## 📌 版本号管理
 
-1️⃣ 简介
+### 1. 简介
 
 在 Node.js 项目中的前后端项目中，版本号管理使用的是 NPM 的命令——别跟我说，你是手动改 `package.json` 来更新版本号的。
 
@@ -955,7 +1077,7 @@ npm version patch -m "Upgrade to %s for reasons"
 
 message 中的 s%将会被替换为版本号。
 
-2️⃣ 版本号策略
+### 2. 版本号策略
 
 版本号格式：主版本号**.**次版本号**.**修订号；
 
@@ -973,7 +1095,7 @@ message 中的 s%将会被替换为版本号。
 
 万一不小心把一个不兼容的改版当成了次版本号发行了该怎么办？一旦发现自己破坏了语义化版本控制的规范，就要修正这个问题，并发行一个新的次版本号来更正这个问题并且恢复向下兼容。即使是这种情况，也不能去修改已发行的版本。
 
-3️⃣ 编程式
+### 3. 编程式
 
 在项目代码中有时候需要判断当前版本，可以通过读取 package 文件获取当前版本：
 
@@ -989,7 +1111,7 @@ compareVersions('10.0.1', '10.0.1') //  0
 compareVersions('10.1.1', '10.2.2') // -1
 ```
 
-4️⃣ 自动更新版本号
+### 4. 自动更新版本号
 
 在项目目录的 `.git/hooks/` 目录中新建文件: `post-commit`——是的，没有后缀名。然后粘贴以下代码并保存文件：
 
@@ -1000,3 +1122,52 @@ compareVersions('10.1.1', '10.2.2') // -1
 上面代码会在每次 `git commit` 执行后被运行，它检查 commit 的 message 是不是版本号，如果不是，它就会执行 `npm version patch` 更新版本号。
 
 > 来源：[版本号管理策略&&使用 npm 管理项目版本号-朱嘉伟](http://buzhundong.com/post/%E7%89%88%E6%9C%AC%E5%8F%B7%E7%AE%A1%E7%90%86%E7%AD%96%E7%95%A5-%E4%BD%BF%E7%94%A8npm%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%E7%89%88%E6%9C%AC%E5%8F%B7.html)
+
+## 📌 常见问题
+
+### Error: error:0308010C:digital envelope routines::unsupported
+
+解决 nodejs 版本升级 openssl 无法使用问题
+
+```shell
+# bash
+export NODE_OPTIONS=--openssl-legacy-provider
+# cmd
+set NODE_OPTIONS=--openssl-legacy-provider
+# PowerShell
+$env:NODE_OPTIONS="--openssl-legacy-provider"
+```
+
+### node-gyp 报错
+
+```
+npm ERR! gyp ERR! find VS **************************************************************
+npm ERR! gyp ERR! find VS You need to install the latest version of Visual Studio
+npm ERR! gyp ERR! find VS including the "Desktop development with C++" workload.
+npm ERR! gyp ERR! find VS For more information consult the documentation at:
+npm ERR! gyp ERR! find VS https://github.com/nodejs/node-gyp#on-windows
+npm ERR! gyp ERR! find VS **************************************************************
+npm ERR! gyp ERR! find VS
+npm ERR! gyp ERR! configure error
+npm ERR! gyp ERR! stack Error: Could not find any Visual Studio installation to use
+npm ERR! gyp ERR! stack     at VisualStudioFinder.fail (D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:122:47)
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:75:16
+npm ERR! gyp ERR! stack     at VisualStudioFinder.findVisualStudio2013 (D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:363:14)
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:71:14
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\find-visualstudio.js:384:16
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\util.js:54:7
+npm ERR! gyp ERR! stack     at D:\app\code\nvm\v16.14.0\node_modules\npm\node_modules\node-gyp\lib\util.js:33:16
+npm ERR! gyp ERR! stack     at ChildProcess.exithandler (node:child_process:406:5)
+npm ERR! gyp ERR! stack     at ChildProcess.emit (node:events:520:28)
+npm ERR! gyp ERR! stack     at maybeClose (node:internal/child_process:1092:16)
+npm ERR! gyp ERR! System Windows_NT 10.0.22000
+npm ERR! gyp ERR! command "D:\\app\\code\\nodejs\\node.exe" "D:\\app\\code\\nvm\\v16.14.0\\node_modules\\npm\\node_modules\\node-gyp\\bin\\node-gyp.js" "rebuild"
+```
+
+安装最新的 [Visual Studio](https://visualstudio.microsoft.com/zh-hans/downloads/)，勾选 `Desktop development with c++` 选项
+
+~~win+x 使用管理员的 `powershell` 执行~~
+
+```shell
+npm install -g --production windows-build-tools
+```

@@ -42,12 +42,12 @@ module.exports = config({
         appKey: '13eOI19EMGKKtQepMDxLIn9u',
       },
     ],
-    [
-      'md-enhance',
-      {
-        enableAll: true,
-      },
-    ],
+    // [
+    //   'md-enhance',
+    //   {
+    //     enableAll: true,
+    //   },
+    // ],
     [
       '@vuepress/search',
       {

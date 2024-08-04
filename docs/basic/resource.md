@@ -2,6 +2,42 @@
 
 ## 📌 工具网站
 
+发现在角落的工作，工作信息聚合网站 https://jobincorner.com/
+
+接口大全-免费API,收集所有免费的API https://www.free-api.com/
+
+Maven Repository https://mvnrepository.com
+
+Docker Hub https://registry.hub.docker.com/
+
+Midway(Node.js Framework For "Speed") https://www.midwayjs.org
+
+10分钟邮箱 - BccTo.CC https://rootsh.com/?lang=cn
+
+网络面板 - 实时监测您的网络情况 https://net.ljxnet.cn
+
+《城市租房生存指南》 https://zufang.ababtools.com/
+
+Acrepi - The Best Free Genshin Impact Hack（原神辅助） https://cheater.fun/genshin-impact_cheats/7175-acrepi-cheat.html
+
+在线PS https://ps.gaoding.com/#/
+
+dns 泄露查询 https://ipleak.net
+
+Auto.js Pro https://pro.autojs.org
+
+Uninstalr - The Best Uninstaller for Windows（最好的 Windows 卸载软件） https://uninstalr.com
+
+SMS-Activate是在线接受短信的虚拟号码服务 https://sms-activate.org/cn
+
+Live Starlink Satellite Map(星链在线查看) https://satellitemap.space
+
+边缘@订阅转换API https://bianyuan.xyz/
+
+AnimeGANv2 - a Hugging Face Space by akhaliq(动漫头像生成) https://huggingface.co/spaces/akhaliq/AnimeGANv2
+
+唧唧-哔哩哔哩唧唧-bilibili视频|弹幕在线下载 https://www.jijidown.com/
+
 [刷新率在线测试-UFO Test: Framerates](https://www.testufo.com/)
 
 [Emoji 符号表情大全](https://www.5vmc.com/emoji/emoji.html)
@@ -69,6 +105,8 @@
 ## 📌 开源项目
 
 [Slidev](https://github.com/slidevjs/slidev) - 这个工具使用 Markdown 格式编写 PPT 幻灯片，功能较多。
+
+[https://github.com/feschber/lan-mouse](https://github.com/feschber/lan-mouse) - 局域网鼠标键盘
 
 ## 📌 开发
 
@@ -139,6 +177,18 @@
 [ChromeAppHeroes](https://github.com/zhaoolee/ChromeAppHeroes) - 🌈 谷粒-Chrome 插件英雄榜, 为优秀的 Chrome 插件写一本中文说明书, 让 Chrome 插件英雄们造福人类~
 
 [UnblockNeteaseMusic](https://github.com/nondanee/UnblockNeteaseMusic) - 解锁网易云音乐客户端变灰歌曲
+
+### Typora
+
+[Drake](https://github.com/liangjingkanji/DrakeTyporaTheme) - 简单且扁平化的主题, 有 12 种风格
+
+[YuanShan](https://theme.typora.io/theme/YuanShan/) - 远山是一款灵感来源于只此青绿，以中国传统颜色**青色**为主色系的typroa主题
+
+[插件系统](https://github.com/obgnail/typora_plugin)
+
+[LapisCV](https://github.com/BingyanStudio/LapisCV) - 📃 开箱即用的 Obsidian / Typora 简历
+
+[Drake](https://theme.typora.io/theme/Drake/) - 对表格支持较好，表格宽度较宽。
 
 ### Wordpress 主题
 

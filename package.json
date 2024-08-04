@@ -6,9 +6,15 @@
   "license": "MIT",
   "scripts": {
     "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress build docs",
-    "dev": "vuepress dev docs",
+    "dev": "cross-env NODE_OPTIONS=--openssl-legacy-provider vuepress dev docs",
     "gc": "git add -A && git-cz && git pull && git push",
-    "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\""
+    "postinstall": "husky install",
+    "lint:lint-staged": "lint-staged",
+    "lint:prettier": "prettier --write --loglevel warn \"./**/*.{js,json,tsx,css,less,scss,vue,html,md}\"",
+    "prepack": "pinst --disable",
+    "postpack": "pinst --enable",
+    "pkg:sort": "npx sort-package-json",
+    "prepare": "husky"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
@@ -27,10 +33,12 @@
   "devDependencies": {
     "@vuepress/plugin-search": "^1.9.10",
     "cross-env": "^7.0.3",
+    "husky": "^9.1.4",
+    "lint-staged": "^15.2.7",
     "pinst": "^3.0.0",
-    "prettier": "^3.3.1",
+    "prettier": "^3.3.3",
     "vuepress": "^1.9.10",
     "vuepress-theme-hope": "1.30.0"
   },
-  "packageManager": "yarn@4.2.2"
+  "packageManager": "yarn@4.3.1"
 }
